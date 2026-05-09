@@ -239,9 +239,14 @@ js_lines.append('''
 const boroughList = document.getElementById("borough-list");
 if (boroughList) {
   const boroughOrder = ["Manchester","Salford","Bolton","Bury","Oldham","Rochdale","Stockport","Tameside","Trafford","Wigan"];
-  // Per-borough turnout headlines (where published)
+  // Per-borough turnout headlines (where published or computable)
+  // Manchester: weighted from per-ward electorate × turnout on the council results
+  // page (sum matches declared 399,451 electorate).
+  // Salford and Bolton councils have not published per-ward votes-cast totals,
+  // so a borough-wide figure cannot be computed reliably yet.
   const boroughTurnouts = {
     "Bury": "45%",
+    "Manchester": "32.5%",
     "Stockport": "44%",
     "Oldham": "46.6%",
     "Rochdale": "39.2%",
