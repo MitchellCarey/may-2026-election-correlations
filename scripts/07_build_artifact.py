@@ -180,9 +180,12 @@ corrVarOrder.forEach((key) => {
     const abs = Math.abs(r);
     const cls = r >= 0 ? "pos" : "neg";
     const strong = abs > 0.4 ? "strong" : abs > 0.25 ? "med" : "weak";
-    const barW = Math.min(50, abs * 100 / 2);
-    const barStyle = r >= 0 ? `left:50%;width:${barW}%;` : `right:50%;width:${barW}%;`;
-    return `<td class="corr-cell ${cls} ${strong}"><span class="bar" style="${barStyle}"></span><span class="val">${sign}${abs.toFixed(3)}</span></td>`;
+    // Heatmap fill: opacity proportional to |r|, capped so the value
+    // stays readable. Replaces the previous magnitude-sized .bar that
+    // wouldn't align with the value text at small |r|.
+    const opacity = Math.min(0.45, abs * 0.7);
+    const tone = r >= 0 ? `44,140,79` : `200,54,42`;
+    return `<td class="corr-cell ${cls} ${strong}" style="background:rgba(${tone},${opacity.toFixed(3)})"><span class="val">${sign}${abs.toFixed(3)}</span></td>`;
   }).join("");
   row.innerHTML = cells;
   corrBody.appendChild(row);
