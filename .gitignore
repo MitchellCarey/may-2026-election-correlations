@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Source data — large public ONS files, see data/source/README.md
+data/source/*.xlsx
+data/source/*.xls
+data/source/*.csv
+
+# Build artifacts
+*.pyc
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
