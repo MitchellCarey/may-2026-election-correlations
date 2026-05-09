@@ -284,6 +284,65 @@ if (boroughList) {
 }
 ''')
 
+# Top correlations per party (§3)
+js_lines.append('''
+/* ===== TOP CORRELATIONS PER PARTY (§3) ===== */
+const partyCorrGrid = document.getElementById("party-corr-grid");
+if (partyCorrGrid) {
+  const pcorrParties = ["Reform","Green","Labour","LibDem","Conservative"];
+  const ageVars = new Set(["median_age","pct_under18","pct_18_29","pct_30_49","pct_50_64","pct_65plus"]);
+  const dedupeAge = (arr) => {
+    let used = false;
+    return arr.filter(x => {
+      if (!ageVars.has(x.variable)) return true;
+      if (used) return false;
+      used = true;
+      return true;
+    });
+  };
+  pcorrParties.forEach(party => {
+    const rows = [];
+    Object.entries(corrData).forEach(([variable, partyMap]) => {
+      const r = partyMap[party];
+      if (r === undefined || r === null) return;
+      rows.push({ variable, r });
+    });
+    const pos = dedupeAge(rows.filter(x => x.r > 0).sort((a,b) => b.r - a.r)).slice(0, 5);
+    const neg = dedupeAge(rows.filter(x => x.r < 0).sort((a,b) => a.r - b.r)).slice(0, 5);
+    const card = document.createElement("div");
+    card.className = "pcorr-card";
+    const n = (meansData[party] && meansData[party].n) || "—";
+    const fmt = (r) => {
+      const sign = r >= 0 ? "+" : "−";
+      return `${sign}${Math.abs(r).toFixed(2)}`;
+    };
+    const renderCol = (label, items, kind) => `
+      <div>
+        <div class="pcorr-col-label ${kind}">${label}</div>
+        ${items.map(x => `
+          <div class="pcorr-row">
+            <span class="pcorr-r ${kind}">${fmt(x.r)}</span>
+            <span class="pcorr-var">${corrLabels[x.variable] || x.variable}</span>
+          </div>
+        `).join("")}
+      </div>
+    `;
+    card.innerHTML = `
+      <div class="pcorr-head">
+        <span class="pcorr-swatch" style="background:${partyColors[party]}"></span>
+        <span class="pcorr-name">${partyDisplay[party]}</span>
+        <span class="pcorr-n">n=${n}</span>
+      </div>
+      <div class="pcorr-cols">
+        ${renderCol("Top + correlations", pos, "pos")}
+        ${renderCol("Top − correlations", neg, "neg")}
+      </div>
+    `;
+    partyCorrGrid.appendChild(card);
+  });
+}
+''')
+
 # Ward list renderer (group by borough → party)
 js_lines.append('''
 /* ===== ALL WARDS LIST (grouped by borough → party) ===== */
