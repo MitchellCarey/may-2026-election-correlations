@@ -239,6 +239,10 @@ body {
 .corr-cell .val { position: relative; z-index: 1; }
 .corr-cell.pos .bar { background: rgba(44,140,79,0.18); }
 .corr-cell.neg .bar { background: rgba(200,54,42,0.16); }
+/* Anchor each value to the same side as its bar so the highlight sits
+   under the text. Without this, default text-align:right leaves the
+   negative-r values floating away from their leftward bars. */
+.corr-cell.neg { text-align: left; }
 .corr-cell.strong .val { font-weight: 700; }
 .corr-row-divider td { border-top: 2px solid var(--ink) !important; }
 
