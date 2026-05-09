@@ -104,9 +104,9 @@ labels_dict = {
   "pct_soc123": "% in SOC 1-3 (graduate-level jobs)",
   "pct_no_qual": "% with no qualifications",
   "pct_uk_born": "% born in UK",
-  "pct_private_rented": "% Private renting",
-  "pct_social_rented": "% Social renting",
-  "pct_owned": "% Owner-occupied",
+  "pct_private_rented": "% Private rent",
+  "pct_social_rented": "% Social housing",
+  "pct_owned": "% Owned",
   "pct_wfh": "% Working from home",
   "pct_female": "% Female",
 }
