@@ -75,7 +75,8 @@ FUZZY_MAP = {
     'Blackfriars & Trinity':             'Blackfriars and Trinity',
     'Barton & Winton':                   'Barton and Winton',  # ward I missed
     
-    # Bury
+    # Bury — Census uses "St. Mary's (Bury)" with a period in "St."
+    "St Mary's":                         "St. Mary's",
     'Radcliffe North & Ainsworth':       'Radcliffe North and Ainsworth',
     
     # Wigan 2024 boundary changes
@@ -125,7 +126,7 @@ BOROUGH_CODE_RANGES = {
     'Manchester': [('E05011350', 'E05011385')],
     'Oldham':     [('E05000719', 'E05000740')],
     'Rochdale':   [('E05014033', 'E05014053')],
-    'Salford':    [('E05013019', 'E05013040')],
+    'Salford':    [('E05013018', 'E05013040')],  # E05013018 = Barton & Winton
     'Stockport':  [('E05000779', 'E05000810')],
     'Tameside':   [('E05000800', 'E05000820')],
     'Trafford':   [('E05000819', 'E05000840')],

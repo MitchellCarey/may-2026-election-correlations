@@ -131,6 +131,10 @@
     "gss": "E05014165",
     "match": "suffix"
   },
+  "Bury::St Mary's": {
+    "gss": "E05014166",
+    "match": "fuzzy"
+  },
   "Bury::Tottington": {
     "gss": "E05014167",
     "match": "exact"
@@ -641,6 +645,10 @@
   },
   "Wigan::Worsley Mesnes": {
     "gss": "E05000864",
+    "match": "exact"
+  },
+  "Salford::Barton & Winton": {
+    "gss": "E05013018",
     "match": "exact"
   }
 }

@@ -677,7 +677,7 @@
     "pct_wfh": 38.06,
     "pct_female": 50.41,
     "turnout": null,
-    "match_type": "manual"
+    "match_type": "fuzzy"
   },
   {
     "borough": "Bury",
@@ -2177,7 +2177,7 @@
     "pct_wfh": 25.73,
     "pct_female": 50.14,
     "turnout": null,
-    "match_type": "manual"
+    "match_type": "exact"
   },
   {
     "borough": "Salford",
