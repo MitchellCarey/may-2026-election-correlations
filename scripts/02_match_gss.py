@@ -7,8 +7,14 @@ Approach:
 - For Bolton/Stockport/Trafford boundary-shifted wards: use manual mapping
 - Wards with no clean Census equivalent are dropped (logged)
 """
-import pandas as pd
 import json
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
+SOURCE = DATA / "source"
 
 # Manual mappings for 2026 ward → 2021 ward (Census-equivalent), where boundaries shifted
 # Strategy: where 2026 ward is a renamed version of a 2021 ward, point at it.
@@ -167,10 +173,10 @@ def find_gss_code(borough, ward_name, df):
 
 
 # Load results and Census
-with open('/home/claude/manchester/all_gm_results.json') as f:
+with open(DATA / 'all_gm_results.json') as f:
     results = json.load(f)
 
-df = pd.read_excel('/mnt/user-data/uploads/TS006-Population-Density-2021-wd-ONS.xlsx', sheet_name='Dataset')
+df = pd.read_excel(SOURCE / 'TS006-Population-Density-2021-wd-ONS.xlsx', sheet_name='Dataset')
 
 mapping = {}  # (borough, ward) -> {gss, match_type}
 not_found = []
@@ -189,7 +195,7 @@ for b, w in not_found:
     print(f"  {b}: {w}")
 
 # Save
-with open('/home/claude/manchester/all_gm_gss_mapping.json', 'w') as f:
+with open(DATA / 'all_gm_gss_mapping.json', 'w') as f:
     json.dump(mapping, f, indent=2)
 
 # Print match type distribution

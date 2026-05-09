@@ -24,6 +24,9 @@ data/source/*.xlsx
 data/source/*.xls
 data/source/*.csv
 
+# Intermediate output from scripts/07_build_artifact.py
+data/v12_new_js.js
+
 # Build artifacts
 *.pyc
 dist/

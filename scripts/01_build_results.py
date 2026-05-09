@@ -6,8 +6,11 @@ Strategy:
    boundary-shifted wards in Bolton/Stockport/Trafford)
 3. Save consolidated dict: ward_name → {borough, winner, winner_share, gss_code}
 """
-import pandas as pd
 import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
 
 # === 2026 election winners by ward ===
 # Format: borough -> {ward: (winner, winner_share_pct or None, turnout_pct or None)}
@@ -191,10 +194,17 @@ RESULTS = {
         'Winstanley':                       ('Reform', None, None),
         'Worsley Mesnes':                   ('Reform', None, None),
     },
+    'Salford': {
+        # Most Salford wards are in the legacy combined_wards.json snapshot;
+        # Barton & Winton was missed in that extract and is added here so the
+        # consolidate step (04) picks it up from all_gm_census.json.
+        'Barton & Winton':                  ('Labour', None, None),
+    },
 }
 
 # Save raw results
-with open('/home/claude/manchester/all_gm_results.json', 'w') as f:
+DATA.mkdir(parents=True, exist_ok=True)
+with open(DATA / 'all_gm_results.json', 'w') as f:
     json.dump(RESULTS, f, indent=2)
 
 total = sum(len(v) for v in RESULTS.values())

@@ -74,11 +74,6 @@ python scripts/06_prep_artifact_data.py
 python scripts/07_build_artifact.py
 ```
 
-> **Note**: the scripts as committed contain hard-coded paths
-> (`/home/claude/manchester/...`, `/mnt/user-data/uploads/...`) from the build
-> environment. Update these to relative paths (`data/`, `data/source/`) before
-> running locally. A pull request to fix this would be welcome.
-
 ## Methodology
 
 **Election data.** Collected 7-9 May 2026 from each council's official results

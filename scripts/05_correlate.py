@@ -5,9 +5,13 @@
 Outputs: gm_correlations.json
 """
 import json
+from pathlib import Path
 from statistics import mean
 
-with open('/home/claude/manchester/gm_all_wards.json') as f:
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
+
+with open(DATA / 'gm_all_wards.json') as f:
     wards = json.load(f)
 
 # Filter to declared (drop Pending)
@@ -95,6 +99,6 @@ output = {
     'correlations': results,
     'means': party_means,
 }
-with open('/home/claude/manchester/gm_correlations.json', 'w') as f:
+with open(DATA / 'gm_correlations.json', 'w') as f:
     json.dump(output, f, indent=2)
 print(f"\nSaved gm_correlations.json")

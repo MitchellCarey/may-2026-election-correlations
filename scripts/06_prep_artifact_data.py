@@ -3,11 +3,15 @@ Inherits CSS structure from v11 (mobile-first), but replaces all data with
 the consolidated full-GM dataset.
 """
 import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
 
 # Load consolidated data
-with open('/home/claude/manchester/gm_all_wards.json') as f:
+with open(DATA / 'gm_all_wards.json') as f:
     wards = json.load(f)
-with open('/home/claude/manchester/gm_correlations.json') as f:
+with open(DATA / 'gm_correlations.json') as f:
     corr = json.load(f)
 
 declared = [w for w in wards if w.get('winner') not in ('Pending', None)]
@@ -59,6 +63,6 @@ for b in sorted(borough_breakdown):
             'match_type': w.get('match_type'),
         })
 
-with open('/home/claude/manchester/v12_ward_data.json', 'w') as f:
+with open(DATA / 'v12_ward_data.json', 'w') as f:
     json.dump(ward_data_js, f, indent=2)
 print(f"\nSaved {len(ward_data_js)} wards to v12_ward_data.json")

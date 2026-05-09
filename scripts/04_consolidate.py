@@ -8,15 +8,21 @@ Steps:
 5. Add the 161 new wards from all_gm_census.json + all_gm_results.json
 6. Output: gm_all_wards.json (full 213-ward dataset)
 """
-import pandas as pd
 import json
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
+SOURCE = DATA / "source"
 
 # Load existing combined (48 wards, Manchester 29 + Salford 19)
-with open('/home/claude/manchester/combined_wards.json') as f:
+with open(DATA / 'combined_wards.json') as f:
     existing = json.load(f)
 
 # Load Manchester wards_v6 to extract pct_female
-with open('/home/claude/manchester/wards_v6.json') as f:
+with open(DATA / 'wards_v6.json') as f:
     mv6 = json.load(f)
 manc_v6 = mv6['wards']  # dict by ward name
 
@@ -79,14 +85,14 @@ print(f"  Manchester winners: {manc_winners}")
 
 # === Add Salford Barton & Winton ===
 # We need to get Census data for it
-df = pd.read_excel('/mnt/user-data/uploads/TS006-Population-Density-2021-wd-ONS.xlsx', sheet_name='Dataset')
+df = pd.read_excel(SOURCE / 'TS006-Population-Density-2021-wd-ONS.xlsx', sheet_name='Dataset')
 bw_match = df[df['Electoral wards and divisions'].str.strip() == 'Barton and Winton']
 print(f"\nBarton and Winton GSS: {bw_match.iloc[0]['Electoral wards and divisions Code'] if len(bw_match) else 'NOT FOUND'}")
 
 # === Add the 161 new wards from new GM extraction ===
-with open('/home/claude/manchester/all_gm_census.json') as f:
+with open(DATA / 'all_gm_census.json') as f:
     new_census = json.load(f)
-with open('/home/claude/manchester/all_gm_results.json') as f:
+with open(DATA / 'all_gm_results.json') as f:
     new_results = json.load(f)
 
 # Build list of new entries
@@ -144,6 +150,6 @@ for b, n in sorted(bcounts.items()):
     print(f"  {b}: {n}")
 
 # Save
-with open('/home/claude/manchester/gm_all_wards.json', 'w') as f:
+with open(DATA / 'gm_all_wards.json', 'w') as f:
     json.dump(existing, f, indent=2)
 print(f"\nSaved gm_all_wards.json")

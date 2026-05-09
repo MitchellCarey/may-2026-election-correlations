@@ -1,9 +1,13 @@
 """Generate the new JS for v12 artifact (replaces lines 575-906 of v12 file)."""
 import json
+from pathlib import Path
 
-with open('/home/claude/manchester/v12_ward_data.json') as f:
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
+
+with open(DATA / 'v12_ward_data.json') as f:
     wards = json.load(f)
-with open('/home/claude/manchester/gm_correlations.json') as f:
+with open(DATA / 'gm_correlations.json') as f:
     corr_full = json.load(f)
 
 # Build compact RAW data structure: keyed by "Borough::Ward"
@@ -328,7 +332,7 @@ if (wardsList) {
 
 # Save
 new_js = '\n'.join(js_lines)
-with open('/home/claude/manchester/v12_new_js.js', 'w') as f:
+with open(DATA / 'v12_new_js.js', 'w') as f:
     f.write(new_js)
 
 print(f"Generated {len(new_js)} chars of new JS")

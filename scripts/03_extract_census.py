@@ -3,11 +3,17 @@
 Outputs: all_gm_census.json
   format: {"<Borough>::<Ward>": {gss, density, median_age, pct_18_29, ...}}
 """
-import pandas as pd
 import json
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
+SOURCE = DATA / "source"
 
 # Load the GSS mapping
-with open('/home/claude/manchester/all_gm_gss_mapping.json') as f:
+with open(DATA / 'all_gm_gss_mapping.json') as f:
     mapping = json.load(f)
 
 # Build reverse: gss -> [(borough, ward, match_type)]
@@ -28,7 +34,7 @@ for key, info in mapping.items():
 
 # === TS006: Density ===
 print("\n=== TS006 Density ===")
-df = pd.read_excel('/mnt/user-data/uploads/TS006-Population-Density-2021-wd-ONS.xlsx', sheet_name='Dataset')
+df = pd.read_excel(SOURCE / 'TS006-Population-Density-2021-wd-ONS.xlsx', sheet_name='Dataset')
 for key, info in mapping.items():
     row = df[df['Electoral wards and divisions Code'] == info['gss']]
     if len(row):
@@ -36,7 +42,7 @@ for key, info in mapping.items():
 
 # === TS007: Age ===
 print("=== TS007 Age ===")
-df = pd.read_excel('/mnt/user-data/uploads/TS007-Age-By-Single-Year-2021-wd-ONS.xlsx', sheet_name='Dataset')
+df = pd.read_excel(SOURCE / 'TS007-Age-By-Single-Year-2021-wd-ONS.xlsx', sheet_name='Dataset')
 print(f"  TS007 cols: {df.columns.tolist()}")
 print(f"  Age categories: {df['Age (101 categories)'].unique()[:8]} ... ({df['Age (101 categories)'].nunique()} total)")
 
@@ -90,7 +96,7 @@ for key, info in mapping.items():
 
 # === TS063: Occupation (SOC 1-3) ===
 print("=== TS063 Occupation ===")
-df = pd.read_excel('/mnt/user-data/uploads/TS063-Occupation-2021-wd-ONS.xlsx', sheet_name='Dataset')
+df = pd.read_excel(SOURCE / 'TS063-Occupation-2021-wd-ONS.xlsx', sheet_name='Dataset')
 print(f"  TS063 cols: {df.columns.tolist()}")
 occ_col = [c for c in df.columns if 'Occupation' in c][0]
 occ_code_col = [c for c in df.columns if 'Code' in c and 'Occupation' in c]
@@ -113,7 +119,7 @@ for key, info in mapping.items():
 
 # === TS067: Qualifications ===
 print("=== TS067 Qualifications ===")
-df = pd.read_excel('/mnt/user-data/uploads/TS067-Highest-Level-Of-Qualification-2021-wd-ONS.xlsx', sheet_name='Dataset')
+df = pd.read_excel(SOURCE / 'TS067-Highest-Level-Of-Qualification-2021-wd-ONS.xlsx', sheet_name='Dataset')
 print(f"  TS067 cols: {df.columns.tolist()}")
 for c in df.columns:
     if 'Code' in c:
@@ -139,7 +145,7 @@ for key, info in mapping.items():
 
 # === TS054: Tenure ===
 print("=== TS054 Tenure ===")
-df = pd.read_excel('/mnt/user-data/uploads/TS054-Tenure-2021-wd-ONS.xlsx', sheet_name='Dataset')
+df = pd.read_excel(SOURCE / 'TS054-Tenure-2021-wd-ONS.xlsx', sheet_name='Dataset')
 print(f"  TS054 cols: {df.columns.tolist()}")
 for c in df.columns:
     if 'Code' in c and 'Tenure' in c:
@@ -180,7 +186,7 @@ for key, info in mapping.items():
 
 # === TS004: Country of Birth ===
 print("=== TS004 Country of Birth ===")
-df = pd.read_excel('/mnt/user-data/uploads/TS004-Country-Of-Birth-2021-wd-ONS.xlsx', sheet_name='Dataset')
+df = pd.read_excel(SOURCE / 'TS004-Country-Of-Birth-2021-wd-ONS.xlsx', sheet_name='Dataset')
 cob_col = [c for c in df.columns if 'Country' in c and 'Code' in c][0]
 print(f"  Using col: {cob_col}, unique codes: {sorted(df[cob_col].dropna().unique())}")
 # TS004 codes: 1=UK, 2=Ireland, 3=Other EU, 4=Non-EU (varies by category set)
@@ -197,7 +203,7 @@ for key, info in mapping.items():
 
 # === TS061: Travel to work (WFH) ===
 print("=== TS061 WFH ===")
-df = pd.read_excel('/mnt/user-data/uploads/TS061-Method-Used-To-Travel-To-Work-2021-wd-ONS.xlsx', sheet_name='Dataset')
+df = pd.read_excel(SOURCE / 'TS061-Method-Used-To-Travel-To-Work-2021-wd-ONS.xlsx', sheet_name='Dataset')
 ttw_col = [c for c in df.columns if 'Code' in c and ('Travel' in c or 'Method' in c)][0]
 print(f"  Using col: {ttw_col}, unique codes: {sorted(df[ttw_col].dropna().unique())}")
 # TS061: 0=Not applicable, 1=WFH (or "mainly works at or from home"), 2-11=various commuting methods
@@ -214,7 +220,7 @@ for key, info in mapping.items():
 
 # === TS008: Sex ===
 print("=== TS008 Sex ===")
-df = pd.read_excel('/mnt/user-data/uploads/TS008-Sex-2021-wd-ONS.xlsx', sheet_name='Dataset')
+df = pd.read_excel(SOURCE / 'TS008-Sex-2021-wd-ONS.xlsx', sheet_name='Dataset')
 for key, info in mapping.items():
     rows = df[df['Electoral wards and divisions Code'] == info['gss']]
     if len(rows) == 0:
@@ -228,7 +234,7 @@ for key, info in mapping.items():
             out[key]['pct_female'] = round(100 * f / (f + m), 2)
 
 # Save
-with open('/home/claude/manchester/all_gm_census.json', 'w') as f:
+with open(DATA / 'all_gm_census.json', 'w') as f:
     json.dump(out, f, indent=2)
 
 # Stats: how many wards have all expected variables?
