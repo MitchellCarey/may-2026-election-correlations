@@ -1,9 +1,19 @@
-"""Generate the new JS for v12 artifact (replaces lines 575-906 of v12 file)."""
+"""Splice the generated data + renderer JS into docs/index.html.
+
+Replaces everything between the BEGIN GENERATED / END GENERATED markers
+inside the page's single <script> block, in place. Run this whenever
+upstream data changes — no other steps are needed before pushing.
+"""
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
+DOCS = ROOT / "docs"
+
+BEGIN = "// ===== BEGIN GENERATED — see scripts/07_build_artifact.py ====="
+END = "// ===== END GENERATED ====="
 
 with open(DATA / 'v12_ward_data.json') as f:
     wards = json.load(f)
@@ -330,12 +340,26 @@ if (wardsList) {
 }
 ''')
 
-# Save
 new_js = '\n'.join(js_lines)
-with open(DATA / 'v12_new_js.js', 'w') as f:
-    f.write(new_js)
 
-print(f"Generated {len(new_js)} chars of new JS")
+# Splice into docs/index.html between the BEGIN/END markers.
+html_path = DOCS / 'index.html'
+html = html_path.read_text()
+pattern = re.compile(
+    re.escape(BEGIN) + r'\n.*?\n' + re.escape(END),
+    re.DOTALL,
+)
+matches = pattern.findall(html)
+if len(matches) != 1:
+    raise SystemExit(
+        f"Expected exactly one BEGIN/END marker pair in {html_path}, "
+        f"found {len(matches)}. Add the markers around the generated "
+        f"<script> block before re-running."
+    )
+new_html = pattern.sub(lambda _m: BEGIN + '\n' + new_js + '\n' + END, html, count=1)
+html_path.write_text(new_html)
+
+print(f"Spliced {len(new_js)} chars of generated JS into {html_path.relative_to(ROOT)}")
 print(f"  RAW entries: {len(raw)}")
 print(f"  corrData variables: {len(corrData)}")
 print(f"  meansData parties: {list(means_full.keys())}")

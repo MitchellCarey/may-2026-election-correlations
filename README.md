@@ -32,10 +32,12 @@ major party — the largest correlation is just +0.23.
 
 ## What's in the repo
 
+Live: https://mitchellcarey.github.io/may-2026-election-correlations/
+
 ```
 .
-├── artifact/
-│   └── gm-2026-ward-analysis.html      # Final deliverable — open in browser
+├── docs/
+│   └── index.html                      # Final deliverable — served by GitHub Pages
 ├── data/
 │   ├── all_gm_results.json             # 2026 election winners, per ward
 │   ├── all_gm_gss_mapping.json         # Ward-name → ONS GSS code
@@ -53,7 +55,7 @@ major party — the largest correlation is just +0.23.
     ├── 04_consolidate.py               # Merge into single dataset
     ├── 05_correlate.py                 # Compute Pearson r and means
     ├── 06_prep_artifact_data.py        # Build JS-ready data
-    └── 07_build_artifact.py            # Generate the HTML/JS
+    └── 07_build_artifact.py            # Splice into docs/index.html
 ```
 
 ## Reproduce
