@@ -219,9 +219,9 @@ meansPartyOrder.forEach(party => {
   Object.entries(meansLabels).forEach(([k, l]) => {
     const v = m[k];
     if (v === undefined || v === null) return;
-    const display = k === "median_age" ? v.toFixed(1) + " yrs"
+    const display = k === "median_age" ? v.toFixed(2) + " yrs"
                   : k === "density"    ? Math.round(v).toLocaleString()
-                  : v.toFixed(1) + "%";
+                  : v.toFixed(2) + "%";
     rows += `<div class="row"><span class="lbl">${l}</span><span class="val">${display}</span></div>`;
   });
   card.innerHTML = `
