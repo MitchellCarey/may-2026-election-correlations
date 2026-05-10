@@ -31,9 +31,9 @@ VAR_ORDER = [
     ("pct_owned",          "% Owner-occupied"),
     ("pct_18_29",          "% Aged 18–29"),
     ("pct_private_rented", "% Private rented"),
-    ("density",            "Population density"),
-    ("pct_soc123",         "% SOC 1–3 (graduate jobs)"),
-    ("pct_level4_plus",    "% Degree (Level 4+)"),
+    ("density",            "Pop. density"),
+    ("pct_soc123",         "% SOC 1–3"),
+    ("pct_level4_plus",    "% Degree (L4+)"),
 ]
 
 # (key, color, stroke px, n)
@@ -180,14 +180,16 @@ for party_key, color, stroke, _n in draw_order:
             f'fill="{color}" stroke="#fafaf7" stroke-width="1"/>'
         )
 
-# X-axis labels — rotate(35) clockwise around the tick base so the tick
-# sits at the upper-right end of the label and text reads down-left.
+# X-axis labels — vertical (rotate -90), each label hanging straight
+# down directly under its column. text-anchor="end" + rotate(-90) puts
+# the right end of the text at the tick (top) and the rest of the label
+# below, so labels read bottom-up.
 for i, (_var, label) in enumerate(VAR_ORDER):
     x = xpos(i)
-    y = PB + 10
+    y = PB + 8
     s.append(
-        f'<g transform="translate({x:.1f} {y}) rotate(35)">'
-        f'<text x="0" y="0" text-anchor="end" '
+        f'<g transform="translate({x:.1f} {y}) rotate(-90)">'
+        f'<text x="0" y="3" text-anchor="end" '
         f'font-family="\'Atkinson Hyperlegible\', sans-serif" '
         f'font-size="10.5" fill="#14110d">{label}</text>'
         f'</g>'
