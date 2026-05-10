@@ -10,7 +10,7 @@
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #f3efe6; --paper: #faf6ec; --ink: #14110d;
@@ -21,8 +21,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body {
   background: var(--bg); color: var(--ink);
-  font-family: 'Inter Tight', system-ui, sans-serif;
-  font-feature-settings: "ss01", "cv11";
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
 }
@@ -55,20 +54,18 @@ body {
 
 /* HERO */
 .headline {
-  font-family: 'Fraunces', serif; font-weight: 800;
-  font-variation-settings: "opsz" 144, "SOFT" 60;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-weight: 700;
   font-size: clamp(32px, 8vw, 76px);
-  line-height: 1.02; letter-spacing: -0.018em;
+  line-height: 1.05; letter-spacing: -0.018em;
   margin: 22px 0 14px; max-width: 18ch;
   color: var(--ink);
 }
-.headline em { font-style: italic; font-weight: 800; font-variation-settings: "opsz" 144, "SOFT" 80; }
+.headline em { font-style: italic; font-weight: 700; }
 .deck {
-  font-family: 'Fraunces', serif; font-weight: 400;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-weight: 400;
   font-size: clamp(15.5px, 4.2vw, 22px);
-  line-height: 1.42; max-width: 64ch;
+  line-height: 1.5; max-width: 64ch;
   margin-bottom: 16px;
-  font-variation-settings: "opsz" 36;
 }
 .byline {
   font-family: 'JetBrains Mono', monospace;
@@ -94,7 +91,7 @@ body {
   font-size: 10px; letter-spacing: 0.14em; color: var(--muted);
 }
 .section-head .ttl {
-  font-family: 'Fraunces', serif; font-weight: 800;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-weight: 800;
   font-size: clamp(20px, 5.5vw, 32px);
   letter-spacing: -0.02em; flex: 1; min-width: 0;
 }
@@ -134,11 +131,11 @@ body {
   color: var(--muted); margin-bottom: 6px;
 }
 .finding .fnum {
-  font-family: 'Fraunces', serif; font-weight: 800;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-weight: 800;
   font-size: 36px; line-height: 1; margin-bottom: 4px;
-  letter-spacing: -0.03em; font-variation-settings: "opsz" 80;
+  letter-spacing: -0.02em;
 }
-.finding .ftxt { font-size: 13px; line-height: 1.45; }
+.finding .ftxt { font-size: 13.5px; line-height: 1.5; }
 .finding .fnum.green  { color: var(--green); }
 .finding .fnum.reform { color: var(--reform); }
 .finding .fnum.labour { color: var(--labour); }
@@ -168,7 +165,7 @@ body {
   color: var(--muted); margin-bottom: 6px;
 }
 .td-side .title {
-  font-family: 'Fraunces', serif; font-weight: 800;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-weight: 800;
   font-size: 19px; letter-spacing: -0.01em; margin-bottom: 4px;
 }
 @media (min-width: 720px) { .td-side .title { font-size: 22px; } }
@@ -185,7 +182,7 @@ body {
 }
 .td-row:last-child { border-bottom: none; }
 .td-row .who {
-  font-family: 'Fraunces', serif; font-weight: 600; font-size: 13px;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-weight: 600; font-size: 13px;
   display: flex; align-items: center; gap: 7px; flex-shrink: 1; min-width: 0;
 }
 .td-row .who .swatch { width: 9px; height: 9px; border-radius: 1px; flex-shrink: 0; }
@@ -212,7 +209,7 @@ body {
 @media (min-width: 720px) { .corr-table th, .corr-table td { padding: 11px 14px; } }
 .corr-table th:first-child, .corr-table td:first-child {
   text-align: left;
-  font-family: 'Inter Tight', sans-serif; font-weight: 500;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-weight: 500;
   position: sticky; left: 0; background: var(--paper);
   z-index: 1;
 }
@@ -260,7 +257,7 @@ body {
   padding-bottom: 8px; margin-bottom: 10px;
 }
 .pcorr-card .pcorr-name {
-  font-family: 'Fraunces', serif; font-weight: 800;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-weight: 800;
   font-size: 18px; line-height: 1.1;
 }
 @media (min-width: 720px) { .pcorr-card .pcorr-name { font-size: 20px; } }
@@ -311,7 +308,7 @@ body {
 .pcorr-row .pcorr-r.pos { color: #2c8c4f; }
 .pcorr-row .pcorr-r.neg { color: #c8362a; }
 .pcorr-row .pcorr-var {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
   color: var(--ink); line-height: 1.35;
 }
 
@@ -328,7 +325,7 @@ body {
 .means-card { background: var(--paper); padding: 14px; }
 @media (min-width: 720px) { .means-card { padding: 18px; } }
 .means-card .pname {
-  font-family: 'Fraunces', serif; font-weight: 800;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-weight: 800;
   font-size: 16px; display: flex; align-items: center; gap: 7px;
   margin-bottom: 4px; line-height: 1.15;
 }
@@ -362,7 +359,7 @@ body {
   margin-bottom: 10px; gap: 10px; flex-wrap: wrap;
 }
 .party-block .pttl {
-  font-family: 'Fraunces', serif; font-weight: 900;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-weight: 900;
   font-size: 22px; letter-spacing: -0.02em;
   display: flex; align-items: center; gap: 10px;
 }
@@ -420,7 +417,7 @@ body {
   padding-top: 0; padding-bottom: 6px;
 }
 .ward-row .name {
-  font-family: 'Fraunces', serif; font-weight: 600;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-weight: 600;
   font-size: 13px; letter-spacing: -0.01em; color: var(--ink);
 }
 @media (min-width: 720px) { .ward-row .name { font-size: 15px; } }
@@ -459,7 +456,7 @@ body {
   margin-bottom: 6px;
 }
 .b-name {
-  font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-size: 17px; font-weight: 600;
   letter-spacing: -0.01em;
 }
 @media (min-width: 720px) { .b-name { font-size: 19px; } }
@@ -497,7 +494,7 @@ body {
   margin-bottom: 8px;
 }
 .bward-name {
-  font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-size: 19px; font-weight: 600;
   letter-spacing: -0.01em;
 }
 @media (min-width: 720px) { .bward-name { font-size: 22px; } }
@@ -525,7 +522,7 @@ body {
   .ward-row.mini .col-hide-mobile { display: inline; }
 }
 .ward-row.mini .name {
-  font-family: 'Fraunces', serif; font-size: 12.5px;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-size: 12.5px;
 }
 @media (min-width: 720px) { .ward-row.mini .name { font-size: 13.5px; } }
 .ward-row.mini .winpill {
@@ -561,7 +558,7 @@ body {
   color: var(--muted); padding: 6px 0;
   border-bottom: 2px solid var(--ink);
 }
-.sal-row .sal-name { font-family: 'Fraunces', serif; font-size: 12.5px; }
+.sal-row .sal-name { font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-size: 12.5px; }
 .sal-row .sal-pill {
   font-family: 'JetBrains Mono', monospace; font-size: 8.5px;
   letter-spacing: 0.06em; text-transform: uppercase;
