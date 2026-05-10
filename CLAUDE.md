@@ -73,12 +73,24 @@ Two parallel pipelines feed the two pages. Both are linear; only re-run from the
 
 The Changes pipeline depends on the Winners pipeline's `gm_all_wards.json` — if upstream data changes, re-run `04` then `04b` (and everything downstream of each).
 
+### Map pipeline → `docs/map.html`
+
+```
+09_fetch_ward_boundaries.py  → data/source/wd_may_2024_uk_bgc_gm.geojson  (cached raw fetch)
+                             → data/gm_ward_geoms.json                    (one-off; idempotent — skips if output exists, --force to rebuild)
+07c_build_map_artifact.py    → splices into docs/map.html  (consumes gm_ward_geoms.json + gm_all_wards_with_prior.json)
+```
+
+`09` is build-only and depends on `geopandas`, `shapely`, `pyproj` (see `requirements.txt`). The deployed artifact is just `docs/map.html` plus the small JSON file; the geo deps don't ship.
+
 Common cases:
 
-- **Touched `scripts/0[1-6]_*.py` or input XLSX** → run that Winners script and every later one, ending with 07. If the change touches `gm_all_wards.json`, also re-run `04b → 05b/05c → 06b → 07b` for Changes.
+- **Touched `scripts/0[1-6]_*.py` or input XLSX** → run that Winners script and every later one, ending with 07. If the change touches `gm_all_wards.json`, also re-run `04b → 05b/05c → 06b → 07b` for Changes, and `07c` for Map (which reads the same downstream-of-04b file).
 - **Touched `scripts/07_build_artifact.py`** → run 07 only.
-- **Touched `scripts/0[145-7]b_*.py` or `05c_*.py`** → run from that script onwards through 07b.
-- **Touched only copy/CSS in either HTML** → no rebuild needed, but verify the BEGIN/END block didn't drift.
+- **Touched `scripts/0[145-7]b_*.py` or `05c_*.py`** → run from that script onwards through 07b. Also re-run 07c if `gm_all_wards_with_prior.json` changed.
+- **Touched `scripts/07c_build_map_artifact.py`** → run 07c only.
+- **Touched `scripts/09_fetch_ward_boundaries.py` or boundary set** → run `09 --force` then 07c.
+- **Touched only copy/CSS in any of the three HTMLs** → no rebuild needed, but verify the BEGIN/END block didn't drift.
 
 After any rebuild, `git diff docs/*.html` should only show changes inside the BEGIN/END markers (plus whatever you intentionally edited outside them). If unrelated chunks moved, something's wrong — investigate before committing.
 
@@ -86,8 +98,9 @@ After any rebuild, `git diff docs/*.html` should only show changes inside the BE
 
 1. If the task changed Winners data/scripts/renderer: confirm `07_build_artifact.py` ran cleanly and printed its summary line.
 2. If the task changed Changes data/scripts/renderer: confirm `07b_build_changes_artifact.py` ran cleanly and printed its summary line.
-3. `git status` / `git diff docs/*.html` — make sure the spliced output is committed alongside the script changes (the deployed artifacts are the HTMLs, not the scripts; an un-rebuilt commit ships stale data).
-4. If you only changed copy/CSS outside the markers, no rebuild is required — say so explicitly rather than running 07/07b "just in case" (a no-op diff is fine, but skip the noise).
+3. If the task changed Map data/scripts/renderer: confirm `07c_build_map_artifact.py` ran cleanly and printed its `matched: X/215 wards` summary (must be 215/215; less means the GSS join lost wards and needs investigation).
+4. `git status` / `git diff docs/*.html` — make sure the spliced output is committed alongside the script changes (the deployed artifacts are the HTMLs, not the scripts; an un-rebuilt commit ships stale data).
+5. If you only changed copy/CSS outside the markers, no rebuild is required — say so explicitly rather than running 07/07b/07c "just in case" (a no-op diff is fine, but skip the noise).
 
 ## Deployment
 

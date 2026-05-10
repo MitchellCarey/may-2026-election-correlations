@@ -1,2 +1,10 @@
 pandas>=2.0
 openpyxl>=3.1
+
+# build-only — used by scripts/09_fetch_ward_boundaries.py to fetch + project +
+# simplify the ONS WD24 ward boundaries into data/gm_ward_geoms.json. Not
+# required at runtime; the deployed artifact (docs/map.html + the JSON) needs
+# nothing more than what GitHub Pages serves statically.
+geopandas>=0.14
+shapely>=2.0
+pyproj>=3.6
