@@ -21,8 +21,10 @@ Pipeline:
      simplification — these are decorative).
   7. Write data/gm_ward_geoms.json:
        {"viewBox": [minx, miny, width, height],
-        "wards":    {WD24CD: "M ... Z"},
-        "boroughs": {LAD24CD: "M ... Z"}}
+        "wards":    {WD24CD: {"path": "M...Z", "name": "...", "lad": "E08..."}},
+        "boroughs": {LAD24CD: {"path": "M...Z", "name": "..."}}}
+     The names/LAD codes let 07c join the results data (which is keyed by
+     borough+ward name) to the geometry without a second network call.
 
 Build-only — geopandas/shapely/pyproj are not needed at runtime; the deployed
 artifact is just docs/map.html plus the small JSON file this writes.
@@ -73,11 +75,11 @@ def http_get(url: str, params: dict) -> dict:
 
 
 def fetch_lookup() -> dict:
-    """Return {WD24CD: LAD24CD} for all 215 GM wards."""
+    """Return {WD24CD: {name, lad, borough}} for all 215 GM wards."""
     in_list = ','.join(f"'{c}'" for c in GM_LAD_CODES)
     params = {
         'where':              f'LAD24CD IN ({in_list})',
-        'outFields':          'WD24CD,LAD24CD',
+        'outFields':          'WD24CD,WD24NM,LAD24CD,LAD24NM',
         'returnGeometry':     'false',
         'f':                  'json',
         'resultRecordCount':  2000,
@@ -88,7 +90,14 @@ def fetch_lookup() -> dict:
     if d.get('exceededTransferLimit'):
         raise RuntimeError('lookup query hit transfer limit; not implemented')
     feats = d.get('features', [])
-    return {f['attributes']['WD24CD']: f['attributes']['LAD24CD'] for f in feats}
+    return {
+        f['attributes']['WD24CD']: {
+            'name':    f['attributes']['WD24NM'],
+            'lad':     f['attributes']['LAD24CD'],
+            'borough': f['attributes']['LAD24NM'],
+        }
+        for f in feats
+    }
 
 
 def fetch_geometry(wd_codes: list[str]) -> dict:
@@ -151,8 +160,8 @@ def main():
     DATA.mkdir(parents=True, exist_ok=True)
 
     print('1. Fetching WD24 → LAD24 lookup for the 10 GM boroughs...')
-    lad_by_wd = fetch_lookup()
-    wd_codes = sorted(lad_by_wd.keys())
+    info_by_wd = fetch_lookup()
+    wd_codes = sorted(info_by_wd.keys())
     print(f'   got {len(wd_codes)} wards')
     if len(wd_codes) != 215:
         print(f'   WARNING: expected 215 GM wards, lookup returned {len(wd_codes)}')
@@ -175,7 +184,7 @@ def main():
     print('3. Loading, reprojecting (EPSG:4326 → 27700), simplifying ward geometry...')
     gdf = gpd.GeoDataFrame.from_features(geom['features'], crs='EPSG:4326')
     gdf = gdf.to_crs(27700)
-    gdf['LAD24CD'] = gdf['WD24CD'].map(lad_by_wd)
+    gdf['LAD24CD'] = gdf['WD24CD'].map(lambda c: info_by_wd[c]['lad'])
     gdf['geom_s'] = gdf.geometry.simplify(WARD_SIMPLIFY_TOLERANCE_M, preserve_topology=True)
 
     bounds = gdf['geom_s'].total_bounds  # [minx, miny, maxx, maxy]
@@ -185,7 +194,11 @@ def main():
 
     print('4. Emitting per-ward SVG paths (y-flipped to SVG coords)...')
     wards_out = {
-        row['WD24CD']: polygon_to_path(row['geom_s'], maxy, miny)
+        row['WD24CD']: {
+            'path': polygon_to_path(row['geom_s'], maxy, miny),
+            'name': info_by_wd[row['WD24CD']]['name'],
+            'lad':  info_by_wd[row['WD24CD']]['lad'],
+        }
         for _, row in gdf.iterrows()
     }
 
@@ -194,7 +207,12 @@ def main():
     for lad_code, group in gdf.groupby('LAD24CD'):
         merged = unary_union(group.geometry.tolist())
         merged = merged.simplify(BOROUGH_SIMPLIFY_TOLERANCE_M, preserve_topology=True)
-        boroughs_out[lad_code] = polygon_to_path(merged, maxy, miny)
+        # Borough name is the same across all rows in the group; pull from any.
+        borough_name = info_by_wd[group.iloc[0]['WD24CD']]['borough']
+        boroughs_out[lad_code] = {
+            'path': polygon_to_path(merged, maxy, miny),
+            'name': borough_name,
+        }
 
     out_data = {
         'viewBox': [round(minx), round(miny), round(maxx - minx), round(maxy - miny)],
