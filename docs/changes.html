@@ -268,16 +268,16 @@ if (baGrid) {
   const fmtVal = (key, v) => {
     if (v === undefined || v === null) return "—";
     if (key === "density")    return Math.round(v).toLocaleString();
-    if (key === "median_age") return v.toFixed(1);
-    return v.toFixed(1) + "%";
+    if (key === "median_age") return v.toFixed(2) + " yrs";
+    return v.toFixed(2) + "%";
   };
   const fmtDelta = (key, d) => {
     if (d === undefined || d === null) return "—";
     const sign = d > 0 ? "+" : (d < 0 ? "−" : "±");
     const abs = Math.abs(d);
     if (key === "density")    return sign + Math.round(abs).toLocaleString();
-    if (key === "median_age") return sign + abs.toFixed(1);
-    return sign + abs.toFixed(1);
+    if (key === "median_age") return sign + abs.toFixed(2);
+    return sign + abs.toFixed(2);
   };
   // What counts as a "big" delta varies wildly by variable — Census percentages
   // don't have the same scale as density. Use a per-variable threshold to colour
