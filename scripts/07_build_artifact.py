@@ -376,6 +376,18 @@ if (wardsList) {
         <span class="bward-tally">${tallyTxt}</span>
       </div>
     `;
+    // Column header strip — clarifies what the four numeric columns mean.
+    const headRow = document.createElement("div");
+    headRow.className = "ward-row mini head";
+    headRow.innerHTML = `
+      <span class="name">Ward</span>
+      <span>Winner</span>
+      <span class="num" title="Population per km²">Density</span>
+      <span class="num" title="% with Level 4+ qualification (degree)">% Degree</span>
+      <span class="num col-hide-mobile" title="% with apprenticeship">% Appr.</span>
+      <span class="num col-hide-mobile" title="% UK-born">% UK-born</span>
+    `;
+    block.appendChild(headRow);
     // Sort wards by party order then density desc
     bWards.sort((a, b) => {
       const ai = partyOrder.indexOf(a.winner);
