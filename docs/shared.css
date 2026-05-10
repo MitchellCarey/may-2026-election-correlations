@@ -687,6 +687,16 @@ body {
 .flip-pill.np   { background: #b6ad9c; color: #2a2620; }
 .flip-arrow { color: var(--muted); padding: 0 4px; }
 
+/* Flipped-wards appendix row (overrides .ward-row.mini grid) */
+.ward-row.mini.flip-row {
+  grid-template-columns: 1.5fr 0.7fr 0.7fr 0.55fr;
+}
+@media (min-width: 720px) {
+  .ward-row.mini.flip-row {
+    grid-template-columns: 1.4fr 0.7fr 0.7fr 0.6fr 0.55fr 0.55fr 0.55fr;
+  }
+}
+
 /* FOOTER */
 .footer {
   margin-top: 48px; padding-top: 20px;
