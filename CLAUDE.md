@@ -1,21 +1,23 @@
 # Repo notes for Claude
 
-## Two pages, one stylesheet
+## Three pages, one stylesheet
 
-The site has **two deployable HTML artifacts**, both served directly by GitHub Pages:
+The site has **three deployable HTML artifacts**, all served directly by GitHub Pages:
 
 - [docs/index.html](docs/index.html) — "**Winners**" page. Census × who-won-each-ward correlations.
 - [docs/changes.html](docs/changes.html) — "**Changes**" page. Census × who-flipped-each-ward correlations.
+- [docs/map.html](docs/map.html) — "**Map**" page. Choropleth of the 215 GM wards: 2022/2021 winners, 2026 winners, and the seats that flipped.
 
-They share styling via [docs/shared.css](docs/shared.css) (referenced from both pages with `<link rel="stylesheet" href="shared.css">`) and a small cross-page `<nav class="pagenav">` block lets readers jump between them. There is **no build step in CI** — committed HTML is the deployment.
+They share styling via [docs/shared.css](docs/shared.css) (referenced from all three pages with `<link rel="stylesheet" href="shared.css">`) and a small cross-page `<nav class="pagenav">` block lets readers jump between them. There is **no build step in CI** — committed HTML is the deployment.
 
 ## Both pages are partially generated
 
 Each page is hand-authored chrome (head, masthead, headlines, byline, section heads, footer) **plus** a single `<script>` block whose contents are spliced in by a build script:
 
 ```
-// ===== BEGIN GENERATED — see scripts/07_build_artifact.py =====       (in index.html)
+// ===== BEGIN GENERATED — see scripts/07_build_artifact.py =====           (in index.html)
 // ===== BEGIN GENERATED — see scripts/07b_build_changes_artifact.py =====   (in changes.html)
+// ===== BEGIN GENERATED — see scripts/07c_build_map_artifact.py =====       (in map.html)
 …
 // ===== END GENERATED =====
 ```
@@ -28,11 +30,13 @@ Everything **outside** the markers is hand-authored and preserved across builds.
 
 | You want to change… | Edit here |
 |---|---|
-| Copy, headlines, captions, byline, methodology prose | `docs/index.html` or `docs/changes.html` (outside markers) |
-| Page styling / fonts / layout | `docs/shared.css` (affects both pages) |
+| Copy, headlines, captions, byline, methodology prose | `docs/index.html`, `docs/changes.html`, or `docs/map.html` (outside markers) |
+| Page styling / fonts / layout | `docs/shared.css` (affects all three pages) |
 | Shape of the rendered Winners data (RAW fields, labels, sort order, party colours) | `scripts/07_build_artifact.py`, then re-run it |
 | Shape of the rendered Changes data | `scripts/07b_build_changes_artifact.py`, then re-run it |
-| Underlying data (2026 winners, census, correlations, prior winners, flips) | upstream scripts, then re-run 07 *and* 07b |
+| Shape of the rendered Map data (party colours, fuzzy-stroke marking, legend) | `scripts/07c_build_map_artifact.py`, then re-run it |
+| Ward boundary geometry / projection / simplification | `scripts/09_fetch_ward_boundaries.py`, then re-run 07c |
+| Underlying data (2026 winners, census, correlations, prior winners, flips) | upstream scripts, then re-run 07, 07b *and* 07c |
 
 **Never hand-edit anything between the BEGIN/END markers.** Those edits will be wiped the next time anyone runs the build, and the diff is easy to miss in review.
 
