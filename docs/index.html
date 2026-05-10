@@ -514,6 +514,7 @@ body {
   font-size: 11px;
   align-items: baseline;
 }
+.ward-row.mini .col-hide-mobile { display: none; }
 @media (min-width: 720px) {
   .ward-row.mini {
     grid-template-columns: 1.6fr 0.8fr 0.5fr 0.5fr 0.5fr 0.5fr;
@@ -537,7 +538,6 @@ body {
   text-align: right; font-variant-numeric: tabular-nums;
 }
 @media (min-width: 720px) { .ward-row.mini .num { font-size: 12px; } }
-.ward-row.mini .col-hide-mobile { display: none; }
 .ward-row.mini .fuzz {
   color: var(--muted); font-family: 'JetBrains Mono', monospace;
   font-size: 9px; margin-left: 4px; opacity: 0.7;
