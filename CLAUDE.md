@@ -60,17 +60,20 @@ Two parallel pipelines feed the two pages. Both are linear; only re-run from the
 01b_extract_prior.py         → data/prior_winners.json
 04b_join_prior.py            → data/gm_all_wards_with_prior.json   (depends on data/gm_all_wards.json)
 05b_correlate_flips.py       → data/gm_flip_correlations.json
+05c_compute_before_after.py  → data/gm_before_after.json
 06b_prep_changes_data.py     → data/v1_changes_ward_data.json
 07b_build_changes_artifact.py → splices into docs/changes.html
 ```
+
+`05b` and `05c` both consume `gm_all_wards_with_prior.json` and are independent of each other — they can run in either order.
 
 The Changes pipeline depends on the Winners pipeline's `gm_all_wards.json` — if upstream data changes, re-run `04` then `04b` (and everything downstream of each).
 
 Common cases:
 
-- **Touched `scripts/0[1-6]_*.py` or input XLSX** → run that Winners script and every later one, ending with 07. If the change touches `gm_all_wards.json`, also re-run `04b → 05b → 06b → 07b` for Changes.
+- **Touched `scripts/0[1-6]_*.py` or input XLSX** → run that Winners script and every later one, ending with 07. If the change touches `gm_all_wards.json`, also re-run `04b → 05b/05c → 06b → 07b` for Changes.
 - **Touched `scripts/07_build_artifact.py`** → run 07 only.
-- **Touched `scripts/0[145-7]b_*.py`** → run from that script onwards through 07b.
+- **Touched `scripts/0[145-7]b_*.py` or `05c_*.py`** → run from that script onwards through 07b.
 - **Touched only copy/CSS in either HTML** → no rebuild needed, but verify the BEGIN/END block didn't drift.
 
 After any rebuild, `git diff docs/*.html` should only show changes inside the BEGIN/END markers (plus whatever you intentionally edited outside them). If unrelated chunks moved, something's wrong — investigate before committing.
