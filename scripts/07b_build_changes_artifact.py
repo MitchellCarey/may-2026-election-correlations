@@ -29,6 +29,8 @@ def main():
         wards = json.load(f)
     with open(DATA / 'gm_flip_correlations.json') as f:
         corr_full = json.load(f)
+    with open(DATA / 'gm_before_after.json') as f:
+        before_after = json.load(f)
 
     # Compact RAW: keyed by "Borough::Ward"
     raw = {}
@@ -79,6 +81,7 @@ def main():
     js_lines.append('const corrData = ' + json.dumps(corrData, separators=(',', ':')) + ';')
     js_lines.append('const meansData = ' + json.dumps(means, separators=(',', ':')) + ';')
     js_lines.append('const flipParties = ' + json.dumps(flip_parties) + ';')
+    js_lines.append('const beforeAfter = ' + json.dumps(before_after, separators=(',', ':')) + ';')
     js_lines.append('')
 
     js_lines.append('''
@@ -229,9 +232,103 @@ if (partyCorrGrid) {
 }
 ''')
 
-    # § 3 flipped-wards appendix — borough-grouped list with prior → new
+    # § 3 before/after coalition cards — one per party, means with delta
     js_lines.append('''
-/* ===== § 3 — flipped wards appendix ===== */
+/* ===== § 3 — each party's coalition shift (before/after) ===== */
+const baGrid = document.getElementById("before-after-grid");
+if (baGrid) {
+  // Order: biggest GAINER first, biggest LOSER last (by delta_seats), but always start
+  // with parties that have BOTH before and after data so the first card teaches the format.
+  const baOrder = ["Labour","Reform","Green","LibDem","Conservative","Independent","Other"];
+  // Visual heft: only render parties with at least 3 wards in either period
+  const baLabels = {
+    density: "Density (per km²)",
+    median_age: "Median age",
+    pct_18_29: "% aged 18-29",
+    pct_65plus: "% aged 65+",
+    pct_apprentice: "% Apprentice",
+    pct_level4_plus: "% Degree (L4+)",
+    pct_soc123: "% SOC 1-3 jobs",
+    pct_owned: "% Owned",
+    pct_private_rented: "% Private rent",
+    pct_social_rented: "% Social housing",
+    pct_uk_born: "% UK-born",
+    pct_wfh: "% WFH",
+    pct_female: "% Female",
+  };
+  const fmtVal = (key, v) => {
+    if (v === undefined || v === null) return "—";
+    if (key === "density")    return Math.round(v).toLocaleString();
+    if (key === "median_age") return v.toFixed(1);
+    return v.toFixed(1) + "%";
+  };
+  const fmtDelta = (key, d) => {
+    if (d === undefined || d === null) return "—";
+    const sign = d > 0 ? "+" : (d < 0 ? "−" : "±");
+    const abs = Math.abs(d);
+    if (key === "density")    return sign + Math.round(abs).toLocaleString();
+    if (key === "median_age") return sign + abs.toFixed(1);
+    return sign + abs.toFixed(1);
+  };
+  // What counts as a "big" delta varies wildly by variable — Census percentages
+  // don't have the same scale as density. Use a per-variable threshold to colour
+  // bold-positive (green) / bold-negative (red); below threshold stays muted.
+  const deltaThreshold = {
+    density: 500, median_age: 1, pct_18_29: 2, pct_65plus: 2,
+    pct_apprentice: 1, pct_level4_plus: 3, pct_soc123: 3,
+    pct_owned: 5, pct_private_rented: 5, pct_social_rented: 5,
+    pct_uk_born: 5, pct_wfh: 3, pct_female: 1,
+  };
+  const deltaClass = (key, d) => {
+    if (d === undefined || d === null) return "flat";
+    const th = deltaThreshold[key] || 1;
+    if (Math.abs(d) < th * 0.4) return "flat";
+    return d > 0 ? "pos" : "neg";
+  };
+
+  baOrder.forEach(party => {
+    const rec = beforeAfter.parties[party];
+    if (!rec) return;
+    if (rec.n_2022 < 3 && rec.n_2026 < 3) return;
+    const card = document.createElement("div");
+    card.className = "means-card";
+    const seatDelta = rec.n_2026 - rec.n_2022;
+    const seatDeltaClass = seatDelta > 0 ? "pos" : (seatDelta < 0 ? "neg" : "flat");
+    const seatDeltaStr = (seatDelta >= 0 ? "+" : "−") + Math.abs(seatDelta);
+    const has2022 = rec.n_2022 >= 3 && rec.means_2022;
+    const has2026 = rec.n_2026 >= 3 && rec.means_2026;
+
+    let rowsHtml = "";
+    beforeAfter.top_vars.forEach(key => {
+      const m22 = has2022 ? rec.means_2022[key] : null;
+      const m26 = has2026 ? rec.means_2026[key] : null;
+      const d   = (has2022 && has2026 && rec.delta_means) ? rec.delta_means[key] : null;
+      const v22cell = has2022 ? `<span class="v22">${fmtVal(key, m22)}</span><span class="arrow">→</span>` : "";
+      const v26cell = `<span class="v26">${fmtVal(key, m26)}</span>`;
+      const deltaCell = has2022
+        ? `<span class="delta ${deltaClass(key, d)}">${fmtDelta(key, d)}</span>`
+        : `<span class="delta new">new</span>`;
+      rowsHtml += `<div class="ba-row${has2022 ? "" : " no-2022"}"><span class="lbl">${baLabels[key] || key}</span><span class="vals">${v22cell}${v26cell}</span>${deltaCell}</div>`;
+    });
+
+    card.innerHTML = `
+      <div class="pname"><span class="swatch" style="background:${partyColors[party]}"></span>${partyDisplay[party]}</div>
+      <div class="ba-seats">
+        <span class="v22">${rec.n_2022} ward${rec.n_2022 === 1 ? "" : "s"} (2022)</span>
+        <span class="arrow">→</span>
+        <span class="v26">${rec.n_2026} ward${rec.n_2026 === 1 ? "" : "s"} (2026)</span>
+        <span class="seat-delta ${seatDeltaClass}">${seatDeltaStr}</span>
+      </div>
+      ${rowsHtml}
+    `;
+    baGrid.appendChild(card);
+  });
+}
+''')
+
+    # § 4 flipped-wards appendix — borough-grouped list with prior → new
+    js_lines.append('''
+/* ===== § 4 — flipped wards appendix ===== */
 const flippedList = document.getElementById("flipped-wards-list");
 if (flippedList) {
   const boroughOrder = ["Manchester","Salford","Bolton","Bury","Oldham","Rochdale","Stockport","Tameside","Trafford","Wigan"];

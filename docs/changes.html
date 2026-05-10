@@ -60,9 +60,18 @@
   </div>
   <div class="party-corr-grid" id="party-corr-grid"></div>
 
-  <!-- §3 — flipped wards appendix -->
+  <!-- §3 — each party's coalition shift, before vs after -->
   <div class="section-head">
     <span class="num">§ 3</span>
+    <span class="ttl">Each party's coalition · 2022 → 2026</span>
+    <span class="meta">Mean Census profile of held wards · Δ = 2026 − 2022</span>
+  </div>
+  <p class="note">Each card shows how a party's structural footprint shifted between the prior and 2026 elections. <strong>Reform</strong> and <strong>Other</strong> have no 2022 baseline (Reform UK didn't win any GM ward in 2022; "Other" is a 2026 catch-all for Workers Party / Oldham Group / etc.) so their cards show 2026 means only. Δ for percentages is in <em>percentage points</em>; for density it's residents/km²; for age it's years. Bold positive Δ in green, bold negative in red — colour intensity scales with magnitude relative to typical inter-party spread.</p>
+  <div class="means-grid" id="before-after-grid"></div>
+
+  <!-- §4 — flipped wards appendix -->
+  <div class="section-head">
+    <span class="num">§ 4</span>
     <span class="ttl">All wards · prior → 2026</span>
     <span class="meta">Sorted: flips first · borough · ward</span>
   </div>
@@ -89,6 +98,7 @@ const wards = Object.values(RAW).map(v => ({
 const corrData = {"density":{"Green":0.586,"Reform":-0.363,"LibDem":-0.019,"Other":0.141},"median_age":{"Green":-0.549,"Reform":0.255,"LibDem":0.065,"Other":-0.176},"pct_under18":{"Green":-0.137,"Reform":-0.104,"LibDem":0.01,"Other":0.257},"pct_18_29":{"Green":0.669,"Reform":-0.221,"LibDem":-0.068,"Other":0.014},"pct_30_49":{"Green":0.181,"Reform":-0.247,"LibDem":0.0,"Other":0.145},"pct_50_64":{"Green":-0.59,"Reform":0.397,"LibDem":0.052,"Other":-0.189},"pct_65plus":{"Green":-0.578,"Reform":0.273,"LibDem":0.06,"Other":-0.182},"pct_apprentice":{"Green":-0.607,"Reform":0.638,"LibDem":0.015,"Other":-0.135},"pct_level4_plus":{"Green":0.322,"Reform":-0.497,"LibDem":0.043,"Other":-0.122},"pct_no_qual":{"Green":-0.147,"Reform":0.242,"LibDem":-0.054,"Other":0.249},"pct_soc123":{"Green":0.13,"Reform":-0.393,"LibDem":0.065,"Other":-0.182},"pct_owned":{"Green":-0.525,"Reform":0.151,"LibDem":0.076,"Other":-0.118},"pct_social_rented":{"Green":0.165,"Reform":0.057,"LibDem":-0.035,"Other":0.103},"pct_private_rented":{"Green":0.65,"Reform":-0.292,"LibDem":-0.083,"Other":0.082},"pct_uk_born":{"Green":-0.585,"Reform":0.46,"LibDem":0.071,"Other":-0.213},"pct_wfh":{"Green":0.235,"Reform":-0.449,"LibDem":0.053,"Other":-0.157},"pct_female":{"Green":-0.379,"Reform":0.147,"LibDem":0.064,"Other":-0.073}};
 const meansData = {"Green":{"n":27,"density":6582.4,"median_age":29.89,"pct_18_29":31.06,"pct_65plus":7.98,"pct_apprentice":2.99,"pct_level4_plus":41.12,"pct_soc123":48.33,"pct_owned":35.87,"pct_social_rented":24.75,"pct_private_rented":38.81,"pct_uk_born":67.29,"pct_wfh":34.18,"pct_female":49.79},"Reform":{"n":104,"density":2663.71,"median_age":40.06,"pct_18_29":13.72,"pct_65plus":18.08,"pct_apprentice":6.81,"pct_level4_plus":26.31,"pct_soc123":38.97,"pct_owned":62.7,"pct_social_rented":20.47,"pct_private_rented":16.77,"pct_uk_born":90.15,"pct_wfh":23.79,"pct_female":51.06},"LibDem":{"n":5,"density":3175.76,"median_age":41,"pct_18_29":11.88,"pct_65plus":18.68,"pct_apprentice":5.86,"pct_level4_plus":34.92,"pct_soc123":49.29,"pct_owned":68.59,"pct_social_rented":17.22,"pct_private_rented":14.19,"pct_uk_born":89.99,"pct_wfh":31.53,"pct_female":51.32},"Other":{"n":6,"density":5120.67,"median_age":32.33,"pct_18_29":16.42,"pct_65plus":10.51,"pct_apprentice":4.35,"pct_level4_plus":24.06,"pct_soc123":30.59,"pct_owned":47.89,"pct_social_rented":26.76,"pct_private_rented":25.35,"pct_uk_born":70.54,"pct_wfh":19.31,"pct_female":50.44}};
 const flipParties = ["Reform", "Green", "Other", "LibDem"];
+const beforeAfter = {"n_total_2022":214,"n_total_2026":213,"top_vars":["density","median_age","pct_18_29","pct_65plus","pct_apprentice","pct_level4_plus","pct_soc123","pct_owned","pct_social_rented","pct_private_rented","pct_uk_born","pct_wfh","pct_female"],"min_n":3,"parties":{"Reform":{"n_2022":0,"n_2026":104,"means_2026":{"density":2663.71,"median_age":40.06,"pct_under18":22.08,"pct_18_29":13.72,"pct_30_49":26.05,"pct_50_64":20.18,"pct_65plus":18.08,"pct_apprentice":6.81,"pct_level4_plus":26.31,"pct_no_qual":21.35,"pct_soc123":38.97,"pct_owned":62.7,"pct_social_rented":20.47,"pct_private_rented":16.77,"pct_uk_born":90.15,"pct_wfh":23.79,"pct_female":51.06},"r_2026":{"density":-0.363,"median_age":0.255,"pct_under18":-0.104,"pct_18_29":-0.221,"pct_30_49":-0.247,"pct_50_64":0.397,"pct_65plus":0.273,"pct_apprentice":0.638,"pct_level4_plus":-0.497,"pct_no_qual":0.242,"pct_soc123":-0.393,"pct_owned":0.151,"pct_social_rented":0.057,"pct_private_rented":-0.292,"pct_uk_born":0.46,"pct_wfh":-0.449,"pct_female":0.147}},"Green":{"n_2022":5,"n_2026":30,"means_2022":{"density":3177.68,"median_age":39.2,"pct_under18":22.94,"pct_18_29":12.34,"pct_30_49":29.08,"pct_50_64":18.92,"pct_65plus":16.72,"pct_apprentice":4.82,"pct_level4_plus":41.56,"pct_no_qual":15.81,"pct_soc123":54.76,"pct_owned":66.38,"pct_social_rented":15.77,"pct_private_rented":17.43,"pct_uk_born":85.56,"pct_wfh":37.63,"pct_female":51.39},"r_2022":{"density":-0.019,"median_age":0.019,"pct_under18":0.013,"pct_18_29":-0.059,"pct_30_49":0.139,"pct_50_64":0.008,"pct_65plus":0.006,"pct_apprentice":-0.08,"pct_level4_plus":0.138,"pct_no_qual":-0.1,"pct_soc123":0.133,"pct_owned":0.057,"pct_social_rented":-0.055,"pct_private_rented":-0.037,"pct_uk_born":0.011,"pct_wfh":0.152,"pct_female":0.075},"means_2026":{"density":6229.07,"median_age":30.67,"pct_under18":21.14,"pct_18_29":29.29,"pct_30_49":28.32,"pct_50_64":14.03,"pct_65plus":8.67,"pct_apprentice":3.23,"pct_level4_plus":40.64,"pct_no_qual":17.51,"pct_soc123":48.28,"pct_owned":37.91,"pct_social_rented":24.62,"pct_private_rented":36.89,"pct_uk_born":69.06,"pct_wfh":34.07,"pct_female":49.98},"r_2026":{"density":0.553,"median_age":-0.531,"pct_under18":-0.129,"pct_18_29":0.629,"pct_30_49":0.233,"pct_50_64":-0.563,"pct_65plus":-0.565,"pct_apprentice":-0.588,"pct_level4_plus":0.325,"pct_no_qual":-0.149,"pct_soc123":0.137,"pct_owned":-0.511,"pct_social_rented":0.17,"pct_private_rented":0.62,"pct_uk_born":-0.559,"pct_wfh":0.245,"pct_female":-0.336},"delta_means":{"density":3051.39,"median_age":-8.53,"pct_under18":-1.8,"pct_18_29":16.95,"pct_30_49":-0.76,"pct_50_64":-4.89,"pct_65plus":-8.05,"pct_apprentice":-1.59,"pct_level4_plus":-0.92,"pct_no_qual":1.7,"pct_soc123":-6.48,"pct_owned":-28.47,"pct_social_rented":8.85,"pct_private_rented":19.46,"pct_uk_born":-16.5,"pct_wfh":-3.56,"pct_female":-1.41},"delta_r":{"density":0.572,"median_age":-0.55,"pct_under18":-0.142,"pct_18_29":0.688,"pct_30_49":0.094,"pct_50_64":-0.571,"pct_65plus":-0.571,"pct_apprentice":-0.508,"pct_level4_plus":0.187,"pct_no_qual":-0.049,"pct_soc123":0.004,"pct_owned":-0.568,"pct_social_rented":0.225,"pct_private_rented":0.657,"pct_uk_born":-0.57,"pct_wfh":0.093,"pct_female":-0.411}},"Labour":{"n_2022":146,"n_2026":34,"means_2022":{"density":3957.27,"median_age":36.56,"pct_under18":23.23,"pct_18_29":17.33,"pct_30_49":27.48,"pct_50_64":17.88,"pct_65plus":14.57,"pct_apprentice":5.47,"pct_level4_plus":30.79,"pct_no_qual":21.05,"pct_soc123":41.52,"pct_owned":54.38,"pct_social_rented":22.92,"pct_private_rented":22.5,"pct_uk_born":81.96,"pct_wfh":26.93,"pct_female":50.71},"r_2022":{"density":0.38,"median_age":-0.47,"pct_under18":0.208,"pct_18_29":0.275,"pct_30_49":0.376,"pct_50_64":-0.367,"pct_65plus":-0.499,"pct_apprentice":-0.199,"pct_level4_plus":-0.142,"pct_no_qual":0.283,"pct_soc123":-0.285,"pct_owned":-0.458,"pct_social_rented":0.378,"pct_private_rented":0.326,"pct_uk_born":-0.356,"pct_wfh":-0.192,"pct_female":-0.233},"means_2026":{"density":4022.18,"median_age":37.29,"pct_under18":24.84,"pct_18_29":14.09,"pct_30_49":28.05,"pct_50_64":17.97,"pct_65plus":15.15,"pct_apprentice":4.95,"pct_level4_plus":34.33,"pct_no_qual":20.39,"pct_soc123":45.99,"pct_owned":58.36,"pct_social_rented":21.14,"pct_private_rented":20.31,"pct_uk_born":80.12,"pct_wfh":30.33,"pct_female":50.81},"r_2026":{"density":0.127,"median_age":-0.088,"pct_under18":0.229,"pct_18_29":-0.08,"pct_30_49":0.213,"pct_50_64":-0.104,"pct_65plus":-0.105,"pct_apprentice":-0.192,"pct_level4_plus":0.098,"pct_no_qual":0.041,"pct_soc123":0.068,"pct_owned":-0.041,"pct_social_rented":0.051,"pct_private_rented":0.01,"pct_uk_born":-0.178,"pct_wfh":0.095,"pct_female":-0.03},"delta_means":{"density":64.91,"median_age":0.73,"pct_under18":1.61,"pct_18_29":-3.24,"pct_30_49":0.57,"pct_50_64":0.09,"pct_65plus":0.58,"pct_apprentice":-0.52,"pct_level4_plus":3.54,"pct_no_qual":-0.66,"pct_soc123":4.47,"pct_owned":3.98,"pct_social_rented":-1.78,"pct_private_rented":-2.19,"pct_uk_born":-1.84,"pct_wfh":3.4,"pct_female":0.1},"delta_r":{"density":-0.253,"median_age":0.382,"pct_under18":0.021,"pct_18_29":-0.355,"pct_30_49":-0.163,"pct_50_64":0.263,"pct_65plus":0.394,"pct_apprentice":0.007,"pct_level4_plus":0.24,"pct_no_qual":-0.242,"pct_soc123":0.353,"pct_owned":0.417,"pct_social_rented":-0.327,"pct_private_rented":-0.316,"pct_uk_born":0.178,"pct_wfh":0.287,"pct_female":0.203}},"LibDem":{"n_2022":19,"n_2026":19,"means_2022":{"density":2458.23,"median_age":44.21,"pct_under18":20.41,"pct_18_29":11.57,"pct_30_49":25.24,"pct_50_64":20.6,"pct_65plus":22.18,"pct_apprentice":6.13,"pct_level4_plus":38.24,"pct_no_qual":14.79,"pct_soc123":53.95,"pct_owned":75.6,"pct_social_rented":10.7,"pct_private_rented":13.68,"pct_uk_born":91.93,"pct_wfh":34.97,"pct_female":51.43},"r_2022":{"density":-0.148,"median_age":0.3,"pct_under18":-0.161,"pct_18_29":-0.147,"pct_30_49":-0.186,"pct_50_64":0.18,"pct_65plus":0.317,"pct_apprentice":0.08,"pct_level4_plus":0.183,"pct_no_qual":-0.252,"pct_soc123":0.248,"pct_owned":0.28,"pct_social_rented":-0.248,"pct_private_rented":-0.181,"pct_uk_born":0.197,"pct_wfh":0.22,"pct_female":0.165},"means_2026":{"density":2830.15,"median_age":43.26,"pct_under18":21.22,"pct_18_29":11.49,"pct_30_49":25.89,"pct_50_64":19.97,"pct_65plus":21.43,"pct_apprentice":5.63,"pct_level4_plus":40.15,"pct_no_qual":14.59,"pct_soc123":55.68,"pct_owned":74.84,"pct_social_rented":11.85,"pct_private_rented":13.29,"pct_uk_born":90.46,"pct_wfh":36.99,"pct_female":51.42},"r_2026":{"density":-0.091,"median_age":0.25,"pct_under18":-0.1,"pct_18_29":-0.15,"pct_30_49":-0.105,"pct_50_64":0.118,"pct_65plus":0.274,"pct_apprentice":-0.012,"pct_level4_plus":0.237,"pct_no_qual":-0.261,"pct_soc123":0.29,"pct_owned":0.265,"pct_social_rented":-0.217,"pct_private_rented":-0.193,"pct_uk_born":0.156,"pct_wfh":0.285,"pct_female":0.162},"delta_means":{"density":371.92,"median_age":-0.95,"pct_under18":0.81,"pct_18_29":-0.08,"pct_30_49":0.65,"pct_50_64":-0.63,"pct_65plus":-0.75,"pct_apprentice":-0.5,"pct_level4_plus":1.91,"pct_no_qual":-0.2,"pct_soc123":1.73,"pct_owned":-0.76,"pct_social_rented":1.15,"pct_private_rented":-0.39,"pct_uk_born":-1.47,"pct_wfh":2.02,"pct_female":-0.01},"delta_r":{"density":0.057,"median_age":-0.05,"pct_under18":0.061,"pct_18_29":-0.003,"pct_30_49":0.081,"pct_50_64":-0.062,"pct_65plus":-0.043,"pct_apprentice":-0.092,"pct_level4_plus":0.054,"pct_no_qual":-0.009,"pct_soc123":0.042,"pct_owned":-0.015,"pct_social_rented":0.031,"pct_private_rented":-0.012,"pct_uk_born":-0.041,"pct_wfh":0.065,"pct_female":-0.003}},"Conservative":{"n_2022":32,"n_2026":11,"means_2022":{"density":1879.75,"median_age":43.16,"pct_under18":21.16,"pct_18_29":11.75,"pct_30_49":24.62,"pct_50_64":20.85,"pct_65plus":21.31,"pct_apprentice":6.21,"pct_level4_plus":34.33,"pct_no_qual":16.92,"pct_soc123":50.26,"pct_owned":73.78,"pct_social_rented":12.31,"pct_private_rented":13.92,"pct_uk_born":90.9,"pct_wfh":30.39,"pct_female":51.18},"r_2022":{"density":-0.317,"median_age":0.329,"pct_under18":-0.134,"pct_18_29":-0.189,"pct_30_49":-0.332,"pct_50_64":0.26,"pct_65plus":0.36,"pct_apprentice":0.127,"pct_level4_plus":0.095,"pct_no_qual":-0.196,"pct_soc123":0.21,"pct_owned":0.332,"pct_social_rented":-0.275,"pct_private_rented":-0.235,"pct_uk_born":0.227,"pct_wfh":0.096,"pct_female":0.112},"means_2026":{"density":1848.84,"median_age":44.27,"pct_under18":22.02,"pct_18_29":10.37,"pct_30_49":25.34,"pct_50_64":20.61,"pct_65plus":21.65,"pct_apprentice":4.85,"pct_level4_plus":45.98,"pct_no_qual":12.41,"pct_soc123":62.77,"pct_owned":78.83,"pct_social_rented":7.04,"pct_private_rented":14.13,"pct_uk_born":87.91,"pct_wfh":39.48,"pct_female":51.36},"r_2026":{"density":-0.179,"median_age":0.226,"pct_under18":-0.028,"pct_18_29":-0.142,"pct_30_49":-0.122,"pct_50_64":0.128,"pct_65plus":0.214,"pct_apprentice":-0.116,"pct_level4_plus":0.301,"pct_no_qual":-0.276,"pct_soc123":0.348,"pct_owned":0.251,"pct_social_rented":-0.259,"pct_private_rented":-0.126,"pct_uk_born":0.064,"pct_wfh":0.273,"pct_female":0.102},"delta_means":{"density":-30.91,"median_age":1.11,"pct_under18":0.86,"pct_18_29":-1.38,"pct_30_49":0.72,"pct_50_64":-0.24,"pct_65plus":0.34,"pct_apprentice":-1.36,"pct_level4_plus":11.65,"pct_no_qual":-4.51,"pct_soc123":12.51,"pct_owned":5.05,"pct_social_rented":-5.27,"pct_private_rented":0.21,"pct_uk_born":-2.99,"pct_wfh":9.09,"pct_female":0.18},"delta_r":{"density":0.138,"median_age":-0.103,"pct_under18":0.106,"pct_18_29":0.047,"pct_30_49":0.21,"pct_50_64":-0.132,"pct_65plus":-0.146,"pct_apprentice":-0.243,"pct_level4_plus":0.206,"pct_no_qual":-0.08,"pct_soc123":0.138,"pct_owned":-0.081,"pct_social_rented":0.016,"pct_private_rented":0.109,"pct_uk_born":-0.163,"pct_wfh":0.177,"pct_female":-0.01}},"Independent":{"n_2022":12,"n_2026":9,"means_2022":{"density":2736.07,"median_age":39.92,"pct_under18":22.24,"pct_18_29":14.19,"pct_30_49":25.61,"pct_50_64":20.19,"pct_65plus":17.77,"pct_apprentice":6.81,"pct_level4_plus":23.94,"pct_no_qual":22.61,"pct_soc123":36.69,"pct_owned":61.95,"pct_social_rented":20.13,"pct_private_rented":17.92,"pct_uk_born":90.22,"pct_wfh":23.03,"pct_female":51.05},"r_2022":{"density":-0.082,"median_age":0.059,"pct_under18":-0.019,"pct_18_29":-0.042,"pct_30_49":-0.109,"pct_50_64":0.108,"pct_65plus":0.056,"pct_apprentice":0.16,"pct_level4_plus":-0.177,"pct_no_qual":0.108,"pct_soc123":-0.141,"pct_owned":0.029,"pct_social_rented":0.004,"pct_private_rented":-0.048,"pct_uk_born":0.117,"pct_wfh":-0.131,"pct_female":0.038},"means_2026":{"density":2690.88,"median_age":38.11,"pct_under18":22.84,"pct_18_29":14.12,"pct_30_49":26.54,"pct_50_64":19.15,"pct_65plus":16.89,"pct_apprentice":6.0,"pct_level4_plus":28.16,"pct_no_qual":21.26,"pct_soc123":42.39,"pct_owned":62.31,"pct_social_rented":18.62,"pct_private_rented":19.07,"pct_uk_born":86.42,"pct_wfh":25.7,"pct_female":50.77},"r_2026":{"density":-0.075,"median_age":-0.014,"pct_under18":0.013,"pct_18_29":-0.038,"pct_30_49":-0.016,"pct_50_64":0.024,"pct_65plus":0.015,"pct_apprentice":0.037,"pct_level4_plus":-0.071,"pct_no_qual":0.049,"pct_soc123":-0.027,"pct_owned":0.028,"pct_social_rented":-0.022,"pct_private_rented":-0.019,"pct_uk_born":0.03,"pct_wfh":-0.055,"pct_female":-0.022},"delta_means":{"density":-45.19,"median_age":-1.81,"pct_under18":0.6,"pct_18_29":-0.07,"pct_30_49":0.93,"pct_50_64":-1.04,"pct_65plus":-0.88,"pct_apprentice":-0.81,"pct_level4_plus":4.22,"pct_no_qual":-1.35,"pct_soc123":5.7,"pct_owned":0.36,"pct_social_rented":-1.51,"pct_private_rented":1.15,"pct_uk_born":-3.8,"pct_wfh":2.67,"pct_female":-0.28},"delta_r":{"density":0.007,"median_age":-0.073,"pct_under18":0.032,"pct_18_29":0.004,"pct_30_49":0.093,"pct_50_64":-0.084,"pct_65plus":-0.041,"pct_apprentice":-0.123,"pct_level4_plus":0.106,"pct_no_qual":-0.059,"pct_soc123":0.114,"pct_owned":-0.001,"pct_social_rented":-0.026,"pct_private_rented":0.029,"pct_uk_born":-0.087,"pct_wfh":0.076,"pct_female":-0.06}},"Other":{"n_2022":0,"n_2026":6,"means_2026":{"density":5120.67,"median_age":32.33,"pct_under18":28.92,"pct_18_29":16.42,"pct_30_49":28.95,"pct_50_64":15.19,"pct_65plus":10.51,"pct_apprentice":4.35,"pct_level4_plus":24.06,"pct_no_qual":28.93,"pct_soc123":30.59,"pct_owned":47.89,"pct_social_rented":26.76,"pct_private_rented":25.35,"pct_uk_born":70.54,"pct_wfh":19.31,"pct_female":50.44},"r_2026":{"density":0.141,"median_age":-0.176,"pct_under18":0.257,"pct_18_29":0.014,"pct_30_49":0.145,"pct_50_64":-0.189,"pct_65plus":-0.182,"pct_apprentice":-0.135,"pct_level4_plus":-0.122,"pct_no_qual":0.249,"pct_soc123":-0.182,"pct_owned":-0.118,"pct_social_rented":0.103,"pct_private_rented":0.082,"pct_uk_born":-0.213,"pct_wfh":-0.157,"pct_female":-0.073}}}};
 
 
 const corrLabels = {
@@ -233,7 +243,99 @@ if (partyCorrGrid) {
 }
 
 
-/* ===== § 3 — flipped wards appendix ===== */
+/* ===== § 3 — each party's coalition shift (before/after) ===== */
+const baGrid = document.getElementById("before-after-grid");
+if (baGrid) {
+  // Order: biggest GAINER first, biggest LOSER last (by delta_seats), but always start
+  // with parties that have BOTH before and after data so the first card teaches the format.
+  const baOrder = ["Labour","Reform","Green","LibDem","Conservative","Independent","Other"];
+  // Visual heft: only render parties with at least 3 wards in either period
+  const baLabels = {
+    density: "Density (per km²)",
+    median_age: "Median age",
+    pct_18_29: "% aged 18-29",
+    pct_65plus: "% aged 65+",
+    pct_apprentice: "% Apprentice",
+    pct_level4_plus: "% Degree (L4+)",
+    pct_soc123: "% SOC 1-3 jobs",
+    pct_owned: "% Owned",
+    pct_private_rented: "% Private rent",
+    pct_social_rented: "% Social housing",
+    pct_uk_born: "% UK-born",
+    pct_wfh: "% WFH",
+    pct_female: "% Female",
+  };
+  const fmtVal = (key, v) => {
+    if (v === undefined || v === null) return "—";
+    if (key === "density")    return Math.round(v).toLocaleString();
+    if (key === "median_age") return v.toFixed(1);
+    return v.toFixed(1) + "%";
+  };
+  const fmtDelta = (key, d) => {
+    if (d === undefined || d === null) return "—";
+    const sign = d > 0 ? "+" : (d < 0 ? "−" : "±");
+    const abs = Math.abs(d);
+    if (key === "density")    return sign + Math.round(abs).toLocaleString();
+    if (key === "median_age") return sign + abs.toFixed(1);
+    return sign + abs.toFixed(1);
+  };
+  // What counts as a "big" delta varies wildly by variable — Census percentages
+  // don't have the same scale as density. Use a per-variable threshold to colour
+  // bold-positive (green) / bold-negative (red); below threshold stays muted.
+  const deltaThreshold = {
+    density: 500, median_age: 1, pct_18_29: 2, pct_65plus: 2,
+    pct_apprentice: 1, pct_level4_plus: 3, pct_soc123: 3,
+    pct_owned: 5, pct_private_rented: 5, pct_social_rented: 5,
+    pct_uk_born: 5, pct_wfh: 3, pct_female: 1,
+  };
+  const deltaClass = (key, d) => {
+    if (d === undefined || d === null) return "flat";
+    const th = deltaThreshold[key] || 1;
+    if (Math.abs(d) < th * 0.4) return "flat";
+    return d > 0 ? "pos" : "neg";
+  };
+
+  baOrder.forEach(party => {
+    const rec = beforeAfter.parties[party];
+    if (!rec) return;
+    if (rec.n_2022 < 3 && rec.n_2026 < 3) return;
+    const card = document.createElement("div");
+    card.className = "means-card";
+    const seatDelta = rec.n_2026 - rec.n_2022;
+    const seatDeltaClass = seatDelta > 0 ? "pos" : (seatDelta < 0 ? "neg" : "flat");
+    const seatDeltaStr = (seatDelta >= 0 ? "+" : "−") + Math.abs(seatDelta);
+    const has2022 = rec.n_2022 >= 3 && rec.means_2022;
+    const has2026 = rec.n_2026 >= 3 && rec.means_2026;
+
+    let rowsHtml = "";
+    beforeAfter.top_vars.forEach(key => {
+      const m22 = has2022 ? rec.means_2022[key] : null;
+      const m26 = has2026 ? rec.means_2026[key] : null;
+      const d   = (has2022 && has2026 && rec.delta_means) ? rec.delta_means[key] : null;
+      const v22cell = has2022 ? `<span class="v22">${fmtVal(key, m22)}</span><span class="arrow">→</span>` : "";
+      const v26cell = `<span class="v26">${fmtVal(key, m26)}</span>`;
+      const deltaCell = has2022
+        ? `<span class="delta ${deltaClass(key, d)}">${fmtDelta(key, d)}</span>`
+        : `<span class="delta new">new</span>`;
+      rowsHtml += `<div class="ba-row${has2022 ? "" : " no-2022"}"><span class="lbl">${baLabels[key] || key}</span><span class="vals">${v22cell}${v26cell}</span>${deltaCell}</div>`;
+    });
+
+    card.innerHTML = `
+      <div class="pname"><span class="swatch" style="background:${partyColors[party]}"></span>${partyDisplay[party]}</div>
+      <div class="ba-seats">
+        <span class="v22">${rec.n_2022} ward${rec.n_2022 === 1 ? "" : "s"} (2022)</span>
+        <span class="arrow">→</span>
+        <span class="v26">${rec.n_2026} ward${rec.n_2026 === 1 ? "" : "s"} (2026)</span>
+        <span class="seat-delta ${seatDeltaClass}">${seatDeltaStr}</span>
+      </div>
+      ${rowsHtml}
+    `;
+    baGrid.appendChild(card);
+  });
+}
+
+
+/* ===== § 4 — flipped wards appendix ===== */
 const flippedList = document.getElementById("flipped-wards-list");
 if (flippedList) {
   const boroughOrder = ["Manchester","Salford","Bolton","Bury","Oldham","Rochdale","Stockport","Tameside","Trafford","Wigan"];
