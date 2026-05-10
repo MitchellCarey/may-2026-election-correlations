@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greater Manchester 2026 — Net Change · Ward Flips</title>
+<meta name="description" content="Where did parties gain seats in the May 2026 GM local elections? This page swaps the dependent variable from 'won by X' to 'flipped to X' and re-runs the Census-correlation analysis on 152 wards that changed hands.">
+<meta property="og:title" content="Greater Manchester 2026 — Ward Flips · Census correlations">
+<meta property="og:description" content="Reform took 104 GM wards. Every single one was a flip. The apprenticeship vs degree split predicts where.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="kicker">Greater Manchester 2026 · Net Change</div>
+    <div class="date">152 ward flips · 213 declared wards · 10 boroughs</div>
+  </div>
+
+  <nav class="pagenav" aria-label="Page navigation">
+    <a href="index.html">Winners</a>
+    <span class="sep">·</span>
+    <span class="here" aria-current="page">Changes</span>
+  </nav>
+
+  <h1 class="headline">Reform took 104<br>GM wards. <em>Every one</em><br>was a flip.</h1>
+
+  <p class="deck">
+    The companion page to <a href="index.html"><strong>Winners</strong></a> asked which Census variables predict where each party <em>won</em>. This page asks where each party <em>gained</em>. Of the 213 wards with both a declared 2026 winner and a known prior party, <strong>152 changed hands</strong> — Reform took 104, the Greens 27. The Census signal sharpens: <strong>flipped-to-Reform</strong> tracks <strong>+0.64 with apprenticeships</strong> and <strong>−0.50 with degree-holding</strong> — essentially the same fingerprint as the Winners page, because Reform's whole map is new. <strong>Flipped-to-Green</strong> swaps the polarity: <strong>+0.67 with under-29s</strong>, <strong>+0.65 with private renters</strong>, <strong>+0.59 with density</strong> — gains in the dense, young, renter-heavy inner cores. Smaller parties (LibDem 5 flips, Other 6, Labour 3, Conservative 3, Independent 4) sit too close to the noise floor to read off correlations cleanly; LibDem and Other are shown for completeness but flagged.
+  </p>
+
+  <div class="byline">
+    <strong>Method:</strong> "Prior party" is the top-of-poll party the last time each seat was contested before 7 May 2026 — for the nine thirds boroughs that's the May 2022 election (the same seat slot, four years apart); for Salford (all-out cycle) it's May 2021. Prior winners scraped from the per-borough Wikipedia articles for those years; see <code>scripts/01b_extract_prior.py</code>. Where a 2026 ward has no clean 1:1 prior because of the 2023/2024 boundary reviews in Bolton, Stockport, Trafford, and Wigan, we use the closest-predecessor ward (~31 wards, flagged ≈ in the appendix). One ward (Manchester · Miles Platting & Newton Heath) is still pending and is excluded from the analysis; Bury · Moorside (cancelled, rerun expected June) appears with no 2026 winner. Per-party correlation cards below show only parties with at least 5 flipped wards (<strong>MIN_FLIPS = 5</strong>); Pearson r on smaller samples is essentially noise.
+  </div>
+
+  <!-- §1 — full flip-correlation matrix -->
+  <div class="section-head">
+    <span class="num">§ 1</span>
+    <span class="ttl">Census variables × flipped-to-party</span>
+    <span class="meta">Pearson r · 213-ward analysis sample</span>
+  </div>
+
+  <div class="corr-frame">
+    <table class="corr-table">
+      <thead id="corr-head"><tr></tr></thead>
+      <tbody id="corr-body"></tbody>
+    </table>
+  </div>
+  <p class="note">Read each column as: "if a ward flipped to this party, how does each Census variable correlate with that flip?" Positive r in green, negative in red, opacity scaled to |r|. Cells with — are below the n=3 minimum for Pearson.</p>
+
+  <!-- §2 — top correlations per party -->
+  <div class="section-head">
+    <span class="num">§ 2</span>
+    <span class="ttl">Top correlations per "flipped-to" party</span>
+    <span class="meta">Top 5 positive · top 5 negative · MIN_FLIPS = 5</span>
+  </div>
+  <div class="party-corr-grid" id="party-corr-grid"></div>
+
+  <!-- §3 — flipped wards appendix -->
+  <div class="section-head">
+    <span class="num">§ 3</span>
+    <span class="ttl">All wards · prior → 2026</span>
+    <span class="meta">Sorted: flips first · borough · ward</span>
+  </div>
+  <p class="note">"Prior" is the top-of-poll party the last time the seat was contested (2022 for thirds boroughs, 2021 for Salford all-out). <span class="flip-pill flip">flip</span> = ward changed party hands; <span class="flip-pill hold">hold</span> = same party as before; <span class="flip-pill np">no prior</span> = boundary change, no clean predecessor. ≈ next to a ward name marks an approximate prior mapping.</p>
+  <div id="flipped-wards-list"></div>
+
+  <div class="footer">
+    <strong>Built by:</strong> Mitchell Carey · gm-2026-ward-analysis · See <code>CLAUDE.md</code> in the repo for the build pipeline. <strong>Source:</strong> Per-borough 2022/2021 Wikipedia articles (cached in <code>data/source/wiki_*.json</code>) for prior winners; same 2026 winners + Census 2021 wards as the <a href="index.html">Winners</a> page.
+  </div>
+
+</div>
+
+<script>
+// ===== BEGIN GENERATED — see scripts/07b_build_changes_artifact.py =====
+// (this block is overwritten by the build script — do not edit by hand)
+// ===== END GENERATED =====
+</script>
+
+</body>
+</html>
