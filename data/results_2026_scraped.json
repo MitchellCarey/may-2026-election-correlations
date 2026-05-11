@@ -2588,7 +2588,68 @@
       "party": "Labour"
     }
   },
-  "Havering": {},
+  "Havering": {
+    "Beam Park": {
+      "party": "Labour"
+    },
+    "Cranham": {
+      "party": "Other"
+    },
+    "Elm Park": {
+      "party": "Other"
+    },
+    "Emerson Park": {
+      "party": "Reform"
+    },
+    "Gooshays": {
+      "party": "Reform"
+    },
+    "Hacton": {
+      "party": "Other"
+    },
+    "Harold Wood": {
+      "party": "Independent"
+    },
+    "Havering-atte-Bower": {
+      "party": "Reform"
+    },
+    "Heaton": {
+      "party": "Reform"
+    },
+    "Hylands and Harrow Lodge": {
+      "party": "Other"
+    },
+    "Marshalls and Rise Park": {
+      "party": "Green"
+    },
+    "Mawneys": {
+      "party": "Reform"
+    },
+    "Rainham and Wennington": {
+      "party": "Labour"
+    },
+    "Rush Green and Crowlands": {
+      "party": "LibDem"
+    },
+    "South Hornchurch": {
+      "party": "Reform"
+    },
+    "Squirrels Heath": {
+      "party": "Reform"
+    },
+    "St Alban's": {
+      "party": "Reform"
+    },
+    "St Andrew's": {
+      "party": "Reform"
+    },
+    "St Edward's": {
+      "party": "Green"
+    },
+    "Upminster": {
+      "party": "Labour"
+    }
+  },
   "Hillingdon": {
     "Belmore": {
       "party": "Labour"

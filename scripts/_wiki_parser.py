@@ -67,6 +67,17 @@ ELECTION_BOX_BEGIN_RE = re.compile(
 )
 ELECTION_BOX_END_RE = re.compile(r'\{\{Election box end\s*\}\}', re.IGNORECASE)
 
+# Havering 2026's per-ward sections delegate their {{Election box ...}} blocks
+# to a separate per-ward Wikipedia article via labeled-section transclusion:
+#     {{#section:Beam Park (ward)|2026 Beam Park}}
+# When the caller provides a fetch_transclusion callback, parse_article
+# substitutes each match with the labeled section content from the target page
+# before running the winner-extract pass.
+SECTION_RE = re.compile(
+    r'\{\{#section:\s*([^|}]+?)\s*\|\s*([^}]+?)\s*\}\}',
+    re.IGNORECASE,
+)
+
 
 def normalize_party(raw: str) -> str:
     """Map Wikipedia party-name strings to the canonical labels used downstream."""
@@ -114,12 +125,29 @@ def _clean_ward_name(name: str) -> str:
     return clean
 
 
-def parse_article(_council_name: str, year: int, wt: str) -> dict:
+def _resolve_transclusions(section: str, fetch_transclusion) -> str:
+    """Replace each {{#section:Page|Label}} call in the section text with the
+    fetched labeled-section content (or empty string on failure). No-op if
+    the section has no transclusions or no fetcher is provided."""
+    if fetch_transclusion is None:
+        return section
+    return SECTION_RE.sub(
+        lambda m: fetch_transclusion(m.group(1).strip(), m.group(2).strip()) or '',
+        section,
+    )
+
+
+def parse_article(_council_name: str, year: int, wt: str,
+                  fetch_transclusion=None) -> dict:
     """Return {ward_name: {'prior_party', 'prior_year'}} for one election article.
 
     The 'prior_*' keys are historical — 01b consumes them; 01c reshapes
     on the way out. Kept for backwards compatibility with 01b's existing
     output shape (preserves byte-identical prior_winners.json for GM).
+
+    fetch_transclusion: optional callable (page_title, section_label) -> str|None
+    that returns the labeled-section wikitext from a per-ward article. Used by
+    01c to follow Havering's {{#section:}} delegations; 01b passes None.
     """
     h2_matches = list(H2_RE.finditer(wt))
     if not h2_matches:
@@ -146,6 +174,11 @@ def parse_article(_council_name: str, year: int, wt: str) -> dict:
             section = segment[h_end:next_start]
 
             party = _extract_winner_party(section)
+            if not party and fetch_transclusion is not None and SECTION_RE.search(section):
+                # Section has no inline winner template but does have a
+                # {{#section:}} transclusion — resolve and re-extract.
+                section = _resolve_transclusions(section, fetch_transclusion)
+                party = _extract_winner_party(section)
             if not party:
                 continue
 

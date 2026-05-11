@@ -4211,6 +4211,86 @@
     "gss": "E05013563",
     "match": "exact"
   },
+  "Havering::Beam Park": {
+    "gss": "E05013967",
+    "match": "exact"
+  },
+  "Havering::Cranham": {
+    "gss": "E05013968",
+    "match": "exact"
+  },
+  "Havering::Elm Park": {
+    "gss": "E05013969",
+    "match": "exact"
+  },
+  "Havering::Emerson Park": {
+    "gss": "E05013970",
+    "match": "exact"
+  },
+  "Havering::Gooshays": {
+    "gss": "E05013971",
+    "match": "exact"
+  },
+  "Havering::Hacton": {
+    "gss": "E05013972",
+    "match": "exact"
+  },
+  "Havering::Harold Wood": {
+    "gss": "E05013973",
+    "match": "exact"
+  },
+  "Havering::Havering-atte-Bower": {
+    "gss": "E05013974",
+    "match": "exact"
+  },
+  "Havering::Heaton": {
+    "gss": "E05013975",
+    "match": "suffix"
+  },
+  "Havering::Hylands and Harrow Lodge": {
+    "gss": "E05013976",
+    "match": "norm"
+  },
+  "Havering::Marshalls and Rise Park": {
+    "gss": "E05013977",
+    "match": "norm"
+  },
+  "Havering::Mawneys": {
+    "gss": "E05013978",
+    "match": "exact"
+  },
+  "Havering::Rainham and Wennington": {
+    "gss": "E05013979",
+    "match": "norm"
+  },
+  "Havering::Rush Green and Crowlands": {
+    "gss": "E05013980",
+    "match": "norm"
+  },
+  "Havering::South Hornchurch": {
+    "gss": "E05013984",
+    "match": "exact"
+  },
+  "Havering::Squirrels Heath": {
+    "gss": "E05013985",
+    "match": "exact"
+  },
+  "Havering::St Alban's": {
+    "gss": "E05013981",
+    "match": "exact"
+  },
+  "Havering::St Andrew's": {
+    "gss": "E05013982",
+    "match": "suffix"
+  },
+  "Havering::St Edward's": {
+    "gss": "E05013983",
+    "match": "exact"
+  },
+  "Havering::Upminster": {
+    "gss": "E05013986",
+    "match": "exact"
+  },
   "Hillingdon::Belmore": {
     "gss": "E05013564",
     "match": "exact"
