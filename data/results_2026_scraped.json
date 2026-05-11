@@ -1,0 +1,3018 @@
+{
+  "Knowsley": {
+    "Cherryfield": {
+      "party": "Independent"
+    },
+    "Halewood North": {
+      "party": "Reform"
+    },
+    "Halewood South": {
+      "party": "Independent"
+    },
+    "Northwood": {
+      "party": "Reform"
+    },
+    "Page Moss": {
+      "party": "Green"
+    },
+    "Prescot North": {
+      "party": "LibDem"
+    },
+    "Prescot South": {
+      "party": "Green"
+    },
+    "Roby (2)": {
+      "party": "Labour"
+    },
+    "Shevington": {
+      "party": "Independent"
+    },
+    "St Gabriels": {
+      "party": "Green"
+    },
+    "St Michaels": {
+      "party": "Labour"
+    },
+    "Stockbridge": {
+      "party": "Reform"
+    },
+    "Swanside": {
+      "party": "Labour"
+    },
+    "Whiston and Cronton": {
+      "party": "Reform"
+    },
+    "Whitefield": {
+      "party": "Independent"
+    }
+  },
+  "St. Helens": {},
+  "Sefton": {
+    "Ainsdale": {
+      "party": "LibDem"
+    }
+  },
+  "Barnsley": {
+    "Athersley and New Lodge": {
+      "party": "Reform"
+    },
+    "Central": {
+      "party": "Labour"
+    },
+    "Cudworth": {
+      "party": "Labour"
+    },
+    "Darfield and Great Houghton": {
+      "party": "Reform"
+    },
+    "Darton East": {
+      "party": "LibDem"
+    },
+    "Darton West": {
+      "party": "Reform"
+    },
+    "Dearne North": {
+      "party": "Reform"
+    },
+    "Dearne South": {
+      "party": "Reform"
+    },
+    "Dodworth, Stainborough and Tankersley": {
+      "party": "Reform"
+    },
+    "Hoyland Milton": {
+      "party": "Reform"
+    },
+    "Kingstone": {
+      "party": "LibDem"
+    },
+    "Monk Bretton": {
+      "party": "Reform"
+    },
+    "North East": {
+      "party": "Reform"
+    },
+    "Old Town": {
+      "party": "Labour"
+    },
+    "Penistone East": {
+      "party": "Labour"
+    },
+    "Penistone West": {
+      "party": "LibDem"
+    },
+    "Rockingham": {
+      "party": "Reform"
+    },
+    "Royston": {
+      "party": "Reform"
+    },
+    "Stairfoot": {
+      "party": "Reform"
+    },
+    "Wombwell": {
+      "party": "Reform"
+    },
+    "Worsbrough": {
+      "party": "Independent"
+    }
+  },
+  "Sheffield": {
+    "Beauchief & Greenhill": {
+      "party": "LibDem"
+    },
+    "Beighton": {
+      "party": "Reform"
+    },
+    "Birley": {
+      "party": "Reform"
+    },
+    "Broomhill & Sharrow Vale": {
+      "party": "Green"
+    },
+    "Burngreave": {
+      "party": "Green"
+    },
+    "City": {
+      "party": "Green"
+    },
+    "Crookes & Crosspool": {
+      "party": "Labour"
+    },
+    "Darnall": {
+      "party": "Labour"
+    },
+    "Dore & Totley": {
+      "party": "LibDem"
+    },
+    "East Ecclesfield": {
+      "party": "Reform"
+    },
+    "Ecclesall": {
+      "party": "Green"
+    },
+    "Firth Park": {
+      "party": "Reform"
+    },
+    "Fulwood": {
+      "party": "LibDem"
+    },
+    "Gleadless Valley": {
+      "party": "Green"
+    },
+    "Graves Park": {
+      "party": "Green"
+    },
+    "Hillsborough": {
+      "party": "Green"
+    },
+    "Manor Castle": {
+      "party": "Green"
+    },
+    "Mosborough": {
+      "party": "Reform"
+    },
+    "Nether Edge & Sharrow": {
+      "party": "Green"
+    },
+    "Park & Arbourthorne": {
+      "party": "Reform"
+    },
+    "Richmond": {
+      "party": "Reform"
+    },
+    "Shiregreen & Brightside": {
+      "party": "Reform"
+    },
+    "Southey": {
+      "party": "Reform"
+    },
+    "Stannington": {
+      "party": "LibDem"
+    },
+    "Stocksbridge & Upper Don": {
+      "party": "Reform"
+    },
+    "Walkley": {
+      "party": "Green"
+    },
+    "West Ecclesfield": {
+      "party": "LibDem"
+    },
+    "Woodhouse": {
+      "party": "Reform"
+    }
+  },
+  "Newcastle upon Tyne": {
+    "Arthur's Hill": {
+      "party": "Green"
+    },
+    "Benwell, Scotswood and Denton Burn": {
+      "party": "Reform"
+    },
+    "Blakelaw and Cowgate": {
+      "party": "Reform"
+    },
+    "Byker": {
+      "party": "Green"
+    },
+    "Castle": {
+      "party": "Green"
+    },
+    "Chapel": {
+      "party": "Independent"
+    },
+    "Dene and South Gosforth": {
+      "party": "LibDem"
+    },
+    "Denton and Westerhope": {
+      "party": "Reform"
+    },
+    "Elswick": {
+      "party": "Green"
+    },
+    "Fawdon and West Gosforth": {
+      "party": "LibDem"
+    },
+    "Gosforth": {
+      "party": "LibDem"
+    },
+    "Heaton": {
+      "party": "Green"
+    },
+    "Jesmond": {
+      "party": "LibDem"
+    },
+    "Kenton": {
+      "party": "Labour"
+    },
+    "Kingston Park and Dinnington": {
+      "party": "LibDem"
+    },
+    "Lemington": {
+      "party": "Reform"
+    },
+    "Manor Park": {
+      "party": "LibDem"
+    },
+    "Monument": {
+      "party": "Green"
+    },
+    "Newbiggin Hall and Callerton": {
+      "party": "Reform"
+    },
+    "Ouseburn": {
+      "party": "Green"
+    },
+    "Parklands and North Gosforth": {
+      "party": "LibDem"
+    },
+    "Throckley, Walbottle and Newburn": {
+      "party": "Reform"
+    },
+    "Walker": {
+      "party": "Green"
+    },
+    "Walkergate": {
+      "party": "Reform"
+    },
+    "West Fenham": {
+      "party": "LibDem"
+    },
+    "Wingrove": {
+      "party": "Green"
+    }
+  },
+  "North Tyneside": {
+    "Backworth and Holystone": {
+      "party": "Labour"
+    },
+    "Battle Hill": {
+      "party": "Reform"
+    },
+    "Camperdown": {
+      "party": "Reform"
+    },
+    "Chirton and Percy Main": {
+      "party": "Reform"
+    },
+    "Cullercoats and Whitley Bay South": {
+      "party": "Labour"
+    },
+    "Forest Hall": {
+      "party": "Labour"
+    },
+    "Howdon": {
+      "party": "Reform"
+    },
+    "Killingworth": {
+      "party": "Reform"
+    },
+    "Longbenton and Benton": {
+      "party": "Labour"
+    },
+    "Monkseaton": {
+      "party": "Labour"
+    },
+    "New York and Murton": {
+      "party": "Reform"
+    },
+    "North Shields": {
+      "party": "Green"
+    },
+    "Preston with Preston Grange": {
+      "party": "Conservative"
+    },
+    "Shiremoor": {
+      "party": "Reform"
+    },
+    "St Mary\u2019s": {
+      "party": "Independent"
+    },
+    "Tynemouth": {
+      "party": "Conservative"
+    },
+    "Wallsend Central": {
+      "party": "Reform"
+    },
+    "Wallsend North": {
+      "party": "Reform"
+    },
+    "Weetslade": {
+      "party": "Reform"
+    },
+    "Whitley Bay North": {
+      "party": "Green"
+    }
+  },
+  "South Tyneside": {
+    "Beacon and Bents": {
+      "party": "Green"
+    },
+    "Bede": {
+      "party": "Reform"
+    },
+    "Biddick and All Saints": {
+      "party": "Reform"
+    },
+    "Boldon Colliery": {
+      "party": "Reform"
+    },
+    "Cleadon Park and Harton Moor": {
+      "party": "Reform"
+    },
+    "Cleadon Village and East Boldon": {
+      "party": "Green"
+    },
+    "Fellgate and Hedworth": {
+      "party": "Reform"
+    },
+    "Harton": {
+      "party": "Reform"
+    },
+    "Hebburn North": {
+      "party": "Reform"
+    },
+    "Hebburn South": {
+      "party": "Reform"
+    },
+    "Horsley Hill and Westoe Crown": {
+      "party": "Reform"
+    },
+    "Monkton": {
+      "party": "Reform"
+    },
+    "Primrose": {
+      "party": "Reform"
+    },
+    "Simonside and Rekendyke": {
+      "party": "Reform"
+    },
+    "West Park": {
+      "party": "Green"
+    },
+    "Westoe": {
+      "party": "Independent"
+    },
+    "Whitburn and Marsden": {
+      "party": "Reform"
+    },
+    "Whiteleas": {
+      "party": "Reform"
+    }
+  },
+  "Sunderland": {
+    "Barnes and Thornhill": {
+      "party": "Labour"
+    },
+    "Deptford and Hendon": {
+      "party": "Reform"
+    },
+    "Doxford Park": {
+      "party": "LibDem"
+    },
+    "Farringdon and Silksworth": {
+      "party": "Reform"
+    },
+    "Fulwell": {
+      "party": "LibDem"
+    },
+    "Grangetown": {
+      "party": "Reform"
+    },
+    "Grindon and Thorney Close": {
+      "party": "LibDem"
+    },
+    "Hetton": {
+      "party": "Reform"
+    },
+    "Houghton North": {
+      "party": "Reform"
+    },
+    "Hylton Castle": {
+      "party": "Reform"
+    },
+    "Pallion and Ford": {
+      "party": "LibDem"
+    },
+    "Pennywell and South Hylton": {
+      "party": "Reform"
+    },
+    "Redhouse": {
+      "party": "Reform"
+    },
+    "Roker": {
+      "party": "Reform"
+    },
+    "Ryhope": {
+      "party": "Reform"
+    },
+    "Southwick": {
+      "party": "Reform"
+    },
+    "Tunstall and Humbledon": {
+      "party": "Reform"
+    },
+    "Washington Central": {
+      "party": "Reform"
+    },
+    "Washington East": {
+      "party": "Reform"
+    },
+    "Washington North": {
+      "party": "Reform"
+    },
+    "Washington South": {
+      "party": "Reform"
+    },
+    "Washington West": {
+      "party": "Labour"
+    }
+  },
+  "Birmingham": {
+    "Acocks Green": {
+      "party": "LibDem"
+    },
+    "Allens Cross": {
+      "party": "Reform"
+    },
+    "Alum Rock": {
+      "party": "Independent"
+    },
+    "Aston": {
+      "party": "Independent"
+    },
+    "Balsall Heath West": {
+      "party": "Green"
+    },
+    "Bartley Green": {
+      "party": "Reform"
+    },
+    "Billesley": {
+      "party": "Green"
+    },
+    "Birchfield": {
+      "party": "Labour"
+    },
+    "Bordesley & Highgate": {
+      "party": "Green"
+    },
+    "Bordesley Green": {
+      "party": "Independent"
+    },
+    "Bournbrook & Selly Park": {
+      "party": "Green"
+    },
+    "Brandwood & Kings Heath": {
+      "party": "Green"
+    },
+    "Bromford & Hodge Hill": {
+      "party": "Labour"
+    },
+    "Castle Vale": {
+      "party": "Labour"
+    },
+    "Druids Heath & Monyhull": {
+      "party": "Green"
+    },
+    "Edgbaston": {
+      "party": "Conservative"
+    },
+    "Erdington": {
+      "party": "Conservative"
+    },
+    "Frankley Great Park": {
+      "party": "Reform"
+    },
+    "Garretts Green": {
+      "party": "Labour"
+    },
+    "Gravelly Hill": {
+      "party": "Labour"
+    },
+    "Hall Green North": {
+      "party": "Green"
+    },
+    "Hall Green South": {
+      "party": "Conservative"
+    },
+    "Handsworth": {
+      "party": "Green"
+    },
+    "Handsworth Wood": {
+      "party": "Labour"
+    },
+    "Harborne": {
+      "party": "Independent"
+    },
+    "Heartlands": {
+      "party": "Labour"
+    },
+    "Highters Heath": {
+      "party": "Conservative"
+    },
+    "Holyhead": {
+      "party": "Independent"
+    },
+    "Kings Norton North": {
+      "party": "Reform"
+    },
+    "Kings Norton South": {
+      "party": "Green"
+    },
+    "Kingstanding": {
+      "party": "Reform"
+    },
+    "Ladywood": {
+      "party": "Green"
+    },
+    "Longbridge & West Heath": {
+      "party": "Reform"
+    },
+    "Lozells": {
+      "party": "Independent"
+    },
+    "Moseley": {
+      "party": "LibDem"
+    },
+    "Nechells": {
+      "party": "Independent"
+    },
+    "Newtown": {
+      "party": "Labour"
+    },
+    "North Edgbaston": {
+      "party": "Labour"
+    },
+    "Northfield": {
+      "party": "Reform"
+    },
+    "Oscott": {
+      "party": "Reform"
+    },
+    "Perry Barr": {
+      "party": "LibDem"
+    },
+    "Perry Common": {
+      "party": "Reform"
+    },
+    "Pype Hayes": {
+      "party": "Reform"
+    },
+    "Quinton": {
+      "party": "Independent"
+    },
+    "Rubery & Rednal": {
+      "party": "Reform"
+    },
+    "Shard End": {
+      "party": "Reform"
+    },
+    "Sheldon": {
+      "party": "Reform"
+    },
+    "Small Heath": {
+      "party": "LibDem"
+    },
+    "Soho & Jewellery Quarter": {
+      "party": "Labour"
+    },
+    "South Yardley": {
+      "party": "LibDem"
+    },
+    "Sparkbrook & Balsall Heath": {
+      "party": "Independent"
+    },
+    "Sparkhill": {
+      "party": "Labour"
+    },
+    "Stirchley": {
+      "party": "Green"
+    },
+    "Stockland Green": {
+      "party": "Independent"
+    },
+    "Sutton Four Oaks": {
+      "party": "Conservative"
+    },
+    "Sutton Mere Green": {
+      "party": "Conservative"
+    },
+    "Sutton Reddicap": {
+      "party": "Conservative"
+    },
+    "Sutton Roughley": {
+      "party": "Conservative"
+    },
+    "Sutton Trinity": {
+      "party": "Conservative"
+    },
+    "Sutton Vesey": {
+      "party": "Conservative"
+    },
+    "Sutton Walmley and Minworth": {
+      "party": "Conservative"
+    },
+    "Sutton Wylde Green": {
+      "party": "Conservative"
+    },
+    "Tyseley & Hay Mills": {
+      "party": "Green"
+    },
+    "Ward End": {
+      "party": "Independent"
+    },
+    "Weoley & Selly Oak": {
+      "party": "Reform"
+    },
+    "Yardley East": {
+      "party": "LibDem"
+    },
+    "Yardley West & Stechford": {
+      "party": "LibDem"
+    }
+  },
+  "Coventry": {
+    "Bablake": {
+      "party": "Reform"
+    },
+    "Binley and Willenhall": {
+      "party": "Reform"
+    },
+    "Cheylesmore": {
+      "party": "Conservative"
+    },
+    "Earlsdon": {
+      "party": "Labour"
+    },
+    "Foleshill": {
+      "party": "Labour"
+    },
+    "Henley": {
+      "party": "Reform"
+    },
+    "Holbrooks": {
+      "party": "Green"
+    },
+    "Longford": {
+      "party": "Reform"
+    },
+    "Lower Stoke": {
+      "party": "Labour"
+    },
+    "Radford": {
+      "party": "Labour"
+    },
+    "Sherbourne": {
+      "party": "Reform"
+    },
+    "St Michael's": {
+      "party": "Labour"
+    },
+    "Tile Hill and Canley": {
+      "party": "Reform"
+    },
+    "Upper Stoke": {
+      "party": "Labour"
+    },
+    "Wainbody": {
+      "party": "Conservative"
+    },
+    "Whoberley": {
+      "party": "Labour"
+    },
+    "Woodlands": {
+      "party": "Reform"
+    },
+    "Wyken": {
+      "party": "Reform"
+    }
+  },
+  "Dudley": {
+    "Amblecote": {
+      "party": "Reform"
+    },
+    "Belle Vale": {
+      "party": "Reform"
+    },
+    "Brierley Hill & Wordsley South": {
+      "party": "Reform"
+    },
+    "Brockmoor & Pensnett": {
+      "party": "Reform"
+    },
+    "Castle & Priory": {
+      "party": "Reform"
+    },
+    "Coseley": {
+      "party": "Reform"
+    },
+    "Cradley North & Wollescote": {
+      "party": "Reform"
+    },
+    "Gornal": {
+      "party": "Reform"
+    },
+    "Halesowen North": {
+      "party": "Conservative"
+    },
+    "Halesowen South": {
+      "party": "Reform"
+    },
+    "Hayley Green & Cradley South": {
+      "party": "Reform"
+    },
+    "Kingswinford North & Wall Heath": {
+      "party": "Conservative"
+    },
+    "Kingswinford South": {
+      "party": "Reform"
+    },
+    "Lye & Stourbridge North": {
+      "party": "Reform"
+    },
+    "Netherton & Holly Hall": {
+      "party": "Reform"
+    },
+    "Norton": {
+      "party": "Reform"
+    },
+    "Pedmore & Stourbridge East": {
+      "party": "Reform"
+    },
+    "Quarry Bank & Dudley Wood": {
+      "party": "Reform"
+    },
+    "Sedgley": {
+      "party": "Reform"
+    },
+    "St James\u2019s": {
+      "party": "Reform"
+    },
+    "St Thomas\u2019s": {
+      "party": "Labour"
+    },
+    "Upper Gornal & Woodsetton": {
+      "party": "Reform"
+    },
+    "Wollaston & Stourbridge Town": {
+      "party": "Reform"
+    },
+    "Wordsley North": {
+      "party": "Reform"
+    }
+  },
+  "Sandwell": {},
+  "Solihull": {
+    "Balsall & Berkswell": {
+      "party": "Conservative"
+    },
+    "Dorridge & Hockley Heath": {
+      "party": "Conservative"
+    }
+  },
+  "Walsall": {},
+  "Wolverhampton": {
+    "Bilston North": {
+      "party": "Reform"
+    },
+    "Bilston South": {
+      "party": "Reform"
+    },
+    "Blakenhall": {
+      "party": "Labour"
+    },
+    "Bushbury North": {
+      "party": "Reform"
+    },
+    "Bushbury South and Low Hill": {
+      "party": "Reform"
+    },
+    "East Park": {
+      "party": "Reform"
+    },
+    "Ettingshall North": {
+      "party": "Labour"
+    },
+    "Ettingshall South and Spring Vale": {
+      "party": "Reform"
+    },
+    "Fallings Park": {
+      "party": "Reform"
+    },
+    "Graiseley": {
+      "party": "Labour"
+    },
+    "Heath Town": {
+      "party": "Labour"
+    },
+    "Merry Hill": {
+      "party": "Reform"
+    },
+    "Oxley": {
+      "party": "Reform"
+    },
+    "Park": {
+      "party": "Labour"
+    },
+    "Penn": {
+      "party": "Conservative"
+    },
+    "St Peters": {
+      "party": "Labour"
+    },
+    "Tettenhall Regis": {
+      "party": "Conservative"
+    },
+    "Tettenhall Wightwick": {
+      "party": "Conservative"
+    },
+    "Wednesfield North": {
+      "party": "Reform"
+    },
+    "Wednesfield South": {
+      "party": "Reform"
+    }
+  },
+  "Bradford": {
+    "Baildon": {
+      "party": "Conservative"
+    },
+    "Bingley East": {
+      "party": "Independent"
+    },
+    "Bingley West": {
+      "party": "Conservative"
+    },
+    "Bolton & Undercliffe": {
+      "party": "Labour"
+    },
+    "Bowling & Barkerend": {
+      "party": "Labour"
+    },
+    "Bradford Moor": {
+      "party": "LibDem"
+    },
+    "City": {
+      "party": "Labour"
+    },
+    "Clayton & Fairweather Green": {
+      "party": "Reform"
+    },
+    "Eccleshill": {
+      "party": "Reform"
+    },
+    "Great Horton": {
+      "party": "Labour"
+    },
+    "Heaton & Frizinghall": {
+      "party": "Green"
+    },
+    "Holme Wood & Bierley": {
+      "party": "Green"
+    },
+    "Ilkley & Addingham": {
+      "party": "Conservative"
+    },
+    "Keighley Central": {
+      "party": "Labour"
+    },
+    "Keighley East": {
+      "party": "Labour"
+    },
+    "Keighley West": {
+      "party": "Reform"
+    },
+    "Little Horton": {
+      "party": "Independent"
+    },
+    "Manningham": {
+      "party": "Independent"
+    },
+    "Queensbury": {
+      "party": "Reform"
+    },
+    "Royds": {
+      "party": "Reform"
+    },
+    "Shipley": {
+      "party": "Green"
+    },
+    "Thornton & Allerton": {
+      "party": "Reform"
+    },
+    "Toller": {
+      "party": "Labour"
+    },
+    "Wharfedale": {
+      "party": "Conservative"
+    },
+    "Wibsey & Odsal": {
+      "party": "Reform"
+    },
+    "Windhill & Wrose": {
+      "party": "Reform"
+    },
+    "Worth Valley": {
+      "party": "Conservative"
+    },
+    "Wyke": {
+      "party": "Reform"
+    }
+  },
+  "Calderdale": {
+    "Brighouse": {
+      "party": "Reform"
+    },
+    "Elland": {
+      "party": "Reform"
+    },
+    "Greetland": {
+      "party": "Reform"
+    },
+    "Halifax Town": {
+      "party": "Reform"
+    },
+    "Hebden Bridge & Todmorden East": {
+      "party": "Labour"
+    },
+    "Hipperholme & Lightcliffe": {
+      "party": "Reform"
+    },
+    "Illingworth & Mixenden": {
+      "party": "Reform"
+    },
+    "Luddendenfoot": {
+      "party": "Labour"
+    },
+    "Northowram & Shelf": {
+      "party": "Green"
+    },
+    "Ovenden": {
+      "party": "Reform"
+    },
+    "Park": {
+      "party": "Independent"
+    },
+    "Rastrick": {
+      "party": "Reform"
+    },
+    "Ryburn": {
+      "party": "Independent"
+    },
+    "Salterhebble, Southowram & Skircoat Green": {
+      "party": "Reform"
+    },
+    "Sowerby Bridge": {
+      "party": "Reform"
+    },
+    "Todmorden West": {
+      "party": "Green"
+    },
+    "Wainhouse": {
+      "party": "Labour"
+    },
+    "Warley": {
+      "party": "LibDem"
+    }
+  },
+  "Kirklees": {
+    "Ashbrow": {
+      "party": "Green"
+    },
+    "Batley East": {
+      "party": "Independent"
+    },
+    "Batley West": {
+      "party": "Independent"
+    },
+    "Birstall and Birkenshaw": {
+      "party": "Conservative"
+    },
+    "Cleckheaton": {
+      "party": "LibDem"
+    }
+  },
+  "Leeds": {
+    "Adel and Wharfedale": {
+      "party": "Conservative"
+    },
+    "Alwoodley": {
+      "party": "Conservative"
+    },
+    "Ardsley and Robin Hood": {
+      "party": "Reform"
+    },
+    "Armley": {
+      "party": "Green"
+    },
+    "Beeston and Holbeck": {
+      "party": "Green"
+    },
+    "Bramley and Stanningley": {
+      "party": "Labour"
+    },
+    "Burmantofts and Richmond Hill": {
+      "party": "Labour"
+    },
+    "Calverley and Farsley": {
+      "party": "Conservative"
+    },
+    "Chapel Allerton": {
+      "party": "Green"
+    },
+    "Cross Gates and Whinmoor": {
+      "party": "Reform"
+    },
+    "Garforth and Swillington": {
+      "party": "Independent"
+    },
+    "Gipton and Harehills": {
+      "party": "Labour"
+    },
+    "Headingley and Hyde Park": {
+      "party": "Green"
+    },
+    "Middleton Park": {
+      "party": "Other"
+    },
+    "Wetherby": {
+      "party": "Conservative"
+    }
+  },
+  "Wakefield": {
+    "Ackworth, North Elmsall and Upton": {
+      "party": "Reform"
+    },
+    "Airedale and Ferry Fryston": {
+      "party": "Reform"
+    },
+    "Altofts & Whitwood": {
+      "party": "Reform"
+    },
+    "Castleford Central and Glasshoughton": {
+      "party": "Reform"
+    },
+    "Crofton, Ryhill and Walton": {
+      "party": "Reform"
+    },
+    "Featherstone": {
+      "party": "Reform"
+    },
+    "Hemsworth": {
+      "party": "Reform"
+    },
+    "Horbury and South Ossett": {
+      "party": "Reform"
+    },
+    "Knottingley and Ferrybridge": {
+      "party": "Reform"
+    },
+    "Normanton": {
+      "party": "Reform"
+    },
+    "Ossett": {
+      "party": "Reform"
+    },
+    "Pontefract North": {
+      "party": "Reform"
+    },
+    "Pontefract South": {
+      "party": "Reform"
+    },
+    "South Elmsall and South Kirkby": {
+      "party": "Reform"
+    },
+    "Stanley and Outwood East": {
+      "party": "Reform"
+    },
+    "Wakefield East": {
+      "party": "Labour"
+    },
+    "Wakefield North": {
+      "party": "Reform"
+    },
+    "Wakefield Rural": {
+      "party": "Reform"
+    },
+    "Wakefield South": {
+      "party": "Reform"
+    },
+    "Wakefield West": {
+      "party": "Reform"
+    },
+    "Wrenthorpe and Outwood West": {
+      "party": "Reform"
+    }
+  },
+  "Gateshead": {
+    "Birtley North and Lamesley": {
+      "party": "Reform"
+    },
+    "Birtley South": {
+      "party": "Reform"
+    },
+    "Blaydon": {
+      "party": "Reform"
+    },
+    "Bridges": {
+      "party": "Green"
+    },
+    "Chopwell and Rowlands Gill": {
+      "party": "Labour"
+    },
+    "Chowdene": {
+      "party": "Reform"
+    },
+    "Crawcrook and Greenside": {
+      "party": "Labour"
+    },
+    "Deckham": {
+      "party": "Reform"
+    },
+    "Dunston Hill and Whickham East": {
+      "party": "Reform"
+    },
+    "Dunston Teams and Riverside": {
+      "party": "Reform"
+    },
+    "Felling": {
+      "party": "Reform"
+    },
+    "High Fell": {
+      "party": "Reform"
+    },
+    "Lobley Hill and Bensham": {
+      "party": "Reform"
+    },
+    "Low Fell": {
+      "party": "LibDem"
+    },
+    "Pelaw Heworth and Bill Quay": {
+      "party": "LibDem"
+    },
+    "Ryton Crookhill and Stella": {
+      "party": "Labour"
+    },
+    "Saltwell": {
+      "party": "Labour"
+    },
+    "Wardley and Leam Lane": {
+      "party": "Reform"
+    },
+    "Whickham North and Swalwell": {
+      "party": "LibDem"
+    },
+    "Whickham South and Sunniside": {
+      "party": "LibDem"
+    },
+    "Windy Nook and Whitehills": {
+      "party": "Reform"
+    },
+    "Winlaton and High Spen": {
+      "party": "Reform"
+    }
+  },
+  "Barking and Dagenham": {
+    "Abbey": {
+      "party": "Labour"
+    },
+    "Alibon": {
+      "party": "Labour"
+    },
+    "Barking Riverside": {
+      "party": "Labour"
+    },
+    "Beam": {
+      "party": "Labour"
+    },
+    "Becontree": {
+      "party": "Labour"
+    },
+    "Chadwell Heath": {
+      "party": "Labour"
+    },
+    "Eastbrook and Rush Green": {
+      "party": "Reform"
+    },
+    "Eastbury": {
+      "party": "Labour"
+    },
+    "Gascoigne": {
+      "party": "Green"
+    },
+    "Goresbrook": {
+      "party": "Reform"
+    },
+    "Heath": {
+      "party": "Labour"
+    },
+    "Longbridge": {
+      "party": "Green"
+    },
+    "Mayesbrook": {
+      "party": "Labour"
+    },
+    "Northbury": {
+      "party": "Labour"
+    },
+    "Parsloes": {
+      "party": "Reform"
+    },
+    "Thames View": {
+      "party": "Labour"
+    },
+    "Valence": {
+      "party": "Labour"
+    },
+    "Village": {
+      "party": "Labour"
+    },
+    "Whalebone": {
+      "party": "Labour"
+    }
+  },
+  "Barnet": {
+    "Barnet Vale (3 seats)": {
+      "party": "Labour"
+    },
+    "Brunswick Park (3 seats)": {
+      "party": "Conservative"
+    },
+    "Burnt Oak (3 seats)": {
+      "party": "Labour"
+    },
+    "Childs Hill (3 seats)": {
+      "party": "Conservative"
+    },
+    "Colindale North (2 seats)": {
+      "party": "Labour"
+    },
+    "Colindale South (3 seats)": {
+      "party": "Labour"
+    },
+    "Cricklewood (2 seats)": {
+      "party": "Labour"
+    },
+    "East Barnet (3 seats)": {
+      "party": "Labour"
+    },
+    "East Finchley (3 seats)": {
+      "party": "Labour"
+    },
+    "Edgware (3 seats)": {
+      "party": "Conservative"
+    },
+    "Edgwarebury (2 seats)": {
+      "party": "Conservative"
+    },
+    "Finchley Church End (3 seats)": {
+      "party": "Conservative"
+    },
+    "Friern Barnet (3 seats)": {
+      "party": "Labour"
+    },
+    "Garden Suburb (2 seats)": {
+      "party": "Conservative"
+    },
+    "Golders Green (2 seats)": {
+      "party": "Conservative"
+    },
+    "Hendon (3 seats)": {
+      "party": "Conservative"
+    },
+    "High Barnet (2 seats)": {
+      "party": "Conservative"
+    },
+    "Mill Hill (3 seats)": {
+      "party": "Conservative"
+    },
+    "Totteridge and Woodside (3 seats)": {
+      "party": "Conservative"
+    },
+    "Underhill (2 seats)": {
+      "party": "Labour"
+    },
+    "West Finchley (3 seats)": {
+      "party": "Labour"
+    },
+    "West Hendon (3 seats)": {
+      "party": "Labour"
+    },
+    "Whetstone (2 seats)": {
+      "party": "Labour"
+    },
+    "Woodhouse (2 seats)": {
+      "party": "Green"
+    }
+  },
+  "Bexley": {
+    "Barnehurst": {
+      "party": "Conservative"
+    },
+    "Belvedere": {
+      "party": "Labour"
+    },
+    "Bexleyheath": {
+      "party": "Conservative"
+    },
+    "Blackfen and Lamorbey": {
+      "party": "Conservative"
+    },
+    "Blendon and Penhill": {
+      "party": "Conservative"
+    },
+    "Crayford": {
+      "party": "Reform"
+    },
+    "Crook Log": {
+      "party": "Conservative"
+    },
+    "East Wickham": {
+      "party": "Conservative"
+    },
+    "Erith": {
+      "party": "Labour"
+    },
+    "Falconwood and Welling": {
+      "party": "Conservative"
+    },
+    "Longlands": {
+      "party": "Conservative"
+    },
+    "Northumberland Heath": {
+      "party": "Reform"
+    },
+    "Sidcup": {
+      "party": "Conservative"
+    },
+    "Slade Green & Northend": {
+      "party": "Labour"
+    },
+    "St Mary's & St James": {
+      "party": "Conservative"
+    },
+    "Thamesmead East": {
+      "party": "Labour"
+    },
+    "West Heath": {
+      "party": "Conservative"
+    }
+  },
+  "Brent": {
+    "Alperton": {
+      "party": "LibDem"
+    },
+    "Barnhill": {
+      "party": "Labour"
+    },
+    "Brondesbury Park": {
+      "party": "Labour"
+    },
+    "Cricklewood and Mapesbury": {
+      "party": "Labour"
+    },
+    "Dollis Hill": {
+      "party": "Labour"
+    },
+    "Harlesden and Kensal Green": {
+      "party": "Labour"
+    },
+    "Kenton": {
+      "party": "Conservative"
+    },
+    "Kilburn": {
+      "party": "Green"
+    },
+    "Kingsbury": {
+      "party": "Labour"
+    },
+    "Northwick Park": {
+      "party": "Green"
+    },
+    "Preston": {
+      "party": "Conservative"
+    },
+    "Queens Park": {
+      "party": "LibDem"
+    },
+    "Queensbury": {
+      "party": "Conservative"
+    },
+    "Roundwood": {
+      "party": "Labour"
+    },
+    "Stonebridge": {
+      "party": "Labour"
+    },
+    "Sudbury": {
+      "party": "LibDem"
+    },
+    "Tokyngton": {
+      "party": "Labour"
+    },
+    "Welsh Harp": {
+      "party": "Labour"
+    },
+    "Wembley Central": {
+      "party": "LibDem"
+    },
+    "Wembley Hill": {
+      "party": "Labour"
+    },
+    "Wembley Park": {
+      "party": "Green"
+    },
+    "Willesden Green": {
+      "party": "Labour"
+    }
+  },
+  "Bromley": {
+    "Beckenham Town & Copers Cope": {
+      "party": "LibDem"
+    },
+    "Bickley & Sundridge": {
+      "party": "Conservative"
+    },
+    "Biggin Hill": {
+      "party": "Reform"
+    },
+    "Bromley Common & Holwood": {
+      "party": "Conservative"
+    },
+    "Bromley Town": {
+      "party": "LibDem"
+    },
+    "Chelsfield": {
+      "party": "Conservative"
+    },
+    "Chislehurst": {
+      "party": "Other"
+    },
+    "Clock House": {
+      "party": "Labour"
+    },
+    "Crystal Palace & Anerley": {
+      "party": "Labour"
+    },
+    "Darwin": {
+      "party": "Conservative"
+    },
+    "Farnborough & Crofton": {
+      "party": "Conservative"
+    },
+    "Hayes & Coney Hall": {
+      "party": "Conservative"
+    },
+    "Kelsey & Eden Park": {
+      "party": "Conservative"
+    },
+    "Mottingham": {
+      "party": "Conservative"
+    },
+    "Orpington": {
+      "party": "Conservative"
+    },
+    "Penge & Cator": {
+      "party": "Labour"
+    },
+    "Petts Wood & Knoll": {
+      "party": "Conservative"
+    },
+    "Plaistow": {
+      "party": "Conservative"
+    },
+    "Shortlands & Park Langley": {
+      "party": "Conservative"
+    },
+    "St Mary Cray": {
+      "party": "Conservative"
+    },
+    "St Paul's Cray": {
+      "party": "Reform"
+    },
+    "West Wickham": {
+      "party": "Conservative"
+    }
+  },
+  "Camden": {
+    "Belsize": {
+      "party": "LibDem"
+    },
+    "Bloomsbury": {
+      "party": "Labour"
+    },
+    "Camden Square": {
+      "party": "Labour"
+    },
+    "Camden Town": {
+      "party": "Labour"
+    },
+    "Fortune Green": {
+      "party": "LibDem"
+    },
+    "Frognal": {
+      "party": "Conservative"
+    },
+    "Gospel Oak": {
+      "party": "Green"
+    },
+    "Hampstead Town": {
+      "party": "LibDem"
+    },
+    "Haverstock": {
+      "party": "Labour"
+    },
+    "Highgate": {
+      "party": "Green"
+    },
+    "Holborn and Covent Garden": {
+      "party": "Green"
+    }
+  },
+  "Croydon": {
+    "Addiscombe East": {
+      "party": "Conservative"
+    },
+    "Addiscombe West": {
+      "party": "Labour"
+    },
+    "Bensham Manor": {
+      "party": "Labour"
+    },
+    "Broad Green": {
+      "party": "Labour"
+    },
+    "Crystal Palace and Upper Norwood": {
+      "party": "LibDem"
+    },
+    "Fairfield": {
+      "party": "Green"
+    },
+    "New Addington South": {
+      "party": "Reform"
+    },
+    "Norbury and Pollards Hill": {
+      "party": "Labour"
+    },
+    "Old Coulsdon": {
+      "party": "Conservative"
+    },
+    "Park Hill and Whitgift": {
+      "party": "Conservative"
+    },
+    "Selhurst": {
+      "party": "Labour"
+    },
+    "South Norwood": {
+      "party": "Green"
+    },
+    "Waddon": {
+      "party": "Labour"
+    },
+    "West Thornton": {
+      "party": "Labour"
+    },
+    "Woodside": {
+      "party": "Labour"
+    }
+  },
+  "Ealing": {
+    "Central Greenford": {
+      "party": "Labour"
+    },
+    "Dormers Wells": {
+      "party": "Labour"
+    },
+    "Ealing Broadway": {
+      "party": "Conservative"
+    },
+    "Ealing Common": {
+      "party": "LibDem"
+    },
+    "East Acton": {
+      "party": "Labour"
+    },
+    "Greenford Broadway": {
+      "party": "Labour"
+    },
+    "Hanger Hill": {
+      "party": "LibDem"
+    },
+    "Hanwell Broadway": {
+      "party": "Green"
+    },
+    "Lady Margaret": {
+      "party": "Labour"
+    },
+    "North Acton": {
+      "party": "Labour"
+    },
+    "North Greenford": {
+      "party": "Conservative"
+    },
+    "North Hanwell": {
+      "party": "Labour"
+    },
+    "Northfield": {
+      "party": "Labour"
+    },
+    "Northolt Mandeville": {
+      "party": "Labour"
+    },
+    "Northolt West End": {
+      "party": "Labour"
+    },
+    "Norwood Green": {
+      "party": "Independent"
+    },
+    "Perivale": {
+      "party": "Labour"
+    },
+    "Pitshanger": {
+      "party": "Labour"
+    },
+    "South Acton": {
+      "party": "Labour"
+    },
+    "Southall Broadway": {
+      "party": "Labour"
+    },
+    "Southall Green": {
+      "party": "Labour"
+    },
+    "Southall West": {
+      "party": "Labour"
+    },
+    "Southfield": {
+      "party": "LibDem"
+    },
+    "Walpole": {
+      "party": "LibDem"
+    }
+  },
+  "Enfield": {
+    "Arnos Grove (2)": {
+      "party": "Conservative"
+    },
+    "Bowes (2)": {
+      "party": "Labour"
+    },
+    "Brimsdown (3)": {
+      "party": "Labour"
+    },
+    "Bullsmoor (2)": {
+      "party": "Labour"
+    },
+    "Bush Hill Park (3)": {
+      "party": "Conservative"
+    },
+    "Carterhatch (2)": {
+      "party": "Labour"
+    },
+    "Cockfosters (2)": {
+      "party": "Conservative"
+    },
+    "Edmonton Green (3)": {
+      "party": "Labour"
+    },
+    "Enfield Lock (3)": {
+      "party": "Green"
+    },
+    "Grange Park (2)": {
+      "party": "Conservative"
+    },
+    "Haselbury (3)": {
+      "party": "Labour"
+    },
+    "Highfield (2)": {
+      "party": "Conservative"
+    },
+    "Jubilee (3)": {
+      "party": "Labour"
+    },
+    "Lower Edmonton (3)": {
+      "party": "Labour"
+    },
+    "New Southgate (2)": {
+      "party": "Green"
+    },
+    "Oakwood (2)": {
+      "party": "Conservative"
+    },
+    "Palmers Green (2)": {
+      "party": "Labour"
+    },
+    "Ponders End (2)": {
+      "party": "Green"
+    },
+    "Ridgeway (3)": {
+      "party": "Conservative"
+    },
+    "Southbury (3)": {
+      "party": "Conservative"
+    },
+    "Southgate (3)": {
+      "party": "Conservative"
+    },
+    "Town (3)": {
+      "party": "Conservative"
+    },
+    "Upper Edmonton (3)": {
+      "party": "Labour"
+    },
+    "Whitewebbs (3)": {
+      "party": "Conservative"
+    },
+    "Winchmore Hill (2)": {
+      "party": "Conservative"
+    }
+  },
+  "Greenwich": {
+    "Abbey Wood": {
+      "party": "Labour"
+    },
+    "Charlton Hornfair": {
+      "party": "Green"
+    },
+    "Charlton Village and Riverside": {
+      "party": "Labour"
+    },
+    "East Greenwich": {
+      "party": "Green"
+    },
+    "Eltham Page": {
+      "party": "Reform"
+    },
+    "Kidbrooke Park": {
+      "party": "Labour"
+    },
+    "Mottingham, Coldharbour and New Eltham": {
+      "party": "Conservative"
+    },
+    "Woolwich Arsenal": {
+      "party": "Labour"
+    },
+    "Woolwich Common": {
+      "party": "Labour"
+    },
+    "Woolwich Dockyard": {
+      "party": "Labour"
+    }
+  },
+  "Hackney": {
+    "Brownswood": {
+      "party": "Green"
+    },
+    "Cazenove": {
+      "party": "Green"
+    },
+    "Dalston": {
+      "party": "Green"
+    },
+    "De Beauvoir": {
+      "party": "Green"
+    },
+    "Hackney Central": {
+      "party": "Green"
+    },
+    "Hackney Downs": {
+      "party": "Green"
+    },
+    "Haggerston": {
+      "party": "Green"
+    },
+    "Hackney Wick": {
+      "party": "Green"
+    },
+    "Homerton": {
+      "party": "Green"
+    },
+    "Hoxton East and Shoreditch": {
+      "party": "Labour"
+    },
+    "Hoxton West": {
+      "party": "Green"
+    },
+    "King's Park": {
+      "party": "Green"
+    },
+    "Lea Bridge": {
+      "party": "Green"
+    },
+    "London Fields": {
+      "party": "Green"
+    },
+    "Shacklewell": {
+      "party": "Green"
+    },
+    "Springfield": {
+      "party": "Conservative"
+    },
+    "Stamford Hill West": {
+      "party": "Conservative"
+    },
+    "Stoke Newington": {
+      "party": "Green"
+    },
+    "Victoria": {
+      "party": "Green"
+    },
+    "Woodberry Down": {
+      "party": "Labour"
+    }
+  },
+  "Hammersmith and Fulham": {
+    "Addison": {
+      "party": "Labour"
+    },
+    "Avonmore": {
+      "party": "Labour"
+    },
+    "Brook Green": {
+      "party": "Labour"
+    },
+    "College Park & Old Oak": {
+      "party": "Labour"
+    },
+    "Coningham": {
+      "party": "Labour"
+    },
+    "Fulham Reach": {
+      "party": "Labour"
+    },
+    "Fulham Town": {
+      "party": "Conservative"
+    },
+    "Grove": {
+      "party": "Labour"
+    },
+    "Hammersmith Broadway": {
+      "party": "Labour"
+    },
+    "Lillie": {
+      "party": "Labour"
+    },
+    "Munster": {
+      "party": "Conservative"
+    },
+    "Palace & Hurlingham": {
+      "party": "Conservative"
+    },
+    "Parsons Green & Sandford": {
+      "party": "Conservative"
+    },
+    "Ravenscourt": {
+      "party": "Labour"
+    },
+    "Sands End": {
+      "party": "Conservative"
+    },
+    "Shepherd's Bush Green": {
+      "party": "Labour"
+    },
+    "Walham Green": {
+      "party": "Labour"
+    },
+    "Wendell Park": {
+      "party": "Labour"
+    },
+    "West Kensington": {
+      "party": "Labour"
+    },
+    "White City": {
+      "party": "Labour"
+    },
+    "Wormholt": {
+      "party": "Labour"
+    }
+  },
+  "Haringey": {
+    "Alexandra Park": {
+      "party": "Labour"
+    },
+    "Bounds Green": {
+      "party": "Labour"
+    },
+    "Bruce Castle": {
+      "party": "Labour"
+    },
+    "Crouch End": {
+      "party": "LibDem"
+    },
+    "Fortis Green": {
+      "party": "LibDem"
+    },
+    "Harringay": {
+      "party": "Green"
+    },
+    "Hermitage & Gardens": {
+      "party": "Green"
+    },
+    "Highgate": {
+      "party": "LibDem"
+    },
+    "Hornsey": {
+      "party": "Labour"
+    },
+    "Muswell Hill": {
+      "party": "LibDem"
+    },
+    "Noel Park": {
+      "party": "Green"
+    },
+    "Northumberland Park": {
+      "party": "Labour"
+    },
+    "Seven Sisters": {
+      "party": "Green"
+    },
+    "South Tottenham": {
+      "party": "Labour"
+    },
+    "St Ann's": {
+      "party": "Green"
+    },
+    "Stroud Green": {
+      "party": "Green"
+    },
+    "Tottenham Central": {
+      "party": "Green"
+    },
+    "Tottenham Hale": {
+      "party": "Green"
+    },
+    "West Green": {
+      "party": "Green"
+    },
+    "White Hart Lane": {
+      "party": "Green"
+    },
+    "Woodside": {
+      "party": "Labour"
+    }
+  },
+  "Harrow": {
+    "Belmont (2)": {
+      "party": "Conservative"
+    },
+    "Canons (2)": {
+      "party": "Conservative"
+    },
+    "Centenary (3)": {
+      "party": "Conservative"
+    },
+    "Edgware (3)": {
+      "party": "Conservative"
+    },
+    "Greenhill (3)": {
+      "party": "Conservative"
+    },
+    "Harrow on the Hill (2)": {
+      "party": "Conservative"
+    },
+    "Harrow Weald (3)": {
+      "party": "Conservative"
+    },
+    "Hatch End (2)": {
+      "party": "Conservative"
+    },
+    "Headstone (3)": {
+      "party": "Conservative"
+    },
+    "Kenton East (3)": {
+      "party": "Conservative"
+    },
+    "Kenton West (2)": {
+      "party": "Conservative"
+    },
+    "Marlborough (3)": {
+      "party": "Labour"
+    },
+    "North Harrow (2)": {
+      "party": "Conservative"
+    },
+    "Pinner (3)": {
+      "party": "Conservative"
+    },
+    "Pinner South (3)": {
+      "party": "Conservative"
+    },
+    "Rayners Lane (2)": {
+      "party": "Conservative"
+    },
+    "Roxbourne (2)": {
+      "party": "Labour"
+    },
+    "Roxeth (3)": {
+      "party": "Labour"
+    },
+    "Stanmore (3)": {
+      "party": "Conservative"
+    },
+    "Wealdstone North (2)": {
+      "party": "Labour"
+    },
+    "Wealdstone South (2)": {
+      "party": "Labour"
+    },
+    "West Harrow (2)": {
+      "party": "Labour"
+    }
+  },
+  "Havering": {},
+  "Hillingdon": {
+    "Belmore": {
+      "party": "Labour"
+    },
+    "Charville": {
+      "party": "Conservative"
+    },
+    "Colham & Cowley": {
+      "party": "Conservative"
+    },
+    "Eastcote": {
+      "party": "Conservative"
+    },
+    "Harefield Village": {
+      "party": "Conservative"
+    },
+    "Hayes Town": {
+      "party": "Labour"
+    },
+    "Heathrow Villages": {
+      "party": "Labour"
+    },
+    "Hillingdon East": {
+      "party": "Conservative"
+    },
+    "Ickenham & South Harefield": {
+      "party": "Conservative"
+    },
+    "Northwood": {
+      "party": "Conservative"
+    },
+    "Northwood Hills": {
+      "party": "Conservative"
+    },
+    "Pinkwell": {
+      "party": "Labour"
+    },
+    "Ruislip": {
+      "party": "Conservative"
+    },
+    "Ruislip Manor": {
+      "party": "Conservative"
+    },
+    "South Ruislip": {
+      "party": "Conservative"
+    },
+    "Uxbridge": {
+      "party": "Conservative"
+    },
+    "West Drayton": {
+      "party": "Reform"
+    },
+    "Wood End": {
+      "party": "Labour"
+    },
+    "Yeading": {
+      "party": "Labour"
+    },
+    "Yiewsley": {
+      "party": "Reform"
+    }
+  },
+  "Hounslow": {
+    "Bedfont": {
+      "party": "Reform"
+    },
+    "Brentford East": {
+      "party": "Labour"
+    },
+    "Brentford West": {
+      "party": "Green"
+    },
+    "Chiswick Gunnersbury": {
+      "party": "Conservative"
+    },
+    "Chiswick Homefields": {
+      "party": "Conservative"
+    },
+    "Chiswick Riverside": {
+      "party": "Labour"
+    },
+    "Heston East": {
+      "party": "Green"
+    },
+    "Hounslow East": {
+      "party": "Labour"
+    }
+  },
+  "Islington": {
+    "Arsenal": {
+      "party": "Labour"
+    },
+    "Canonbury": {
+      "party": "Labour"
+    },
+    "Clerkenwell": {
+      "party": "Green"
+    },
+    "Finsbury Park": {
+      "party": "Green"
+    },
+    "Highbury": {
+      "party": "Green"
+    },
+    "Mildmay": {
+      "party": "Green"
+    },
+    "Tollington": {
+      "party": "Green"
+    },
+    "Tufnell Park": {
+      "party": "Green"
+    }
+  },
+  "Kensington and Chelsea": {
+    "Abingdon": {
+      "party": "Conservative"
+    },
+    "Brompton & Hans Town": {
+      "party": "Conservative"
+    },
+    "Campden": {
+      "party": "Conservative"
+    },
+    "Chelsea Riverside": {
+      "party": "Conservative"
+    },
+    "Colville": {
+      "party": "Labour"
+    },
+    "Courtfield": {
+      "party": "Conservative"
+    },
+    "Dalgarno": {
+      "party": "Labour"
+    },
+    "Earl's Court": {
+      "party": "LibDem"
+    },
+    "Golborne": {
+      "party": "Labour"
+    },
+    "Holland": {
+      "party": "Conservative"
+    },
+    "Norland": {
+      "party": "Conservative"
+    },
+    "Notting Dale": {
+      "party": "Labour"
+    },
+    "Pembridge": {
+      "party": "Conservative"
+    },
+    "Queen's Gate": {
+      "party": "Conservative"
+    },
+    "Redcliffe": {
+      "party": "Conservative"
+    },
+    "Royal Hospital": {
+      "party": "Conservative"
+    },
+    "St Helen's": {
+      "party": "Labour"
+    },
+    "Stanley": {
+      "party": "Conservative"
+    }
+  },
+  "Kingston upon Thames": {},
+  "Lambeth": {
+    "Brixton Acre Lane": {
+      "party": "Green"
+    },
+    "Brixton North": {
+      "party": "Labour"
+    },
+    "Brixton Rush Common": {
+      "party": "Green"
+    },
+    "Brixton Windrush": {
+      "party": "Green"
+    },
+    "Clapham Common and Abbeville": {
+      "party": "LibDem"
+    },
+    "Clapham East": {
+      "party": "Labour"
+    },
+    "Clapham Park": {
+      "party": "Labour"
+    },
+    "Clapham Town": {
+      "party": "Labour"
+    },
+    "Gipsy Hill": {
+      "party": "Green"
+    },
+    "Herne Hill and Loughborough Junction": {
+      "party": "Green"
+    },
+    "Kennington": {
+      "party": "Labour"
+    },
+    "Knight's Hill": {
+      "party": "Green"
+    },
+    "Myatt's Fields": {
+      "party": "Green"
+    },
+    "Oval": {
+      "party": "Labour"
+    },
+    "St Martin's": {
+      "party": "Green"
+    },
+    "Stockwell East": {
+      "party": "Green"
+    },
+    "Stockwell West and Larkhall": {
+      "party": "Labour"
+    },
+    "Streatham Common and Vale": {
+      "party": "Labour"
+    },
+    "Streatham Hill East": {
+      "party": "Green"
+    },
+    "Streatham Hill West and Thornton": {
+      "party": "LibDem"
+    },
+    "Streatham St Leonard's": {
+      "party": "Green"
+    },
+    "Streatham Wells": {
+      "party": "LibDem"
+    },
+    "Vauxhall": {
+      "party": "Green"
+    },
+    "Waterloo and South Bank": {
+      "party": "Labour"
+    },
+    "West Dulwich": {
+      "party": "Green"
+    }
+  },
+  "Lewisham": {
+    "Bellingham": {
+      "party": "Labour"
+    },
+    "Blackheath": {
+      "party": "Green"
+    },
+    "Brockley": {
+      "party": "Green"
+    },
+    "Catford South": {
+      "party": "Green"
+    },
+    "Crofton Park": {
+      "party": "Green"
+    },
+    "Deptford": {
+      "party": "Green"
+    },
+    "Downham": {
+      "party": "Labour"
+    },
+    "Evelyn": {
+      "party": "Green"
+    },
+    "Forest Hill": {
+      "party": "Green"
+    },
+    "Grove Park": {
+      "party": "Labour"
+    },
+    "Hither Green": {
+      "party": "Labour"
+    },
+    "Ladywell": {
+      "party": "Green"
+    },
+    "Lee Green": {
+      "party": "Labour"
+    },
+    "Lewisham Central": {
+      "party": "Green"
+    },
+    "New Cross Gate": {
+      "party": "Green"
+    },
+    "Perry Vale": {
+      "party": "Green"
+    },
+    "Rushey Green": {
+      "party": "Green"
+    },
+    "Sydenham": {
+      "party": "Green"
+    },
+    "Telegraph Hill": {
+      "party": "Green"
+    }
+  },
+  "Merton": {
+    "Abbey": {
+      "party": "LibDem"
+    },
+    "Cannon Hill": {
+      "party": "LibDem"
+    },
+    "Colliers Wood": {
+      "party": "Labour"
+    },
+    "Cricket Green": {
+      "party": "Labour"
+    },
+    "Figge's Marsh": {
+      "party": "Labour"
+    },
+    "Graveney": {
+      "party": "Labour"
+    },
+    "Hillside": {
+      "party": "LibDem"
+    },
+    "Lavender Fields": {
+      "party": "Labour"
+    },
+    "Longthornton": {
+      "party": "Labour"
+    },
+    "Lower Morden": {
+      "party": "Labour"
+    },
+    "Merton Park": {
+      "party": "Other"
+    },
+    "Pollards Hill": {
+      "party": "Labour"
+    },
+    "Ravensbury": {
+      "party": "Labour"
+    },
+    "Raynes Park": {
+      "party": "LibDem"
+    },
+    "St Helier": {
+      "party": "Labour"
+    },
+    "Village": {
+      "party": "Conservative"
+    },
+    "Wandle": {
+      "party": "Labour"
+    },
+    "West Barnes": {
+      "party": "LibDem"
+    },
+    "Wimbledon Park": {
+      "party": "LibDem"
+    },
+    "Wimbledon Town and Dundonald": {
+      "party": "LibDem"
+    }
+  },
+  "Newham": {
+    "Beckton": {
+      "party": "Labour"
+    },
+    "Boleyn": {
+      "party": "Independent"
+    },
+    "Canning Town North": {
+      "party": "Labour"
+    },
+    "Canning Town South": {
+      "party": "Labour"
+    },
+    "Custom House": {
+      "party": "Labour"
+    },
+    "East Ham": {
+      "party": "Independent"
+    },
+    "East Ham South": {
+      "party": "Labour"
+    },
+    "Forest Gate North": {
+      "party": "Labour"
+    },
+    "Forest Gate South": {
+      "party": "Green"
+    },
+    "Green Street East": {
+      "party": "Labour"
+    },
+    "Green Street West": {
+      "party": "Independent"
+    },
+    "Little Ilford": {
+      "party": "Independent"
+    },
+    "Manor Park": {
+      "party": "Labour"
+    },
+    "Maryland": {
+      "party": "Green"
+    },
+    "Plaistow North": {
+      "party": "Labour"
+    },
+    "Plaistow South": {
+      "party": "Independent"
+    },
+    "Plaistow West and Canning Town East": {
+      "party": "Labour"
+    },
+    "Plashet": {
+      "party": "Independent"
+    },
+    "Royal Albert": {
+      "party": "Labour"
+    },
+    "Royal Victoria": {
+      "party": "Green"
+    },
+    "Stratford": {
+      "party": "Green"
+    },
+    "Stratford Olympic Park": {
+      "party": "Green"
+    },
+    "Wall End": {
+      "party": "Independent"
+    },
+    "West Ham": {
+      "party": "Labour"
+    }
+  },
+  "Redbridge": {
+    "Aldborough": {
+      "party": "Labour"
+    },
+    "Barkingside": {
+      "party": "Labour"
+    },
+    "Bridge": {
+      "party": "Conservative"
+    },
+    "Chadwell": {
+      "party": "Labour"
+    },
+    "Churchfields": {
+      "party": "Labour"
+    },
+    "Clayhall": {
+      "party": "Labour"
+    },
+    "Clementswood": {
+      "party": "Labour"
+    },
+    "Cranbrook": {
+      "party": "Independent"
+    },
+    "Fairlop": {
+      "party": "Labour"
+    },
+    "Fullwell": {
+      "party": "Labour"
+    },
+    "Goodmayes": {
+      "party": "Labour"
+    },
+    "Hainault": {
+      "party": "Labour"
+    },
+    "Ilford Town": {
+      "party": "Labour"
+    },
+    "Loxford": {
+      "party": "Labour"
+    },
+    "Mayfield": {
+      "party": "Labour"
+    },
+    "Monkhams": {
+      "party": "Conservative"
+    },
+    "Newbury": {
+      "party": "Labour"
+    },
+    "Seven Kings": {
+      "party": "Independent"
+    },
+    "South Woodford": {
+      "party": "Labour"
+    },
+    "Valentines": {
+      "party": "Independent"
+    },
+    "Wanstead Park": {
+      "party": "Labour"
+    },
+    "Wanstead Village": {
+      "party": "Labour"
+    }
+  },
+  "Richmond upon Thames": {
+    "Barnes": {
+      "party": "LibDem"
+    },
+    "East Sheen": {
+      "party": "LibDem"
+    },
+    "Fulwell and Hampton Hill": {
+      "party": "LibDem"
+    },
+    "Ham, Petersham and Richmond Riverside": {
+      "party": "LibDem"
+    },
+    "Hampton": {
+      "party": "LibDem"
+    },
+    "Hampton North": {
+      "party": "LibDem"
+    },
+    "Hampton Wick and South Teddington": {
+      "party": "LibDem"
+    },
+    "Heathfield": {
+      "party": "LibDem"
+    },
+    "Kew": {
+      "party": "LibDem"
+    },
+    "Mortlake and Barnes Common": {
+      "party": "LibDem"
+    },
+    "North Richmond": {
+      "party": "LibDem"
+    },
+    "South Richmond": {
+      "party": "LibDem"
+    },
+    "South Twickenham": {
+      "party": "LibDem"
+    },
+    "St Margarets and North Twickenham": {
+      "party": "LibDem"
+    },
+    "Teddington": {
+      "party": "LibDem"
+    },
+    "Twickenham Riverside": {
+      "party": "LibDem"
+    },
+    "West Twickenham": {
+      "party": "LibDem"
+    },
+    "Whitton": {
+      "party": "LibDem"
+    }
+  },
+  "Southwark": {
+    "Borough and Bankside": {
+      "party": "LibDem"
+    },
+    "Camberwell Green": {
+      "party": "Labour"
+    },
+    "Champion Hill": {
+      "party": "Labour"
+    },
+    "Chaucer": {
+      "party": "Green"
+    },
+    "Dulwich Hill": {
+      "party": "Labour"
+    },
+    "Dulwich Village": {
+      "party": "Labour"
+    },
+    "Dulwich Wood": {
+      "party": "Labour"
+    },
+    "Faraday": {
+      "party": "Labour"
+    },
+    "Goose Green": {
+      "party": "Green"
+    },
+    "London Bridge & West Bermondsey": {
+      "party": "Labour"
+    },
+    "Newington": {
+      "party": "Labour"
+    },
+    "North Bermondsey": {
+      "party": "LibDem"
+    },
+    "North Walworth": {
+      "party": "Green"
+    },
+    "Nunhead & Queen's Road": {
+      "party": "Green"
+    },
+    "Old Kent Road": {
+      "party": "Labour"
+    },
+    "Peckham": {
+      "party": "Green"
+    },
+    "Peckham Rye": {
+      "party": "Labour"
+    },
+    "Rotherhithe": {
+      "party": "Green"
+    },
+    "Rye Lane": {
+      "party": "Labour"
+    },
+    "South Bermondsey": {
+      "party": "Labour"
+    },
+    "St George's": {
+      "party": "LibDem"
+    },
+    "St Giles": {
+      "party": "Green"
+    },
+    "Surrey Docks": {
+      "party": "LibDem"
+    }
+  },
+  "Sutton": {
+    "Beddington": {
+      "party": "Independent"
+    },
+    "Belmont": {
+      "party": "LibDem"
+    },
+    "Carshalton Central": {
+      "party": "LibDem"
+    },
+    "Carshalton South & Clockhouse": {
+      "party": "LibDem"
+    },
+    "Cheam": {
+      "party": "LibDem"
+    },
+    "Hackbridge": {
+      "party": "LibDem"
+    },
+    "North Cheam": {
+      "party": "LibDem"
+    },
+    "South Beddington & Roundshaw": {
+      "party": "LibDem"
+    },
+    "St Helier East": {
+      "party": "LibDem"
+    },
+    "St Helier West": {
+      "party": "Reform"
+    },
+    "Stonecot": {
+      "party": "LibDem"
+    },
+    "Sutton Central": {
+      "party": "LibDem"
+    },
+    "Sutton North": {
+      "party": "LibDem"
+    },
+    "Sutton South": {
+      "party": "LibDem"
+    },
+    "Sutton West & East Cheam": {
+      "party": "LibDem"
+    },
+    "The Wrythe": {
+      "party": "LibDem"
+    },
+    "Wallington North": {
+      "party": "LibDem"
+    },
+    "Wallington South": {
+      "party": "LibDem"
+    },
+    "Worcester Park North": {
+      "party": "LibDem"
+    },
+    "Worcester Park South": {
+      "party": "LibDem"
+    }
+  },
+  "Tower Hamlets": {
+    "Bethnal Green East": {
+      "party": "Other"
+    },
+    "Bethnal Green West": {
+      "party": "Other"
+    },
+    "Blackwall & Cubitt Town": {
+      "party": "Other"
+    },
+    "Bow East": {
+      "party": "Green"
+    },
+    "Bow West": {
+      "party": "Green"
+    },
+    "Bromley North": {
+      "party": "Other"
+    },
+    "Bromley South": {
+      "party": "Labour"
+    },
+    "Canary Wharf": {
+      "party": "Other"
+    },
+    "Island Gardens": {
+      "party": "Conservative"
+    },
+    "Lansbury": {
+      "party": "Other"
+    },
+    "Limehouse": {
+      "party": "Labour"
+    },
+    "Mile End": {
+      "party": "Other"
+    },
+    "Poplar": {
+      "party": "Other"
+    },
+    "Shadwell": {
+      "party": "Other"
+    },
+    "Spitalfields & Banglatown": {
+      "party": "Other"
+    },
+    "St Dunstan's": {
+      "party": "Other"
+    },
+    "St Katharine's & Wapping": {
+      "party": "Labour"
+    },
+    "Stepney Green": {
+      "party": "Other"
+    },
+    "Weavers": {
+      "party": "Other"
+    },
+    "Whitechapel": {
+      "party": "Other"
+    }
+  },
+  "Waltham Forest": {
+    "Cann Hall": {
+      "party": "Green"
+    },
+    "Cathall": {
+      "party": "Green"
+    },
+    "Chapel End": {
+      "party": "Green"
+    },
+    "Chingford Green": {
+      "party": "Conservative"
+    },
+    "Endlebury": {
+      "party": "Conservative"
+    },
+    "Forest": {
+      "party": "Green"
+    },
+    "Grove Green": {
+      "party": "Green"
+    },
+    "Hale End & Highams Park South": {
+      "party": "Labour"
+    },
+    "Hatch Lane & Highams Park North": {
+      "party": "Conservative"
+    },
+    "High Street": {
+      "party": "Green"
+    },
+    "Higham Hill": {
+      "party": "Green"
+    },
+    "Hoe Street": {
+      "party": "Labour"
+    },
+    "Larkswood": {
+      "party": "Conservative"
+    },
+    "Lea Bridge": {
+      "party": "Green"
+    },
+    "Leyton": {
+      "party": "Green"
+    },
+    "Leytonstone": {
+      "party": "Labour"
+    },
+    "Markhouse": {
+      "party": "Labour"
+    },
+    "St James": {
+      "party": "Green"
+    },
+    "Upper Walthamstow": {
+      "party": "Labour"
+    },
+    "Valley": {
+      "party": "Conservative"
+    },
+    "William Morris": {
+      "party": "Labour"
+    },
+    "Wood Street": {
+      "party": "Labour"
+    }
+  },
+  "Wandsworth": {
+    "Balham": {
+      "party": "Conservative"
+    },
+    "Battersea Park": {
+      "party": "Labour"
+    },
+    "East Putney": {
+      "party": "Conservative"
+    },
+    "Falconbrook": {
+      "party": "Labour"
+    },
+    "Furzedown": {
+      "party": "Labour"
+    },
+    "Lavender": {
+      "party": "Conservative"
+    },
+    "Nine Elms": {
+      "party": "Conservative"
+    },
+    "Northcote": {
+      "party": "Conservative"
+    },
+    "Roehampton": {
+      "party": "Labour"
+    },
+    "Shaftesbury and Queenstown": {
+      "party": "Labour"
+    },
+    "South Balham": {
+      "party": "Labour"
+    },
+    "Southfields": {
+      "party": "Conservative"
+    },
+    "St Mary's": {
+      "party": "Conservative"
+    },
+    "Thamesfield": {
+      "party": "Conservative"
+    },
+    "Tooting Bec": {
+      "party": "Labour"
+    },
+    "Tooting Broadway": {
+      "party": "Labour"
+    },
+    "Trinity": {
+      "party": "Conservative"
+    },
+    "Wandle": {
+      "party": "Conservative"
+    },
+    "Wandsworth Common": {
+      "party": "Conservative"
+    },
+    "Wandsworth Town": {
+      "party": "Labour"
+    },
+    "West Hill": {
+      "party": "Independent"
+    },
+    "West Putney": {
+      "party": "Conservative"
+    }
+  },
+  "Westminster": {
+    "Abbey Road": {
+      "party": "Conservative"
+    },
+    "Bayswater": {
+      "party": "Conservative"
+    },
+    "Church Street": {
+      "party": "Labour"
+    },
+    "Harrow Road": {
+      "party": "Labour"
+    },
+    "Hyde Park": {
+      "party": "Conservative"
+    },
+    "Knightsbridge and Belgravia": {
+      "party": "Conservative"
+    },
+    "Lancaster Gate": {
+      "party": "Labour"
+    },
+    "Little Venice": {
+      "party": "Conservative"
+    },
+    "Maida Vale": {
+      "party": "Labour"
+    },
+    "Marylebone": {
+      "party": "Conservative"
+    },
+    "Pimlico North": {
+      "party": "Conservative"
+    },
+    "Pimlico South": {
+      "party": "Labour"
+    },
+    "Queen's Park": {
+      "party": "Labour"
+    },
+    "Regent's Park": {
+      "party": "Conservative"
+    },
+    "St James's": {
+      "party": "Conservative"
+    },
+    "Vincent Square": {
+      "party": "Conservative"
+    },
+    "West End": {
+      "party": "Conservative"
+    },
+    "Westbourne": {
+      "party": "Labour"
+    }
+  }
+}
