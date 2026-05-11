@@ -38,28 +38,59 @@ body {
   .masthead .kicker, .masthead .date { font-size: 11px; letter-spacing: 0.18em; }
 }
 
-/* PAGE NAV (between Winners / Changes) */
+/* PAGE NAV — tab strip, sticky on scroll */
 .pagenav {
-  display: flex; gap: 10px; align-items: baseline;
+  position: sticky; top: 0; z-index: 5;
+  display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px; letter-spacing: 0.10em; text-transform: uppercase;
-  padding: 8px 0 0;
-  border-bottom: 1px solid var(--hairline);
+  padding: 8px 0;
+  background: var(--bg);
+  box-shadow: 0 1px 0 var(--hairline);
   margin-bottom: 4px;
 }
-.pagenav a {
-  color: var(--muted); text-decoration: none;
-  padding-bottom: 6px;
-  border-bottom: 2px solid transparent;
-}
-.pagenav a:hover { color: var(--ink); border-bottom-color: var(--hairline); }
+.pagenav a,
 .pagenav .here {
-  color: var(--ink); font-weight: 700;
-  border-bottom: 2px solid var(--ink);
-  padding-bottom: 6px;
+  display: inline-flex; align-items: center;
+  padding: 10px 14px;
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  text-decoration: none;
+  line-height: 1;
 }
-.pagenav .sep { color: var(--hairline); }
-@media (min-width: 720px) { .pagenav { font-size: 11px; letter-spacing: 0.14em; } }
+.pagenav a {
+  color: var(--ink);
+  background: var(--paper);
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.pagenav a:hover { background: #fff; border-color: var(--ink); }
+.pagenav a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.pagenav .here {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+  font-weight: 700;
+}
+.pagenav .sep { display: none; }
+@media (min-width: 720px) {
+  .pagenav { font-size: 11px; letter-spacing: 0.14em; gap: 8px; }
+}
+
+/* SKIP LINK — hidden until focused */
+.skip-link {
+  position: absolute;
+  top: 8px; left: 8px;
+  padding: 10px 14px;
+  background: var(--ink); color: var(--paper);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transform: translateY(-200%);
+  transition: transform 120ms ease;
+  z-index: 100;
+}
+.skip-link:focus { transform: translateY(0); outline: 2px solid var(--paper); outline-offset: 2px; }
 
 /* HERO */
 .headline {
