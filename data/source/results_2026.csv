@@ -1,0 +1,215 @@
+lad_code,borough,ward,party,share,turnout
+E08000001,Bolton,Astley Bridge,Reform,33.5,
+E08000001,Bolton,Bradshaw,Conservative,36.7,
+E08000001,Bolton,Breightmet,Reform,47.4,
+E08000001,Bolton,Bromley Cross,Conservative,36.5,
+E08000001,Bolton,Farnworth North,Labour,28.4,
+E08000001,Bolton,Farnworth South,Reform,39.7,
+E08000001,Bolton,Great Lever,Labour,44.0,
+E08000001,Bolton,Halliwell,Green,42.4,
+E08000001,Bolton,"Heaton, Lostock & Chew Moor",Conservative,37.2,
+E08000001,Bolton,Horwich North,Independent,43.1,
+E08000001,Bolton,Horwich South & Blackrod,Independent,41.0,
+E08000001,Bolton,Hulton,Reform,43.4,
+E08000001,Bolton,Kearsley,Reform,45.0,
+E08000001,Bolton,Little Lever & Darcy Lever,Reform,50.7,
+E08000001,Bolton,Queens Park & Central,Green,36.4,
+E08000001,Bolton,Rumworth,Green,47.3,
+E08000001,Bolton,Smithills,LibDem,39.9,
+E08000001,Bolton,Tonge with the Haulgh,Reform,47.2,
+E08000001,Bolton,Westhoughton North & Hunger Hill,Reform,38.7,
+E08000001,Bolton,Westhoughton South,Reform,39.7,
+E08000002,Bury,Besses,Labour,36.7,
+E08000002,Bury,Bury East,Labour,32.4,
+E08000002,Bury,Bury West,Reform,35.0,
+E08000002,Bury,Elton,Reform,41.5,
+E08000002,Bury,Holyrood,Labour,36.7,
+E08000002,Bury,North Manor,Labour,35.0,
+E08000002,Bury,Pilkington Park,Reform,35.0,
+E08000002,Bury,Radcliffe East,Independent,47.6,
+E08000002,Bury,Radcliffe North & Ainsworth,Reform,33.4,
+E08000002,Bury,Radcliffe West,Independent,38.0,
+E08000002,Bury,Ramsbottom,Labour,36.4,
+E08000002,Bury,Redvales,Other,30.2,
+E08000002,Bury,Sedgley,Labour,32.4,
+E08000002,Bury,St Mary's,Labour,45.5,
+E08000002,Bury,Tottington,Independent,51.1,
+E08000002,Bury,Unsworth,Reform,33.6,
+E08000003,Manchester,Ancoats & Beswick,Green,,
+E08000003,Manchester,Ardwick,Green,,
+E08000003,Manchester,Baguley,Reform,,
+E08000003,Manchester,Brooklands,Reform,,
+E08000003,Manchester,Burnage,Green,,
+E08000003,Manchester,Charlestown,Reform,,
+E08000003,Manchester,Cheetham,Labour,,
+E08000003,Manchester,Chorlton,Green,,
+E08000003,Manchester,Chorlton Park,Green,,
+E08000003,Manchester,Clayton & Openshaw,Labour,,
+E08000003,Manchester,Crumpsall,Labour,,
+E08000003,Manchester,Deansgate,Green,,
+E08000003,Manchester,Didsbury East,Labour,,
+E08000003,Manchester,Didsbury West,LibDem,,
+E08000003,Manchester,Fallowfield,Green,,
+E08000003,Manchester,Gorton & Abbey Hey,Green,,
+E08000003,Manchester,Harpurhey,Labour,,
+E08000003,Manchester,Higher Blackley,Reform,,
+E08000003,Manchester,Hulme,Green,,
+E08000003,Manchester,Levenshulme,Green,,
+E08000003,Manchester,Longsight,Green,,
+E08000003,Manchester,Miles Platting & Newton Heath,Pending,,
+E08000003,Manchester,Moss Side,Green,,
+E08000003,Manchester,Moston,Reform,,
+E08000003,Manchester,Northenden,Labour,,
+E08000003,Manchester,Old Moat,Green,,
+E08000003,Manchester,Piccadilly,Green,,
+E08000003,Manchester,Rusholme,Green,,
+E08000003,Manchester,Sharston,Reform,,
+E08000003,Manchester,Whalley Range,Green,,
+E08000003,Manchester,Withington,Green,,
+E08000003,Manchester,Woodhouse Park,Green,,
+E08000004,Oldham,Alexandra,Other,42.4,45.01
+E08000004,Oldham,Chadderton Central,Labour,32.8,44.72
+E08000004,Oldham,Chadderton North,Reform,53.5,47.27
+E08000004,Oldham,Chadderton South,Reform,47.7,41.8
+E08000004,Oldham,Coldhurst,Independent,45.1,45.92
+E08000004,Oldham,Crompton,Reform,47.6,47.76
+E08000004,Oldham,Failsworth East,Reform,58.6,44.16
+E08000004,Oldham,Failsworth West,Reform,56.1,42.61
+E08000004,Oldham,Hollinwood,Reform,39.7,41.8
+E08000004,Oldham,Medlock Vale,Labour,36.6,40.47
+E08000004,Oldham,Royton North,Reform,58.3,50.14
+E08000004,Oldham,Royton South,Reform,56.0,44.8
+E08000004,Oldham,Saddleworth North,Reform,41.8,54.48
+E08000004,Oldham,Saddleworth South,LibDem,33.4,54.77
+E08000004,Oldham,Saddleworth West & Lees,Reform,42.2,49.43
+E08000004,Oldham,Shaw,Reform,47.0,47.11
+E08000004,Oldham,St James',Reform,60.6,39.51
+E08000004,Oldham,St Mary's,Other,50.4,51.84
+E08000004,Oldham,Waterhead,Reform,44.0,46.09
+E08000004,Oldham,Werneth,Labour,36.0,51.28
+E08000005,Rochdale,Balderstone & Kirkholt,Reform,44.8,33.46
+E08000005,Rochdale,Bamford,Conservative,36.7,43.37
+E08000005,Rochdale,Castleton,Reform,50.0,37.51
+E08000005,Rochdale,Central Rochdale,Other,47.1,43.91
+E08000005,Rochdale,East Middleton,Labour,36.2,38.45
+E08000005,Rochdale,Healey,Reform,38.5,43.29
+E08000005,Rochdale,Hopwood Hall,Reform,47.2,36.09
+E08000005,Rochdale,Kingsway,Labour,32.7,40.63
+E08000005,Rochdale,Littleborough Lakeside,Reform,41.4,46.18
+E08000005,Rochdale,Milkstone & Deeplish,Other,49.1,40.2
+E08000005,Rochdale,Milnrow & Newhey,Reform,39.0,42.08
+E08000005,Rochdale,Norden,Conservative,40.6,48.48
+E08000005,Rochdale,North Heywood,Reform,54.7,31.6
+E08000005,Rochdale,North Middleton,Reform,45.7,34.77
+E08000005,Rochdale,Smallbridge & Firgrove,LibDem,30.6,35.44
+E08000005,Rochdale,South Middleton,Reform,45.0,42.86
+E08000005,Rochdale,Spotland & Falinge,Reform,31.1,39.15
+E08000005,Rochdale,"Wardle, Shore & West Littleborough",Reform,39.7,43.87
+E08000005,Rochdale,West Heywood,Reform,49.3,33.94
+E08000005,Rochdale,West Middleton,Reform,36.6,30.08
+E08000006,Salford,Barton & Winton,Labour,,
+E08000006,Salford,Blackfriars & Trinity,Green,,
+E08000006,Salford,Boothstown & Ellenbrook,Conservative,,
+E08000006,Salford,Broughton,Labour,,
+E08000006,Salford,Cadishead & Lower Irlam,Reform,,
+E08000006,Salford,Claremont,Reform,,
+E08000006,Salford,Eccles,Labour,,
+E08000006,Salford,Higher Irlam & Peel Green,Reform,,
+E08000006,Salford,Kersal & Broughton Park,Independent,,
+E08000006,Salford,Little Hulton,Reform,,
+E08000006,Salford,Ordsall,Green,,
+E08000006,Salford,Pendlebury & Clifton,Reform,,
+E08000006,Salford,Pendleton & Charlestown,Reform,,
+E08000006,Salford,Quays,Green,,
+E08000006,Salford,Swinton & Wardley,Reform,,
+E08000006,Salford,Swinton Park,Reform,,
+E08000006,Salford,Walkden North,Reform,,
+E08000006,Salford,Walkden South,Reform,,
+E08000006,Salford,Weaste & Seedley,Reform,,
+E08000006,Salford,Worsley & Westwood Park,Reform,,
+E08000007,Stockport,Bramhall North,LibDem,,
+E08000007,Stockport,Bramhall South & Woodford,LibDem,,
+E08000007,Stockport,Bredbury & Woodley,LibDem,,
+E08000007,Stockport,Bredbury Green & Romiley,LibDem,,
+E08000007,Stockport,Brinnington & Stockport Central,Reform,,
+E08000007,Stockport,Cheadle East & Cheadle Hulme North,LibDem,,
+E08000007,Stockport,Cheadle Hulme South,LibDem,,
+E08000007,Stockport,Cheadle West & Gatley,LibDem,,
+E08000007,Stockport,Davenport & Cale Green,LibDem,,
+E08000007,Stockport,Edgeley,Other,,
+E08000007,Stockport,Hazel Grove,LibDem,,
+E08000007,Stockport,Heald Green,Independent,,
+E08000007,Stockport,Heatons North,Labour,,
+E08000007,Stockport,Heatons South,Labour,,
+E08000007,Stockport,Manor,Reform,,
+E08000007,Stockport,Marple North,LibDem,,
+E08000007,Stockport,Marple South & High Lane,LibDem,,
+E08000007,Stockport,Norbury & Woodsmoor,LibDem,,
+E08000007,Stockport,Offerton,LibDem,,
+E08000007,Stockport,Reddish North,Green,,
+E08000007,Stockport,Reddish South,Green,,
+E08000008,Tameside,Ashton Hurst,Reform,41.8,43.05
+E08000008,Tameside,Ashton St Michael's,Reform,36.5,37.16
+E08000008,Tameside,Ashton Waterloo,Reform,39.3,44.49
+E08000008,Tameside,Audenshaw,Reform,42.6,44.16
+E08000008,Tameside,Denton North East,Reform,50.3,37.49
+E08000008,Tameside,Denton South,Reform,53.6,37.41
+E08000008,Tameside,Denton West,Reform,49.6,43.43
+E08000008,Tameside,Droylsden East,Reform,50.1,39.57
+E08000008,Tameside,Droylsden West,Reform,45.3,
+E08000008,Tameside,Dukinfield,Reform,48.9,35.14
+E08000008,Tameside,Dukinfield/Stalybridge,Reform,49.6,
+E08000008,Tameside,Hyde Godley,Reform,36.8,42.0
+E08000008,Tameside,Hyde Newton,Reform,47.5,35.6
+E08000008,Tameside,Hyde Werneth,Reform,28.4,45.2
+E08000008,Tameside,Longdendale,Reform,47.0,35.3
+E08000008,Tameside,Mossley,Reform,33.3,46.8
+E08000008,Tameside,St Peter's,Labour,38.7,38.3
+E08000008,Tameside,Stalybridge North,Reform,47.7,38.9
+E08000008,Tameside,Stalybridge South,Reform,35.0,43.2
+E08000009,Trafford,Altrincham,Green,44.7,48.64
+E08000009,Trafford,Ashton upon Mersey,Labour,34.4,55.44
+E08000009,Trafford,Bowdon,Conservative,54.6,56.29
+E08000009,Trafford,Broadheath,Conservative,35.7,53.73
+E08000009,Trafford,Brooklands,Labour,32.2,56.6
+E08000009,Trafford,Bucklow-St Martins,Reform,44.0,34.67
+E08000009,Trafford,Davyhulme,Reform,30.1,48.64
+E08000009,Trafford,Flixton,Labour,29.6,51.59
+E08000009,Trafford,Gorse Hill and Cornbrook,Green,44.6,35.49
+E08000009,Trafford,Hale,Conservative,45.6,54.2
+E08000009,Trafford,Hale Barns and Timperley South,Conservative,51.9,54.19
+E08000009,Trafford,Longford,Green,47.0,44.89
+E08000009,Trafford,Lostock and Barton,Labour,31.0,42.17
+E08000009,Trafford,Manor,Conservative,47.0,50.55
+E08000009,Trafford,Old Trafford,Green,52.9,42.19
+E08000009,Trafford,Sale Central,Labour,36.4,50.12
+E08000009,Trafford,Sale Moor,Labour,36.9,47.92
+E08000009,Trafford,Stretford and Humphrey Park,Labour,32.3,48.13
+E08000009,Trafford,Timperley Central,LibDem,38.9,50.25
+E08000009,Trafford,Timperley North,LibDem,48.6,53.4
+E08000009,Trafford,Urmston,Labour,36.3,49.59
+E08000010,Wigan,Abram,Reform,,
+E08000010,Wigan,Ashton-in-Makerfield South,Reform,,
+E08000010,Wigan,"Aspull, New Springs & Whelley",Reform,,
+E08000010,Wigan,Astley,Reform,,
+E08000010,Wigan,Atherton North,Independent,,
+E08000010,Wigan,Atherton South & Lilford,Reform,,
+E08000010,Wigan,Bryn with Ashton-in-Makerfield North,Reform,,
+E08000010,Wigan,Douglas,Reform,,
+E08000010,Wigan,Golborne & Lowton West,Reform,,
+E08000010,Wigan,Hindley,Reform,,
+E08000010,Wigan,Hindley Green,Reform,,
+E08000010,Wigan,Ince,Reform,,
+E08000010,Wigan,Leigh Central & Higher Folds,Reform,,
+E08000010,Wigan,Leigh South,Reform,,
+E08000010,Wigan,Leigh West,Reform,,
+E08000010,Wigan,Lowton East,Reform,,
+E08000010,Wigan,Orrell,Reform,,
+E08000010,Wigan,Pemberton,Reform,,
+E08000010,Wigan,Shevington with Lower Ground & Moor,Reform,,
+E08000010,Wigan,Standish with Langtree,Reform,,
+E08000010,Wigan,Tyldesley & Mosley Common,Reform,,
+E08000010,Wigan,Wigan Central,Reform,,
+E08000010,Wigan,Wigan West,Reform,37.15,
+E08000010,Wigan,Winstanley,Reform,,
+E08000010,Wigan,Worsley Mesnes,Reform,,

@@ -22,7 +22,9 @@ Thumbs.db
 # Source data — large public ONS files, see data/source/README.md
 data/source/*.xlsx
 data/source/*.xls
-data/source/*.csv
+
+# Raw cached ward boundary GeoJSON from scripts/09 (~50 MB GB-wide)
+data/source/wd_may_2024_uk_bgc_*.geojson
 
 
 # Build artifacts

@@ -1,0 +1,296 @@
+{
+  "East Sussex": {
+    "Eastbourne": {
+      "party": "LibDem",
+      "seats_won": 7,
+      "total_seats": 9,
+      "year": 2026
+    },
+    "Hastings": {
+      "party": "Green",
+      "seats_won": 6,
+      "total_seats": 8,
+      "year": 2026
+    },
+    "Lewes": {
+      "party": "LibDem",
+      "seats_won": 4,
+      "total_seats": 9,
+      "year": 2026
+    },
+    "Rother": {
+      "party": "Reform",
+      "seats_won": 7,
+      "total_seats": 9,
+      "year": 2026
+    },
+    "Wealden": {
+      "party": "Reform",
+      "seats_won": 10,
+      "total_seats": 15,
+      "year": 2026
+    }
+  },
+  "Essex": {
+    "Basildon": {
+      "party": "Reform",
+      "seats_won": 6,
+      "total_seats": 9,
+      "year": 2026
+    },
+    "Braintree": {
+      "party": "Reform",
+      "seats_won": 6,
+      "total_seats": 8,
+      "year": 2026
+    },
+    "Brentwood": {
+      "party": "Reform",
+      "seats_won": 4,
+      "total_seats": 4,
+      "year": 2026
+    },
+    "Castle Point": {
+      "party": "Reform",
+      "seats_won": 4,
+      "total_seats": 5,
+      "year": 2026
+    },
+    "Chelmsford": {
+      "party": "Reform",
+      "seats_won": 4,
+      "total_seats": 9,
+      "year": 2026
+    },
+    "Colchester": {
+      "party": "Reform",
+      "seats_won": 4,
+      "total_seats": 9,
+      "year": 2026
+    },
+    "Epping Forest": {
+      "party": "Reform",
+      "seats_won": 6,
+      "total_seats": 7,
+      "year": 2026
+    },
+    "Harlow": {
+      "party": "Conservative",
+      "seats_won": 5,
+      "total_seats": 5,
+      "year": 2026
+    },
+    "Maldon": {
+      "party": "Reform",
+      "seats_won": 3,
+      "total_seats": 4,
+      "year": 2026
+    },
+    "Rochford": {
+      "party": "Reform",
+      "seats_won": 5,
+      "total_seats": 5,
+      "year": 2026
+    },
+    "Tendring": {
+      "party": "Reform",
+      "seats_won": 8,
+      "total_seats": 8,
+      "year": 2026
+    },
+    "Uttlesford": {
+      "party": "Reform",
+      "seats_won": 3,
+      "total_seats": 5,
+      "year": 2026
+    }
+  },
+  "Hampshire": {
+    "Basingstoke and Deane": {
+      "party": "Conservative",
+      "seats_won": 4,
+      "total_seats": 10,
+      "year": 2026
+    },
+    "East Hampshire": {
+      "party": "Conservative",
+      "seats_won": 4,
+      "total_seats": 7,
+      "year": 2026
+    },
+    "Eastleigh": {
+      "party": "LibDem",
+      "seats_won": 6,
+      "total_seats": 8,
+      "year": 2026
+    },
+    "Fareham": {
+      "party": "Conservative",
+      "seats_won": 4,
+      "total_seats": 6,
+      "year": 2026
+    },
+    "Gosport": {
+      "party": "Conservative",
+      "seats_won": 2,
+      "total_seats": 4,
+      "year": 2026
+    },
+    "Hart": {
+      "party": "Conservative",
+      "seats_won": 2,
+      "total_seats": 5,
+      "year": 2026
+    },
+    "Havant": {
+      "party": "Reform",
+      "seats_won": 6,
+      "total_seats": 7,
+      "year": 2026
+    },
+    "New Forest": {
+      "party": "LibDem",
+      "seats_won": 4,
+      "total_seats": 10,
+      "year": 2026
+    },
+    "Rushmoor": {
+      "party": "Reform",
+      "seats_won": 4,
+      "total_seats": 5,
+      "year": 2026
+    },
+    "Test Valley": {
+      "party": "Conservative",
+      "seats_won": 5,
+      "total_seats": 7,
+      "year": 2026
+    },
+    "Winchester": {
+      "party": "LibDem",
+      "seats_won": 7,
+      "total_seats": 7,
+      "year": 2026
+    }
+  },
+  "Norfolk": {
+    "Breckland": {
+      "party": "Reform",
+      "seats_won": 11,
+      "total_seats": 12,
+      "year": 2026
+    },
+    "Broadland": {
+      "party": "Reform",
+      "seats_won": 7,
+      "total_seats": 13,
+      "year": 2026
+    },
+    "Great Yarmouth": {
+      "party": "Other",
+      "seats_won": 9,
+      "total_seats": 9,
+      "year": 2026
+    },
+    "King's Lynn & West Norfolk": {
+      "party": "Conservative",
+      "seats_won": 14,
+      "total_seats": 14,
+      "year": 2026
+    },
+    "North Norfolk": {
+      "party": "Conservative",
+      "seats_won": 10,
+      "total_seats": 10,
+      "year": 2026
+    },
+    "Norwich": {
+      "party": "Conservative",
+      "seats_won": 13,
+      "total_seats": 13,
+      "year": 2026
+    },
+    "South Norfolk": {
+      "party": "Conservative",
+      "seats_won": 13,
+      "total_seats": 13,
+      "year": 2026
+    }
+  },
+  "Suffolk": {
+    "Babergh": {
+      "party": "LibDem",
+      "seats_won": 4,
+      "total_seats": 9,
+      "year": 2026
+    },
+    "East Suffolk": {
+      "party": "Conservative",
+      "seats_won": 10,
+      "total_seats": 23,
+      "year": 2026
+    },
+    "Ipswich": {
+      "party": "Labour",
+      "seats_won": 6,
+      "total_seats": 12,
+      "year": 2026
+    },
+    "Mid Suffolk": {
+      "party": "Conservative",
+      "seats_won": 2,
+      "total_seats": 10,
+      "year": 2026
+    },
+    "West Suffolk": {
+      "party": "Reform",
+      "seats_won": 6,
+      "total_seats": 15,
+      "year": 2026
+    }
+  },
+  "West Sussex": {
+    "Adur": {
+      "party": "Labour",
+      "seats_won": 2,
+      "total_seats": 5,
+      "year": 2026
+    },
+    "Arun": {
+      "party": "Reform",
+      "seats_won": 9,
+      "total_seats": 13,
+      "year": 2026
+    },
+    "Chichester": {
+      "party": "LibDem",
+      "seats_won": 7,
+      "total_seats": 10,
+      "year": 2026
+    },
+    "Crawley": {
+      "party": "Reform",
+      "seats_won": 8,
+      "total_seats": 9,
+      "year": 2026
+    },
+    "Horsham": {
+      "party": "LibDem",
+      "seats_won": 8,
+      "total_seats": 12,
+      "year": 2026
+    },
+    "Mid Sussex": {
+      "party": "LibDem",
+      "seats_won": 8,
+      "total_seats": 12,
+      "year": 2026
+    },
+    "Worthing": {
+      "party": "Green",
+      "seats_won": 4,
+      "total_seats": 9,
+      "year": 2026
+    }
+  }
+}

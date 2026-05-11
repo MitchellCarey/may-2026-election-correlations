@@ -3,7 +3,7 @@
 Mirror of scripts/07_build_artifact.py for the Changes page. Reads:
 
   - data/v1_changes_ward_data.json  (compact ward array, from 06b)
-  - data/gm_flip_correlations.json  (party × Census Pearson r, from 05b)
+  - data/flip_correlations.json  (party × Census Pearson r, from 05b)
 
 …and rewrites the block between the BEGIN/END markers in docs/changes.html
 in place.
@@ -12,9 +12,18 @@ Reuses 07's correlation-matrix and per-party-card renderers verbatim — same
 {var: {party: r}} shape, same .corr-frame / .pcorr-card CSS — and adds a new
 borough-grouped flipped-wards appendix as §3.
 """
+import argparse
 import json
 import re
 from pathlib import Path
+
+from _artifact_lib import (
+    corr_labels_js_unquoted_keys,
+    party_colours_text_js,
+    party_display_text_js,
+    party_short_js,
+)
+from _councils import lad_codes_for
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -25,12 +34,23 @@ END = "// ===== END GENERATED ====="
 
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
+    ap.add_argument('--region', default='gm', choices=['gm', 'gb'])
+    args = ap.parse_args()
+    region = args.region
+    region_lad_codes = lad_codes_for(region)
+    html_path = DOCS / 'changes.html' if region == 'gm' else DOCS / 'uk' / 'changes.html'
+
     with open(DATA / 'v1_changes_ward_data.json') as f:
         wards = json.load(f)
-    with open(DATA / 'gm_flip_correlations.json') as f:
+    with open(DATA / 'flip_correlations.json') as f:
         corr_full = json.load(f)
-    with open(DATA / 'gm_before_after.json') as f:
+    with open(DATA / 'before_after.json') as f:
         before_after = json.load(f)
+
+    wards = [w for w in wards if w.get('lad_code') in region_lad_codes]
+    corr_full = corr_full['regions'][region]
+    before_after = before_after['regions'][region]
 
     # Compact RAW: keyed by "Borough::Ward"
     raw = {}
@@ -67,6 +87,18 @@ def main():
         key=lambda p: -corr_full['correlations'][p]['n_flipped'],
     )
 
+    # Borough order for the §4 flipped-wards appendix. GM gets a hand-curated
+    # order; other regions sort by ward count descending.
+    GM_BOROUGH_ORDER = ['Manchester', 'Salford', 'Bolton', 'Bury', 'Oldham',
+                        'Rochdale', 'Stockport', 'Tameside', 'Trafford', 'Wigan']
+    if region == 'gm':
+        flip_borough_order = GM_BOROUGH_ORDER
+    else:
+        bcount: dict[str, int] = {}
+        for w in wards:
+            bcount[w['borough']] = bcount.get(w['borough'], 0) + 1
+        flip_borough_order = sorted(bcount, key=lambda b: (-bcount[b], b))
+
     js_lines = []
 
     js_lines.append('const RAW = ' + json.dumps(raw, separators=(',', ':')) + ';')
@@ -84,58 +116,15 @@ def main():
     js_lines.append('const beforeAfter = ' + json.dumps(before_after, separators=(',', ':')) + ';')
     js_lines.append('')
 
-    js_lines.append('''
-const corrLabels = {
-  density: "Population density (per km²)",
-  median_age: "Median age (years)",
-  pct_under18: "% aged under 18",
-  pct_18_29: "% aged 18-29",
-  pct_30_49: "% aged 30-49",
-  pct_50_64: "% aged 50-64",
-  pct_65plus: "% aged 65+",
-  pct_apprentice: "% with apprenticeship",
-  pct_level4_plus: "% with Level 4+ (degree)",
-  pct_soc123: "% in SOC 1-3 (graduate-level jobs)",
-  pct_no_qual: "% with no qualifications",
-  pct_uk_born: "% born in UK",
-  pct_private_rented: "% Private rent",
-  pct_social_rented: "% Social housing",
-  pct_owned: "% Owned",
-  pct_wfh: "% Working from home",
-  pct_female: "% Female",
-};
-
-const partyColors = {
-  Green: "var(--green)",
-  Reform: "var(--reform)",
-  Labour: "var(--labour)",
-  LibDem: "var(--libdem)",
-  Conservative: "#1d4f8a",
-  Independent: "#888",
-  Other: "#a87b3e",
-  Pending: "#bbb"
-};
-const partyDisplay = {
-  Green: "Greens",
-  Labour: "Labour",
-  Reform: "Reform UK",
-  LibDem: "Liberal Democrats",
-  Conservative: "Conservatives",
-  Independent: "Independent / local",
-  Other: "Other",
-  Pending: "Awaiting declaration"
-};
-const partyShort = {
-  Green: "Green",
-  Labour: "Labour",
-  Reform: "Reform",
-  LibDem: "LibDem",
-  Conservative: "Cons",
-  Independent: "Indep",
-  Other: "Other",
-  Pending: "Pending"
-};
-''')
+    js_lines.append('\n'.join([
+        '',
+        corr_labels_js_unquoted_keys(),
+        '',
+        party_colours_text_js(),
+        party_display_text_js(other_label='Other'),
+        party_short_js(),
+        '',
+    ]))
 
     # § 1 matrix renderer — lifted from 07 with a small tweak: column header
     # subtitle reads "n_flipped=X" (not "n=X") so readers know the basis.
@@ -327,11 +316,11 @@ if (baGrid) {
 ''')
 
     # § 4 flipped-wards appendix — borough-grouped list with prior → new
+    js_lines.append('const flipBoroughOrder = ' + json.dumps(flip_borough_order) + ';')
     js_lines.append('''
 /* ===== § 4 — flipped wards appendix ===== */
 const flippedList = document.getElementById("flipped-wards-list");
 if (flippedList) {
-  const boroughOrder = ["Manchester","Salford","Bolton","Bury","Oldham","Rochdale","Stockport","Tameside","Trafford","Wigan"];
   const partyOrder = ["Reform","Green","Labour","LibDem","Conservative","Independent","Other","Pending"];
   // Group by borough
   const byBorough = {};
@@ -339,7 +328,7 @@ if (flippedList) {
     if (!byBorough[w.borough]) byBorough[w.borough] = [];
     byBorough[w.borough].push(w);
   });
-  boroughOrder.forEach(borough => {
+  flipBoroughOrder.forEach(borough => {
     const bWards = byBorough[borough];
     if (!bWards) return;
     // Sort: flipped first, then by 2026 winner party order, then by ward
@@ -412,7 +401,6 @@ if (flippedList) {
 
     new_js = '\n'.join(js_lines)
 
-    html_path = DOCS / 'changes.html'
     html = html_path.read_text()
     pattern = re.compile(re.escape(BEGIN) + r'\n.*?\n' + re.escape(END), re.DOTALL)
     matches = pattern.findall(html)

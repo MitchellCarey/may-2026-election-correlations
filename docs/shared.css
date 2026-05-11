@@ -38,16 +38,22 @@ body {
   .masthead .kicker, .masthead .date { font-size: 11px; letter-spacing: 0.18em; }
 }
 
-/* PAGE NAV — tab strip, sticky on scroll */
+/* PAGE NAV — two-tier tab strip (region row + view row), sticky on scroll.
+   The region row picks between Greater Manchester and Great Britain; the
+   view row picks Winners / Changes / Map within the active region. */
 .pagenav {
   position: sticky; top: 0; z-index: 5;
-  display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
+  display: flex; flex-direction: column; gap: 4px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px; letter-spacing: 0.10em; text-transform: uppercase;
   padding: 8px 0;
   background: var(--bg);
   box-shadow: 0 1px 0 var(--hairline);
   margin-bottom: 4px;
+}
+.nav-region,
+.nav-view {
+  display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
 }
 .pagenav a,
 .pagenav .here {
@@ -73,7 +79,8 @@ body {
 }
 .pagenav .sep { display: none; }
 @media (min-width: 720px) {
-  .pagenav { font-size: 11px; letter-spacing: 0.14em; gap: 8px; }
+  .pagenav { font-size: 11px; letter-spacing: 0.14em; }
+  .nav-region, .nav-view { gap: 8px; }
 }
 
 /* SKIP LINK — hidden until focused */
@@ -781,6 +788,31 @@ body {
 .ba-row.no-2022 .vals .v22 { display: none; }
 
 /* MAP PAGE (used by docs/map.html) */
+.map-controls {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+  margin: 24px 0 -6px;
+}
+.zoom-toggle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase;
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.zoom-toggle:hover { background: var(--ink); color: var(--paper); }
+.zoom-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.zoom-toggle[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.map-controls-hint {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.08em;
+  color: var(--muted);
+}
+@media (min-width: 720px) {
+  .map-controls-hint { font-size: 10.5px; }
+}
+
 .map-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -830,6 +862,34 @@ body {
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
   pointer-events: none;
+}
+.map-svg path.country {
+  fill: none;
+  stroke: rgba(20,17,13,0.85);
+  stroke-width: 1.3;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+.map-svg.no-boroughs path.borough { display: none; }
+
+/* English county-council elections, painted at constituent-district level
+   (one polygon per E07/E06 district inside a contesting E10* county). Shown
+   by default; the GB page's "Hide county council elections" toggle adds
+   .no-counties to the .map-svg root to hide it. */
+.map-svg.no-counties .counties { display: none; }
+.map-svg path.county {
+  stroke: rgba(20,17,13,0.55);
+  stroke-width: 0.5;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  fill-opacity: 0.92;
+  cursor: default;
+}
+.map-svg path.county:hover {
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  fill-opacity: 0.78;
 }
 
 .map-legend {

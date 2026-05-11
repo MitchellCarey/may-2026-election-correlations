@@ -8,10 +8,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
-# Load consolidated data
-with open(DATA / 'gm_all_wards.json') as f:
+with open(DATA / 'all_wards.json') as f:
     wards = json.load(f)
-with open(DATA / 'gm_correlations.json') as f:
+with open(DATA / 'correlations.json') as f:
     corr = json.load(f)
 
 declared = [w for w in wards if w.get('winner') not in ('Pending', None)]
@@ -44,6 +43,7 @@ for b in sorted(borough_breakdown):
     for w in sorted(borough_breakdown[b]['wards'], key=lambda x: x['ward']):
         ward_data_js.append({
             'borough': b,
+            'lad_code': w.get('lad_code'),
             'ward': w['ward'],
             'winner': w.get('winner', 'Pending'),
             'density': w.get('density'),

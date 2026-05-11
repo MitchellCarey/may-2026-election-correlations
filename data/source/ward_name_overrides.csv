@@ -1,0 +1,325 @@
+lad_code,scraped_name,gss_name,note
+E08000001,"Heaton, Lostock & Chew Moor",Heaton and Lostock,Bolton 2023 boundary review
+E08000001,Horwich North,Horwich North East,Bolton 2023 boundary review
+E08000001,Horwich South & Blackrod,Horwich and Blackrod,Bolton 2023 boundary review
+E08000001,Westhoughton North & Hunger Hill,Westhoughton North and Chew Moor,Bolton 2023 boundary review
+E08000001,Little Lever & Darcy Lever,Little Lever and Darcy Lever,Bolton 2023 boundary review
+E08000001,Farnworth North,Farnworth (Bolton),Bolton: 2023 split into N+S; proxy with combined Farnworth
+E08000001,Farnworth South,Farnworth (Bolton),Bolton: 2023 split into N+S; proxy with combined Farnworth
+E08000001,Queens Park & Central,Crompton (Bolton),Bolton: new ward roughly = old Crompton town-centre area + parts of others
+E08000007,Brinnington & Stockport Central,Brinnington and Central,Stockport 2023 boundary changes
+E08000007,Cheadle East & Cheadle Hulme North,Cheadle Hulme North,Stockport 2023 boundary changes
+E08000007,Cheadle West & Gatley,Cheadle and Gatley,Stockport 2023 boundary changes
+E08000007,Cheadle Hulme South,Cheadle Hulme South,Stockport 2023 boundary changes
+E08000007,Davenport & Cale Green,Davenport and Cale Green,Stockport 2023 boundary changes
+E08000007,Bramhall South & Woodford,Bramhall South and Woodford,Stockport 2023 boundary changes
+E08000007,Bredbury & Woodley,Bredbury and Woodley,Stockport 2023 boundary changes
+E08000007,Bredbury Green & Romiley,Bredbury Green and Romiley,Stockport 2023 boundary changes
+E08000007,Marple South & High Lane,Marple South and High Lane,Stockport 2023 boundary changes
+E08000007,Edgeley,Edgeley and Cheadle Heath,Stockport 2023 boundary changes
+E08000007,Norbury & Woodsmoor,Stepping Hill,Stockport 2023 boundary changes
+E08000009,Ashton upon Mersey,Ashton upon Mersey,Trafford: no change; bypasses borough-code-range filter
+E08000009,Davyhulme,Davyhulme East,Trafford: use one of Davyhulme E/W as proxy
+E08000009,Lostock and Barton,Davyhulme West,Trafford: roughly western Davyhulme + parts of Flixton
+E08000009,Gorse Hill and Cornbrook,Gorse Hill (Trafford),Trafford 2023 boundary changes
+E08000009,Hale,Hale Central,Trafford 2023 boundary changes
+E08000009,Hale Barns and Timperley South,Hale Barns,Trafford 2023 boundary changes
+E08000009,Manor,Priory (Trafford),Trafford: Manor is in Sale; was part of Priory area
+E08000009,Old Trafford,Clifford,Trafford 2023 boundary changes
+E08000009,Sale Central,St Mary's (Trafford),Trafford 2023 boundary changes
+E08000009,Stretford and Humphrey Park,Stretford,Trafford 2023 boundary changes
+E08000009,Timperley Central,Timperley,Trafford 2023 boundary changes
+E08000009,Timperley North,Village (Trafford),Trafford 2023 boundary changes
+E08000006,Higher Irlam & Peel Green,Higher Irlam and Peel Green,Salford: punctuation (& -> and)
+E08000006,Cadishead & Lower Irlam,Cadishead and Lower Irlam,Salford: punctuation (& -> and)
+E08000006,Pendlebury & Clifton,Pendlebury and Clifton,Salford: punctuation (& -> and)
+E08000006,Boothstown & Ellenbrook,Boothstown and Ellenbrook,Salford: punctuation (& -> and)
+E08000006,Worsley & Westwood Park,Worsley and Westwood Park,Salford: punctuation (& -> and)
+E08000006,Walkden North,Walkden North,Salford: bypasses borough-code-range filter
+E08000006,Walkden South,Walkden South,Salford: bypasses borough-code-range filter
+E08000006,Swinton & Wardley,Swinton and Wardley,Salford: punctuation (& -> and)
+E08000006,Pendleton & Charlestown,Pendleton and Charlestown,Salford: punctuation (& -> and)
+E08000006,Weaste & Seedley,Weaste and Seedley,Salford: punctuation (& -> and)
+E08000006,Kersal & Broughton Park,Kersal and Broughton Park,Salford: punctuation (& -> and)
+E08000006,Blackfriars & Trinity,Blackfriars and Trinity,Salford: punctuation (& -> and)
+E08000006,Barton & Winton,Barton and Winton,Salford: punctuation (& -> and)
+E08000002,St Mary's,St. Mary's,Bury: Census uses 'St.' with a period
+E08000002,Radcliffe North & Ainsworth,Radcliffe North and Ainsworth,Bury: punctuation (& -> and)
+E08000010,"Aspull, New Springs & Whelley",Aspull New Springs Whelley,Wigan 2024 boundary changes
+E08000010,Atherton North,Atherton,Wigan: 2021 Atherton split into N + S&L; proxy with combined
+E08000010,Atherton South & Lilford,Atherton,Wigan: 2021 Atherton split into N + S&L; proxy with combined
+E08000010,Astley,Astley Mosley Common,Wigan 2024 boundary changes
+E08000010,Tyldesley & Mosley Common,Tyldesley (Wigan),Wigan 2024 boundary changes
+E08000010,Bryn with Ashton-in-Makerfield North,Bryn (Wigan),Wigan 2024 boundary changes
+E08000010,Ashton-in-Makerfield South,Ashton,Wigan 2024 boundary changes
+E08000010,Leigh Central & Higher Folds,Leigh East,Wigan 2024 boundary changes
+E08000010,Shevington with Lower Ground & Moor,Shevington with Lower Ground,Wigan 2024 boundary changes
+E08000008,Dukinfield/Stalybridge,Dukinfield Stalybridge,Tameside: Census has no slash
+E08000005,"Wardle, Shore & West Littleborough","Wardle, Shore and West Littleborough",Rochdale: punctuation (& -> and)
+E08000005,Smallbridge & Firgrove,Smallbridge and Firgrove,Rochdale: punctuation (& -> and)
+E08000005,Spotland & Falinge,Spotland and Falinge,Rochdale: punctuation (& -> and)
+E08000005,Milnrow & Newhey,Milnrow and Newhey,Rochdale: punctuation (& -> and)
+E08000005,Milkstone & Deeplish,Milkstone and Deeplish,Rochdale: punctuation (& -> and)
+E08000005,Balderstone & Kirkholt,Balderstone & Kirkholt,Rochdale: Census uses ampersand here
+E08000004,Saddleworth West & Lees,Saddleworth West and Lees,Oldham: punctuation (& -> and)
+E08000016,Athersley and New Lodge,St Helens (Barnsley),Barnsley 2024: was old St Helens ward
+E08000016,Darfield and Great Houghton,Darfield,Barnsley 2024 boundary review
+E08000016,"Dodworth, Stainborough and Tankersley",Dodworth,Barnsley 2024 boundary review
+E08000021,"Benwell, Scotswood and Denton Burn",Benwell & Scotswood,Newcastle 2024 boundary review
+E08000021,Blakelaw and Cowgate,Blakelaw,Newcastle 2024 boundary review
+E08000021,Jesmond,North Jesmond,Newcastle 2024: N+S Jesmond merged; proxy with N
+E08000021,Kingston Park and Dinnington,Kingston Park South & Newbiggin Hall,Newcastle 2024 boundary review
+E08000021,Newbiggin Hall and Callerton,Callerton & Throckley,Newcastle 2024 boundary review
+E08000021,Parklands and North Gosforth,Parklands,Newcastle 2024 boundary review
+E08000021,"Throckley, Walbottle and Newburn",South Jesmond,Newcastle 2024: Lemington kept; using the only free old ward as proxy
+E08000022,Backworth and Holystone,Weetslade,North Tyneside 2024 boundary review
+E08000022,Chirton and Percy Main,Chirton,North Tyneside 2024 boundary review
+E08000022,Cullercoats and Whitley Bay South,Cullercoats,North Tyneside 2024 boundary review
+E08000022,Forest Hall,Longbenton,North Tyneside 2024: Forest Hall in Longbenton area
+E08000022,Longbenton and Benton,Benton,North Tyneside 2024: Longbenton+Benton merged; Longbenton used for Forest Hall
+E08000022,Monkseaton,Monkseaton North,North Tyneside 2024: N+S Monkseaton merged; proxy with N
+E08000022,New York and Murton,Killingworth,North Tyneside 2024: Murton in Killingworth area
+E08000022,North Shields,Riverside (North Tyneside),North Tyneside 2024: North Shields = Riverside area
+E08000022,Preston with Preston Grange,Preston (North Tyneside),North Tyneside 2024 boundary review
+E08000022,Shiremoor,Camperdown,North Tyneside 2024: Shiremoor in Camperdown area
+E08000022,Wallsend Central,Wallsend,North Tyneside 2024 boundary review
+E08000022,Wallsend North,Howdon,North Tyneside 2024: Wallsend split; Howdon covers the N edge
+E08000022,Whitley Bay North,Whitley Bay,North Tyneside 2024 boundary review
+E08000023,Cleadon Park and Harton Moor,Cleadon Park,South Tyneside 2024 boundary review
+E08000023,Cleadon Village and East Boldon,Cleadon and East Boldon,South Tyneside 2024 boundary review
+E08000023,Horsley Hill and Westoe Crown,Horsley Hill,South Tyneside 2024 boundary review
+E08000024,Barnes and Thornhill,Barnes (Sunderland),Sunderland 2024 boundary review
+E08000024,Deptford and Hendon,Hendon (Sunderland),Sunderland 2024 boundary review
+E08000024,Doxford Park,Doxford,Sunderland 2024 boundary review
+E08000024,Farringdon and Silksworth,Silksworth,Sunderland 2024 boundary review
+E08000024,Grangetown,St Michael's (Sunderland),Sunderland 2024: Grangetown was in St Michael's
+E08000024,Grindon and Thorney Close,Sandhill,Sunderland 2024: Thorney Close was in Sandhill
+E08000024,Houghton North,Houghton,Sunderland 2024 boundary review
+E08000024,Hylton Castle,Castle (Sunderland),Sunderland 2024 boundary review
+E08000024,Pallion and Ford,Pallion,Sunderland 2024 boundary review
+E08000024,Pennywell and South Hylton,St Anne's,Sunderland 2024: Pennywell was in St Anne's
+E08000024,Redhouse,Redhill (Sunderland),Sunderland 2024 boundary review
+E08000024,Roker,St Peter's (Sunderland),Sunderland 2024: Roker in St Peter's area
+E08000024,Tunstall and Humbledon,St Chad's,Sunderland 2024: Tunstall in St Chad's area
+E08000025,Sparkbrook & Balsall Heath,Sparkbrook & Balsall Heath East,Birmingham: 2026 reverts merge of Balsall Heath E+W
+E08000026,Holbrooks,Holbrook,Coventry: plural difference (Holbrooks vs Holbrook)
+E08000026,Tile Hill and Canley,Westwood,Coventry 2024: Canley in Westwood; Tile Hill in Bablake/Westwood
+E08000027,Brierley Hill & Wordsley South,Brierley Hill,Dudley 2024 boundary review
+E08000027,Coseley,Coseley East,Dudley 2024: Coseley E only; proxy with E
+E08000027,Cradley North & Wollescote,Cradley and Wollescote,Dudley 2024 boundary review
+E08000027,Netherton & Holly Hall,"Netherton, Woodside and St Andrews",Dudley 2024 boundary review
+E08000027,Wordsley North,Wordsley,Dudley 2024 boundary review
+E08000029,Balsall & Berkswell,Bickenhill,Solihull 2024: rural ward carved out of Meriden; proxy with adjacent Bickenhill so Meriden & Arden keeps the Meriden polygon
+E08000031,Bilston South,Bilston East,Wolverhampton 2024: no Bilston South in Census; proxy with E
+E08000031,Ettingshall North,Ettingshall,Wolverhampton 2024 boundary review
+E08000031,Ettingshall South and Spring Vale,Spring Vale,Wolverhampton 2024 boundary review
+E08000032,Bingley East,Bingley,Bradford 2024 boundary review
+E08000032,Bingley West,Bingley Rural,Bradford 2024 boundary review
+E08000032,Heaton & Frizinghall,Heaton (Bradford),Bradford 2024 boundary review
+E08000032,Holme Wood & Bierley,Tong,Bradford 2024: Holme Wood in Tong area
+E08000032,Ilkley & Addingham,Ilkley,Bradford 2024 boundary review
+E08000032,Wibsey & Odsal,Wibsey,Bradford 2024 boundary review
+E08000033,Greetland,Greetland and Stainland,Calderdale 2024 boundary review
+E08000033,Halifax Town,Town (Calderdale),Calderdale 2024 boundary review
+E08000033,Hebden Bridge & Todmorden East,Calder (Calderdale),Calderdale 2024: Hebden Bridge in Calder
+E08000033,"Salterhebble, Southowram & Skircoat Green",Skircoat,Calderdale 2024: Skircoat Green in Skircoat
+E08000033,Todmorden West,Todmorden,Calderdale 2024 boundary review
+E08000033,Wainhouse,Park (Calderdale),Calderdale 2024: Wainhouse Tower in Park
+E08000036,Knottingley and Ferrybridge,Knottingley,Wakefield 2024 boundary review
+E08000037,Birtley North and Lamesley,Lamesley,Gateshead 2024 boundary review
+E08000037,Birtley South,Birtley,Gateshead 2024 boundary review
+E08000037,Dunston Teams and Riverside,Dunston and Teams,Gateshead 2024 boundary review
+E08000037,Pelaw Heworth and Bill Quay,Pelaw and Heworth,Gateshead 2024 boundary review
+E08000037,Ryton Crookhill and Stella,"Ryton, Crookhill and Stella",Gateshead 2024 boundary review
+E08000037,Whickham North and Swalwell,Whickham North,Gateshead 2024 boundary review
+E09000030,Bethnal Green East,Bethnal Green,Tower Hamlets 2024: single ward split E/W
+E09000030,Bethnal Green West,Bethnal Green,Tower Hamlets 2024: single ward split E/W
+E08000013,Newton‑le‑Willows East,Newton-le-Willows East,St Helens: Wikipedia heading uses non-breaking hyphens (U+2011)
+E08000013,Newton‑le‑Willows West,Newton-le-Willows West,St Helens: Wikipedia heading uses non-breaking hyphens (U+2011)
+E08000028,Charlemont & Grove Vale,Charlemont with Grove Vale,"Sandwell: scraped uses & vs Census ""with"""
+E08000028,Friar Park  & Stone Cross,Friar Park,Sandwell 2024 boundary review: Friar Park + Stone Cross merged; proxy with old Friar Park
+E08000028,"Great Barr, Tamebridge & Yew Tree",Great Barr with Yew Tree,Sandwell 2024: Tamebridge area subsumed; proxy with combined Great Barr with Yew Tree
+E08000028,Newton & Valley,Newton (Sandwell),Sandwell 2024: Newton + part of Valley merged; proxy with old Newton
+E08000028,Wednesbury,Wednesbury North,Sandwell 2024: Wednesbury N+S merged; proxy with N
+E08000028,Hill Top,Hateley Heath,Sandwell 2024: Hill Top within old Hateley Heath footprint
+E08000028,Bearwood,Smethwick,Sandwell 2024 boundary review: Bearwood area; proxy with Smethwick
+E08000029,Fordbridge,Kingshurst and Fordbridge,Solihull 2024: Fordbridge split from Kingshurst; proxy combined
+E08000029,Kingshurst & Smith’s Wood,Smith's Wood,Solihull 2024 re-warding
+E08000029,Shirley East & Sharmans Cross,Shirley East,Solihull 2024 re-warding
+E08000029,Meriden & Arden,Meriden (Solihull),Solihull 2024 boundary review
+E08000029,St Alphege with Monkspath and Hillfields,St Alphege,Solihull 2024: enlarged ward; proxy with old St Alphege
+E08000030,"Beechdale, Leamore & Reedswood",Birchills Leamore,Walsall 2024: Leamore area; proxy with old Birchills Leamore
+E08000030,Bloxwich East & Blakenall Heath,Bloxwich East,Walsall 2024 re-warding; proxy with old Bloxwich East
+E08000030,"Harden, Goscote & Ryecroft",Blakenall,Walsall 2024: parts of Blakenall area; proxy
+E08000030,New Invention,Willenhall North,Walsall 2024: New Invention within old Willenhall North area
+E08000030,Palfrey & The Delves,Palfrey,Walsall 2024: enlarged ward; proxy with old Palfrey
+E08000030,Willenhall,Willenhall South,Walsall 2024: Willenhall N+S merged; proxy with S
+E08000032,Airedale,Keighley East,Bradford 2024: Airedale = parts of old Keighley East
+E08000034,Colne Valley East,Colne Valley,Kirklees 2024: Colne Valley split E+W; proxy combined
+E08000034,Colne Valley West,Colne Valley,Kirklees 2024: Colne Valley split E+W; proxy combined (same target)
+E08000034,Crosland Moor,Crosland Moor and Netherton,Kirklees 2024: Crosland Moor + Netherton split; proxy combined
+E08000034,Netherton and Newsome,Newsome,Kirklees 2024: Netherton + Newsome reshaped; proxy with old Newsome
+E08000024,Herrington and Newbottle,Houghton,Sunderland 2024 boundary review; proxy with old Houghton area
+E08000024,Houghton South and Hetton Downs,Hetton,Sunderland 2024 boundary review; proxy with old Hetton
+E08000024,Penshaw and Shiney Row,Shiney Row,Sunderland 2024: Penshaw merged into Shiney Row
+E06000008,Little Harwood & Whitebrik,Little Harwood & Whitebirk,"Blackburn: Wikipedia heading has a typo ""Whitebrik"" for ""Whitebirk"""
+E06000031,Raventhorpe,Ravensthorpe,"Peterborough: Wikipedia heading typo ""Raventhorpe"" for ""Ravensthorpe"""
+E06000045,Banister & Polygon,Bargate,Southampton 2024 boundary review: Bargate area; proxy
+E06000045,Thornhill,Sholing,Southampton 2024 boundary review: Thornhill within Sholing footprint
+E07000068,Blackmore & Doddinghurst,Brizes and Doddinghurst,Brentwood 2024 boundary review proxy
+E07000068,"Brizes, Stondon Massey & South Weald",South Weald,Brentwood 2024: enlarged ward; proxy with old South Weald
+E07000073,Church Langley North and Newhall,Church Langley,Harlow 2024: split into N+S; proxy with old Church Langley
+E07000073,Church Langley South and Potter Street,Old Harlow,Harlow 2024 boundary review; proxy with Old Harlow area
+E07000073,Latton Bush and Stewards,Bush Fair,Harlow 2024: Latton Bush within old Bush Fair area
+E07000073,Little Parndon and Town Centre,Little Parndon and Hare Street,Harlow 2024 boundary review
+E07000073,Passmores,Sumners and Kingsmoor,Harlow 2024: Passmores within old Sumners and Kingsmoor area
+E07000075,Hockley & Asgingdon,Hockley and Ashingdon,"Rochford: Wikipedia heading typo ""Asgingdon"" for ""Ashingdon"""
+E07000086,Burlesdon & Hound North,Bursledon & Hound North,"Eastleigh: Wikipedia heading typo ""Burlesdon"" for ""Bursledon"""
+E07000086,Hittingbury,Hiltingbury,"Eastleigh: Wikipedia heading typo ""Hittingbury"" for ""Hiltingbury"""
+E07000090,Havant St Faith's,St Faith's,"Havant: scraped includes ""Havant"" prefix; Census name is just ""St Faith's"""
+E07000090,Leigh Park Central & West Leigh,Hart Plain,Havant 2024: Leigh Park area; proxy with Hart Plain
+E07000090,Leigh Park Hermitage,Battins,Havant 2024: Leigh Park east area; proxy with Battins
+E07000117,Coalclough with Deerplay,Coal Clough with Deerplay,"Burnley: Wikipedia heading drops the space in ""Coal Clough"""
+E07000122,Boughsworth & Foulridge,Boulsworth & Foulridge,"Pendle: Wikipedia heading typo ""Boughsworth"" for ""Boulsworth"""
+E07000178,Cuttleslowe & Sunnymead,Cutteslowe & Sunnymead,"Oxford: Wikipedia heading typo ""Cuttleslowe"" for ""Cutteslowe"""
+E07000226,Buwbush & North Broadfield,Bewbush & North Broadfield,"Crawley: Wikipedia heading typo ""Buwbush"" for ""Bewbush"""
+E08000014,Aintree and Maghull South,Sudell,Sefton 2024: Aintree/Maghull area; proxy with old Sudell (Maghull)
+E08000014,Bootle East,Linacre (Sefton),Sefton 2024: Bootle area; proxy with old Linacre
+E08000014,Bootle West,Derby (Sefton),Sefton 2024: Bootle area; proxy with old Derby
+E08000014,Formby East,Harington,Sefton 2024: Formby area; proxy with old Harington
+E08000014,Formby West,Ravenmeols,Sefton 2024: Formby area; proxy with old Ravenmeols
+E08000014,Great Crosby,Manor (Sefton),Sefton 2024: Crosby area; proxy with old Manor
+E08000014,Lydiate & Maghull West,Park (Sefton),Sefton 2024: Maghull area; proxy with old Park
+E08000014,Maghull East,Molyneux,Sefton 2024: Maghull area; proxy with old Molyneux
+E08000014,Netherton North,Ford,Sefton 2024: Netherton north; proxy with old Ford
+E08000014,Netherton South & Orrell,Netherton and Orrell,Sefton 2024: same as old Netherton and Orrell with slight reshape
+E08000014,Thornton & Hightown,Blundellsands,Sefton 2024: Thornton/Hightown area; proxy with old Blundellsands
+E08000014,Waterloo,Church (Sefton),Sefton 2024: Waterloo area; proxy with old Church
+E06000034,Aveley,Aveley and Uplands,Thurrock 2024: Aveley + Uplands split; proxy combined
+E06000034,Chafford Hundred East,Chafford and North Stifford,Thurrock 2024: Chafford E/W split; proxy combined
+E06000034,Chafford Hundred West,South Chafford,Thurrock 2024: Chafford E/W split; proxy with South Chafford
+E06000034,"East Tilbury, Linford & West Tilbury",East Tilbury,Thurrock 2024: enlarged ward; proxy with old East Tilbury
+E06000034,Grays Town,Grays Thurrock,Thurrock 2024: Grays town centre; proxy with Grays Thurrock
+E06000034,"Orsett, Horndon & Bulphan",Orsett,Thurrock 2024: enlarged rural ward; proxy with old Orsett
+E06000034,Purfleet-on-Thames,West Thurrock and South Stifford,Thurrock 2024: Purfleet within old West Thurrock area
+E06000034,Stanford-le-Hope South,Stanford-le-Hope West,Thurrock 2024 re-warding
+E06000034,Stifford,Stifford Clays,Thurrock 2024: Stifford = old Stifford Clays
+E06000034,The Homesteads & Stanford-le-Hope North,The Homesteads,Thurrock 2024: re-warding; proxy with old The Homesteads
+E06000034,Tilbury Riverside,Tilbury Riverside and Thurrock Park,Thurrock 2024: Tilbury Riverside split; proxy combined
+E06000041,Barkham & Arborfield,Arborfield,Wokingham 2024: Barkham + Arborfield merged; proxy combined
+E06000041,Bulmershe & Coronation,Bulmershe and Whitegates,Wokingham 2024 re-warding
+E06000041,Finchampstead,Finchampstead South,Wokingham 2024: Finchampstead N+S merged; proxy with S
+E06000041,Maiden Erlegh & Whitegates,Maiden Erlegh,Wokingham 2024 re-warding
+E06000041,Shinfield,Shinfield South,Wokingham 2024: Shinfield N+S merged; proxy with S
+E06000041,Spencerswood & Swallowfield,Spencers Wood & Swallowfield,"Wokingham 2024: scraped drops the space; WD24 keeps it. Target the WD24 form so 07c can join; this ward has no WD22 equivalent so it falls out of 02's Census match."
+E06000041,Thames,Sonning,Wokingham 2024: Thames riverside area; proxy with Sonning
+E06000041,Twyford Ruscombe & Hurst,Twyford,Wokingham 2024: combined ward; proxy with old Twyford
+E06000042,Bletchley Park & Fenny Stratford,Bletchley Park,Milton Keynes 2024: enlarged ward; proxy with old Bletchley Park
+E06000042,Bletchley South,Bletchley West,Milton Keynes 2024 re-warding
+E06000042,Broughton & Moulsoe,Broughton (Milton Keynes),Milton Keynes 2024: enlarged ward; proxy with old Broughton
+E06000042,Campbell Park & Willen,Campbell Park & Old Woughton,Milton Keynes 2024 re-warding
+E06000042,Danesborough,Danesborough & Walton,Milton Keynes 2024: Danesborough split from Walton
+E06000042,Furzton,Tattenhoe,Milton Keynes 2024 re-warding; Furzton area; proxy with Tattenhoe
+E06000042,Great Linford,Bradwell (Milton Keynes),Milton Keynes 2024: Great Linford area; proxy with Bradwell
+E06000042,Hanslope,Newport Pagnell North & Hanslope,Milton Keynes 2024: Hanslope split off; proxy combined
+E06000042,New Bradwell,Stantonbury,Milton Keynes 2024: New Bradwell area; proxy with Stantonbury
+E06000042,Newport Pagnell,Newport Pagnell South,Milton Keynes 2024 re-warding
+E06000042,Olney & Rural,Olney,Milton Keynes 2024: enlarged ward; proxy with old Olney
+E06000042,Ouzel Valley,Woughton & Fishermead,Milton Keynes 2024 re-warding; proxy nearby
+E06000042,Walton,Monkston,Milton Keynes 2024: Walton area; proxy with Monkston
+E06000042,Watling,Loughton & Shenley,Milton Keynes 2024: Watling area; proxy with Loughton & Shenley
+E07000087,Avenue,Fareham West,Fareham 2024 re-warding; Avenue area; proxy
+E07000087,Fareham Park,Fareham North,Fareham 2024 re-warding
+E07000087,Fareham Town,Fareham East,Fareham 2024 re-warding
+E07000087,Fort Fareham,Fareham South,Fareham 2024 re-warding
+E07000087,Hook-with-Warsash,Warsash,Fareham 2024: Hook merged with Warsash
+E07000087,Portchester Castle,Portchester East,Fareham 2024 re-warding
+E07000087,Portchester Wicor,Portchester West,Fareham 2024 re-warding
+E07000087,Sarisbury & Whiteley,Sarisbury,Fareham 2024 re-warding
+E07000087,Uplands & Funtley,Fareham North-West,Fareham 2024 re-warding
+E07000087,Wallington & Downend,Park Gate,Fareham 2024 re-warding; proxy with nearby Park Gate
+E07000116,"Cranbrook, Sissinghurst & Frittenden",Benenden and Cranbrook,Tunbridge Wells 2024: enlarged ward; proxy with Benenden and Cranbrook
+E07000116,"Hawkhurst, Sandhurst & Benenden",Hawkhurst and Sandhurst,Tunbridge Wells 2024: Benenden added; proxy combined
+E07000116,Paddock Wood,Paddock Wood East,Tunbridge Wells 2024: Paddock Wood E+W merged; proxy with E
+E07000116,Pantiles,Pantiles and St Mark's,Tunbridge Wells 2024: Pantiles split; proxy combined
+E07000116,Pembury & Capel,Pembury,Tunbridge Wells 2024: Pembury + Capel merged; proxy with Pembury
+E07000116,Rural Tunbridge Wells,Park (Tunbridge Wells),Tunbridge Wells 2024: rural area; proxy with Park
+E07000116,Rusthall & Speldhurst,Rusthall,Tunbridge Wells 2024: Rusthall + Speldhurst merged; proxy with Rusthall
+E07000116,Southborough & Bidborough,Southborough North,Tunbridge Wells 2024: Southborough enlarged; proxy with Southborough North
+E07000127,Aughton & Holborn,Aughton and Downholland,West Lancashire 2024 re-warding
+E07000127,Burscough Bridge & Rufford,Burscough East,West Lancashire 2024 re-warding
+E07000127,Burscough Town,Burscough West,West Lancashire 2024 re-warding
+E07000127,North Meols & Hesketh Bank,North Meols,West Lancashire 2024: North Meols + Hesketh Bank merged; proxy
+E07000127,Old Skelmersdale,Skelmersdale North,West Lancashire 2024 re-warding; proxy with Skelmersdale North
+E07000127,Ormskirk East,Aughton Park,West Lancashire 2024 re-warding; proxy nearby
+E07000127,Ormskirk West,Derby (West Lancashire),West Lancashire 2024: Ormskirk West area; proxy with Derby
+E07000127,Rural North East,Newburgh,West Lancashire 2024 re-warding
+E07000127,Rural South,Halsall,West Lancashire 2024 re-warding
+E07000127,Rural West,Bickerstaffe,West Lancashire 2024 re-warding
+E07000127,Tanhouse & Skelmersdale Town Centre,Tanhouse,West Lancashire 2024: Tanhouse area
+E07000127,Tarleton Village,Tarleton,West Lancashire 2024: same area; proxy
+E07000192,Cannock Longford & Bridgtown,Cannock North,Cannock Chase 2024 re-warding; proxy with Cannock North
+E07000192,Cannock Park and Old Fallow,Cannock South,Cannock Chase 2024 re-warding; proxy with Cannock South
+E07000192,Chadsmoor,Cannock East,Cannock Chase 2024 re-warding; proxy nearby
+E07000192,Hawks Green with Rumer Hill,Hawks Green,Cannock Chase 2024: enlarged ward; proxy with old Hawks Green
+E07000192,Heath Hayes and Wimblebury,Heath Hayes East and Wimblebury,Cannock Chase 2024 re-warding
+E07000192,Hednesford Hills and Rawnsley,Rawnsley,Cannock Chase 2024 re-warding
+E07000192,Hednesford Pye Green,Hednesford North,Cannock Chase 2024 re-warding
+E07000219,Chilvers Coton,Whitestone,Nuneaton and Bedworth 2024 re-warding; proxy nearby
+E07000219,Eastboro,Attleborough,Nuneaton and Bedworth 2024 re-warding; proxy nearby
+E07000219,Milby,Weddington,Nuneaton and Bedworth 2024: Milby area; proxy with Weddington
+E07000219,St Mary's,Abbey (Nuneaton and Bedworth),Nuneaton and Bedworth 2024: St Marys church area; proxy with Abbey
+E07000219,Stockingford East,Galley Common,Nuneaton and Bedworth 2024: Stockingford area; proxy nearby
+E07000219,Stockingford West,Camp Hill,Nuneaton and Bedworth 2024: Stockingford area; proxy nearby
+E07000236,Greenlands & Lakeside,Greenlands (Redditch),Redditch 2024: Greenlands enlarged; proxy with old Greenlands
+E07000236,Matchborough & Woodrow,Matchborough,Redditch 2024: enlarged ward; proxy with old Matchborough
+E07000236,North,Headless Cross and Oakenshaw,Redditch 2024: North area; proxy nearby
+E07000236,Webheath & Callow Hill,Batchley & Brockhill,Redditch 2024 re-warding; proxy nearby
+E07000243,Almond Hill,Pin Green,Stevenage 2024: Almond Hill area; proxy with Pin Green
+E07000243,Bandley Hill & Poplars,Bandley Hill,Stevenage 2024: Bandley Hill enlarged; proxy with old Bandley Hill
+E07000078,"Benhall, the Reddings and Fiddler's Green",Benhall and The Reddings,Cheltenham 2024 re-warding: enlarged ward; proxy with old Benhall and The Reddings
+E07000066,Castledon & Crouch,Wickford Castledon,Basildon 2024 re-warding; proxy with old Wickford Castledon
+E08000014,Netherton North,St Oswald,Sefton 2024 review; St Oswald (Aintree) is the closest unclaimed proxy to Netherton
+E08000014,Thornton & Hightown,Victoria,Sefton 2024 review; no coastal unclaimed proxy after Manor and Blundellsands taken — Victoria as placeholder
+E08000024,Houghton North,Copt Hill,Sunderland 2024 review; Copt Hill ward sits in north Houghton-le-Spring
+E08000024,Houghton South and Hetton Downs,Millfield,Sunderland 2024 review; no Houghton/Hetton-area unclaimed polygon — Millfield as placeholder
+E08000028,Bearwood,Abbey,Sandwell 2024 review; old Abbey ward covered the Bearwood/Abbey Road area of Smethwick
+E08000028,Hill Top,Wednesbury South,Sandwell 2024 review; Hill Top sits between West Bromwich and Wednesbury
+E08000032,Airedale,Craven,Bradford 2024 review; Craven ward covered the Aire valley around Cullingworth
+E08000034,Colne Valley West,Golcar,Kirklees 2024 review; Golcar ward is the western edge of Colne Valley
+E06000034,Purfleet-on-Thames,Stanford East and Corringham Town,Thurrock 2024 review; no west-Thurrock unclaimed polygon — Stanford East as placeholder
+E06000042,Bletchley South,Bletchley East,Milton Keynes 2024 review; both south of central MK in Bletchley
+E06000042,Furzton,Shenley Brook End,Milton Keynes 2024 review; Shenley Brook End is adjacent to Furzton
+E06000030,"Badbury Park, Eldene & Liden","Liden, Eldene and Park South",Swindon 2024 review
+E06000030,Blunsdon,Blunsdon and Highworth,Swindon 2024 review
+E06000030,Broadgreen,Mannington and Western,Swindon 2024 review; Broadgreen is in NE Swindon
+E06000030,Chiseldon & Ridgeway,Ridgeway,Swindon 2024 review
+E06000030,Covingham & Nythe,Covingham and Dorcan,Swindon 2024 review
+E06000030,Gorse Hill,Gorse Hill and Pinehurst,Swindon 2024 review
+E06000030,Highworth,Blunsdon and Highworth,Swindon 2024 review (polygon collides with Blunsdon)
+E06000030,Kingshill,Chiseldon and Lawn,Swindon 2024 review; Kingshill is south-central — closest unused proxy
+E06000030,Lower Stratton,Penhill and Upper Stratton,Swindon 2024 review
+E06000030,"Lydiard, Freshbrook & Toothill",Lydiard and Freshbrook,Swindon 2024 review
+E06000030,Old Town & Lawn,Old Town,Swindon 2024 review
+E06000030,Parks,Walcot and Park North,Swindon 2024 review
+E06000030,Penhill & Pinehurst,Gorse Hill and Pinehurst,Swindon 2024 review (polygon collides with Gorse Hill)
+E06000030,Queen's Park,Central,Swindon 2024 review; Queen's Park is in central Swindon
+E06000030,Rodbourne Ferndale and Western,Mannington and Western,Swindon 2024 review (polygon collides with Broadgreen)
+E06000030,Shaw & Westlea,Shaw,Swindon 2024 review
+E06000030,South Marston,St Margaret and South Marston,Swindon 2024 review
+E06000030,St Andrews East,St Andrews,Swindon 2024 review
+E06000030,St Andrews West and Tadpole,Haydon Wick,Swindon 2024 review; Tadpole Garden Village area (polygon collides with direct Haydon Wick)
+E06000030,Upper Stratton,Penhill and Upper Stratton,Swindon 2024 review (polygon collides with Lower Stratton)
+E06000030,Walcot,Eastcott,Swindon 2024 review; Walcot adjacent to Eastcott
+E06000030,Wroughton & Wichelstowe,Wroughton and Wichelstowe,Swindon 2024 review
+E07000072,Buckhurst Hill East & Whitebridge,Buckhurst Hill East,Epping Forest 2024 review
+E07000072,Chigwell with Lambourne,Lambourne,Epping Forest 2024 review
+E07000072,Epping East,Epping Hemnall,Epping Forest 2024 review
+E07000072,Epping West & Rural,Epping Lindsey and Thornwood Common,Epping Forest 2024 review
+E07000072,Ongar,"Chipping Ongar, Greensted and Marden Ash",Epping Forest 2024 review
+E07000072,Roydon & Lower Nazeing,Roydon,Epping Forest 2024 review
+E07000072,Rural East,"Hastingwood, Matching and Sheering Village",Epping Forest 2024 review
+E07000072,Theydon Bois with Passingford,Theydon Bois,Epping Forest 2024 review
+E07000072,Waltham Abbey North,Waltham Abbey North East,Epping Forest 2024 review
+E07000072,Waltham Abbey South & Rural,Waltham Abbey High Beach,Epping Forest 2024 review
+E07000072,Waltham Abbey West,Waltham Abbey Honey Lane,Epping Forest 2024 review

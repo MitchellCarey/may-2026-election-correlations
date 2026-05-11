@@ -1,16 +1,17 @@
-"""Fetch prior-election Wikipedia articles for the 10 GM boroughs.
+"""Fetch prior-election Wikipedia articles for every council in the registry.
 
 For each ward seat up in May 2026 we want the most recent prior contest of the
-same seat. The English met-borough thirds cycle elects 1/3 of seats per year for
-3 years with year 4 fallow, so a 2026 seat in a thirds borough was last
-contested 4 years prior, in **2022**. Salford runs all-out every 4 years; the
-prior all-out was **2021**.
+same seat. The English met-borough thirds cycle elects 1/3 of seats per year
+for 3 years with year 4 fallow, so a 2026 seat in a thirds borough was last
+contested 4 years prior (2022). Salford runs all-out every 4 years; the prior
+all-out was 2021. Welsh and Scottish councils run all-out on a 5-year cycle;
+the prior all-out was 2022 for both.
 
-So we fetch:
-  - 9 thirds boroughs × 2022 Wikipedia article
-  - Salford × 2021 Wikipedia article
+The registry data/source/councils.yaml specifies wiki_prior + wiki_prior_year
+per row. We fetch one Wikipedia article per row that has a wiki_prior value;
+rows with wiki_prior: null are skipped.
 
-Output: data/source/wiki_<borough>_<year>.json (raw MediaWiki API response,
+Output: data/source/wiki_<council>_<year>.json (raw MediaWiki API response
 containing the article wikitext). Idempotent — skips files that already exist.
 
 Originally planned to use the House of Commons Library annual XLSX handbooks,
@@ -19,30 +20,24 @@ that blocks programmatic clients. Wikipedia is more accessible and the per-ward
 "hold" / "gain from X" templates are straightforward to parse downstream.
 """
 import json
+import re
 import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
 
+from _councils import for_region
+
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "data" / "source"
 
-# (borough, year, wikipedia article title)
-ARTICLES = [
-    ('Bolton',     2022, '2022 Bolton Metropolitan Borough Council election'),
-    ('Bury',       2022, '2022 Bury Metropolitan Borough Council election'),
-    ('Manchester', 2022, '2022 Manchester City Council election'),
-    ('Oldham',     2022, '2022 Oldham Metropolitan Borough Council election'),
-    ('Rochdale',   2022, '2022 Rochdale Metropolitan Borough Council election'),
-    ('Stockport',  2022, '2022 Stockport Metropolitan Borough Council election'),
-    ('Tameside',   2022, '2022 Tameside Metropolitan Borough Council election'),
-    ('Trafford',   2022, '2022 Trafford Metropolitan Borough Council election'),
-    ('Wigan',      2022, '2022 Wigan Metropolitan Borough Council election'),
-    ('Salford',    2021, '2021 Salford City Council election'),
-]
-
 UA = 'gm-2026-ward-analysis/1.0 (mitchellcarey2@gmail.com)'
 API = 'https://en.wikipedia.org/w/api.php'
+
+
+def slug(name: str) -> str:
+    """Council name -> filesystem-safe slug for the wiki cache filename."""
+    return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
 
 
 def fetch(title: str) -> dict:
@@ -59,20 +54,37 @@ def fetch(title: str) -> dict:
         return json.loads(r.read())
 
 
-SOURCE.mkdir(parents=True, exist_ok=True)
-fetched = skipped = 0
-for borough, year, title in ARTICLES:
-    out = SOURCE / f'wiki_{borough.lower()}_{year}.json'
-    if out.exists():
-        skipped += 1
-        continue
-    print(f'Fetching {title}...')
-    data = fetch(title)
-    if 'error' in data:
-        raise RuntimeError(f'{title}: {data["error"]}')
-    with open(out, 'w') as f:
-        json.dump(data, f)
-    fetched += 1
-    time.sleep(0.5)  # be nice to Wikipedia
+def main():
+    SOURCE.mkdir(parents=True, exist_ok=True)
+    fetched = skipped = 0
+    misses: list[tuple[str, str, str]] = []  # (lad_code, name, attempted_title)
+    for council in for_region("gb"):
+        if not council.get("wiki_prior"):
+            continue
+        year = council["wiki_prior_year"]
+        title = council["wiki_prior"]
+        out = SOURCE / f'wiki_{slug(council["name"])}_{year}.json'
+        if out.exists():
+            skipped += 1
+            continue
+        print(f'Fetching {title}...')
+        data = fetch(title)
+        if 'error' in data:
+            print(f'  ! {data["error"].get("code")}: {data["error"].get("info", "")}')
+            misses.append((council["lad_code"], council["name"], title))
+            time.sleep(0.5)
+            continue
+        with open(out, 'w') as f:
+            json.dump(data, f)
+        fetched += 1
+        time.sleep(0.5)  # be nice to Wikipedia
 
-print(f'\nDone. Fetched {fetched}, skipped {skipped} (already cached).')
+    print(f'\nDone. Fetched {fetched}, skipped {skipped} (already cached), {len(misses)} miss(es).')
+    if misses:
+        print("\nMisses — update wiki_prior in data/source/councils.yaml for these:")
+        for lad, name, tried in misses:
+            print(f'  {lad}  {name}: tried "{tried}"')
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,472 @@
+{
+  "E07000061": {
+    "county_lad": "E10000011",
+    "county": "East Sussex",
+    "district": "Eastbourne",
+    "winner_2026": "LibDem",
+    "winner_prior": "LibDem",
+    "flipped": false,
+    "seats_won_2026": 7,
+    "total_seats_2026": 9
+  },
+  "E07000062": {
+    "county_lad": "E10000011",
+    "county": "East Sussex",
+    "district": "Hastings",
+    "winner_2026": "Green",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 6,
+    "total_seats_2026": 8
+  },
+  "E07000063": {
+    "county_lad": "E10000011",
+    "county": "East Sussex",
+    "district": "Lewes",
+    "winner_2026": "LibDem",
+    "winner_prior": "LibDem",
+    "flipped": false,
+    "seats_won_2026": 4,
+    "total_seats_2026": 9
+  },
+  "E07000064": {
+    "county_lad": "E10000011",
+    "county": "East Sussex",
+    "district": "Rother",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 7,
+    "total_seats_2026": 9
+  },
+  "E07000065": {
+    "county_lad": "E10000011",
+    "county": "East Sussex",
+    "district": "Wealden",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 10,
+    "total_seats_2026": 15
+  },
+  "E07000066": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Basildon",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 6,
+    "total_seats_2026": 9
+  },
+  "E07000067": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Braintree",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 6,
+    "total_seats_2026": 8
+  },
+  "E07000068": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Brentwood",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 4,
+    "total_seats_2026": 4
+  },
+  "E07000069": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Castle Point",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 4,
+    "total_seats_2026": 5
+  },
+  "E07000070": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Chelmsford",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 4,
+    "total_seats_2026": 9
+  },
+  "E07000071": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Colchester",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 4,
+    "total_seats_2026": 9
+  },
+  "E07000072": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Epping Forest",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 6,
+    "total_seats_2026": 7
+  },
+  "E07000073": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Harlow",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 5,
+    "total_seats_2026": 5
+  },
+  "E07000074": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Maldon",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 3,
+    "total_seats_2026": 4
+  },
+  "E07000075": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Rochford",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 5,
+    "total_seats_2026": 5
+  },
+  "E07000076": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Tendring",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 8,
+    "total_seats_2026": 8
+  },
+  "E07000077": {
+    "county_lad": "E10000012",
+    "county": "Essex",
+    "district": "Uttlesford",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 3,
+    "total_seats_2026": 5
+  },
+  "E07000084": {
+    "county_lad": "E10000014",
+    "county": "Hampshire",
+    "district": "Basingstoke and Deane",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 4,
+    "total_seats_2026": 10
+  },
+  "E07000085": {
+    "county_lad": "E10000014",
+    "county": "Hampshire",
+    "district": "East Hampshire",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 4,
+    "total_seats_2026": 7
+  },
+  "E07000086": {
+    "county_lad": "E10000014",
+    "county": "Hampshire",
+    "district": "Eastleigh",
+    "winner_2026": "LibDem",
+    "winner_prior": "LibDem",
+    "flipped": false,
+    "seats_won_2026": 6,
+    "total_seats_2026": 8
+  },
+  "E07000087": {
+    "county_lad": "E10000014",
+    "county": "Hampshire",
+    "district": "Fareham",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 4,
+    "total_seats_2026": 6
+  },
+  "E07000088": {
+    "county_lad": "E10000014",
+    "county": "Hampshire",
+    "district": "Gosport",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 2,
+    "total_seats_2026": 4
+  },
+  "E07000089": {
+    "county_lad": "E10000014",
+    "county": "Hampshire",
+    "district": "Hart",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 2,
+    "total_seats_2026": 5
+  },
+  "E07000090": {
+    "county_lad": "E10000014",
+    "county": "Hampshire",
+    "district": "Havant",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 6,
+    "total_seats_2026": 7
+  },
+  "E07000091": {
+    "county_lad": "E10000014",
+    "county": "Hampshire",
+    "district": "New Forest",
+    "winner_2026": "LibDem",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 4,
+    "total_seats_2026": 10
+  },
+  "E07000092": {
+    "county_lad": "E10000014",
+    "county": "Hampshire",
+    "district": "Rushmoor",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 4,
+    "total_seats_2026": 5
+  },
+  "E07000093": {
+    "county_lad": "E10000014",
+    "county": "Hampshire",
+    "district": "Test Valley",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 5,
+    "total_seats_2026": 7
+  },
+  "E07000094": {
+    "county_lad": "E10000014",
+    "county": "Hampshire",
+    "district": "Winchester",
+    "winner_2026": "LibDem",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 7,
+    "total_seats_2026": 7
+  },
+  "E07000143": {
+    "county_lad": "E10000020",
+    "county": "Norfolk",
+    "district": "Breckland",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 11,
+    "total_seats_2026": 12
+  },
+  "E07000144": {
+    "county_lad": "E10000020",
+    "county": "Norfolk",
+    "district": "Broadland",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 7,
+    "total_seats_2026": 13
+  },
+  "E07000145": {
+    "county_lad": "E10000020",
+    "county": "Norfolk",
+    "district": "Great Yarmouth",
+    "winner_2026": "Other",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 9,
+    "total_seats_2026": 9
+  },
+  "E07000146": {
+    "county_lad": "E10000020",
+    "county": "Norfolk",
+    "district": "King's Lynn & West Norfolk",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 14,
+    "total_seats_2026": 14
+  },
+  "E07000147": {
+    "county_lad": "E10000020",
+    "county": "Norfolk",
+    "district": "North Norfolk",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 10,
+    "total_seats_2026": 10
+  },
+  "E07000148": {
+    "county_lad": "E10000020",
+    "county": "Norfolk",
+    "district": "Norwich",
+    "winner_2026": "Conservative",
+    "winner_prior": "Labour",
+    "flipped": true,
+    "seats_won_2026": 13,
+    "total_seats_2026": 13
+  },
+  "E07000149": {
+    "county_lad": "E10000020",
+    "county": "Norfolk",
+    "district": "South Norfolk",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 13,
+    "total_seats_2026": 13
+  },
+  "E07000200": {
+    "county_lad": "E10000029",
+    "county": "Suffolk",
+    "district": "Babergh",
+    "winner_2026": "LibDem",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 4,
+    "total_seats_2026": 9
+  },
+  "E07000244": {
+    "county_lad": "E10000029",
+    "county": "Suffolk",
+    "district": "East Suffolk",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 10,
+    "total_seats_2026": 23
+  },
+  "E07000202": {
+    "county_lad": "E10000029",
+    "county": "Suffolk",
+    "district": "Ipswich",
+    "winner_2026": "Labour",
+    "winner_prior": "Labour",
+    "flipped": false,
+    "seats_won_2026": 6,
+    "total_seats_2026": 12
+  },
+  "E07000203": {
+    "county_lad": "E10000029",
+    "county": "Suffolk",
+    "district": "Mid Suffolk",
+    "winner_2026": "Conservative",
+    "winner_prior": "Conservative",
+    "flipped": false,
+    "seats_won_2026": 2,
+    "total_seats_2026": 10
+  },
+  "E07000245": {
+    "county_lad": "E10000029",
+    "county": "Suffolk",
+    "district": "West Suffolk",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 6,
+    "total_seats_2026": 15
+  },
+  "E07000223": {
+    "county_lad": "E10000032",
+    "county": "West Sussex",
+    "district": "Adur",
+    "winner_2026": "Labour",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 2,
+    "total_seats_2026": 5
+  },
+  "E07000224": {
+    "county_lad": "E10000032",
+    "county": "West Sussex",
+    "district": "Arun",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 9,
+    "total_seats_2026": 13
+  },
+  "E07000225": {
+    "county_lad": "E10000032",
+    "county": "West Sussex",
+    "district": "Chichester",
+    "winner_2026": "LibDem",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 7,
+    "total_seats_2026": 10
+  },
+  "E07000226": {
+    "county_lad": "E10000032",
+    "county": "West Sussex",
+    "district": "Crawley",
+    "winner_2026": "Reform",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 8,
+    "total_seats_2026": 9
+  },
+  "E07000227": {
+    "county_lad": "E10000032",
+    "county": "West Sussex",
+    "district": "Horsham",
+    "winner_2026": "LibDem",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 8,
+    "total_seats_2026": 12
+  },
+  "E07000228": {
+    "county_lad": "E10000032",
+    "county": "West Sussex",
+    "district": "Mid Sussex",
+    "winner_2026": "LibDem",
+    "winner_prior": "Conservative",
+    "flipped": true,
+    "seats_won_2026": 8,
+    "total_seats_2026": 12
+  },
+  "E07000229": {
+    "county_lad": "E10000032",
+    "county": "West Sussex",
+    "district": "Worthing",
+    "winner_2026": "Green",
+    "winner_prior": "Labour",
+    "flipped": true,
+    "seats_won_2026": 4,
+    "total_seats_2026": 9
+  }
+}

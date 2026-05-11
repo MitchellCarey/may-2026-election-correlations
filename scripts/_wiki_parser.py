@@ -1,0 +1,285 @@
+"""Top-of-poll Wikipedia wikitext parser used by 01b (prior winners) and
+01c (2026 results).
+
+Both scrapers want the same thing: the **first** `{{Election box winning
+candidate ... |party=PARTY}}` template inside each ward section of an
+English local-election article. The template shape is consistent between
+years and across thirds/all-out/halves councils, so a single parser
+serves both phases.
+"""
+import re
+
+
+# H2 sections to skip — anything inside one of these can't contain a
+# ward-result heading. In 2022 articles "Changes since 2021" tends to come
+# AFTER ward results, but in 2026 articles the same h2 is sometimes the
+# *next* section after the result summary and before the per-ward block, so
+# we can't just cut at the first occurrence.
+H2_SKIP = re.compile(
+    r'^(?:by[- ]elections?|changes since|aftermath|references|external links|notes|see also)\b',
+    re.IGNORECASE,
+)
+
+H2_RE = re.compile(r'^==\s*([^=\n]+?)\s*==\s*$', re.MULTILINE)
+
+# Both h3 (===Ward===) and h4 (====Ward====) — Wigan uses h4 inside h3
+# constituency sections.
+HEADING_RE = re.compile(r'^(={3,4})\s*([^=\n]+?)\s*\1\s*$', re.MULTILINE)
+
+# 2026 articles often title h3 sections as "=== [[Abbey Road (ward)|Abbey Road]] ==="
+# (wikilink to a per-ward article). Strip the wikilink markup down to the visible label.
+WIKILINK_RE = re.compile(r'\[\[(?:[^|\]]+\|)?([^\]]+)\]\]')
+
+# Top-of-poll: first {{Election box winning candidate [with party link]...
+# |party=PARTY...}}. The "with party link" suffix is optional — minor parties
+# (e.g. "Radcliffe First") without their own Wikipedia article use the
+# link-less variant.
+WINNER_RE = re.compile(
+    r'\{\{Election box winning candidate(?:\s+with party link)?[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
+    re.IGNORECASE | re.DOTALL,
+)
+# Some 2026 articles (Walsall, Sandwell, St Helens, Basingstoke & Deane, …) use
+# plain {{Election box candidate}} templates for every candidate including the
+# winner, with no explicit "winning candidate" marker. Candidates are listed in
+# vote-rank order — the first candidate is the winner. Use this as a fallback
+# when WINNER_RE finds nothing.
+CANDIDATE_RE = re.compile(
+    r'\{\{Election box candidate(?:\s+with party link)?[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
+    re.IGNORECASE | re.DOTALL,
+)
+# Last-resort fallback: hold/gain template's winner= field. Many articles leave
+# this field blank (the template only flags the seat as a hold), so this is
+# checked after CANDIDATE_RE and a blank match is discarded.
+HOLDGAIN_RE = re.compile(
+    r'\{\{Election box (?:hold|gain)[^|]*\|[^}]*?winner\s*=\s*([^|}\n]+)',
+    re.IGNORECASE | re.DOTALL,
+)
+
+# Some 2026 articles (Swindon, Epping Forest) drop the per-ward H3 headings and
+# put the {{Election box begin}}…{{Election box end}} blocks directly under the
+# H2 ward-results section. Match the begin template and read the ward name from
+# its title= parameter. The alternation lets the title contain wikilinks like
+# `[[Haydon Wick (ward)|Haydon Wick]]` whose internal `|` would otherwise be
+# read as a template-parameter delimiter.
+# Match plain {{Election box begin}} as well as variants like
+# {{Election box begin no change}} (used in Essex 2026 to flag a hold).
+ELECTION_BOX_BEGIN_RE = re.compile(
+    r'\{\{Election box begin(?:\s+no change)?\s*\|\s*title\s*=\s*'
+    r'((?:\[\[[^\]]*\]\]|[^|}\n])+)',
+    re.IGNORECASE,
+)
+ELECTION_BOX_END_RE = re.compile(r'\{\{Election box end\s*\}\}', re.IGNORECASE)
+
+# Havering 2026's per-ward sections delegate their {{Election box ...}} blocks
+# to a separate per-ward Wikipedia article via labeled-section transclusion:
+#     {{#section:Beam Park (ward)|2026 Beam Park}}
+# When the caller provides a fetch_transclusion callback, parse_article
+# substitutes each match with the labeled section content from the target page
+# before running the winner-extract pass.
+SECTION_RE = re.compile(
+    r'\{\{#section:\s*([^|}]+?)\s*\|\s*([^}]+?)\s*\}\}',
+    re.IGNORECASE,
+)
+
+
+def normalize_party(raw: str) -> str:
+    """Map Wikipedia party-name strings to the canonical labels used downstream."""
+    s = raw.strip().lower().replace('[[', '').replace(']]', '')
+    if '|' in s:
+        s = s.split('|', 1)[-1].strip()
+    if 'labour' in s:
+        return 'Labour'
+    if 'conservative' in s:
+        return 'Conservative'
+    if 'liberal democrat' in s or 'lib dem' in s or s == 'libdem':
+        return 'LibDem'
+    if 'green' in s:
+        return 'Green'
+    if 'reform' in s:
+        return 'Reform'
+    if 'independent' in s:
+        return 'Independent'
+    # Local independent groupings — 2026 dataset classifies these as Independent,
+    # so match that for the prior-vs-2026 comparison to be apples-to-apples.
+    if s in {'radcliffe first', 'one kearsley', 'heald green ratepayers'}:
+        return 'Independent'
+    return 'Other'
+
+
+def _extract_winner_party(section: str) -> str | None:
+    """Return the raw party string for the top-of-poll candidate in a wiki
+    section, or None if no candidate template is found. Cascades winning →
+    candidate → hold/gain templates, mirroring the original inline logic."""
+    m = WINNER_RE.search(section) or CANDIDATE_RE.search(section)
+    if not m:
+        m = HOLDGAIN_RE.search(section)
+        if m and not m.group(1).strip():
+            m = None
+    return m.group(1) if m else None
+
+
+def _clean_ward_name(name: str) -> str:
+    """Strip Wikipedia heading/title decorations: collapse wikilinks to their
+    visible label, drop a trailing ward/constituency suffix (Wigan h4 style),
+    drop a trailing seat-count parenthetical like '(2)' or '(3 seats)'."""
+    clean = WIKILINK_RE.sub(r'\1', name)
+    clean = re.sub(r'\s+(ward|constituency)\s*$', '', clean, flags=re.IGNORECASE).strip()
+    clean = re.sub(r'\s*\(\d+(?:\s+seats?)?\)\s*$', '', clean).strip()
+    return clean
+
+
+# H2 section headers used by English county-council (E10*) articles. The
+# 2026 set spans five distinct headings — Hampshire uses plain "Results",
+# West Sussex "Results by division", East Sussex "Candidates by authority",
+# Essex/Norfolk/Suffolk "Candidates/Results by local authority". The 2021
+# priors add "Results by district" (Essex/Suffolk) and "Results by electoral
+# division" (Hampshire). Case-insensitive.
+COUNTY_H2_RE = re.compile(
+    r'^==\s*(?:'
+    r'Candidates by local authority|Results by local authority|'
+    r'Candidates by authority|Results by authority|'
+    r'Results by district|Results by division|Results by electoral division|'
+    r'Results'
+    r')\s*==\s*$',
+    re.MULTILINE | re.IGNORECASE,
+)
+
+
+def parse_county_article(_council_name: str, year: int, wt: str) -> dict:
+    """Return {district_name: {'party', 'seats_won', 'total_seats'}} for one
+    English county-council election article.
+
+    English counties elect electoral divisions, not WD22/24 wards. Wikipedia
+    article structure varies (per-district summary tables in Essex/Suffolk;
+    bare per-division election boxes in Hampshire/Norfolk/East Sussex/West
+    Sussex), so this aggregator works from the per-division detail in every
+    case: walk each H3 district section, count winning-party templates
+    across the division blocks inside it, and take the top party by seats.
+    """
+    m = COUNTY_H2_RE.search(wt)
+    if not m:
+        return {}
+    rest = wt[m.end():]
+    next_h2 = H2_RE.search(rest)
+    section = rest[:next_h2.start()] if next_h2 else rest
+
+    h3s = list(re.finditer(r'^===\s*([^=\n]+?)\s*===\s*$', section, re.MULTILINE))
+    out: dict[str, dict] = {}
+    for i, hm in enumerate(h3s):
+        district = _clean_ward_name(hm.group(1).strip())
+        body_end = h3s[i + 1].start() if i + 1 < len(h3s) else len(section)
+        body = section[hm.end():body_end]
+
+        begins = list(ELECTION_BOX_BEGIN_RE.finditer(body))
+        if not begins:
+            continue
+        seat_counts: dict[str, int] = {}
+        for j, bm in enumerate(begins):
+            blk_start = bm.end()
+            next_begin = begins[j + 1].start() if j + 1 < len(begins) else len(body)
+            end_match = ELECTION_BOX_END_RE.search(body, blk_start, next_begin)
+            blk_end = end_match.start() if end_match else next_begin
+            block = body[blk_start:blk_end]
+            party = _extract_winner_party(block)
+            if not party:
+                continue
+            normalized = normalize_party(party)
+            seat_counts[normalized] = seat_counts.get(normalized, 0) + 1
+        if not seat_counts:
+            continue
+        # Top party by seats. Ties broken by alphabetical party name — fine
+        # for a viz; the actual tie-handling can be revisited if it bites.
+        top_party = max(sorted(seat_counts), key=lambda p: seat_counts[p])
+        out[district] = {
+            'party':       top_party,
+            'seats_won':   seat_counts[top_party],
+            'total_seats': sum(seat_counts.values()),
+            'year':        year,
+        }
+    return out
+
+
+def _resolve_transclusions(section: str, fetch_transclusion) -> str:
+    """Replace each {{#section:Page|Label}} call in the section text with the
+    fetched labeled-section content (or empty string on failure). No-op if
+    the section has no transclusions or no fetcher is provided."""
+    if fetch_transclusion is None:
+        return section
+    return SECTION_RE.sub(
+        lambda m: fetch_transclusion(m.group(1).strip(), m.group(2).strip()) or '',
+        section,
+    )
+
+
+def parse_article(_council_name: str, year: int, wt: str,
+                  fetch_transclusion=None) -> dict:
+    """Return {ward_name: {'prior_party', 'prior_year'}} for one election article.
+
+    The 'prior_*' keys are historical — 01b consumes them; 01c reshapes
+    on the way out. Kept for backwards compatibility with 01b's existing
+    output shape (preserves byte-identical prior_winners.json for GM).
+
+    fetch_transclusion: optional callable (page_title, section_label) -> str|None
+    that returns the labeled-section wikitext from a per-ward article. Used by
+    01c to follow Havering's {{#section:}} delegations; 01b passes None.
+    """
+    h2_matches = list(H2_RE.finditer(wt))
+    if not h2_matches:
+        scan_ranges = [(0, len(wt))]
+    else:
+        scan_ranges = []
+        for i, m in enumerate(h2_matches):
+            sec_end = h2_matches[i + 1].start() if i + 1 < len(h2_matches) else len(wt)
+            if H2_SKIP.match(m.group(1).strip()):
+                continue
+            scan_ranges.append((m.end(), sec_end))
+        # Include the article preamble (anything before the first h2). Some
+        # short single-section articles put winners there.
+        scan_ranges.insert(0, (0, h2_matches[0].start()))
+
+    out = {}
+    for r_start, r_end in scan_ranges:
+        segment = wt[r_start:r_end]
+        headings = [(m.start(), m.end(), m.group(2).strip())
+                    for m in HEADING_RE.finditer(segment)]
+        out_before = len(out)
+        for i, (h_start, h_end, name) in enumerate(headings):
+            next_start = headings[i + 1][0] if i + 1 < len(headings) else len(segment)
+            section = segment[h_end:next_start]
+
+            party = _extract_winner_party(section)
+            if not party and fetch_transclusion is not None and SECTION_RE.search(section):
+                # Section has no inline winner template but does have a
+                # {{#section:}} transclusion — resolve and re-extract.
+                section = _resolve_transclusions(section, fetch_transclusion)
+                party = _extract_winner_party(section)
+            if not party:
+                continue
+
+            clean = _clean_ward_name(name)
+            if clean in out:
+                continue
+            out[clean] = {'prior_party': normalize_party(party), 'prior_year': year}
+
+        # Fallback for articles that drop the per-ward H3 headings and put
+        # {{Election box begin|title=Ward Name}}…{{Election box end}} blocks
+        # directly under the H2 (Swindon and Epping Forest 2026). Only fires
+        # when the H3/H4 walk yielded nothing in this scan range, so existing
+        # heading-structured articles are unaffected.
+        if len(out) > out_before:
+            continue
+        begins = list(ELECTION_BOX_BEGIN_RE.finditer(segment))
+        for j, bm in enumerate(begins):
+            block_start = bm.end()
+            next_begin = begins[j + 1].start() if j + 1 < len(begins) else len(segment)
+            end_match = ELECTION_BOX_END_RE.search(segment, block_start, next_begin)
+            block_end = end_match.start() if end_match else next_begin
+            block = segment[block_start:block_end]
+            party = _extract_winner_party(block)
+            if not party:
+                continue
+            clean = _clean_ward_name(bm.group(1).strip())
+            if clean in out:
+                continue
+            out[clean] = {'prior_party': normalize_party(party), 'prior_year': year}
+    return out
