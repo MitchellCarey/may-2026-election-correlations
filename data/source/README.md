@@ -1,8 +1,9 @@
 # Source data
 
-This directory should contain 8 ONS Census 2021 ward-level XLSX files.
-They are gitignored because they're large public datasets that don't need
-to be redistributed via this repo.
+This directory should contain 8 ONS Census 2021 ward-level XLSX files plus
+one CSV (TS022). They are gitignored where large; the smaller TS022 CSV is
+checked in since it's the only table the pipeline can't easily re-fetch
+automatically.
 
 ## Required files
 
@@ -18,6 +19,7 @@ Drop these into this directory before running `scripts/03_extract_census.py`:
 | `TS004-Country-Of-Birth-2021-wd-ONS.xlsx`                         | Country of birth          |
 | `TS061-Method-Used-To-Travel-To-Work-2021-wd-ONS.xlsx`            | Method of travel to work  |
 | `TS008-Sex-2021-wd-ONS.xlsx`                                      | Sex                       |
+| `census2021-ts022-ward.csv`                                       | Ethnic group (detailed) — CSV (one row per ward, columns are the full ~290-category hierarchy under five top-level ONS groups) |
 
 ## Where to download
 

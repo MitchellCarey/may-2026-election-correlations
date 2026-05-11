@@ -88,7 +88,7 @@ page where available, otherwise from the most authoritative local source:
 - Salford: Salford Now / salfordmedia.co.uk
 - Tameside: Tameside Correspondent
 
-**Census data.** ONS Census 2021 ward-level XLSX files via UK Data Service:
+**Census data.** ONS Census 2021 ward-level data via UK Data Service (XLSX) and NOMIS (CSV):
 
 - TS006 (population density)
 - TS007 (single-year age, 101 categories)
@@ -98,6 +98,7 @@ page where available, otherwise from the most authoritative local source:
 - TS004 (country of birth, 12 categories)
 - TS061 (method of travel to work, 12 categories)
 - TS008 (sex)
+- TS022 (ethnic group, detailed — CSV)
 
 **Aggregations:**
 - `pct_apprentice` = TS067 code 3 / sum(0..6)
@@ -107,6 +108,7 @@ page where available, otherwise from the most authoritative local source:
 - `pct_private_rented` = TS054 codes 5+6+7 (incl. lives-rent-free)
 - `pct_uk_born` = TS004 code 1 / total
 - `pct_wfh` = TS061 code 1 / sum(1..11) — employed-only denominator
+- `pct_white` / `pct_asian` / `pct_black` / `pct_mixed` / `pct_other_ethnic` = TS022 top-level group sub-totals / TS022 'All usual residents'. `pct_black` combines the African and Caribbean Black sub-groups per the standard ONS 5-category presentation.
 - `pct_soc123` = TS063 codes 1+2+3 / sum(1..9) — graduate-level jobs share
 
 **Boundary mismatches.** Bolton (2023), Stockport (2023), Trafford (2023), and
