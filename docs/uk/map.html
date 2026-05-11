@@ -50,8 +50,8 @@
   <div class="map-controls">
     <button id="zoom-toggle" type="button" class="zoom-toggle" aria-pressed="false">Zoom to contested councils</button>
     <button id="borough-toggle" type="button" class="zoom-toggle" aria-pressed="false">Hide borough outlines</button>
-    <button id="counties-toggle" type="button" class="zoom-toggle" aria-pressed="false">Show county council elections</button>
-    <span class="map-controls-hint">Default is the full UK with every borough boundary drawn. Crop to contested councils, hide internal boundaries, or paint each constituent district of an English county (Essex, Hampshire, Norfolk, Suffolk, East &amp; West Sussex) by who won that district inside the county-wide election.</span>
+    <button id="counties-toggle" type="button" class="zoom-toggle" aria-pressed="false">Hide county council elections</button>
+    <span class="map-controls-hint">Default is the full UK with every borough boundary drawn and the 6 English county-council elections (Essex, Hampshire, Norfolk, Suffolk, East &amp; West Sussex) painted at constituent-district level. Crop to contested councils, hide internal boundaries, or hide the county-election layer.</span>
   </div>
 
   <!-- §1 — Before / After side by side -->
@@ -242,19 +242,21 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 }
 
 // Toggle the counties overlay (English county-council elections painted at
-// constituent district level). Only wires up if the page emits a button AND
-// COUNTY_DATA is non-empty (i.e. the GB page).
+// constituent district level). Shown by default, mirroring the borough
+// outlines pattern: aria-pressed=false means the layer is in its default
+// (visible) state and clicking will hide. Only wires up if the page emits
+// a button AND COUNTY_DATA is non-empty (i.e. the GB page).
 const countyBtn = document.getElementById('counties-toggle');
 if (countyBtn && Object.keys(COUNTY_DATA).length) {
-  let on = false;
+  let hidden = false;
   const applyCounty = () => {
     document.querySelectorAll('.map-svg').forEach(svg => {
-      svg.classList.toggle('show-counties', on);
+      svg.classList.toggle('no-counties', hidden);
     });
-    countyBtn.setAttribute('aria-pressed', String(on));
-    countyBtn.textContent = on ? 'Hide county council elections' : 'Show county council elections';
+    countyBtn.setAttribute('aria-pressed', String(hidden));
+    countyBtn.textContent = hidden ? 'Show county council elections' : 'Hide county council elections';
   };
-  countyBtn.addEventListener('click', () => { on = !on; applyCounty(); });
+  countyBtn.addEventListener('click', () => { hidden = !hidden; applyCounty(); });
   applyCounty();
 }
 

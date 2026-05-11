@@ -430,19 +430,21 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 }
 
 // Toggle the counties overlay (English county-council elections painted at
-// constituent district level). Only wires up if the page emits a button AND
-// COUNTY_DATA is non-empty (i.e. the GB page).
+// constituent district level). Shown by default, mirroring the borough
+// outlines pattern: aria-pressed=false means the layer is in its default
+// (visible) state and clicking will hide. Only wires up if the page emits
+// a button AND COUNTY_DATA is non-empty (i.e. the GB page).
 const countyBtn = document.getElementById('counties-toggle');
 if (countyBtn && Object.keys(COUNTY_DATA).length) {
-  let on = false;
+  let hidden = false;
   const applyCounty = () => {
     document.querySelectorAll('.map-svg').forEach(svg => {
-      svg.classList.toggle('show-counties', on);
+      svg.classList.toggle('no-counties', hidden);
     });
-    countyBtn.setAttribute('aria-pressed', String(on));
-    countyBtn.textContent = on ? 'Hide county council elections' : 'Show county council elections';
+    countyBtn.setAttribute('aria-pressed', String(hidden));
+    countyBtn.textContent = hidden ? 'Show county council elections' : 'Hide county council elections';
   };
-  countyBtn.addEventListener('click', () => { on = !on; applyCounty(); });
+  countyBtn.addEventListener('click', () => { hidden = !hidden; applyCounty(); });
   applyCounty();
 }
 

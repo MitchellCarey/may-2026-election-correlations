@@ -874,11 +874,10 @@ body {
 .map-svg.no-boroughs path.borough { display: none; }
 
 /* English county-council elections, painted at constituent-district level
-   (one polygon per E07/E06 district inside a contesting E10* county). The
-   group is hidden by default; the GB page's "Show county council elections"
-   toggle adds .show-counties to the .map-svg root to reveal it. */
-.map-svg .counties { display: none; }
-.map-svg.show-counties .counties { display: inline; }
+   (one polygon per E07/E06 district inside a contesting E10* county). Shown
+   by default; the GB page's "Hide county council elections" toggle adds
+   .no-counties to the .map-svg root to hide it. */
+.map-svg.no-counties .counties { display: none; }
 .map-svg path.county {
   stroke: rgba(20,17,13,0.55);
   stroke-width: 0.5;
