@@ -142,7 +142,8 @@ if (corrHeadRow) {
 const corrVarOrder = [
   "density","median_age","pct_under18","pct_18_29","pct_30_49","pct_50_64","pct_65plus",
   "pct_apprentice","pct_level4_plus","pct_soc123","pct_no_qual",
-  "pct_uk_born","pct_private_rented","pct_social_rented","pct_owned","pct_wfh","pct_female"
+  "pct_uk_born","pct_private_rented","pct_social_rented","pct_owned","pct_wfh","pct_female",
+  "pct_white","pct_asian","pct_black","pct_mixed","pct_other_ethnic"
 ];
 corrVarOrder.forEach((key) => {
   if (!corrData[key]) return;
@@ -244,6 +245,11 @@ if (baGrid) {
     pct_uk_born: "% UK-born",
     pct_wfh: "% WFH",
     pct_female: "% Female",
+    pct_white: "% White",
+    pct_asian: "% Asian",
+    pct_black: "% Black",
+    pct_mixed: "% Mixed",
+    pct_other_ethnic: "% Other ethnic",
   };
   const fmtVal = (key, v) => {
     if (v === undefined || v === null) return "—";
@@ -267,6 +273,7 @@ if (baGrid) {
     pct_apprentice: 1, pct_level4_plus: 3, pct_soc123: 3,
     pct_owned: 5, pct_private_rented: 5, pct_social_rented: 5,
     pct_uk_born: 5, pct_wfh: 3, pct_female: 1,
+    pct_white: 5, pct_asian: 3, pct_black: 3, pct_mixed: 2, pct_other_ethnic: 2,
   };
   const deltaClass = (key, d) => {
     if (d === undefined || d === null) return "flat";
