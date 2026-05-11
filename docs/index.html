@@ -97,30 +97,9 @@
     </div>
   </div>
 
-  <!-- BOROUGH BREAKDOWN -->
-  <div class="section-head">
-    <span class="num">§ 2</span>
-    <span class="ttl">Per-borough breakdown</span>
-    <span class="meta">214 wards · 213 declared</span>
-  </div>
-
-  <p class="deck" style="font-size:15px; margin-top:8px;">
-    Reform won 104 of 213 declared wards across Greater Manchester — sweeping Wigan (24/25), Tameside (18/19), and dominating Oldham (13/20), Rochdale (13/20), Salford (12/20). Greens broke through Manchester (18/32) but won only sparsely outside it. Stockport stayed Lib Dem (13/21). Trafford stayed Labour (8/21) with significant Conservative gains in the Altrincham area. The full borough-by-borough picture:
-  </p>
-
-  <div class="borough-frame">
-    <div class="borough-label">Borough · ward count by winning party</div>
-    <div id="borough-list"></div>
-  </div>
-
-  <p class="note">
-    Manchester's Miles Platting & Newton Heath ward had not declared at the time of writing. Bury's Moorside ward election was cancelled in April after Reform candidate Victor Hagan died (rerun expected June). Salford's Cadishead & Lower Irlam had two seats up but is counted once here.
-  </p>
-
-
   <!-- TOP CORRELATIONS PER PARTY -->
   <div class="section-head">
-    <span class="num">§ 3</span>
+    <span class="num">§ 2</span>
     <span class="ttl">Top correlations per party</span>
     <span class="meta">Top 5 positive · top 5 negative</span>
   </div>
@@ -134,7 +113,7 @@
 
   <!-- FULL CORRELATION TABLE -->
   <div class="section-head">
-    <span class="num">§ 4</span>
+    <span class="num">§ 3</span>
     <span class="ttl">Full correlation matrix</span>
     <span class="meta">All 213 declared GM wards · Pearson r</span>
   </div>
@@ -777,6 +756,26 @@
   })();
   </script>
 
+  <!-- BOROUGH BREAKDOWN -->
+  <div class="section-head">
+    <span class="num">§ 4</span>
+    <span class="ttl">Per-borough breakdown</span>
+    <span class="meta">214 wards · 213 declared</span>
+  </div>
+
+  <p class="deck" style="font-size:15px; margin-top:8px;">
+    Reform won 104 of 213 declared wards across Greater Manchester — sweeping Wigan (24/25), Tameside (18/19), and dominating Oldham (13/20), Rochdale (13/20), Salford (12/20). Greens broke through Manchester (18/32) but won only sparsely outside it. Stockport stayed Lib Dem (13/21). Trafford stayed Labour (8/21) with significant Conservative gains in the Altrincham area. The full borough-by-borough picture:
+  </p>
+
+  <div class="borough-frame">
+    <div class="borough-label">Borough · ward count by winning party</div>
+    <div id="borough-list"></div>
+  </div>
+
+  <p class="note">
+    Manchester's Miles Platting & Newton Heath ward had not declared at the time of writing. Bury's Moorside ward election was cancelled in April after Reform candidate Victor Hagan died (rerun expected June). Salford's Cadishead & Lower Irlam had two seats up but is counted once here.
+  </p>
+
   <!-- PARTY MEANS -->
   <div class="section-head">
     <span class="num">§ 5</span>
@@ -1003,7 +1002,7 @@ if (boroughList) {
 }
 
 
-/* ===== TOP CORRELATIONS PER PARTY (§3) ===== */
+/* ===== TOP CORRELATIONS PER PARTY (§2) ===== */
 const partyCorrGrid = document.getElementById("party-corr-grid");
 if (partyCorrGrid) {
   const pcorrParties = ["Reform","Green","Labour","LibDem","Conservative"];

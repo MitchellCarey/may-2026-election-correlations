@@ -97,30 +97,9 @@
     </div>
   </div>
 
-  <!-- BOROUGH BREAKDOWN -->
-  <div class="section-head">
-    <span class="num">§ 2</span>
-    <span class="ttl">Per-borough breakdown</span>
-    <span class="meta">2,434 wards · 2,433 declared</span>
-  </div>
-
-  <p class="deck" style="font-size:15px; margin-top:8px;">
-    Reform won 646 of 2,433 declared wards across Great Britain — taking outright control of Hartlepool (12/12), Wigan (24/25), Wakefield (20/21), Tameside (18/19), Rochford (12/13), Redditch (8/9) and Dudley (21/24), and the largest single party in Sunderland (19/25), Halton (15/18), Plymouth (14/19), South Tyneside (14/18), Basildon (11/14) and Havant (9/12). Labour (532 wards) held inner-London — Greenwich (18/22), Redbridge (17/22), Ealing (16/24), Hammersmith &amp; Fulham (16/21), Barking &amp; Dagenham (14/19). LibDems (355) swept their core commuter belts: South Cambridgeshire (24/26), Sutton (18/20), Richmond upon Thames (18/18), St Albans (17/20), Cheltenham (17/20), Watford (12/12). Conservatives (417) held the affluent London fringe — Harrow (16/22), Bromley (14/22), Wandsworth (12/22), Kensington &amp; Chelsea (12/18), Cannock Chase (12/12) — and clusters in the Home Counties. Greens (346) broke through in Hackney (16/21), Lewisham (14/19), Lambeth (13/25), Manchester (18/32), Norwich (10/13) and Leeds (11/33). The full council-by-council picture:
-  </p>
-
-  <div class="borough-frame">
-    <div class="borough-label">Borough · ward count by winning party</div>
-    <div id="borough-list"></div>
-  </div>
-
-  <p class="note">
-    Manchester's Miles Platting & Newton Heath ward had not declared at the time of writing — the only undeclared ward across all 128 GB councils that elected in May 2026. Bury's Moorside ward election was cancelled in April after Reform candidate Victor Hagan died (rerun expected June) and is not counted here. A handful of multi-seat wards (e.g. Salford's Cadishead & Lower Irlam) are counted once each by winning party.
-  </p>
-
-
   <!-- TOP CORRELATIONS PER PARTY -->
   <div class="section-head">
-    <span class="num">§ 3</span>
+    <span class="num">§ 2</span>
     <span class="ttl">Top correlations per party</span>
     <span class="meta">Top 5 positive · top 5 negative</span>
   </div>
@@ -134,7 +113,7 @@
 
   <!-- FULL CORRELATION TABLE -->
   <div class="section-head">
-    <span class="num">§ 4</span>
+    <span class="num">§ 3</span>
     <span class="ttl">Full correlation matrix</span>
     <span class="meta">All 2,433 declared GB wards · Pearson r</span>
   </div>
@@ -777,6 +756,26 @@
   })();
   </script>
 
+  <!-- BOROUGH BREAKDOWN -->
+  <div class="section-head">
+    <span class="num">§ 4</span>
+    <span class="ttl">Per-borough breakdown</span>
+    <span class="meta">2,434 wards · 2,433 declared</span>
+  </div>
+
+  <p class="deck" style="font-size:15px; margin-top:8px;">
+    Reform won 646 of 2,433 declared wards across Great Britain — taking outright control of Hartlepool (12/12), Wigan (24/25), Wakefield (20/21), Tameside (18/19), Rochford (12/13), Redditch (8/9) and Dudley (21/24), and the largest single party in Sunderland (19/25), Halton (15/18), Plymouth (14/19), South Tyneside (14/18), Basildon (11/14) and Havant (9/12). Labour (532 wards) held inner-London — Greenwich (18/22), Redbridge (17/22), Ealing (16/24), Hammersmith &amp; Fulham (16/21), Barking &amp; Dagenham (14/19). LibDems (355) swept their core commuter belts: South Cambridgeshire (24/26), Sutton (18/20), Richmond upon Thames (18/18), St Albans (17/20), Cheltenham (17/20), Watford (12/12). Conservatives (417) held the affluent London fringe — Harrow (16/22), Bromley (14/22), Wandsworth (12/22), Kensington &amp; Chelsea (12/18), Cannock Chase (12/12) — and clusters in the Home Counties. Greens (346) broke through in Hackney (16/21), Lewisham (14/19), Lambeth (13/25), Manchester (18/32), Norwich (10/13) and Leeds (11/33). The full council-by-council picture:
+  </p>
+
+  <div class="borough-frame">
+    <div class="borough-label">Borough · ward count by winning party</div>
+    <div id="borough-list"></div>
+  </div>
+
+  <p class="note">
+    Manchester's Miles Platting & Newton Heath ward had not declared at the time of writing — the only undeclared ward across all 128 GB councils that elected in May 2026. Bury's Moorside ward election was cancelled in April after Reform candidate Victor Hagan died (rerun expected June) and is not counted here. A handful of multi-seat wards (e.g. Salford's Cadishead & Lower Irlam) are counted once each by winning party.
+  </p>
+
   <!-- PARTY MEANS -->
   <div class="section-head">
     <span class="num">§ 5</span>
@@ -1003,7 +1002,7 @@ if (boroughList) {
 }
 
 
-/* ===== TOP CORRELATIONS PER PARTY (§3) ===== */
+/* ===== TOP CORRELATIONS PER PARTY (§2) ===== */
 const partyCorrGrid = document.getElementById("party-corr-grid");
 if (partyCorrGrid) {
   const pcorrParties = ["Reform","Green","Labour","LibDem","Conservative"];

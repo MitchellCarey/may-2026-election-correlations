@@ -294,9 +294,9 @@ if (boroughList) {
 }
 ''')
 
-# Top correlations per party (§3)
+# Top correlations per party (§2)
 js_lines.append('''
-/* ===== TOP CORRELATIONS PER PARTY (§3) ===== */
+/* ===== TOP CORRELATIONS PER PARTY (§2) ===== */
 const partyCorrGrid = document.getElementById("party-corr-grid");
 if (partyCorrGrid) {
   const pcorrParties = ["Reform","Green","Labour","LibDem","Conservative"];
