@@ -54,6 +54,23 @@ def load_overrides() -> dict:
     return overrides
 
 
+# TS022 (Census 2021 ethnic group, detailed) — five mutually-exclusive
+# top-level shares. Surfaced in the per-ward hover tooltip alongside the
+# winner/prior result so readers can see the demographic context behind
+# each ward without a separate overlay.
+ETH_KEYS = ('pct_white', 'pct_asian', 'pct_black', 'pct_mixed', 'pct_other_ethnic')
+
+
+def _eth(r: dict) -> list | None:
+    """Pack the 5 TS022 shares into a compact array [W, A, B, M, O].
+    Returns None if any field is missing/null so the renderer can skip
+    the block cleanly. Rounded to 1 dp — tooltip-grade precision."""
+    vals = [r.get(k) for k in ETH_KEYS]
+    if any(v is None for v in vals):
+        return None
+    return [round(float(v), 1) for v in vals]
+
+
 def normalise(s: str) -> str:
     """Loose name match: lowercase, strip dots, slash → space, both apostrophe
     variants → nothing, ' and ' → ' & ', drop a trailing '(...)' disambiguator
@@ -175,6 +192,7 @@ def main():
             'py':  r.get('prior_year'),
             'fl':  r.get('flipped'),
             'mp':  r.get('match_type_prior'),
+            'eth': _eth(r),
         })
 
     # Pass 2 — walk every result that didn't have a direct WD24 name match
@@ -203,6 +221,7 @@ def main():
             'py':  r.get('prior_year'),
             'fl':  r.get('flipped'),
             'mp':  r.get('match_type_prior'),
+            'eth': _eth(r),
         })
 
     # Polygons present in the geom set but missing from results (e.g. cancelled
@@ -215,6 +234,7 @@ def main():
         no_result.append({
             'gss': code, 'b': borough_name, 'wn': w['name'],
             'w': None, 'pp': None, 'py': None, 'fl': None, 'mp': None,
+            'eth': None,
         })
 
     print(f'matched: {len(matched)}/{len(results)} results-side wards joined to a polygon')
@@ -328,6 +348,15 @@ function fmtTitle(w) {
     lines.push('Prior: ' + (PARTY_DISPLAY[w.pp] || w.pp) + (w.py ? ' (' + w.py + ')' : ''));
   }
   if (w.mp === 'fuzzy') lines.push('(prior is approximate — boundary change)');
+  if (w.eth) {
+    const [pw, pa, pb, pm, po] = w.eth;
+    lines.push('Ethnicity (2021): '
+      + 'White ' + pw.toFixed(1) + '% · '
+      + 'Asian ' + pa.toFixed(1) + '% · '
+      + 'Black ' + pb.toFixed(1) + '% · '
+      + 'Mixed ' + pm.toFixed(1) + '% · '
+      + 'Other ' + po.toFixed(1) + '%');
+  }
   return lines.join('\n');
 }
 
