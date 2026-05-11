@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Great Britain 2026 — Ward-Level Structural Analysis</title>
-<meta name="description" content="How structural variables — density, age, qualifications, tenure, country of birth — correlate with party-win patterns across 213 declared wards in every Great Britain council that elected in 2026 at the 7 May 2026 local elections.">
+<meta name="description" content="How structural variables — density, age, qualifications, tenure, country of birth — correlate with party-win patterns across 2,433 declared wards in every Great Britain council that elected at the 7 May 2026 local elections.">
 <meta property="og:title" content="Great Britain 2026 — Ward-Level Structural Analysis">
-<meta property="og:description" content="The May 2026 GB local elections. Across the full sample, Reform vs % apprenticeship sits at r = +0.64 — the single strongest correlation in the matrix.">
+<meta property="og:description" content="The May 2026 GB local elections. Across the full 2,433-ward sample, Reform vs % apprenticeship sits at r = +0.46 — the strongest single correlation in the matrix.">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,60 +40,60 @@
   <h1 class="headline" id="main" tabindex="-1">The May 2026 results across<br>Great Britain. Coalition lines,<br>drawn at the ward level.</h1>
 
   <p class="deck">
-    Across the 213 declared wards in every Great Britain council that elected in 2026, <strong>Reform vs % apprenticeship</strong> sits at <strong>r = +0.64</strong> — the single strongest correlation in the dataset. Reform's mean ward has 6.8% apprenticeship-trained residents vs 3.2% in Green wards. Reform also tracks negatively with degree-holding (<strong>−0.50</strong>), working-from-home (<strong>−0.45</strong>) and density (<strong>−0.36</strong>), and positively with UK-born share (<strong>+0.46</strong>). Conservative and LibDem wards share the highest-degree, highest-WFH profiles — Conservatives in lower-density rural-fringe seats (Bowdon, Hale, Bamford, Norden), LibDems in dense suburban knowledge-worker belts (Stockport, Timperley). Greens win the dense, young, privately-rented inner cores. Reform sweeps the post-industrial periphery.
+    Across the 2,433 declared wards in every Great Britain council that elected in 2026, <strong>Reform vs % apprenticeship</strong> sits at <strong>r = +0.46</strong> — still the strongest single correlation in the dataset, though softer than the GM-only +0.64 once Tyne &amp; Wear, the West Midlands metal towns and the Essex/Kent fringe are folded in. Reform's mean ward has 6.3% apprenticeship-trained residents vs 4.0% in Green wards. Reform also tracks negatively with degree-holding (<strong>−0.43</strong>), working-from-home (<strong>−0.36</strong>), SOC&nbsp;1-3 graduate occupations (<strong>−0.35</strong>), private renting (<strong>−0.31</strong>) and density (<strong>−0.26</strong>); positively with UK-born share (<strong>+0.41</strong>) and no-qualifications (<strong>+0.31</strong>). Greens win the dense, young, privately-rented inner cores — Hackney, Lewisham, Lambeth, Norwich, Manchester. LibDems sweep the high-degree commuter belts — South Cambridgeshire, Sutton, Richmond, St Albans, Cheltenham, Stockport. Conservatives hold the affluent suburban fringe — Harrow, Bromley, Wandsworth, Kensington &amp; Chelsea, Cannock Chase. Reform takes the post-industrial periphery, with full or near-full council sweeps in Hartlepool (12/12), Wigan (24/25), Wakefield (20/21), Tameside (18/19), Dudley (21/24) and Sunderland (19/25).
   </p>
 
   <div class="byline">
-    <strong>Sources:</strong> All 10 GB borough councils' published 2026 results · ONS Census 2021 ward-level XLSX (UK Data Service): TS006 (density), TS007 (age), TS063 (occupation), TS067 (qualifications), TS054 (tenure), TS004 (country of birth), TS061 (method of travel to work), TS008 (sex). Council Tax Support claimants by Manchester ward, June 2025 (Manchester only — other boroughs run separate schemes). Bolton, Stockport, Trafford had ward boundary changes between Census 2021 and the 2026 election; ~30 of those wards use approximate Census mappings flagged in the methodology. Manchester's Miles Platting & Newton Heath ward is still pending. Bury's Moorside ward election was cancelled (Reform candidate died; rerun expected June).
+    <strong>Sources:</strong> 2026 results for all 128 GB councils that elected in May 2026 — sourced from each council's published declarations, and from Wikipedia per-ward <code>{{Election box winning candidate}}</code> rolls where councils had not yet published machine-readable results · ONS Census 2021 ward-level XLSX (UK Data Service): TS006 (density), TS007 (age), TS063 (occupation), TS067 (qualifications), TS054 (tenure), TS004 (country of birth), TS061 (method of travel to work), TS008 (sex). Wards whose boundaries changed between Census 2021 and the May 2026 election use approximate Census mappings via the GSS ward lookup (flagged in the methodology). Manchester's Miles Platting & Newton Heath ward had not yet declared at the time of writing. Bury's Moorside ward election was cancelled (Reform candidate died; rerun expected June).
   </div>
 
   <!-- HEADLINE CORRELATIONS -->
   <div class="section-head">
     <span class="num">§ 1</span>
     <span class="ttl">Top correlations · all variables</span>
-    <span class="meta">Pearson r · 213 declared GB wards</span>
+    <span class="meta">Pearson r · 2,433 declared GB wards</span>
   </div>
 
   <div class="finding-grid">
     <div class="finding">
       <div class="ftag">Strongest</div>
-      <div class="fnum reform">+0.64</div>
-      <div class="ftxt">Reform shows a <strong>strong positive</strong> correlation with <strong>% with apprenticeships</strong>: wards Reform won average 6.8% apprenticeship-trained residents vs 3.2% in Green-won wards. The single strongest correlation across 213 wards.</div>
-    </div>
-    <div class="finding">
-      <div class="ftag">Reform</div>
-      <div class="fnum reform">−0.50</div>
-      <div class="ftxt">Reform shows a <strong>strong negative</strong> correlation with <strong>% with a Level 4+ qualification (degree)</strong>: Reform-won wards average 26% degree-holders, against Green 41%, LibDem 40%, Conservative 46%.</div>
-    </div>
-    <div class="finding">
-      <div class="ftag">Reform</div>
       <div class="fnum reform">+0.46</div>
-      <div class="ftxt">Reform shows a <strong>strong positive</strong> correlation with <strong>% UK-born</strong>: Reform-won wards average 90% UK-born residents vs 69% in Green-won wards — a 21-point gap.</div>
+      <div class="ftxt">Reform shows a <strong>strong positive</strong> correlation with <strong>% with apprenticeships</strong>: Reform-won wards average 6.3% apprenticeship-trained residents vs 4.0% in Green-won wards. The strongest single correlation across the 2,433 GB wards.</div>
     </div>
     <div class="finding">
       <div class="ftag">Reform</div>
-      <div class="fnum reform">−0.45</div>
-      <div class="ftxt">Reform shows a <strong>strong negative</strong> correlation with <strong>% working from home</strong>: Reform 24%, Green 34%, LibDem 37%, Conservative 40%. WFH is a graduate-occupation marker.</div>
+      <div class="fnum reform">−0.43</div>
+      <div class="ftxt">Reform shows a <strong>strong negative</strong> correlation with <strong>% with a Level 4+ qualification (degree)</strong>: Reform-won wards average 26% degree-holders, against Green 41%, LibDem 42%, Conservative 39%.</div>
+    </div>
+    <div class="finding">
+      <div class="ftag">Reform</div>
+      <div class="fnum reform">+0.41</div>
+      <div class="ftxt">Reform shows a <strong>strong positive</strong> correlation with <strong>% UK-born</strong>: Reform-won wards average 89% UK-born residents vs 72% in Green-won wards — a 17-point gap.</div>
+    </div>
+    <div class="finding">
+      <div class="ftag">Reform</div>
+      <div class="fnum reform">−0.36</div>
+      <div class="ftxt">Reform shows a <strong>strong negative</strong> correlation with <strong>% working from home</strong>: Reform 25%, Labour 32%, Green 36%, Conservative 38%, LibDem 39%. WFH is a graduate-occupation marker.</div>
     </div>
     <div class="finding">
       <div class="ftag">Greens</div>
-      <div class="fnum green">+0.63</div>
-      <div class="ftxt">Greens show a <strong>strong positive</strong> correlation with <strong>% aged 18-29</strong>: Green-won wards average 29% young adults vs 14% in Reform-won wards.</div>
+      <div class="fnum green">+0.30</div>
+      <div class="ftxt">Greens show a <strong>moderate positive</strong> correlation with <strong>% aged 18-29</strong>: Green-won wards average 21% young adults vs 14% in Reform-won wards. The effect is softer GB-wide than in GM (+0.63) because Green wins outside Manchester/Hackney/Lewisham aren't all in young-adult cores.</div>
     </div>
     <div class="finding">
       <div class="ftag">Greens</div>
-      <div class="fnum green">+0.62</div>
-      <div class="ftxt">Greens show a <strong>strong positive</strong> correlation with <strong>% private renting</strong>: Greens win the dense, renter-heavy inner cores (37% private rent vs Reform's 17%).</div>
+      <div class="fnum green">+0.26</div>
+      <div class="ftxt">Greens show a <strong>moderate positive</strong> correlation with <strong>% private renting</strong>: Green-won wards average 29% private rent vs Reform's 16%. Inner-London Greens (Hackney, Lewisham, Lambeth) anchor the upper end.</div>
     </div>
     <div class="finding">
       <div class="ftag">Greens · density</div>
-      <div class="fnum green">+0.55</div>
-      <div class="ftxt">Greens show a <strong>strong positive</strong> correlation with <strong>population density</strong>: Green mean 6,229/km², Reform 2,664/km², Conservative 1,849/km². The urban-rural axis.</div>
+      <div class="fnum green">+0.19</div>
+      <div class="ftxt">Greens show a <strong>weak positive</strong> correlation with <strong>population density</strong>: Green mean 6,524/km², Reform 2,879/km², Conservative 3,979/km². The urban-rural axis is real but noisy GB-wide — Norwich and Bristol Greens sit at much lower densities than Hackney's.</div>
     </div>
     <div class="finding">
       <div class="ftag">Conservative</div>
-      <div class="fnum reform" style="color:#1d4f8a">+0.35</div>
-      <div class="ftxt">Conservatives show a <strong>moderate positive</strong> correlation with <strong>% in SOC 1-3 (graduate-level jobs)</strong>: the Tory ward profile (n=11) carries the oldest median age (44.3), highest L4+ (46%), and highest SOC 1-3 (63%) — the affluent rural fringe.</div>
+      <div class="fnum reform" style="color:#1d4f8a">+0.20</div>
+      <div class="ftxt">Conservatives show a <strong>moderate positive</strong> correlation with <strong>% in SOC 1-3 (graduate-level jobs)</strong>: the Tory ward profile (n=417) carries the oldest median age (41.2), high L4+ (39%), and high SOC 1-3 (53%) — the affluent suburban fringe of London (Bromley, Harrow, Wandsworth, K&amp;C) and the Midlands/South commuter belts.</div>
     </div>
   </div>
 
@@ -101,11 +101,11 @@
   <div class="section-head">
     <span class="num">§ 2</span>
     <span class="ttl">Per-borough breakdown</span>
-    <span class="meta">214 wards · 213 declared</span>
+    <span class="meta">2,434 wards · 2,433 declared</span>
   </div>
 
   <p class="deck" style="font-size:15px; margin-top:8px;">
-    Reform won 104 of 213 declared wards across Great Britain — sweeping Wigan (24/25), Tameside (18/19), and dominating Oldham (13/20), Rochdale (13/20), Salford (12/20). Greens broke through Manchester (18/32) but won only sparsely outside it. Stockport stayed Lib Dem (13/21). Trafford stayed Labour (8/21) with significant Conservative gains in the Altrincham area. The full borough-by-borough picture:
+    Reform won 646 of 2,433 declared wards across Great Britain — taking outright control of Hartlepool (12/12), Wigan (24/25), Wakefield (20/21), Tameside (18/19), Rochford (12/13), Redditch (8/9) and Dudley (21/24), and the largest single party in Sunderland (19/25), Halton (15/18), Plymouth (14/19), South Tyneside (14/18), Basildon (11/14) and Havant (9/12). Labour (532 wards) held inner-London — Greenwich (18/22), Redbridge (17/22), Ealing (16/24), Hammersmith &amp; Fulham (16/21), Barking &amp; Dagenham (14/19). LibDems (355) swept their core commuter belts: South Cambridgeshire (24/26), Sutton (18/20), Richmond upon Thames (18/18), St Albans (17/20), Cheltenham (17/20), Watford (12/12). Conservatives (417) held the affluent London fringe — Harrow (16/22), Bromley (14/22), Wandsworth (12/22), Kensington &amp; Chelsea (12/18), Cannock Chase (12/12) — and clusters in the Home Counties. Greens (346) broke through in Hackney (16/21), Lewisham (14/19), Lambeth (13/25), Manchester (18/32), Norwich (10/13) and Leeds (11/33). The full council-by-council picture:
   </p>
 
   <div class="borough-frame">
@@ -114,7 +114,7 @@
   </div>
 
   <p class="note">
-    Manchester's Miles Platting & Newton Heath ward had not declared at the time of writing. Bury's Moorside ward election was cancelled in April after Reform candidate Victor Hagan died (rerun expected June). Salford's Cadishead & Lower Irlam had two seats up but is counted once here.
+    Manchester's Miles Platting & Newton Heath ward had not declared at the time of writing — the only undeclared ward across all 128 GB councils that elected in May 2026. Bury's Moorside ward election was cancelled in April after Reform candidate Victor Hagan died (rerun expected June) and is not counted here. A handful of multi-seat wards (e.g. Salford's Cadishead & Lower Irlam) are counted once each by winning party.
   </p>
 
 
@@ -126,7 +126,7 @@
   </div>
 
   <p class="note">
-    For each main party, the five strongest <span style="color:var(--green)">positive</span> correlations and the five strongest <span style="color:var(--reform)">negative</span> correlations between a 0/1 party-win indicator and the ward's structural profile. To avoid showing the same age signal three times, only the strongest age-related variable (median age, % under 18, % 18-29, % 30-49, % 50-64, % 65+) is shown per direction. Conservative (n=11) and LibDem (n=19) have smaller samples so their r values are noisier — read them as direction-of-pattern rather than precise effect size.
+    For each main party, the five strongest <span style="color:var(--green)">positive</span> correlations and the five strongest <span style="color:var(--reform)">negative</span> correlations between a 0/1 party-win indicator and the ward's structural profile. To avoid showing the same age signal three times, only the strongest age-related variable (median age, % under 18, % 18-29, % 30-49, % 50-64, % 65+) is shown per direction. At the GB scale every main-party sample is large (Reform n=646, Labour n=532, Conservative n=417, LibDem n=355, Green n=346), so r values are statistically tight; the GB picture is also flatter than the GM picture because the same structural pattern is being measured across more heterogeneous geographies.
   </p>
 
   <div class="party-corr-grid" id="party-corr-grid"></div>
@@ -136,11 +136,11 @@
   <div class="section-head">
     <span class="num">§ 4</span>
     <span class="ttl">Full correlation matrix</span>
-    <span class="meta">All 213 declared GB wards · Pearson r</span>
+    <span class="meta">All 2,433 declared GB wards · Pearson r</span>
   </div>
 
   <p class="note">
-    Each row is a structural variable; each column is the party-win indicator (1 = ward won by that party, 0 otherwise). Reform now has the largest sample (n=104) so its correlations are tightest. LibDem (n=19) and Conservative (n=11) signals are real but noisier. Independent (n=9) and Other (n=6, mostly The Oldham Group + Workers Party + Radcliffe First + community parties) are too varied to show clear structural patterns. Bolton, Stockport, and Trafford had ward boundary changes between Census 2021 and the 2026 election; ~30 wards there use approximate Census mappings (full list in methodology).
+    Each row is a structural variable; each column is the party-win indicator (1 = ward won by that party, 0 otherwise). Reform has the largest sample (n=646), followed by Labour (n=532), Conservative (n=417), LibDem (n=355) and Green (n=346) — all comfortably large enough that the GB r values are statistically tight. Independent (n=91) and Other (n=46 — a long tail of community-party labels) are too varied to show clear structural patterns. Wards whose boundaries changed between Census 2021 and the May 2026 election use approximate Census mappings via the GSS ward lookup (flagged in the methodology).
   </p>
 
   <div class="corr-frame">
@@ -170,33 +170,33 @@
       <button type="button" class="parallel-btn"           data-sort="Conservative" aria-pressed="false" style="--party-color:#1d4f8a">Conservative</button>
     </div>
     <!-- ===== BEGIN GENERATED SVG — see scripts/08_parallel_chart.py ===== -->
-<svg class="parallel-svg is-visible" data-sort="Reform" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel-coordinates chart of party-win correlations with structural variables across 213 Great Britain wards, ordered by Reform's correlation strength" style="width:100%;height:auto;">
+<svg class="parallel-svg is-visible" data-sort="Reform" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel-coordinates chart of party-win correlations with structural variables across 2433 Great Britain wards, ordered by Reform's correlation strength" style="width:100%;height:auto;">
 <rect x="0" y="0" width="720" height="480" fill="#fafaf7"/>
 <text x="60" y="24" font-family="'Source Serif 4', Georgia, serif" font-size="18" font-weight="700" fill="#14110d">Where each party wins, structurally — Great Britain 2026 wards</text>
 <text x="60" y="48" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">Pearson r between a 0/1 party-win indicator and each ward's Census</text>
-<text x="60" y="62" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">2021 structural profile, across 213 declared wards. Showing the ten</text>
+<text x="60" y="62" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">2021 structural profile, across 2433 declared wards. Showing the ten</text>
 <text x="60" y="76" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">variables most correlated with Reform's wins.</text>
 <text x="480" y="46" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#6b6256" letter-spacing="0.10em">PARTY · WARDS WON</text>
 <line x1="480" y1="57" x2="506" y2="57" stroke="#00b8c4" stroke-width="3.5" stroke-linecap="round"/>
 <circle cx="493" cy="57" r="3.2" fill="#00b8c4"/>
 <text x="514" y="60" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Reform</text>
-<text x="702" y="60" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=104</text>
+<text x="702" y="60" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=646</text>
 <line x1="480" y1="71" x2="506" y2="71" stroke="#2c8c4f" stroke-width="3.5" stroke-linecap="round"/>
 <circle cx="493" cy="71" r="3.2" fill="#2c8c4f"/>
 <text x="514" y="74" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Green</text>
-<text x="702" y="74" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=30</text>
+<text x="702" y="74" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=346</text>
 <line x1="480" y1="85" x2="506" y2="85" stroke="#c8362a" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="85" r="3.2" fill="#c8362a"/>
 <text x="514" y="88" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Labour</text>
-<text x="702" y="88" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=34</text>
+<text x="702" y="88" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=532</text>
 <line x1="480" y1="99" x2="506" y2="99" stroke="#e6a228" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="99" r="3.2" fill="#e6a228"/>
 <text x="514" y="102" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">LibDem</text>
-<text x="702" y="102" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=19</text>
+<text x="702" y="102" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=355</text>
 <line x1="480" y1="113" x2="506" y2="113" stroke="#1d4f8a" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="113" r="3.2" fill="#1d4f8a"/>
 <text x="514" y="116" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Conservative</text>
-<text x="702" y="116" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=11</text>
+<text x="702" y="116" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=417</text>
 <line x1="82.0" y1="130" x2="82.0" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
 <line x1="148.2" y1="130" x2="148.2" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
 <line x1="214.4" y1="130" x2="214.4" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
@@ -218,101 +218,101 @@
 <line x1="60" y1="146.4" x2="700" y2="146.4" stroke="rgba(20,17,13,0.16)" stroke-width="0.7"/>
 <text x="52" y="149.9" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#6b6256">+0.6</text>
 <line x1="60" y1="130" x2="60" y2="360" stroke="rgba(20,17,13,0.55)" stroke-width="1"/>
-<path d="M 82.0 264.1 L 148.2 234.5 L 214.4 222.3 L 280.7 209.8 L 346.9 207.9 L 413.1 265.7 L 479.3 274.4 L 545.6 187.8 L 611.8 200.1 L 678.0 195.6" fill="none" stroke="#1d4f8a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="264.1" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="234.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="222.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="209.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="207.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="265.7" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="274.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="187.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="200.1" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="195.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 247.0 L 148.2 219.4 L 214.4 223.8 L 280.7 200.0 L 346.9 203.9 L 413.1 276.7 L 479.3 259.9 L 545.6 197.4 L 611.8 198.2 L 678.0 206.1" fill="none" stroke="#e6a228" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="247.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="219.4" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="223.8" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="200.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="203.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="276.7" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="259.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="197.4" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="198.2" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="206.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 276.5 L 148.2 274.2 L 214.4 258.6 L 280.7 262.2 L 346.9 259.5 L 413.1 243.4 L 479.3 224.1 L 545.6 233.8 L 611.8 229.4 L 678.0 228.9" fill="none" stroke="#c8362a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="276.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="274.2" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="258.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="262.2" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="259.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="243.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="224.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="233.8" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="229.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="228.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 341.6 L 148.2 336.8 L 214.4 339.3 L 280.7 337.8 L 346.9 332.2 L 413.1 143.0 L 479.3 154.1 L 545.6 222.5 L 611.8 204.8 L 678.0 191.6" fill="none" stroke="#2c8c4f" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="341.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="336.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="339.3" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="337.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="332.2" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="143.0" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="154.1" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="222.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="204.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="191.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 140.2 L 148.2 169.4 L 214.4 183.1 L 280.7 200.1 L 346.9 203.1 L 413.1 293.1 L 479.3 304.6 L 545.6 309.6 L 611.8 318.8 L 678.0 326.6" fill="none" stroke="#00b8c4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="140.2" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="169.4" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="183.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="200.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="203.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="293.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="304.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="309.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="318.8" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="326.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 252.7 L 148.2 245.5 L 214.4 273.6 L 280.7 223.8 L 346.9 252.9 L 413.1 257.0 L 479.3 253.1 L 545.6 211.5 L 611.8 214.4 L 678.0 223.3" fill="none" stroke="#1d4f8a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="252.7" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="245.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="273.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="223.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="252.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="257.0" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="253.1" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="211.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="214.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="223.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 259.1 L 148.2 237.1 L 214.4 287.1 L 280.7 235.8 L 346.9 245.5 L 413.1 259.6 L 479.3 250.9 L 545.6 209.0 L 611.8 211.0 L 678.0 211.3" fill="none" stroke="#e6a228" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="259.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="237.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="287.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="235.8" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="245.5" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="259.6" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="250.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="209.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="211.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="211.3" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 275.7 L 148.2 297.9 L 214.4 234.5 L 280.7 274.6 L 346.9 210.8 L 413.1 208.0 L 479.3 214.1 L 545.6 252.4 L 611.8 248.4 L 678.0 232.4" fill="none" stroke="#c8362a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="275.7" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="297.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="234.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="274.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="210.8" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="208.0" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="214.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="252.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="248.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="232.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 279.2 L 148.2 269.6 L 214.4 262.7 L 280.7 284.6 L 346.9 221.2 L 413.1 213.6 L 479.3 202.9 L 545.6 228.6 L 611.8 225.5 L 678.0 218.7" fill="none" stroke="#2c8c4f" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="279.2" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="269.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="262.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="284.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="221.2" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="213.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="202.9" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="228.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="225.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="218.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 168.9 L 148.2 178.3 L 214.4 194.1 L 280.7 203.6 L 346.9 286.9 L 413.1 287.7 L 479.3 296.3 L 545.6 301.8 L 611.8 304.5 L 678.0 316.3" fill="none" stroke="#00b8c4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="168.9" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="178.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="194.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="203.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="286.9" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="287.7" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="296.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="301.8" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="304.5" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="316.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
 <g transform="translate(82.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Apprenticeship</text></g>
 <g transform="translate(148.2 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% UK-born</text></g>
-<g transform="translate(214.4 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 50–64</text></g>
-<g transform="translate(280.7 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 65+</text></g>
-<g transform="translate(346.9 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Median age</text></g>
-<g transform="translate(413.1 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Private rented</text></g>
-<g transform="translate(479.3 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Pop. density</text></g>
+<g transform="translate(214.4 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% No qualifications</text></g>
+<g transform="translate(280.7 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 50–64</text></g>
+<g transform="translate(346.9 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 30–49</text></g>
+<g transform="translate(413.1 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Pop. density</text></g>
+<g transform="translate(479.3 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Private rented</text></g>
 <g transform="translate(545.6 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% SOC 1–3</text></g>
 <g transform="translate(611.8 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% WFH</text></g>
 <g transform="translate(678.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Degree (L4+)</text></g>
-<text x="91.0" y="132.2" text-anchor="start" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#00b8c4">+0.64</text>
-<text x="669.0" y="342.6" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#00b8c4">−0.50</text>
+<text x="91.0" y="160.9" text-anchor="start" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#00b8c4">+0.46</text>
+<text x="669.0" y="332.3" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#00b8c4">−0.43</text>
 </svg>
-<svg class="parallel-svg" data-sort="Green" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel-coordinates chart of party-win correlations with structural variables across 213 Great Britain wards, ordered by Green's correlation strength" style="width:100%;height:auto;">
+<svg class="parallel-svg" data-sort="Green" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel-coordinates chart of party-win correlations with structural variables across 2433 Great Britain wards, ordered by Green's correlation strength" style="width:100%;height:auto;">
 <rect x="0" y="0" width="720" height="480" fill="#fafaf7"/>
 <text x="60" y="24" font-family="'Source Serif 4', Georgia, serif" font-size="18" font-weight="700" fill="#14110d">Where each party wins, structurally — Great Britain 2026 wards</text>
 <text x="60" y="48" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">Pearson r between a 0/1 party-win indicator and each ward's Census</text>
-<text x="60" y="62" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">2021 structural profile, across 213 declared wards. Showing the ten</text>
+<text x="60" y="62" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">2021 structural profile, across 2433 declared wards. Showing the ten</text>
 <text x="60" y="76" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">variables most correlated with Green's wins.</text>
 <text x="480" y="46" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#6b6256" letter-spacing="0.10em">PARTY · WARDS WON</text>
 <line x1="480" y1="57" x2="506" y2="57" stroke="#00b8c4" stroke-width="3.5" stroke-linecap="round"/>
 <circle cx="493" cy="57" r="3.2" fill="#00b8c4"/>
 <text x="514" y="60" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Reform</text>
-<text x="702" y="60" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=104</text>
+<text x="702" y="60" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=646</text>
 <line x1="480" y1="71" x2="506" y2="71" stroke="#2c8c4f" stroke-width="3.5" stroke-linecap="round"/>
 <circle cx="493" cy="71" r="3.2" fill="#2c8c4f"/>
 <text x="514" y="74" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Green</text>
-<text x="702" y="74" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=30</text>
+<text x="702" y="74" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=346</text>
 <line x1="480" y1="85" x2="506" y2="85" stroke="#c8362a" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="85" r="3.2" fill="#c8362a"/>
 <text x="514" y="88" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Labour</text>
-<text x="702" y="88" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=34</text>
+<text x="702" y="88" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=532</text>
 <line x1="480" y1="99" x2="506" y2="99" stroke="#e6a228" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="99" r="3.2" fill="#e6a228"/>
 <text x="514" y="102" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">LibDem</text>
-<text x="702" y="102" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=19</text>
+<text x="702" y="102" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=355</text>
 <line x1="480" y1="113" x2="506" y2="113" stroke="#1d4f8a" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="113" r="3.2" fill="#1d4f8a"/>
 <text x="514" y="116" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Conservative</text>
-<text x="702" y="116" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=11</text>
+<text x="702" y="116" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=417</text>
 <line x1="82.0" y1="130" x2="82.0" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
 <line x1="148.2" y1="130" x2="148.2" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
 <line x1="214.4" y1="130" x2="214.4" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
@@ -334,101 +334,101 @@
 <line x1="60" y1="146.4" x2="700" y2="146.4" stroke="rgba(20,17,13,0.16)" stroke-width="0.7"/>
 <text x="52" y="149.9" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#6b6256">+0.6</text>
 <line x1="60" y1="130" x2="60" y2="360" stroke="rgba(20,17,13,0.55)" stroke-width="1"/>
-<path d="M 82.0 268.3 L 148.2 265.7 L 214.4 274.4 L 280.7 227.9 L 346.9 203.6 L 413.1 207.9 L 479.3 234.5 L 545.6 209.8 L 611.8 222.3 L 678.0 264.1" fill="none" stroke="#1d4f8a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="268.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="265.7" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="274.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="227.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="203.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="207.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="234.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="209.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="222.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="264.1" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 269.6 L 148.2 276.7 L 214.4 259.9 L 280.7 218.7 L 346.9 201.3 L 413.1 203.9 L 479.3 219.4 L 545.6 200.0 L 611.8 223.8 L 678.0 247.0" fill="none" stroke="#e6a228" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="269.6" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="276.7" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="259.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="218.7" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="201.3" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="203.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="219.4" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="200.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="223.8" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="247.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 258.1 L 148.2 243.4 L 214.4 224.1 L 280.7 250.9 L 346.9 251.6 L 413.1 259.5 L 479.3 274.2 L 545.6 262.2 L 611.8 258.6 L 678.0 276.5" fill="none" stroke="#c8362a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="258.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="243.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="224.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="250.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="251.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="259.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="274.2" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="262.2" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="258.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="276.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 141.7 L 148.2 143.0 L 214.4 154.1 L 280.7 309.1 L 346.9 328.3 L 413.1 332.2 L 479.3 336.8 L 545.6 337.8 L 611.8 339.3 L 678.0 341.6" fill="none" stroke="#2c8c4f" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="141.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="143.0" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="154.1" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="309.1" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="328.3" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="332.2" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="336.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="337.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="339.3" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="341.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 281.3 L 148.2 293.1 L 214.4 304.6 L 280.7 214.3 L 346.9 220.7 L 413.1 203.1 L 479.3 169.4 L 545.6 200.1 L 611.8 183.1 L 678.0 140.2" fill="none" stroke="#00b8c4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="281.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="293.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="304.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="214.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="220.7" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="203.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="169.4" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="200.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="183.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="140.2" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 265.4 L 148.2 253.1 L 214.4 257.0 L 280.7 223.3 L 346.9 255.3 L 413.1 252.7 L 479.3 217.9 L 545.6 219.5 L 611.8 223.8 L 678.0 212.3" fill="none" stroke="#1d4f8a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="265.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="253.1" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="257.0" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="223.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="255.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="252.7" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="217.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="219.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="223.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="212.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 256.7 L 148.2 250.9 L 214.4 259.6 L 280.7 211.3 L 346.9 250.3 L 413.1 259.1 L 479.3 230.2 L 545.6 232.0 L 611.8 235.8 L 678.0 221.0" fill="none" stroke="#e6a228" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="256.7" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="250.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="259.6" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="211.3" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="250.3" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="259.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="230.2" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="232.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="235.8" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="221.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 229.4 L 148.2 214.1 L 214.4 208.0 L 280.7 232.4 L 346.9 225.1 L 413.1 275.7 L 479.3 279.5 L 545.6 285.1 L 611.8 274.6 L 678.0 282.9" fill="none" stroke="#c8362a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="229.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="214.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="208.0" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="232.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="225.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="275.7" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="279.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="285.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="274.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="282.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 196.4 L 148.2 202.9 L 214.4 213.6 L 280.7 218.7 L 346.9 272.4 L 413.1 279.2 L 479.3 279.5 L 545.6 280.6 L 611.8 284.6 L 678.0 285.7" fill="none" stroke="#2c8c4f" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="196.4" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="202.9" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="213.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="218.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="272.4" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="279.2" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="279.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="280.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="284.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="285.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 273.3 L 148.2 296.3 L 214.4 287.7 L 280.7 316.3 L 346.9 237.3 L 413.1 168.9 L 479.3 215.8 L 545.6 208.7 L 611.8 203.6 L 678.0 222.2" fill="none" stroke="#00b8c4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="273.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="296.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="287.7" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="316.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="237.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="168.9" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="215.8" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="208.7" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="203.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="222.2" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
 <g transform="translate(82.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 18–29</text></g>
 <g transform="translate(148.2 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Private rented</text></g>
 <g transform="translate(214.4 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Pop. density</text></g>
-<g transform="translate(280.7 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Female</text></g>
-<g transform="translate(346.9 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Owner-occupied</text></g>
-<g transform="translate(413.1 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Median age</text></g>
-<g transform="translate(479.3 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% UK-born</text></g>
+<g transform="translate(280.7 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Degree (L4+)</text></g>
+<g transform="translate(346.9 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 0–17</text></g>
+<g transform="translate(413.1 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Apprenticeship</text></g>
+<g transform="translate(479.3 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Median age</text></g>
 <g transform="translate(545.6 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 65+</text></g>
 <g transform="translate(611.8 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 50–64</text></g>
-<g transform="translate(678.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Apprenticeship</text></g>
-<text x="91.0" y="133.7" text-anchor="start" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#2c8c4f">+0.63</text>
-<text x="669.0" y="357.6" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#2c8c4f">−0.59</text>
+<g transform="translate(678.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Owner-occupied</text></g>
+<text x="91.0" y="188.4" text-anchor="start" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#2c8c4f">+0.30</text>
+<text x="669.0" y="301.7" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#2c8c4f">−0.25</text>
 </svg>
-<svg class="parallel-svg" data-sort="Labour" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel-coordinates chart of party-win correlations with structural variables across 213 Great Britain wards, ordered by Labour's correlation strength" style="width:100%;height:auto;">
+<svg class="parallel-svg" data-sort="Labour" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel-coordinates chart of party-win correlations with structural variables across 2433 Great Britain wards, ordered by Labour's correlation strength" style="width:100%;height:auto;">
 <rect x="0" y="0" width="720" height="480" fill="#fafaf7"/>
 <text x="60" y="24" font-family="'Source Serif 4', Georgia, serif" font-size="18" font-weight="700" fill="#14110d">Where each party wins, structurally — Great Britain 2026 wards</text>
 <text x="60" y="48" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">Pearson r between a 0/1 party-win indicator and each ward's Census</text>
-<text x="60" y="62" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">2021 structural profile, across 213 declared wards. Showing the ten</text>
+<text x="60" y="62" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">2021 structural profile, across 2433 declared wards. Showing the ten</text>
 <text x="60" y="76" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">variables most correlated with Labour's wins.</text>
 <text x="480" y="46" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#6b6256" letter-spacing="0.10em">PARTY · WARDS WON</text>
 <line x1="480" y1="57" x2="506" y2="57" stroke="#00b8c4" stroke-width="3.5" stroke-linecap="round"/>
 <circle cx="493" cy="57" r="3.2" fill="#00b8c4"/>
 <text x="514" y="60" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Reform</text>
-<text x="702" y="60" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=104</text>
+<text x="702" y="60" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=646</text>
 <line x1="480" y1="71" x2="506" y2="71" stroke="#2c8c4f" stroke-width="3.5" stroke-linecap="round"/>
 <circle cx="493" cy="71" r="3.2" fill="#2c8c4f"/>
 <text x="514" y="74" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Green</text>
-<text x="702" y="74" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=30</text>
+<text x="702" y="74" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=346</text>
 <line x1="480" y1="85" x2="506" y2="85" stroke="#c8362a" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="85" r="3.2" fill="#c8362a"/>
 <text x="514" y="88" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Labour</text>
-<text x="702" y="88" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=34</text>
+<text x="702" y="88" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=532</text>
 <line x1="480" y1="99" x2="506" y2="99" stroke="#e6a228" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="99" r="3.2" fill="#e6a228"/>
 <text x="514" y="102" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">LibDem</text>
-<text x="702" y="102" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=19</text>
+<text x="702" y="102" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=355</text>
 <line x1="480" y1="113" x2="506" y2="113" stroke="#1d4f8a" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="113" r="3.2" fill="#1d4f8a"/>
 <text x="514" y="116" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Conservative</text>
-<text x="702" y="116" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=11</text>
+<text x="702" y="116" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=417</text>
 <line x1="82.0" y1="130" x2="82.0" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
 <line x1="148.2" y1="130" x2="148.2" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
 <line x1="214.4" y1="130" x2="214.4" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
@@ -450,101 +450,101 @@
 <line x1="60" y1="146.4" x2="700" y2="146.4" stroke="rgba(20,17,13,0.16)" stroke-width="0.7"/>
 <text x="52" y="149.9" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#6b6256">+0.6</text>
 <line x1="60" y1="130" x2="60" y2="360" stroke="rgba(20,17,13,0.55)" stroke-width="1"/>
-<path d="M 82.0 249.1 L 148.2 265.2 L 214.4 274.4 L 280.7 195.6 L 346.9 200.1 L 413.1 222.3 L 479.3 207.9 L 545.6 209.8 L 611.8 234.5 L 678.0 264.1" fill="none" stroke="#1d4f8a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="249.1" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="265.2" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="274.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="195.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="200.1" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="222.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="207.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="209.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="234.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="264.1" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 258.1 L 148.2 264.1 L 214.4 259.9 L 280.7 206.1 L 346.9 198.2 L 413.1 223.8 L 479.3 203.9 L 545.6 200.0 L 611.8 219.4 L 678.0 247.0" fill="none" stroke="#e6a228" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="258.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="264.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="259.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="206.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="198.2" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="223.8" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="203.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="200.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="219.4" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="247.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 208.2 L 148.2 213.0 L 214.4 224.1 L 280.7 228.9 L 346.9 229.4 L 413.1 258.6 L 479.3 259.5 L 545.6 262.2 L 611.8 274.2 L 678.0 276.5" fill="none" stroke="#c8362a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="208.2" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="213.0" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="224.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="228.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="229.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="258.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="259.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="262.2" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="274.2" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="276.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 279.5 L 148.2 201.5 L 214.4 154.1 L 280.7 191.6 L 346.9 204.8 L 413.1 339.3 L 479.3 332.2 L 545.6 337.8 L 611.8 336.8 L 678.0 341.6" fill="none" stroke="#2c8c4f" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="279.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="201.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="154.1" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="191.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="204.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="339.3" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="332.2" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="337.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="336.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="341.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 256.5 L 148.2 283.3 L 214.4 304.6 L 280.7 326.6 L 346.9 318.8 L 413.1 183.1 L 479.3 203.1 L 545.6 200.1 L 611.8 169.4 L 678.0 140.2" fill="none" stroke="#00b8c4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="256.5" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="283.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="304.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="326.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="318.8" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="183.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="203.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="200.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="169.4" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="140.2" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<g transform="translate(82.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 0–17</text></g>
+<path d="M 82.0 257.0 L 148.2 252.9 L 214.4 253.1 L 280.7 284.4 L 346.9 223.8 L 413.1 252.7 L 479.3 217.9 L 545.6 212.3 L 611.8 219.5 L 678.0 245.5" fill="none" stroke="#1d4f8a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="257.0" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="252.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="253.1" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="284.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="223.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="252.7" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="217.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="212.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="219.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="245.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 259.6 L 148.2 245.5 L 214.4 250.9 L 280.7 274.1 L 346.9 235.8 L 413.1 259.1 L 479.3 230.2 L 545.6 221.0 L 611.8 232.0 L 678.0 237.1" fill="none" stroke="#e6a228" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="259.6" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="245.5" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="250.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="274.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="235.8" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="259.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="230.2" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="221.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="232.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="237.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 208.0 L 148.2 210.8 L 214.4 214.1 L 280.7 219.0 L 346.9 274.6 L 413.1 275.7 L 479.3 279.5 L 545.6 282.9 L 611.8 285.1 L 678.0 297.9" fill="none" stroke="#c8362a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="208.0" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="210.8" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="214.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="219.0" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="274.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="275.7" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="279.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="282.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="285.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="297.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 213.6 L 148.2 221.2 L 214.4 202.9 L 280.7 225.5 L 346.9 284.6 L 413.1 279.2 L 479.3 279.5 L 545.6 285.7 L 611.8 280.6 L 678.0 269.6" fill="none" stroke="#2c8c4f" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="213.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="221.2" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="202.9" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="225.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="284.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="279.2" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="279.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="285.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="280.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="269.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 287.7 L 148.2 286.9 L 214.4 296.3 L 280.7 230.4 L 346.9 203.6 L 413.1 168.9 L 479.3 215.8 L 545.6 222.2 L 611.8 208.7 L 678.0 178.3" fill="none" stroke="#00b8c4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="287.7" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="286.9" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="296.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="230.4" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="203.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="168.9" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="215.8" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="222.2" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="208.7" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="178.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<g transform="translate(82.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Pop. density</text></g>
 <g transform="translate(148.2 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 30–49</text></g>
-<g transform="translate(214.4 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Pop. density</text></g>
-<g transform="translate(280.7 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Degree (L4+)</text></g>
-<g transform="translate(346.9 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% WFH</text></g>
-<g transform="translate(413.1 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 50–64</text></g>
+<g transform="translate(214.4 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Private rented</text></g>
+<g transform="translate(280.7 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Social rented</text></g>
+<g transform="translate(346.9 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 50–64</text></g>
+<g transform="translate(413.1 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Apprenticeship</text></g>
 <g transform="translate(479.3 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Median age</text></g>
-<g transform="translate(545.6 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 65+</text></g>
-<g transform="translate(611.8 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% UK-born</text></g>
-<g transform="translate(678.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Apprenticeship</text></g>
-<text x="91.0" y="200.2" text-anchor="start" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#c8362a">+0.22</text>
-<text x="669.0" y="292.5" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#c8362a">−0.19</text>
+<g transform="translate(545.6 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Owner-occupied</text></g>
+<g transform="translate(611.8 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 65+</text></g>
+<g transform="translate(678.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% UK-born</text></g>
+<text x="91.0" y="200.0" text-anchor="start" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#c8362a">+0.23</text>
+<text x="669.0" y="313.9" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#c8362a">−0.32</text>
 </svg>
-<svg class="parallel-svg" data-sort="LibDem" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel-coordinates chart of party-win correlations with structural variables across 213 Great Britain wards, ordered by Lib Dem's correlation strength" style="width:100%;height:auto;">
+<svg class="parallel-svg" data-sort="LibDem" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel-coordinates chart of party-win correlations with structural variables across 2433 Great Britain wards, ordered by Lib Dem's correlation strength" style="width:100%;height:auto;">
 <rect x="0" y="0" width="720" height="480" fill="#fafaf7"/>
 <text x="60" y="24" font-family="'Source Serif 4', Georgia, serif" font-size="18" font-weight="700" fill="#14110d">Where each party wins, structurally — Great Britain 2026 wards</text>
 <text x="60" y="48" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">Pearson r between a 0/1 party-win indicator and each ward's Census</text>
-<text x="60" y="62" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">2021 structural profile, across 213 declared wards. Showing the ten</text>
+<text x="60" y="62" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">2021 structural profile, across 2433 declared wards. Showing the ten</text>
 <text x="60" y="76" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">variables most correlated with Lib Dem's wins.</text>
 <text x="480" y="46" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#6b6256" letter-spacing="0.10em">PARTY · WARDS WON</text>
 <line x1="480" y1="57" x2="506" y2="57" stroke="#00b8c4" stroke-width="3.5" stroke-linecap="round"/>
 <circle cx="493" cy="57" r="3.2" fill="#00b8c4"/>
 <text x="514" y="60" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Reform</text>
-<text x="702" y="60" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=104</text>
+<text x="702" y="60" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=646</text>
 <line x1="480" y1="71" x2="506" y2="71" stroke="#2c8c4f" stroke-width="3.5" stroke-linecap="round"/>
 <circle cx="493" cy="71" r="3.2" fill="#2c8c4f"/>
 <text x="514" y="74" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Green</text>
-<text x="702" y="74" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=30</text>
+<text x="702" y="74" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=346</text>
 <line x1="480" y1="85" x2="506" y2="85" stroke="#c8362a" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="85" r="3.2" fill="#c8362a"/>
 <text x="514" y="88" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Labour</text>
-<text x="702" y="88" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=34</text>
+<text x="702" y="88" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=532</text>
 <line x1="480" y1="99" x2="506" y2="99" stroke="#e6a228" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="99" r="3.2" fill="#e6a228"/>
 <text x="514" y="102" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">LibDem</text>
-<text x="702" y="102" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=19</text>
+<text x="702" y="102" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=355</text>
 <line x1="480" y1="113" x2="506" y2="113" stroke="#1d4f8a" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="113" r="3.2" fill="#1d4f8a"/>
 <text x="514" y="116" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Conservative</text>
-<text x="702" y="116" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=11</text>
+<text x="702" y="116" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=417</text>
 <line x1="82.0" y1="130" x2="82.0" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
 <line x1="148.2" y1="130" x2="148.2" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
 <line x1="214.4" y1="130" x2="214.4" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
@@ -566,101 +566,101 @@
 <line x1="60" y1="146.4" x2="700" y2="146.4" stroke="rgba(20,17,13,0.16)" stroke-width="0.7"/>
 <text x="52" y="149.9" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#6b6256">+0.6</text>
 <line x1="60" y1="130" x2="60" y2="360" stroke="rgba(20,17,13,0.55)" stroke-width="1"/>
-<path d="M 82.0 187.8 L 148.2 200.1 L 214.4 209.8 L 280.7 203.6 L 346.9 207.9 L 413.1 195.6 L 479.3 227.9 L 545.6 265.7 L 611.8 287.6 L 678.0 290.3" fill="none" stroke="#1d4f8a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="187.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="200.1" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="209.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="203.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="207.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="195.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="227.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="265.7" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="287.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="290.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 197.4 L 148.2 198.2 L 214.4 200.0 L 280.7 201.3 L 346.9 203.9 L 413.1 206.1 L 479.3 218.7 L 545.6 276.7 L 611.8 280.6 L 678.0 287.9" fill="none" stroke="#e6a228" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="197.4" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="198.2" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="200.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="201.3" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="203.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="206.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="218.7" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="276.7" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="280.6" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="287.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 233.8 L 148.2 229.4 L 214.4 262.2 L 280.7 251.6 L 346.9 259.5 L 413.1 228.9 L 479.3 250.9 L 545.6 243.4 L 611.8 236.6 L 678.0 238.3" fill="none" stroke="#c8362a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="233.8" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="229.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="262.2" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="251.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="259.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="228.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="250.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="243.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="236.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="238.3" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 222.5 L 148.2 204.8 L 214.4 337.8 L 280.7 328.3 L 346.9 332.2 L 413.1 191.6 L 479.3 309.1 L 545.6 143.0 L 611.8 217.1 L 678.0 269.5" fill="none" stroke="#2c8c4f" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="222.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="204.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="337.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="328.3" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="332.2" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="191.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="309.1" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="143.0" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="217.1" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="269.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 309.6 L 148.2 318.8 L 214.4 200.1 L 280.7 220.7 L 346.9 203.1 L 413.1 326.6 L 479.3 214.3 L 545.6 293.1 L 611.8 235.6 L 678.0 205.2" fill="none" stroke="#00b8c4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="309.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="318.8" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="200.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="220.7" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="203.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="326.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="214.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="293.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="235.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="205.2" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 211.5 L 148.2 214.4 L 214.4 223.3 L 280.7 212.3 L 346.9 217.9 L 413.1 219.5 L 479.3 252.7 L 545.6 257.0 L 611.8 284.4 L 678.0 273.6" fill="none" stroke="#1d4f8a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="211.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="214.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="223.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="212.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="217.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="219.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="252.7" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="257.0" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="284.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="273.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 209.0 L 148.2 211.0 L 214.4 211.3 L 280.7 221.0 L 346.9 230.2 L 413.1 232.0 L 479.3 259.1 L 545.6 259.6 L 611.8 274.1 L 678.0 287.1" fill="none" stroke="#e6a228" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="209.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="211.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="211.3" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="221.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="230.2" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="232.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="259.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="259.6" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="274.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="287.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 252.4 L 148.2 248.4 L 214.4 232.4 L 280.7 282.9 L 346.9 279.5 L 413.1 285.1 L 479.3 275.7 L 545.6 208.0 L 611.8 219.0 L 678.0 234.5" fill="none" stroke="#c8362a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="252.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="248.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="232.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="282.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="279.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="285.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="275.7" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="208.0" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="219.0" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="234.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 228.6 L 148.2 225.5 L 214.4 218.7 L 280.7 285.7 L 346.9 279.5 L 413.1 280.6 L 479.3 279.2 L 545.6 213.6 L 611.8 225.5 L 678.0 262.7" fill="none" stroke="#2c8c4f" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="228.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="225.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="218.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="285.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="279.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="280.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="279.2" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="213.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="225.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="262.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 301.8 L 148.2 304.5 L 214.4 316.3 L 280.7 222.2 L 346.9 215.8 L 413.1 208.7 L 479.3 168.9 L 545.6 287.7 L 611.8 230.4 L 678.0 194.1" fill="none" stroke="#00b8c4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="301.8" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="304.5" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="316.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="222.2" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="215.8" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="208.7" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="168.9" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="287.7" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="230.4" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="194.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
 <g transform="translate(82.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% SOC 1–3</text></g>
 <g transform="translate(148.2 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% WFH</text></g>
-<g transform="translate(214.4 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 65+</text></g>
+<g transform="translate(214.4 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Degree (L4+)</text></g>
 <g transform="translate(280.7 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Owner-occupied</text></g>
 <g transform="translate(346.9 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Median age</text></g>
-<g transform="translate(413.1 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Degree (L4+)</text></g>
-<g transform="translate(479.3 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Female</text></g>
-<g transform="translate(545.6 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Private rented</text></g>
+<g transform="translate(413.1 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 65+</text></g>
+<g transform="translate(479.3 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Apprenticeship</text></g>
+<g transform="translate(545.6 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Pop. density</text></g>
 <g transform="translate(611.8 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Social rented</text></g>
 <g transform="translate(678.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% No qualifications</text></g>
-<text x="91.0" y="189.4" text-anchor="start" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#e6a228">+0.29</text>
-<text x="669.0" y="303.9" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#e6a228">−0.26</text>
+<text x="91.0" y="201.0" text-anchor="start" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#e6a228">+0.22</text>
+<text x="669.0" y="303.1" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#e6a228">−0.26</text>
 </svg>
-<svg class="parallel-svg" data-sort="Conservative" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel-coordinates chart of party-win correlations with structural variables across 213 Great Britain wards, ordered by Conservative's correlation strength" style="width:100%;height:auto;">
+<svg class="parallel-svg" data-sort="Conservative" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel-coordinates chart of party-win correlations with structural variables across 2433 Great Britain wards, ordered by Conservative's correlation strength" style="width:100%;height:auto;">
 <rect x="0" y="0" width="720" height="480" fill="#fafaf7"/>
 <text x="60" y="24" font-family="'Source Serif 4', Georgia, serif" font-size="18" font-weight="700" fill="#14110d">Where each party wins, structurally — Great Britain 2026 wards</text>
 <text x="60" y="48" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">Pearson r between a 0/1 party-win indicator and each ward's Census</text>
-<text x="60" y="62" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">2021 structural profile, across 213 declared wards. Showing the ten</text>
+<text x="60" y="62" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">2021 structural profile, across 2433 declared wards. Showing the ten</text>
 <text x="60" y="76" font-family="'Inter Tight', 'Atkinson Hyperlegible', sans-serif" font-size="11" fill="#6b6256">variables most correlated with Conservative's wins.</text>
 <text x="480" y="46" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#6b6256" letter-spacing="0.10em">PARTY · WARDS WON</text>
 <line x1="480" y1="57" x2="506" y2="57" stroke="#00b8c4" stroke-width="3.5" stroke-linecap="round"/>
 <circle cx="493" cy="57" r="3.2" fill="#00b8c4"/>
 <text x="514" y="60" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Reform</text>
-<text x="702" y="60" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=104</text>
+<text x="702" y="60" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=646</text>
 <line x1="480" y1="71" x2="506" y2="71" stroke="#2c8c4f" stroke-width="3.5" stroke-linecap="round"/>
 <circle cx="493" cy="71" r="3.2" fill="#2c8c4f"/>
 <text x="514" y="74" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Green</text>
-<text x="702" y="74" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=30</text>
+<text x="702" y="74" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=346</text>
 <line x1="480" y1="85" x2="506" y2="85" stroke="#c8362a" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="85" r="3.2" fill="#c8362a"/>
 <text x="514" y="88" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Labour</text>
-<text x="702" y="88" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=34</text>
+<text x="702" y="88" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=532</text>
 <line x1="480" y1="99" x2="506" y2="99" stroke="#e6a228" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="99" r="3.2" fill="#e6a228"/>
 <text x="514" y="102" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">LibDem</text>
-<text x="702" y="102" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=19</text>
+<text x="702" y="102" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=355</text>
 <line x1="480" y1="113" x2="506" y2="113" stroke="#1d4f8a" stroke-width="2.0" stroke-linecap="round"/>
 <circle cx="493" cy="113" r="3.2" fill="#1d4f8a"/>
 <text x="514" y="116" font-family="'Atkinson Hyperlegible', sans-serif" font-size="11" font-weight="600" fill="#14110d">Conservative</text>
-<text x="702" y="116" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=11</text>
+<text x="702" y="116" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" fill="#6b6256">n=417</text>
 <line x1="82.0" y1="130" x2="82.0" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
 <line x1="148.2" y1="130" x2="148.2" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
 <line x1="214.4" y1="130" x2="214.4" y2="360" stroke="rgba(20,17,13,0.10)" stroke-width="0.7"/>
@@ -682,73 +682,73 @@
 <line x1="60" y1="146.4" x2="700" y2="146.4" stroke="rgba(20,17,13,0.16)" stroke-width="0.7"/>
 <text x="52" y="149.9" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#6b6256">+0.6</text>
 <line x1="60" y1="130" x2="60" y2="360" stroke="rgba(20,17,13,0.55)" stroke-width="1"/>
-<path d="M 82.0 187.8 L 148.2 195.6 L 214.4 200.1 L 280.7 203.6 L 346.9 207.9 L 413.1 209.8 L 479.3 268.3 L 545.6 274.4 L 611.8 287.6 L 678.0 290.3" fill="none" stroke="#1d4f8a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="187.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="195.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="200.1" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="203.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="207.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="209.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="268.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="274.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="287.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="290.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 197.4 L 148.2 206.1 L 214.4 198.2 L 280.7 201.3 L 346.9 203.9 L 413.1 200.0 L 479.3 269.6 L 545.6 259.9 L 611.8 280.6 L 678.0 287.9" fill="none" stroke="#e6a228" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="197.4" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="206.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="198.2" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="201.3" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="203.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="200.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="269.6" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="259.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="280.6" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="287.9" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 233.8 L 148.2 228.9 L 214.4 229.4 L 280.7 251.6 L 346.9 259.5 L 413.1 262.2 L 479.3 258.1 L 545.6 224.1 L 611.8 236.6 L 678.0 238.3" fill="none" stroke="#c8362a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="233.8" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="228.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="229.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="251.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="259.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="262.2" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="258.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="224.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="236.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="238.3" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 222.5 L 148.2 191.6 L 214.4 204.8 L 280.7 328.3 L 346.9 332.2 L 413.1 337.8 L 479.3 141.7 L 545.6 154.1 L 611.8 217.1 L 678.0 269.5" fill="none" stroke="#2c8c4f" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="222.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="191.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="204.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="328.3" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="332.2" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="337.8" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="141.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="154.1" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="217.1" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="269.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
-<path d="M 82.0 309.6 L 148.2 326.6 L 214.4 318.8 L 280.7 220.7 L 346.9 203.1 L 413.1 200.1 L 479.3 281.3 L 545.6 304.6 L 611.8 235.6 L 678.0 205.2" fill="none" stroke="#00b8c4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
-<circle cx="82.0" cy="309.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="148.2" cy="326.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="214.4" cy="318.8" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="280.7" cy="220.7" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="346.9" cy="203.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="413.1" cy="200.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="479.3" cy="281.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="545.6" cy="304.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="611.8" cy="235.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
-<circle cx="678.0" cy="205.2" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 211.5 L 148.2 212.3 L 214.4 214.4 L 280.7 217.9 L 346.9 219.5 L 413.1 223.3 L 479.3 223.8 L 545.6 265.4 L 611.8 273.6 L 678.0 284.4" fill="none" stroke="#1d4f8a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="211.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="212.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="214.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="217.9" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="219.5" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="223.3" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="223.8" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="265.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="273.6" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="284.4" r="4.5" fill="#1d4f8a" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 209.0 L 148.2 221.0 L 214.4 211.0 L 280.7 230.2 L 346.9 232.0 L 413.1 211.3 L 479.3 235.8 L 545.6 256.7 L 611.8 287.1 L 678.0 274.1" fill="none" stroke="#e6a228" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="209.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="221.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="211.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="230.2" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="232.0" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="211.3" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="235.8" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="256.7" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="287.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="274.1" r="4.5" fill="#e6a228" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 252.4 L 148.2 282.9 L 214.4 248.4 L 280.7 279.5 L 346.9 285.1 L 413.1 232.4 L 479.3 274.6 L 545.6 229.4 L 611.8 234.5 L 678.0 219.0" fill="none" stroke="#c8362a" stroke-width="2.0" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="252.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="282.9" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="248.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="279.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="285.1" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="232.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="274.6" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="229.4" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="234.5" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="219.0" r="4.5" fill="#c8362a" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 228.6 L 148.2 285.7 L 214.4 225.5 L 280.7 279.5 L 346.9 280.6 L 413.1 218.7 L 479.3 284.6 L 545.6 196.4 L 611.8 262.7 L 678.0 225.5" fill="none" stroke="#2c8c4f" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="228.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="285.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="225.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="279.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="280.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="218.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="284.6" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="196.4" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="262.7" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="225.5" r="4.5" fill="#2c8c4f" stroke="#fafaf7" stroke-width="1"/>
+<path d="M 82.0 301.8 L 148.2 222.2 L 214.4 304.5 L 280.7 215.8 L 346.9 208.7 L 413.1 316.3 L 479.3 203.6 L 545.6 273.3 L 611.8 194.1 L 678.0 230.4" fill="none" stroke="#00b8c4" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" opacity="0.95"/>
+<circle cx="82.0" cy="301.8" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="148.2" cy="222.2" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="214.4" cy="304.5" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="280.7" cy="215.8" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="346.9" cy="208.7" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="413.1" cy="316.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="479.3" cy="203.6" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="545.6" cy="273.3" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="611.8" cy="194.1" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
+<circle cx="678.0" cy="230.4" r="4.5" fill="#00b8c4" stroke="#fafaf7" stroke-width="1"/>
 <g transform="translate(82.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% SOC 1–3</text></g>
-<g transform="translate(148.2 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Degree (L4+)</text></g>
+<g transform="translate(148.2 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Owner-occupied</text></g>
 <g transform="translate(214.4 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% WFH</text></g>
-<g transform="translate(280.7 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Owner-occupied</text></g>
-<g transform="translate(346.9 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Median age</text></g>
-<g transform="translate(413.1 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 65+</text></g>
-<g transform="translate(479.3 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 18–29</text></g>
-<g transform="translate(545.6 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Pop. density</text></g>
-<g transform="translate(611.8 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Social rented</text></g>
-<g transform="translate(678.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% No qualifications</text></g>
-<text x="91.0" y="179.8" text-anchor="start" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#1d4f8a">+0.35</text>
-<text x="669.0" y="306.3" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#1d4f8a">−0.28</text>
+<g transform="translate(280.7 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">Median age</text></g>
+<g transform="translate(346.9 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 65+</text></g>
+<g transform="translate(413.1 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Degree (L4+)</text></g>
+<g transform="translate(479.3 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 50–64</text></g>
+<g transform="translate(545.6 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Aged 18–29</text></g>
+<g transform="translate(611.8 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% No qualifications</text></g>
+<g transform="translate(678.0 368) rotate(-90)"><text x="0" y="3" text-anchor="end" font-family="'Atkinson Hyperlegible', sans-serif" font-size="10.5" fill="#14110d">% Social rented</text></g>
+<text x="91.0" y="203.5" text-anchor="start" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#1d4f8a">+0.20</text>
+<text x="669.0" y="300.4" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="700" fill="#1d4f8a">−0.24</text>
 </svg>
 <!-- ===== END GENERATED SVG ===== -->
     <p class="parallel-caveat">
@@ -781,7 +781,7 @@
   <div class="section-head">
     <span class="num">§ 5</span>
     <span class="ttl">Average ward profile</span>
-    <span class="meta">All 213 declared GB wards · means</span>
+    <span class="meta">All 2,433 declared GB wards · means</span>
   </div>
 
   <div class="means-grid" id="means-grid"></div>
@@ -789,18 +789,18 @@
   <!-- ALL WARDS -->
   <div class="section-head">
     <span class="num">§ 6</span>
-    <span class="ttl">All wards · 10 boroughs</span>
-    <span class="meta">214 wards · sorted by borough → party → density</span>
+    <span class="ttl">All wards · 128 councils</span>
+    <span class="meta">2,434 wards · sorted by council → party → density</span>
   </div>
 
   <div class="wards-list" id="wards-list"></div>
 
   <!-- FOOTER -->
   <div class="footer">
-    <strong>Method.</strong> All 10 Great Britain borough councils held local elections on 7 May 2026; ward-level results were collected from each council's official results page or the most authoritative local source (bolton.gov.uk, oldham.gov.uk, stockport.gov.uk, trafford.gov.uk, electionresults.wigan.gov.uk for council-direct; Bury Times via Yahoo, Tameside Correspondent, Rochdale Times, Salford Now, salfordmedia.co.uk, Northern Quota for the rest). For each ward, the structural profile is built from ONS Census 2021 ward-level data: TS006 (density), TS007 (single-year age), TS063 (10-category occupation), TS067 (8-category qualifications, ages 16+), TS054 (9-category tenure), TS004 (12-category country of birth), TS061 (12-category travel to work), TS008 (sex). Aggregations: % apprenticeship and % L4+ are share of residents 16+ (TS067 codes 3 and 5 respectively); % owned = TS054 codes 0+1+2; % social rent = codes 3+4; % private rent = codes 5+6+7 (rent-free bundled with private); % UK-born = TS004 code 1 / total; % WFH = TS061 code 1 / sum of codes 1-11 (employed denominator); % female = TS008 Female / (Female + Male). Correlations are Pearson r vs a 0/1 party-win indicator across the full 213-ward declared sample.<br><br>
+    <strong>Method.</strong> 128 Great Britain councils held local elections on 7 May 2026; ward-level results were collected from each council's official results page where available, and from Wikipedia per-ward <code>{{Election box winning candidate}}</code> rolls where the council had not yet published a machine-readable result file. For each ward, the structural profile is built from ONS Census 2021 ward-level data: TS006 (density), TS007 (single-year age), TS063 (10-category occupation), TS067 (8-category qualifications, ages 16+), TS054 (9-category tenure), TS004 (12-category country of birth), TS061 (12-category travel to work), TS008 (sex). Aggregations: % apprenticeship and % L4+ are share of residents 16+ (TS067 codes 3 and 5 respectively); % owned = TS054 codes 0+1+2; % social rent = codes 3+4; % private rent = codes 5+6+7 (rent-free bundled with private); % UK-born = TS004 code 1 / total; % WFH = TS061 code 1 / sum of codes 1-11 (employed denominator); % female = TS008 Female / (Female + Male). Correlations are Pearson r vs a 0/1 party-win indicator across the full 2,433-ward declared sample.<br><br>
     <strong>Boundary mismatches.</strong> Bolton (2023 review), Stockport (2023 review), and Trafford (2023 review) all had ward boundary changes between Census 2021 and the 2026 election. Where 2026 ward names match 2021 ward boundaries, an exact GSS code lookup is used (104 of 161 new wards). Where names changed but boundaries are substantially the same, a fuzzy mapping is applied (33 wards) — e.g. Bolton's "Heaton, Lostock & Chew Moor" maps to 2021's "Heaton and Lostock". Where 2026 wards are splits or significant re-bounds of 2021 wards, an approximate proxy is used (e.g. Bolton's "Farnworth North" and "Farnworth South" both inherit the old "Farnworth" Census profile). This introduces some imprecision for these three boroughs, particularly Trafford, but doesn't materially affect the borough-level patterns. Wigan also had a 2024 boundary change handled the same way.<br><br>
-    <strong>Coverage notes.</strong> 213 of 214 wards are declared. Manchester's Miles Platting & Newton Heath was still pending at the time of writing. Bury's Moorside ward election was cancelled in April 2026 after Reform candidate Victor Hagan died; rerun expected June 2026. Salford's Cadishead & Lower Irlam had two seats up (both Reform); counted once. Bury count assumes a 16-of-17 declared sample. Per-ward turnout is published for Tameside, Trafford, Oldham, Rochdale, Bury (45% borough-wide), Stockport (44% borough-wide), and one Salford ward (Swinton Park 39.45%); other boroughs published only borough-level turnouts. Council Tax Support data is Manchester-only — other boroughs run separate Council Tax Reduction schemes that aren't directly comparable.<br><br>
-    <strong>Caveats.</strong> Independent and Other categories combine heterogeneous local parties (Horwich & Blackrod First, Radcliffe First, The Oldham Group Party, Edgeley Community Association, Workers Party of Britain, etc.) so their correlation profiles are weak by construction. The Conservative sample (n=11) and LibDem sample (n=19) are smaller than Reform (n=104) so their correlations are wider; the means in §4 are more reliable than the per-variable r values. Reform's structural correlation (vs % apprenticeship +0.64, vs L4+ −0.50) weakened slightly from the 48-ward Manchester+Salford sample (+0.75 / −0.50) but remains the strongest single signal in the dataset.
+    <strong>Coverage notes.</strong> 2,433 of 2,434 wards are declared. Manchester's Miles Platting & Newton Heath was still pending at the time of writing — the only undeclared ward across all 128 GB councils. Bury's Moorside ward election was cancelled in April 2026 after Reform candidate Victor Hagan died (rerun expected June 2026) and is not counted here. Multi-seat wards (where two or more seats were up in 2026) are counted once each by winning party. Per-ward turnout publication varies widely by council; this dataset focuses on winning party, vote share, and structural variables — turnout is preserved where the council published it.<br><br>
+    <strong>Caveats.</strong> Independent (n=91) and Other (n=46) categories combine heterogeneous local parties (residents' associations, Workers Party of Britain, community labels, plus the long tail of single-ward minor parties) so their correlation profiles are weak by construction. The five main-party samples are all substantial (Reform n=646, Labour n=532, Conservative n=417, LibDem n=355, Green n=346), so r values across the GB dataset are statistically tight. Reform's structural correlation versus % apprenticeship is +0.46 GB-wide — softer than the GM-only +0.64, because the GB sample folds in geographies (London-fringe, the Home Counties, the South-East coast) where the apprenticeship/degree axis isn't as cleanly aligned with the Reform vote as it is across the post-industrial North.
   </div>
 
 </div>
