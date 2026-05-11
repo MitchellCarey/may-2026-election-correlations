@@ -337,11 +337,11 @@ if (baGrid) {
   });
 }
 
+const flipBoroughOrder = ["Manchester", "Salford", "Bolton", "Bury", "Oldham", "Rochdale", "Stockport", "Tameside", "Trafford", "Wigan"];
 
 /* ===== § 4 — flipped wards appendix ===== */
 const flippedList = document.getElementById("flipped-wards-list");
 if (flippedList) {
-  const boroughOrder = ["Manchester","Salford","Bolton","Bury","Oldham","Rochdale","Stockport","Tameside","Trafford","Wigan"];
   const partyOrder = ["Reform","Green","Labour","LibDem","Conservative","Independent","Other","Pending"];
   // Group by borough
   const byBorough = {};
@@ -349,7 +349,7 @@ if (flippedList) {
     if (!byBorough[w.borough]) byBorough[w.borough] = [];
     byBorough[w.borough].push(w);
   });
-  boroughOrder.forEach(borough => {
+  flipBoroughOrder.forEach(borough => {
     const bWards = byBorough[borough];
     if (!bWards) return;
     // Sort: flipped first, then by 2026 winner party order, then by ward

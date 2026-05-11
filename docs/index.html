@@ -840,6 +840,9 @@ const corrData = {"density":{"Green":0.553,"Labour":0.127,"Reform":-0.363,"LibDe
 const meansData = {"Green":{"n":30,"density":6229.07,"median_age":30.67,"pct_18_29":29.3,"pct_65plus":8.67,"pct_apprentice":3.23,"pct_level4_plus":40.64,"pct_soc123":48.28,"pct_owned":38.37,"pct_social_rented":24.62,"pct_private_rented":37.01,"pct_uk_born":69.06,"pct_wfh":34.06,"pct_female":49.56},"Labour":{"n":34,"density":4022.18,"median_age":37.29,"pct_18_29":14.09,"pct_65plus":15.15,"pct_apprentice":4.95,"pct_level4_plus":34.33,"pct_soc123":45.99,"pct_owned":58.51,"pct_social_rented":21.14,"pct_private_rented":20.35,"pct_uk_born":80.12,"pct_wfh":30.33,"pct_female":50.67},"Reform":{"n":104,"density":2663.71,"median_age":40.06,"pct_18_29":13.72,"pct_65plus":18.08,"pct_apprentice":6.81,"pct_level4_plus":26.31,"pct_soc123":38.97,"pct_owned":62.75,"pct_social_rented":20.47,"pct_private_rented":16.79,"pct_uk_born":90.15,"pct_wfh":23.79,"pct_female":51.02},"LibDem":{"n":19,"density":2830.15,"median_age":43.26,"pct_18_29":11.49,"pct_65plus":21.43,"pct_apprentice":5.63,"pct_level4_plus":40.15,"pct_soc123":55.68,"pct_owned":74.86,"pct_social_rented":11.85,"pct_private_rented":13.29,"pct_uk_born":90.46,"pct_wfh":36.99,"pct_female":51.42},"Conservative":{"n":11,"density":1848.84,"median_age":44.27,"pct_18_29":10.37,"pct_65plus":21.65,"pct_apprentice":4.85,"pct_level4_plus":45.98,"pct_soc123":62.77,"pct_owned":78.83,"pct_social_rented":7.04,"pct_private_rented":14.13,"pct_uk_born":87.91,"pct_wfh":39.48,"pct_female":51.34},"Independent":{"n":9,"density":2690.88,"median_age":38.11,"pct_18_29":14.12,"pct_65plus":16.89,"pct_apprentice":6.0,"pct_level4_plus":28.16,"pct_soc123":42.4,"pct_owned":62.31,"pct_social_rented":18.62,"pct_private_rented":19.07,"pct_uk_born":86.42,"pct_wfh":25.7,"pct_female":50.6},"Other":{"n":6,"density":5120.67,"median_age":32.33,"pct_18_29":16.42,"pct_65plus":10.51,"pct_apprentice":4.35,"pct_level4_plus":24.06,"pct_soc123":30.59,"pct_owned":47.89,"pct_social_rented":26.76,"pct_private_rented":25.35,"pct_uk_born":70.54,"pct_wfh":19.31,"pct_female":50.44}};
 
 const boroughTallies = {"Bolton":{"wards":20,"parties":{"Reform":9,"Conservative":3,"Labour":2,"Green":3,"Independent":2,"LibDem":1}},"Bury":{"wards":16,"parties":{"Labour":7,"Reform":5,"Independent":3,"Other":1}},"Manchester":{"wards":32,"parties":{"Green":18,"Reform":6,"Labour":6,"LibDem":1,"Pending":1}},"Oldham":{"wards":20,"parties":{"Other":2,"Labour":3,"Reform":13,"Independent":1,"LibDem":1}},"Rochdale":{"wards":20,"parties":{"Reform":13,"Conservative":2,"Other":2,"Labour":2,"LibDem":1}},"Salford":{"wards":20,"parties":{"Labour":3,"Green":3,"Conservative":1,"Reform":12,"Independent":1}},"Stockport":{"wards":21,"parties":{"LibDem":13,"Reform":2,"Other":1,"Independent":1,"Labour":2,"Green":2}},"Tameside":{"wards":19,"parties":{"Reform":18,"Labour":1}},"Trafford":{"wards":21,"parties":{"Green":4,"Labour":8,"Conservative":5,"Reform":2,"LibDem":2}},"Wigan":{"wards":25,"parties":{"Reform":24,"Independent":1}}};
+const boroughOrder = ["Manchester", "Salford", "Bolton", "Bury", "Oldham", "Rochdale", "Stockport", "Tameside", "Trafford", "Wigan"];
+const boroughTurnouts = {"Bury":"45%","Manchester":"32.5%","Stockport":"44%","Oldham":"46.6%","Rochdale":"39.2%","Trafford":"48.9%"};
+const boroughNotes = {"Bolton":"2023 boundaries \u00b7 7 fuzzy-mapped wards","Stockport":"2023 boundaries \u00b7 5 fuzzy-mapped wards","Trafford":"2023 boundaries \u00b7 12 fuzzy-mapped wards","Wigan":"2024 boundaries \u00b7 8 fuzzy-mapped wards","Manchester":"1 ward still pending","Bury":"1 ward cancelled (Moorside)","Salford":"Cadishead had 2 seats up; counted once"};
 
 
 const partyColors = {
@@ -953,30 +956,6 @@ meansPartyOrder.forEach(party => {
 /* ===== BOROUGH BREAKDOWN ===== */
 const boroughList = document.getElementById("borough-list");
 if (boroughList) {
-  const boroughOrder = ["Manchester","Salford","Bolton","Bury","Oldham","Rochdale","Stockport","Tameside","Trafford","Wigan"];
-  // Per-borough turnout headlines (where published or computable)
-  // Manchester: weighted from per-ward electorate × turnout on the council results
-  // page (sum matches declared 399,451 electorate).
-  // Salford and Bolton councils have not published per-ward votes-cast totals,
-  // so a borough-wide figure cannot be computed reliably yet.
-  const boroughTurnouts = {
-    "Bury": "45%",
-    "Manchester": "32.5%",
-    "Stockport": "44%",
-    "Oldham": "46.6%",
-    "Rochdale": "39.2%",
-    "Trafford": "48.9%",
-  };
-  // Per-borough notes
-  const boroughNotes = {
-    "Bolton": "2023 boundaries · 7 fuzzy-mapped wards",
-    "Stockport": "2023 boundaries · 5 fuzzy-mapped wards",
-    "Trafford": "2023 boundaries · 12 fuzzy-mapped wards",
-    "Wigan": "2024 boundaries · 8 fuzzy-mapped wards",
-    "Manchester": "1 ward still pending",
-    "Bury": "1 ward cancelled (Moorside)",
-    "Salford": "Cadishead had 2 seats up; counted once",
-  };
   boroughOrder.forEach(b => {
     const t = boroughTallies[b];
     if (!t) return;
@@ -1064,7 +1043,6 @@ if (partyCorrGrid) {
 /* ===== ALL WARDS LIST (grouped by borough → party) ===== */
 const wardsList = document.getElementById("wards-list");
 if (wardsList) {
-  const boroughOrder = ["Manchester","Salford","Bolton","Bury","Oldham","Rochdale","Stockport","Tameside","Trafford","Wigan"];
   // Group by borough
   const byBorough = {};
   Object.values(data.wards).forEach(w => {

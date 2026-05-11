@@ -16,6 +16,7 @@ whose election was cancelled) are still rendered, in neutral grey on every
 view. Aborts if any results-side ward fails to join — drift in either
 dataset must be investigated, not silently dropped.
 """
+import argparse
 import json
 import re
 import sys
@@ -32,8 +33,6 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
 
-GM_LAD_CODES = lad_codes_for('gm')
-
 BEGIN = "// ===== BEGIN GENERATED — see scripts/07c_build_map_artifact.py ====="
 END = "// ===== END GENERATED ====="
 
@@ -49,15 +48,33 @@ def normalise(s: str) -> str:
 
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
+    ap.add_argument('--region', default='gm', choices=['gm', 'gb'])
+    args = ap.parse_args()
+    region = args.region
+    region_lad_codes = lad_codes_for(region)
+    html_path = DOCS / 'map.html' if region == 'gm' else DOCS / 'uk' / 'map.html'
+
     with open(DATA / 'all_wards_with_prior.json') as f:
         results = json.load(f)
     with open(DATA / 'ward_geoms.json') as f:
         geoms = json.load(f)
 
-    # Phase B transitional filter — results is now GB-wide but ward_geoms.json
-    # is still GM-only (09 has its own GM filter). Restrict to GM until
-    # both sides align in Phase B.10 / C.13.
-    results = [r for r in results if r.get('lad_code') in GM_LAD_CODES]
+    results = [r for r in results if r.get('lad_code') in region_lad_codes]
+
+    # If the geom file doesn't cover the full region (e.g. --region=gb but 09
+    # has only fetched GM polygons), refuse to splice — a UK page with only
+    # GM shapes is misleading. Phase B.10 widens 09 to GB.
+    geom_lads = {w['lad'] for w in geoms['wards'].values()}
+    missing = region_lad_codes - geom_lads
+    if missing:
+        covered = len(region_lad_codes & geom_lads)
+        print(f'  ! ward_geoms.json covers {covered}/{len(region_lad_codes)} '
+              f'{region} councils; {len(missing)} councils have no geometry. '
+              f'Run scripts/09_fetch_ward_boundaries.py with the missing '
+              f'councils in scope (Phase B.10 widens 09 to GB).',
+              file=sys.stderr)
+        return
 
     # Normalised name → WD24CD lookup; geom file is the source of truth.
     geom_by_norm = {}
@@ -241,7 +258,6 @@ if (legend) {
 
     new_js = '\n'.join(js)
 
-    html_path = DOCS / 'map.html'
     html = html_path.read_text()
     pattern = re.compile(re.escape(BEGIN) + r'\n.*?\n' + re.escape(END), re.DOTALL)
     found = pattern.findall(html)

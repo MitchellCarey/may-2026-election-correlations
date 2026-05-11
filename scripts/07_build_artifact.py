@@ -4,6 +4,7 @@ Replaces everything between the BEGIN GENERATED / END GENERATED markers
 inside the page's single <script> block, in place. Run this whenever
 upstream data changes — no other steps are needed before pushing.
 """
+import argparse
 import json
 import re
 from pathlib import Path
@@ -14,7 +15,7 @@ from _artifact_lib import (
     party_display_text_js,
     party_order_winners_js,
 )
-from _councils import lad_codes_for
+from _councils import for_region, lad_codes_for
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -23,10 +24,12 @@ DOCS = ROOT / "docs"
 BEGIN = "// ===== BEGIN GENERATED — see scripts/07_build_artifact.py ====="
 END = "// ===== END GENERATED ====="
 
-# Phase B transitional: render the GM region only. Phase C.13 will swap in
-# argparse --region + UK output paths.
-REGION = 'gm'
+ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
+ap.add_argument('--region', default='gm', choices=['gm', 'gb'])
+args = ap.parse_args()
+REGION = args.region
 REGION_LAD_CODES = lad_codes_for(REGION)
+HTML_PATH = DOCS / 'index.html' if REGION == 'gm' else DOCS / 'uk' / 'index.html'
 
 with open(DATA / 'v12_ward_data.json') as f:
     wards = json.load(f)
@@ -34,10 +37,7 @@ with open(DATA / 'correlations.json') as f:
     corr_full = json.load(f)
 
 wards = [w for w in wards if w.get('lad_code') in REGION_LAD_CODES]
-# Use the region's correlation block. The legacy top-level keys still
-# mirror regions.gm for now, but reading regions explicitly future-proofs
-# the renderer for the C.13 --region switch.
-corr_full = corr_full.get('regions', {}).get(REGION, corr_full)
+corr_full = corr_full['regions'][REGION]
 
 # Build compact RAW data structure: keyed by "Borough::Ward"
 raw = {}
@@ -92,6 +92,35 @@ for w in wards:
     p = w['winner'] or 'Pending'
     borough_tallies[b]['parties'][p] = borough_tallies[b]['parties'].get(p, 0) + 1
 
+# Per-region borough ordering, turnouts and notes. GM has hand-curated
+# values; other regions default to a count-desc ordering with no extras.
+GM_BOROUGH_ORDER = ['Manchester', 'Salford', 'Bolton', 'Bury', 'Oldham',
+                    'Rochdale', 'Stockport', 'Tameside', 'Trafford', 'Wigan']
+GM_BOROUGH_TURNOUTS = {
+    'Bury': '45%', 'Manchester': '32.5%', 'Stockport': '44%',
+    'Oldham': '46.6%', 'Rochdale': '39.2%', 'Trafford': '48.9%',
+}
+GM_BOROUGH_NOTES = {
+    'Bolton': '2023 boundaries · 7 fuzzy-mapped wards',
+    'Stockport': '2023 boundaries · 5 fuzzy-mapped wards',
+    'Trafford': '2023 boundaries · 12 fuzzy-mapped wards',
+    'Wigan': '2024 boundaries · 8 fuzzy-mapped wards',
+    'Manchester': '1 ward still pending',
+    'Bury': '1 ward cancelled (Moorside)',
+    'Salford': 'Cadishead had 2 seats up; counted once',
+}
+
+if REGION == 'gm':
+    borough_order_list = GM_BOROUGH_ORDER
+    borough_turnouts = GM_BOROUGH_TURNOUTS
+    borough_notes = GM_BOROUGH_NOTES
+else:
+    # Sort by ward count desc, then name; turnouts/notes empty until curated.
+    borough_order_list = sorted(borough_tallies,
+                                key=lambda b: (-borough_tallies[b]['wards'], b))
+    borough_turnouts = {}
+    borough_notes = {}
+
 # Generate JS
 js_lines = []
 js_lines.append('const RAW = ' + json.dumps(raw, separators=(',', ':')) + ';')
@@ -117,6 +146,9 @@ js_lines.append('const meansData = ' + json.dumps(means_full, separators=(',', '
 js_lines.append('')
 # Convert party tallies to JSON for borough list
 js_lines.append('const boroughTallies = ' + json.dumps(borough_tallies, separators=(',', ':')) + ';')
+js_lines.append('const boroughOrder = ' + json.dumps(borough_order_list) + ';')
+js_lines.append('const boroughTurnouts = ' + json.dumps(borough_turnouts, separators=(',', ':')) + ';')
+js_lines.append('const boroughNotes = ' + json.dumps(borough_notes, separators=(',', ':')) + ';')
 js_lines.append('')
 
 # Now the rendering helpers
@@ -222,30 +254,6 @@ js_lines.append('''
 /* ===== BOROUGH BREAKDOWN ===== */
 const boroughList = document.getElementById("borough-list");
 if (boroughList) {
-  const boroughOrder = ["Manchester","Salford","Bolton","Bury","Oldham","Rochdale","Stockport","Tameside","Trafford","Wigan"];
-  // Per-borough turnout headlines (where published or computable)
-  // Manchester: weighted from per-ward electorate × turnout on the council results
-  // page (sum matches declared 399,451 electorate).
-  // Salford and Bolton councils have not published per-ward votes-cast totals,
-  // so a borough-wide figure cannot be computed reliably yet.
-  const boroughTurnouts = {
-    "Bury": "45%",
-    "Manchester": "32.5%",
-    "Stockport": "44%",
-    "Oldham": "46.6%",
-    "Rochdale": "39.2%",
-    "Trafford": "48.9%",
-  };
-  // Per-borough notes
-  const boroughNotes = {
-    "Bolton": "2023 boundaries · 7 fuzzy-mapped wards",
-    "Stockport": "2023 boundaries · 5 fuzzy-mapped wards",
-    "Trafford": "2023 boundaries · 12 fuzzy-mapped wards",
-    "Wigan": "2024 boundaries · 8 fuzzy-mapped wards",
-    "Manchester": "1 ward still pending",
-    "Bury": "1 ward cancelled (Moorside)",
-    "Salford": "Cadishead had 2 seats up; counted once",
-  };
   boroughOrder.forEach(b => {
     const t = boroughTallies[b];
     if (!t) return;
@@ -337,7 +345,6 @@ js_lines.append('''
 /* ===== ALL WARDS LIST (grouped by borough → party) ===== */
 const wardsList = document.getElementById("wards-list");
 if (wardsList) {
-  const boroughOrder = ["Manchester","Salford","Bolton","Bury","Oldham","Rochdale","Stockport","Tameside","Trafford","Wigan"];
   // Group by borough
   const byBorough = {};
   Object.values(data.wards).forEach(w => {
@@ -403,7 +410,7 @@ if (wardsList) {
 new_js = '\n'.join(js_lines)
 
 # Splice into docs/index.html between the BEGIN/END markers.
-html_path = DOCS / 'index.html'
+html_path = HTML_PATH
 html = html_path.read_text()
 pattern = re.compile(
     re.escape(BEGIN) + r'\n.*?\n' + re.escape(END),

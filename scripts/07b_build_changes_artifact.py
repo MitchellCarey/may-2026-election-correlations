@@ -12,6 +12,7 @@ Reuses 07's correlation-matrix and per-party-card renderers verbatim — same
 {var: {party: r}} shape, same .corr-frame / .pcorr-card CSS — and adds a new
 borough-grouped flipped-wards appendix as §3.
 """
+import argparse
 import json
 import re
 from pathlib import Path
@@ -28,16 +29,18 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
 
-# Phase B transitional: render the GM region only. Phase C.13 will swap in
-# argparse --region + UK output paths.
-REGION = 'gm'
-REGION_LAD_CODES = lad_codes_for(REGION)
-
 BEGIN = "// ===== BEGIN GENERATED — see scripts/07b_build_changes_artifact.py ====="
 END = "// ===== END GENERATED ====="
 
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
+    ap.add_argument('--region', default='gm', choices=['gm', 'gb'])
+    args = ap.parse_args()
+    region = args.region
+    region_lad_codes = lad_codes_for(region)
+    html_path = DOCS / 'changes.html' if region == 'gm' else DOCS / 'uk' / 'changes.html'
+
     with open(DATA / 'v1_changes_ward_data.json') as f:
         wards = json.load(f)
     with open(DATA / 'flip_correlations.json') as f:
@@ -45,9 +48,9 @@ def main():
     with open(DATA / 'before_after.json') as f:
         before_after = json.load(f)
 
-    wards = [w for w in wards if w.get('lad_code') in REGION_LAD_CODES]
-    corr_full = corr_full.get('regions', {}).get(REGION, corr_full)
-    before_after = before_after.get('regions', {}).get(REGION, before_after)
+    wards = [w for w in wards if w.get('lad_code') in region_lad_codes]
+    corr_full = corr_full['regions'][region]
+    before_after = before_after['regions'][region]
 
     # Compact RAW: keyed by "Borough::Ward"
     raw = {}
@@ -83,6 +86,18 @@ def main():
         corr_full['correlations'].keys(),
         key=lambda p: -corr_full['correlations'][p]['n_flipped'],
     )
+
+    # Borough order for the §4 flipped-wards appendix. GM gets a hand-curated
+    # order; other regions sort by ward count descending.
+    GM_BOROUGH_ORDER = ['Manchester', 'Salford', 'Bolton', 'Bury', 'Oldham',
+                        'Rochdale', 'Stockport', 'Tameside', 'Trafford', 'Wigan']
+    if region == 'gm':
+        flip_borough_order = GM_BOROUGH_ORDER
+    else:
+        bcount: dict[str, int] = {}
+        for w in wards:
+            bcount[w['borough']] = bcount.get(w['borough'], 0) + 1
+        flip_borough_order = sorted(bcount, key=lambda b: (-bcount[b], b))
 
     js_lines = []
 
@@ -301,11 +316,11 @@ if (baGrid) {
 ''')
 
     # § 4 flipped-wards appendix — borough-grouped list with prior → new
+    js_lines.append('const flipBoroughOrder = ' + json.dumps(flip_borough_order) + ';')
     js_lines.append('''
 /* ===== § 4 — flipped wards appendix ===== */
 const flippedList = document.getElementById("flipped-wards-list");
 if (flippedList) {
-  const boroughOrder = ["Manchester","Salford","Bolton","Bury","Oldham","Rochdale","Stockport","Tameside","Trafford","Wigan"];
   const partyOrder = ["Reform","Green","Labour","LibDem","Conservative","Independent","Other","Pending"];
   // Group by borough
   const byBorough = {};
@@ -313,7 +328,7 @@ if (flippedList) {
     if (!byBorough[w.borough]) byBorough[w.borough] = [];
     byBorough[w.borough].push(w);
   });
-  boroughOrder.forEach(borough => {
+  flipBoroughOrder.forEach(borough => {
     const bWards = byBorough[borough];
     if (!bWards) return;
     // Sort: flipped first, then by 2026 winner party order, then by ward
@@ -386,7 +401,6 @@ if (flippedList) {
 
     new_js = '\n'.join(js_lines)
 
-    html_path = DOCS / 'changes.html'
     html = html_path.read_text()
     pattern = re.compile(re.escape(BEGIN) + r'\n.*?\n' + re.escape(END), re.DOTALL)
     matches = pattern.findall(html)
