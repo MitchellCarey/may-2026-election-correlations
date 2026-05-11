@@ -19,7 +19,12 @@
       "pct_private_rented": 0.621,
       "pct_uk_born": -0.559,
       "pct_wfh": 0.245,
-      "pct_female": -0.39
+      "pct_female": -0.39,
+      "pct_white": -0.458,
+      "pct_asian": 0.305,
+      "pct_black": 0.446,
+      "pct_mixed": 0.636,
+      "pct_other_ethnic": 0.595
     },
     "Labour": {
       "n_wards": 34,
@@ -39,7 +44,12 @@
       "pct_private_rented": 0.01,
       "pct_uk_born": -0.178,
       "pct_wfh": 0.095,
-      "pct_female": -0.036
+      "pct_female": -0.036,
+      "pct_white": -0.181,
+      "pct_asian": 0.161,
+      "pct_black": 0.096,
+      "pct_mixed": 0.154,
+      "pct_other_ethnic": 0.198
     },
     "Reform": {
       "n_wards": 104,
@@ -59,7 +69,12 @@
       "pct_private_rented": -0.293,
       "pct_uk_born": 0.46,
       "pct_wfh": -0.449,
-      "pct_female": 0.187
+      "pct_female": 0.187,
+      "pct_white": 0.456,
+      "pct_asian": -0.414,
+      "pct_black": -0.202,
+      "pct_mixed": -0.463,
+      "pct_other_ethnic": -0.504
     },
     "LibDem": {
       "n_wards": 19,
@@ -79,7 +94,12 @@
       "pct_private_rented": -0.193,
       "pct_uk_born": 0.156,
       "pct_wfh": 0.285,
-      "pct_female": 0.16
+      "pct_female": 0.16,
+      "pct_white": 0.135,
+      "pct_asian": -0.095,
+      "pct_black": -0.18,
+      "pct_mixed": -0.095,
+      "pct_other_ethnic": -0.083
     },
     "Conservative": {
       "n_wards": 11,
@@ -99,7 +119,12 @@
       "pct_private_rented": -0.126,
       "pct_uk_born": 0.064,
       "pct_wfh": 0.273,
-      "pct_female": 0.104
+      "pct_female": 0.104,
+      "pct_white": 0.036,
+      "pct_asian": 0.004,
+      "pct_black": -0.127,
+      "pct_mixed": -0.034,
+      "pct_other_ethnic": -0.039
     },
     "Independent": {
       "n_wards": 9,
@@ -119,7 +144,12 @@
       "pct_private_rented": -0.019,
       "pct_uk_born": 0.03,
       "pct_wfh": -0.055,
-      "pct_female": -0.029
+      "pct_female": -0.029,
+      "pct_white": 0.014,
+      "pct_asian": 0.015,
+      "pct_black": -0.058,
+      "pct_mixed": -0.093,
+      "pct_other_ethnic": -0.043
     },
     "Other": {
       "n_wards": 6,
@@ -139,7 +169,12 @@
       "pct_private_rented": 0.081,
       "pct_uk_born": -0.213,
       "pct_wfh": -0.157,
-      "pct_female": -0.045
+      "pct_female": -0.045,
+      "pct_white": -0.314,
+      "pct_asian": 0.391,
+      "pct_black": 0.01,
+      "pct_mixed": 0.043,
+      "pct_other_ethnic": 0.082
     }
   },
   "means": {
@@ -157,7 +192,12 @@
       "pct_private_rented": 37.01,
       "pct_uk_born": 69.06,
       "pct_wfh": 34.06,
-      "pct_female": 49.56
+      "pct_female": 49.56,
+      "pct_white": 57.17,
+      "pct_asian": 23.34,
+      "pct_black": 9.37,
+      "pct_mixed": 5.02,
+      "pct_other_ethnic": 5.1
     },
     "Labour": {
       "n": 34,
@@ -173,7 +213,12 @@
       "pct_private_rented": 20.35,
       "pct_uk_born": 80.12,
       "pct_wfh": 30.33,
-      "pct_female": 50.67
+      "pct_female": 50.67,
+      "pct_white": 70.84,
+      "pct_asian": 17.74,
+      "pct_black": 5.04,
+      "pct_mixed": 3.36,
+      "pct_other_ethnic": 3.02
     },
     "Reform": {
       "n": 104,
@@ -189,7 +234,12 @@
       "pct_private_rented": 16.79,
       "pct_uk_born": 90.15,
       "pct_wfh": 23.79,
-      "pct_female": 51.02
+      "pct_female": 51.02,
+      "pct_white": 87.64,
+      "pct_asian": 6.16,
+      "pct_black": 2.94,
+      "pct_mixed": 2.23,
+      "pct_other_ethnic": 1.04
     },
     "LibDem": {
       "n": 19,
@@ -205,7 +255,12 @@
       "pct_private_rented": 13.29,
       "pct_uk_born": 90.46,
       "pct_wfh": 36.99,
-      "pct_female": 51.42
+      "pct_female": 51.42,
+      "pct_white": 86.96,
+      "pct_asian": 7.91,
+      "pct_black": 1.13,
+      "pct_mixed": 2.46,
+      "pct_other_ethnic": 1.55
     },
     "Conservative": {
       "n": 11,
@@ -221,7 +276,12 @@
       "pct_private_rented": 14.13,
       "pct_uk_born": 87.91,
       "pct_wfh": 39.48,
-      "pct_female": 51.34
+      "pct_female": 51.34,
+      "pct_white": 81.71,
+      "pct_asian": 12.58,
+      "pct_black": 1.28,
+      "pct_mixed": 2.68,
+      "pct_other_ethnic": 1.75
     },
     "Independent": {
       "n": 9,
@@ -237,7 +297,12 @@
       "pct_private_rented": 19.07,
       "pct_uk_born": 86.42,
       "pct_wfh": 25.7,
-      "pct_female": 50.6
+      "pct_female": 50.6,
+      "pct_white": 80.03,
+      "pct_asian": 13.42,
+      "pct_black": 2.6,
+      "pct_mixed": 2.27,
+      "pct_other_ethnic": 1.67
     },
     "Other": {
       "n": 6,
@@ -253,7 +318,12 @@
       "pct_private_rented": 25.35,
       "pct_uk_born": 70.54,
       "pct_wfh": 19.31,
-      "pct_female": 50.44
+      "pct_female": 50.44,
+      "pct_white": 43.57,
+      "pct_asian": 45.9,
+      "pct_black": 4.23,
+      "pct_mixed": 3.22,
+      "pct_other_ethnic": 3.08
     }
   },
   "regions": {
@@ -278,7 +348,12 @@
           "pct_private_rented": 0.621,
           "pct_uk_born": -0.559,
           "pct_wfh": 0.245,
-          "pct_female": -0.39
+          "pct_female": -0.39,
+          "pct_white": -0.458,
+          "pct_asian": 0.305,
+          "pct_black": 0.446,
+          "pct_mixed": 0.636,
+          "pct_other_ethnic": 0.595
         },
         "Labour": {
           "n_wards": 34,
@@ -298,7 +373,12 @@
           "pct_private_rented": 0.01,
           "pct_uk_born": -0.178,
           "pct_wfh": 0.095,
-          "pct_female": -0.036
+          "pct_female": -0.036,
+          "pct_white": -0.181,
+          "pct_asian": 0.161,
+          "pct_black": 0.096,
+          "pct_mixed": 0.154,
+          "pct_other_ethnic": 0.198
         },
         "Reform": {
           "n_wards": 104,
@@ -318,7 +398,12 @@
           "pct_private_rented": -0.293,
           "pct_uk_born": 0.46,
           "pct_wfh": -0.449,
-          "pct_female": 0.187
+          "pct_female": 0.187,
+          "pct_white": 0.456,
+          "pct_asian": -0.414,
+          "pct_black": -0.202,
+          "pct_mixed": -0.463,
+          "pct_other_ethnic": -0.504
         },
         "LibDem": {
           "n_wards": 19,
@@ -338,7 +423,12 @@
           "pct_private_rented": -0.193,
           "pct_uk_born": 0.156,
           "pct_wfh": 0.285,
-          "pct_female": 0.16
+          "pct_female": 0.16,
+          "pct_white": 0.135,
+          "pct_asian": -0.095,
+          "pct_black": -0.18,
+          "pct_mixed": -0.095,
+          "pct_other_ethnic": -0.083
         },
         "Conservative": {
           "n_wards": 11,
@@ -358,7 +448,12 @@
           "pct_private_rented": -0.126,
           "pct_uk_born": 0.064,
           "pct_wfh": 0.273,
-          "pct_female": 0.104
+          "pct_female": 0.104,
+          "pct_white": 0.036,
+          "pct_asian": 0.004,
+          "pct_black": -0.127,
+          "pct_mixed": -0.034,
+          "pct_other_ethnic": -0.039
         },
         "Independent": {
           "n_wards": 9,
@@ -378,7 +473,12 @@
           "pct_private_rented": -0.019,
           "pct_uk_born": 0.03,
           "pct_wfh": -0.055,
-          "pct_female": -0.029
+          "pct_female": -0.029,
+          "pct_white": 0.014,
+          "pct_asian": 0.015,
+          "pct_black": -0.058,
+          "pct_mixed": -0.093,
+          "pct_other_ethnic": -0.043
         },
         "Other": {
           "n_wards": 6,
@@ -398,7 +498,12 @@
           "pct_private_rented": 0.081,
           "pct_uk_born": -0.213,
           "pct_wfh": -0.157,
-          "pct_female": -0.045
+          "pct_female": -0.045,
+          "pct_white": -0.314,
+          "pct_asian": 0.391,
+          "pct_black": 0.01,
+          "pct_mixed": 0.043,
+          "pct_other_ethnic": 0.082
         }
       },
       "means": {
@@ -416,7 +521,12 @@
           "pct_private_rented": 37.01,
           "pct_uk_born": 69.06,
           "pct_wfh": 34.06,
-          "pct_female": 49.56
+          "pct_female": 49.56,
+          "pct_white": 57.17,
+          "pct_asian": 23.34,
+          "pct_black": 9.37,
+          "pct_mixed": 5.02,
+          "pct_other_ethnic": 5.1
         },
         "Labour": {
           "n": 34,
@@ -432,7 +542,12 @@
           "pct_private_rented": 20.35,
           "pct_uk_born": 80.12,
           "pct_wfh": 30.33,
-          "pct_female": 50.67
+          "pct_female": 50.67,
+          "pct_white": 70.84,
+          "pct_asian": 17.74,
+          "pct_black": 5.04,
+          "pct_mixed": 3.36,
+          "pct_other_ethnic": 3.02
         },
         "Reform": {
           "n": 104,
@@ -448,7 +563,12 @@
           "pct_private_rented": 16.79,
           "pct_uk_born": 90.15,
           "pct_wfh": 23.79,
-          "pct_female": 51.02
+          "pct_female": 51.02,
+          "pct_white": 87.64,
+          "pct_asian": 6.16,
+          "pct_black": 2.94,
+          "pct_mixed": 2.23,
+          "pct_other_ethnic": 1.04
         },
         "LibDem": {
           "n": 19,
@@ -464,7 +584,12 @@
           "pct_private_rented": 13.29,
           "pct_uk_born": 90.46,
           "pct_wfh": 36.99,
-          "pct_female": 51.42
+          "pct_female": 51.42,
+          "pct_white": 86.96,
+          "pct_asian": 7.91,
+          "pct_black": 1.13,
+          "pct_mixed": 2.46,
+          "pct_other_ethnic": 1.55
         },
         "Conservative": {
           "n": 11,
@@ -480,7 +605,12 @@
           "pct_private_rented": 14.13,
           "pct_uk_born": 87.91,
           "pct_wfh": 39.48,
-          "pct_female": 51.34
+          "pct_female": 51.34,
+          "pct_white": 81.71,
+          "pct_asian": 12.58,
+          "pct_black": 1.28,
+          "pct_mixed": 2.68,
+          "pct_other_ethnic": 1.75
         },
         "Independent": {
           "n": 9,
@@ -496,7 +626,12 @@
           "pct_private_rented": 19.07,
           "pct_uk_born": 86.42,
           "pct_wfh": 25.7,
-          "pct_female": 50.6
+          "pct_female": 50.6,
+          "pct_white": 80.03,
+          "pct_asian": 13.42,
+          "pct_black": 2.6,
+          "pct_mixed": 2.27,
+          "pct_other_ethnic": 1.67
         },
         "Other": {
           "n": 6,
@@ -512,7 +647,12 @@
           "pct_private_rented": 25.35,
           "pct_uk_born": 70.54,
           "pct_wfh": 19.31,
-          "pct_female": 50.44
+          "pct_female": 50.44,
+          "pct_white": 43.57,
+          "pct_asian": 45.9,
+          "pct_black": 4.23,
+          "pct_mixed": 3.22,
+          "pct_other_ethnic": 3.08
         }
       }
     },
@@ -537,7 +677,12 @@
           "pct_private_rented": 0.256,
           "pct_uk_born": -0.15,
           "pct_wfh": 0.119,
-          "pct_female": -0.053
+          "pct_female": -0.053,
+          "pct_white": -0.122,
+          "pct_asian": 0.019,
+          "pct_black": 0.195,
+          "pct_mixed": 0.215,
+          "pct_other_ethnic": 0.143
         },
         "Labour": {
           "n_wards": 532,
@@ -557,7 +702,12 @@
           "pct_private_rented": 0.188,
           "pct_uk_born": -0.322,
           "pct_wfh": -0.021,
-          "pct_female": -0.003
+          "pct_female": -0.003,
+          "pct_white": -0.342,
+          "pct_asian": 0.224,
+          "pct_black": 0.354,
+          "pct_mixed": 0.25,
+          "pct_other_ethnic": 0.299
         },
         "Reform": {
           "n_wards": 646,
@@ -577,7 +727,12 @@
           "pct_private_rented": -0.312,
           "pct_uk_born": 0.406,
           "pct_wfh": -0.362,
-          "pct_female": 0.037
+          "pct_female": 0.037,
+          "pct_white": 0.348,
+          "pct_asian": -0.27,
+          "pct_black": -0.241,
+          "pct_mixed": -0.338,
+          "pct_other_ethnic": -0.33
         },
         "LibDem": {
           "n_wards": 355,
@@ -597,7 +752,12 @@
           "pct_private_rented": -0.036,
           "pct_uk_born": 0.048,
           "pct_wfh": 0.207,
-          "pct_female": -0.011
+          "pct_female": -0.011,
+          "pct_white": 0.116,
+          "pct_asian": -0.07,
+          "pct_black": -0.153,
+          "pct_mixed": -0.015,
+          "pct_other_ethnic": -0.095
         },
         "Conservative": {
           "n_wards": 417,
@@ -617,7 +777,12 @@
           "pct_private_rented": -0.049,
           "pct_uk_born": -0.003,
           "pct_wfh": 0.186,
-          "pct_female": 0.051
+          "pct_female": 0.051,
+          "pct_white": 0.058,
+          "pct_asian": -0.023,
+          "pct_black": -0.127,
+          "pct_mixed": -0.024,
+          "pct_other_ethnic": 0.03
         },
         "Independent": {
           "n_wards": 91,
@@ -637,7 +802,12 @@
           "pct_private_rented": -0.005,
           "pct_uk_born": -0.016,
           "pct_wfh": -0.117,
-          "pct_female": -0.038
+          "pct_female": -0.038,
+          "pct_white": -0.115,
+          "pct_asian": 0.193,
+          "pct_black": -0.02,
+          "pct_mixed": -0.079,
+          "pct_other_ethnic": -0.016
         },
         "Other": {
           "n_wards": 46,
@@ -657,7 +827,12 @@
           "pct_private_rented": 0.021,
           "pct_uk_born": -0.051,
           "pct_wfh": 0.043,
-          "pct_female": -0.03
+          "pct_female": -0.03,
+          "pct_white": -0.078,
+          "pct_asian": 0.126,
+          "pct_black": -0.017,
+          "pct_mixed": 0.004,
+          "pct_other_ethnic": -0.015
         }
       },
       "means": {
@@ -675,7 +850,12 @@
           "pct_private_rented": 29.25,
           "pct_uk_born": 72.31,
           "pct_wfh": 36.22,
-          "pct_female": 50.93
+          "pct_female": 50.93,
+          "pct_white": 68.86,
+          "pct_asian": 13.11,
+          "pct_black": 9.38,
+          "pct_mixed": 4.63,
+          "pct_other_ethnic": 4.04
         },
         "Labour": {
           "n": 532,
@@ -691,7 +871,12 @@
           "pct_private_rented": 26.19,
           "pct_uk_born": 68.42,
           "pct_wfh": 31.94,
-          "pct_female": 51.09
+          "pct_female": 51.09,
+          "pct_white": 61.37,
+          "pct_asian": 18.61,
+          "pct_black": 10.8,
+          "pct_mixed": 4.51,
+          "pct_other_ethnic": 4.7
         },
         "Reform": {
           "n": 646,
@@ -707,7 +892,12 @@
           "pct_private_rented": 16.41,
           "pct_uk_born": 89.25,
           "pct_wfh": 24.66,
-          "pct_female": 51.18
+          "pct_female": 51.18,
+          "pct_white": 87.73,
+          "pct_asian": 5.82,
+          "pct_black": 2.81,
+          "pct_mixed": 2.42,
+          "pct_other_ethnic": 1.22
         },
         "LibDem": {
           "n": 355,
@@ -723,7 +913,12 @@
           "pct_private_rented": 21.25,
           "pct_uk_born": 80.18,
           "pct_wfh": 38.92,
-          "pct_female": 51.07
+          "pct_female": 51.07,
+          "pct_white": 81.34,
+          "pct_asian": 9.92,
+          "pct_black": 3.04,
+          "pct_mixed": 3.48,
+          "pct_other_ethnic": 2.22
         },
         "Conservative": {
           "n": 417,
@@ -739,7 +934,12 @@
           "pct_private_rented": 21.01,
           "pct_uk_born": 78.18,
           "pct_wfh": 37.73,
-          "pct_female": 51.25
+          "pct_female": 51.25,
+          "pct_white": 78.03,
+          "pct_asian": 11.67,
+          "pct_black": 3.71,
+          "pct_mixed": 3.45,
+          "pct_other_ethnic": 3.14
         },
         "Independent": {
           "n": 91,
@@ -755,7 +955,12 @@
           "pct_private_rented": 21.96,
           "pct_uk_born": 76.94,
           "pct_wfh": 24.78,
-          "pct_female": 50.84
+          "pct_female": 50.84,
+          "pct_white": 62.79,
+          "pct_asian": 26.73,
+          "pct_black": 5.05,
+          "pct_mixed": 2.75,
+          "pct_other_ethnic": 2.68
         },
         "Other": {
           "n": 46,
@@ -771,7 +976,12 @@
           "pct_private_rented": 23.92,
           "pct_uk_born": 72.32,
           "pct_wfh": 36.41,
-          "pct_female": 50.81
+          "pct_female": 50.81,
+          "pct_white": 63.18,
+          "pct_asian": 25.74,
+          "pct_black": 4.87,
+          "pct_mixed": 3.61,
+          "pct_other_ethnic": 2.61
         }
       }
     }

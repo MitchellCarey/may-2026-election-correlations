@@ -14,7 +14,12 @@
     "pct_private_rented",
     "pct_uk_born",
     "pct_wfh",
-    "pct_female"
+    "pct_female",
+    "pct_white",
+    "pct_asian",
+    "pct_black",
+    "pct_mixed",
+    "pct_other_ethnic"
   ],
   "min_n": 3,
   "parties": {
@@ -38,7 +43,12 @@
         "pct_private_rented": 16.79,
         "pct_uk_born": 90.15,
         "pct_wfh": 23.79,
-        "pct_female": 51.02
+        "pct_female": 51.02,
+        "pct_white": 87.64,
+        "pct_asian": 6.16,
+        "pct_black": 2.94,
+        "pct_mixed": 2.23,
+        "pct_other_ethnic": 1.04
       },
       "r_2026": {
         "density": -0.363,
@@ -57,7 +67,12 @@
         "pct_private_rented": -0.293,
         "pct_uk_born": 0.46,
         "pct_wfh": -0.449,
-        "pct_female": 0.187
+        "pct_female": 0.187,
+        "pct_white": 0.456,
+        "pct_asian": -0.414,
+        "pct_black": -0.202,
+        "pct_mixed": -0.463,
+        "pct_other_ethnic": -0.504
       }
     },
     "Green": {
@@ -80,7 +95,12 @@
         "pct_private_rented": 17.47,
         "pct_uk_born": 85.55,
         "pct_wfh": 37.63,
-        "pct_female": 51.39
+        "pct_female": 51.39,
+        "pct_white": 81.61,
+        "pct_asian": 11.03,
+        "pct_black": 1.91,
+        "pct_mixed": 3.54,
+        "pct_other_ethnic": 1.91
       },
       "r_2022": {
         "density": -0.019,
@@ -99,7 +119,12 @@
         "pct_private_rented": -0.037,
         "pct_uk_born": 0.011,
         "pct_wfh": 0.152,
-        "pct_female": 0.075
+        "pct_female": 0.075,
+        "pct_white": 0.024,
+        "pct_asian": -0.014,
+        "pct_black": -0.065,
+        "pct_mixed": 0.073,
+        "pct_other_ethnic": -0.014
       },
       "means_2026": {
         "density": 6229.07,
@@ -118,7 +143,12 @@
         "pct_private_rented": 37.01,
         "pct_uk_born": 69.06,
         "pct_wfh": 34.06,
-        "pct_female": 49.56
+        "pct_female": 49.56,
+        "pct_white": 57.17,
+        "pct_asian": 23.34,
+        "pct_black": 9.37,
+        "pct_mixed": 5.02,
+        "pct_other_ethnic": 5.1
       },
       "r_2026": {
         "density": 0.553,
@@ -137,7 +167,12 @@
         "pct_private_rented": 0.621,
         "pct_uk_born": -0.559,
         "pct_wfh": 0.245,
-        "pct_female": -0.39
+        "pct_female": -0.39,
+        "pct_white": -0.458,
+        "pct_asian": 0.305,
+        "pct_black": 0.446,
+        "pct_mixed": 0.636,
+        "pct_other_ethnic": 0.595
       },
       "delta_means": {
         "density": 3051.39,
@@ -156,7 +191,12 @@
         "pct_private_rented": 19.54,
         "pct_uk_born": -16.49,
         "pct_wfh": -3.57,
-        "pct_female": -1.83
+        "pct_female": -1.83,
+        "pct_white": -24.44,
+        "pct_asian": 12.31,
+        "pct_black": 7.46,
+        "pct_mixed": 1.48,
+        "pct_other_ethnic": 3.19
       },
       "delta_r": {
         "density": 0.572,
@@ -175,7 +215,12 @@
         "pct_private_rented": 0.658,
         "pct_uk_born": -0.57,
         "pct_wfh": 0.093,
-        "pct_female": -0.465
+        "pct_female": -0.465,
+        "pct_white": -0.482,
+        "pct_asian": 0.319,
+        "pct_black": 0.511,
+        "pct_mixed": 0.563,
+        "pct_other_ethnic": 0.609
       }
     },
     "Labour": {
@@ -198,7 +243,12 @@
         "pct_private_rented": 22.55,
         "pct_uk_born": 81.96,
         "pct_wfh": 26.92,
-        "pct_female": 50.58
+        "pct_female": 50.58,
+        "pct_white": 74.86,
+        "pct_asian": 14.34,
+        "pct_black": 5.14,
+        "pct_mixed": 3.17,
+        "pct_other_ethnic": 2.5
       },
       "r_2022": {
         "density": 0.38,
@@ -217,7 +267,12 @@
         "pct_private_rented": 0.327,
         "pct_uk_born": -0.356,
         "pct_wfh": -0.192,
-        "pct_female": -0.231
+        "pct_female": -0.231,
+        "pct_white": -0.293,
+        "pct_asian": 0.203,
+        "pct_black": 0.327,
+        "pct_mixed": 0.296,
+        "pct_other_ethnic": 0.289
       },
       "means_2026": {
         "density": 4022.18,
@@ -236,7 +291,12 @@
         "pct_private_rented": 20.35,
         "pct_uk_born": 80.12,
         "pct_wfh": 30.33,
-        "pct_female": 50.67
+        "pct_female": 50.67,
+        "pct_white": 70.84,
+        "pct_asian": 17.74,
+        "pct_black": 5.04,
+        "pct_mixed": 3.36,
+        "pct_other_ethnic": 3.02
       },
       "r_2026": {
         "density": 0.127,
@@ -255,7 +315,12 @@
         "pct_private_rented": 0.01,
         "pct_uk_born": -0.178,
         "pct_wfh": 0.095,
-        "pct_female": -0.036
+        "pct_female": -0.036,
+        "pct_white": -0.181,
+        "pct_asian": 0.161,
+        "pct_black": 0.096,
+        "pct_mixed": 0.154,
+        "pct_other_ethnic": 0.198
       },
       "delta_means": {
         "density": 64.91,
@@ -274,7 +339,12 @@
         "pct_private_rented": -2.2,
         "pct_uk_born": -1.84,
         "pct_wfh": 3.41,
-        "pct_female": 0.09
+        "pct_female": 0.09,
+        "pct_white": -4.02,
+        "pct_asian": 3.4,
+        "pct_black": -0.1,
+        "pct_mixed": 0.19,
+        "pct_other_ethnic": 0.52
       },
       "delta_r": {
         "density": -0.253,
@@ -293,7 +363,12 @@
         "pct_private_rented": -0.317,
         "pct_uk_born": 0.178,
         "pct_wfh": 0.287,
-        "pct_female": 0.195
+        "pct_female": 0.195,
+        "pct_white": 0.112,
+        "pct_asian": -0.042,
+        "pct_black": -0.231,
+        "pct_mixed": -0.142,
+        "pct_other_ethnic": -0.091
       }
     },
     "LibDem": {
@@ -316,7 +391,12 @@
         "pct_private_rented": 13.68,
         "pct_uk_born": 91.93,
         "pct_wfh": 34.97,
-        "pct_female": 51.43
+        "pct_female": 51.43,
+        "pct_white": 89.56,
+        "pct_asian": 5.99,
+        "pct_black": 0.92,
+        "pct_mixed": 2.29,
+        "pct_other_ethnic": 1.25
       },
       "r_2022": {
         "density": -0.148,
@@ -335,7 +415,12 @@
         "pct_private_rented": -0.182,
         "pct_uk_born": 0.197,
         "pct_wfh": 0.22,
-        "pct_female": 0.162
+        "pct_female": 0.162,
+        "pct_white": 0.178,
+        "pct_asian": -0.136,
+        "pct_black": -0.194,
+        "pct_mixed": -0.135,
+        "pct_other_ethnic": -0.13
       },
       "means_2026": {
         "density": 2830.15,
@@ -354,7 +439,12 @@
         "pct_private_rented": 13.29,
         "pct_uk_born": 90.46,
         "pct_wfh": 36.99,
-        "pct_female": 51.42
+        "pct_female": 51.42,
+        "pct_white": 86.96,
+        "pct_asian": 7.91,
+        "pct_black": 1.13,
+        "pct_mixed": 2.46,
+        "pct_other_ethnic": 1.55
       },
       "r_2026": {
         "density": -0.091,
@@ -373,7 +463,12 @@
         "pct_private_rented": -0.193,
         "pct_uk_born": 0.156,
         "pct_wfh": 0.285,
-        "pct_female": 0.16
+        "pct_female": 0.16,
+        "pct_white": 0.135,
+        "pct_asian": -0.095,
+        "pct_black": -0.18,
+        "pct_mixed": -0.095,
+        "pct_other_ethnic": -0.083
       },
       "delta_means": {
         "density": 371.92,
@@ -392,7 +487,12 @@
         "pct_private_rented": -0.39,
         "pct_uk_born": -1.47,
         "pct_wfh": 2.02,
-        "pct_female": -0.01
+        "pct_female": -0.01,
+        "pct_white": -2.6,
+        "pct_asian": 1.92,
+        "pct_black": 0.21,
+        "pct_mixed": 0.17,
+        "pct_other_ethnic": 0.3
       },
       "delta_r": {
         "density": 0.057,
@@ -411,7 +511,12 @@
         "pct_private_rented": -0.011,
         "pct_uk_born": -0.041,
         "pct_wfh": 0.065,
-        "pct_female": -0.002
+        "pct_female": -0.002,
+        "pct_white": -0.043,
+        "pct_asian": 0.041,
+        "pct_black": 0.014,
+        "pct_mixed": 0.04,
+        "pct_other_ethnic": 0.047
       }
     },
     "Conservative": {
@@ -434,7 +539,12 @@
         "pct_private_rented": 13.92,
         "pct_uk_born": 90.9,
         "pct_wfh": 30.39,
-        "pct_female": 51.1
+        "pct_female": 51.1,
+        "pct_white": 86.42,
+        "pct_asian": 8.65,
+        "pct_black": 1.53,
+        "pct_mixed": 2.15,
+        "pct_other_ethnic": 1.25
       },
       "r_2022": {
         "density": -0.317,
@@ -453,7 +563,12 @@
         "pct_private_rented": -0.235,
         "pct_uk_born": 0.227,
         "pct_wfh": 0.096,
-        "pct_female": 0.106
+        "pct_female": 0.106,
+        "pct_white": 0.171,
+        "pct_asian": -0.106,
+        "pct_black": -0.209,
+        "pct_mixed": -0.226,
+        "pct_other_ethnic": -0.174
       },
       "means_2026": {
         "density": 1848.84,
@@ -472,7 +587,12 @@
         "pct_private_rented": 14.13,
         "pct_uk_born": 87.91,
         "pct_wfh": 39.48,
-        "pct_female": 51.34
+        "pct_female": 51.34,
+        "pct_white": 81.71,
+        "pct_asian": 12.58,
+        "pct_black": 1.28,
+        "pct_mixed": 2.68,
+        "pct_other_ethnic": 1.75
       },
       "r_2026": {
         "density": -0.179,
@@ -491,7 +611,12 @@
         "pct_private_rented": -0.126,
         "pct_uk_born": 0.064,
         "pct_wfh": 0.273,
-        "pct_female": 0.104
+        "pct_female": 0.104,
+        "pct_white": 0.036,
+        "pct_asian": 0.004,
+        "pct_black": -0.127,
+        "pct_mixed": -0.034,
+        "pct_other_ethnic": -0.039
       },
       "delta_means": {
         "density": -30.91,
@@ -510,7 +635,12 @@
         "pct_private_rented": 0.21,
         "pct_uk_born": -2.99,
         "pct_wfh": 9.09,
-        "pct_female": 0.24
+        "pct_female": 0.24,
+        "pct_white": -4.71,
+        "pct_asian": 3.93,
+        "pct_black": -0.25,
+        "pct_mixed": 0.53,
+        "pct_other_ethnic": 0.5
       },
       "delta_r": {
         "density": 0.138,
@@ -529,7 +659,12 @@
         "pct_private_rented": 0.109,
         "pct_uk_born": -0.163,
         "pct_wfh": 0.177,
-        "pct_female": -0.002
+        "pct_female": -0.002,
+        "pct_white": -0.135,
+        "pct_asian": 0.11,
+        "pct_black": 0.082,
+        "pct_mixed": 0.192,
+        "pct_other_ethnic": 0.135
       }
     },
     "Independent": {
@@ -552,7 +687,12 @@
         "pct_private_rented": 17.92,
         "pct_uk_born": 90.22,
         "pct_wfh": 23.03,
-        "pct_female": 51.05
+        "pct_female": 51.05,
+        "pct_white": 85.91,
+        "pct_asian": 8.16,
+        "pct_black": 2.91,
+        "pct_mixed": 2.15,
+        "pct_other_ethnic": 0.87
       },
       "r_2022": {
         "density": -0.082,
@@ -571,7 +711,12 @@
         "pct_private_rented": -0.048,
         "pct_uk_born": 0.117,
         "pct_wfh": -0.131,
-        "pct_female": 0.052
+        "pct_female": 0.052,
+        "pct_white": 0.093,
+        "pct_asian": -0.07,
+        "pct_black": -0.054,
+        "pct_mixed": -0.13,
+        "pct_other_ethnic": -0.146
       },
       "means_2026": {
         "density": 2690.88,
@@ -590,7 +735,12 @@
         "pct_private_rented": 19.07,
         "pct_uk_born": 86.42,
         "pct_wfh": 25.7,
-        "pct_female": 50.6
+        "pct_female": 50.6,
+        "pct_white": 80.03,
+        "pct_asian": 13.42,
+        "pct_black": 2.6,
+        "pct_mixed": 2.27,
+        "pct_other_ethnic": 1.67
       },
       "r_2026": {
         "density": -0.075,
@@ -609,7 +759,12 @@
         "pct_private_rented": -0.019,
         "pct_uk_born": 0.03,
         "pct_wfh": -0.055,
-        "pct_female": -0.029
+        "pct_female": -0.029,
+        "pct_white": 0.014,
+        "pct_asian": 0.015,
+        "pct_black": -0.058,
+        "pct_mixed": -0.093,
+        "pct_other_ethnic": -0.043
       },
       "delta_means": {
         "density": -45.19,
@@ -628,7 +783,12 @@
         "pct_private_rented": 1.15,
         "pct_uk_born": -3.8,
         "pct_wfh": 2.67,
-        "pct_female": -0.45
+        "pct_female": -0.45,
+        "pct_white": -5.88,
+        "pct_asian": 5.26,
+        "pct_black": -0.31,
+        "pct_mixed": 0.12,
+        "pct_other_ethnic": 0.8
       },
       "delta_r": {
         "density": 0.007,
@@ -647,7 +807,12 @@
         "pct_private_rented": 0.029,
         "pct_uk_born": -0.087,
         "pct_wfh": 0.076,
-        "pct_female": -0.081
+        "pct_female": -0.081,
+        "pct_white": -0.079,
+        "pct_asian": 0.085,
+        "pct_black": -0.004,
+        "pct_mixed": 0.037,
+        "pct_other_ethnic": 0.103
       }
     },
     "Other": {
@@ -670,7 +835,12 @@
         "pct_private_rented": 25.35,
         "pct_uk_born": 70.54,
         "pct_wfh": 19.31,
-        "pct_female": 50.44
+        "pct_female": 50.44,
+        "pct_white": 43.57,
+        "pct_asian": 45.9,
+        "pct_black": 4.23,
+        "pct_mixed": 3.22,
+        "pct_other_ethnic": 3.08
       },
       "r_2026": {
         "density": 0.141,
@@ -689,7 +859,12 @@
         "pct_private_rented": 0.081,
         "pct_uk_born": -0.213,
         "pct_wfh": -0.157,
-        "pct_female": -0.045
+        "pct_female": -0.045,
+        "pct_white": -0.314,
+        "pct_asian": 0.391,
+        "pct_black": 0.01,
+        "pct_mixed": 0.043,
+        "pct_other_ethnic": 0.082
       }
     }
   },
@@ -710,7 +885,12 @@
         "pct_private_rented",
         "pct_uk_born",
         "pct_wfh",
-        "pct_female"
+        "pct_female",
+        "pct_white",
+        "pct_asian",
+        "pct_black",
+        "pct_mixed",
+        "pct_other_ethnic"
       ],
       "min_n": 3,
       "parties": {
@@ -734,7 +914,12 @@
             "pct_private_rented": 16.79,
             "pct_uk_born": 90.15,
             "pct_wfh": 23.79,
-            "pct_female": 51.02
+            "pct_female": 51.02,
+            "pct_white": 87.64,
+            "pct_asian": 6.16,
+            "pct_black": 2.94,
+            "pct_mixed": 2.23,
+            "pct_other_ethnic": 1.04
           },
           "r_2026": {
             "density": -0.363,
@@ -753,7 +938,12 @@
             "pct_private_rented": -0.293,
             "pct_uk_born": 0.46,
             "pct_wfh": -0.449,
-            "pct_female": 0.187
+            "pct_female": 0.187,
+            "pct_white": 0.456,
+            "pct_asian": -0.414,
+            "pct_black": -0.202,
+            "pct_mixed": -0.463,
+            "pct_other_ethnic": -0.504
           }
         },
         "Green": {
@@ -776,7 +966,12 @@
             "pct_private_rented": 17.47,
             "pct_uk_born": 85.55,
             "pct_wfh": 37.63,
-            "pct_female": 51.39
+            "pct_female": 51.39,
+            "pct_white": 81.61,
+            "pct_asian": 11.03,
+            "pct_black": 1.91,
+            "pct_mixed": 3.54,
+            "pct_other_ethnic": 1.91
           },
           "r_2022": {
             "density": -0.019,
@@ -795,7 +990,12 @@
             "pct_private_rented": -0.037,
             "pct_uk_born": 0.011,
             "pct_wfh": 0.152,
-            "pct_female": 0.075
+            "pct_female": 0.075,
+            "pct_white": 0.024,
+            "pct_asian": -0.014,
+            "pct_black": -0.065,
+            "pct_mixed": 0.073,
+            "pct_other_ethnic": -0.014
           },
           "means_2026": {
             "density": 6229.07,
@@ -814,7 +1014,12 @@
             "pct_private_rented": 37.01,
             "pct_uk_born": 69.06,
             "pct_wfh": 34.06,
-            "pct_female": 49.56
+            "pct_female": 49.56,
+            "pct_white": 57.17,
+            "pct_asian": 23.34,
+            "pct_black": 9.37,
+            "pct_mixed": 5.02,
+            "pct_other_ethnic": 5.1
           },
           "r_2026": {
             "density": 0.553,
@@ -833,7 +1038,12 @@
             "pct_private_rented": 0.621,
             "pct_uk_born": -0.559,
             "pct_wfh": 0.245,
-            "pct_female": -0.39
+            "pct_female": -0.39,
+            "pct_white": -0.458,
+            "pct_asian": 0.305,
+            "pct_black": 0.446,
+            "pct_mixed": 0.636,
+            "pct_other_ethnic": 0.595
           },
           "delta_means": {
             "density": 3051.39,
@@ -852,7 +1062,12 @@
             "pct_private_rented": 19.54,
             "pct_uk_born": -16.49,
             "pct_wfh": -3.57,
-            "pct_female": -1.83
+            "pct_female": -1.83,
+            "pct_white": -24.44,
+            "pct_asian": 12.31,
+            "pct_black": 7.46,
+            "pct_mixed": 1.48,
+            "pct_other_ethnic": 3.19
           },
           "delta_r": {
             "density": 0.572,
@@ -871,7 +1086,12 @@
             "pct_private_rented": 0.658,
             "pct_uk_born": -0.57,
             "pct_wfh": 0.093,
-            "pct_female": -0.465
+            "pct_female": -0.465,
+            "pct_white": -0.482,
+            "pct_asian": 0.319,
+            "pct_black": 0.511,
+            "pct_mixed": 0.563,
+            "pct_other_ethnic": 0.609
           }
         },
         "Labour": {
@@ -894,7 +1114,12 @@
             "pct_private_rented": 22.55,
             "pct_uk_born": 81.96,
             "pct_wfh": 26.92,
-            "pct_female": 50.58
+            "pct_female": 50.58,
+            "pct_white": 74.86,
+            "pct_asian": 14.34,
+            "pct_black": 5.14,
+            "pct_mixed": 3.17,
+            "pct_other_ethnic": 2.5
           },
           "r_2022": {
             "density": 0.38,
@@ -913,7 +1138,12 @@
             "pct_private_rented": 0.327,
             "pct_uk_born": -0.356,
             "pct_wfh": -0.192,
-            "pct_female": -0.231
+            "pct_female": -0.231,
+            "pct_white": -0.293,
+            "pct_asian": 0.203,
+            "pct_black": 0.327,
+            "pct_mixed": 0.296,
+            "pct_other_ethnic": 0.289
           },
           "means_2026": {
             "density": 4022.18,
@@ -932,7 +1162,12 @@
             "pct_private_rented": 20.35,
             "pct_uk_born": 80.12,
             "pct_wfh": 30.33,
-            "pct_female": 50.67
+            "pct_female": 50.67,
+            "pct_white": 70.84,
+            "pct_asian": 17.74,
+            "pct_black": 5.04,
+            "pct_mixed": 3.36,
+            "pct_other_ethnic": 3.02
           },
           "r_2026": {
             "density": 0.127,
@@ -951,7 +1186,12 @@
             "pct_private_rented": 0.01,
             "pct_uk_born": -0.178,
             "pct_wfh": 0.095,
-            "pct_female": -0.036
+            "pct_female": -0.036,
+            "pct_white": -0.181,
+            "pct_asian": 0.161,
+            "pct_black": 0.096,
+            "pct_mixed": 0.154,
+            "pct_other_ethnic": 0.198
           },
           "delta_means": {
             "density": 64.91,
@@ -970,7 +1210,12 @@
             "pct_private_rented": -2.2,
             "pct_uk_born": -1.84,
             "pct_wfh": 3.41,
-            "pct_female": 0.09
+            "pct_female": 0.09,
+            "pct_white": -4.02,
+            "pct_asian": 3.4,
+            "pct_black": -0.1,
+            "pct_mixed": 0.19,
+            "pct_other_ethnic": 0.52
           },
           "delta_r": {
             "density": -0.253,
@@ -989,7 +1234,12 @@
             "pct_private_rented": -0.317,
             "pct_uk_born": 0.178,
             "pct_wfh": 0.287,
-            "pct_female": 0.195
+            "pct_female": 0.195,
+            "pct_white": 0.112,
+            "pct_asian": -0.042,
+            "pct_black": -0.231,
+            "pct_mixed": -0.142,
+            "pct_other_ethnic": -0.091
           }
         },
         "LibDem": {
@@ -1012,7 +1262,12 @@
             "pct_private_rented": 13.68,
             "pct_uk_born": 91.93,
             "pct_wfh": 34.97,
-            "pct_female": 51.43
+            "pct_female": 51.43,
+            "pct_white": 89.56,
+            "pct_asian": 5.99,
+            "pct_black": 0.92,
+            "pct_mixed": 2.29,
+            "pct_other_ethnic": 1.25
           },
           "r_2022": {
             "density": -0.148,
@@ -1031,7 +1286,12 @@
             "pct_private_rented": -0.182,
             "pct_uk_born": 0.197,
             "pct_wfh": 0.22,
-            "pct_female": 0.162
+            "pct_female": 0.162,
+            "pct_white": 0.178,
+            "pct_asian": -0.136,
+            "pct_black": -0.194,
+            "pct_mixed": -0.135,
+            "pct_other_ethnic": -0.13
           },
           "means_2026": {
             "density": 2830.15,
@@ -1050,7 +1310,12 @@
             "pct_private_rented": 13.29,
             "pct_uk_born": 90.46,
             "pct_wfh": 36.99,
-            "pct_female": 51.42
+            "pct_female": 51.42,
+            "pct_white": 86.96,
+            "pct_asian": 7.91,
+            "pct_black": 1.13,
+            "pct_mixed": 2.46,
+            "pct_other_ethnic": 1.55
           },
           "r_2026": {
             "density": -0.091,
@@ -1069,7 +1334,12 @@
             "pct_private_rented": -0.193,
             "pct_uk_born": 0.156,
             "pct_wfh": 0.285,
-            "pct_female": 0.16
+            "pct_female": 0.16,
+            "pct_white": 0.135,
+            "pct_asian": -0.095,
+            "pct_black": -0.18,
+            "pct_mixed": -0.095,
+            "pct_other_ethnic": -0.083
           },
           "delta_means": {
             "density": 371.92,
@@ -1088,7 +1358,12 @@
             "pct_private_rented": -0.39,
             "pct_uk_born": -1.47,
             "pct_wfh": 2.02,
-            "pct_female": -0.01
+            "pct_female": -0.01,
+            "pct_white": -2.6,
+            "pct_asian": 1.92,
+            "pct_black": 0.21,
+            "pct_mixed": 0.17,
+            "pct_other_ethnic": 0.3
           },
           "delta_r": {
             "density": 0.057,
@@ -1107,7 +1382,12 @@
             "pct_private_rented": -0.011,
             "pct_uk_born": -0.041,
             "pct_wfh": 0.065,
-            "pct_female": -0.002
+            "pct_female": -0.002,
+            "pct_white": -0.043,
+            "pct_asian": 0.041,
+            "pct_black": 0.014,
+            "pct_mixed": 0.04,
+            "pct_other_ethnic": 0.047
           }
         },
         "Conservative": {
@@ -1130,7 +1410,12 @@
             "pct_private_rented": 13.92,
             "pct_uk_born": 90.9,
             "pct_wfh": 30.39,
-            "pct_female": 51.1
+            "pct_female": 51.1,
+            "pct_white": 86.42,
+            "pct_asian": 8.65,
+            "pct_black": 1.53,
+            "pct_mixed": 2.15,
+            "pct_other_ethnic": 1.25
           },
           "r_2022": {
             "density": -0.317,
@@ -1149,7 +1434,12 @@
             "pct_private_rented": -0.235,
             "pct_uk_born": 0.227,
             "pct_wfh": 0.096,
-            "pct_female": 0.106
+            "pct_female": 0.106,
+            "pct_white": 0.171,
+            "pct_asian": -0.106,
+            "pct_black": -0.209,
+            "pct_mixed": -0.226,
+            "pct_other_ethnic": -0.174
           },
           "means_2026": {
             "density": 1848.84,
@@ -1168,7 +1458,12 @@
             "pct_private_rented": 14.13,
             "pct_uk_born": 87.91,
             "pct_wfh": 39.48,
-            "pct_female": 51.34
+            "pct_female": 51.34,
+            "pct_white": 81.71,
+            "pct_asian": 12.58,
+            "pct_black": 1.28,
+            "pct_mixed": 2.68,
+            "pct_other_ethnic": 1.75
           },
           "r_2026": {
             "density": -0.179,
@@ -1187,7 +1482,12 @@
             "pct_private_rented": -0.126,
             "pct_uk_born": 0.064,
             "pct_wfh": 0.273,
-            "pct_female": 0.104
+            "pct_female": 0.104,
+            "pct_white": 0.036,
+            "pct_asian": 0.004,
+            "pct_black": -0.127,
+            "pct_mixed": -0.034,
+            "pct_other_ethnic": -0.039
           },
           "delta_means": {
             "density": -30.91,
@@ -1206,7 +1506,12 @@
             "pct_private_rented": 0.21,
             "pct_uk_born": -2.99,
             "pct_wfh": 9.09,
-            "pct_female": 0.24
+            "pct_female": 0.24,
+            "pct_white": -4.71,
+            "pct_asian": 3.93,
+            "pct_black": -0.25,
+            "pct_mixed": 0.53,
+            "pct_other_ethnic": 0.5
           },
           "delta_r": {
             "density": 0.138,
@@ -1225,7 +1530,12 @@
             "pct_private_rented": 0.109,
             "pct_uk_born": -0.163,
             "pct_wfh": 0.177,
-            "pct_female": -0.002
+            "pct_female": -0.002,
+            "pct_white": -0.135,
+            "pct_asian": 0.11,
+            "pct_black": 0.082,
+            "pct_mixed": 0.192,
+            "pct_other_ethnic": 0.135
           }
         },
         "Independent": {
@@ -1248,7 +1558,12 @@
             "pct_private_rented": 17.92,
             "pct_uk_born": 90.22,
             "pct_wfh": 23.03,
-            "pct_female": 51.05
+            "pct_female": 51.05,
+            "pct_white": 85.91,
+            "pct_asian": 8.16,
+            "pct_black": 2.91,
+            "pct_mixed": 2.15,
+            "pct_other_ethnic": 0.87
           },
           "r_2022": {
             "density": -0.082,
@@ -1267,7 +1582,12 @@
             "pct_private_rented": -0.048,
             "pct_uk_born": 0.117,
             "pct_wfh": -0.131,
-            "pct_female": 0.052
+            "pct_female": 0.052,
+            "pct_white": 0.093,
+            "pct_asian": -0.07,
+            "pct_black": -0.054,
+            "pct_mixed": -0.13,
+            "pct_other_ethnic": -0.146
           },
           "means_2026": {
             "density": 2690.88,
@@ -1286,7 +1606,12 @@
             "pct_private_rented": 19.07,
             "pct_uk_born": 86.42,
             "pct_wfh": 25.7,
-            "pct_female": 50.6
+            "pct_female": 50.6,
+            "pct_white": 80.03,
+            "pct_asian": 13.42,
+            "pct_black": 2.6,
+            "pct_mixed": 2.27,
+            "pct_other_ethnic": 1.67
           },
           "r_2026": {
             "density": -0.075,
@@ -1305,7 +1630,12 @@
             "pct_private_rented": -0.019,
             "pct_uk_born": 0.03,
             "pct_wfh": -0.055,
-            "pct_female": -0.029
+            "pct_female": -0.029,
+            "pct_white": 0.014,
+            "pct_asian": 0.015,
+            "pct_black": -0.058,
+            "pct_mixed": -0.093,
+            "pct_other_ethnic": -0.043
           },
           "delta_means": {
             "density": -45.19,
@@ -1324,7 +1654,12 @@
             "pct_private_rented": 1.15,
             "pct_uk_born": -3.8,
             "pct_wfh": 2.67,
-            "pct_female": -0.45
+            "pct_female": -0.45,
+            "pct_white": -5.88,
+            "pct_asian": 5.26,
+            "pct_black": -0.31,
+            "pct_mixed": 0.12,
+            "pct_other_ethnic": 0.8
           },
           "delta_r": {
             "density": 0.007,
@@ -1343,7 +1678,12 @@
             "pct_private_rented": 0.029,
             "pct_uk_born": -0.087,
             "pct_wfh": 0.076,
-            "pct_female": -0.081
+            "pct_female": -0.081,
+            "pct_white": -0.079,
+            "pct_asian": 0.085,
+            "pct_black": -0.004,
+            "pct_mixed": 0.037,
+            "pct_other_ethnic": 0.103
           }
         },
         "Other": {
@@ -1366,7 +1706,12 @@
             "pct_private_rented": 25.35,
             "pct_uk_born": 70.54,
             "pct_wfh": 19.31,
-            "pct_female": 50.44
+            "pct_female": 50.44,
+            "pct_white": 43.57,
+            "pct_asian": 45.9,
+            "pct_black": 4.23,
+            "pct_mixed": 3.22,
+            "pct_other_ethnic": 3.08
           },
           "r_2026": {
             "density": 0.141,
@@ -1385,7 +1730,12 @@
             "pct_private_rented": 0.081,
             "pct_uk_born": -0.213,
             "pct_wfh": -0.157,
-            "pct_female": -0.045
+            "pct_female": -0.045,
+            "pct_white": -0.314,
+            "pct_asian": 0.391,
+            "pct_black": 0.01,
+            "pct_mixed": 0.043,
+            "pct_other_ethnic": 0.082
           }
         }
       }
@@ -1406,7 +1756,12 @@
         "pct_private_rented",
         "pct_uk_born",
         "pct_wfh",
-        "pct_female"
+        "pct_female",
+        "pct_white",
+        "pct_asian",
+        "pct_black",
+        "pct_mixed",
+        "pct_other_ethnic"
       ],
       "min_n": 3,
       "parties": {
@@ -1430,7 +1785,12 @@
             "pct_private_rented": 16.41,
             "pct_uk_born": 89.25,
             "pct_wfh": 24.66,
-            "pct_female": 51.18
+            "pct_female": 51.18,
+            "pct_white": 87.73,
+            "pct_asian": 5.82,
+            "pct_black": 2.81,
+            "pct_mixed": 2.42,
+            "pct_other_ethnic": 1.22
           },
           "r_2026": {
             "density": -0.26,
@@ -1449,7 +1809,12 @@
             "pct_private_rented": -0.312,
             "pct_uk_born": 0.406,
             "pct_wfh": -0.362,
-            "pct_female": 0.037
+            "pct_female": 0.037,
+            "pct_white": 0.348,
+            "pct_asian": -0.27,
+            "pct_black": -0.241,
+            "pct_mixed": -0.338,
+            "pct_other_ethnic": -0.33
           }
         },
         "Green": {
@@ -1472,7 +1837,12 @@
             "pct_private_rented": 29.43,
             "pct_uk_born": 81.34,
             "pct_wfh": 35.03,
-            "pct_female": 50.69
+            "pct_female": 50.69,
+            "pct_white": 82.19,
+            "pct_asian": 8.35,
+            "pct_black": 3.67,
+            "pct_mixed": 3.64,
+            "pct_other_ethnic": 2.15
           },
           "r_2022": {
             "density": -0.013,
@@ -1491,7 +1861,12 @@
             "pct_private_rented": 0.103,
             "pct_uk_born": 0.043,
             "pct_wfh": 0.031,
-            "pct_female": -0.054
+            "pct_female": -0.054,
+            "pct_white": 0.065,
+            "pct_asian": -0.054,
+            "pct_black": -0.056,
+            "pct_mixed": -0.003,
+            "pct_other_ethnic": -0.053
           },
           "means_2026": {
             "density": 6524.13,
@@ -1510,7 +1885,12 @@
             "pct_private_rented": 29.25,
             "pct_uk_born": 72.31,
             "pct_wfh": 36.22,
-            "pct_female": 50.93
+            "pct_female": 50.93,
+            "pct_white": 68.86,
+            "pct_asian": 13.11,
+            "pct_black": 9.38,
+            "pct_mixed": 4.63,
+            "pct_other_ethnic": 4.04
           },
           "r_2026": {
             "density": 0.191,
@@ -1529,7 +1909,12 @@
             "pct_private_rented": 0.256,
             "pct_uk_born": -0.15,
             "pct_wfh": 0.119,
-            "pct_female": -0.053
+            "pct_female": -0.053,
+            "pct_white": -0.122,
+            "pct_asian": 0.019,
+            "pct_black": 0.195,
+            "pct_mixed": 0.215,
+            "pct_other_ethnic": 0.143
           },
           "delta_means": {
             "density": 1988.18,
@@ -1548,7 +1933,12 @@
             "pct_private_rented": -0.18,
             "pct_uk_born": -9.03,
             "pct_wfh": 1.19,
-            "pct_female": 0.24
+            "pct_female": 0.24,
+            "pct_white": -13.33,
+            "pct_asian": 4.76,
+            "pct_black": 5.71,
+            "pct_mixed": 0.99,
+            "pct_other_ethnic": 1.89
           },
           "delta_r": {
             "density": 0.204,
@@ -1567,7 +1957,12 @@
             "pct_private_rented": 0.153,
             "pct_uk_born": -0.193,
             "pct_wfh": 0.088,
-            "pct_female": 0.001
+            "pct_female": 0.001,
+            "pct_white": -0.187,
+            "pct_asian": 0.073,
+            "pct_black": 0.251,
+            "pct_mixed": 0.218,
+            "pct_other_ethnic": 0.196
           }
         },
         "Labour": {
@@ -1590,7 +1985,12 @@
             "pct_private_rented": 25.63,
             "pct_uk_born": 72.44,
             "pct_wfh": 29.78,
-            "pct_female": 51.02
+            "pct_female": 51.02,
+            "pct_white": 66.39,
+            "pct_asian": 16.5,
+            "pct_black": 8.97,
+            "pct_mixed": 4.16,
+            "pct_other_ethnic": 3.99
           },
           "r_2022": {
             "density": 0.328,
@@ -1609,7 +2009,12 @@
             "pct_private_rented": 0.263,
             "pct_uk_born": -0.31,
             "pct_wfh": -0.239,
-            "pct_female": -0.063
+            "pct_female": -0.063,
+            "pct_white": -0.377,
+            "pct_asian": 0.256,
+            "pct_black": 0.388,
+            "pct_mixed": 0.245,
+            "pct_other_ethnic": 0.286
           },
           "means_2026": {
             "density": 6349.22,
@@ -1628,7 +2033,12 @@
             "pct_private_rented": 26.19,
             "pct_uk_born": 68.42,
             "pct_wfh": 31.94,
-            "pct_female": 51.09
+            "pct_female": 51.09,
+            "pct_white": 61.37,
+            "pct_asian": 18.61,
+            "pct_black": 10.8,
+            "pct_mixed": 4.51,
+            "pct_other_ethnic": 4.7
           },
           "r_2026": {
             "density": 0.225,
@@ -1647,7 +2057,12 @@
             "pct_private_rented": 0.188,
             "pct_uk_born": -0.322,
             "pct_wfh": -0.021,
-            "pct_female": -0.003
+            "pct_female": -0.003,
+            "pct_white": -0.342,
+            "pct_asian": 0.224,
+            "pct_black": 0.354,
+            "pct_mixed": 0.25,
+            "pct_other_ethnic": 0.299
           },
           "delta_means": {
             "density": 204.17,
@@ -1666,7 +2081,12 @@
             "pct_private_rented": 0.56,
             "pct_uk_born": -4.02,
             "pct_wfh": 2.16,
-            "pct_female": 0.07
+            "pct_female": 0.07,
+            "pct_white": -5.02,
+            "pct_asian": 2.11,
+            "pct_black": 1.83,
+            "pct_mixed": 0.35,
+            "pct_other_ethnic": 0.71
           },
           "delta_r": {
             "density": -0.103,
@@ -1685,7 +2105,12 @@
             "pct_private_rented": -0.075,
             "pct_uk_born": -0.012,
             "pct_wfh": 0.218,
-            "pct_female": 0.06
+            "pct_female": 0.06,
+            "pct_white": 0.035,
+            "pct_asian": -0.032,
+            "pct_black": -0.034,
+            "pct_mixed": 0.005,
+            "pct_other_ethnic": 0.013
           }
         },
         "LibDem": {
@@ -1708,7 +2133,12 @@
             "pct_private_rented": 20.33,
             "pct_uk_born": 81.74,
             "pct_wfh": 38.78,
-            "pct_female": 51.14
+            "pct_female": 51.14,
+            "pct_white": 83.37,
+            "pct_asian": 8.67,
+            "pct_black": 2.53,
+            "pct_mixed": 3.39,
+            "pct_other_ethnic": 2.03
           },
           "r_2022": {
             "density": -0.14,
@@ -1727,7 +2157,12 @@
             "pct_private_rented": -0.093,
             "pct_uk_born": 0.116,
             "pct_wfh": 0.198,
-            "pct_female": 0.014
+            "pct_female": 0.014,
+            "pct_white": 0.181,
+            "pct_asian": -0.121,
+            "pct_black": -0.201,
+            "pct_mixed": -0.061,
+            "pct_other_ethnic": -0.144
           },
           "means_2026": {
             "density": 3759.1,
@@ -1746,7 +2181,12 @@
             "pct_private_rented": 21.25,
             "pct_uk_born": 80.18,
             "pct_wfh": 38.92,
-            "pct_female": 51.07
+            "pct_female": 51.07,
+            "pct_white": 81.34,
+            "pct_asian": 9.92,
+            "pct_black": 3.04,
+            "pct_mixed": 3.48,
+            "pct_other_ethnic": 2.22
           },
           "r_2026": {
             "density": -0.089,
@@ -1765,7 +2205,12 @@
             "pct_private_rented": -0.036,
             "pct_uk_born": 0.048,
             "pct_wfh": 0.207,
-            "pct_female": -0.011
+            "pct_female": -0.011,
+            "pct_white": 0.116,
+            "pct_asian": -0.07,
+            "pct_black": -0.153,
+            "pct_mixed": -0.015,
+            "pct_other_ethnic": -0.095
           },
           "delta_means": {
             "density": 261.63,
@@ -1784,7 +2229,12 @@
             "pct_private_rented": 0.92,
             "pct_uk_born": -1.56,
             "pct_wfh": 0.14,
-            "pct_female": -0.07
+            "pct_female": -0.07,
+            "pct_white": -2.03,
+            "pct_asian": 1.25,
+            "pct_black": 0.51,
+            "pct_mixed": 0.09,
+            "pct_other_ethnic": 0.19
           },
           "delta_r": {
             "density": 0.051,
@@ -1803,7 +2253,12 @@
             "pct_private_rented": 0.057,
             "pct_uk_born": -0.068,
             "pct_wfh": 0.009,
-            "pct_female": -0.025
+            "pct_female": -0.025,
+            "pct_white": -0.065,
+            "pct_asian": 0.051,
+            "pct_black": 0.048,
+            "pct_mixed": 0.046,
+            "pct_other_ethnic": 0.049
           }
         },
         "Conservative": {
@@ -1826,7 +2281,12 @@
             "pct_private_rented": 18.03,
             "pct_uk_born": 83.03,
             "pct_wfh": 35.15,
-            "pct_female": 51.29
+            "pct_female": 51.29,
+            "pct_white": 82.52,
+            "pct_asian": 8.86,
+            "pct_black": 3.23,
+            "pct_mixed": 3.02,
+            "pct_other_ethnic": 2.37
           },
           "r_2022": {
             "density": -0.239,
@@ -1845,7 +2305,12 @@
             "pct_private_rented": -0.233,
             "pct_uk_born": 0.194,
             "pct_wfh": 0.102,
-            "pct_female": 0.081
+            "pct_female": 0.081,
+            "pct_white": 0.212,
+            "pct_asian": -0.15,
+            "pct_black": -0.21,
+            "pct_mixed": -0.177,
+            "pct_other_ethnic": -0.128
           },
           "means_2026": {
             "density": 3978.54,
@@ -1864,7 +2329,12 @@
             "pct_private_rented": 21.01,
             "pct_uk_born": 78.18,
             "pct_wfh": 37.73,
-            "pct_female": 51.25
+            "pct_female": 51.25,
+            "pct_white": 78.03,
+            "pct_asian": 11.67,
+            "pct_black": 3.71,
+            "pct_mixed": 3.45,
+            "pct_other_ethnic": 3.14
           },
           "r_2026": {
             "density": -0.073,
@@ -1883,7 +2353,12 @@
             "pct_private_rented": -0.049,
             "pct_uk_born": -0.003,
             "pct_wfh": 0.186,
-            "pct_female": 0.051
+            "pct_female": 0.051,
+            "pct_white": 0.058,
+            "pct_asian": -0.023,
+            "pct_black": -0.127,
+            "pct_mixed": -0.024,
+            "pct_other_ethnic": 0.03
           },
           "delta_means": {
             "density": 911.8,
@@ -1902,7 +2377,12 @@
             "pct_private_rented": 2.98,
             "pct_uk_born": -4.85,
             "pct_wfh": 2.58,
-            "pct_female": -0.04
+            "pct_female": -0.04,
+            "pct_white": -4.49,
+            "pct_asian": 2.81,
+            "pct_black": 0.48,
+            "pct_mixed": 0.43,
+            "pct_other_ethnic": 0.77
           },
           "delta_r": {
             "density": 0.166,
@@ -1921,7 +2401,12 @@
             "pct_private_rented": 0.184,
             "pct_uk_born": -0.197,
             "pct_wfh": 0.084,
-            "pct_female": -0.03
+            "pct_female": -0.03,
+            "pct_white": -0.154,
+            "pct_asian": 0.127,
+            "pct_black": 0.083,
+            "pct_mixed": 0.153,
+            "pct_other_ethnic": 0.158
           }
         },
         "Independent": {
@@ -1944,7 +2429,12 @@
             "pct_private_rented": 18.24,
             "pct_uk_born": 88.01,
             "pct_wfh": 27.88,
-            "pct_female": 51.19
+            "pct_female": 51.19,
+            "pct_white": 87.86,
+            "pct_asian": 6.37,
+            "pct_black": 2.28,
+            "pct_mixed": 2.36,
+            "pct_other_ethnic": 1.13
           },
           "r_2022": {
             "density": -0.09,
@@ -1963,7 +2453,12 @@
             "pct_private_rented": -0.073,
             "pct_uk_born": 0.119,
             "pct_wfh": -0.068,
-            "pct_female": 0.013
+            "pct_female": 0.013,
+            "pct_white": 0.115,
+            "pct_asian": -0.08,
+            "pct_black": -0.092,
+            "pct_mixed": -0.117,
+            "pct_other_ethnic": -0.113
           },
           "means_2026": {
             "density": 4526.91,
@@ -1982,7 +2477,12 @@
             "pct_private_rented": 21.96,
             "pct_uk_born": 76.94,
             "pct_wfh": 24.78,
-            "pct_female": 50.84
+            "pct_female": 50.84,
+            "pct_white": 62.79,
+            "pct_asian": 26.73,
+            "pct_black": 5.05,
+            "pct_mixed": 2.75,
+            "pct_other_ethnic": 2.68
           },
           "r_2026": {
             "density": -0.005,
@@ -2001,7 +2501,12 @@
             "pct_private_rented": -0.005,
             "pct_uk_born": -0.016,
             "pct_wfh": -0.117,
-            "pct_female": -0.038
+            "pct_female": -0.038,
+            "pct_white": -0.115,
+            "pct_asian": 0.193,
+            "pct_black": -0.02,
+            "pct_mixed": -0.079,
+            "pct_other_ethnic": -0.016
           },
           "delta_means": {
             "density": 1727.84,
@@ -2020,7 +2525,12 @@
             "pct_private_rented": 3.72,
             "pct_uk_born": -11.07,
             "pct_wfh": -3.1,
-            "pct_female": -0.35
+            "pct_female": -0.35,
+            "pct_white": -25.07,
+            "pct_asian": 20.36,
+            "pct_black": 2.77,
+            "pct_mixed": 0.39,
+            "pct_other_ethnic": 1.55
           },
           "delta_r": {
             "density": 0.085,
@@ -2039,7 +2549,12 @@
             "pct_private_rented": 0.068,
             "pct_uk_born": -0.135,
             "pct_wfh": -0.049,
-            "pct_female": -0.051
+            "pct_female": -0.051,
+            "pct_white": -0.23,
+            "pct_asian": 0.273,
+            "pct_black": 0.072,
+            "pct_mixed": 0.038,
+            "pct_other_ethnic": 0.097
           }
         },
         "Other": {
@@ -2062,7 +2577,12 @@
             "pct_private_rented": 20.91,
             "pct_uk_born": 78.91,
             "pct_wfh": 41.01,
-            "pct_female": 50.99
+            "pct_female": 50.99,
+            "pct_white": 75.72,
+            "pct_asian": 15.63,
+            "pct_black": 3.58,
+            "pct_mixed": 3.22,
+            "pct_other_ethnic": 1.85
           },
           "r_2022": {
             "density": 0.051,
@@ -2081,7 +2601,12 @@
             "pct_private_rented": -0.022,
             "pct_uk_born": 0.013,
             "pct_wfh": 0.085,
-            "pct_female": -0.01
+            "pct_female": -0.01,
+            "pct_white": 0.009,
+            "pct_asian": 0.025,
+            "pct_black": -0.045,
+            "pct_mixed": -0.03,
+            "pct_other_ethnic": -0.053
           },
           "means_2026": {
             "density": 7825.49,
@@ -2100,7 +2625,12 @@
             "pct_private_rented": 23.92,
             "pct_uk_born": 72.32,
             "pct_wfh": 36.41,
-            "pct_female": 50.81
+            "pct_female": 50.81,
+            "pct_white": 63.18,
+            "pct_asian": 25.74,
+            "pct_black": 4.87,
+            "pct_mixed": 3.61,
+            "pct_other_ethnic": 2.61
           },
           "r_2026": {
             "density": 0.11,
@@ -2119,7 +2649,12 @@
             "pct_private_rented": 0.021,
             "pct_uk_born": -0.051,
             "pct_wfh": 0.043,
-            "pct_female": -0.03
+            "pct_female": -0.03,
+            "pct_white": -0.078,
+            "pct_asian": 0.126,
+            "pct_black": -0.017,
+            "pct_mixed": 0.004,
+            "pct_other_ethnic": -0.015
           },
           "delta_means": {
             "density": 1394.45,
@@ -2138,7 +2673,12 @@
             "pct_private_rented": 3.01,
             "pct_uk_born": -6.59,
             "pct_wfh": -4.6,
-            "pct_female": -0.18
+            "pct_female": -0.18,
+            "pct_white": -12.54,
+            "pct_asian": 10.11,
+            "pct_black": 1.29,
+            "pct_mixed": 0.39,
+            "pct_other_ethnic": 0.76
           },
           "delta_r": {
             "density": 0.059,
@@ -2157,7 +2697,12 @@
             "pct_private_rented": 0.043,
             "pct_uk_born": -0.064,
             "pct_wfh": -0.042,
-            "pct_female": -0.02
+            "pct_female": -0.02,
+            "pct_white": -0.087,
+            "pct_asian": 0.101,
+            "pct_black": 0.028,
+            "pct_mixed": 0.034,
+            "pct_other_ethnic": 0.038
           }
         }
       }
