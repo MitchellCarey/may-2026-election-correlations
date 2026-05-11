@@ -109,6 +109,11 @@ def parse_article(_council_name: str, year: int, wt: str) -> dict:
             clean = WIKILINK_RE.sub(r'\1', name)
             # Strip "ward" / "constituency" suffix common in Wigan's h4 names.
             clean = re.sub(r'\s+(ward|constituency)\s*$', '', clean, flags=re.IGNORECASE).strip()
+            # Strip trailing "(N)" or "(N seats)" — Wikipedia conventions for
+            # the number of seats up for election (e.g. "===Roby (2)===" or
+            # "===Underhill (2 seats)==="). Neither is part of the ward name
+            # and the ONS WD24 register has no such suffix.
+            clean = re.sub(r'\s*\(\d+(?:\s+seats?)?\)\s*$', '', clean).strip()
             if clean in out:
                 continue
             out[clean] = {'prior_party': normalize_party(m.group(1)), 'prior_year': year}

@@ -44,6 +44,23 @@ def _borough_codes_for(borough):
     return wd_codes_for_lad(lad)
 
 
+def _normalize(s: str) -> str:
+    """Loose-match key: lowercase, strip apostrophes (curly + straight),
+    unify ' & ' → ' and ', drop a trailing '(...)' disambiguator, drop a
+    leading 'St.' dot, collapse whitespace. Wikipedia article headings
+    routinely drop the apostrophe in possessives (e.g. 'Kings Heath' for the
+    Census 'King's Heath'), and ampersand-vs-and is inconsistent across the
+    same article — both have to be neutralised to match by name. The
+    parenthetical suffix is the Census disambiguator (e.g. 'St Mary's
+    (North Tyneside)') and is never part of the scraped name."""
+    import re
+    s = s.lower().replace("’", "").replace("'", "")
+    s = s.replace(' & ', ' and ')
+    s = re.sub(r'\s*\([^)]*\)\s*$', '', s)
+    s = re.sub(r'\bst\.\s+', 'st ', s)
+    return ' '.join(s.split())
+
+
 def find_gss_code(borough, ward_name, df):
     """Find GSS code for ward with progressive fallback strategies."""
     codes = _borough_codes_for(borough)
@@ -67,6 +84,14 @@ def find_gss_code(borough, ward_name, df):
     match = df_borough[df_borough['Electoral wards and divisions'].str.strip() == w3]
     if len(match) >= 1:
         return match.iloc[0]['Electoral wards and divisions Code'], 'suffix'
+
+    # Try a normalised match within borough (apostrophes, ampersand, case).
+    # Safe inside a single borough: ward names are unique per council, so a
+    # case-insensitive apostrophe-less hit can only point at one ward.
+    target_norm = _normalize(ward_name)
+    for _, row in df_borough.iterrows():
+        if _normalize(row['Electoral wards and divisions'].strip()) == target_norm:
+            return row['Electoral wards and divisions Code'], 'norm'
 
     # Try the (lad_code, scraped_name) override
     target = OVERRIDES.get((COUNCIL_LAD[borough], ward_name))

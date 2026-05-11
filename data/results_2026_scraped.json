@@ -21,7 +21,7 @@
     "Prescot South": {
       "party": "Green"
     },
-    "Roby (2)": {
+    "Roby": {
       "party": "Labour"
     },
     "Shevington": {
@@ -1273,76 +1273,76 @@
     }
   },
   "Barnet": {
-    "Barnet Vale (3 seats)": {
+    "Barnet Vale": {
       "party": "Labour"
     },
-    "Brunswick Park (3 seats)": {
+    "Brunswick Park": {
       "party": "Conservative"
     },
-    "Burnt Oak (3 seats)": {
+    "Burnt Oak": {
       "party": "Labour"
     },
-    "Childs Hill (3 seats)": {
+    "Childs Hill": {
       "party": "Conservative"
     },
-    "Colindale North (2 seats)": {
+    "Colindale North": {
       "party": "Labour"
     },
-    "Colindale South (3 seats)": {
+    "Colindale South": {
       "party": "Labour"
     },
-    "Cricklewood (2 seats)": {
+    "Cricklewood": {
       "party": "Labour"
     },
-    "East Barnet (3 seats)": {
+    "East Barnet": {
       "party": "Labour"
     },
-    "East Finchley (3 seats)": {
+    "East Finchley": {
       "party": "Labour"
     },
-    "Edgware (3 seats)": {
+    "Edgware": {
       "party": "Conservative"
     },
-    "Edgwarebury (2 seats)": {
+    "Edgwarebury": {
       "party": "Conservative"
     },
-    "Finchley Church End (3 seats)": {
+    "Finchley Church End": {
       "party": "Conservative"
     },
-    "Friern Barnet (3 seats)": {
+    "Friern Barnet": {
       "party": "Labour"
     },
-    "Garden Suburb (2 seats)": {
+    "Garden Suburb": {
       "party": "Conservative"
     },
-    "Golders Green (2 seats)": {
+    "Golders Green": {
       "party": "Conservative"
     },
-    "Hendon (3 seats)": {
+    "Hendon": {
       "party": "Conservative"
     },
-    "High Barnet (2 seats)": {
+    "High Barnet": {
       "party": "Conservative"
     },
-    "Mill Hill (3 seats)": {
+    "Mill Hill": {
       "party": "Conservative"
     },
-    "Totteridge and Woodside (3 seats)": {
+    "Totteridge and Woodside": {
       "party": "Conservative"
     },
-    "Underhill (2 seats)": {
+    "Underhill": {
       "party": "Labour"
     },
-    "West Finchley (3 seats)": {
+    "West Finchley": {
       "party": "Labour"
     },
-    "West Hendon (3 seats)": {
+    "West Hendon": {
       "party": "Labour"
     },
-    "Whetstone (2 seats)": {
+    "Whetstone": {
       "party": "Labour"
     },
-    "Woodhouse (2 seats)": {
+    "Woodhouse": {
       "party": "Green"
     }
   },
@@ -1692,79 +1692,79 @@
     }
   },
   "Enfield": {
-    "Arnos Grove (2)": {
+    "Arnos Grove": {
       "party": "Conservative"
     },
-    "Bowes (2)": {
+    "Bowes": {
       "party": "Labour"
     },
-    "Brimsdown (3)": {
+    "Brimsdown": {
       "party": "Labour"
     },
-    "Bullsmoor (2)": {
+    "Bullsmoor": {
       "party": "Labour"
     },
-    "Bush Hill Park (3)": {
+    "Bush Hill Park": {
       "party": "Conservative"
     },
-    "Carterhatch (2)": {
+    "Carterhatch": {
       "party": "Labour"
     },
-    "Cockfosters (2)": {
+    "Cockfosters": {
       "party": "Conservative"
     },
-    "Edmonton Green (3)": {
+    "Edmonton Green": {
       "party": "Labour"
     },
-    "Enfield Lock (3)": {
+    "Enfield Lock": {
       "party": "Green"
     },
-    "Grange Park (2)": {
+    "Grange Park": {
       "party": "Conservative"
     },
-    "Haselbury (3)": {
+    "Haselbury": {
       "party": "Labour"
     },
-    "Highfield (2)": {
+    "Highfield": {
       "party": "Conservative"
     },
-    "Jubilee (3)": {
+    "Jubilee": {
       "party": "Labour"
     },
-    "Lower Edmonton (3)": {
+    "Lower Edmonton": {
       "party": "Labour"
     },
-    "New Southgate (2)": {
+    "New Southgate": {
       "party": "Green"
     },
-    "Oakwood (2)": {
+    "Oakwood": {
       "party": "Conservative"
     },
-    "Palmers Green (2)": {
+    "Palmers Green": {
       "party": "Labour"
     },
-    "Ponders End (2)": {
+    "Ponders End": {
       "party": "Green"
     },
-    "Ridgeway (3)": {
+    "Ridgeway": {
       "party": "Conservative"
     },
-    "Southbury (3)": {
+    "Southbury": {
       "party": "Conservative"
     },
-    "Southgate (3)": {
+    "Southgate": {
       "party": "Conservative"
     },
-    "Town (3)": {
+    "Town": {
       "party": "Conservative"
     },
-    "Upper Edmonton (3)": {
+    "Upper Edmonton": {
       "party": "Labour"
     },
-    "Whitewebbs (3)": {
+    "Whitewebbs": {
       "party": "Conservative"
     },
-    "Winchmore Hill (2)": {
+    "Winchmore Hill": {
       "party": "Conservative"
     }
   },
@@ -1993,70 +1993,70 @@
     }
   },
   "Harrow": {
-    "Belmont (2)": {
+    "Belmont": {
       "party": "Conservative"
     },
-    "Canons (2)": {
+    "Canons": {
       "party": "Conservative"
     },
-    "Centenary (3)": {
+    "Centenary": {
       "party": "Conservative"
     },
-    "Edgware (3)": {
+    "Edgware": {
       "party": "Conservative"
     },
-    "Greenhill (3)": {
+    "Greenhill": {
       "party": "Conservative"
     },
-    "Harrow on the Hill (2)": {
+    "Harrow on the Hill": {
       "party": "Conservative"
     },
-    "Harrow Weald (3)": {
+    "Harrow Weald": {
       "party": "Conservative"
     },
-    "Hatch End (2)": {
+    "Hatch End": {
       "party": "Conservative"
     },
-    "Headstone (3)": {
+    "Headstone": {
       "party": "Conservative"
     },
-    "Kenton East (3)": {
+    "Kenton East": {
       "party": "Conservative"
     },
-    "Kenton West (2)": {
+    "Kenton West": {
       "party": "Conservative"
     },
-    "Marlborough (3)": {
+    "Marlborough": {
       "party": "Labour"
     },
-    "North Harrow (2)": {
+    "North Harrow": {
       "party": "Conservative"
     },
-    "Pinner (3)": {
+    "Pinner": {
       "party": "Conservative"
     },
-    "Pinner South (3)": {
+    "Pinner South": {
       "party": "Conservative"
     },
-    "Rayners Lane (2)": {
+    "Rayners Lane": {
       "party": "Conservative"
     },
-    "Roxbourne (2)": {
+    "Roxbourne": {
       "party": "Labour"
     },
-    "Roxeth (3)": {
+    "Roxeth": {
       "party": "Labour"
     },
-    "Stanmore (3)": {
+    "Stanmore": {
       "party": "Conservative"
     },
-    "Wealdstone North (2)": {
+    "Wealdstone North": {
       "party": "Labour"
     },
-    "Wealdstone South (2)": {
+    "Wealdstone South": {
       "party": "Labour"
     },
-    "West Harrow (2)": {
+    "West Harrow": {
       "party": "Labour"
     }
   },

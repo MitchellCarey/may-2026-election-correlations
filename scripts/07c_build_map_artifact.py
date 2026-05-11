@@ -40,11 +40,14 @@ END = "// ===== END GENERATED ====="
 
 
 def normalise(s: str) -> str:
-    """Loose name match: lowercase, strip dots, slash → space, ' and ' → ' & ',
-    collapse whitespace. Bridges the punctuation drift between the WD24 names
-    in the ONS geom file and the human-edited names in results-side data
-    (e.g. 'Dukinfield/Stalybridge' vs 'Dukinfield Stalybridge')."""
+    """Loose name match: lowercase, strip dots, slash → space, both apostrophe
+    variants → nothing, ' and ' → ' & ', collapse whitespace. Bridges the
+    punctuation drift between the WD24 names in the ONS geom file and the
+    Wikipedia-scraped names in results-side data (e.g. 'Dukinfield/Stalybridge'
+    vs 'Dukinfield Stalybridge', 'Kings Heath' vs "King's Heath", 'St Mary's'
+    with curly vs straight apostrophe)."""
     s = s.lower().replace('/', ' ').replace('.', '')
+    s = s.replace("’", "").replace("'", "")
     s = s.replace(' and ', ' & ')
     return ' '.join(s.split())
 
