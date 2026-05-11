@@ -65,6 +65,7 @@ def main():
             'fl': w.get('flipped'),
             'mp': w.get('match_type_prior'),
             'd': w.get('density'),
+            'inc': w.get('mean_income'),
             'l4': w.get('pct_level4_plus'),
             'ap': w.get('pct_apprentice'),
             'uk': w.get('pct_uk_born'),
@@ -106,7 +107,7 @@ def main():
     js_lines.append('  borough: v.b, ward: v.wn, winner: v.w,')
     js_lines.append('  prior_party: v.pp, prior_year: v.py,')
     js_lines.append('  flipped: v.fl, match_type_prior: v.mp,')
-    js_lines.append('  density: v.d, pct_level4_plus: v.l4,')
+    js_lines.append('  density: v.d, mean_income: v.inc, pct_level4_plus: v.l4,')
     js_lines.append('  pct_apprentice: v.ap, pct_uk_born: v.uk,')
     js_lines.append('}));')
     js_lines.append('')
@@ -140,7 +141,8 @@ if (corrHeadRow) {
   }).join("");
 }
 const corrVarOrder = [
-  "density","median_age","pct_under18","pct_18_29","pct_30_49","pct_50_64","pct_65plus",
+  "density","median_age","mean_income",
+  "pct_under18","pct_18_29","pct_30_49","pct_50_64","pct_65plus",
   "pct_apprentice","pct_level4_plus","pct_soc123","pct_no_qual",
   "pct_uk_born","pct_private_rented","pct_social_rented","pct_owned","pct_wfh","pct_female",
   "pct_white","pct_asian","pct_black","pct_mixed","pct_other_ethnic"
@@ -234,6 +236,7 @@ if (baGrid) {
   const baLabels = {
     density: "Density (per km²)",
     median_age: "Median age",
+    mean_income: "Income (£/yr)",
     pct_18_29: "% aged 18-29",
     pct_65plus: "% aged 65+",
     pct_apprentice: "% Apprentice",
@@ -253,23 +256,26 @@ if (baGrid) {
   };
   const fmtVal = (key, v) => {
     if (v === undefined || v === null) return "—";
-    if (key === "density")    return Math.round(v).toLocaleString();
-    if (key === "median_age") return v.toFixed(2) + " yrs";
+    if (key === "density")     return Math.round(v).toLocaleString();
+    if (key === "median_age")  return v.toFixed(2) + " yrs";
+    if (key === "mean_income") return "£" + Math.round(v).toLocaleString();
     return v.toFixed(2) + "%";
   };
   const fmtDelta = (key, d) => {
     if (d === undefined || d === null) return "—";
     const sign = d > 0 ? "+" : (d < 0 ? "−" : "±");
     const abs = Math.abs(d);
-    if (key === "density")    return sign + Math.round(abs).toLocaleString();
-    if (key === "median_age") return sign + abs.toFixed(2);
+    if (key === "density")     return sign + Math.round(abs).toLocaleString();
+    if (key === "median_age")  return sign + abs.toFixed(2);
+    if (key === "mean_income") return sign + "£" + Math.round(abs).toLocaleString();
     return sign + abs.toFixed(2);
   };
   // What counts as a "big" delta varies wildly by variable — Census percentages
   // don't have the same scale as density. Use a per-variable threshold to colour
   // bold-positive (green) / bold-negative (red); below threshold stays muted.
   const deltaThreshold = {
-    density: 500, median_age: 1, pct_18_29: 2, pct_65plus: 2,
+    density: 500, median_age: 1, mean_income: 2000,
+    pct_18_29: 2, pct_65plus: 2,
     pct_apprentice: 1, pct_level4_plus: 3, pct_soc123: 3,
     pct_owned: 5, pct_private_rented: 5, pct_social_rented: 5,
     pct_uk_born: 5, pct_wfh: 3, pct_female: 1,

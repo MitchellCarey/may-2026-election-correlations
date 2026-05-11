@@ -29,6 +29,7 @@ def main():
             'flipped': w.get('flipped'),
             'match_type_prior': w.get('match_type_prior'),
             'density': w.get('density'),
+            'mean_income': w.get('mean_income'),
             'pct_level4_plus': w.get('pct_level4_plus'),
             'pct_apprentice': w.get('pct_apprentice'),
             'pct_uk_born': w.get('pct_uk_born'),
