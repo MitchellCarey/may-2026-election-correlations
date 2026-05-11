@@ -24,6 +24,8 @@ import re
 import sys
 from pathlib import Path
 
+import csv
+
 from _artifact_lib import (
     PARTY_COLOURS_MAP as PARTY_COLOURS,
     PARTY_DISPLAY_MAP as PARTY_DISPLAY,
@@ -39,16 +41,32 @@ BEGIN = "// ===== BEGIN GENERATED — see scripts/07c_build_map_artifact.py ====
 END = "// ===== END GENERATED ====="
 
 
+def load_overrides() -> dict:
+    """Return {(lad_code, scraped_name): gss_name} — same file 02 uses.
+    The 'gss_name' in the CSV is the pre-2024-review Census/ONS ward name,
+    which is what the WD24 geom file also carries (the May 2024 ONS
+    snapshot pre-dates the August 2024 boundary reviews for the affected
+    councils). Wikipedia 2026 headings use the NEW (post-review) names."""
+    overrides: dict[tuple[str, str], str] = {}
+    with open(ROOT / 'data' / 'source' / 'ward_name_overrides.csv', newline='') as f:
+        for row in csv.DictReader(f):
+            overrides[(row['lad_code'], row['scraped_name'])] = row['gss_name']
+    return overrides
+
+
 def normalise(s: str) -> str:
     """Loose name match: lowercase, strip dots, slash → space, both apostrophe
-    variants → nothing, ' and ' → ' & ', collapse whitespace. Bridges the
-    punctuation drift between the WD24 names in the ONS geom file and the
-    Wikipedia-scraped names in results-side data (e.g. 'Dukinfield/Stalybridge'
-    vs 'Dukinfield Stalybridge', 'Kings Heath' vs "King's Heath", 'St Mary's'
-    with curly vs straight apostrophe)."""
+    variants → nothing, ' and ' → ' & ', drop a trailing '(...)' disambiguator,
+    collapse whitespace. Bridges the punctuation drift between the WD24 names
+    in the ONS geom file and the Wikipedia-scraped names in results-side data
+    (e.g. 'Dukinfield/Stalybridge' vs 'Dukinfield Stalybridge', 'Kings Heath'
+    vs "King's Heath", 'St Mary's' with curly vs straight apostrophe). The
+    parenthetical suffix is the Census disambiguator carried in override
+    targets (e.g. 'Barnes (Sunderland)') — WD24 itself uses no parens."""
     s = s.lower().replace('/', ' ').replace('.', '')
     s = s.replace("’", "").replace("'", "")
     s = s.replace(' and ', ' & ')
+    s = re.sub(r'\s*\([^)]*\)\s*$', '', s)
     return ' '.join(s.split())
 
 
@@ -103,12 +121,35 @@ def main():
         borough_name = region_boroughs[w['lad']]['name']
         geom_by_norm[f'{normalise(borough_name)}::{normalise(w["name"])}'] = code
 
+    overrides = load_overrides()
+
     matched = []
     unmatched = []
+    polygon_collisions = []  # 2026 wards whose override target is already claimed
     used_codes = set()
     for r in results:
         key = f'{normalise(r["borough"])}::{normalise(r["ward"])}'
         code = geom_by_norm.get(key)
+        via_override = False
+        if code is None:
+            # Fall back to the override CSV (same one 02 uses for GSS
+            # matching). For 2024-boundary-review wards, Wikipedia carries
+            # the NEW name while WD24 geom still carries the OLD one — the
+            # override maps NEW → OLD so the geom join can finish.
+            override = overrides.get((r['lad_code'], r['ward']))
+            if override is not None:
+                key2 = f'{normalise(r["borough"])}::{normalise(override)}'
+                code = geom_by_norm.get(key2)
+                via_override = code is not None
+        # If an override-resolved polygon is already taken by an earlier
+        # ward, don't overwrite — Calderdale gained one ward in the 2024
+        # review without a free old-ward proxy, so e.g. Wainhouse and Park
+        # both want the same old Park polygon. The direct-match ward
+        # (processed first by natural iteration) keeps it; the
+        # override-match ward gets dropped from the map.
+        if code is not None and via_override and code in used_codes:
+            polygon_collisions.append((r['borough'], r['ward']))
+            continue
         if code is None:
             unmatched.append((r['borough'], r['ward']))
             continue
@@ -141,6 +182,15 @@ def main():
         for b, w in unmatched:
             print(f'  [UNMATCHED] {b} :: {w}', file=sys.stderr)
         sys.exit(1)
+    if polygon_collisions:
+        # Not a hard error — these wards are still in the analysis tables;
+        # only their polygon overlapped with another ward via the override
+        # proxy. Log so it doesn't go silent.
+        print(f'  ! {len(polygon_collisions)} ward(s) dropped from the map: '
+              f'override polygon already claimed by a direct-match ward:',
+              file=sys.stderr)
+        for b, w in polygon_collisions:
+            print(f'    - {b} :: {w}', file=sys.stderr)
     no_result_names = ', '.join(f'{w["b"]}::{w["wn"]}' for w in no_result)
     print(f'no-result polygons (rendered grey): {len(no_result)}'
           + (f' — {no_result_names}' if no_result else ''))

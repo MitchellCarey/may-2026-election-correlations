@@ -62,3 +62,75 @@ E08000005,Milnrow & Newhey,Milnrow and Newhey,Rochdale: punctuation (& -> and)
 E08000005,Milkstone & Deeplish,Milkstone and Deeplish,Rochdale: punctuation (& -> and)
 E08000005,Balderstone & Kirkholt,Balderstone & Kirkholt,Rochdale: Census uses ampersand here
 E08000004,Saddleworth West & Lees,Saddleworth West and Lees,Oldham: punctuation (& -> and)
+E08000016,Athersley and New Lodge,St Helens (Barnsley),Barnsley 2024: was old St Helens ward
+E08000016,Darfield and Great Houghton,Darfield,Barnsley 2024 boundary review
+E08000016,"Dodworth, Stainborough and Tankersley",Dodworth,Barnsley 2024 boundary review
+E08000021,"Benwell, Scotswood and Denton Burn",Benwell & Scotswood,Newcastle 2024 boundary review
+E08000021,Blakelaw and Cowgate,Blakelaw,Newcastle 2024 boundary review
+E08000021,Jesmond,North Jesmond,Newcastle 2024: N+S Jesmond merged; proxy with N
+E08000021,Kingston Park and Dinnington,Kingston Park South & Newbiggin Hall,Newcastle 2024 boundary review
+E08000021,Newbiggin Hall and Callerton,Callerton & Throckley,Newcastle 2024 boundary review
+E08000021,Parklands and North Gosforth,Parklands,Newcastle 2024 boundary review
+E08000021,"Throckley, Walbottle and Newburn",South Jesmond,Newcastle 2024: Lemington kept; using the only free old ward as proxy
+E08000022,Backworth and Holystone,Weetslade,North Tyneside 2024 boundary review
+E08000022,Chirton and Percy Main,Chirton,North Tyneside 2024 boundary review
+E08000022,Cullercoats and Whitley Bay South,Cullercoats,North Tyneside 2024 boundary review
+E08000022,Forest Hall,Longbenton,North Tyneside 2024: Forest Hall in Longbenton area
+E08000022,Longbenton and Benton,Benton,North Tyneside 2024: Longbenton+Benton merged; Longbenton used for Forest Hall
+E08000022,Monkseaton,Monkseaton North,North Tyneside 2024: N+S Monkseaton merged; proxy with N
+E08000022,New York and Murton,Killingworth,North Tyneside 2024: Murton in Killingworth area
+E08000022,North Shields,Riverside (North Tyneside),North Tyneside 2024: North Shields = Riverside area
+E08000022,Preston with Preston Grange,Preston (North Tyneside),North Tyneside 2024 boundary review
+E08000022,Shiremoor,Camperdown,North Tyneside 2024: Shiremoor in Camperdown area
+E08000022,Wallsend Central,Wallsend,North Tyneside 2024 boundary review
+E08000022,Wallsend North,Howdon,North Tyneside 2024: Wallsend split; Howdon covers the N edge
+E08000022,Whitley Bay North,Whitley Bay,North Tyneside 2024 boundary review
+E08000023,Cleadon Park and Harton Moor,Cleadon Park,South Tyneside 2024 boundary review
+E08000023,Cleadon Village and East Boldon,Cleadon and East Boldon,South Tyneside 2024 boundary review
+E08000023,Horsley Hill and Westoe Crown,Horsley Hill,South Tyneside 2024 boundary review
+E08000024,Barnes and Thornhill,Barnes (Sunderland),Sunderland 2024 boundary review
+E08000024,Deptford and Hendon,Hendon (Sunderland),Sunderland 2024 boundary review
+E08000024,Doxford Park,Doxford,Sunderland 2024 boundary review
+E08000024,Farringdon and Silksworth,Silksworth,Sunderland 2024 boundary review
+E08000024,Grangetown,St Michael's (Sunderland),Sunderland 2024: Grangetown was in St Michael's
+E08000024,Grindon and Thorney Close,Sandhill,Sunderland 2024: Thorney Close was in Sandhill
+E08000024,Houghton North,Houghton,Sunderland 2024 boundary review
+E08000024,Hylton Castle,Castle (Sunderland),Sunderland 2024 boundary review
+E08000024,Pallion and Ford,Pallion,Sunderland 2024 boundary review
+E08000024,Pennywell and South Hylton,St Anne's,Sunderland 2024: Pennywell was in St Anne's
+E08000024,Redhouse,Redhill (Sunderland),Sunderland 2024 boundary review
+E08000024,Roker,St Peter's (Sunderland),Sunderland 2024: Roker in St Peter's area
+E08000024,Tunstall and Humbledon,St Chad's,Sunderland 2024: Tunstall in St Chad's area
+E08000025,Sparkbrook & Balsall Heath,Sparkbrook & Balsall Heath East,Birmingham: 2026 reverts merge of Balsall Heath E+W
+E08000026,Holbrooks,Holbrook,Coventry: plural difference (Holbrooks vs Holbrook)
+E08000026,Tile Hill and Canley,Westwood,Coventry 2024: Canley in Westwood; Tile Hill in Bablake/Westwood
+E08000027,Brierley Hill & Wordsley South,Brierley Hill,Dudley 2024 boundary review
+E08000027,Coseley,Coseley East,Dudley 2024: Coseley E only; proxy with E
+E08000027,Cradley North & Wollescote,Cradley and Wollescote,Dudley 2024 boundary review
+E08000027,Netherton & Holly Hall,"Netherton, Woodside and St Andrews",Dudley 2024 boundary review
+E08000027,Wordsley North,Wordsley,Dudley 2024 boundary review
+E08000029,Balsall & Berkswell,Meriden (Solihull),Solihull 2024: rural ward carved out of Meriden
+E08000031,Bilston South,Bilston East,Wolverhampton 2024: no Bilston South in Census; proxy with E
+E08000031,Ettingshall North,Ettingshall,Wolverhampton 2024 boundary review
+E08000031,Ettingshall South and Spring Vale,Spring Vale,Wolverhampton 2024 boundary review
+E08000032,Bingley East,Bingley,Bradford 2024 boundary review
+E08000032,Bingley West,Bingley Rural,Bradford 2024 boundary review
+E08000032,Heaton & Frizinghall,Heaton (Bradford),Bradford 2024 boundary review
+E08000032,Holme Wood & Bierley,Tong,Bradford 2024: Holme Wood in Tong area
+E08000032,Ilkley & Addingham,Ilkley,Bradford 2024 boundary review
+E08000032,Wibsey & Odsal,Wibsey,Bradford 2024 boundary review
+E08000033,Greetland,Greetland and Stainland,Calderdale 2024 boundary review
+E08000033,Halifax Town,Town (Calderdale),Calderdale 2024 boundary review
+E08000033,Hebden Bridge & Todmorden East,Calder (Calderdale),Calderdale 2024: Hebden Bridge in Calder
+E08000033,"Salterhebble, Southowram & Skircoat Green",Skircoat,Calderdale 2024: Skircoat Green in Skircoat
+E08000033,Todmorden West,Todmorden,Calderdale 2024 boundary review
+E08000033,Wainhouse,Park (Calderdale),Calderdale 2024: Wainhouse Tower in Park
+E08000036,Knottingley and Ferrybridge,Knottingley,Wakefield 2024 boundary review
+E08000037,Birtley North and Lamesley,Lamesley,Gateshead 2024 boundary review
+E08000037,Birtley South,Birtley,Gateshead 2024 boundary review
+E08000037,Dunston Teams and Riverside,Dunston and Teams,Gateshead 2024 boundary review
+E08000037,Pelaw Heworth and Bill Quay,Pelaw and Heworth,Gateshead 2024 boundary review
+E08000037,Ryton Crookhill and Stella,"Ryton, Crookhill and Stella",Gateshead 2024 boundary review
+E08000037,Whickham North and Swalwell,Whickham North,Gateshead 2024 boundary review
+E09000030,Bethnal Green East,Bethnal Green,Tower Hamlets 2024: single ward split E/W
+E09000030,Bethnal Green West,Bethnal Green,Tower Hamlets 2024: single ward split E/W
