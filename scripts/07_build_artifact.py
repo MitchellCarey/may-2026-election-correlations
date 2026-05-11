@@ -8,6 +8,13 @@ import json
 import re
 from pathlib import Path
 
+from _artifact_lib import (
+    corr_labels_js_quoted_keys,
+    party_colours_text_js,
+    party_display_text_js,
+    party_order_winners_js,
+)
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
@@ -90,29 +97,7 @@ js_lines.append('    match_type: v.m,')
 js_lines.append('  };')
 js_lines.append('});')
 js_lines.append('')
-js_lines.append('const corrLabels = {')
-labels_dict = {
-  "density": "Population density (per km²)",
-  "median_age": "Median age (years)",
-  "pct_under18": "% aged under 18",
-  "pct_18_29": "% aged 18-29",
-  "pct_30_49": "% aged 30-49",
-  "pct_50_64": "% aged 50-64",
-  "pct_65plus": "% aged 65+",
-  "pct_apprentice": "% with apprenticeship",
-  "pct_level4_plus": "% with Level 4+ (degree)",
-  "pct_soc123": "% in SOC 1-3 (graduate-level jobs)",
-  "pct_no_qual": "% with no qualifications",
-  "pct_uk_born": "% born in UK",
-  "pct_private_rented": "% Private rent",
-  "pct_social_rented": "% Social housing",
-  "pct_owned": "% Owned",
-  "pct_wfh": "% Working from home",
-  "pct_female": "% Female",
-}
-for k, v in labels_dict.items():
-    js_lines.append(f'  "{k}": "{v}",')
-js_lines.append('};')
+js_lines.append(corr_labels_js_quoted_keys())
 js_lines.append('')
 js_lines.append('const corrData = ' + json.dumps(corrData, separators=(',', ':')) + ';')
 js_lines.append('')
@@ -123,29 +108,13 @@ js_lines.append('const boroughTallies = ' + json.dumps(borough_tallies, separato
 js_lines.append('')
 
 # Now the rendering helpers
-js_lines.append('''
-const partyColors = {
-  Green: "var(--green)",
-  Reform: "var(--reform)",
-  Labour: "var(--labour)",
-  LibDem: "var(--libdem)",
-  Conservative: "#1d4f8a",
-  Independent: "#888",
-  Other: "#a87b3e",
-  Pending: "#bbb"
-};
-const partyDisplay = {
-  Green: "Greens",
-  Labour: "Labour",
-  Reform: "Reform UK",
-  LibDem: "Liberal Democrats",
-  Conservative: "Conservatives",
-  Independent: "Independent / local",
-  Other: "Workers / Oldham Group / etc.",
-  Pending: "Awaiting declaration"
-};
-const partyOrder = ["Reform","Green","Labour","LibDem","Conservative","Independent","Other","Pending"];
-''')
+js_lines.append('\n'.join([
+    '',
+    party_colours_text_js(),
+    party_display_text_js(other_label='Workers / Oldham Group / etc.'),
+    party_order_winners_js(),
+    '',
+]))
 
 # Correlation table renderer
 js_lines.append('''

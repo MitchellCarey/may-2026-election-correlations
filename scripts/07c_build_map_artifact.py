@@ -21,40 +21,18 @@ import re
 import sys
 from pathlib import Path
 
+from _artifact_lib import (
+    PARTY_COLOURS_MAP as PARTY_COLOURS,
+    PARTY_DISPLAY_MAP as PARTY_DISPLAY,
+    LEGEND_ORDER_MAP as LEGEND_ORDER,
+)
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
 
 BEGIN = "// ===== BEGIN GENERATED — see scripts/07c_build_map_artifact.py ====="
 END = "// ===== END GENERATED ====="
-
-# Vivid party fills tuned for choropleth use — denser than the muted text-label
-# variants in shared.css's --labour / --reform / --libdem variables, which look
-# right on pills but wash out on small polygons. Other & Pending colours are
-# inherited from the Changes-page palette (07b) for visual continuity.
-PARTY_COLOURS = {
-    'Labour':       '#c8102e',
-    'Conservative': '#0087DC',
-    'LibDem':       '#FAA61A',
-    'Reform':       '#12B6CF',
-    'Green':        '#6AB023',
-    'Independent':  '#888780',
-    'Other':        '#a87b3e',
-    'Pending':      '#cccccc',
-}
-
-PARTY_DISPLAY = {
-    'Labour':       'Labour',
-    'Conservative': 'Conservative',
-    'LibDem':       'Liberal Democrats',
-    'Reform':       'Reform UK',
-    'Green':        'Green',
-    'Independent':  'Independent',
-    'Other':        'Other',
-    'Pending':      'Awaiting declaration',
-}
-
-LEGEND_ORDER = ['Labour', 'Reform', 'Green', 'LibDem', 'Conservative', 'Independent', 'Other', 'Pending']
 
 
 def normalise(s: str) -> str:

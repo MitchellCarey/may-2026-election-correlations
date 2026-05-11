@@ -16,6 +16,13 @@ import json
 import re
 from pathlib import Path
 
+from _artifact_lib import (
+    corr_labels_js_unquoted_keys,
+    party_colours_text_js,
+    party_display_text_js,
+    party_short_js,
+)
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
@@ -84,58 +91,15 @@ def main():
     js_lines.append('const beforeAfter = ' + json.dumps(before_after, separators=(',', ':')) + ';')
     js_lines.append('')
 
-    js_lines.append('''
-const corrLabels = {
-  density: "Population density (per km²)",
-  median_age: "Median age (years)",
-  pct_under18: "% aged under 18",
-  pct_18_29: "% aged 18-29",
-  pct_30_49: "% aged 30-49",
-  pct_50_64: "% aged 50-64",
-  pct_65plus: "% aged 65+",
-  pct_apprentice: "% with apprenticeship",
-  pct_level4_plus: "% with Level 4+ (degree)",
-  pct_soc123: "% in SOC 1-3 (graduate-level jobs)",
-  pct_no_qual: "% with no qualifications",
-  pct_uk_born: "% born in UK",
-  pct_private_rented: "% Private rent",
-  pct_social_rented: "% Social housing",
-  pct_owned: "% Owned",
-  pct_wfh: "% Working from home",
-  pct_female: "% Female",
-};
-
-const partyColors = {
-  Green: "var(--green)",
-  Reform: "var(--reform)",
-  Labour: "var(--labour)",
-  LibDem: "var(--libdem)",
-  Conservative: "#1d4f8a",
-  Independent: "#888",
-  Other: "#a87b3e",
-  Pending: "#bbb"
-};
-const partyDisplay = {
-  Green: "Greens",
-  Labour: "Labour",
-  Reform: "Reform UK",
-  LibDem: "Liberal Democrats",
-  Conservative: "Conservatives",
-  Independent: "Independent / local",
-  Other: "Other",
-  Pending: "Awaiting declaration"
-};
-const partyShort = {
-  Green: "Green",
-  Labour: "Labour",
-  Reform: "Reform",
-  LibDem: "LibDem",
-  Conservative: "Cons",
-  Independent: "Indep",
-  Other: "Other",
-  Pending: "Pending"
-};
-''')
+    js_lines.append('\n'.join([
+        '',
+        corr_labels_js_unquoted_keys(),
+        '',
+        party_colours_text_js(),
+        party_display_text_js(other_label='Other'),
+        party_short_js(),
+        '',
+    ]))
 
     # § 1 matrix renderer — lifted from 07 with a small tweak: column header
     # subtitle reads "n_flipped=X" (not "n=X") so readers know the basis.
