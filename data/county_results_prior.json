@@ -1,0 +1,296 @@
+{
+  "East Sussex": {
+    "Eastbourne": {
+      "party": "LibDem",
+      "seats_won": 6,
+      "total_seats": 9,
+      "year": 2021
+    },
+    "Hastings": {
+      "party": "Conservative",
+      "seats_won": 4,
+      "total_seats": 8,
+      "year": 2021
+    },
+    "Lewes": {
+      "party": "LibDem",
+      "seats_won": 3,
+      "total_seats": 9,
+      "year": 2021
+    },
+    "Rother": {
+      "party": "Conservative",
+      "seats_won": 7,
+      "total_seats": 9,
+      "year": 2021
+    },
+    "Wealden": {
+      "party": "Conservative",
+      "seats_won": 11,
+      "total_seats": 15,
+      "year": 2021
+    }
+  },
+  "Essex": {
+    "Basildon": {
+      "party": "Conservative",
+      "seats_won": 4,
+      "total_seats": 5,
+      "year": 2021
+    },
+    "Braintree": {
+      "party": "Conservative",
+      "seats_won": 7,
+      "total_seats": 8,
+      "year": 2021
+    },
+    "Brentwood": {
+      "party": "Conservative",
+      "seats_won": 3,
+      "total_seats": 4,
+      "year": 2021
+    },
+    "Castle Point": {
+      "party": "Conservative",
+      "seats_won": 3,
+      "total_seats": 5,
+      "year": 2021
+    },
+    "Chelmsford": {
+      "party": "Conservative",
+      "seats_won": 5,
+      "total_seats": 9,
+      "year": 2021
+    },
+    "Colchester": {
+      "party": "Conservative",
+      "seats_won": 5,
+      "total_seats": 9,
+      "year": 2021
+    },
+    "Epping Forest": {
+      "party": "Conservative",
+      "seats_won": 6,
+      "total_seats": 7,
+      "year": 2021
+    },
+    "Harlow": {
+      "party": "Conservative",
+      "seats_won": 3,
+      "total_seats": 3,
+      "year": 2021
+    },
+    "Maldon": {
+      "party": "Conservative",
+      "seats_won": 2,
+      "total_seats": 3,
+      "year": 2021
+    },
+    "Rochford": {
+      "party": "Conservative",
+      "seats_won": 3,
+      "total_seats": 5,
+      "year": 2021
+    },
+    "Tendring": {
+      "party": "Conservative",
+      "seats_won": 6,
+      "total_seats": 8,
+      "year": 2021
+    },
+    "Uttlesford": {
+      "party": "Conservative",
+      "seats_won": 2,
+      "total_seats": 4,
+      "year": 2021
+    }
+  },
+  "Hampshire": {
+    "Basingstoke and Deane": {
+      "party": "Conservative",
+      "seats_won": 7,
+      "total_seats": 10,
+      "year": 2021
+    },
+    "East Hampshire": {
+      "party": "Conservative",
+      "seats_won": 6,
+      "total_seats": 7,
+      "year": 2021
+    },
+    "Eastleigh": {
+      "party": "LibDem",
+      "seats_won": 6,
+      "total_seats": 8,
+      "year": 2021
+    },
+    "Fareham": {
+      "party": "Conservative",
+      "seats_won": 5,
+      "total_seats": 6,
+      "year": 2021
+    },
+    "Gosport": {
+      "party": "Conservative",
+      "seats_won": 3,
+      "total_seats": 4,
+      "year": 2021
+    },
+    "Hart": {
+      "party": "Conservative",
+      "seats_won": 4,
+      "total_seats": 5,
+      "year": 2021
+    },
+    "Havant": {
+      "party": "Conservative",
+      "seats_won": 7,
+      "total_seats": 7,
+      "year": 2021
+    },
+    "New Forest": {
+      "party": "Conservative",
+      "seats_won": 8,
+      "total_seats": 10,
+      "year": 2021
+    },
+    "Rushmoor": {
+      "party": "Conservative",
+      "seats_won": 4,
+      "total_seats": 5,
+      "year": 2021
+    },
+    "Test Valley": {
+      "party": "Conservative",
+      "seats_won": 5,
+      "total_seats": 7,
+      "year": 2021
+    },
+    "Winchester": {
+      "party": "Conservative",
+      "seats_won": 4,
+      "total_seats": 7,
+      "year": 2021
+    }
+  },
+  "Norfolk": {
+    "Breckland": {
+      "party": "Conservative",
+      "seats_won": 11,
+      "total_seats": 12,
+      "year": 2021
+    },
+    "Broadland": {
+      "party": "Conservative",
+      "seats_won": 11,
+      "total_seats": 13,
+      "year": 2021
+    },
+    "Great Yarmouth": {
+      "party": "Conservative",
+      "seats_won": 7,
+      "total_seats": 9,
+      "year": 2021
+    },
+    "King's Lynn and West Norfolk": {
+      "party": "Conservative",
+      "seats_won": 12,
+      "total_seats": 14,
+      "year": 2021
+    },
+    "North Norfolk": {
+      "party": "Conservative",
+      "seats_won": 6,
+      "total_seats": 11,
+      "year": 2021
+    },
+    "Norwich": {
+      "party": "Labour",
+      "seats_won": 9,
+      "total_seats": 13,
+      "year": 2021
+    },
+    "South Norfolk": {
+      "party": "Conservative",
+      "seats_won": 11,
+      "total_seats": 12,
+      "year": 2021
+    }
+  },
+  "Suffolk": {
+    "Babergh": {
+      "party": "Conservative",
+      "seats_won": 6,
+      "total_seats": 10,
+      "year": 2021
+    },
+    "East Suffolk": {
+      "party": "Conservative",
+      "seats_won": 16,
+      "total_seats": 19,
+      "year": 2021
+    },
+    "Ipswich": {
+      "party": "Labour",
+      "seats_won": 5,
+      "total_seats": 10,
+      "year": 2021
+    },
+    "Mid Suffolk": {
+      "party": "Conservative",
+      "seats_won": 5,
+      "total_seats": 10,
+      "year": 2021
+    },
+    "West Suffolk": {
+      "party": "Conservative",
+      "seats_won": 13,
+      "total_seats": 14,
+      "year": 2021
+    }
+  },
+  "West Sussex": {
+    "Adur": {
+      "party": "Conservative",
+      "seats_won": 5,
+      "total_seats": 5,
+      "year": 2021
+    },
+    "Arun": {
+      "party": "Conservative",
+      "seats_won": 11,
+      "total_seats": 13,
+      "year": 2021
+    },
+    "Chichester": {
+      "party": "Conservative",
+      "seats_won": 6,
+      "total_seats": 10,
+      "year": 2021
+    },
+    "Crawley": {
+      "party": "Conservative",
+      "seats_won": 5,
+      "total_seats": 9,
+      "year": 2021
+    },
+    "Horsham": {
+      "party": "Conservative",
+      "seats_won": 9,
+      "total_seats": 12,
+      "year": 2021
+    },
+    "Mid Sussex": {
+      "party": "Conservative",
+      "seats_won": 8,
+      "total_seats": 12,
+      "year": 2021
+    },
+    "Worthing": {
+      "party": "Labour",
+      "seats_won": 5,
+      "total_seats": 9,
+      "year": 2021
+    }
+  }
+}

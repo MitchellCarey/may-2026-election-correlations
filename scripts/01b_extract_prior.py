@@ -28,7 +28,7 @@ import re
 from pathlib import Path
 
 from _councils import for_region
-from _wiki_parser import parse_article
+from _wiki_parser import parse_article, parse_county_article
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -40,14 +40,12 @@ def slug(name: str) -> str:
 
 def main():
     all_winners = {}
+    counties_out = {}
     summary_rows = []
+    counties_summary = []
     missing_cache = []
     for council in for_region("gb"):
         if not council.get("wiki_prior"):
-            continue
-        # Skip English county councils — see 01c for the rationale (county
-        # articles list district summaries, not per-division winners).
-        if council["lad_code"].startswith("E10"):
             continue
         name = council["name"]
         year = council["wiki_prior_year"]
@@ -57,6 +55,16 @@ def main():
             continue
         with open(path) as f:
             wt = json.load(f)['parse']['wikitext']
+        # English county councils (E10*) — see 01c for rationale; aggregate
+        # by district rather than parsing per-ward.
+        if council["lad_code"].startswith("E10"):
+            districts = parse_county_article(name, year, wt)
+            counties_out[name] = districts
+            counts = {}
+            for d in districts.values():
+                counts[d['party']] = counts.get(d['party'], 0) + 1
+            counties_summary.append((name, year, len(districts), counts))
+            continue
         winners = parse_article(name, year, wt)
         all_winners[name] = winners
         counts = {}
@@ -67,14 +75,21 @@ def main():
     DATA.mkdir(parents=True, exist_ok=True)
     with open(DATA / 'prior_winners.json', 'w') as f:
         json.dump(all_winners, f, indent=2)
+    with open(DATA / 'county_results_prior.json', 'w') as f:
+        json.dump(counties_out, f, indent=2)
 
     total_wards = sum(len(v) for v in all_winners.values())
+    cty_total = sum(len(v) for v in counties_out.values())
     print(f'Saved prior_winners.json — {total_wards} wards across {len(all_winners)} councils')
+    print(f'Saved county_results_prior.json — {cty_total} districts across {len(counties_out)} counties')
     if missing_cache:
         print(f'  ({len(missing_cache)} councils have wiki_prior but no cached file; run scripts/00_fetch_prior_winners.py)')
     print()
     for name, year, n, counts in summary_rows:
         print(f'  {name:>30} ({year}): {n:>3} wards | {counts}')
+    print()
+    for name, year, n, counts in counties_summary:
+        print(f'  {name:>30} ({year}): {n:>3} districts | {counts}')
 
 
 if __name__ == '__main__':

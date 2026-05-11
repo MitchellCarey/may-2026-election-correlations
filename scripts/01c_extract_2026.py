@@ -22,7 +22,7 @@ import urllib.request
 from pathlib import Path
 
 from _councils import for_region
-from _wiki_parser import parse_article
+from _wiki_parser import parse_article, parse_county_article
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -82,18 +82,12 @@ def fetch_transclusion(page_title: str, section_label: str) -> str | None:
 
 def main():
     out = {}
+    counties_out = {}
     summary_rows = []
+    counties_summary = []
     missing_cache = []
     for council in for_region("gb"):
         if not council.get("wiki_2026"):
-            continue
-        # English county council (E10*) articles are organised "candidates by
-        # local authority" — H3 sections are DISTRICT names, not electoral
-        # divisions. The parser can't recover real division-level results from
-        # them, so the would-be pseudo-wards (district names) only pollute
-        # downstream matching as NOT FOUND. Skip until a CED-aware parser +
-        # CED-to-CTY lookup are added (tracked as a follow-up to issue #3).
-        if council["lad_code"].startswith("E10"):
             continue
         name = council["name"]
         path = SOURCE / f'wiki_{slug(name)}_2026.json'
@@ -102,6 +96,20 @@ def main():
             continue
         with open(path) as f:
             wt = json.load(f)['parse']['wikitext']
+        # English county councils (E10*) elect electoral divisions, not WD24
+        # wards. The article structure is per-district H3s with division-level
+        # election boxes (or sometimes a pre-aggregated "Authority summary"
+        # table). Aggregate winning-party templates by district and emit to a
+        # separate file — the ward-level results file is keyed by WD24 ward
+        # name and would corrupt the join if we mixed in district records.
+        if council["lad_code"].startswith("E10"):
+            districts = parse_county_article(name, 2026, wt)
+            counties_out[name] = districts
+            counts: dict[str, int] = {}
+            for d in districts.values():
+                counts[d['party']] = counts.get(d['party'], 0) + 1
+            counties_summary.append((name, len(districts), counts))
+            continue
         winners = parse_article(name, 2026, wt, fetch_transclusion=fetch_transclusion)
         # parse_article returns {ward: {prior_party, prior_year}}; reshape to
         # {ward: {party}} for the 2026 output.
@@ -114,14 +122,21 @@ def main():
     DATA.mkdir(parents=True, exist_ok=True)
     with open(DATA / 'results_2026_scraped.json', 'w') as f:
         json.dump(out, f, indent=2)
+    with open(DATA / 'county_results_2026.json', 'w') as f:
+        json.dump(counties_out, f, indent=2)
 
     total = sum(len(v) for v in out.values())
+    cty_total = sum(len(v) for v in counties_out.values())
     print(f'Saved results_2026_scraped.json — {total} wards across {len(out)} councils')
+    print(f'Saved county_results_2026.json — {cty_total} districts across {len(counties_out)} counties')
     if missing_cache:
         print(f'  ({len(missing_cache)} councils have wiki_2026 but no cached file; run scripts/00b_fetch_2026_results.py)')
     print()
     for name, n, counts in summary_rows:
         print(f'  {name:>30}: {n:>3} wards | {counts}')
+    print()
+    for name, n, counts in counties_summary:
+        print(f'  {name:>30}: {n:>3} districts | {counts}')
 
 
 if __name__ == '__main__':

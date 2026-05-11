@@ -125,6 +125,77 @@ def _clean_ward_name(name: str) -> str:
     return clean
 
 
+# H2 section headers used by English county-council (E10*) articles. The
+# 2026 set spans five distinct headings — Hampshire uses plain "Results",
+# West Sussex "Results by division", East Sussex "Candidates by authority",
+# Essex/Norfolk/Suffolk "Candidates/Results by local authority". The 2021
+# priors add "Results by district" (Essex/Suffolk) and "Results by electoral
+# division" (Hampshire). Case-insensitive.
+COUNTY_H2_RE = re.compile(
+    r'^==\s*(?:'
+    r'Candidates by local authority|Results by local authority|'
+    r'Candidates by authority|Results by authority|'
+    r'Results by district|Results by division|Results by electoral division|'
+    r'Results'
+    r')\s*==\s*$',
+    re.MULTILINE | re.IGNORECASE,
+)
+
+
+def parse_county_article(_council_name: str, year: int, wt: str) -> dict:
+    """Return {district_name: {'party', 'seats_won', 'total_seats'}} for one
+    English county-council election article.
+
+    English counties elect electoral divisions, not WD22/24 wards. Wikipedia
+    article structure varies (per-district summary tables in Essex/Suffolk;
+    bare per-division election boxes in Hampshire/Norfolk/East Sussex/West
+    Sussex), so this aggregator works from the per-division detail in every
+    case: walk each H3 district section, count winning-party templates
+    across the division blocks inside it, and take the top party by seats.
+    """
+    m = COUNTY_H2_RE.search(wt)
+    if not m:
+        return {}
+    rest = wt[m.end():]
+    next_h2 = H2_RE.search(rest)
+    section = rest[:next_h2.start()] if next_h2 else rest
+
+    h3s = list(re.finditer(r'^===\s*([^=\n]+?)\s*===\s*$', section, re.MULTILINE))
+    out: dict[str, dict] = {}
+    for i, hm in enumerate(h3s):
+        district = _clean_ward_name(hm.group(1).strip())
+        body_end = h3s[i + 1].start() if i + 1 < len(h3s) else len(section)
+        body = section[hm.end():body_end]
+
+        begins = list(ELECTION_BOX_BEGIN_RE.finditer(body))
+        if not begins:
+            continue
+        seat_counts: dict[str, int] = {}
+        for j, bm in enumerate(begins):
+            blk_start = bm.end()
+            next_begin = begins[j + 1].start() if j + 1 < len(begins) else len(body)
+            end_match = ELECTION_BOX_END_RE.search(body, blk_start, next_begin)
+            blk_end = end_match.start() if end_match else next_begin
+            block = body[blk_start:blk_end]
+            party = _extract_winner_party(block)
+            if not party:
+                continue
+            normalized = normalize_party(party)
+            seat_counts[normalized] = seat_counts.get(normalized, 0) + 1
+        if not seat_counts:
+            continue
+        # Top party by seats. Ties broken by alphabetical party name — fine
+        # for a viz; the actual tie-handling can be revisited if it bites.
+        top_party = max(sorted(seat_counts), key=lambda p: seat_counts[p])
+        out[district] = {
+            'party':       top_party,
+            'seats_won':   seat_counts[top_party],
+            'total_seats': sum(seat_counts.values()),
+            'year':        year,
+        }
+    return out
+
+
 def _resolve_transclusions(section: str, fetch_transclusion) -> str:
     """Replace each {{#section:Page|Label}} call in the section text with the
     fetched labeled-section content (or empty string on failure). No-op if
