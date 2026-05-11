@@ -109,7 +109,7 @@ E08000027,Coseley,Coseley East,Dudley 2024: Coseley E only; proxy with E
 E08000027,Cradley North & Wollescote,Cradley and Wollescote,Dudley 2024 boundary review
 E08000027,Netherton & Holly Hall,"Netherton, Woodside and St Andrews",Dudley 2024 boundary review
 E08000027,Wordsley North,Wordsley,Dudley 2024 boundary review
-E08000029,Balsall & Berkswell,Meriden (Solihull),Solihull 2024: rural ward carved out of Meriden
+E08000029,Balsall & Berkswell,Bickenhill,Solihull 2024: rural ward carved out of Meriden; proxy with adjacent Bickenhill so Meriden & Arden keeps the Meriden polygon
 E08000031,Bilston South,Bilston East,Wolverhampton 2024: no Bilston South in Census; proxy with E
 E08000031,Ettingshall North,Ettingshall,Wolverhampton 2024 boundary review
 E08000031,Ettingshall South and Spring Vale,Spring Vale,Wolverhampton 2024 boundary review
@@ -279,3 +279,14 @@ E07000243,Almond Hill,Pin Green,Stevenage 2024: Almond Hill area; proxy with Pin
 E07000243,Bandley Hill & Poplars,Bandley Hill,Stevenage 2024: Bandley Hill enlarged; proxy with old Bandley Hill
 E07000078,"Benhall, the Reddings and Fiddler's Green",Benhall and The Reddings,Cheltenham 2024 re-warding: enlarged ward; proxy with old Benhall and The Reddings
 E07000066,Castledon & Crouch,Wickford Castledon,Basildon 2024 re-warding; proxy with old Wickford Castledon
+E08000014,Netherton North,St Oswald,Sefton 2024 review; St Oswald (Aintree) is the closest unclaimed proxy to Netherton
+E08000014,Thornton & Hightown,Victoria,Sefton 2024 review; no coastal unclaimed proxy after Manor and Blundellsands taken — Victoria as placeholder
+E08000024,Houghton North,Copt Hill,Sunderland 2024 review; Copt Hill ward sits in north Houghton-le-Spring
+E08000024,Houghton South and Hetton Downs,Millfield,Sunderland 2024 review; no Houghton/Hetton-area unclaimed polygon — Millfield as placeholder
+E08000028,Bearwood,Abbey,Sandwell 2024 review; old Abbey ward covered the Bearwood/Abbey Road area of Smethwick
+E08000028,Hill Top,Wednesbury South,Sandwell 2024 review; Hill Top sits between West Bromwich and Wednesbury
+E08000032,Airedale,Craven,Bradford 2024 review; Craven ward covered the Aire valley around Cullingworth
+E08000034,Colne Valley West,Golcar,Kirklees 2024 review; Golcar ward is the western edge of Colne Valley
+E06000034,Purfleet-on-Thames,Stanford East and Corringham Town,Thurrock 2024 review; no west-Thurrock unclaimed polygon — Stanford East as placeholder
+E06000042,Bletchley South,Bletchley East,Milton Keynes 2024 review; both south of central MK in Bletchley
+E06000042,Furzton,Shenley Brook End,Milton Keynes 2024 review; Shenley Brook End is adjacent to Furzton
