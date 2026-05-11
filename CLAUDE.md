@@ -47,11 +47,11 @@ Two parallel pipelines feed the two pages. Both are linear; only re-run from the
 ### Winners pipeline → `docs/index.html`
 
 ```
-01_build_results.py          → data/all_gm_results.json
-02_match_gss.py              → data/all_gm_gss_mapping.json
-03_extract_census.py         → data/all_gm_census.json     (needs data/source/*.xlsx)
-04_consolidate.py            → data/gm_all_wards.json
-05_correlate.py              → data/gm_correlations.json
+01_build_results.py          → data/all_results.json
+02_match_gss.py              → data/all_gss_mapping.json
+03_extract_census.py         → data/all_census.json     (needs data/source/*.xlsx)
+04_consolidate.py            → data/all_wards.json
+05_correlate.py              → data/correlations.json
 06_prep_artifact_data.py     → data/v12_ward_data.json
 07_build_artifact.py         → splices into docs/index.html
 08_parallel_chart.py         → splices SVG into docs/index.html
@@ -62,32 +62,32 @@ Two parallel pipelines feed the two pages. Both are linear; only re-run from the
 ```
 00_fetch_prior_winners.py    → data/source/wiki_*.json     (one-off; idempotent — skips cached files)
 01b_extract_prior.py         → data/prior_winners.json
-04b_join_prior.py            → data/gm_all_wards_with_prior.json   (depends on data/gm_all_wards.json)
-05b_correlate_flips.py       → data/gm_flip_correlations.json
-05c_compute_before_after.py  → data/gm_before_after.json
+04b_join_prior.py            → data/all_wards_with_prior.json   (depends on data/all_wards.json)
+05b_correlate_flips.py       → data/flip_correlations.json
+05c_compute_before_after.py  → data/before_after.json
 06b_prep_changes_data.py     → data/v1_changes_ward_data.json
 07b_build_changes_artifact.py → splices into docs/changes.html
 ```
 
-`05b` and `05c` both consume `gm_all_wards_with_prior.json` and are independent of each other — they can run in either order.
+`05b` and `05c` both consume `all_wards_with_prior.json` and are independent of each other — they can run in either order.
 
-The Changes pipeline depends on the Winners pipeline's `gm_all_wards.json` — if upstream data changes, re-run `04` then `04b` (and everything downstream of each).
+The Changes pipeline depends on the Winners pipeline's `all_wards.json` — if upstream data changes, re-run `04` then `04b` (and everything downstream of each).
 
 ### Map pipeline → `docs/map.html`
 
 ```
 09_fetch_ward_boundaries.py  → data/source/wd_may_2024_uk_bgc_gm.geojson  (cached raw fetch)
-                             → data/gm_ward_geoms.json                    (one-off; idempotent — skips if output exists, --force to rebuild)
-07c_build_map_artifact.py    → splices into docs/map.html  (consumes gm_ward_geoms.json + gm_all_wards_with_prior.json)
+                             → data/ward_geoms.json                    (one-off; idempotent — skips if output exists, --force to rebuild)
+07c_build_map_artifact.py    → splices into docs/map.html  (consumes ward_geoms.json + all_wards_with_prior.json)
 ```
 
 `09` is build-only and depends on `geopandas`, `shapely`, `pyproj` (see `requirements.txt`). The deployed artifact is just `docs/map.html` plus the small JSON file; the geo deps don't ship.
 
 Common cases:
 
-- **Touched `scripts/0[1-6]_*.py` or input XLSX** → run that Winners script and every later one, ending with 07. If the change touches `gm_all_wards.json`, also re-run `04b → 05b/05c → 06b → 07b` for Changes, and `07c` for Map (which reads the same downstream-of-04b file).
+- **Touched `scripts/0[1-6]_*.py` or input XLSX** → run that Winners script and every later one, ending with 07. If the change touches `all_wards.json`, also re-run `04b → 05b/05c → 06b → 07b` for Changes, and `07c` for Map (which reads the same downstream-of-04b file).
 - **Touched `scripts/07_build_artifact.py`** → run 07 only.
-- **Touched `scripts/0[145-7]b_*.py` or `05c_*.py`** → run from that script onwards through 07b. Also re-run 07c if `gm_all_wards_with_prior.json` changed.
+- **Touched `scripts/0[145-7]b_*.py` or `05c_*.py`** → run from that script onwards through 07b. Also re-run 07c if `all_wards_with_prior.json` changed.
 - **Touched `scripts/07c_build_map_artifact.py`** → run 07c only.
 - **Touched `scripts/09_fetch_ward_boundaries.py` or boundary set** → run `09 --force` then 07c.
 - **Touched only copy/CSS in any of the three HTMLs** → no rebuild needed, but verify the BEGIN/END block didn't drift.
