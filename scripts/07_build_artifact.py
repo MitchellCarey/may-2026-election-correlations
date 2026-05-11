@@ -51,6 +51,7 @@ for w in wards:
         's': w.get('turnout'),  # winner share not available for most; use turnout for sortability
         'd': w.get('density'),
         'med': w.get('median_age'),
+        'inc': w.get('mean_income'),
         'a18': w.get('pct_under18'),
         'a29': w.get('pct_18_29'),
         'a49': w.get('pct_30_49'),
@@ -133,7 +134,7 @@ js_lines.append('const data = { wards: {} };')
 js_lines.append('Object.entries(RAW).forEach(([k,v]) => {')
 js_lines.append('  data.wards[k] = {')
 js_lines.append('    key: k, borough: v.b, ward: v.wn, winner: v.w, turnout: v.s,')
-js_lines.append('    density: v.d, median_age: v.med,')
+js_lines.append('    density: v.d, median_age: v.med, mean_income: v.inc,')
 js_lines.append('    pct_under18: v.a18, pct_18_29: v.a29, pct_30_49: v.a49,')
 js_lines.append('    pct_50_64: v.a64, pct_65plus: v.a65,')
 js_lines.append('    pct_apprentice: v.ap, pct_level4_plus: v.l4, pct_soc123: v.soc,')
@@ -183,7 +184,8 @@ if (corrHeadRow) {
   }).join("");
 }
 const corrVarOrder = [
-  "density","median_age","pct_under18","pct_18_29","pct_30_49","pct_50_64","pct_65plus",
+  "density","median_age","mean_income",
+  "pct_under18","pct_18_29","pct_30_49","pct_50_64","pct_65plus",
   "pct_apprentice","pct_level4_plus","pct_soc123","pct_no_qual",
   "pct_uk_born","pct_private_rented","pct_social_rented","pct_owned","pct_wfh","pct_female",
   "pct_white","pct_asian","pct_black","pct_mixed","pct_other_ethnic"
@@ -220,6 +222,7 @@ const meansGrid = document.getElementById("means-grid");
 const meansLabels = {
   density: "Density / km²",
   median_age: "Median age",
+  mean_income: "Income (£/yr)",
   pct_18_29: "% 18-29",
   pct_65plus: "% 65+",
   pct_apprentice: "% Apprentice",
@@ -248,8 +251,9 @@ meansPartyOrder.forEach(party => {
   Object.entries(meansLabels).forEach(([k, l]) => {
     const v = m[k];
     if (v === undefined || v === null) return;
-    const display = k === "median_age" ? v.toFixed(2) + " yrs"
-                  : k === "density"    ? Math.round(v).toLocaleString()
+    const display = k === "median_age"  ? v.toFixed(2) + " yrs"
+                  : k === "density"     ? Math.round(v).toLocaleString()
+                  : k === "mean_income" ? "£" + Math.round(v).toLocaleString()
                   : v.toFixed(2) + "%";
     rows += `<div class="row"><span class="lbl">${l}</span><span class="val">${display}</span></div>`;
   });

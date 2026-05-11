@@ -10,6 +10,7 @@ in byte-identical to the previously inline JS-literal blocks in each script.
 CORR_LABELS = {
     "density":            "Population density (per km²)",
     "median_age":         "Median age (years)",
+    "mean_income":        "Net household income (£/yr, before housing)",
     "pct_under18":        "% aged under 18",
     "pct_18_29":          "% aged 18-29",
     "pct_30_49":          "% aged 30-49",

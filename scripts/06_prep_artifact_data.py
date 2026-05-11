@@ -48,6 +48,7 @@ for b in sorted(borough_breakdown):
             'winner': w.get('winner', 'Pending'),
             'density': w.get('density'),
             'median_age': w.get('median_age'),
+            'mean_income': w.get('mean_income'),
             'pct_18_29': w.get('pct_18_29'),
             'pct_65plus': w.get('pct_65plus'),
             'pct_apprentice': w.get('pct_apprentice'),

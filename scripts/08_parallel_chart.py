@@ -40,6 +40,7 @@ n_total = _corr_full["regions"][region]["n_total"]
 VAR_LABELS = {
     "density":            "Pop. density",
     "median_age":         "Median age",
+    "mean_income":        "Income £/yr",
     "pct_under18":        "% Aged 0–17",
     "pct_18_29":          "% Aged 18–29",
     "pct_30_49":          "% Aged 30–49",
