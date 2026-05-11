@@ -26,6 +26,11 @@ data/source/*.xls
 # Raw cached ward boundary GeoJSON from scripts/09 (~50 MB GB-wide)
 data/source/wd_may_2024_uk_bgc_*.geojson
 
+# Raw cached ONS Open Geography Portal OA lookups from scripts/03b
+# (~5–10 MB each; ~188k OAs in EW)
+data/source/oa21_msoa21_lookup.csv
+data/source/oa21_wd24_lookup.csv
+
 
 # Build artifacts
 *.pyc
