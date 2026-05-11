@@ -22,12 +22,16 @@ Pipeline:
      data is reused across every region's viewBox.
   6. Dissolve wards by LAD24CD and emit per-council outlines too (looser
      simplification — these are decorative).
+  6b. Fetch LAD24_CTY24_EN_LU and dissolve wards into per-county outlines so
+     the GB map can paint English county-council elections at district level
+     (issue #4 §1 Option B).
   7. Compute one viewBox per region (gm, gb) from each region's bounds in
      the shared SVG coordinate system, with a 2% pad.
   8. Write data/ward_geoms.json:
        {"viewBoxes": {"gm": [minx, miny, w, h], "gb": [...]},
         "wards":     {WD24CD: {"path": "M...Z", "name": "...", "lad": "E08..."}},
-        "boroughs":  {LAD24CD: {"path": "M...Z", "name": "..."}}}
+        "boroughs":  {LAD24CD: {"path": "M...Z", "name": "..."}},
+        "counties":  {CTY24CD: {"path": "M...Z", "name": "...", "lads": [...]}}}
      The names/LAD codes let 07c join the results data (which is keyed by
      borough+ward name) to the geometry without a second network call.
 
@@ -65,6 +69,13 @@ LU_ENDPOINT = (
 GEOM_ENDPOINT = (
     'https://services1.arcgis.com/ESMARspQHYMw9BZ9/ArcGIS/rest/services/'
     'Wards_May_2024_Boundaries_UK_BGC/FeatureServer/0/query'
+)
+# District (LAD24) → county (CTY24) lookup for English two-tier areas. Only
+# districts inside a real county council appear (~230 rows total); districts
+# in unitary areas have no county parent and aren't returned at all.
+LAD_CTY_ENDPOINT = (
+    'https://services1.arcgis.com/ESMARspQHYMw9BZ9/ArcGIS/rest/services/'
+    'LAD24_CTY24_EN_LU/FeatureServer/0/query'
 )
 UA = 'gm-2026-ward-analysis/1.0 (mitchellcarey2@gmail.com)'
 
@@ -123,6 +134,30 @@ def fetch_lookup() -> dict:
         offset += len(feats)
         time.sleep(0.3)
     return info_by_wd
+
+
+def fetch_lad_cty_lookup() -> dict:
+    """Return {LAD24CD: {'cty': CTY24CD, 'cty_name': CTY24NM}} for English
+    districts in two-tier counties. ~230 rows; one request, no pagination."""
+    params = {
+        'where':            '1=1',
+        'outFields':        'LAD24CD,LAD24NM,CTY24CD,CTY24NM',
+        'returnGeometry':   'false',
+        'f':                'json',
+        'resultRecordCount': 1000,
+    }
+    d = http_get(LAD_CTY_ENDPOINT, params)
+    if d.get('error'):
+        raise RuntimeError(f'LAD-CTY lookup query failed: {d["error"]}')
+    if d.get('exceededTransferLimit'):
+        raise RuntimeError('LAD-CTY lookup unexpectedly paginated; raise resultRecordCount')
+    return {
+        f['attributes']['LAD24CD']: {
+            'cty':      f['attributes']['CTY24CD'],
+            'cty_name': f['attributes']['CTY24NM'],
+        }
+        for f in d.get('features', [])
+    }
 
 
 def fetch_geometry(wd_codes: list[str]) -> dict:
@@ -257,7 +292,26 @@ def main():
             'name': borough_name,
         }
 
-    print('5b. Dissolving wards → country outlines (E / W / S)...')
+    print('5b. Fetching LAD24 → CTY24 lookup and dissolving wards → county outlines...')
+    lad_to_cty = fetch_lad_cty_lookup()
+    counties_out = {}
+    gdf_with_cty = gdf.assign(
+        _cty=gdf['LAD24CD'].map(lambda l: (lad_to_cty.get(l) or {}).get('cty'))
+    )
+    for cty_code, group in gdf_with_cty[gdf_with_cty['_cty'].notna()].groupby('_cty'):
+        merged = unary_union(group.geometry.tolist())
+        merged = merged.simplify(BOROUGH_SIMPLIFY_TOLERANCE_M, preserve_topology=True)
+        cty_name = lad_to_cty[group.iloc[0]['LAD24CD']]['cty_name']
+        lads = sorted(group['LAD24CD'].unique().tolist())
+        counties_out[cty_code] = {
+            'path': polygon_to_path(merged, maxy, miny),
+            'name': cty_name,
+            'lads': lads,
+        }
+    print(f'   emitted {len(counties_out)} county outlines from {len(lad_to_cty)} '
+          f'two-tier districts')
+
+    print('5c. Dissolving wards → country outlines (E / W / S)...')
     # LAD24 codes encode the nation in their first letter: E* = England,
     # W* = Wales, S* = Scotland. Group on that. The GB-page renderer can
     # hide the borough outlines while keeping these so colours show
@@ -306,6 +360,7 @@ def main():
         'viewBoxes': view_boxes,
         'wards':     wards_out,
         'boroughs':  boroughs_out,
+        'counties':  counties_out,
         'countries': countries_out,
     }
     OUT.write_text(json.dumps(out_data, separators=(',', ':')))
@@ -314,7 +369,8 @@ def main():
     gz_kb = len(gzip.compress(OUT.read_bytes())) / 1024
     print(
         f'\nDone. wrote {len(wards_out)} wards + {len(boroughs_out)} councils '
-        f'+ {len(countries_out)} countries · {size_kb:.1f} KB (gzip {gz_kb:.1f} KB)'
+        f'+ {len(counties_out)} counties + {len(countries_out)} countries · '
+        f'{size_kb:.1f} KB (gzip {gz_kb:.1f} KB)'
     )
 
 
