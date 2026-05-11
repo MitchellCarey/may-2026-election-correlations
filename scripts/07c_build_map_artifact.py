@@ -71,6 +71,15 @@ def _eth(r: dict) -> list | None:
     return [round(float(v), 1) for v in vals]
 
 
+def _inc(r: dict) -> int | None:
+    """Ward mean income (£/yr, before housing) rounded to the nearest £.
+    None for Scottish wards on the GB map and the handful of E&W wards
+    where the name didn't bridge to the WD24 lookup — same null-handling
+    pattern as _eth above."""
+    v = r.get('mean_income')
+    return int(round(v)) if v is not None else None
+
+
 def normalise(s: str) -> str:
     """Loose name match: lowercase, strip dots, slash → space, both apostrophe
     variants → nothing, ' and ' → ' & ', drop a trailing '(...)' disambiguator
@@ -193,6 +202,7 @@ def main():
             'fl':  r.get('flipped'),
             'mp':  r.get('match_type_prior'),
             'eth': _eth(r),
+            'inc': _inc(r),
         })
 
     # Pass 2 — walk every result that didn't have a direct WD24 name match
@@ -222,6 +232,7 @@ def main():
             'fl':  r.get('flipped'),
             'mp':  r.get('match_type_prior'),
             'eth': _eth(r),
+            'inc': _inc(r),
         })
 
     # Polygons present in the geom set but missing from results (e.g. cancelled
@@ -234,7 +245,7 @@ def main():
         no_result.append({
             'gss': code, 'b': borough_name, 'wn': w['name'],
             'w': None, 'pp': None, 'py': None, 'fl': None, 'mp': None,
-            'eth': None,
+            'eth': None, 'inc': None,
         })
 
     print(f'matched: {len(matched)}/{len(results)} results-side wards joined to a polygon')
@@ -356,6 +367,9 @@ function fmtTitle(w) {
       + 'Black ' + pb.toFixed(1) + '% · '
       + 'Mixed ' + pm.toFixed(1) + '% · '
       + 'Other ' + po.toFixed(1) + '%');
+  }
+  if (w.inc != null) {
+    lines.push('Income (FY23, before housing): £' + w.inc.toLocaleString() + '/yr');
   }
   return lines.join('\n');
 }
