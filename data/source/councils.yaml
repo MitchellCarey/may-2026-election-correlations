@@ -174,17 +174,12 @@
   wiki_prior: "2022 Sefton Metropolitan Borough Council election"
   wiki_prior_year: 2022
 
-# Wirral's 2026 article isn't on Wikipedia yet (as of 2026-05-11). Set
-# wiki_2026 to null for now; flip to the article title once an editor
-# creates it. The 2022 prior is fine.
-- lad_code: E08000015
-  name: Wirral
-  nation: england
-  cycle: thirds
-  region_gm: false
-  wiki_2026: null
-  wiki_prior: "2022 Wirral Metropolitan Borough Council election"
-  wiki_prior_year: 2022
+# Wirral switched from thirds to all-out elections in 2023 (last all-out 2023,
+# next 2027). No 2026 contest exists, so Wirral is omitted from the May 2026
+# registry. Re-add with cycle: all-out, wiki_2026: "2027 Wirral Metropolitan
+# Borough Council election", wiki_prior: 2023 once that election runs.
+# (Issue #4 §5; verified 2026-05-11 — no 2026 article exists on Wikipedia
+# because no 2026 election was held.)
 
 - lad_code: E08000016
   name: Barnsley
