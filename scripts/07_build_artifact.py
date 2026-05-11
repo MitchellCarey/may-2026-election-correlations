@@ -65,6 +65,11 @@ for w in wards:
         'uk': w.get('pct_uk_born'),
         'wfh': w.get('pct_wfh'),
         'f': w.get('pct_female'),
+        'wht': w.get('pct_white'),
+        'asn': w.get('pct_asian'),
+        'blk': w.get('pct_black'),
+        'mix': w.get('pct_mixed'),
+        'oth': w.get('pct_other_ethnic'),
         'm': w.get('match_type', 'mcr-orig'),  # data source/match type
     }
 
@@ -134,6 +139,8 @@ js_lines.append('    pct_50_64: v.a64, pct_65plus: v.a65,')
 js_lines.append('    pct_apprentice: v.ap, pct_level4_plus: v.l4, pct_soc123: v.soc,')
 js_lines.append('    pct_owned: v.ow, pct_social_rented: v.sr, pct_private_rented: v.pr,')
 js_lines.append('    pct_uk_born: v.uk, pct_wfh: v.wfh, pct_female: v.f,')
+js_lines.append('    pct_white: v.wht, pct_asian: v.asn, pct_black: v.blk,')
+js_lines.append('    pct_mixed: v.mix, pct_other_ethnic: v.oth,')
 js_lines.append('    match_type: v.m,')
 js_lines.append('  };')
 js_lines.append('});')
@@ -178,7 +185,8 @@ if (corrHeadRow) {
 const corrVarOrder = [
   "density","median_age","pct_under18","pct_18_29","pct_30_49","pct_50_64","pct_65plus",
   "pct_apprentice","pct_level4_plus","pct_soc123","pct_no_qual",
-  "pct_uk_born","pct_private_rented","pct_social_rented","pct_owned","pct_wfh","pct_female"
+  "pct_uk_born","pct_private_rented","pct_social_rented","pct_owned","pct_wfh","pct_female",
+  "pct_white","pct_asian","pct_black","pct_mixed","pct_other_ethnic"
 ];
 corrVarOrder.forEach((key) => {
   if (!corrData[key]) return;
@@ -223,6 +231,11 @@ const meansLabels = {
   pct_uk_born: "% UK-born",
   pct_wfh: "% WFH",
   pct_female: "% Female",
+  pct_white: "% White",
+  pct_asian: "% Asian",
+  pct_black: "% Black",
+  pct_mixed: "% Mixed",
+  pct_other_ethnic: "% Other ethnic",
 };
 // Sort by sample size descending for visual heft
 const meansPartyOrder = ["Reform","Green","Labour","LibDem","Conservative"];

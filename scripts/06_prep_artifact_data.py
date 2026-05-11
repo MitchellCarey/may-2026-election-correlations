@@ -59,6 +59,11 @@ for b in sorted(borough_breakdown):
             'pct_uk_born': w.get('pct_uk_born'),
             'pct_wfh': w.get('pct_wfh'),
             'pct_female': w.get('pct_female'),
+            'pct_white': w.get('pct_white'),
+            'pct_asian': w.get('pct_asian'),
+            'pct_black': w.get('pct_black'),
+            'pct_mixed': w.get('pct_mixed'),
+            'pct_other_ethnic': w.get('pct_other_ethnic'),
             'turnout': w.get('turnout'),
             'match_type': w.get('match_type'),
         })

@@ -25,6 +25,11 @@ CORR_LABELS = {
     "pct_owned":          "% Owned",
     "pct_wfh":            "% Working from home",
     "pct_female":         "% Female",
+    "pct_white":          "% White",
+    "pct_asian":          "% Asian / Asian British",
+    "pct_black":          "% Black / Black British",
+    "pct_mixed":          "% Mixed / Multiple ethnicity",
+    "pct_other_ethnic":   "% Other ethnic group",
 }
 
 # CSS-variable palette used by the Winners and Changes pages. Hex fallbacks

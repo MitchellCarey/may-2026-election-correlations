@@ -55,6 +55,11 @@ VAR_LABELS = {
     "pct_uk_born":        "% UK-born",
     "pct_wfh":            "% WFH",
     "pct_female":         "% Female",
+    "pct_white":          "% White",
+    "pct_asian":          "% Asian",
+    "pct_black":          "% Black",
+    "pct_mixed":          "% Mixed",
+    "pct_other_ethnic":   "% Other ethnic",
 }
 
 # Number of variables shown per chart. Fixed across views so the chart's
