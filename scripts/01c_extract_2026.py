@@ -37,6 +37,14 @@ def main():
     for council in for_region("gb"):
         if not council.get("wiki_2026"):
             continue
+        # English county council (E10*) articles are organised "candidates by
+        # local authority" — H3 sections are DISTRICT names, not electoral
+        # divisions. The parser can't recover real division-level results from
+        # them, so the would-be pseudo-wards (district names) only pollute
+        # downstream matching as NOT FOUND. Skip until a CED-aware parser +
+        # CED-to-CTY lookup are added (tracked as a follow-up to issue #3).
+        if council["lad_code"].startswith("E10"):
+            continue
         name = council["name"]
         path = SOURCE / f'wiki_{slug(name)}_2026.json'
         if not path.exists():

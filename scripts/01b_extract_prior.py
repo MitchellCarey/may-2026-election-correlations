@@ -45,6 +45,10 @@ def main():
     for council in for_region("gb"):
         if not council.get("wiki_prior"):
             continue
+        # Skip English county councils — see 01c for the rationale (county
+        # articles list district summaries, not per-division winners).
+        if council["lad_code"].startswith("E10"):
+            continue
         name = council["name"]
         year = council["wiki_prior_year"]
         path = SOURCE / f'wiki_{slug(name)}_{year}.json'

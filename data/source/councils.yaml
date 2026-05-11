@@ -19,12 +19,20 @@
 #                    all-out, 2 years back for halves)
 #   wiki_prior_year  integer year of wiki_prior
 #
-# Coverage today (69 councils):
+# Coverage today (139 councils):
 #   - 10 GM councils (E08000001-E08000010, region_gm: true)
 #   - 26 non-GM English metropolitan boroughs (E08000011-E08000037)
 #   - 33 London boroughs (E09000001-E09000033; City of London has wiki_*: null)
-# Not yet added (~280 councils):
-#   - English unitaries (E06*) and non-metropolitan districts (E07*)
+#   - 16 English unitary authorities (E06*) — every one that contested May 2026
+#   - 48 English non-metropolitan districts (E07*) — every one that contested May 2026
+#   - 6 English county councils (E10*) — every one that contested May 2026
+# Together this covers 134 of the 136 council elections held on 7 May 2026.
+# The two missing ones are East Surrey and West Surrey — newly created merger
+# councils that don't yet appear in the ONS WD24_LAD24 lookup and have no
+# Census 2021 boundary; defer them until ONS publishes the new boundary set.
+#
+# Not yet added (~180 councils with no 2026 contest):
+#   - Other English unitaries / districts on non-2026 election years
 #   - Welsh principal areas (W06*; no 2026 elections, useful for Map only)
 #   - Scottish council areas (S12*; multi-member STV needs a separate parser)
 # Phase B.6 of plans/plan-a-refactor-to-moonlit-pie.md tracks the expansion.
@@ -679,3 +687,671 @@
   wiki_2026: "2026 Westminster City Council election"
   wiki_prior: "2022 Westminster City Council election"
   wiki_prior_year: 2022
+
+# ===== Issue #3: every other English principal authority that contested in May 2026 =====
+# 70 council rows: 16 unitaries (E06*) + 6 county councils (E10*) + 48 districts (E07*).
+# All English; region_gm: false; no Greater Manchester councils here. Discovered via
+# the 2026 United Kingdom local elections summary article (per-table Details links).
+#
+# County councils elect electoral divisions (CEDs), not WD22 wards, so the WD22_LAD22
+# lookup used by 02 will leave their divisions as NOT FOUND until a separate CED matcher
+# is built. The 6 county rows here unblock Map / Winners / Changes coverage of the county
+# council outline; per-ward analysis is a follow-up.
+#
+# Two new merger councils (East Surrey, West Surrey) are deferred — they are not in the
+# WD24_LAD24 lookup (created post-Dec 2024), have no Census 2021 boundary, and no prior
+# election to compare against. Track separately when ONS releases the new boundary.
+
+# --- English unitary authorities (E06*) ---
+# Most run thirds; 2026 election was their next thirds year after 2022. Swindon and
+# Milton Keynes had all seats up in 2026 due to 2024/25 boundary reviews; Thurrock and
+# Isle of Wight had all-up elections delayed from 2025.
+
+- lad_code: E06000001
+  name: Hartlepool
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Hartlepool Borough Council election"
+  wiki_prior: "2022 Hartlepool Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E06000006
+  name: Halton
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Halton Borough Council election"
+  wiki_prior: "2022 Halton Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E06000008
+  name: Blackburn with Darwen
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Blackburn with Darwen Borough Council election"
+  wiki_prior: "2022 Blackburn with Darwen Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E06000010
+  name: Kingston upon Hull
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Hull City Council election"
+  wiki_prior: "2022 Hull City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E06000012
+  name: North East Lincolnshire
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 North East Lincolnshire Council election"
+  wiki_prior: "2022 North East Lincolnshire Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E06000026
+  name: Plymouth
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Plymouth City Council election"
+  wiki_prior: "2022 Plymouth City Council election"
+  wiki_prior_year: 2022
+
+# Normally thirds; 2026 was a one-off all-up due to a 2024 boundary review.
+# Prior 2022 is the most recent thirds-pattern election.
+- lad_code: E06000030
+  name: Swindon
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Swindon Borough Council election"
+  wiki_prior: "2022 Swindon Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E06000031
+  name: Peterborough
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Peterborough City Council election"
+  wiki_prior: "2022 Peterborough City Council election"
+  wiki_prior_year: 2022
+
+# Renamed City Council in 2022; the 2022 article uses the pre-rename Borough
+# form.
+- lad_code: E06000033
+  name: Southend-on-Sea
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Southend-on-Sea City Council election"
+  wiki_prior: "2022 Southend-on-Sea Borough Council election"
+  wiki_prior_year: 2022
+
+# Normally thirds; the 2025 all-up was delayed to 2026. Prior 2022 is the most
+# recent thirds-pattern election covering all wards.
+- lad_code: E06000034
+  name: Thurrock
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Thurrock Council election"
+  wiki_prior: "2022 Thurrock Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E06000038
+  name: Reading
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Reading Borough Council election"
+  wiki_prior: "2022 Reading Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E06000041
+  name: Wokingham
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Wokingham Borough Council election"
+  wiki_prior: "2022 Wokingham Borough Council election"
+  wiki_prior_year: 2022
+
+# Normally thirds; 2026 was a one-off all-up due to a 2024 boundary review.
+# Prior 2022 is the most recent thirds-pattern election.
+- lad_code: E06000042
+  name: Milton Keynes
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Milton Keynes Council election"
+  wiki_prior: "2022 Milton Keynes Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E06000044
+  name: Portsmouth
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Portsmouth City Council election"
+  wiki_prior: "2022 Portsmouth City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E06000045
+  name: Southampton
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Southampton City Council election"
+  wiki_prior: "2022 Southampton City Council election"
+  wiki_prior_year: 2022
+
+# Delayed all-out cycle: 2021 -> 2026 (skipped 2025)
+- lad_code: E06000046
+  name: Isle of Wight
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Isle of Wight Council election"
+  wiki_prior: "2021 Isle of Wight Council election"
+  wiki_prior_year: 2021
+
+# --- English non-metropolitan districts (E07*) ---
+# Mix of all-out, halves and thirds cycles; cycle field captures the steady-state pattern.
+# Halves districts elect half of seats every 2 years (prior 2024, not 2022).
+
+- lad_code: E07000008
+  name: Cambridge
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Cambridge City Council election"
+  wiki_prior: "2022 Cambridge City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000011
+  name: Huntingdonshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Huntingdonshire District Council election"
+  wiki_prior: "2022 Huntingdonshire District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000012
+  name: South Cambridgeshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 South Cambridgeshire District Council election"
+  wiki_prior: "2022 South Cambridgeshire District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000041
+  name: Exeter
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Exeter City Council election"
+  wiki_prior: "2022 Exeter City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000062
+  name: Hastings
+  nation: england
+  cycle: halves
+  region_gm: false
+  wiki_2026: "2026 Hastings Borough Council election"
+  wiki_prior: "2024 Hastings Borough Council election"
+  wiki_prior_year: 2024
+
+- lad_code: E07000066
+  name: Basildon
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Basildon Borough Council election"
+  wiki_prior: "2022 Basildon Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000068
+  name: Brentwood
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Brentwood Borough Council election"
+  wiki_prior: "2022 Brentwood Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000071
+  name: Colchester
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Colchester Borough Council election"
+  wiki_prior: "2022 Colchester Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000072
+  name: Epping Forest
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Epping Forest District Council election"
+  wiki_prior: "2022 Epping Forest District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000073
+  name: Harlow
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Harlow District Council election"
+  wiki_prior: "2022 Harlow District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000075
+  name: Rochford
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Rochford District Council election"
+  wiki_prior: "2022 Rochford District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000078
+  name: Cheltenham
+  nation: england
+  cycle: halves
+  region_gm: false
+  wiki_2026: "2026 Cheltenham Borough Council election"
+  wiki_prior: "2024 Cheltenham Borough Council election"
+  wiki_prior_year: 2024
+
+- lad_code: E07000084
+  name: Basingstoke and Deane
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Basingstoke and Deane Borough Council election"
+  wiki_prior: "2022 Basingstoke and Deane Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000086
+  name: Eastleigh
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Eastleigh Borough Council election"
+  wiki_prior: "2022 Eastleigh Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000087
+  name: Fareham
+  nation: england
+  cycle: halves
+  region_gm: false
+  wiki_2026: "2026 Fareham Borough Council election"
+  wiki_prior: "2024 Fareham Borough Council election"
+  wiki_prior_year: 2024
+
+- lad_code: E07000088
+  name: Gosport
+  nation: england
+  cycle: halves
+  region_gm: false
+  wiki_2026: "2026 Gosport Borough Council election"
+  wiki_prior: "2024 Gosport Borough Council election"
+  wiki_prior_year: 2024
+
+- lad_code: E07000089
+  name: Hart
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Hart District Council election"
+  wiki_prior: "2022 Hart District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000090
+  name: Havant
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Havant Borough Council election"
+  wiki_prior: "2022 Havant Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000092
+  name: Rushmoor
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Rushmoor Borough Council election"
+  wiki_prior: "2022 Rushmoor Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000094
+  name: Winchester
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Winchester City Council election"
+  wiki_prior: "2022 Winchester City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000095
+  name: Broxbourne
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Broxbourne Borough Council election"
+  wiki_prior: "2022 Broxbourne Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000102
+  name: Three Rivers
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Three Rivers District Council election"
+  wiki_prior: "2022 Three Rivers District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000103
+  name: Watford
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Watford Borough Council election"
+  wiki_prior: "2022 Watford Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000116
+  name: Tunbridge Wells
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Tunbridge Wells Borough Council election"
+  wiki_prior: "2022 Tunbridge Wells Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000117
+  name: Burnley
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Burnley Borough Council election"
+  wiki_prior: "2022 Burnley Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000118
+  name: Chorley
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Chorley Borough Council election"
+  wiki_prior: "2022 Chorley Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000120
+  name: Hyndburn
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Hyndburn Borough Council election"
+  wiki_prior: "2022 Hyndburn Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000122
+  name: Pendle
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Pendle Borough Council election"
+  wiki_prior: "2022 Pendle Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000123
+  name: Preston
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Preston City Council election"
+  wiki_prior: "2022 Preston City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000127
+  name: West Lancashire
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 West Lancashire Borough Council election"
+  wiki_prior: "2022 West Lancashire Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000138
+  name: Lincoln
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 City of Lincoln Council election"
+  wiki_prior: "2022 City of Lincoln Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000148
+  name: Norwich
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Norwich City Council election"
+  wiki_prior: "2022 Norwich City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000177
+  name: Cherwell
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Cherwell District Council election"
+  wiki_prior: "2022 Cherwell District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000178
+  name: Oxford
+  nation: england
+  cycle: halves
+  region_gm: false
+  wiki_2026: "2026 Oxford City Council election"
+  wiki_prior: "2024 Oxford City Council election"
+  wiki_prior_year: 2024
+
+- lad_code: E07000181
+  name: West Oxfordshire
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 West Oxfordshire District Council election"
+  wiki_prior: "2022 West Oxfordshire District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000192
+  name: Cannock Chase
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Cannock Chase District Council election"
+  wiki_prior: "2022 Cannock Chase District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000195
+  name: Newcastle-under-Lyme
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Newcastle-under-Lyme Borough Council election"
+  wiki_prior: "2022 Newcastle-under-Lyme Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000199
+  name: Tamworth
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Tamworth Borough Council election"
+  wiki_prior: "2022 Tamworth Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000202
+  name: Ipswich
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Ipswich Borough Council election"
+  wiki_prior: "2022 Ipswich Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000219
+  name: Nuneaton and Bedworth
+  nation: england
+  cycle: halves
+  region_gm: false
+  wiki_2026: "2026 Nuneaton and Bedworth Borough Council election"
+  wiki_prior: "2024 Nuneaton and Bedworth Borough Council election"
+  wiki_prior_year: 2024
+
+- lad_code: E07000220
+  name: Rugby
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Rugby Borough Council election"
+  wiki_prior: "2022 Rugby Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000223
+  name: Adur
+  nation: england
+  cycle: halves
+  region_gm: false
+  wiki_2026: "2026 Adur District Council election"
+  wiki_prior: "2024 Adur District Council election"
+  wiki_prior_year: 2024
+
+- lad_code: E07000226
+  name: Crawley
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Crawley Borough Council election"
+  wiki_prior: "2022 Crawley Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000229
+  name: Worthing
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Worthing Borough Council election"
+  wiki_prior: "2022 Worthing Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000236
+  name: Redditch
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Redditch Borough Council election"
+  wiki_prior: "2022 Redditch Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000240
+  name: St Albans
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 St Albans City and District Council election"
+  wiki_prior: "2022 St Albans City and District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000241
+  name: Welwyn Hatfield
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Welwyn Hatfield Borough Council election"
+  wiki_prior: "2022 Welwyn Hatfield Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E07000243
+  name: Stevenage
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Stevenage Borough Council election"
+  wiki_prior: "2022 Stevenage Borough Council election"
+  wiki_prior_year: 2022
+
+# --- English county councils (E10*) ---
+# All-out every 4 years; the 6 that contested in 2026 are on a 2021->2026 delayed cycle.
+# County councils elect CEDs (electoral divisions) which do not appear in the WD22_LAD22
+# lookup; 02 will surface their divisions as NOT FOUND. The rows are included so the Map
+# view picks up the county outlines; full ward-level analysis is a follow-up.
+
+- lad_code: E10000011
+  name: East Sussex
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 East Sussex County Council election"
+  wiki_prior: "2021 East Sussex County Council election"
+  wiki_prior_year: 2021
+
+- lad_code: E10000012
+  name: Essex
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Essex County Council election"
+  wiki_prior: "2021 Essex County Council election"
+  wiki_prior_year: 2021
+
+- lad_code: E10000014
+  name: Hampshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Hampshire County Council election"
+  wiki_prior: "2021 Hampshire County Council election"
+  wiki_prior_year: 2021
+
+- lad_code: E10000020
+  name: Norfolk
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Norfolk County Council election"
+  wiki_prior: "2021 Norfolk County Council election"
+  wiki_prior_year: 2021
+
+- lad_code: E10000029
+  name: Suffolk
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Suffolk County Council election"
+  wiki_prior: "2021 Suffolk County Council election"
+  wiki_prior_year: 2021
+
+- lad_code: E10000032
+  name: West Sussex
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 West Sussex County Council election"
+  wiki_prior: "2021 West Sussex County Council election"
+  wiki_prior_year: 2021

@@ -38,8 +38,18 @@ WINNER_RE = re.compile(
     r'\{\{Election box winning candidate(?:\s+with party link)?[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
     re.IGNORECASE | re.DOTALL,
 )
-# Fallback: hold/gain template's winner= field (used for sections that only
-# have a hold marker, no candidate row).
+# Some 2026 articles (Walsall, Sandwell, St Helens, Basingstoke & Deane, …) use
+# plain {{Election box candidate}} templates for every candidate including the
+# winner, with no explicit "winning candidate" marker. Candidates are listed in
+# vote-rank order — the first candidate is the winner. Use this as a fallback
+# when WINNER_RE finds nothing.
+CANDIDATE_RE = re.compile(
+    r'\{\{Election box candidate(?:\s+with party link)?[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
+    re.IGNORECASE | re.DOTALL,
+)
+# Last-resort fallback: hold/gain template's winner= field. Many articles leave
+# this field blank (the template only flags the seat as a hold), so this is
+# checked after CANDIDATE_RE and a blank match is discarded.
 HOLDGAIN_RE = re.compile(
     r'\{\{Election box (?:hold|gain)[^|]*\|[^}]*?winner\s*=\s*([^|}\n]+)',
     re.IGNORECASE | re.DOTALL,
@@ -100,7 +110,11 @@ def parse_article(_council_name: str, year: int, wt: str) -> dict:
             next_start = headings[i + 1][0] if i + 1 < len(headings) else len(segment)
             section = segment[h_end:next_start]
 
-            m = WINNER_RE.search(section) or HOLDGAIN_RE.search(section)
+            m = WINNER_RE.search(section) or CANDIDATE_RE.search(section)
+            if not m:
+                m = HOLDGAIN_RE.search(section)
+                if m and not m.group(1).strip():
+                    m = None
             if not m:
                 continue
 

@@ -915,9 +915,165 @@
     "gss": "E05010949",
     "match": "exact"
   },
+  "St. Helens::Billinge and Seneley Green": {
+    "gss": "E05014120",
+    "match": "norm"
+  },
+  "St. Helens::Blackbrook": {
+    "gss": "E05014121",
+    "match": "suffix"
+  },
+  "St. Helens::Bold and Lea Green": {
+    "gss": "E05014122",
+    "match": "norm"
+  },
+  "St. Helens::Eccleston": {
+    "gss": "E05014123",
+    "match": "exact"
+  },
+  "St. Helens::Haydock": {
+    "gss": "E05014124",
+    "match": "exact"
+  },
+  "St. Helens::Moss Bank": {
+    "gss": "E05014125",
+    "match": "exact"
+  },
+  "St. Helens::Newton\u2011le\u2011Willows East": {
+    "gss": "E05014126",
+    "match": "fuzzy"
+  },
+  "St. Helens::Newton\u2011le\u2011Willows West": {
+    "gss": "E05014127",
+    "match": "fuzzy"
+  },
+  "St. Helens::Parr": {
+    "gss": "E05014128",
+    "match": "exact"
+  },
+  "St. Helens::Peasley Cross and Fingerpost": {
+    "gss": "E05014129",
+    "match": "norm"
+  },
+  "St. Helens::Rainford": {
+    "gss": "E05014130",
+    "match": "exact"
+  },
+  "St. Helens::Rainhill": {
+    "gss": "E05014131",
+    "match": "exact"
+  },
+  "St. Helens::St Helens Town Centre": {
+    "gss": "E05014132",
+    "match": "exact"
+  },
+  "St. Helens::Sutton North West": {
+    "gss": "E05014133",
+    "match": "exact"
+  },
+  "St. Helens::Sutton South East": {
+    "gss": "E05014134",
+    "match": "exact"
+  },
+  "St. Helens::Thatto Heath": {
+    "gss": "E05014135",
+    "match": "exact"
+  },
+  "St. Helens::West Park": {
+    "gss": "E05014136",
+    "match": "suffix"
+  },
+  "St. Helens::Windle": {
+    "gss": "E05014137",
+    "match": "exact"
+  },
   "Sefton::Ainsdale": {
     "gss": "E05000932",
     "match": "exact"
+  },
+  "Sefton::Aintree and Maghull South": {
+    "gss": "E05000952",
+    "match": "fuzzy"
+  },
+  "Sefton::Birkdale": {
+    "gss": "E05000933",
+    "match": "exact"
+  },
+  "Sefton::Blundellsands": {
+    "gss": "E05000934",
+    "match": "exact"
+  },
+  "Sefton::Bootle East": {
+    "gss": "E05000942",
+    "match": "fuzzy"
+  },
+  "Sefton::Bootle West": {
+    "gss": "E05000937",
+    "match": "fuzzy"
+  },
+  "Sefton::Cambridge": {
+    "gss": "E05000935",
+    "match": "exact"
+  },
+  "Sefton::Duke's": {
+    "gss": "E05000938",
+    "match": "exact"
+  },
+  "Sefton::Ford": {
+    "gss": "E05000939",
+    "match": "exact"
+  },
+  "Sefton::Formby East": {
+    "gss": "E05000940",
+    "match": "fuzzy"
+  },
+  "Sefton::Formby West": {
+    "gss": "E05000950",
+    "match": "fuzzy"
+  },
+  "Sefton::Great Crosby": {
+    "gss": "E05000944",
+    "match": "fuzzy"
+  },
+  "Sefton::Kew": {
+    "gss": "E05000941",
+    "match": "suffix"
+  },
+  "Sefton::Litherland": {
+    "gss": "E05000943",
+    "match": "exact"
+  },
+  "Sefton::Lydiate & Maghull West": {
+    "gss": "E05000949",
+    "match": "fuzzy"
+  },
+  "Sefton::Maghull East": {
+    "gss": "E05000946",
+    "match": "fuzzy"
+  },
+  "Sefton::Meols": {
+    "gss": "E05000945",
+    "match": "exact"
+  },
+  "Sefton::Netherton North": {
+    "gss": "E05000939",
+    "match": "fuzzy"
+  },
+  "Sefton::Netherton South & Orrell": {
+    "gss": "E05000947",
+    "match": "fuzzy"
+  },
+  "Sefton::Norwood": {
+    "gss": "E05000948",
+    "match": "exact"
+  },
+  "Sefton::Thornton & Hightown": {
+    "gss": "E05000934",
+    "match": "fuzzy"
+  },
+  "Sefton::Waterloo": {
+    "gss": "E05000936",
+    "match": "fuzzy"
   },
   "Barnsley::Athersley and New Lodge": {
     "gss": "E05000993",
@@ -1399,12 +1555,20 @@
     "gss": "E05001169",
     "match": "fuzzy"
   },
+  "Sunderland::Herrington and Newbottle": {
+    "gss": "E05001160",
+    "match": "fuzzy"
+  },
   "Sunderland::Hetton": {
     "gss": "E05001159",
     "match": "exact"
   },
   "Sunderland::Houghton North": {
     "gss": "E05001160",
+    "match": "fuzzy"
+  },
+  "Sunderland::Houghton South and Hetton Downs": {
+    "gss": "E05001159",
     "match": "fuzzy"
   },
   "Sunderland::Hylton Castle": {
@@ -1417,6 +1581,10 @@
   },
   "Sunderland::Pennywell and South Hylton": {
     "gss": "E05001165",
+    "match": "fuzzy"
+  },
+  "Sunderland::Penshaw and Shiney Row": {
+    "gss": "E05001170",
     "match": "fuzzy"
   },
   "Sunderland::Redhouse": {
@@ -1503,6 +1671,10 @@
     "gss": "E05011128",
     "match": "exact"
   },
+  "Birmingham::Bournville & Cotteridge": {
+    "gss": "E05011129",
+    "match": "exact"
+  },
   "Birmingham::Brandwood & Kings Heath": {
     "gss": "E05011130",
     "match": "norm"
@@ -1533,6 +1705,10 @@
   },
   "Birmingham::Garretts Green": {
     "gss": "E05011137",
+    "match": "exact"
+  },
+  "Birmingham::Glebe Farm & Tile Cross": {
+    "gss": "E05011138",
     "match": "exact"
   },
   "Birmingham::Gravelly Hill": {
@@ -1895,13 +2071,245 @@
     "gss": "E05001259",
     "match": "fuzzy"
   },
+  "Sandwell::Bearwood": {
+    "gss": "E05001277",
+    "match": "fuzzy"
+  },
+  "Sandwell::Blackheath": {
+    "gss": "E05001261",
+    "match": "suffix"
+  },
+  "Sandwell::Bristnall": {
+    "gss": "E05001262",
+    "match": "exact"
+  },
+  "Sandwell::Charlemont & Grove Vale": {
+    "gss": "E05001263",
+    "match": "fuzzy"
+  },
+  "Sandwell::Cradley Heath & Old Hill": {
+    "gss": "E05001264",
+    "match": "punct"
+  },
+  "Sandwell::Friar Park  & Stone Cross": {
+    "gss": "E05001265",
+    "match": "fuzzy"
+  },
+  "Sandwell::Great Barr, Tamebridge & Yew Tree": {
+    "gss": "E05001266",
+    "match": "fuzzy"
+  },
+  "Sandwell::Great Bridge": {
+    "gss": "E05001267",
+    "match": "exact"
+  },
+  "Sandwell::Greets Green & Lyng": {
+    "gss": "E05001268",
+    "match": "punct"
+  },
+  "Sandwell::Hateley Heath": {
+    "gss": "E05001269",
+    "match": "exact"
+  },
+  "Sandwell::Hill Top": {
+    "gss": "E05001269",
+    "match": "fuzzy"
+  },
+  "Sandwell::Langley": {
+    "gss": "E05001270",
+    "match": "exact"
+  },
+  "Sandwell::Newton & Valley": {
+    "gss": "E05001271",
+    "match": "fuzzy"
+  },
+  "Sandwell::Old Warley": {
+    "gss": "E05001272",
+    "match": "exact"
+  },
+  "Sandwell::Oldbury": {
+    "gss": "E05001273",
+    "match": "exact"
+  },
+  "Sandwell::Princes End": {
+    "gss": "E05001274",
+    "match": "exact"
+  },
+  "Sandwell::Rowley": {
+    "gss": "E05001275",
+    "match": "suffix"
+  },
+  "Sandwell::Smethwick": {
+    "gss": "E05001277",
+    "match": "exact"
+  },
+  "Sandwell::Soho & Victoria": {
+    "gss": "E05001278",
+    "match": "punct"
+  },
+  "Sandwell::St Pauls": {
+    "gss": "E05001276",
+    "match": "suffix"
+  },
+  "Sandwell::Tipton Green": {
+    "gss": "E05001279",
+    "match": "exact"
+  },
+  "Sandwell::Tividale": {
+    "gss": "E05001280",
+    "match": "exact"
+  },
+  "Sandwell::Wednesbury": {
+    "gss": "E05001281",
+    "match": "fuzzy"
+  },
+  "Sandwell::West Bromwich Central": {
+    "gss": "E05001283",
+    "match": "exact"
+  },
   "Solihull::Balsall & Berkswell": {
     "gss": "E05001293",
     "match": "fuzzy"
   },
+  "Solihull::Castle Bromwich": {
+    "gss": "E05001286",
+    "match": "exact"
+  },
+  "Solihull::Chelmsley Wood": {
+    "gss": "E05001287",
+    "match": "exact"
+  },
   "Solihull::Dorridge & Hockley Heath": {
     "gss": "E05001288",
     "match": "punct"
+  },
+  "Solihull::Elmdon": {
+    "gss": "E05001289",
+    "match": "exact"
+  },
+  "Solihull::Fordbridge": {
+    "gss": "E05001290",
+    "match": "fuzzy"
+  },
+  "Solihull::Kingshurst & Smith\u2019s Wood": {
+    "gss": "E05001300",
+    "match": "fuzzy"
+  },
+  "Solihull::Knowle": {
+    "gss": "E05001291",
+    "match": "suffix"
+  },
+  "Solihull::Lyndon": {
+    "gss": "E05001292",
+    "match": "exact"
+  },
+  "Solihull::Meriden & Arden": {
+    "gss": "E05001293",
+    "match": "fuzzy"
+  },
+  "Solihull::Olton": {
+    "gss": "E05001294",
+    "match": "exact"
+  },
+  "Solihull::St Alphege with Monkspath and Hillfields": {
+    "gss": "E05001295",
+    "match": "fuzzy"
+  },
+  "Solihull::Shirley East & Sharmans Cross": {
+    "gss": "E05001296",
+    "match": "fuzzy"
+  },
+  "Solihull::Shirley South": {
+    "gss": "E05001297",
+    "match": "suffix"
+  },
+  "Solihull::Shirley West": {
+    "gss": "E05001298",
+    "match": "exact"
+  },
+  "Solihull::Silhill": {
+    "gss": "E05001299",
+    "match": "exact"
+  },
+  "Walsall::Aldridge Central & South": {
+    "gss": "E05001301",
+    "match": "punct"
+  },
+  "Walsall::Aldridge North & Walsall Wood": {
+    "gss": "E05001302",
+    "match": "punct"
+  },
+  "Walsall::Beechdale, Leamore & Reedswood": {
+    "gss": "E05001304",
+    "match": "fuzzy"
+  },
+  "Walsall::Bentley & Darlaston North": {
+    "gss": "E05001303",
+    "match": "punct"
+  },
+  "Walsall::Bloxwich East & Blakenall Heath": {
+    "gss": "E05001306",
+    "match": "fuzzy"
+  },
+  "Walsall::Bloxwich West": {
+    "gss": "E05001307",
+    "match": "exact"
+  },
+  "Walsall::Brownhills": {
+    "gss": "E05001308",
+    "match": "exact"
+  },
+  "Walsall::Darlaston South": {
+    "gss": "E05001309",
+    "match": "exact"
+  },
+  "Walsall::Harden, Goscote & Ryecroft": {
+    "gss": "E05001305",
+    "match": "fuzzy"
+  },
+  "Walsall::New Invention": {
+    "gss": "E05001319",
+    "match": "fuzzy"
+  },
+  "Walsall::Paddock": {
+    "gss": "E05001310",
+    "match": "exact"
+  },
+  "Walsall::Palfrey & The Delves": {
+    "gss": "E05001311",
+    "match": "fuzzy"
+  },
+  "Walsall::Pelsall": {
+    "gss": "E05001312",
+    "match": "exact"
+  },
+  "Walsall::Pheasey Park Farm": {
+    "gss": "E05001313",
+    "match": "exact"
+  },
+  "Walsall::Pleck": {
+    "gss": "E05001314",
+    "match": "exact"
+  },
+  "Walsall::Rushall-Shelfield": {
+    "gss": "E05001315",
+    "match": "exact"
+  },
+  "Walsall::Short Heath": {
+    "gss": "E05001317",
+    "match": "exact"
+  },
+  "Walsall::St Matthew's": {
+    "gss": "E05001316",
+    "match": "suffix"
+  },
+  "Walsall::Streetly": {
+    "gss": "E05001318",
+    "match": "exact"
+  },
+  "Walsall::Willenhall": {
+    "gss": "E05001320",
+    "match": "fuzzy"
   },
   "Wolverhampton::Bilston North": {
     "gss": "E05001322",
@@ -1983,6 +2391,10 @@
     "gss": "E05001340",
     "match": "exact"
   },
+  "Bradford::Airedale": {
+    "gss": "E05001356",
+    "match": "fuzzy"
+  },
   "Bradford::Baildon": {
     "gss": "E05001341",
     "match": "exact"
@@ -2030,6 +2442,10 @@
   "Bradford::Holme Wood & Bierley": {
     "gss": "E05001365",
     "match": "fuzzy"
+  },
+  "Bradford::Idle & Thackley": {
+    "gss": "E05001353",
+    "match": "punct"
   },
   "Bradford::Ilkley & Addingham": {
     "gss": "E05001354",
@@ -2167,6 +2583,10 @@
     "gss": "E05001387",
     "match": "suffix"
   },
+  "Kirklees::Almondbury": {
+    "gss": "E05008558",
+    "match": "exact"
+  },
   "Kirklees::Ashbrow": {
     "gss": "E05001389",
     "match": "exact"
@@ -2186,6 +2606,74 @@
   "Kirklees::Cleckheaton": {
     "gss": "E05001393",
     "match": "exact"
+  },
+  "Kirklees::Colne Valley East": {
+    "gss": "E05008559",
+    "match": "fuzzy"
+  },
+  "Kirklees::Colne Valley West": {
+    "gss": "E05008559",
+    "match": "fuzzy"
+  },
+  "Kirklees::Crosland Moor": {
+    "gss": "E05008560",
+    "match": "fuzzy"
+  },
+  "Kirklees::Dalton": {
+    "gss": "E05001396",
+    "match": "exact"
+  },
+  "Kirklees::Denby Dale": {
+    "gss": "E05001397",
+    "match": "exact"
+  },
+  "Kirklees::Dewsbury East": {
+    "gss": "E05001398",
+    "match": "exact"
+  },
+  "Kirklees::Dewsbury South": {
+    "gss": "E05001399",
+    "match": "exact"
+  },
+  "Kirklees::Dewsbury West": {
+    "gss": "E05001400",
+    "match": "exact"
+  },
+  "Kirklees::Greenhead": {
+    "gss": "E05001402",
+    "match": "exact"
+  },
+  "Kirklees::Heckmondwike": {
+    "gss": "E05001403",
+    "match": "exact"
+  },
+  "Kirklees::Holme Valley North": {
+    "gss": "E05008561",
+    "match": "exact"
+  },
+  "Kirklees::Holme Valley South": {
+    "gss": "E05001405",
+    "match": "exact"
+  },
+  "Kirklees::Kirkburton": {
+    "gss": "E05008562",
+    "match": "exact"
+  },
+  "Kirklees::Lindley": {
+    "gss": "E05001407",
+    "match": "exact"
+  },
+  "Kirklees::Liversedge and Gomersal": {
+    "gss": "E05001408",
+    "match": "exact"
+  },
+  "Kirklees::Mirfield": {
+    "gss": "E05001409",
+    "match": "exact"
+  },
+  "Kirklees::Netherton and Newsome": {
+    "gss": "E05001410",
+    "match": "fuzzy"
   },
   "Leeds::Adel and Wharfedale": {
     "gss": "E05012841",
@@ -2227,6 +2715,10 @@
     "gss": "E05011391",
     "match": "norm"
   },
+  "Leeds::Farnley and Wortley": {
+    "gss": "E05012648",
+    "match": "norm"
+  },
   "Leeds::Garforth and Swillington": {
     "gss": "E05013830",
     "match": "norm"
@@ -2235,12 +2727,80 @@
     "gss": "E05011394",
     "match": "norm"
   },
+  "Leeds::Guiseley and Rawdon": {
+    "gss": "E05011395",
+    "match": "norm"
+  },
+  "Leeds::Harewood": {
+    "gss": "E05011396",
+    "match": "suffix"
+  },
   "Leeds::Headingley and Hyde Park": {
     "gss": "E05011397",
     "match": "norm"
   },
+  "Leeds::Horsforth": {
+    "gss": "E05011547",
+    "match": "exact"
+  },
+  "Leeds::Hunslet and Riverside": {
+    "gss": "E05011399",
+    "match": "norm"
+  },
+  "Leeds::Killingbeck and Seacroft": {
+    "gss": "E05011400",
+    "match": "norm"
+  },
+  "Leeds::Kippax and Methley": {
+    "gss": "E05011401",
+    "match": "norm"
+  },
+  "Leeds::Kirkstall": {
+    "gss": "E05011402",
+    "match": "exact"
+  },
+  "Leeds::Little London and Woodhouse": {
+    "gss": "E05011403",
+    "match": "norm"
+  },
   "Leeds::Middleton Park": {
     "gss": "E05011404",
+    "match": "exact"
+  },
+  "Leeds::Moortown": {
+    "gss": "E05011405",
+    "match": "exact"
+  },
+  "Leeds::Morley North": {
+    "gss": "E05011406",
+    "match": "exact"
+  },
+  "Leeds::Morley South": {
+    "gss": "E05011407",
+    "match": "exact"
+  },
+  "Leeds::Otley and Yeadon": {
+    "gss": "E05011549",
+    "match": "norm"
+  },
+  "Leeds::Pudsey": {
+    "gss": "E05011409",
+    "match": "exact"
+  },
+  "Leeds::Rothwell": {
+    "gss": "E05011410",
+    "match": "exact"
+  },
+  "Leeds::Roundhay": {
+    "gss": "E05011411",
+    "match": "exact"
+  },
+  "Leeds::Temple Newsam": {
+    "gss": "E05013831",
+    "match": "exact"
+  },
+  "Leeds::Weetwood": {
+    "gss": "E05011413",
     "match": "exact"
   },
   "Leeds::Wetherby": {
@@ -2879,6 +3439,42 @@
     "gss": "E05013662",
     "match": "norm"
   },
+  "Camden::Kentish Town North": {
+    "gss": "E05013663",
+    "match": "exact"
+  },
+  "Camden::Kentish Town South": {
+    "gss": "E05013664",
+    "match": "exact"
+  },
+  "Camden::Kilburn": {
+    "gss": "E05013665",
+    "match": "suffix"
+  },
+  "Camden::King's Cross": {
+    "gss": "E05013666",
+    "match": "exact"
+  },
+  "Camden::Primrose Hill": {
+    "gss": "E05013667",
+    "match": "exact"
+  },
+  "Camden::Regent's Park": {
+    "gss": "E05013668",
+    "match": "suffix"
+  },
+  "Camden::South Hampstead": {
+    "gss": "E05013670",
+    "match": "exact"
+  },
+  "Camden::St Pancras and Somers Town": {
+    "gss": "E05013669",
+    "match": "norm"
+  },
+  "Camden::West Hampstead": {
+    "gss": "E05013671",
+    "match": "exact"
+  },
   "Croydon::Addiscombe East": {
     "gss": "E05011462",
     "match": "exact"
@@ -2895,6 +3491,10 @@
     "gss": "E05011465",
     "match": "exact"
   },
+  "Croydon::Coulsdon Town": {
+    "gss": "E05011466",
+    "match": "exact"
+  },
   "Croydon::Crystal Palace and Upper Norwood": {
     "gss": "E05011467",
     "match": "norm"
@@ -2902,6 +3502,14 @@
   "Croydon::Fairfield": {
     "gss": "E05011468",
     "match": "suffix"
+  },
+  "Croydon::Kenley": {
+    "gss": "E05011469",
+    "match": "exact"
+  },
+  "Croydon::New Addington North": {
+    "gss": "E05011470",
+    "match": "exact"
   },
   "Croydon::New Addington South": {
     "gss": "E05011471",
@@ -2911,6 +3519,10 @@
     "gss": "E05011472",
     "match": "norm"
   },
+  "Croydon::Norbury Park": {
+    "gss": "E05011473",
+    "match": "exact"
+  },
   "Croydon::Old Coulsdon": {
     "gss": "E05011474",
     "match": "exact"
@@ -2919,12 +3531,48 @@
     "gss": "E05011475",
     "match": "norm"
   },
+  "Croydon::Purley and Woodcote": {
+    "gss": "E05011476",
+    "match": "norm"
+  },
+  "Croydon::Purley Oaks and Riddlesdown": {
+    "gss": "E05011477",
+    "match": "norm"
+  },
+  "Croydon::Sanderstead": {
+    "gss": "E05011478",
+    "match": "exact"
+  },
   "Croydon::Selhurst": {
     "gss": "E05011479",
     "match": "exact"
   },
+  "Croydon::Selsdon and Addington Village": {
+    "gss": "E05011480",
+    "match": "norm"
+  },
+  "Croydon::Selsdon Vale and Forestdale": {
+    "gss": "E05011481",
+    "match": "norm"
+  },
+  "Croydon::Shirley North": {
+    "gss": "E05011482",
+    "match": "exact"
+  },
+  "Croydon::Shirley South": {
+    "gss": "E05011483",
+    "match": "suffix"
+  },
+  "Croydon::South Croydon": {
+    "gss": "E05011484",
+    "match": "exact"
+  },
   "Croydon::South Norwood": {
     "gss": "E05011485",
+    "match": "exact"
+  },
+  "Croydon::Thornton Heath": {
+    "gss": "E05011486",
     "match": "exact"
   },
   "Croydon::Waddon": {
@@ -3155,13 +3803,61 @@
     "gss": "E05014077",
     "match": "exact"
   },
+  "Greenwich::Eltham Park and Progress": {
+    "gss": "E05014078",
+    "match": "norm"
+  },
+  "Greenwich::Eltham Town and Avery Hill": {
+    "gss": "E05014079",
+    "match": "norm"
+  },
+  "Greenwich::Greenwich Creekside": {
+    "gss": "E05014080",
+    "match": "exact"
+  },
+  "Greenwich::Greenwich Park": {
+    "gss": "E05014081",
+    "match": "exact"
+  },
+  "Greenwich::Greenwich Peninsula": {
+    "gss": "E05014082",
+    "match": "exact"
+  },
   "Greenwich::Kidbrooke Park": {
     "gss": "E05014083",
     "match": "exact"
   },
+  "Greenwich::Kidbrooke Village and Sutcliffe": {
+    "gss": "E05014084",
+    "match": "norm"
+  },
+  "Greenwich::Middle Park and Horn Park": {
+    "gss": "E05014085",
+    "match": "norm"
+  },
   "Greenwich::Mottingham, Coldharbour and New Eltham": {
     "gss": "E05014086",
     "match": "norm"
+  },
+  "Greenwich::Plumstead and Glyndon": {
+    "gss": "E05014087",
+    "match": "norm"
+  },
+  "Greenwich::Plumstead Common": {
+    "gss": "E05014088",
+    "match": "exact"
+  },
+  "Greenwich::Shooters Hill": {
+    "gss": "E05014089",
+    "match": "exact"
+  },
+  "Greenwich::Thamesmead Moorings": {
+    "gss": "E05014090",
+    "match": "exact"
+  },
+  "Greenwich::West Thamesmead": {
+    "gss": "E05014091",
+    "match": "exact"
   },
   "Greenwich::Woolwich Arsenal": {
     "gss": "E05014092",
@@ -3181,6 +3877,10 @@
   },
   "Hackney::Cazenove": {
     "gss": "E05009368",
+    "match": "exact"
+  },
+  "Hackney::Clissold": {
+    "gss": "E05009369",
     "match": "exact"
   },
   "Hackney::Dalston": {
@@ -3543,6 +4243,10 @@
     "gss": "E05013571",
     "match": "exact"
   },
+  "Hillingdon::Hillingdon West": {
+    "gss": "E05013572",
+    "match": "exact"
+  },
   "Hillingdon::Ickenham & South Harefield": {
     "gss": "E05013573",
     "match": "exact"
@@ -3615,16 +4319,84 @@
     "gss": "E05013611",
     "match": "exact"
   },
+  "Hounslow::Cranford": {
+    "gss": "E05013612",
+    "match": "exact"
+  },
+  "Hounslow::Feltham North": {
+    "gss": "E05013613",
+    "match": "exact"
+  },
+  "Hounslow::Feltham West": {
+    "gss": "E05013614",
+    "match": "exact"
+  },
+  "Hounslow::Hanworth Park": {
+    "gss": "E05013615",
+    "match": "exact"
+  },
+  "Hounslow::Hanworth Village": {
+    "gss": "E05013616",
+    "match": "exact"
+  },
+  "Hounslow::Heston Central": {
+    "gss": "E05013617",
+    "match": "exact"
+  },
   "Hounslow::Heston East": {
     "gss": "E05013618",
+    "match": "exact"
+  },
+  "Hounslow::Heston West": {
+    "gss": "E05013619",
+    "match": "exact"
+  },
+  "Hounslow::Hounslow Central": {
+    "gss": "E05013620",
     "match": "exact"
   },
   "Hounslow::Hounslow East": {
     "gss": "E05013621",
     "match": "exact"
   },
+  "Hounslow::Hounslow Heath": {
+    "gss": "E05013622",
+    "match": "exact"
+  },
+  "Hounslow::Hounslow South": {
+    "gss": "E05013623",
+    "match": "exact"
+  },
+  "Hounslow::Hounslow West": {
+    "gss": "E05013624",
+    "match": "exact"
+  },
+  "Hounslow::Isleworth": {
+    "gss": "E05013625",
+    "match": "exact"
+  },
+  "Hounslow::Osterley & Spring Grove": {
+    "gss": "E05013626",
+    "match": "exact"
+  },
+  "Hounslow::Syon & Brentford Lock": {
+    "gss": "E05013627",
+    "match": "exact"
+  },
   "Islington::Arsenal": {
     "gss": "E05013697",
+    "match": "exact"
+  },
+  "Islington::Barnsbury": {
+    "gss": "E05013698",
+    "match": "exact"
+  },
+  "Islington::Bunhill": {
+    "gss": "E05013699",
+    "match": "exact"
+  },
+  "Islington::Caledonian": {
+    "gss": "E05013700",
     "match": "exact"
   },
   "Islington::Canonbury": {
@@ -3643,8 +4415,32 @@
     "gss": "E05013704",
     "match": "exact"
   },
+  "Islington::Hillrise": {
+    "gss": "E05013705",
+    "match": "exact"
+  },
+  "Islington::Holloway": {
+    "gss": "E05013706",
+    "match": "exact"
+  },
+  "Islington::Junction": {
+    "gss": "E05013707",
+    "match": "exact"
+  },
+  "Islington::Laycock": {
+    "gss": "E05013708",
+    "match": "exact"
+  },
   "Islington::Mildmay": {
     "gss": "E05013709",
+    "match": "exact"
+  },
+  "Islington::St Mary's & St James'": {
+    "gss": "E05013710",
+    "match": "suffix"
+  },
+  "Islington::St Peter's & Canalside": {
+    "gss": "E05013711",
     "match": "exact"
   },
   "Islington::Tollington": {
@@ -3725,6 +4521,82 @@
   },
   "Kensington and Chelsea::Stanley": {
     "gss": "E05009405",
+    "match": "suffix"
+  },
+  "Kingston upon Thames::Alexandra": {
+    "gss": "E05013928",
+    "match": "suffix"
+  },
+  "Kingston upon Thames::Berrylands": {
+    "gss": "E05013929",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Canbury Gardens": {
+    "gss": "E05013930",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Chessington South & Malden Rushett": {
+    "gss": "E05013931",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Coombe Hill": {
+    "gss": "E05013932",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Coombe Vale": {
+    "gss": "E05013933",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Green Lane & St James": {
+    "gss": "E05013934",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Hook & Chessington North": {
+    "gss": "E05013935",
+    "match": "exact"
+  },
+  "Kingston upon Thames::King George's & Sunray": {
+    "gss": "E05013936",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Kingston Gate": {
+    "gss": "E05013937",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Kingston Town": {
+    "gss": "E05013938",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Motspur Park & Old Malden East": {
+    "gss": "E05013939",
+    "match": "exact"
+  },
+  "Kingston upon Thames::New Malden Village": {
+    "gss": "E05013940",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Norbiton": {
+    "gss": "E05013941",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Old Malden": {
+    "gss": "E05013942",
+    "match": "exact"
+  },
+  "Kingston upon Thames::St Mark's & Seething Wells": {
+    "gss": "E05013943",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Surbiton Hill": {
+    "gss": "E05013944",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Tolworth": {
+    "gss": "E05013945",
+    "match": "exact"
+  },
+  "Kingston upon Thames::Tudor": {
+    "gss": "E05013946",
     "match": "suffix"
   },
   "Lambeth::Brixton Acre Lane": {
@@ -4738,5 +5610,3877 @@
   "Westminster::Westbourne": {
     "gss": "E05013809",
     "match": "suffix"
+  },
+  "Hartlepool::Burn Valley": {
+    "gss": "E05013038",
+    "match": "exact"
+  },
+  "Hartlepool::De Bruce": {
+    "gss": "E05013039",
+    "match": "exact"
+  },
+  "Hartlepool::Fens & Greatham": {
+    "gss": "E05013040",
+    "match": "exact"
+  },
+  "Hartlepool::Foggy Furze": {
+    "gss": "E05013041",
+    "match": "exact"
+  },
+  "Hartlepool::Hart": {
+    "gss": "E05013042",
+    "match": "exact"
+  },
+  "Hartlepool::Headland & Harbour": {
+    "gss": "E05013043",
+    "match": "exact"
+  },
+  "Hartlepool::Manor House": {
+    "gss": "E05013044",
+    "match": "exact"
+  },
+  "Hartlepool::Rossmere": {
+    "gss": "E05013045",
+    "match": "exact"
+  },
+  "Hartlepool::Rural West": {
+    "gss": "E05013046",
+    "match": "exact"
+  },
+  "Hartlepool::Seaton": {
+    "gss": "E05013047",
+    "match": "suffix"
+  },
+  "Hartlepool::Throston": {
+    "gss": "E05013048",
+    "match": "exact"
+  },
+  "Hartlepool::Victoria": {
+    "gss": "E05013049",
+    "match": "suffix"
+  },
+  "Halton::Appleton": {
+    "gss": "E05013169",
+    "match": "suffix"
+  },
+  "Halton::Bankfield": {
+    "gss": "E05013170",
+    "match": "exact"
+  },
+  "Halton::Beechwood & Heath": {
+    "gss": "E05013171",
+    "match": "exact"
+  },
+  "Halton::Birchfield": {
+    "gss": "E05013172",
+    "match": "suffix"
+  },
+  "Halton::Bridgewater": {
+    "gss": "E05013173",
+    "match": "exact"
+  },
+  "Halton::Central & West Bank": {
+    "gss": "E05013174",
+    "match": "exact"
+  },
+  "Halton::Daresbury, Moore & Sandymoor": {
+    "gss": "E05013175",
+    "match": "exact"
+  },
+  "Halton::Ditton, Hale Village & Halebank": {
+    "gss": "E05013176",
+    "match": "exact"
+  },
+  "Halton::Farnworth": {
+    "gss": "E05013177",
+    "match": "suffix"
+  },
+  "Halton::Grange": {
+    "gss": "E05013178",
+    "match": "suffix"
+  },
+  "Halton::Halton Castle": {
+    "gss": "E05013179",
+    "match": "exact"
+  },
+  "Halton::Halton Lea": {
+    "gss": "E05013180",
+    "match": "exact"
+  },
+  "Halton::Halton View": {
+    "gss": "E05013181",
+    "match": "exact"
+  },
+  "Halton::Highfield": {
+    "gss": "E05013182",
+    "match": "suffix"
+  },
+  "Halton::Hough Green": {
+    "gss": "E05013183",
+    "match": "exact"
+  },
+  "Halton::Mersey & Weston": {
+    "gss": "E05013184",
+    "match": "exact"
+  },
+  "Halton::Norton North": {
+    "gss": "E05013185",
+    "match": "suffix"
+  },
+  "Halton::Norton South & Preston Brook": {
+    "gss": "E05013186",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Audley & Queen's Park": {
+    "gss": "E05011508",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Bastwell & Daisyfield": {
+    "gss": "E05011509",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Billinge & Beardwood": {
+    "gss": "E05011510",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Blackburn Central": {
+    "gss": "E05011511",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Blackburn South & Lower Darwen": {
+    "gss": "E05011512",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Blackburn South East": {
+    "gss": "E05011513",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Darwen East": {
+    "gss": "E05011514",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Darwen South": {
+    "gss": "E05011515",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Darwen West": {
+    "gss": "E05011516",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Ewood": {
+    "gss": "E05011517",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Little Harwood & Whitebrik": {
+    "gss": "E05011518",
+    "match": "fuzzy"
+  },
+  "Blackburn with Darwen::Livesey with Pleasington": {
+    "gss": "E05011519",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Mill Hill & Moorgate": {
+    "gss": "E05011520",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Roe Lee": {
+    "gss": "E05011521",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Shear Brow & Corporation Park": {
+    "gss": "E05011522",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::Wensley Fold": {
+    "gss": "E05011523",
+    "match": "exact"
+  },
+  "Blackburn with Darwen::West Pennine": {
+    "gss": "E05011524",
+    "match": "exact"
+  },
+  "Kingston upon Hull::Avenue": {
+    "gss": "E05011525",
+    "match": "suffix"
+  },
+  "Kingston upon Hull::Beverley and Newland": {
+    "gss": "E05011526",
+    "match": "norm"
+  },
+  "Kingston upon Hull::Boothferry": {
+    "gss": "E05011527",
+    "match": "exact"
+  },
+  "Kingston upon Hull::Bricknell": {
+    "gss": "E05011528",
+    "match": "exact"
+  },
+  "Kingston upon Hull::Central": {
+    "gss": "E05011529",
+    "match": "suffix"
+  },
+  "Kingston upon Hull::Derringham": {
+    "gss": "E05011530",
+    "match": "exact"
+  },
+  "Kingston upon Hull::Drypool": {
+    "gss": "E05011531",
+    "match": "exact"
+  },
+  "Kingston upon Hull::Holderness": {
+    "gss": "E05011532",
+    "match": "exact"
+  },
+  "Kingston upon Hull::Longhill and Bilton Grange": {
+    "gss": "E05011535",
+    "match": "norm"
+  },
+  "Kingston upon Hull::Marfleet": {
+    "gss": "E05011536",
+    "match": "exact"
+  },
+  "Kingston upon Hull::Newington and Gipsyville": {
+    "gss": "E05011537",
+    "match": "norm"
+  },
+  "Kingston upon Hull::North Carr": {
+    "gss": "E05011538",
+    "match": "exact"
+  },
+  "Kingston upon Hull::Orchard Park": {
+    "gss": "E05011539",
+    "match": "exact"
+  },
+  "Kingston upon Hull::Pickering": {
+    "gss": "E05011540",
+    "match": "suffix"
+  },
+  "Kingston upon Hull::Southcoates": {
+    "gss": "E05011542",
+    "match": "exact"
+  },
+  "Kingston upon Hull::St Andrews and Docklands": {
+    "gss": "E05011541",
+    "match": "norm"
+  },
+  "Kingston upon Hull::Sutton": {
+    "gss": "E05011543",
+    "match": "suffix"
+  },
+  "Kingston upon Hull::University": {
+    "gss": "E05011544",
+    "match": "suffix"
+  },
+  "Kingston upon Hull::West Carr": {
+    "gss": "E05011545",
+    "match": "exact"
+  },
+  "North East Lincolnshire::Croft Baker": {
+    "gss": "E05001713",
+    "match": "exact"
+  },
+  "North East Lincolnshire::East Marsh": {
+    "gss": "E05001714",
+    "match": "exact"
+  },
+  "North East Lincolnshire::Freshney": {
+    "gss": "E05001715",
+    "match": "exact"
+  },
+  "North East Lincolnshire::Haverstoe": {
+    "gss": "E05001716",
+    "match": "exact"
+  },
+  "North East Lincolnshire::Heneage": {
+    "gss": "E05001717",
+    "match": "exact"
+  },
+  "North East Lincolnshire::Humberston & New Waltham": {
+    "gss": "E05001718",
+    "match": "punct"
+  },
+  "North East Lincolnshire::Immingham": {
+    "gss": "E05001719",
+    "match": "exact"
+  },
+  "North East Lincolnshire::Park": {
+    "gss": "E05001720",
+    "match": "suffix"
+  },
+  "North East Lincolnshire::Scartho": {
+    "gss": "E05001721",
+    "match": "exact"
+  },
+  "North East Lincolnshire::Sidney Sussex": {
+    "gss": "E05001722",
+    "match": "exact"
+  },
+  "North East Lincolnshire::South": {
+    "gss": "E05001723",
+    "match": "suffix"
+  },
+  "North East Lincolnshire::Waltham": {
+    "gss": "E05001724",
+    "match": "exact"
+  },
+  "North East Lincolnshire::West Marsh": {
+    "gss": "E05001725",
+    "match": "exact"
+  },
+  "North East Lincolnshire::Wolds": {
+    "gss": "E05001726",
+    "match": "exact"
+  },
+  "North East Lincolnshire::Yarborough": {
+    "gss": "E05001727",
+    "match": "exact"
+  },
+  "Plymouth::Budshead": {
+    "gss": "E05002078",
+    "match": "exact"
+  },
+  "Plymouth::Compton": {
+    "gss": "E05002079",
+    "match": "exact"
+  },
+  "Plymouth::Devonport": {
+    "gss": "E05002080",
+    "match": "exact"
+  },
+  "Plymouth::Drake": {
+    "gss": "E05002081",
+    "match": "exact"
+  },
+  "Plymouth::Efford and Lipson": {
+    "gss": "E05002082",
+    "match": "exact"
+  },
+  "Plymouth::Eggbuckland": {
+    "gss": "E05002083",
+    "match": "exact"
+  },
+  "Plymouth::Ham": {
+    "gss": "E05002084",
+    "match": "exact"
+  },
+  "Plymouth::Honicknowle": {
+    "gss": "E05002085",
+    "match": "exact"
+  },
+  "Plymouth::Moor View": {
+    "gss": "E05002086",
+    "match": "exact"
+  },
+  "Plymouth::Peverell": {
+    "gss": "E05002087",
+    "match": "exact"
+  },
+  "Plymouth::Plympton Chaddlewood": {
+    "gss": "E05002088",
+    "match": "exact"
+  },
+  "Plymouth::Plympton St Mary": {
+    "gss": "E05002090",
+    "match": "exact"
+  },
+  "Plymouth::Plymstock Dunstone": {
+    "gss": "E05002091",
+    "match": "exact"
+  },
+  "Plymouth::Plymstock Radford": {
+    "gss": "E05002092",
+    "match": "exact"
+  },
+  "Plymouth::Southway": {
+    "gss": "E05002095",
+    "match": "exact"
+  },
+  "Plymouth::St Budeaux": {
+    "gss": "E05002093",
+    "match": "exact"
+  },
+  "Plymouth::St Peter and the Waterfront": {
+    "gss": "E05002094",
+    "match": "exact"
+  },
+  "Plymouth::Stoke": {
+    "gss": "E05002096",
+    "match": "suffix"
+  },
+  "Plymouth::Sutton and Mount Gould": {
+    "gss": "E05002097",
+    "match": "exact"
+  },
+  "Peterborough::Bretton": {
+    "gss": "E05010806",
+    "match": "exact"
+  },
+  "Peterborough::Central": {
+    "gss": "E05010807",
+    "match": "suffix"
+  },
+  "Peterborough::Dogsthorpe": {
+    "gss": "E05010808",
+    "match": "exact"
+  },
+  "Peterborough::East": {
+    "gss": "E05010809",
+    "match": "suffix"
+  },
+  "Peterborough::Eye, Thorney & Newborough": {
+    "gss": "E05010810",
+    "match": "punct"
+  },
+  "Peterborough::Fletton & Stanground": {
+    "gss": "E05010811",
+    "match": "punct"
+  },
+  "Peterborough::Fletton & Woodston": {
+    "gss": "E05010812",
+    "match": "punct"
+  },
+  "Peterborough::Gunthorpe": {
+    "gss": "E05010814",
+    "match": "exact"
+  },
+  "Peterborough::Hampton Vale": {
+    "gss": "E05010815",
+    "match": "exact"
+  },
+  "Peterborough::Hargate & Hempsted": {
+    "gss": "E05010816",
+    "match": "punct"
+  },
+  "Peterborough::North": {
+    "gss": "E05010817",
+    "match": "suffix"
+  },
+  "Peterborough::Orton Longueville": {
+    "gss": "E05010818",
+    "match": "exact"
+  },
+  "Peterborough::Orton Waterville": {
+    "gss": "E05010819",
+    "match": "exact"
+  },
+  "Peterborough::Park": {
+    "gss": "E05010820",
+    "match": "suffix"
+  },
+  "Peterborough::Paston & Walton": {
+    "gss": "E05010821",
+    "match": "punct"
+  },
+  "Peterborough::Raventhorpe": {
+    "gss": "E05010822",
+    "match": "fuzzy"
+  },
+  "Peterborough::Stanground South": {
+    "gss": "E05010823",
+    "match": "exact"
+  },
+  "Peterborough::Werrington": {
+    "gss": "E05010824",
+    "match": "suffix"
+  },
+  "Southend-on-Sea::Belfairs": {
+    "gss": "E05002212",
+    "match": "exact"
+  },
+  "Southend-on-Sea::Blenheim Park": {
+    "gss": "E05002213",
+    "match": "exact"
+  },
+  "Southend-on-Sea::Chalkwell": {
+    "gss": "E05002214",
+    "match": "suffix"
+  },
+  "Southend-on-Sea::Eastwood Park": {
+    "gss": "E05002215",
+    "match": "exact"
+  },
+  "Southend-on-Sea::Kursaal": {
+    "gss": "E05002216",
+    "match": "exact"
+  },
+  "Southend-on-Sea::Leigh": {
+    "gss": "E05002217",
+    "match": "exact"
+  },
+  "Southend-on-Sea::Milton": {
+    "gss": "E05002218",
+    "match": "suffix"
+  },
+  "Southend-on-Sea::Prittlewell": {
+    "gss": "E05002219",
+    "match": "exact"
+  },
+  "Southend-on-Sea::Shoeburyness": {
+    "gss": "E05002222",
+    "match": "exact"
+  },
+  "Southend-on-Sea::Southchurch": {
+    "gss": "E05002223",
+    "match": "exact"
+  },
+  "Southend-on-Sea::St Laurence": {
+    "gss": "E05002220",
+    "match": "exact"
+  },
+  "Southend-on-Sea::St Luke's": {
+    "gss": "E05002221",
+    "match": "norm"
+  },
+  "Southend-on-Sea::Thorpe": {
+    "gss": "E05002224",
+    "match": "suffix"
+  },
+  "Southend-on-Sea::Victoria": {
+    "gss": "E05002225",
+    "match": "suffix"
+  },
+  "Southend-on-Sea::West Leigh": {
+    "gss": "E05002227",
+    "match": "exact"
+  },
+  "Southend-on-Sea::West Shoebury": {
+    "gss": "E05002228",
+    "match": "exact"
+  },
+  "Southend-on-Sea::Westborough": {
+    "gss": "E05002226",
+    "match": "suffix"
+  },
+  "Thurrock::Aveley": {
+    "gss": "E05002229",
+    "match": "fuzzy"
+  },
+  "Thurrock::Belhus": {
+    "gss": "E05002230",
+    "match": "exact"
+  },
+  "Thurrock::Chadwell St Mary": {
+    "gss": "E05002231",
+    "match": "exact"
+  },
+  "Thurrock::Chafford Hundred East": {
+    "gss": "E05002232",
+    "match": "fuzzy"
+  },
+  "Thurrock::Chafford Hundred West": {
+    "gss": "E05002241",
+    "match": "fuzzy"
+  },
+  "Thurrock::Corringham & Fobbing": {
+    "gss": "E05002233",
+    "match": "punct"
+  },
+  "Thurrock::East Tilbury, Linford & West Tilbury": {
+    "gss": "E05002234",
+    "match": "fuzzy"
+  },
+  "Thurrock::Grays Riverside": {
+    "gss": "E05002235",
+    "match": "exact"
+  },
+  "Thurrock::Grays Town": {
+    "gss": "E05002236",
+    "match": "fuzzy"
+  },
+  "Thurrock::Little Thurrock Blackshots": {
+    "gss": "E05002237",
+    "match": "exact"
+  },
+  "Thurrock::Little Thurrock Rectory": {
+    "gss": "E05002238",
+    "match": "exact"
+  },
+  "Thurrock::Ockendon": {
+    "gss": "E05002239",
+    "match": "exact"
+  },
+  "Thurrock::Orsett, Horndon & Bulphan": {
+    "gss": "E05002240",
+    "match": "fuzzy"
+  },
+  "Thurrock::Purfleet-on-Thames": {
+    "gss": "E05002248",
+    "match": "fuzzy"
+  },
+  "Thurrock::Stanford-le-Hope South": {
+    "gss": "E05002243",
+    "match": "fuzzy"
+  },
+  "Thurrock::Stifford": {
+    "gss": "E05002244",
+    "match": "fuzzy"
+  },
+  "Thurrock::The Homesteads & Stanford-le-Hope North": {
+    "gss": "E05002245",
+    "match": "fuzzy"
+  },
+  "Thurrock::Tilbury Riverside": {
+    "gss": "E05002246",
+    "match": "fuzzy"
+  },
+  "Thurrock::Tilbury St Chads": {
+    "gss": "E05002247",
+    "match": "exact"
+  },
+  "Thurrock::West Thurrock & South Stifford": {
+    "gss": "E05002248",
+    "match": "punct"
+  },
+  "Reading::Abbey": {
+    "gss": "E05013864",
+    "match": "suffix"
+  },
+  "Reading::Battle": {
+    "gss": "E05013865",
+    "match": "exact"
+  },
+  "Reading::Caversham": {
+    "gss": "E05013866",
+    "match": "exact"
+  },
+  "Reading::Caversham Heights": {
+    "gss": "E05013867",
+    "match": "exact"
+  },
+  "Reading::Church": {
+    "gss": "E05013868",
+    "match": "suffix"
+  },
+  "Reading::Coley": {
+    "gss": "E05013869",
+    "match": "exact"
+  },
+  "Reading::Emmer Green": {
+    "gss": "E05013870",
+    "match": "exact"
+  },
+  "Reading::Katesgrove": {
+    "gss": "E05013871",
+    "match": "exact"
+  },
+  "Reading::Kentwood": {
+    "gss": "E05013872",
+    "match": "exact"
+  },
+  "Reading::Norcot": {
+    "gss": "E05013873",
+    "match": "exact"
+  },
+  "Reading::Park": {
+    "gss": "E05013874",
+    "match": "suffix"
+  },
+  "Reading::Redlands": {
+    "gss": "E05013875",
+    "match": "exact"
+  },
+  "Reading::Southcote": {
+    "gss": "E05013876",
+    "match": "exact"
+  },
+  "Reading::Thames": {
+    "gss": "E05013877",
+    "match": "suffix"
+  },
+  "Reading::Tilehurst": {
+    "gss": "E05013878",
+    "match": "exact"
+  },
+  "Reading::Whitley": {
+    "gss": "E05013879",
+    "match": "exact"
+  },
+  "Wokingham::Barkham & Arborfield": {
+    "gss": "E05002372",
+    "match": "fuzzy"
+  },
+  "Wokingham::Bulmershe & Coronation": {
+    "gss": "E05002374",
+    "match": "fuzzy"
+  },
+  "Wokingham::Emmbrook": {
+    "gss": "E05002377",
+    "match": "exact"
+  },
+  "Wokingham::Evendons": {
+    "gss": "E05002378",
+    "match": "exact"
+  },
+  "Wokingham::Finchampstead": {
+    "gss": "E05002380",
+    "match": "fuzzy"
+  },
+  "Wokingham::Hawkedon": {
+    "gss": "E05002381",
+    "match": "exact"
+  },
+  "Wokingham::Hillside": {
+    "gss": "E05002382",
+    "match": "suffix"
+  },
+  "Wokingham::Loddon": {
+    "gss": "E05002384",
+    "match": "exact"
+  },
+  "Wokingham::Maiden Erlegh & Whitegates": {
+    "gss": "E05002385",
+    "match": "fuzzy"
+  },
+  "Wokingham::Norreys": {
+    "gss": "E05002386",
+    "match": "exact"
+  },
+  "Wokingham::Shinfield": {
+    "gss": "E05002389",
+    "match": "fuzzy"
+  },
+  "Wokingham::South Lake": {
+    "gss": "E05002391",
+    "match": "exact"
+  },
+  "Wokingham::Thames": {
+    "gss": "E05002390",
+    "match": "fuzzy"
+  },
+  "Wokingham::Twyford Ruscombe & Hurst": {
+    "gss": "E05002393",
+    "match": "fuzzy"
+  },
+  "Wokingham::Wescott": {
+    "gss": "E05002394",
+    "match": "exact"
+  },
+  "Wokingham::Winnersh": {
+    "gss": "E05002395",
+    "match": "exact"
+  },
+  "Wokingham::Wokingham Without": {
+    "gss": "E05002396",
+    "match": "exact"
+  },
+  "Milton Keynes::Bletchley Park & Fenny Stratford": {
+    "gss": "E05009407",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Bletchley South": {
+    "gss": "E05009408",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Bletchley West": {
+    "gss": "E05009408",
+    "match": "exact"
+  },
+  "Milton Keynes::Bradwell": {
+    "gss": "E05009409",
+    "match": "suffix"
+  },
+  "Milton Keynes::Broughton & Moulsoe": {
+    "gss": "E05009410",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Campbell Park & Willen": {
+    "gss": "E05009411",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Central Milton Keynes": {
+    "gss": "E05009412",
+    "match": "exact"
+  },
+  "Milton Keynes::Danesborough": {
+    "gss": "E05009413",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Furzton": {
+    "gss": "E05009422",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Great Linford": {
+    "gss": "E05009409",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Hanslope": {
+    "gss": "E05009416",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::New Bradwell": {
+    "gss": "E05009420",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Newport Pagnell": {
+    "gss": "E05009417",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Olney & Rural": {
+    "gss": "E05009418",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Ouzel Valley": {
+    "gss": "E05009424",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Stony Stratford": {
+    "gss": "E05009421",
+    "match": "exact"
+  },
+  "Milton Keynes::Tattenhoe": {
+    "gss": "E05009422",
+    "match": "exact"
+  },
+  "Milton Keynes::Walton": {
+    "gss": "E05009415",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Watling": {
+    "gss": "E05009414",
+    "match": "fuzzy"
+  },
+  "Milton Keynes::Wolverton": {
+    "gss": "E05009423",
+    "match": "exact"
+  },
+  "Milton Keynes::Woughton & Fishermead": {
+    "gss": "E05009424",
+    "match": "exact"
+  },
+  "Portsmouth::Baffins": {
+    "gss": "E05002441",
+    "match": "exact"
+  },
+  "Portsmouth::Central Southsea": {
+    "gss": "E05002442",
+    "match": "exact"
+  },
+  "Portsmouth::Charles Dickens": {
+    "gss": "E05002443",
+    "match": "exact"
+  },
+  "Portsmouth::Copnor": {
+    "gss": "E05002444",
+    "match": "exact"
+  },
+  "Portsmouth::Cosham": {
+    "gss": "E05002445",
+    "match": "exact"
+  },
+  "Portsmouth::Drayton & Farlington": {
+    "gss": "E05002446",
+    "match": "punct"
+  },
+  "Portsmouth::Eastney & Craneswater": {
+    "gss": "E05002447",
+    "match": "punct"
+  },
+  "Portsmouth::Fratton": {
+    "gss": "E05002448",
+    "match": "exact"
+  },
+  "Portsmouth::Hilsea": {
+    "gss": "E05002449",
+    "match": "exact"
+  },
+  "Portsmouth::Milton": {
+    "gss": "E05002450",
+    "match": "suffix"
+  },
+  "Portsmouth::Nelson": {
+    "gss": "E05002451",
+    "match": "suffix"
+  },
+  "Portsmouth::Paulsgrove": {
+    "gss": "E05002452",
+    "match": "exact"
+  },
+  "Portsmouth::St Jude": {
+    "gss": "E05002453",
+    "match": "exact"
+  },
+  "Portsmouth::St Thomas": {
+    "gss": "E05002454",
+    "match": "suffix"
+  },
+  "Southampton::Banister & Polygon": {
+    "gss": "E05002455",
+    "match": "fuzzy"
+  },
+  "Southampton::Bargate": {
+    "gss": "E05002455",
+    "match": "exact"
+  },
+  "Southampton::Bassett": {
+    "gss": "E05002456",
+    "match": "exact"
+  },
+  "Southampton::Bevois": {
+    "gss": "E05002457",
+    "match": "exact"
+  },
+  "Southampton::Bitterne Park": {
+    "gss": "E05002459",
+    "match": "exact"
+  },
+  "Southampton::Coxford": {
+    "gss": "E05002460",
+    "match": "exact"
+  },
+  "Southampton::Freemantle": {
+    "gss": "E05002461",
+    "match": "exact"
+  },
+  "Southampton::Harefield": {
+    "gss": "E05002462",
+    "match": "exact"
+  },
+  "Southampton::Millbrook": {
+    "gss": "E05002463",
+    "match": "exact"
+  },
+  "Southampton::Peartree": {
+    "gss": "E05002464",
+    "match": "suffix"
+  },
+  "Southampton::Portswood": {
+    "gss": "E05002465",
+    "match": "exact"
+  },
+  "Southampton::Redbridge": {
+    "gss": "E05002466",
+    "match": "exact"
+  },
+  "Southampton::Shirley": {
+    "gss": "E05002467",
+    "match": "exact"
+  },
+  "Southampton::Sholing": {
+    "gss": "E05002468",
+    "match": "exact"
+  },
+  "Southampton::Swaythling": {
+    "gss": "E05002469",
+    "match": "exact"
+  },
+  "Southampton::Thornhill": {
+    "gss": "E05002468",
+    "match": "fuzzy"
+  },
+  "Southampton::Woolston": {
+    "gss": "E05002470",
+    "match": "exact"
+  },
+  "Isle of Wight::Bembridge": {
+    "gss": "E05013359",
+    "match": "exact"
+  },
+  "Isle of Wight::Binstead and Fishbourne": {
+    "gss": "E05013360",
+    "match": "norm"
+  },
+  "Isle of Wight::Brading and St Helens": {
+    "gss": "E05013361",
+    "match": "norm"
+  },
+  "Isle of Wight::Brighstone, Calbourne and Shalfleet": {
+    "gss": "E05013362",
+    "match": "norm"
+  },
+  "Isle of Wight::Carisbrooke and Gunville": {
+    "gss": "E05013363",
+    "match": "norm"
+  },
+  "Isle of Wight::Central Rural": {
+    "gss": "E05013364",
+    "match": "exact"
+  },
+  "Isle of Wight::Chale, Niton and Shorwell": {
+    "gss": "E05013365",
+    "match": "norm"
+  },
+  "Isle of Wight::Cowes Medina": {
+    "gss": "E05013366",
+    "match": "exact"
+  },
+  "Isle of Wight::Cowes North": {
+    "gss": "E05013367",
+    "match": "exact"
+  },
+  "Isle of Wight::Cowes South and Northwood": {
+    "gss": "E05013368",
+    "match": "norm"
+  },
+  "Isle of Wight::Cowes West and Gurnard": {
+    "gss": "E05013369",
+    "match": "norm"
+  },
+  "Isle of Wight::East Cowes": {
+    "gss": "E05013370",
+    "match": "exact"
+  },
+  "Isle of Wight::Fairlee and Whippingham": {
+    "gss": "E05013371",
+    "match": "norm"
+  },
+  "Isle of Wight::Freshwater North and Yarmouth": {
+    "gss": "E05013372",
+    "match": "norm"
+  },
+  "Isle of Wight::Freshwater South": {
+    "gss": "E05013373",
+    "match": "exact"
+  },
+  "Isle of Wight::Haylands and Swanmore": {
+    "gss": "E05013374",
+    "match": "norm"
+  },
+  "Isle of Wight::Lake North": {
+    "gss": "E05013375",
+    "match": "exact"
+  },
+  "Isle of Wight::Lake South": {
+    "gss": "E05013376",
+    "match": "exact"
+  },
+  "Isle of Wight::Mountjoy and Shide": {
+    "gss": "E05013377",
+    "match": "norm"
+  },
+  "Isle of Wight::Nettlestone and Seaview": {
+    "gss": "E05013378",
+    "match": "norm"
+  },
+  "Isle of Wight::Newchurch, Havenstreet and Ashey": {
+    "gss": "E05013379",
+    "match": "norm"
+  },
+  "Isle of Wight::Newport Central": {
+    "gss": "E05013380",
+    "match": "exact"
+  },
+  "Isle of Wight::Newport West": {
+    "gss": "E05013381",
+    "match": "exact"
+  },
+  "Isle of Wight::Osborne": {
+    "gss": "E05013382",
+    "match": "exact"
+  },
+  "Isle of Wight::Pan and Barton": {
+    "gss": "E05013383",
+    "match": "norm"
+  },
+  "Isle of Wight::Parkhurst and Hunnyhill": {
+    "gss": "E05013384",
+    "match": "norm"
+  },
+  "Isle of Wight::Ryde Appley and Elmfield": {
+    "gss": "E05013385",
+    "match": "norm"
+  },
+  "Isle of Wight::Ryde Monktonmead": {
+    "gss": "E05013386",
+    "match": "exact"
+  },
+  "Isle of Wight::Ryde North West": {
+    "gss": "E05013387",
+    "match": "exact"
+  },
+  "Isle of Wight::Ryde South East": {
+    "gss": "E05013388",
+    "match": "exact"
+  },
+  "Isle of Wight::Ryde West": {
+    "gss": "E05013389",
+    "match": "exact"
+  },
+  "Isle of Wight::Sandown North": {
+    "gss": "E05013390",
+    "match": "exact"
+  },
+  "Isle of Wight::Sandown South": {
+    "gss": "E05013391",
+    "match": "exact"
+  },
+  "Isle of Wight::Shanklin Central": {
+    "gss": "E05013392",
+    "match": "exact"
+  },
+  "Isle of Wight::Shanklin South": {
+    "gss": "E05013393",
+    "match": "exact"
+  },
+  "Isle of Wight::Totland and Colwell": {
+    "gss": "E05013394",
+    "match": "norm"
+  },
+  "Isle of Wight::Ventnor and St Lawrence": {
+    "gss": "E05013395",
+    "match": "norm"
+  },
+  "Isle of Wight::Wootton Bridge": {
+    "gss": "E05013396",
+    "match": "exact"
+  },
+  "Isle of Wight::Wroxall, Lowtherville and Bonchurch": {
+    "gss": "E05013397",
+    "match": "norm"
+  },
+  "Cambridge::Abbey": {
+    "gss": "E05013050",
+    "match": "suffix"
+  },
+  "Cambridge::Arbury": {
+    "gss": "E05013051",
+    "match": "suffix"
+  },
+  "Cambridge::Castle": {
+    "gss": "E05013052",
+    "match": "suffix"
+  },
+  "Cambridge::Cherry Hinton": {
+    "gss": "E05013053",
+    "match": "exact"
+  },
+  "Cambridge::Coleridge": {
+    "gss": "E05013054",
+    "match": "exact"
+  },
+  "Cambridge::East Chesterton": {
+    "gss": "E05013055",
+    "match": "exact"
+  },
+  "Cambridge::King's Hedges": {
+    "gss": "E05013056",
+    "match": "exact"
+  },
+  "Cambridge::Market": {
+    "gss": "E05013057",
+    "match": "exact"
+  },
+  "Cambridge::Newnham": {
+    "gss": "E05013058",
+    "match": "suffix"
+  },
+  "Cambridge::Petersfield": {
+    "gss": "E05013059",
+    "match": "exact"
+  },
+  "Cambridge::Queen Edith's": {
+    "gss": "E05013060",
+    "match": "exact"
+  },
+  "Cambridge::Romsey": {
+    "gss": "E05013061",
+    "match": "exact"
+  },
+  "Cambridge::Trumpington": {
+    "gss": "E05013062",
+    "match": "exact"
+  },
+  "Cambridge::West Chesterton": {
+    "gss": "E05013063",
+    "match": "exact"
+  },
+  "Huntingdonshire::Alconbury": {
+    "gss": "E05011256",
+    "match": "exact"
+  },
+  "Huntingdonshire::Brampton": {
+    "gss": "E05011257",
+    "match": "suffix"
+  },
+  "Huntingdonshire::Buckden": {
+    "gss": "E05011258",
+    "match": "exact"
+  },
+  "Huntingdonshire::Fenstanton": {
+    "gss": "E05011259",
+    "match": "exact"
+  },
+  "Huntingdonshire::Godmanchester and Hemingford Abbots": {
+    "gss": "E05011260",
+    "match": "norm"
+  },
+  "Huntingdonshire::Great Paxton": {
+    "gss": "E05011261",
+    "match": "exact"
+  },
+  "Huntingdonshire::Great Staughton": {
+    "gss": "E05011262",
+    "match": "exact"
+  },
+  "Huntingdonshire::Hemingford Grey and Houghton": {
+    "gss": "E05011263",
+    "match": "norm"
+  },
+  "Huntingdonshire::Holywell-cum-Needingworth": {
+    "gss": "E05011264",
+    "match": "exact"
+  },
+  "Huntingdonshire::Huntingdon East": {
+    "gss": "E05011265",
+    "match": "exact"
+  },
+  "Huntingdonshire::Huntingdon North": {
+    "gss": "E05011266",
+    "match": "exact"
+  },
+  "Huntingdonshire::Kimbolton": {
+    "gss": "E05011267",
+    "match": "exact"
+  },
+  "Huntingdonshire::Ramsey": {
+    "gss": "E05011268",
+    "match": "exact"
+  },
+  "Huntingdonshire::Sawtry": {
+    "gss": "E05011276",
+    "match": "exact"
+  },
+  "Huntingdonshire::Somersham": {
+    "gss": "E05011277",
+    "match": "exact"
+  },
+  "Huntingdonshire::St Neots East": {
+    "gss": "E05011272",
+    "match": "exact"
+  },
+  "Huntingdonshire::St Neots Eatons": {
+    "gss": "E05011273",
+    "match": "exact"
+  },
+  "Huntingdonshire::St Neots Priory Park and Little Paxton": {
+    "gss": "E05011275",
+    "match": "norm"
+  },
+  "Huntingdonshire::St. Ives East": {
+    "gss": "E05011269",
+    "match": "norm"
+  },
+  "Huntingdonshire::St. Ives South": {
+    "gss": "E05011270",
+    "match": "norm"
+  },
+  "Huntingdonshire::St. Ives West": {
+    "gss": "E05011271",
+    "match": "norm"
+  },
+  "Huntingdonshire::St. Neots Eynesbury": {
+    "gss": "E05011274",
+    "match": "norm"
+  },
+  "Huntingdonshire::Stilton, Folksworth and Washingley": {
+    "gss": "E05011278",
+    "match": "norm"
+  },
+  "Huntingdonshire::The Stukeleys": {
+    "gss": "E05011279",
+    "match": "exact"
+  },
+  "Huntingdonshire::Warboys": {
+    "gss": "E05011280",
+    "match": "exact"
+  },
+  "Huntingdonshire::Yaxley": {
+    "gss": "E05011281",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Balsham": {
+    "gss": "E05011282",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Bar Hill": {
+    "gss": "E05011283",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Barrington": {
+    "gss": "E05011284",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Bassingbourn": {
+    "gss": "E05011285",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Caldecote": {
+    "gss": "E05011286",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Cambourne": {
+    "gss": "E05014031",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Caxton & Papworth": {
+    "gss": "E05014032",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Cottenham": {
+    "gss": "E05011289",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Duxford": {
+    "gss": "E05014169",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Fen Ditton & Fulbourn": {
+    "gss": "E05011291",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Foxton": {
+    "gss": "E05011292",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Gamlingay": {
+    "gss": "E05011293",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Girton": {
+    "gss": "E05011294",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Hardwick": {
+    "gss": "E05011295",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Harston & Comberton": {
+    "gss": "E05011296",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Histon & Impington": {
+    "gss": "E05011297",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Linton": {
+    "gss": "E05011298",
+    "match": "suffix"
+  },
+  "South Cambridgeshire::Longstanton": {
+    "gss": "E05013880",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Melbourn": {
+    "gss": "E05011300",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Milton & Waterbeach": {
+    "gss": "E05011301",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Over & Willingham": {
+    "gss": "E05013881",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Sawston": {
+    "gss": "E05014170",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Shelford": {
+    "gss": "E05011304",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Swavesey": {
+    "gss": "E05011305",
+    "match": "exact"
+  },
+  "South Cambridgeshire::The Mordens": {
+    "gss": "E05011306",
+    "match": "exact"
+  },
+  "South Cambridgeshire::Whittlesford": {
+    "gss": "E05011307",
+    "match": "exact"
+  },
+  "Exeter::Alphington": {
+    "gss": "E05011011",
+    "match": "exact"
+  },
+  "Exeter::Duryard & St. James": {
+    "gss": "E05011012",
+    "match": "norm"
+  },
+  "Exeter::Exwick": {
+    "gss": "E05011013",
+    "match": "exact"
+  },
+  "Exeter::Heavitree": {
+    "gss": "E05011014",
+    "match": "exact"
+  },
+  "Exeter::Mincinglake & Whipton": {
+    "gss": "E05011015",
+    "match": "punct"
+  },
+  "Exeter::Newtown & St. Leonard's": {
+    "gss": "E05011016",
+    "match": "norm"
+  },
+  "Exeter::Pennsylvania": {
+    "gss": "E05011017",
+    "match": "exact"
+  },
+  "Exeter::Pinhoe": {
+    "gss": "E05011018",
+    "match": "exact"
+  },
+  "Exeter::Priory": {
+    "gss": "E05011019",
+    "match": "suffix"
+  },
+  "Exeter::St. David's": {
+    "gss": "E05011020",
+    "match": "norm"
+  },
+  "Exeter::St. Loye's": {
+    "gss": "E05011021",
+    "match": "norm"
+  },
+  "Exeter::St. Thomas": {
+    "gss": "E05011022",
+    "match": "norm"
+  },
+  "Exeter::Topsham": {
+    "gss": "E05011023",
+    "match": "exact"
+  },
+  "Hastings::Ashdown": {
+    "gss": "E05011201",
+    "match": "exact"
+  },
+  "Hastings::Baird": {
+    "gss": "E05011202",
+    "match": "exact"
+  },
+  "Hastings::Braybrooke": {
+    "gss": "E05011203",
+    "match": "exact"
+  },
+  "Hastings::Castle": {
+    "gss": "E05011204",
+    "match": "suffix"
+  },
+  "Hastings::Central St Leonards": {
+    "gss": "E05011205",
+    "match": "exact"
+  },
+  "Hastings::Conquest": {
+    "gss": "E05011206",
+    "match": "exact"
+  },
+  "Hastings::Gensing": {
+    "gss": "E05011207",
+    "match": "exact"
+  },
+  "Hastings::Hollington": {
+    "gss": "E05011208",
+    "match": "exact"
+  },
+  "Hastings::Maze Hill": {
+    "gss": "E05011209",
+    "match": "exact"
+  },
+  "Hastings::Old Hastings": {
+    "gss": "E05011210",
+    "match": "exact"
+  },
+  "Hastings::Ore": {
+    "gss": "E05011211",
+    "match": "exact"
+  },
+  "Hastings::Silverhill": {
+    "gss": "E05011213",
+    "match": "exact"
+  },
+  "Hastings::St Helens": {
+    "gss": "E05011212",
+    "match": "suffix"
+  },
+  "Hastings::Tressell": {
+    "gss": "E05011214",
+    "match": "exact"
+  },
+  "Hastings::West St Leonards": {
+    "gss": "E05011215",
+    "match": "exact"
+  },
+  "Hastings::Wishing Tree": {
+    "gss": "E05011216",
+    "match": "exact"
+  },
+  "Basildon::Billericay East": {
+    "gss": "E05004021",
+    "match": "exact"
+  },
+  "Basildon::Billericay West": {
+    "gss": "E05004022",
+    "match": "exact"
+  },
+  "Basildon::Burstead": {
+    "gss": "E05004023",
+    "match": "exact"
+  },
+  "Basildon::Castledon & Crouch": {
+    "gss": "E05004034",
+    "match": "fuzzy"
+  },
+  "Basildon::Fryerns": {
+    "gss": "E05004025",
+    "match": "exact"
+  },
+  "Basildon::Laindon Park": {
+    "gss": "E05004026",
+    "match": "exact"
+  },
+  "Basildon::Langdon Hills": {
+    "gss": "E05004027",
+    "match": "exact"
+  },
+  "Basildon::Lee Chapel North": {
+    "gss": "E05004028",
+    "match": "exact"
+  },
+  "Basildon::Nethermayne": {
+    "gss": "E05004029",
+    "match": "exact"
+  },
+  "Basildon::Pitsea North West": {
+    "gss": "E05004030",
+    "match": "exact"
+  },
+  "Basildon::Pitsea South East": {
+    "gss": "E05004031",
+    "match": "exact"
+  },
+  "Basildon::St Martin's": {
+    "gss": "E05004032",
+    "match": "suffix"
+  },
+  "Basildon::Wickford North": {
+    "gss": "E05004035",
+    "match": "exact"
+  },
+  "Basildon::Wickford Park": {
+    "gss": "E05004036",
+    "match": "exact"
+  },
+  "Brentwood::Blackmore & Doddinghurst": {
+    "gss": "E05004070",
+    "match": "fuzzy"
+  },
+  "Brentwood::Brentwood North": {
+    "gss": "E05004067",
+    "match": "exact"
+  },
+  "Brentwood::Brentwood South": {
+    "gss": "E05004068",
+    "match": "exact"
+  },
+  "Brentwood::Brentwood West": {
+    "gss": "E05004069",
+    "match": "exact"
+  },
+  "Brentwood::Brizes, Stondon Massey & South Weald": {
+    "gss": "E05004079",
+    "match": "fuzzy"
+  },
+  "Brentwood::Herongate, Ingrave & West Horndon": {
+    "gss": "E05004071",
+    "match": "punct"
+  },
+  "Brentwood::Hutton East": {
+    "gss": "E05004073",
+    "match": "exact"
+  },
+  "Brentwood::Hutton North": {
+    "gss": "E05004074",
+    "match": "exact"
+  },
+  "Brentwood::Hutton South": {
+    "gss": "E05004075",
+    "match": "exact"
+  },
+  "Brentwood::Ingatestone, Fryerning & Mountnessing": {
+    "gss": "E05004076",
+    "match": "punct"
+  },
+  "Brentwood::Pilgrims Hatch": {
+    "gss": "E05004077",
+    "match": "exact"
+  },
+  "Brentwood::Shenfield": {
+    "gss": "E05004078",
+    "match": "exact"
+  },
+  "Brentwood::Warley": {
+    "gss": "E05004081",
+    "match": "suffix"
+  },
+  "Colchester::Berechurch": {
+    "gss": "E05010827",
+    "match": "exact"
+  },
+  "Colchester::Castle": {
+    "gss": "E05010828",
+    "match": "suffix"
+  },
+  "Colchester::Greenstead": {
+    "gss": "E05010829",
+    "match": "exact"
+  },
+  "Colchester::Highwoods": {
+    "gss": "E05010830",
+    "match": "exact"
+  },
+  "Colchester::Lexden & Braiswick": {
+    "gss": "E05010831",
+    "match": "punct"
+  },
+  "Colchester::Marks Tey & Layer": {
+    "gss": "E05010832",
+    "match": "punct"
+  },
+  "Colchester::Mersea & Pyefleet": {
+    "gss": "E05010833",
+    "match": "punct"
+  },
+  "Colchester::Mile End": {
+    "gss": "E05010834",
+    "match": "suffix"
+  },
+  "Colchester::New Town & Christ Church": {
+    "gss": "E05010835",
+    "match": "punct"
+  },
+  "Colchester::Old Heath & The Hythe": {
+    "gss": "E05010836",
+    "match": "punct"
+  },
+  "Colchester::Prettygate": {
+    "gss": "E05010837",
+    "match": "exact"
+  },
+  "Colchester::Rural North": {
+    "gss": "E05010838",
+    "match": "exact"
+  },
+  "Colchester::Shrub End": {
+    "gss": "E05010840",
+    "match": "exact"
+  },
+  "Colchester::St Anne's & St John's": {
+    "gss": "E05010839",
+    "match": "punct"
+  },
+  "Colchester::Stanway": {
+    "gss": "E05010841",
+    "match": "exact"
+  },
+  "Colchester::Tiptree": {
+    "gss": "E05010842",
+    "match": "exact"
+  },
+  "Colchester::Wivenhoe": {
+    "gss": "E05010843",
+    "match": "exact"
+  },
+  "Harlow::Bush Fair": {
+    "gss": "E05004179",
+    "match": "exact"
+  },
+  "Harlow::Church Langley North and Newhall": {
+    "gss": "E05004180",
+    "match": "fuzzy"
+  },
+  "Harlow::Church Langley South and Potter Street": {
+    "gss": "E05004186",
+    "match": "fuzzy"
+  },
+  "Harlow::Great Parndon": {
+    "gss": "E05004181",
+    "match": "exact"
+  },
+  "Harlow::Latton Bush and Stewards": {
+    "gss": "E05004179",
+    "match": "fuzzy"
+  },
+  "Harlow::Little Parndon and Town Centre": {
+    "gss": "E05004183",
+    "match": "fuzzy"
+  },
+  "Harlow::Mark Hall": {
+    "gss": "E05004184",
+    "match": "exact"
+  },
+  "Harlow::Netteswell": {
+    "gss": "E05004185",
+    "match": "exact"
+  },
+  "Harlow::Old Harlow": {
+    "gss": "E05004186",
+    "match": "exact"
+  },
+  "Harlow::Passmores": {
+    "gss": "E05004188",
+    "match": "fuzzy"
+  },
+  "Harlow::Sumners and Kingsmoor": {
+    "gss": "E05004188",
+    "match": "exact"
+  },
+  "Rochford::Downhall & Rawreth": {
+    "gss": "E05010844",
+    "match": "punct"
+  },
+  "Rochford::Foulness & The Wakerings": {
+    "gss": "E05010845",
+    "match": "punct"
+  },
+  "Rochford::Hawkwell East": {
+    "gss": "E05010846",
+    "match": "exact"
+  },
+  "Rochford::Hawkwell West": {
+    "gss": "E05010847",
+    "match": "exact"
+  },
+  "Rochford::Hockley": {
+    "gss": "E05010848",
+    "match": "exact"
+  },
+  "Rochford::Hockley & Asgingdon": {
+    "gss": "E05010849",
+    "match": "fuzzy"
+  },
+  "Rochford::Hullbridge": {
+    "gss": "E05010850",
+    "match": "exact"
+  },
+  "Rochford::Lodge": {
+    "gss": "E05010851",
+    "match": "exact"
+  },
+  "Rochford::Roche North & Rural": {
+    "gss": "E05010852",
+    "match": "punct"
+  },
+  "Rochford::Roche South": {
+    "gss": "E05010853",
+    "match": "exact"
+  },
+  "Rochford::Sweyne Park & Grange": {
+    "gss": "E05010854",
+    "match": "punct"
+  },
+  "Rochford::Trinity": {
+    "gss": "E05010855",
+    "match": "suffix"
+  },
+  "Rochford::Wheatley": {
+    "gss": "E05010856",
+    "match": "suffix"
+  },
+  "Cheltenham::All Saints": {
+    "gss": "E05004288",
+    "match": "exact"
+  },
+  "Cheltenham::Battledown": {
+    "gss": "E05004289",
+    "match": "exact"
+  },
+  "Cheltenham::Benhall, the Reddings and Fiddler's Green": {
+    "gss": "E05004290",
+    "match": "fuzzy"
+  },
+  "Cheltenham::Charlton Kings": {
+    "gss": "E05004291",
+    "match": "exact"
+  },
+  "Cheltenham::Charlton Park": {
+    "gss": "E05004292",
+    "match": "exact"
+  },
+  "Cheltenham::College": {
+    "gss": "E05004293",
+    "match": "suffix"
+  },
+  "Cheltenham::Hesters Way": {
+    "gss": "E05004294",
+    "match": "exact"
+  },
+  "Cheltenham::Lansdown": {
+    "gss": "E05004295",
+    "match": "suffix"
+  },
+  "Cheltenham::Leckhampton": {
+    "gss": "E05004296",
+    "match": "exact"
+  },
+  "Cheltenham::Oakley": {
+    "gss": "E05004297",
+    "match": "suffix"
+  },
+  "Cheltenham::Park": {
+    "gss": "E05004298",
+    "match": "suffix"
+  },
+  "Cheltenham::Pittville": {
+    "gss": "E05004299",
+    "match": "exact"
+  },
+  "Cheltenham::Prestbury": {
+    "gss": "E05004300",
+    "match": "suffix"
+  },
+  "Cheltenham::Springbank": {
+    "gss": "E05004304",
+    "match": "exact"
+  },
+  "Cheltenham::St Mark's": {
+    "gss": "E05004301",
+    "match": "suffix"
+  },
+  "Cheltenham::St Paul's": {
+    "gss": "E05004302",
+    "match": "suffix"
+  },
+  "Cheltenham::St Peter's": {
+    "gss": "E05004303",
+    "match": "suffix"
+  },
+  "Cheltenham::Swindon Village": {
+    "gss": "E05004305",
+    "match": "exact"
+  },
+  "Cheltenham::Up Hatherley": {
+    "gss": "E05004306",
+    "match": "exact"
+  },
+  "Cheltenham::Warden Hill": {
+    "gss": "E05004307",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Basing & Upton Grey": {
+    "gss": "E05013078",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Bramley": {
+    "gss": "E05013079",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Brighton Hill": {
+    "gss": "E05013080",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Brookvale & Kings Furlong": {
+    "gss": "E05013081",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Chineham": {
+    "gss": "E05013082",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Eastrop & Grove": {
+    "gss": "E05013083",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Evingar": {
+    "gss": "E05013084",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Hatch Warren & Beggarwood": {
+    "gss": "E05013085",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Kempshott & Buckskin": {
+    "gss": "E05013086",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Norden": {
+    "gss": "E05013087",
+    "match": "suffix"
+  },
+  "Basingstoke and Deane::Oakley & The Candovers": {
+    "gss": "E05013088",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Popley": {
+    "gss": "E05013089",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Sherborne St John & Rooksdown": {
+    "gss": "E05013090",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::South Ham": {
+    "gss": "E05013091",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Tadley & Pamber": {
+    "gss": "E05013092",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Tadley North, Kingsclere & Baughurst": {
+    "gss": "E05013093",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Whitchurch, Overton & Laverstoke": {
+    "gss": "E05013094",
+    "match": "exact"
+  },
+  "Basingstoke and Deane::Winklebury & Manydown": {
+    "gss": "E05013095",
+    "match": "exact"
+  },
+  "Eastleigh::Bishopstoke": {
+    "gss": "E05011187",
+    "match": "exact"
+  },
+  "Eastleigh::Botley": {
+    "gss": "E05011188",
+    "match": "exact"
+  },
+  "Eastleigh::Burlesdon & Hound North": {
+    "gss": "E05011189",
+    "match": "fuzzy"
+  },
+  "Eastleigh::Chandler's Ford": {
+    "gss": "E05011190",
+    "match": "exact"
+  },
+  "Eastleigh::Eastleigh Central": {
+    "gss": "E05011191",
+    "match": "exact"
+  },
+  "Eastleigh::Eastleigh North": {
+    "gss": "E05011192",
+    "match": "exact"
+  },
+  "Eastleigh::Eastleigh South": {
+    "gss": "E05011193",
+    "match": "exact"
+  },
+  "Eastleigh::Fair Oak & Horton Heath": {
+    "gss": "E05011194",
+    "match": "exact"
+  },
+  "Eastleigh::Hamble & Netley": {
+    "gss": "E05011195",
+    "match": "exact"
+  },
+  "Eastleigh::Hedge End North": {
+    "gss": "E05011196",
+    "match": "exact"
+  },
+  "Eastleigh::Hedge End South": {
+    "gss": "E05011197",
+    "match": "exact"
+  },
+  "Eastleigh::Hittingbury": {
+    "gss": "E05011198",
+    "match": "fuzzy"
+  },
+  "Eastleigh::West End North": {
+    "gss": "E05011199",
+    "match": "exact"
+  },
+  "Eastleigh::West End South": {
+    "gss": "E05011200",
+    "match": "exact"
+  },
+  "Fareham::Avenue": {
+    "gss": "E05004520",
+    "match": "fuzzy"
+  },
+  "Fareham::Fareham Park": {
+    "gss": "E05004517",
+    "match": "fuzzy"
+  },
+  "Fareham::Fareham Town": {
+    "gss": "E05004516",
+    "match": "fuzzy"
+  },
+  "Fareham::Fort Fareham": {
+    "gss": "E05004519",
+    "match": "fuzzy"
+  },
+  "Fareham::Hill Head": {
+    "gss": "E05004521",
+    "match": "exact"
+  },
+  "Fareham::Hook-with-Warsash": {
+    "gss": "E05004530",
+    "match": "fuzzy"
+  },
+  "Fareham::Locks Heath": {
+    "gss": "E05004522",
+    "match": "exact"
+  },
+  "Fareham::Park Gate": {
+    "gss": "E05004523",
+    "match": "exact"
+  },
+  "Fareham::Portchester Castle": {
+    "gss": "E05004524",
+    "match": "fuzzy"
+  },
+  "Fareham::Portchester Wicor": {
+    "gss": "E05004525",
+    "match": "fuzzy"
+  },
+  "Fareham::Sarisbury & Whiteley": {
+    "gss": "E05004526",
+    "match": "fuzzy"
+  },
+  "Fareham::Stubbington": {
+    "gss": "E05004527",
+    "match": "exact"
+  },
+  "Fareham::Titchfield": {
+    "gss": "E05004528",
+    "match": "exact"
+  },
+  "Fareham::Titchfield Common": {
+    "gss": "E05004529",
+    "match": "exact"
+  },
+  "Fareham::Uplands & Funtley": {
+    "gss": "E05004518",
+    "match": "fuzzy"
+  },
+  "Fareham::Wallington & Downend": {
+    "gss": "E05004523",
+    "match": "fuzzy"
+  },
+  "Gosport::Alverstoke": {
+    "gss": "E05014138",
+    "match": "exact"
+  },
+  "Gosport::Anglesey": {
+    "gss": "E05014139",
+    "match": "suffix"
+  },
+  "Gosport::Bridgemary": {
+    "gss": "E05014140",
+    "match": "exact"
+  },
+  "Gosport::Brockhurst & Privett": {
+    "gss": "E05014141",
+    "match": "exact"
+  },
+  "Gosport::Elson": {
+    "gss": "E05014142",
+    "match": "exact"
+  },
+  "Gosport::Forton": {
+    "gss": "E05014143",
+    "match": "exact"
+  },
+  "Gosport::Grange & Alver Valley": {
+    "gss": "E05014144",
+    "match": "exact"
+  },
+  "Gosport::Harbourside & Town": {
+    "gss": "E05014145",
+    "match": "exact"
+  },
+  "Gosport::Hardway": {
+    "gss": "E05014146",
+    "match": "exact"
+  },
+  "Gosport::Lee East": {
+    "gss": "E05014147",
+    "match": "exact"
+  },
+  "Gosport::Lee West": {
+    "gss": "E05014148",
+    "match": "exact"
+  },
+  "Gosport::Leesland & Newtown": {
+    "gss": "E05014149",
+    "match": "exact"
+  },
+  "Gosport::Peel Common": {
+    "gss": "E05014150",
+    "match": "exact"
+  },
+  "Gosport::Rowner & Holbrook": {
+    "gss": "E05014151",
+    "match": "exact"
+  },
+  "Hart::Blackwater & Hawley": {
+    "gss": "E05009352",
+    "match": "punct"
+  },
+  "Hart::Crookham East": {
+    "gss": "E05009353",
+    "match": "exact"
+  },
+  "Hart::Crookham West & Ewshot": {
+    "gss": "E05009354",
+    "match": "punct"
+  },
+  "Hart::Fleet Central": {
+    "gss": "E05009355",
+    "match": "exact"
+  },
+  "Hart::Fleet East": {
+    "gss": "E05009356",
+    "match": "exact"
+  },
+  "Hart::Fleet West": {
+    "gss": "E05009357",
+    "match": "exact"
+  },
+  "Hart::Hartley Wintney": {
+    "gss": "E05009358",
+    "match": "exact"
+  },
+  "Hart::Hook": {
+    "gss": "E05009359",
+    "match": "exact"
+  },
+  "Hart::Odiham": {
+    "gss": "E05009360",
+    "match": "exact"
+  },
+  "Hart::Yateley East": {
+    "gss": "E05009361",
+    "match": "exact"
+  },
+  "Hart::Yateley West": {
+    "gss": "E05009362",
+    "match": "exact"
+  },
+  "Havant::Bedhampton": {
+    "gss": "E05004568",
+    "match": "exact"
+  },
+  "Havant::Cowplain": {
+    "gss": "E05004570",
+    "match": "exact"
+  },
+  "Havant::Emsworth": {
+    "gss": "E05004571",
+    "match": "exact"
+  },
+  "Havant::Hart Plain": {
+    "gss": "E05004572",
+    "match": "exact"
+  },
+  "Havant::Havant St Faith's": {
+    "gss": "E05004576",
+    "match": "fuzzy"
+  },
+  "Havant::Hayling East": {
+    "gss": "E05004573",
+    "match": "exact"
+  },
+  "Havant::Hayling West": {
+    "gss": "E05004574",
+    "match": "exact"
+  },
+  "Havant::Leigh Park Central & West Leigh": {
+    "gss": "E05004572",
+    "match": "fuzzy"
+  },
+  "Havant::Leigh Park Hermitage": {
+    "gss": "E05004567",
+    "match": "fuzzy"
+  },
+  "Havant::Purbrook": {
+    "gss": "E05004575",
+    "match": "exact"
+  },
+  "Havant::Stakes": {
+    "gss": "E05004577",
+    "match": "exact"
+  },
+  "Havant::Waterloo": {
+    "gss": "E05004579",
+    "match": "suffix"
+  },
+  "Rushmoor::Aldershot Park": {
+    "gss": "E05008989",
+    "match": "exact"
+  },
+  "Rushmoor::Cherrywood": {
+    "gss": "E05008990",
+    "match": "exact"
+  },
+  "Rushmoor::Cove & Southwood": {
+    "gss": "E05008991",
+    "match": "punct"
+  },
+  "Rushmoor::Empress": {
+    "gss": "E05008992",
+    "match": "exact"
+  },
+  "Rushmoor::Fernhill": {
+    "gss": "E05008993",
+    "match": "suffix"
+  },
+  "Rushmoor::Knellwood": {
+    "gss": "E05008994",
+    "match": "exact"
+  },
+  "Rushmoor::Manor Park": {
+    "gss": "E05008995",
+    "match": "suffix"
+  },
+  "Rushmoor::North Town": {
+    "gss": "E05008996",
+    "match": "exact"
+  },
+  "Rushmoor::Rowhill": {
+    "gss": "E05008997",
+    "match": "exact"
+  },
+  "Rushmoor::St John's": {
+    "gss": "E05008998",
+    "match": "suffix"
+  },
+  "Rushmoor::St Mark's": {
+    "gss": "E05008999",
+    "match": "suffix"
+  },
+  "Rushmoor::Wellington": {
+    "gss": "E05009000",
+    "match": "suffix"
+  },
+  "Rushmoor::West Heath": {
+    "gss": "E05009001",
+    "match": "suffix"
+  },
+  "Winchester::Alresford & Itchen Valley": {
+    "gss": "E05010995",
+    "match": "punct"
+  },
+  "Winchester::Badger Farm & Oliver's Battery": {
+    "gss": "E05010996",
+    "match": "punct"
+  },
+  "Winchester::Bishops Waltham": {
+    "gss": "E05010997",
+    "match": "norm"
+  },
+  "Winchester::Central Meon Valley": {
+    "gss": "E05010998",
+    "match": "exact"
+  },
+  "Winchester::Colden Common & Twyford": {
+    "gss": "E05010999",
+    "match": "punct"
+  },
+  "Winchester::Denmead": {
+    "gss": "E05011000",
+    "match": "exact"
+  },
+  "Winchester::Southwick & Wickham": {
+    "gss": "E05011006",
+    "match": "punct"
+  },
+  "Winchester::St Barnabas": {
+    "gss": "E05011001",
+    "match": "exact"
+  },
+  "Winchester::St Bartholomew": {
+    "gss": "E05011002",
+    "match": "suffix"
+  },
+  "Winchester::St Michael": {
+    "gss": "E05011004",
+    "match": "suffix"
+  },
+  "Winchester::St Paul": {
+    "gss": "E05011005",
+    "match": "suffix"
+  },
+  "Winchester::The Worthys": {
+    "gss": "E05011007",
+    "match": "exact"
+  },
+  "Winchester::Upper Meon Valley": {
+    "gss": "E05011008",
+    "match": "exact"
+  },
+  "Winchester::Whiteley & Shedfield": {
+    "gss": "E05011009",
+    "match": "punct"
+  },
+  "Winchester::Wonston & Micheldever": {
+    "gss": "E05011010",
+    "match": "punct"
+  },
+  "Broxbourne::Broxbourne and Hoddesdon South": {
+    "gss": "E05009002",
+    "match": "exact"
+  },
+  "Broxbourne::Cheshunt North": {
+    "gss": "E05009003",
+    "match": "exact"
+  },
+  "Broxbourne::Cheshunt South and Theobalds": {
+    "gss": "E05009004",
+    "match": "exact"
+  },
+  "Broxbourne::Flamstead End": {
+    "gss": "E05009005",
+    "match": "exact"
+  },
+  "Broxbourne::Goffs Oak": {
+    "gss": "E05009006",
+    "match": "exact"
+  },
+  "Broxbourne::Hoddesdon North": {
+    "gss": "E05009007",
+    "match": "exact"
+  },
+  "Broxbourne::Hoddesdon Town and Rye Park": {
+    "gss": "E05009008",
+    "match": "exact"
+  },
+  "Broxbourne::Rosedale and Bury Green": {
+    "gss": "E05009009",
+    "match": "exact"
+  },
+  "Broxbourne::Waltham Cross": {
+    "gss": "E05009010",
+    "match": "exact"
+  },
+  "Broxbourne::Wormley and Turnford": {
+    "gss": "E05009011",
+    "match": "exact"
+  },
+  "Three Rivers::Abbots Langley & Bedmond": {
+    "gss": "E05009425",
+    "match": "exact"
+  },
+  "Three Rivers::Carpenders Park": {
+    "gss": "E05009426",
+    "match": "exact"
+  },
+  "Three Rivers::Chorleywood North & Sarratt": {
+    "gss": "E05009427",
+    "match": "exact"
+  },
+  "Three Rivers::Chorleywood South & Maple Cross": {
+    "gss": "E05009428",
+    "match": "exact"
+  },
+  "Three Rivers::Dickinsons": {
+    "gss": "E05009429",
+    "match": "exact"
+  },
+  "Three Rivers::Durrants": {
+    "gss": "E05009430",
+    "match": "exact"
+  },
+  "Three Rivers::Gade Valley": {
+    "gss": "E05009431",
+    "match": "exact"
+  },
+  "Three Rivers::Leavesden": {
+    "gss": "E05009432",
+    "match": "exact"
+  },
+  "Three Rivers::Moor Park & Eastbury": {
+    "gss": "E05009433",
+    "match": "exact"
+  },
+  "Three Rivers::Oxhey Hall & Hayling": {
+    "gss": "E05009434",
+    "match": "exact"
+  },
+  "Three Rivers::Penn & Mill End": {
+    "gss": "E05009435",
+    "match": "exact"
+  },
+  "Three Rivers::Rickmansworth Town": {
+    "gss": "E05009436",
+    "match": "exact"
+  },
+  "Three Rivers::South Oxhey": {
+    "gss": "E05009437",
+    "match": "exact"
+  },
+  "Watford::Callowland": {
+    "gss": "E05011046",
+    "match": "exact"
+  },
+  "Watford::Central": {
+    "gss": "E05011047",
+    "match": "suffix"
+  },
+  "Watford::Holywell": {
+    "gss": "E05011048",
+    "match": "suffix"
+  },
+  "Watford::Leggatts": {
+    "gss": "E05011049",
+    "match": "exact"
+  },
+  "Watford::Meriden": {
+    "gss": "E05011050",
+    "match": "suffix"
+  },
+  "Watford::Nascot": {
+    "gss": "E05011051",
+    "match": "exact"
+  },
+  "Watford::Oxhey": {
+    "gss": "E05011052",
+    "match": "exact"
+  },
+  "Watford::Park": {
+    "gss": "E05011053",
+    "match": "suffix"
+  },
+  "Watford::Stanborough": {
+    "gss": "E05011054",
+    "match": "exact"
+  },
+  "Watford::Tudor": {
+    "gss": "E05011055",
+    "match": "suffix"
+  },
+  "Watford::Vicarage": {
+    "gss": "E05011056",
+    "match": "exact"
+  },
+  "Watford::Woodside": {
+    "gss": "E05011057",
+    "match": "suffix"
+  },
+  "Tunbridge Wells::Cranbrook, Sissinghurst & Frittenden": {
+    "gss": "E05005130",
+    "match": "fuzzy"
+  },
+  "Tunbridge Wells::Culverden": {
+    "gss": "E05005134",
+    "match": "exact"
+  },
+  "Tunbridge Wells::Hawkhurst, Sandhurst & Benenden": {
+    "gss": "E05005137",
+    "match": "fuzzy"
+  },
+  "Tunbridge Wells::Paddock Wood": {
+    "gss": "E05005138",
+    "match": "fuzzy"
+  },
+  "Tunbridge Wells::Pantiles": {
+    "gss": "E05005140",
+    "match": "fuzzy"
+  },
+  "Tunbridge Wells::Park": {
+    "gss": "E05005141",
+    "match": "suffix"
+  },
+  "Tunbridge Wells::Pembury & Capel": {
+    "gss": "E05005142",
+    "match": "fuzzy"
+  },
+  "Tunbridge Wells::Rural Tunbridge Wells": {
+    "gss": "E05005141",
+    "match": "fuzzy"
+  },
+  "Tunbridge Wells::Rusthall & Speldhurst": {
+    "gss": "E05005143",
+    "match": "fuzzy"
+  },
+  "Tunbridge Wells::Sherwood": {
+    "gss": "E05005146",
+    "match": "suffix"
+  },
+  "Tunbridge Wells::Southborough & Bidborough": {
+    "gss": "E05005148",
+    "match": "fuzzy"
+  },
+  "Tunbridge Wells::St James": {
+    "gss": "E05005144",
+    "match": "norm"
+  },
+  "Tunbridge Wells::St John's": {
+    "gss": "E05005145",
+    "match": "suffix"
+  },
+  "Burnley::Bank Hall": {
+    "gss": "E05005150",
+    "match": "exact"
+  },
+  "Burnley::Briercliffe": {
+    "gss": "E05005151",
+    "match": "exact"
+  },
+  "Burnley::Brunshaw": {
+    "gss": "E05005152",
+    "match": "exact"
+  },
+  "Burnley::Cliviger with Worsthorne": {
+    "gss": "E05005153",
+    "match": "exact"
+  },
+  "Burnley::Coalclough with Deerplay": {
+    "gss": "E05005154",
+    "match": "fuzzy"
+  },
+  "Burnley::Daneshouse with Stoneyholme": {
+    "gss": "E05005155",
+    "match": "exact"
+  },
+  "Burnley::Gannow": {
+    "gss": "E05005156",
+    "match": "exact"
+  },
+  "Burnley::Gawthorpe": {
+    "gss": "E05005157",
+    "match": "exact"
+  },
+  "Burnley::Hapton with Park": {
+    "gss": "E05005158",
+    "match": "exact"
+  },
+  "Burnley::Lanehead": {
+    "gss": "E05005159",
+    "match": "exact"
+  },
+  "Burnley::Queensgate": {
+    "gss": "E05005160",
+    "match": "exact"
+  },
+  "Burnley::Rosegrove with Lowerhouse": {
+    "gss": "E05005161",
+    "match": "exact"
+  },
+  "Burnley::Rosehill with Burnley Wood": {
+    "gss": "E05005162",
+    "match": "exact"
+  },
+  "Burnley::Trinity": {
+    "gss": "E05005163",
+    "match": "suffix"
+  },
+  "Burnley::Whittlefield with Ightenhill": {
+    "gss": "E05005164",
+    "match": "exact"
+  },
+  "Chorley::Adlington & Anderton": {
+    "gss": "E05013064",
+    "match": "exact"
+  },
+  "Chorley::Buckshaw & Whittle": {
+    "gss": "E05013065",
+    "match": "exact"
+  },
+  "Chorley::Chorley East": {
+    "gss": "E05013066",
+    "match": "exact"
+  },
+  "Chorley::Chorley North & Astley": {
+    "gss": "E05013069",
+    "match": "exact"
+  },
+  "Chorley::Chorley North East": {
+    "gss": "E05013067",
+    "match": "exact"
+  },
+  "Chorley::Chorley North West": {
+    "gss": "E05013068",
+    "match": "exact"
+  },
+  "Chorley::Chorley South East & Heath Charnock": {
+    "gss": "E05013070",
+    "match": "exact"
+  },
+  "Chorley::Chorley South West": {
+    "gss": "E05013071",
+    "match": "exact"
+  },
+  "Chorley::Clayton East, Brindle & Hoghton": {
+    "gss": "E05013072",
+    "match": "exact"
+  },
+  "Chorley::Clayton West & Cuerden": {
+    "gss": "E05013073",
+    "match": "exact"
+  },
+  "Chorley::Coppull": {
+    "gss": "E05013074",
+    "match": "exact"
+  },
+  "Chorley::Croston, Mawdesley & Euxton South": {
+    "gss": "E05013075",
+    "match": "exact"
+  },
+  "Chorley::Eccleston, Heskin & Charnock Richard": {
+    "gss": "E05013076",
+    "match": "exact"
+  },
+  "Chorley::Euxton": {
+    "gss": "E05013077",
+    "match": "exact"
+  },
+  "Hyndburn::Clayton-le-Moors": {
+    "gss": "E05005211",
+    "match": "exact"
+  },
+  "Hyndburn::Huncoat": {
+    "gss": "E05005212",
+    "match": "exact"
+  },
+  "Hyndburn::Immanuel": {
+    "gss": "E05005213",
+    "match": "exact"
+  },
+  "Hyndburn::Milnshaw": {
+    "gss": "E05005214",
+    "match": "exact"
+  },
+  "Hyndburn::Netherton": {
+    "gss": "E05005215",
+    "match": "exact"
+  },
+  "Hyndburn::Overton": {
+    "gss": "E05005216",
+    "match": "suffix"
+  },
+  "Hyndburn::Peel": {
+    "gss": "E05005217",
+    "match": "exact"
+  },
+  "Hyndburn::Rishton": {
+    "gss": "E05005218",
+    "match": "exact"
+  },
+  "Hyndburn::Spring Hill": {
+    "gss": "E05005221",
+    "match": "exact"
+  },
+  "Hyndburn::St Andrew's": {
+    "gss": "E05005219",
+    "match": "suffix"
+  },
+  "Hyndburn::St Oswald's": {
+    "gss": "E05005220",
+    "match": "suffix"
+  },
+  "Pendle::Barnoldswick": {
+    "gss": "E05013200",
+    "match": "exact"
+  },
+  "Pendle::Barrowford & Pendleside": {
+    "gss": "E05013201",
+    "match": "exact"
+  },
+  "Pendle::Boughsworth & Foulridge": {
+    "gss": "E05013202",
+    "match": "fuzzy"
+  },
+  "Pendle::Bradley": {
+    "gss": "E05013203",
+    "match": "suffix"
+  },
+  "Pendle::Brierfield East & Clover Hill": {
+    "gss": "E05013204",
+    "match": "exact"
+  },
+  "Pendle::Earby & Coates": {
+    "gss": "E05013206",
+    "match": "exact"
+  },
+  "Pendle::Marsden & Southfield": {
+    "gss": "E05013208",
+    "match": "exact"
+  },
+  "Pendle::Vivary Bridge": {
+    "gss": "E05013209",
+    "match": "exact"
+  },
+  "Pendle::Waterside & Horsfield": {
+    "gss": "E05013210",
+    "match": "exact"
+  },
+  "Pendle::Whitefield & Walverden": {
+    "gss": "E05013211",
+    "match": "exact"
+  },
+  "Preston::Ashton": {
+    "gss": "E05012193",
+    "match": "suffix"
+  },
+  "Preston::Brookfield": {
+    "gss": "E05012194",
+    "match": "suffix"
+  },
+  "Preston::Cadley": {
+    "gss": "E05012195",
+    "match": "exact"
+  },
+  "Preston::City Centre": {
+    "gss": "E05012196",
+    "match": "exact"
+  },
+  "Preston::Deepdale": {
+    "gss": "E05012197",
+    "match": "exact"
+  },
+  "Preston::Fishwick & Frenchwood": {
+    "gss": "E05012198",
+    "match": "exact"
+  },
+  "Preston::Garrison": {
+    "gss": "E05012199",
+    "match": "exact"
+  },
+  "Preston::Greyfriars": {
+    "gss": "E05012200",
+    "match": "suffix"
+  },
+  "Preston::Ingol & Cottam": {
+    "gss": "E05012201",
+    "match": "exact"
+  },
+  "Preston::Lea & Larches": {
+    "gss": "E05012202",
+    "match": "exact"
+  },
+  "Preston::Plungington": {
+    "gss": "E05012203",
+    "match": "exact"
+  },
+  "Preston::Preston Rural East": {
+    "gss": "E05012204",
+    "match": "exact"
+  },
+  "Preston::Preston Rural North": {
+    "gss": "E05012205",
+    "match": "exact"
+  },
+  "Preston::Ribbleton": {
+    "gss": "E05012206",
+    "match": "exact"
+  },
+  "Preston::Sharoe Green": {
+    "gss": "E05012208",
+    "match": "exact"
+  },
+  "Preston::St Matthew's": {
+    "gss": "E05012207",
+    "match": "suffix"
+  },
+  "West Lancashire::Aughton & Holborn": {
+    "gss": "E05005358",
+    "match": "fuzzy"
+  },
+  "West Lancashire::Burscough Bridge & Rufford": {
+    "gss": "E05005361",
+    "match": "fuzzy"
+  },
+  "West Lancashire::Burscough Town": {
+    "gss": "E05005362",
+    "match": "fuzzy"
+  },
+  "West Lancashire::North Meols & Hesketh Bank": {
+    "gss": "E05005369",
+    "match": "fuzzy"
+  },
+  "West Lancashire::Old Skelmersdale": {
+    "gss": "E05005374",
+    "match": "fuzzy"
+  },
+  "West Lancashire::Ormskirk East": {
+    "gss": "E05005359",
+    "match": "fuzzy"
+  },
+  "West Lancashire::Ormskirk West": {
+    "gss": "E05005363",
+    "match": "fuzzy"
+  },
+  "West Lancashire::Rural North East": {
+    "gss": "E05005381",
+    "match": "fuzzy"
+  },
+  "West Lancashire::Rural South": {
+    "gss": "E05005365",
+    "match": "fuzzy"
+  },
+  "West Lancashire::Rural West": {
+    "gss": "E05005380",
+    "match": "fuzzy"
+  },
+  "West Lancashire::Skelmersdale North": {
+    "gss": "E05005374",
+    "match": "exact"
+  },
+  "West Lancashire::Skelmersdale South": {
+    "gss": "E05005375",
+    "match": "exact"
+  },
+  "West Lancashire::Tanhouse & Skelmersdale Town Centre": {
+    "gss": "E05005376",
+    "match": "fuzzy"
+  },
+  "West Lancashire::Tarleton Village": {
+    "gss": "E05005377",
+    "match": "fuzzy"
+  },
+  "West Lancashire::Up Holland": {
+    "gss": "E05005378",
+    "match": "exact"
+  },
+  "Lincoln::Abbey": {
+    "gss": "E05010784",
+    "match": "suffix"
+  },
+  "Lincoln::Birchwood": {
+    "gss": "E05010785",
+    "match": "suffix"
+  },
+  "Lincoln::Boultham": {
+    "gss": "E05010786",
+    "match": "exact"
+  },
+  "Lincoln::Carholme": {
+    "gss": "E05010787",
+    "match": "exact"
+  },
+  "Lincoln::Castle": {
+    "gss": "E05010788",
+    "match": "suffix"
+  },
+  "Lincoln::Glebe": {
+    "gss": "E05010789",
+    "match": "exact"
+  },
+  "Lincoln::Hartsholme": {
+    "gss": "E05010790",
+    "match": "exact"
+  },
+  "Lincoln::Minster": {
+    "gss": "E05010791",
+    "match": "exact"
+  },
+  "Lincoln::Moorland": {
+    "gss": "E05010792",
+    "match": "exact"
+  },
+  "Lincoln::Park": {
+    "gss": "E05010793",
+    "match": "suffix"
+  },
+  "Lincoln::Witham": {
+    "gss": "E05010794",
+    "match": "suffix"
+  },
+  "Norwich::Bowthorpe": {
+    "gss": "E05012901",
+    "match": "exact"
+  },
+  "Norwich::Catton Grove": {
+    "gss": "E05012902",
+    "match": "exact"
+  },
+  "Norwich::Crome": {
+    "gss": "E05012903",
+    "match": "exact"
+  },
+  "Norwich::Eaton": {
+    "gss": "E05012904",
+    "match": "exact"
+  },
+  "Norwich::Lakenham": {
+    "gss": "E05012905",
+    "match": "exact"
+  },
+  "Norwich::Mancroft": {
+    "gss": "E05012906",
+    "match": "exact"
+  },
+  "Norwich::Mile Cross": {
+    "gss": "E05012907",
+    "match": "exact"
+  },
+  "Norwich::Nelson": {
+    "gss": "E05012908",
+    "match": "suffix"
+  },
+  "Norwich::Sewell": {
+    "gss": "E05012909",
+    "match": "exact"
+  },
+  "Norwich::Thorpe Hamlet": {
+    "gss": "E05012910",
+    "match": "exact"
+  },
+  "Norwich::Town Close": {
+    "gss": "E05012911",
+    "match": "exact"
+  },
+  "Norwich::University": {
+    "gss": "E05012912",
+    "match": "suffix"
+  },
+  "Norwich::Wensum": {
+    "gss": "E05012913",
+    "match": "exact"
+  },
+  "Cherwell::Adderbury, Bloxham & Bodicote": {
+    "gss": "E05011348",
+    "match": "punct"
+  },
+  "Cherwell::Banbury Calthorpe & Easington": {
+    "gss": "E05011349",
+    "match": "punct"
+  },
+  "Cherwell::Banbury Cross & Neithrop": {
+    "gss": "E05010921",
+    "match": "punct"
+  },
+  "Cherwell::Banbury Grimsbury & Hightown": {
+    "gss": "E05010922",
+    "match": "punct"
+  },
+  "Cherwell::Banbury Hardwick": {
+    "gss": "E05010923",
+    "match": "exact"
+  },
+  "Cherwell::Banbury Ruscote": {
+    "gss": "E05010924",
+    "match": "exact"
+  },
+  "Cherwell::Bicester East": {
+    "gss": "E05010925",
+    "match": "exact"
+  },
+  "Cherwell::Bicester North & Caversfield": {
+    "gss": "E05010926",
+    "match": "punct"
+  },
+  "Cherwell::Bicester South & Ambrosden": {
+    "gss": "E05012968",
+    "match": "punct"
+  },
+  "Cherwell::Bicester West": {
+    "gss": "E05010928",
+    "match": "exact"
+  },
+  "Cherwell::Cropredy, Sibfords & Wroxton": {
+    "gss": "E05010929",
+    "match": "punct"
+  },
+  "Cherwell::Deddington": {
+    "gss": "E05010930",
+    "match": "exact"
+  },
+  "Cherwell::Fringford & Heyfords": {
+    "gss": "E05012969",
+    "match": "punct"
+  },
+  "Cherwell::Kidlington East": {
+    "gss": "E05010932",
+    "match": "exact"
+  },
+  "Cherwell::Kidlington West": {
+    "gss": "E05010933",
+    "match": "exact"
+  },
+  "Cherwell::Launton & Otmoor": {
+    "gss": "E05010934",
+    "match": "punct"
+  },
+  "Oxford::Barton & Sandhills": {
+    "gss": "E05013096",
+    "match": "exact"
+  },
+  "Oxford::Blackbird Leys": {
+    "gss": "E05013097",
+    "match": "exact"
+  },
+  "Oxford::Carfax & Jericho": {
+    "gss": "E05013098",
+    "match": "exact"
+  },
+  "Oxford::Churchill": {
+    "gss": "E05013099",
+    "match": "suffix"
+  },
+  "Oxford::Cowley": {
+    "gss": "E05013100",
+    "match": "exact"
+  },
+  "Oxford::Cuttleslowe & Sunnymead": {
+    "gss": "E05013101",
+    "match": "fuzzy"
+  },
+  "Oxford::Donnington": {
+    "gss": "E05013102",
+    "match": "suffix"
+  },
+  "Oxford::Headington": {
+    "gss": "E05013103",
+    "match": "exact"
+  },
+  "Oxford::Headington Hill & Northway": {
+    "gss": "E05013104",
+    "match": "exact"
+  },
+  "Oxford::Hinksey Park": {
+    "gss": "E05013105",
+    "match": "exact"
+  },
+  "Oxford::Holywell": {
+    "gss": "E05013106",
+    "match": "suffix"
+  },
+  "Oxford::Littlemore": {
+    "gss": "E05013107",
+    "match": "exact"
+  },
+  "Oxford::Lye Valley": {
+    "gss": "E05013108",
+    "match": "exact"
+  },
+  "Oxford::Marston": {
+    "gss": "E05013109",
+    "match": "exact"
+  },
+  "Oxford::Northfield Brook": {
+    "gss": "E05013110",
+    "match": "exact"
+  },
+  "Oxford::Osney & St Thomas": {
+    "gss": "E05013111",
+    "match": "exact"
+  },
+  "Oxford::Quarry & Risinghurst": {
+    "gss": "E05013112",
+    "match": "exact"
+  },
+  "Oxford::Rose Hill & Iffley": {
+    "gss": "E05013113",
+    "match": "exact"
+  },
+  "Oxford::St Clements": {
+    "gss": "E05013114",
+    "match": "norm"
+  },
+  "Oxford::St Mary's": {
+    "gss": "E05013115",
+    "match": "suffix"
+  },
+  "Oxford::Summertown": {
+    "gss": "E05013116",
+    "match": "exact"
+  },
+  "Oxford::Temple Cowley": {
+    "gss": "E05013117",
+    "match": "exact"
+  },
+  "Oxford::Walton Manor": {
+    "gss": "E05013118",
+    "match": "exact"
+  },
+  "Oxford::Wolvercote": {
+    "gss": "E05013119",
+    "match": "exact"
+  },
+  "West Oxfordshire::Ascott & Shipton": {
+    "gss": "E05006628",
+    "match": "punct"
+  },
+  "West Oxfordshire::Bampton & Clanfield": {
+    "gss": "E05006629",
+    "match": "punct"
+  },
+  "West Oxfordshire::Brize Norton & Shilton": {
+    "gss": "E05009364",
+    "match": "punct"
+  },
+  "West Oxfordshire::Burford": {
+    "gss": "E05009363",
+    "match": "exact"
+  },
+  "West Oxfordshire::Carterton North East": {
+    "gss": "E05006632",
+    "match": "exact"
+  },
+  "West Oxfordshire::Carterton North West": {
+    "gss": "E05009365",
+    "match": "exact"
+  },
+  "West Oxfordshire::Carterton South": {
+    "gss": "E05006634",
+    "match": "exact"
+  },
+  "West Oxfordshire::Chipping Norton": {
+    "gss": "E05006637",
+    "match": "exact"
+  },
+  "West Oxfordshire::Ducklington": {
+    "gss": "E05006638",
+    "match": "exact"
+  },
+  "West Oxfordshire::Eynsham & Cassington": {
+    "gss": "E05006639",
+    "match": "punct"
+  },
+  "West Oxfordshire::Freeland & Hanborough": {
+    "gss": "E05006640",
+    "match": "punct"
+  },
+  "West Oxfordshire::Standlake, Aston & Stanton Harcourt": {
+    "gss": "E05006645",
+    "match": "punct"
+  },
+  "West Oxfordshire::The Bartons": {
+    "gss": "E05006647",
+    "match": "exact"
+  },
+  "West Oxfordshire::Witney East": {
+    "gss": "E05006649",
+    "match": "exact"
+  },
+  "West Oxfordshire::Witney South": {
+    "gss": "E05006651",
+    "match": "exact"
+  },
+  "West Oxfordshire::Woodstock & Bladon": {
+    "gss": "E05006653",
+    "match": "punct"
+  },
+  "Cannock Chase::Brereton and Ravenhill": {
+    "gss": "E05006902",
+    "match": "exact"
+  },
+  "Cannock Chase::Cannock Longford & Bridgtown": {
+    "gss": "E05006904",
+    "match": "fuzzy"
+  },
+  "Cannock Chase::Cannock Park and Old Fallow": {
+    "gss": "E05006905",
+    "match": "fuzzy"
+  },
+  "Cannock Chase::Chadsmoor": {
+    "gss": "E05006903",
+    "match": "fuzzy"
+  },
+  "Cannock Chase::Etching Hill and The Heath": {
+    "gss": "E05006907",
+    "match": "exact"
+  },
+  "Cannock Chase::Hawks Green with Rumer Hill": {
+    "gss": "E05006909",
+    "match": "fuzzy"
+  },
+  "Cannock Chase::Heath Hayes and Wimblebury": {
+    "gss": "E05006910",
+    "match": "fuzzy"
+  },
+  "Cannock Chase::Hednesford Green Heath": {
+    "gss": "E05006911",
+    "match": "exact"
+  },
+  "Cannock Chase::Hednesford Hills and Rawnsley": {
+    "gss": "E05006915",
+    "match": "fuzzy"
+  },
+  "Cannock Chase::Hednesford Pye Green": {
+    "gss": "E05006912",
+    "match": "fuzzy"
+  },
+  "Cannock Chase::Norton Canes": {
+    "gss": "E05006914",
+    "match": "exact"
+  },
+  "Cannock Chase::Western Springs": {
+    "gss": "E05006916",
+    "match": "exact"
+  },
+  "Newcastle-under-Lyme::Audley": {
+    "gss": "E05011415",
+    "match": "exact"
+  },
+  "Newcastle-under-Lyme::Bradwell": {
+    "gss": "E05011416",
+    "match": "suffix"
+  },
+  "Newcastle-under-Lyme::Clayton": {
+    "gss": "E05011417",
+    "match": "exact"
+  },
+  "Newcastle-under-Lyme::Crackley and Red Street": {
+    "gss": "E05011418",
+    "match": "norm"
+  },
+  "Newcastle-under-Lyme::Cross Heath": {
+    "gss": "E05011419",
+    "match": "exact"
+  },
+  "Newcastle-under-Lyme::Holditch and Chesterton": {
+    "gss": "E05011420",
+    "match": "norm"
+  },
+  "Newcastle-under-Lyme::Keele": {
+    "gss": "E05011421",
+    "match": "exact"
+  },
+  "Newcastle-under-Lyme::Kidsgrove and Ravenscliffe": {
+    "gss": "E05011422",
+    "match": "norm"
+  },
+  "Newcastle-under-Lyme::Knutton": {
+    "gss": "E05011423",
+    "match": "exact"
+  },
+  "Newcastle-under-Lyme::Loggerheads": {
+    "gss": "E05011424",
+    "match": "exact"
+  },
+  "Newcastle-under-Lyme::Madeley and Betley": {
+    "gss": "E05011425",
+    "match": "norm"
+  },
+  "Newcastle-under-Lyme::Maer and Whitmore": {
+    "gss": "E05011426",
+    "match": "norm"
+  },
+  "Newcastle-under-Lyme::May Bank": {
+    "gss": "E05011427",
+    "match": "exact"
+  },
+  "Newcastle-under-Lyme::Newchapel and Mow Cop": {
+    "gss": "E05011428",
+    "match": "norm"
+  },
+  "Newcastle-under-Lyme::Silverdale": {
+    "gss": "E05011429",
+    "match": "suffix"
+  },
+  "Newcastle-under-Lyme::Talke and Butt Lane": {
+    "gss": "E05011430",
+    "match": "norm"
+  },
+  "Tamworth::Amington": {
+    "gss": "E05007066",
+    "match": "exact"
+  },
+  "Tamworth::Belgrave": {
+    "gss": "E05007067",
+    "match": "suffix"
+  },
+  "Tamworth::Bolehall": {
+    "gss": "E05007068",
+    "match": "exact"
+  },
+  "Tamworth::Castle": {
+    "gss": "E05007069",
+    "match": "suffix"
+  },
+  "Tamworth::Glascote": {
+    "gss": "E05007070",
+    "match": "exact"
+  },
+  "Tamworth::Mercian": {
+    "gss": "E05007071",
+    "match": "exact"
+  },
+  "Tamworth::Spital": {
+    "gss": "E05007072",
+    "match": "exact"
+  },
+  "Tamworth::Stonydelph": {
+    "gss": "E05007073",
+    "match": "exact"
+  },
+  "Tamworth::Trinity": {
+    "gss": "E05007074",
+    "match": "suffix"
+  },
+  "Tamworth::Wilnecote": {
+    "gss": "E05007075",
+    "match": "exact"
+  },
+  "Ipswich::Alexandra": {
+    "gss": "E05007117",
+    "match": "suffix"
+  },
+  "Ipswich::Bixley": {
+    "gss": "E05007118",
+    "match": "exact"
+  },
+  "Ipswich::Bridge": {
+    "gss": "E05007119",
+    "match": "suffix"
+  },
+  "Ipswich::Castle Hill": {
+    "gss": "E05007120",
+    "match": "exact"
+  },
+  "Ipswich::Gainsborough": {
+    "gss": "E05007121",
+    "match": "exact"
+  },
+  "Ipswich::Gipping": {
+    "gss": "E05007122",
+    "match": "exact"
+  },
+  "Ipswich::Holywells": {
+    "gss": "E05007123",
+    "match": "exact"
+  },
+  "Ipswich::Priory Heath": {
+    "gss": "E05007124",
+    "match": "exact"
+  },
+  "Ipswich::Rushmere": {
+    "gss": "E05007125",
+    "match": "exact"
+  },
+  "Ipswich::Sprites": {
+    "gss": "E05007128",
+    "match": "exact"
+  },
+  "Ipswich::St John's": {
+    "gss": "E05007126",
+    "match": "suffix"
+  },
+  "Ipswich::St Margaret's": {
+    "gss": "E05007127",
+    "match": "suffix"
+  },
+  "Ipswich::Stoke Park": {
+    "gss": "E05007129",
+    "match": "exact"
+  },
+  "Ipswich::Westgate": {
+    "gss": "E05007130",
+    "match": "suffix"
+  },
+  "Ipswich::Whitehouse": {
+    "gss": "E05007131",
+    "match": "exact"
+  },
+  "Ipswich::Whitton": {
+    "gss": "E05007132",
+    "match": "suffix"
+  },
+  "Nuneaton and Bedworth::Arbury": {
+    "gss": "E05007475",
+    "match": "suffix"
+  },
+  "Nuneaton and Bedworth::Attleborough": {
+    "gss": "E05007476",
+    "match": "exact"
+  },
+  "Nuneaton and Bedworth::Bede": {
+    "gss": "E05007478",
+    "match": "suffix"
+  },
+  "Nuneaton and Bedworth::Bulkington": {
+    "gss": "E05007479",
+    "match": "exact"
+  },
+  "Nuneaton and Bedworth::Camp Hill": {
+    "gss": "E05007480",
+    "match": "exact"
+  },
+  "Nuneaton and Bedworth::Chilvers Coton": {
+    "gss": "E05007490",
+    "match": "fuzzy"
+  },
+  "Nuneaton and Bedworth::Eastboro": {
+    "gss": "E05007476",
+    "match": "fuzzy"
+  },
+  "Nuneaton and Bedworth::Exhall": {
+    "gss": "E05007481",
+    "match": "exact"
+  },
+  "Nuneaton and Bedworth::Galley Common": {
+    "gss": "E05007482",
+    "match": "exact"
+  },
+  "Nuneaton and Bedworth::Heath": {
+    "gss": "E05007483",
+    "match": "suffix"
+  },
+  "Nuneaton and Bedworth::Milby": {
+    "gss": "E05007488",
+    "match": "fuzzy"
+  },
+  "Nuneaton and Bedworth::Poplar": {
+    "gss": "E05007485",
+    "match": "suffix"
+  },
+  "Nuneaton and Bedworth::Slough": {
+    "gss": "E05007487",
+    "match": "exact"
+  },
+  "Nuneaton and Bedworth::St Mary's": {
+    "gss": "E05007474",
+    "match": "fuzzy"
+  },
+  "Nuneaton and Bedworth::St Nicolas": {
+    "gss": "E05007486",
+    "match": "suffix"
+  },
+  "Nuneaton and Bedworth::Stockingford East": {
+    "gss": "E05007482",
+    "match": "fuzzy"
+  },
+  "Nuneaton and Bedworth::Stockingford West": {
+    "gss": "E05007480",
+    "match": "fuzzy"
+  },
+  "Nuneaton and Bedworth::Weddington": {
+    "gss": "E05007488",
+    "match": "exact"
+  },
+  "Nuneaton and Bedworth::Whitestone": {
+    "gss": "E05007490",
+    "match": "exact"
+  },
+  "Rugby::Admirals & Cawston": {
+    "gss": "E05010758",
+    "match": "punct"
+  },
+  "Rugby::Benn": {
+    "gss": "E05008974",
+    "match": "exact"
+  },
+  "Rugby::Bilton": {
+    "gss": "E05008975",
+    "match": "exact"
+  },
+  "Rugby::Coton & Boughton": {
+    "gss": "E05008977",
+    "match": "punct"
+  },
+  "Rugby::Dunsmore": {
+    "gss": "E05010759",
+    "match": "exact"
+  },
+  "Rugby::Eastlands": {
+    "gss": "E05008986",
+    "match": "exact"
+  },
+  "Rugby::Hillmorton": {
+    "gss": "E05008979",
+    "match": "exact"
+  },
+  "Rugby::New Bilton": {
+    "gss": "E05008981",
+    "match": "exact"
+  },
+  "Rugby::Newbold & Brownsover": {
+    "gss": "E05008982",
+    "match": "punct"
+  },
+  "Rugby::Paddox": {
+    "gss": "E05008983",
+    "match": "exact"
+  },
+  "Rugby::Revel & Binley Woods": {
+    "gss": "E05008984",
+    "match": "punct"
+  },
+  "Rugby::Rokeby & Overslade": {
+    "gss": "E05008985",
+    "match": "punct"
+  },
+  "Rugby::Wolston & The Lawfords": {
+    "gss": "E05010760",
+    "match": "norm"
+  },
+  "Rugby::Wolvey & Shilton": {
+    "gss": "E05008988",
+    "match": "punct"
+  },
+  "Adur::Buckingham": {
+    "gss": "E05007562",
+    "match": "exact"
+  },
+  "Adur::Churchill": {
+    "gss": "E05007563",
+    "match": "suffix"
+  },
+  "Adur::Cokeham": {
+    "gss": "E05007564",
+    "match": "exact"
+  },
+  "Adur::Eastbrook": {
+    "gss": "E05007565",
+    "match": "exact"
+  },
+  "Adur::Hillside": {
+    "gss": "E05007566",
+    "match": "suffix"
+  },
+  "Adur::Manor": {
+    "gss": "E05007567",
+    "match": "suffix"
+  },
+  "Adur::Marine": {
+    "gss": "E05007568",
+    "match": "suffix"
+  },
+  "Adur::Mash Barn": {
+    "gss": "E05007569",
+    "match": "exact"
+  },
+  "Adur::Peverel": {
+    "gss": "E05007570",
+    "match": "exact"
+  },
+  "Adur::Southlands": {
+    "gss": "E05007573",
+    "match": "exact"
+  },
+  "Adur::Southwick Green": {
+    "gss": "E05007574",
+    "match": "exact"
+  },
+  "Adur::St Mary's": {
+    "gss": "E05007571",
+    "match": "suffix"
+  },
+  "Adur::St Nicolas": {
+    "gss": "E05007572",
+    "match": "suffix"
+  },
+  "Adur::Widewater": {
+    "gss": "E05007575",
+    "match": "exact"
+  },
+  "Crawley::Buwbush & North Broadfield": {
+    "gss": "E05012914",
+    "match": "fuzzy"
+  },
+  "Crawley::Broadfield": {
+    "gss": "E05012915",
+    "match": "suffix"
+  },
+  "Crawley::Furnace Green": {
+    "gss": "E05012916",
+    "match": "exact"
+  },
+  "Crawley::Ifield": {
+    "gss": "E05012918",
+    "match": "exact"
+  },
+  "Crawley::Langley Green & Tushmore": {
+    "gss": "E05012919",
+    "match": "exact"
+  },
+  "Crawley::Maidenbower": {
+    "gss": "E05012920",
+    "match": "exact"
+  },
+  "Crawley::Northgate & West Green": {
+    "gss": "E05012921",
+    "match": "exact"
+  },
+  "Crawley::Pound Hill North & Forge Wood": {
+    "gss": "E05012922",
+    "match": "exact"
+  },
+  "Crawley::Pound Hill South & Worth": {
+    "gss": "E05012923",
+    "match": "exact"
+  },
+  "Crawley::Southgate": {
+    "gss": "E05012924",
+    "match": "suffix"
+  },
+  "Crawley::Three Bridges": {
+    "gss": "E05012925",
+    "match": "exact"
+  },
+  "Crawley::Tilgate": {
+    "gss": "E05012926",
+    "match": "exact"
+  },
+  "Worthing::Broadwater": {
+    "gss": "E05007694",
+    "match": "suffix"
+  },
+  "Worthing::Castle": {
+    "gss": "E05007695",
+    "match": "suffix"
+  },
+  "Worthing::Central": {
+    "gss": "E05007696",
+    "match": "suffix"
+  },
+  "Worthing::Durrington": {
+    "gss": "E05007697",
+    "match": "suffix"
+  },
+  "Worthing::Gaisford": {
+    "gss": "E05007698",
+    "match": "exact"
+  },
+  "Worthing::Goring": {
+    "gss": "E05007699",
+    "match": "suffix"
+  },
+  "Worthing::Heene": {
+    "gss": "E05007700",
+    "match": "exact"
+  },
+  "Worthing::Marine": {
+    "gss": "E05007701",
+    "match": "suffix"
+  },
+  "Worthing::Northbrook": {
+    "gss": "E05007702",
+    "match": "exact"
+  },
+  "Worthing::Offington": {
+    "gss": "E05007703",
+    "match": "exact"
+  },
+  "Worthing::Salvington": {
+    "gss": "E05007704",
+    "match": "exact"
+  },
+  "Worthing::Selden": {
+    "gss": "E05007705",
+    "match": "exact"
+  },
+  "Worthing::Tarring": {
+    "gss": "E05007706",
+    "match": "exact"
+  },
+  "Redditch::Astwood Bank & Feckenham": {
+    "gss": "E05007869",
+    "match": "punct"
+  },
+  "Redditch::Batchley & Brockhill": {
+    "gss": "E05007870",
+    "match": "exact"
+  },
+  "Redditch::Central": {
+    "gss": "E05007871",
+    "match": "suffix"
+  },
+  "Redditch::Greenlands & Lakeside": {
+    "gss": "E05007874",
+    "match": "fuzzy"
+  },
+  "Redditch::Headless Cross & Oakenshaw": {
+    "gss": "E05007875",
+    "match": "punct"
+  },
+  "Redditch::Matchborough & Woodrow": {
+    "gss": "E05007877",
+    "match": "fuzzy"
+  },
+  "Redditch::North": {
+    "gss": "E05007875",
+    "match": "fuzzy"
+  },
+  "Redditch::Webheath & Callow Hill": {
+    "gss": "E05007870",
+    "match": "fuzzy"
+  },
+  "Redditch::Winyates": {
+    "gss": "E05007879",
+    "match": "exact"
+  },
+  "St Albans::Batchwood": {
+    "gss": "E05013947",
+    "match": "exact"
+  },
+  "St Albans::Bernards Heath": {
+    "gss": "E05013948",
+    "match": "exact"
+  },
+  "St Albans::Clarence": {
+    "gss": "E05013949",
+    "match": "exact"
+  },
+  "St Albans::Colney Heath": {
+    "gss": "E05013950",
+    "match": "exact"
+  },
+  "St Albans::Cunningham": {
+    "gss": "E05013951",
+    "match": "exact"
+  },
+  "St Albans::Harpenden East": {
+    "gss": "E05013952",
+    "match": "exact"
+  },
+  "St Albans::Harpenden North and Rural": {
+    "gss": "E05013953",
+    "match": "norm"
+  },
+  "St Albans::Harpenden South": {
+    "gss": "E05013954",
+    "match": "exact"
+  },
+  "St Albans::Harpenden West": {
+    "gss": "E05013955",
+    "match": "exact"
+  },
+  "St Albans::Hill End": {
+    "gss": "E05013956",
+    "match": "exact"
+  },
+  "St Albans::London Colney": {
+    "gss": "E05013957",
+    "match": "exact"
+  },
+  "St Albans::Marshalswick East and Jersey Farm": {
+    "gss": "E05013958",
+    "match": "norm"
+  },
+  "St Albans::Marshalswick West": {
+    "gss": "E05013959",
+    "match": "exact"
+  },
+  "St Albans::Park Street": {
+    "gss": "E05013960",
+    "match": "exact"
+  },
+  "St Albans::Redbourn": {
+    "gss": "E05013961",
+    "match": "exact"
+  },
+  "St Albans::Sandridge and Wheathampstead": {
+    "gss": "E05013962",
+    "match": "norm"
+  },
+  "St Albans::Sopwell": {
+    "gss": "E05013963",
+    "match": "exact"
+  },
+  "St Albans::St Peters": {
+    "gss": "E05013964",
+    "match": "suffix"
+  },
+  "St Albans::St Stephen": {
+    "gss": "E05013965",
+    "match": "suffix"
+  },
+  "St Albans::Verulam": {
+    "gss": "E05013966",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Brookmans Park and Little Heath": {
+    "gss": "E05011058",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Haldens": {
+    "gss": "E05011059",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Handside": {
+    "gss": "E05011060",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Hatfield Central": {
+    "gss": "E05011061",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Hatfield East": {
+    "gss": "E05011062",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Hatfield South West": {
+    "gss": "E05011063",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Hatfield Villages": {
+    "gss": "E05011064",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Hollybush": {
+    "gss": "E05011065",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Howlands": {
+    "gss": "E05011066",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Northaw and Cuffley": {
+    "gss": "E05011067",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Panshanger": {
+    "gss": "E05011068",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Peartree": {
+    "gss": "E05011069",
+    "match": "suffix"
+  },
+  "Welwyn Hatfield::Sherrards": {
+    "gss": "E05011070",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Welham Green and Hatfield South": {
+    "gss": "E05011071",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Welwyn East": {
+    "gss": "E05011072",
+    "match": "exact"
+  },
+  "Welwyn Hatfield::Welwyn West": {
+    "gss": "E05011073",
+    "match": "exact"
+  },
+  "Stevenage::Almond Hill": {
+    "gss": "E05004812",
+    "match": "fuzzy"
+  },
+  "Stevenage::Bandley Hill & Poplars": {
+    "gss": "E05004805",
+    "match": "fuzzy"
+  },
+  "Stevenage::Bedwell": {
+    "gss": "E05004806",
+    "match": "exact"
+  },
+  "Stevenage::Chells": {
+    "gss": "E05004807",
+    "match": "exact"
+  },
+  "Stevenage::Longmeadow": {
+    "gss": "E05004808",
+    "match": "exact"
+  },
+  "Stevenage::Manor": {
+    "gss": "E05009316",
+    "match": "suffix"
+  },
+  "Stevenage::Martins Wood": {
+    "gss": "E05004810",
+    "match": "exact"
+  },
+  "Stevenage::Old Town": {
+    "gss": "E05004811",
+    "match": "suffix"
+  },
+  "Stevenage::Roebuck": {
+    "gss": "E05004813",
+    "match": "exact"
+  },
+  "Stevenage::Shephall": {
+    "gss": "E05004815",
+    "match": "exact"
+  },
+  "Stevenage::St Nicholas": {
+    "gss": "E05004814",
+    "match": "exact"
+  },
+  "Stevenage::Symonds Green": {
+    "gss": "E05004816",
+    "match": "exact"
+  },
+  "Stevenage::Woodfield": {
+    "gss": "E05004817",
+    "match": "exact"
   }
 }
