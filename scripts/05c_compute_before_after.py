@@ -28,14 +28,16 @@ GM_LAD_CODES = lad_codes_for('gm')
 PARTIES = ['Reform', 'Green', 'Labour', 'LibDem', 'Conservative', 'Independent', 'Other']
 
 # Same variable list as 05_correlate.py / 05b_correlate_flips.py
-VARS = ['density', 'median_age', 'pct_under18', 'pct_18_29', 'pct_30_49', 'pct_50_64',
+VARS = ['density', 'median_age', 'mean_income',
+        'pct_under18', 'pct_18_29', 'pct_30_49', 'pct_50_64',
         'pct_65plus', 'pct_apprentice', 'pct_level4_plus', 'pct_no_qual', 'pct_soc123',
         'pct_owned', 'pct_social_rented', 'pct_private_rented', 'pct_uk_born', 'pct_wfh',
         'pct_female',
         'pct_white', 'pct_asian', 'pct_black', 'pct_mixed', 'pct_other_ethnic']
 
 # Subset surfaced on the page (parallel to TOP_VARS in 05_correlate.py)
-TOP_VARS = ['density', 'median_age', 'pct_18_29', 'pct_65plus', 'pct_apprentice',
+TOP_VARS = ['density', 'median_age', 'mean_income',
+            'pct_18_29', 'pct_65plus', 'pct_apprentice',
             'pct_level4_plus', 'pct_soc123', 'pct_owned', 'pct_social_rented',
             'pct_private_rented', 'pct_uk_born', 'pct_wfh', 'pct_female',
             'pct_white', 'pct_asian', 'pct_black', 'pct_mixed', 'pct_other_ethnic']

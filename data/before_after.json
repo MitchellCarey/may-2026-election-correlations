@@ -4,6 +4,7 @@
   "top_vars": [
     "density",
     "median_age",
+    "mean_income",
     "pct_18_29",
     "pct_65plus",
     "pct_apprentice",
@@ -29,6 +30,7 @@
       "means_2026": {
         "density": 2663.71,
         "median_age": 40.06,
+        "mean_income": 31685.88,
         "pct_under18": 22.08,
         "pct_18_29": 13.72,
         "pct_30_49": 26.25,
@@ -53,6 +55,7 @@
       "r_2026": {
         "density": -0.363,
         "median_age": 0.255,
+        "mean_income": -0.251,
         "pct_under18": -0.07,
         "pct_18_29": -0.221,
         "pct_30_49": -0.233,
@@ -81,6 +84,7 @@
       "means_2022": {
         "density": 3177.68,
         "median_age": 39.2,
+        "mean_income": 37497,
         "pct_under18": 22.94,
         "pct_18_29": 12.35,
         "pct_30_49": 29.08,
@@ -105,6 +109,7 @@
       "r_2022": {
         "density": -0.019,
         "median_age": 0.019,
+        "mean_income": 0.149,
         "pct_under18": 0.017,
         "pct_18_29": -0.059,
         "pct_30_49": 0.125,
@@ -129,6 +134,7 @@
       "means_2026": {
         "density": 6229.07,
         "median_age": 30.67,
+        "mean_income": 33557.6,
         "pct_under18": 19.97,
         "pct_18_29": 29.3,
         "pct_30_49": 28.66,
@@ -153,6 +159,7 @@
       "r_2026": {
         "density": 0.553,
         "median_age": -0.531,
+        "mean_income": 0.054,
         "pct_under18": -0.21,
         "pct_18_29": 0.629,
         "pct_30_49": 0.265,
@@ -177,6 +184,7 @@
       "delta_means": {
         "density": 3051.39,
         "median_age": -8.53,
+        "mean_income": -3939.4,
         "pct_under18": -2.97,
         "pct_18_29": 16.95,
         "pct_30_49": -0.42,
@@ -201,6 +209,7 @@
       "delta_r": {
         "density": 0.572,
         "median_age": -0.55,
+        "mean_income": -0.095,
         "pct_under18": -0.227,
         "pct_18_29": 0.688,
         "pct_30_49": 0.14,
@@ -229,6 +238,7 @@
       "means_2022": {
         "density": 3957.27,
         "median_age": 36.56,
+        "mean_income": 31866.86,
         "pct_under18": 22.88,
         "pct_18_29": 17.33,
         "pct_30_49": 27.62,
@@ -253,6 +263,7 @@
       "r_2022": {
         "density": 0.38,
         "median_age": -0.47,
+        "mean_income": -0.318,
         "pct_under18": 0.137,
         "pct_18_29": 0.275,
         "pct_30_49": 0.39,
@@ -277,6 +288,7 @@
       "means_2026": {
         "density": 4022.18,
         "median_age": 37.29,
+        "mean_income": 32864.68,
         "pct_under18": 24.85,
         "pct_18_29": 14.09,
         "pct_30_49": 28.1,
@@ -301,6 +313,7 @@
       "r_2026": {
         "density": 0.127,
         "median_age": -0.088,
+        "mean_income": -0.005,
         "pct_under18": 0.224,
         "pct_18_29": -0.08,
         "pct_30_49": 0.195,
@@ -325,6 +338,7 @@
       "delta_means": {
         "density": 64.91,
         "median_age": 0.73,
+        "mean_income": 997.82,
         "pct_under18": 1.97,
         "pct_18_29": -3.24,
         "pct_30_49": 0.48,
@@ -349,6 +363,7 @@
       "delta_r": {
         "density": -0.253,
         "median_age": 0.382,
+        "mean_income": 0.313,
         "pct_under18": 0.087,
         "pct_18_29": -0.355,
         "pct_30_49": -0.195,
@@ -377,6 +392,7 @@
       "means_2022": {
         "density": 2458.23,
         "median_age": 44.21,
+        "mean_income": 36932.95,
         "pct_under18": 20.41,
         "pct_18_29": 11.57,
         "pct_30_49": 25.24,
@@ -401,6 +417,7 @@
       "r_2022": {
         "density": -0.148,
         "median_age": 0.3,
+        "mean_income": 0.263,
         "pct_under18": -0.134,
         "pct_18_29": -0.147,
         "pct_30_49": -0.192,
@@ -425,6 +442,7 @@
       "means_2026": {
         "density": 2830.15,
         "median_age": 43.26,
+        "mean_income": 37382.68,
         "pct_under18": 21.21,
         "pct_18_29": 11.49,
         "pct_30_49": 25.89,
@@ -449,6 +467,7 @@
       "r_2026": {
         "density": -0.091,
         "median_age": 0.25,
+        "mean_income": 0.292,
         "pct_under18": -0.08,
         "pct_18_29": -0.15,
         "pct_30_49": -0.116,
@@ -473,6 +492,7 @@
       "delta_means": {
         "density": 371.92,
         "median_age": -0.95,
+        "mean_income": 449.73,
         "pct_under18": 0.8,
         "pct_18_29": -0.08,
         "pct_30_49": 0.65,
@@ -497,6 +517,7 @@
       "delta_r": {
         "density": 0.057,
         "median_age": -0.05,
+        "mean_income": 0.029,
         "pct_under18": 0.054,
         "pct_18_29": -0.003,
         "pct_30_49": 0.076,
@@ -525,6 +546,7 @@
       "means_2022": {
         "density": 1879.75,
         "median_age": 43.16,
+        "mean_income": 35164.28,
         "pct_under18": 21.62,
         "pct_18_29": 11.75,
         "pct_30_49": 24.75,
@@ -549,6 +571,7 @@
       "r_2022": {
         "density": -0.317,
         "median_age": 0.329,
+        "mean_income": 0.198,
         "pct_under18": -0.072,
         "pct_18_29": -0.189,
         "pct_30_49": -0.333,
@@ -573,6 +596,7 @@
       "means_2026": {
         "density": 1848.84,
         "median_age": 44.27,
+        "mean_income": 39284.64,
         "pct_under18": 21.9,
         "pct_18_29": 10.37,
         "pct_30_49": 25.47,
@@ -597,6 +621,7 @@
       "r_2026": {
         "density": -0.179,
         "median_age": 0.226,
+        "mean_income": 0.31,
         "pct_under18": -0.025,
         "pct_18_29": -0.142,
         "pct_30_49": -0.123,
@@ -621,6 +646,7 @@
       "delta_means": {
         "density": -30.91,
         "median_age": 1.11,
+        "mean_income": 4120.36,
         "pct_under18": 0.28,
         "pct_18_29": -1.38,
         "pct_30_49": 0.72,
@@ -645,6 +671,7 @@
       "delta_r": {
         "density": 0.138,
         "median_age": -0.103,
+        "mean_income": 0.112,
         "pct_under18": 0.047,
         "pct_18_29": 0.047,
         "pct_30_49": 0.21,
@@ -673,6 +700,7 @@
       "means_2022": {
         "density": 2736.07,
         "median_age": 39.92,
+        "mean_income": 31224.92,
         "pct_under18": 22.24,
         "pct_18_29": 14.19,
         "pct_30_49": 25.61,
@@ -697,6 +725,7 @@
       "r_2022": {
         "density": -0.082,
         "median_age": 0.059,
+        "mean_income": -0.086,
         "pct_under18": -0.01,
         "pct_18_29": -0.042,
         "pct_30_49": -0.116,
@@ -721,6 +750,7 @@
       "means_2026": {
         "density": 2690.88,
         "median_age": 38.11,
+        "mean_income": 31946.11,
         "pct_under18": 24.13,
         "pct_18_29": 14.12,
         "pct_30_49": 26.33,
@@ -745,6 +775,7 @@
       "r_2026": {
         "density": -0.075,
         "median_age": -0.014,
+        "mean_income": -0.043,
         "pct_under18": 0.076,
         "pct_18_29": -0.038,
         "pct_30_49": -0.043,
@@ -769,6 +800,7 @@
       "delta_means": {
         "density": -45.19,
         "median_age": -1.81,
+        "mean_income": 721.19,
         "pct_under18": 1.89,
         "pct_18_29": -0.07,
         "pct_30_49": 0.72,
@@ -793,6 +825,7 @@
       "delta_r": {
         "density": 0.007,
         "median_age": -0.073,
+        "mean_income": 0.043,
         "pct_under18": 0.086,
         "pct_18_29": 0.004,
         "pct_30_49": 0.073,
@@ -821,6 +854,7 @@
       "means_2026": {
         "density": 5120.67,
         "median_age": 32.33,
+        "mean_income": 26974,
         "pct_under18": 28.92,
         "pct_18_29": 16.42,
         "pct_30_49": 28.95,
@@ -845,6 +879,7 @@
       "r_2026": {
         "density": 0.141,
         "median_age": -0.176,
+        "mean_income": -0.211,
         "pct_under18": 0.235,
         "pct_18_29": 0.014,
         "pct_30_49": 0.13,
@@ -875,6 +910,7 @@
       "top_vars": [
         "density",
         "median_age",
+        "mean_income",
         "pct_18_29",
         "pct_65plus",
         "pct_apprentice",
@@ -900,6 +936,7 @@
           "means_2026": {
             "density": 2663.71,
             "median_age": 40.06,
+            "mean_income": 31685.88,
             "pct_under18": 22.08,
             "pct_18_29": 13.72,
             "pct_30_49": 26.25,
@@ -924,6 +961,7 @@
           "r_2026": {
             "density": -0.363,
             "median_age": 0.255,
+            "mean_income": -0.251,
             "pct_under18": -0.07,
             "pct_18_29": -0.221,
             "pct_30_49": -0.233,
@@ -952,6 +990,7 @@
           "means_2022": {
             "density": 3177.68,
             "median_age": 39.2,
+            "mean_income": 37497,
             "pct_under18": 22.94,
             "pct_18_29": 12.35,
             "pct_30_49": 29.08,
@@ -976,6 +1015,7 @@
           "r_2022": {
             "density": -0.019,
             "median_age": 0.019,
+            "mean_income": 0.149,
             "pct_under18": 0.017,
             "pct_18_29": -0.059,
             "pct_30_49": 0.125,
@@ -1000,6 +1040,7 @@
           "means_2026": {
             "density": 6229.07,
             "median_age": 30.67,
+            "mean_income": 33557.6,
             "pct_under18": 19.97,
             "pct_18_29": 29.3,
             "pct_30_49": 28.66,
@@ -1024,6 +1065,7 @@
           "r_2026": {
             "density": 0.553,
             "median_age": -0.531,
+            "mean_income": 0.054,
             "pct_under18": -0.21,
             "pct_18_29": 0.629,
             "pct_30_49": 0.265,
@@ -1048,6 +1090,7 @@
           "delta_means": {
             "density": 3051.39,
             "median_age": -8.53,
+            "mean_income": -3939.4,
             "pct_under18": -2.97,
             "pct_18_29": 16.95,
             "pct_30_49": -0.42,
@@ -1072,6 +1115,7 @@
           "delta_r": {
             "density": 0.572,
             "median_age": -0.55,
+            "mean_income": -0.095,
             "pct_under18": -0.227,
             "pct_18_29": 0.688,
             "pct_30_49": 0.14,
@@ -1100,6 +1144,7 @@
           "means_2022": {
             "density": 3957.27,
             "median_age": 36.56,
+            "mean_income": 31866.86,
             "pct_under18": 22.88,
             "pct_18_29": 17.33,
             "pct_30_49": 27.62,
@@ -1124,6 +1169,7 @@
           "r_2022": {
             "density": 0.38,
             "median_age": -0.47,
+            "mean_income": -0.318,
             "pct_under18": 0.137,
             "pct_18_29": 0.275,
             "pct_30_49": 0.39,
@@ -1148,6 +1194,7 @@
           "means_2026": {
             "density": 4022.18,
             "median_age": 37.29,
+            "mean_income": 32864.68,
             "pct_under18": 24.85,
             "pct_18_29": 14.09,
             "pct_30_49": 28.1,
@@ -1172,6 +1219,7 @@
           "r_2026": {
             "density": 0.127,
             "median_age": -0.088,
+            "mean_income": -0.005,
             "pct_under18": 0.224,
             "pct_18_29": -0.08,
             "pct_30_49": 0.195,
@@ -1196,6 +1244,7 @@
           "delta_means": {
             "density": 64.91,
             "median_age": 0.73,
+            "mean_income": 997.82,
             "pct_under18": 1.97,
             "pct_18_29": -3.24,
             "pct_30_49": 0.48,
@@ -1220,6 +1269,7 @@
           "delta_r": {
             "density": -0.253,
             "median_age": 0.382,
+            "mean_income": 0.313,
             "pct_under18": 0.087,
             "pct_18_29": -0.355,
             "pct_30_49": -0.195,
@@ -1248,6 +1298,7 @@
           "means_2022": {
             "density": 2458.23,
             "median_age": 44.21,
+            "mean_income": 36932.95,
             "pct_under18": 20.41,
             "pct_18_29": 11.57,
             "pct_30_49": 25.24,
@@ -1272,6 +1323,7 @@
           "r_2022": {
             "density": -0.148,
             "median_age": 0.3,
+            "mean_income": 0.263,
             "pct_under18": -0.134,
             "pct_18_29": -0.147,
             "pct_30_49": -0.192,
@@ -1296,6 +1348,7 @@
           "means_2026": {
             "density": 2830.15,
             "median_age": 43.26,
+            "mean_income": 37382.68,
             "pct_under18": 21.21,
             "pct_18_29": 11.49,
             "pct_30_49": 25.89,
@@ -1320,6 +1373,7 @@
           "r_2026": {
             "density": -0.091,
             "median_age": 0.25,
+            "mean_income": 0.292,
             "pct_under18": -0.08,
             "pct_18_29": -0.15,
             "pct_30_49": -0.116,
@@ -1344,6 +1398,7 @@
           "delta_means": {
             "density": 371.92,
             "median_age": -0.95,
+            "mean_income": 449.73,
             "pct_under18": 0.8,
             "pct_18_29": -0.08,
             "pct_30_49": 0.65,
@@ -1368,6 +1423,7 @@
           "delta_r": {
             "density": 0.057,
             "median_age": -0.05,
+            "mean_income": 0.029,
             "pct_under18": 0.054,
             "pct_18_29": -0.003,
             "pct_30_49": 0.076,
@@ -1396,6 +1452,7 @@
           "means_2022": {
             "density": 1879.75,
             "median_age": 43.16,
+            "mean_income": 35164.28,
             "pct_under18": 21.62,
             "pct_18_29": 11.75,
             "pct_30_49": 24.75,
@@ -1420,6 +1477,7 @@
           "r_2022": {
             "density": -0.317,
             "median_age": 0.329,
+            "mean_income": 0.198,
             "pct_under18": -0.072,
             "pct_18_29": -0.189,
             "pct_30_49": -0.333,
@@ -1444,6 +1502,7 @@
           "means_2026": {
             "density": 1848.84,
             "median_age": 44.27,
+            "mean_income": 39284.64,
             "pct_under18": 21.9,
             "pct_18_29": 10.37,
             "pct_30_49": 25.47,
@@ -1468,6 +1527,7 @@
           "r_2026": {
             "density": -0.179,
             "median_age": 0.226,
+            "mean_income": 0.31,
             "pct_under18": -0.025,
             "pct_18_29": -0.142,
             "pct_30_49": -0.123,
@@ -1492,6 +1552,7 @@
           "delta_means": {
             "density": -30.91,
             "median_age": 1.11,
+            "mean_income": 4120.36,
             "pct_under18": 0.28,
             "pct_18_29": -1.38,
             "pct_30_49": 0.72,
@@ -1516,6 +1577,7 @@
           "delta_r": {
             "density": 0.138,
             "median_age": -0.103,
+            "mean_income": 0.112,
             "pct_under18": 0.047,
             "pct_18_29": 0.047,
             "pct_30_49": 0.21,
@@ -1544,6 +1606,7 @@
           "means_2022": {
             "density": 2736.07,
             "median_age": 39.92,
+            "mean_income": 31224.92,
             "pct_under18": 22.24,
             "pct_18_29": 14.19,
             "pct_30_49": 25.61,
@@ -1568,6 +1631,7 @@
           "r_2022": {
             "density": -0.082,
             "median_age": 0.059,
+            "mean_income": -0.086,
             "pct_under18": -0.01,
             "pct_18_29": -0.042,
             "pct_30_49": -0.116,
@@ -1592,6 +1656,7 @@
           "means_2026": {
             "density": 2690.88,
             "median_age": 38.11,
+            "mean_income": 31946.11,
             "pct_under18": 24.13,
             "pct_18_29": 14.12,
             "pct_30_49": 26.33,
@@ -1616,6 +1681,7 @@
           "r_2026": {
             "density": -0.075,
             "median_age": -0.014,
+            "mean_income": -0.043,
             "pct_under18": 0.076,
             "pct_18_29": -0.038,
             "pct_30_49": -0.043,
@@ -1640,6 +1706,7 @@
           "delta_means": {
             "density": -45.19,
             "median_age": -1.81,
+            "mean_income": 721.19,
             "pct_under18": 1.89,
             "pct_18_29": -0.07,
             "pct_30_49": 0.72,
@@ -1664,6 +1731,7 @@
           "delta_r": {
             "density": 0.007,
             "median_age": -0.073,
+            "mean_income": 0.043,
             "pct_under18": 0.086,
             "pct_18_29": 0.004,
             "pct_30_49": 0.073,
@@ -1692,6 +1760,7 @@
           "means_2026": {
             "density": 5120.67,
             "median_age": 32.33,
+            "mean_income": 26974,
             "pct_under18": 28.92,
             "pct_18_29": 16.42,
             "pct_30_49": 28.95,
@@ -1716,6 +1785,7 @@
           "r_2026": {
             "density": 0.141,
             "median_age": -0.176,
+            "mean_income": -0.211,
             "pct_under18": 0.235,
             "pct_18_29": 0.014,
             "pct_30_49": 0.13,
@@ -1746,6 +1816,7 @@
       "top_vars": [
         "density",
         "median_age",
+        "mean_income",
         "pct_18_29",
         "pct_65plus",
         "pct_apprentice",
@@ -1771,6 +1842,7 @@
           "means_2026": {
             "density": 2879.05,
             "median_age": 40.78,
+            "mean_income": 34437.79,
             "pct_under18": 21.66,
             "pct_18_29": 13.65,
             "pct_30_49": 25.9,
@@ -1795,6 +1867,7 @@
           "r_2026": {
             "density": -0.26,
             "median_age": 0.178,
+            "mean_income": -0.364,
             "pct_under18": 0.047,
             "pct_18_29": -0.172,
             "pct_30_49": -0.255,
@@ -1823,6 +1896,7 @@
           "means_2022": {
             "density": 4535.95,
             "median_age": 37.71,
+            "mean_income": 39359.48,
             "pct_under18": 18.35,
             "pct_18_29": 21.23,
             "pct_30_49": 27.16,
@@ -1847,6 +1921,7 @@
           "r_2022": {
             "density": -0.013,
             "median_age": -0.031,
+            "mean_income": -0.008,
             "pct_under18": -0.125,
             "pct_18_29": 0.121,
             "pct_30_49": -0.033,
@@ -1871,6 +1946,7 @@
           "means_2026": {
             "density": 6524.13,
             "median_age": 35.89,
+            "mean_income": 41058.06,
             "pct_under18": 19.63,
             "pct_18_29": 21.25,
             "pct_30_49": 29.4,
@@ -1895,6 +1971,7 @@
           "r_2026": {
             "density": 0.191,
             "median_age": -0.21,
+            "mean_income": 0.066,
             "pct_under18": -0.167,
             "pct_18_29": 0.296,
             "pct_30_49": 0.145,
@@ -1919,6 +1996,7 @@
           "delta_means": {
             "density": 1988.18,
             "median_age": -1.82,
+            "mean_income": 1698.58,
             "pct_under18": 1.28,
             "pct_18_29": 0.02,
             "pct_30_49": 2.24,
@@ -1943,6 +2021,7 @@
           "delta_r": {
             "density": 0.204,
             "median_age": -0.179,
+            "mean_income": 0.074,
             "pct_under18": -0.042,
             "pct_18_29": 0.175,
             "pct_30_49": 0.178,
@@ -1971,6 +2050,7 @@
           "means_2022": {
             "density": 6145.05,
             "median_age": 36.16,
+            "mean_income": 37781.04,
             "pct_under18": 22.1,
             "pct_18_29": 17.85,
             "pct_30_49": 29.25,
@@ -1995,6 +2075,7 @@
           "r_2022": {
             "density": 0.328,
             "median_age": -0.458,
+            "mean_income": -0.24,
             "pct_under18": 0.195,
             "pct_18_29": 0.256,
             "pct_30_49": 0.292,
@@ -2019,6 +2100,7 @@
           "means_2026": {
             "density": 6349.22,
             "median_age": 36.6,
+            "mean_income": 39993.69,
             "pct_under18": 22.29,
             "pct_18_29": 17.14,
             "pct_30_49": 29.57,
@@ -2043,6 +2125,7 @@
           "r_2026": {
             "density": 0.225,
             "median_age": -0.21,
+            "mean_income": 0.019,
             "pct_under18": 0.121,
             "pct_18_29": 0.095,
             "pct_30_49": 0.208,
@@ -2067,6 +2150,7 @@
           "delta_means": {
             "density": 204.17,
             "median_age": 0.44,
+            "mean_income": 2212.65,
             "pct_under18": 0.19,
             "pct_18_29": -0.71,
             "pct_30_49": 0.32,
@@ -2091,6 +2175,7 @@
           "delta_r": {
             "density": -0.103,
             "median_age": 0.248,
+            "mean_income": 0.259,
             "pct_under18": -0.074,
             "pct_18_29": -0.161,
             "pct_30_49": -0.084,
@@ -2119,6 +2204,7 @@
           "means_2022": {
             "density": 3497.47,
             "median_age": 40.76,
+            "mean_income": 43751.44,
             "pct_under18": 20.96,
             "pct_18_29": 14.11,
             "pct_30_49": 27.55,
@@ -2143,6 +2229,7 @@
           "r_2022": {
             "density": -0.14,
             "median_age": 0.142,
+            "mean_income": 0.2,
             "pct_under18": -0.038,
             "pct_18_29": -0.107,
             "pct_30_49": -0.042,
@@ -2167,6 +2254,7 @@
           "means_2026": {
             "density": 3759.1,
             "median_age": 40.3,
+            "mean_income": 44109.06,
             "pct_under18": 21.01,
             "pct_18_29": 14.5,
             "pct_30_49": 27.77,
@@ -2191,6 +2279,7 @@
           "r_2026": {
             "density": -0.089,
             "median_age": 0.09,
+            "mean_income": 0.215,
             "pct_under18": -0.032,
             "pct_18_29": -0.071,
             "pct_30_49": -0.003,
@@ -2215,6 +2304,7 @@
           "delta_means": {
             "density": 261.63,
             "median_age": -0.46,
+            "mean_income": 357.62,
             "pct_under18": 0.05,
             "pct_18_29": 0.39,
             "pct_30_49": 0.22,
@@ -2239,6 +2329,7 @@
           "delta_r": {
             "density": 0.051,
             "median_age": -0.052,
+            "mean_income": 0.015,
             "pct_under18": 0.006,
             "pct_18_29": 0.036,
             "pct_30_49": 0.039,
@@ -2267,6 +2358,7 @@
           "means_2022": {
             "density": 3066.74,
             "median_age": 42.77,
+            "mean_income": 41579.32,
             "pct_under18": 20.45,
             "pct_18_29": 12.86,
             "pct_30_49": 25.94,
@@ -2291,6 +2383,7 @@
           "r_2022": {
             "density": -0.239,
             "median_age": 0.368,
+            "mean_income": 0.119,
             "pct_under18": -0.116,
             "pct_18_29": -0.23,
             "pct_30_49": -0.252,
@@ -2315,6 +2408,7 @@
           "means_2026": {
             "density": 3978.54,
             "median_age": 41.19,
+            "mean_income": 43495.71,
             "pct_under18": 20.76,
             "pct_18_29": 13.75,
             "pct_30_49": 27.33,
@@ -2339,6 +2433,7 @@
           "r_2026": {
             "density": -0.073,
             "median_age": 0.165,
+            "mean_income": 0.202,
             "pct_under18": -0.063,
             "pct_18_29": -0.124,
             "pct_30_49": -0.048,
@@ -2363,6 +2458,7 @@
           "delta_means": {
             "density": 911.8,
             "median_age": -1.58,
+            "mean_income": 1916.39,
             "pct_under18": 0.31,
             "pct_18_29": 0.89,
             "pct_30_49": 1.39,
@@ -2387,6 +2483,7 @@
           "delta_r": {
             "density": 0.166,
             "median_age": -0.203,
+            "mean_income": 0.083,
             "pct_under18": 0.053,
             "pct_18_29": 0.106,
             "pct_30_49": 0.204,
@@ -2415,6 +2512,7 @@
           "means_2022": {
             "density": 2799.07,
             "median_age": 42.51,
+            "mean_income": 36802.93,
             "pct_under18": 20.32,
             "pct_18_29": 13.27,
             "pct_30_49": 25.55,
@@ -2439,6 +2537,7 @@
           "r_2022": {
             "density": -0.09,
             "median_age": 0.113,
+            "mean_income": -0.063,
             "pct_under18": -0.044,
             "pct_18_29": -0.066,
             "pct_30_49": -0.098,
@@ -2463,6 +2562,7 @@
           "means_2026": {
             "density": 4526.91,
             "median_age": 38.44,
+            "mean_income": 33976.22,
             "pct_under18": 23.76,
             "pct_18_29": 14.92,
             "pct_30_49": 26.84,
@@ -2487,6 +2587,7 @@
           "r_2026": {
             "density": -0.005,
             "median_age": -0.018,
+            "mean_income": -0.133,
             "pct_under18": 0.115,
             "pct_18_29": -0.023,
             "pct_30_49": -0.043,
@@ -2511,6 +2612,7 @@
           "delta_means": {
             "density": 1727.84,
             "median_age": -4.07,
+            "mean_income": -2826.71,
             "pct_under18": 3.44,
             "pct_18_29": 1.65,
             "pct_30_49": 1.29,
@@ -2535,6 +2637,7 @@
           "delta_r": {
             "density": 0.085,
             "median_age": -0.131,
+            "mean_income": -0.07,
             "pct_under18": 0.159,
             "pct_18_29": 0.043,
             "pct_30_49": 0.055,
@@ -2563,6 +2666,7 @@
           "means_2022": {
             "density": 6431.04,
             "median_age": 40.79,
+            "mean_income": 44237.44,
             "pct_under18": 20.15,
             "pct_18_29": 15.77,
             "pct_30_49": 27.75,
@@ -2587,6 +2691,7 @@
           "r_2022": {
             "density": 0.051,
             "median_age": 0.045,
+            "mean_income": 0.07,
             "pct_under18": -0.038,
             "pct_18_29": -0.004,
             "pct_30_49": -0.007,
@@ -2611,6 +2716,7 @@
           "means_2026": {
             "density": 7825.49,
             "median_age": 36.26,
+            "mean_income": 40583.15,
             "pct_under18": 21.63,
             "pct_18_29": 19.58,
             "pct_30_49": 28.7,
@@ -2635,6 +2741,7 @@
           "r_2026": {
             "density": 0.11,
             "median_age": -0.063,
+            "mean_income": 0.015,
             "pct_under18": 0.01,
             "pct_18_29": 0.07,
             "pct_30_49": 0.028,
@@ -2659,6 +2766,7 @@
           "delta_means": {
             "density": 1394.45,
             "median_age": -4.53,
+            "mean_income": -3654.29,
             "pct_under18": 1.48,
             "pct_18_29": 3.81,
             "pct_30_49": 0.95,
@@ -2683,6 +2791,7 @@
           "delta_r": {
             "density": 0.059,
             "median_age": -0.108,
+            "mean_income": -0.055,
             "pct_under18": 0.048,
             "pct_18_29": 0.074,
             "pct_30_49": 0.035,

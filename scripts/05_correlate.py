@@ -25,13 +25,15 @@ from _councils import lad_codes_for
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
-VARS = ['density', 'median_age', 'pct_under18', 'pct_18_29', 'pct_30_49', 'pct_50_64',
+VARS = ['density', 'median_age', 'mean_income',
+        'pct_under18', 'pct_18_29', 'pct_30_49', 'pct_50_64',
         'pct_65plus', 'pct_apprentice', 'pct_level4_plus', 'pct_no_qual', 'pct_soc123',
         'pct_owned', 'pct_social_rented', 'pct_private_rented', 'pct_uk_born', 'pct_wfh',
         'pct_female',
         'pct_white', 'pct_asian', 'pct_black', 'pct_mixed', 'pct_other_ethnic']
 PARTIES = ['Green', 'Labour', 'Reform', 'LibDem', 'Conservative', 'Independent', 'Other']
-TOP_VARS = ['density', 'median_age', 'pct_18_29', 'pct_65plus', 'pct_apprentice',
+TOP_VARS = ['density', 'median_age', 'mean_income',
+            'pct_18_29', 'pct_65plus', 'pct_apprentice',
             'pct_level4_plus', 'pct_soc123', 'pct_owned', 'pct_social_rented',
             'pct_private_rented', 'pct_uk_born', 'pct_wfh', 'pct_female',
             'pct_white', 'pct_asian', 'pct_black', 'pct_mixed', 'pct_other_ethnic']
