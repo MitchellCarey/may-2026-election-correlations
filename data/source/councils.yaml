@@ -166,12 +166,15 @@
   wiki_prior: "2022 Sefton Metropolitan Borough Council election"
   wiki_prior_year: 2022
 
+# Wirral's 2026 article isn't on Wikipedia yet (as of 2026-05-11). Set
+# wiki_2026 to null for now; flip to the article title once an editor
+# creates it. The 2022 prior is fine.
 - lad_code: E08000015
   name: Wirral
   nation: england
   cycle: thirds
   region_gm: false
-  wiki_2026: "2026 Wirral Metropolitan Borough Council election"
+  wiki_2026: null
   wiki_prior: "2022 Wirral Metropolitan Borough Council election"
   wiki_prior_year: 2022
 
@@ -307,12 +310,15 @@
   wiki_prior: "2022 Walsall Metropolitan Borough Council election"
   wiki_prior_year: 2022
 
+# Wolverhampton was renamed "City of Wolverhampton Council" between 2022
+# and 2026; the 2026 article uses the new name. The cached 2022 article
+# pre-dates the rename.
 - lad_code: E08000031
   name: Wolverhampton
   nation: england
   cycle: thirds
   region_gm: false
-  wiki_2026: "2026 Wolverhampton City Council election"
+  wiki_2026: "2026 City of Wolverhampton Council election"
   wiki_prior: "2022 Wolverhampton City Council election"
   wiki_prior_year: 2022
 
