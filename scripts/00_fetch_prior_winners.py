@@ -20,6 +20,7 @@ that blocks programmatic clients. Wikipedia is more accessible and the per-ward
 "hold" / "gain from X" templates are straightforward to parse downstream.
 """
 import json
+import re
 import time
 import urllib.parse
 import urllib.request
@@ -32,6 +33,11 @@ SOURCE = ROOT / "data" / "source"
 
 UA = 'gm-2026-ward-analysis/1.0 (mitchellcarey2@gmail.com)'
 API = 'https://en.wikipedia.org/w/api.php'
+
+
+def slug(name: str) -> str:
+    """Council name -> filesystem-safe slug for the wiki cache filename."""
+    return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
 
 
 def fetch(title: str) -> dict:
@@ -51,25 +57,33 @@ def fetch(title: str) -> dict:
 def main():
     SOURCE.mkdir(parents=True, exist_ok=True)
     fetched = skipped = 0
+    misses: list[tuple[str, str, str]] = []  # (lad_code, name, attempted_title)
     for council in for_region("gb"):
         if not council.get("wiki_prior"):
             continue
         year = council["wiki_prior_year"]
         title = council["wiki_prior"]
-        out = SOURCE / f'wiki_{council["name"].lower()}_{year}.json'
+        out = SOURCE / f'wiki_{slug(council["name"])}_{year}.json'
         if out.exists():
             skipped += 1
             continue
         print(f'Fetching {title}...')
         data = fetch(title)
         if 'error' in data:
-            raise RuntimeError(f'{title}: {data["error"]}')
+            print(f'  ! {data["error"].get("code")}: {data["error"].get("info", "")}')
+            misses.append((council["lad_code"], council["name"], title))
+            time.sleep(0.5)
+            continue
         with open(out, 'w') as f:
             json.dump(data, f)
         fetched += 1
         time.sleep(0.5)  # be nice to Wikipedia
 
-    print(f'\nDone. Fetched {fetched}, skipped {skipped} (already cached).')
+    print(f'\nDone. Fetched {fetched}, skipped {skipped} (already cached), {len(misses)} miss(es).')
+    if misses:
+        print("\nMisses — update wiki_prior in data/source/councils.yaml for these:")
+        for lad, name, tried in misses:
+            print(f'  {lad}  {name}: tried "{tried}"')
 
 
 if __name__ == '__main__':

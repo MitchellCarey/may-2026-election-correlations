@@ -115,3 +115,554 @@
   wiki_2026: null
   wiki_prior: "2022 Wigan Metropolitan Borough Council election"
   wiki_prior_year: 2022
+
+# Non-GM English metropolitan boroughs (E08).
+# All run thirds; the 2026 election was their next thirds year after 2024.
+# Boroughs flagged as cities use 'X City Council election' rather than the
+# 'X Metropolitan Borough Council election' form.
+
+- lad_code: E08000011
+  name: Knowsley
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Knowsley Metropolitan Borough Council election"
+  wiki_prior: "2022 Knowsley Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+# Liverpool restructured in 2023 (boundary review + cycle change). The prior
+# whole-council election was 2023, all-out, and the next is 2027 — no 2026.
+- lad_code: E08000012
+  name: Liverpool
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: "2023 Liverpool City Council election"
+  wiki_prior_year: 2023
+
+- lad_code: E08000013
+  name: St. Helens
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 St Helens Metropolitan Borough Council election"
+  wiki_prior: "2022 St Helens Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000014
+  name: Sefton
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Sefton Metropolitan Borough Council election"
+  wiki_prior: "2022 Sefton Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000015
+  name: Wirral
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Wirral Metropolitan Borough Council election"
+  wiki_prior: "2022 Wirral Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000016
+  name: Barnsley
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Barnsley Metropolitan Borough Council election"
+  wiki_prior: "2022 Barnsley Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+# Doncaster moved to all-out 2021 -> 2025 -> 2029, so no 2026 contest. The
+# council was renamed "City of Doncaster Council" after the 2022 city status
+# award; the pre-name-change 2021 article is the correct prior.
+- lad_code: E08000017
+  name: Doncaster
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: "2021 Doncaster Metropolitan Borough Council election"
+  wiki_prior_year: 2021
+
+# Rotherham went to all-out 2021 -> 2025 -> 2029 after the post-2014 commissioner
+# period — no 2026 contest.
+- lad_code: E08000018
+  name: Rotherham
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: "2021 Rotherham Metropolitan Borough Council election"
+  wiki_prior_year: 2021
+
+- lad_code: E08000019
+  name: Sheffield
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Sheffield City Council election"
+  wiki_prior: "2022 Sheffield City Council election"
+  wiki_prior_year: 2022
+
+# Wikipedia drops "upon Tyne" in the council article name.
+- lad_code: E08000021
+  name: Newcastle upon Tyne
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Newcastle City Council election"
+  wiki_prior: "2022 Newcastle City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000022
+  name: North Tyneside
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 North Tyneside Metropolitan Borough Council election"
+  wiki_prior: "2022 North Tyneside Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000023
+  name: South Tyneside
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 South Tyneside Metropolitan Borough Council election"
+  wiki_prior: "2022 South Tyneside Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000024
+  name: Sunderland
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Sunderland City Council election"
+  wiki_prior: "2022 Sunderland City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000025
+  name: Birmingham
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Birmingham City Council election"
+  wiki_prior: "2022 Birmingham City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000026
+  name: Coventry
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Coventry City Council election"
+  wiki_prior: "2022 Coventry City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000027
+  name: Dudley
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Dudley Metropolitan Borough Council election"
+  wiki_prior: "2022 Dudley Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000028
+  name: Sandwell
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Sandwell Metropolitan Borough Council election"
+  wiki_prior: "2022 Sandwell Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000029
+  name: Solihull
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Solihull Metropolitan Borough Council election"
+  wiki_prior: "2022 Solihull Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000030
+  name: Walsall
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Walsall Metropolitan Borough Council election"
+  wiki_prior: "2022 Walsall Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000031
+  name: Wolverhampton
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Wolverhampton City Council election"
+  wiki_prior: "2022 Wolverhampton City Council election"
+  wiki_prior_year: 2022
+
+# Bradford's council article uses "City of Bradford Metropolitan District Council".
+- lad_code: E08000032
+  name: Bradford
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 City of Bradford Metropolitan District Council election"
+  wiki_prior: "2022 City of Bradford Metropolitan District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000033
+  name: Calderdale
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Calderdale Metropolitan Borough Council election"
+  wiki_prior: "2022 Calderdale Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000034
+  name: Kirklees
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Kirklees Metropolitan Borough Council election"
+  wiki_prior: "2022 Kirklees Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000035
+  name: Leeds
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Leeds City Council election"
+  wiki_prior: "2022 Leeds City Council election"
+  wiki_prior_year: 2022
+
+# Wakefield's council article uses "Metropolitan District Council" (not Borough).
+- lad_code: E08000036
+  name: Wakefield
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Wakefield Metropolitan District Council election"
+  wiki_prior: "2022 Wakefield Metropolitan District Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000037
+  name: Gateshead
+  nation: england
+  cycle: thirds
+  region_gm: false
+  wiki_2026: "2026 Gateshead Metropolitan Borough Council election"
+  wiki_prior: "2022 Gateshead Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+# London boroughs (E09). All-out every 4 years; 2022 -> 2026 -> 2030.
+# Westminster is a city; City of London has unique Common Council elections
+# with non-comparable wards and is excluded from the scraper.
+
+# City of London Common Council uses ward names like Bishopsgate, Cordwainer, etc. that do not align with the rest of the registry; analytical scope skips it.
+- lad_code: E09000001
+  name: City of London
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+
+- lad_code: E09000002
+  name: Barking and Dagenham
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Barking and Dagenham London Borough Council election"
+  wiki_prior: "2022 Barking and Dagenham London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000003
+  name: Barnet
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Barnet London Borough Council election"
+  wiki_prior: "2022 Barnet London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000004
+  name: Bexley
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Bexley London Borough Council election"
+  wiki_prior: "2022 Bexley London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000005
+  name: Brent
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Brent London Borough Council election"
+  wiki_prior: "2022 Brent London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000006
+  name: Bromley
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Bromley London Borough Council election"
+  wiki_prior: "2022 Bromley London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000007
+  name: Camden
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Camden London Borough Council election"
+  wiki_prior: "2022 Camden London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000008
+  name: Croydon
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Croydon London Borough Council election"
+  wiki_prior: "2022 Croydon London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000009
+  name: Ealing
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Ealing London Borough Council election"
+  wiki_prior: "2022 Ealing London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000010
+  name: Enfield
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Enfield London Borough Council election"
+  wiki_prior: "2022 Enfield London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000011
+  name: Greenwich
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Greenwich London Borough Council election"
+  wiki_prior: "2022 Greenwich London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000012
+  name: Hackney
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Hackney London Borough Council election"
+  wiki_prior: "2022 Hackney London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000013
+  name: Hammersmith and Fulham
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Hammersmith and Fulham London Borough Council election"
+  wiki_prior: "2022 Hammersmith and Fulham London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000014
+  name: Haringey
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Haringey London Borough Council election"
+  wiki_prior: "2022 Haringey London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000015
+  name: Harrow
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Harrow London Borough Council election"
+  wiki_prior: "2022 Harrow London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000016
+  name: Havering
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Havering London Borough Council election"
+  wiki_prior: "2022 Havering London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000017
+  name: Hillingdon
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Hillingdon London Borough Council election"
+  wiki_prior: "2022 Hillingdon London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000018
+  name: Hounslow
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Hounslow London Borough Council election"
+  wiki_prior: "2022 Hounslow London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000019
+  name: Islington
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Islington London Borough Council election"
+  wiki_prior: "2022 Islington London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000020
+  name: Kensington and Chelsea
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Kensington and Chelsea London Borough Council election"
+  wiki_prior: "2022 Kensington and Chelsea London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000021
+  name: Kingston upon Thames
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Kingston upon Thames London Borough Council election"
+  wiki_prior: "2022 Kingston upon Thames London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000022
+  name: Lambeth
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Lambeth London Borough Council election"
+  wiki_prior: "2022 Lambeth London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000023
+  name: Lewisham
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Lewisham London Borough Council election"
+  wiki_prior: "2022 Lewisham London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000024
+  name: Merton
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Merton London Borough Council election"
+  wiki_prior: "2022 Merton London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000025
+  name: Newham
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Newham London Borough Council election"
+  wiki_prior: "2022 Newham London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000026
+  name: Redbridge
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Redbridge London Borough Council election"
+  wiki_prior: "2022 Redbridge London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000027
+  name: Richmond upon Thames
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Richmond upon Thames London Borough Council election"
+  wiki_prior: "2022 Richmond upon Thames London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000028
+  name: Southwark
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Southwark London Borough Council election"
+  wiki_prior: "2022 Southwark London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000029
+  name: Sutton
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Sutton London Borough Council election"
+  wiki_prior: "2022 Sutton London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000030
+  name: Tower Hamlets
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Tower Hamlets London Borough Council election"
+  wiki_prior: "2022 Tower Hamlets London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000031
+  name: Waltham Forest
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Waltham Forest London Borough Council election"
+  wiki_prior: "2022 Waltham Forest London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000032
+  name: Wandsworth
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Wandsworth London Borough Council election"
+  wiki_prior: "2022 Wandsworth London Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E09000033
+  name: Westminster
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: "2026 Westminster City Council election"
+  wiki_prior: "2022 Westminster City Council election"
+  wiki_prior_year: 2022
