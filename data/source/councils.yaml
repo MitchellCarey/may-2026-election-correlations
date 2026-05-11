@@ -19,8 +19,15 @@
 #                    all-out, 2 years back for halves)
 #   wiki_prior_year  integer year of wiki_prior
 #
-# Seeded with the 10 GM councils only. Phase B.6 extends this to ~390 GB
-# principal councils.
+# Coverage today (69 councils):
+#   - 10 GM councils (E08000001-E08000010, region_gm: true)
+#   - 26 non-GM English metropolitan boroughs (E08000011-E08000037)
+#   - 33 London boroughs (E09000001-E09000033; City of London has wiki_*: null)
+# Not yet added (~280 councils):
+#   - English unitaries (E06*) and non-metropolitan districts (E07*)
+#   - Welsh principal areas (W06*; no 2026 elections, useful for Map only)
+#   - Scottish council areas (S12*; multi-member STV needs a separate parser)
+# Phase B.6 of plans/plan-a-refactor-to-moonlit-pie.md tracks the expansion.
 
 - lad_code: E08000001
   name: Bolton
