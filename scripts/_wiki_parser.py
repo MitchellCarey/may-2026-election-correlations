@@ -61,8 +61,11 @@ HOLDGAIN_RE = re.compile(
 # its title= parameter. The alternation lets the title contain wikilinks like
 # `[[Haydon Wick (ward)|Haydon Wick]]` whose internal `|` would otherwise be
 # read as a template-parameter delimiter.
+# Match plain {{Election box begin}} as well as variants like
+# {{Election box begin no change}} (used in Essex 2026 to flag a hold).
 ELECTION_BOX_BEGIN_RE = re.compile(
-    r'\{\{Election box begin\s*\|\s*title\s*=\s*((?:\[\[[^\]]*\]\]|[^|}\n])+)',
+    r'\{\{Election box begin(?:\s+no change)?\s*\|\s*title\s*=\s*'
+    r'((?:\[\[[^\]]*\]\]|[^|}\n])+)',
     re.IGNORECASE,
 )
 ELECTION_BOX_END_RE = re.compile(r'\{\{Election box end\s*\}\}', re.IGNORECASE)

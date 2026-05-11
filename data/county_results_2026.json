@@ -33,15 +33,15 @@
   },
   "Essex": {
     "Basildon": {
-      "party": "Independent",
-      "seats_won": 1,
-      "total_seats": 1,
+      "party": "Reform",
+      "seats_won": 6,
+      "total_seats": 9,
       "year": 2026
     },
     "Braintree": {
       "party": "Reform",
-      "seats_won": 5,
-      "total_seats": 6,
+      "seats_won": 6,
+      "total_seats": 8,
       "year": 2026
     },
     "Brentwood": {
@@ -63,9 +63,9 @@
       "year": 2026
     },
     "Colchester": {
-      "party": "Conservative",
-      "seats_won": 2,
-      "total_seats": 6,
+      "party": "Reform",
+      "seats_won": 4,
+      "total_seats": 9,
       "year": 2026
     },
     "Epping Forest": {
@@ -88,8 +88,8 @@
     },
     "Rochford": {
       "party": "Reform",
-      "seats_won": 2,
-      "total_seats": 2,
+      "seats_won": 5,
+      "total_seats": 5,
       "year": 2026
     },
     "Tendring": {
