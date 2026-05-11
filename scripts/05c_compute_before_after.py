@@ -74,20 +74,9 @@ def compute_correlations(sample, indicator):
     return out
 
 
-def main():
-    with open(DATA / 'all_wards_with_prior.json') as f:
-        wards = json.load(f)
-
-    # Phase B transitional filter — restrict to GM until 07b accepts --region.
-    wards = [w for w in wards if w.get('lad_code') in GM_LAD_CODES]
-
-    # 2022/2021 sample: wards with a known prior_party (boundary-changed wards
-    # without a clean predecessor are excluded by definition).
+def compute_block(wards):
     sample_2022 = [w for w in wards if w.get('prior_party') is not None]
-    # 2026 sample: declared wards (Pending excluded).
     sample_2026 = [w for w in wards if w.get('winner') not in ('Pending', None)]
-
-    # Pre-build indicator vectors for correlations
     out = {
         'n_total_2022': len(sample_2022),
         'n_total_2026': len(sample_2026),
@@ -95,56 +84,49 @@ def main():
         'min_n': MIN_N,
         'parties': {},
     }
-
     for party in PARTIES:
         wards_2022 = [w for w in sample_2022 if w['prior_party'] == party]
         wards_2026 = [w for w in sample_2026 if w['winner'] == party]
         n22, n26 = len(wards_2022), len(wards_2026)
         rec = {'n_2022': n22, 'n_2026': n26}
-
         if n22 >= MIN_N:
             rec['means_2022'] = compute_means(wards_2022)
-            indicator = [1 if w['prior_party'] == party else 0 for w in sample_2022]
-            rec['r_2022'] = compute_correlations(sample_2022, indicator)
+            ind = [1 if w['prior_party'] == party else 0 for w in sample_2022]
+            rec['r_2022'] = compute_correlations(sample_2022, ind)
         if n26 >= MIN_N:
             rec['means_2026'] = compute_means(wards_2026)
-            indicator = [1 if w['winner'] == party else 0 for w in sample_2026]
-            rec['r_2026'] = compute_correlations(sample_2026, indicator)
-
+            ind = [1 if w['winner'] == party else 0 for w in sample_2026]
+            rec['r_2026'] = compute_correlations(sample_2026, ind)
         if n22 >= MIN_N and n26 >= MIN_N:
             rec['delta_means'] = {
                 v: round(rec['means_2026'][v] - rec['means_2022'][v], 2)
-                for v in rec['means_2022']
-                if v in rec['means_2026']
+                for v in rec['means_2022'] if v in rec['means_2026']
             }
             rec['delta_r'] = {
                 v: round(rec['r_2026'].get(v, 0) - rec['r_2022'].get(v, 0), 3)
-                for v in rec['r_2022']
-                if v in rec['r_2026']
+                for v in rec['r_2022'] if v in rec['r_2026']
             }
-
         out['parties'][party] = rec
+    return out
 
+
+def main():
+    with open(DATA / 'all_wards_with_prior.json') as f:
+        wards = json.load(f)
+
+    gm_block = compute_block([w for w in wards if w.get('lad_code') in GM_LAD_CODES])
+    gb_block = compute_block(wards)
+
+    output = {
+        **gm_block,
+        'regions': {'gm': gm_block, 'gb': gb_block},
+    }
     with open(DATA / 'before_after.json', 'w') as f:
-        json.dump(out, f, indent=2)
+        json.dump(output, f, indent=2)
 
-    print(f'Saved before_after.json')
-    print(f'  n_total: 2022={out["n_total_2022"]} | 2026={out["n_total_2026"]}\n')
-    print(f'  Per-party seat counts (2022 → 2026):')
-    for p, r in out['parties'].items():
-        delta = r['n_2026'] - r['n_2022']
-        sign = '+' if delta >= 0 else ''
-        print(f'    {p:>14}:  {r["n_2022"]:>3}  →  {r["n_2026"]:>3}   ({sign}{delta})')
-
-    # Highlight a couple of striking shifts so the build log is informative
-    print('\n  Sample mean shifts (2026 − 2022):')
-    for p in ['Labour', 'Green', 'LibDem']:
-        r = out['parties'].get(p, {})
-        if 'delta_means' not in r:
-            continue
-        deltas = sorted(r['delta_means'].items(), key=lambda kv: -abs(kv[1]))[:3]
-        deltas_str = ', '.join(f'{v} {("+" if d>=0 else "")}{d}' for v, d in deltas)
-        print(f'    {p:>14}: {deltas_str}')
+    print(f'Saved before_after.json '
+          f'(gm: 2022={gm_block["n_total_2022"]} -> 2026={gm_block["n_total_2026"]}, '
+          f'gb: 2022={gb_block["n_total_2022"]} -> 2026={gb_block["n_total_2026"]})')
 
 
 if __name__ == '__main__':

@@ -14,6 +14,7 @@ from _artifact_lib import (
     party_display_text_js,
     party_order_winners_js,
 )
+from _councils import lad_codes_for
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -22,10 +23,21 @@ DOCS = ROOT / "docs"
 BEGIN = "// ===== BEGIN GENERATED — see scripts/07_build_artifact.py ====="
 END = "// ===== END GENERATED ====="
 
+# Phase B transitional: render the GM region only. Phase C.13 will swap in
+# argparse --region + UK output paths.
+REGION = 'gm'
+REGION_LAD_CODES = lad_codes_for(REGION)
+
 with open(DATA / 'v12_ward_data.json') as f:
     wards = json.load(f)
 with open(DATA / 'correlations.json') as f:
     corr_full = json.load(f)
+
+wards = [w for w in wards if w.get('lad_code') in REGION_LAD_CODES]
+# Use the region's correlation block. The legacy top-level keys still
+# mirror regions.gm for now, but reading regions explicitly future-proofs
+# the renderer for the C.13 --region switch.
+corr_full = corr_full.get('regions', {}).get(REGION, corr_full)
 
 # Build compact RAW data structure: keyed by "Borough::Ward"
 raw = {}

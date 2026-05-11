@@ -22,10 +22,16 @@ from _artifact_lib import (
     party_display_text_js,
     party_short_js,
 )
+from _councils import lad_codes_for
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
+
+# Phase B transitional: render the GM region only. Phase C.13 will swap in
+# argparse --region + UK output paths.
+REGION = 'gm'
+REGION_LAD_CODES = lad_codes_for(REGION)
 
 BEGIN = "// ===== BEGIN GENERATED — see scripts/07b_build_changes_artifact.py ====="
 END = "// ===== END GENERATED ====="
@@ -38,6 +44,10 @@ def main():
         corr_full = json.load(f)
     with open(DATA / 'before_after.json') as f:
         before_after = json.load(f)
+
+    wards = [w for w in wards if w.get('lad_code') in REGION_LAD_CODES]
+    corr_full = corr_full.get('regions', {}).get(REGION, corr_full)
+    before_after = before_after.get('regions', {}).get(REGION, before_after)
 
     # Compact RAW: keyed by "Borough::Ward"
     raw = {}

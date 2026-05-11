@@ -5,21 +5,13 @@ the consolidated full-GM dataset.
 import json
 from pathlib import Path
 
-from _councils import lad_codes_for
-
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
-GM_LAD_CODES = lad_codes_for('gm')
-
-# Load consolidated data
 with open(DATA / 'all_wards.json') as f:
     wards = json.load(f)
 with open(DATA / 'correlations.json') as f:
     corr = json.load(f)
-
-# Phase B transitional filter — restrict to GM until 07 accepts --region.
-wards = [w for w in wards if w.get('lad_code') in GM_LAD_CODES]
 
 declared = [w for w in wards if w.get('winner') not in ('Pending', None)]
 
@@ -51,6 +43,7 @@ for b in sorted(borough_breakdown):
     for w in sorted(borough_breakdown[b]['wards'], key=lambda x: x['ward']):
         ward_data_js.append({
             'borough': b,
+            'lad_code': w.get('lad_code'),
             'ward': w['ward'],
             'winner': w.get('winner', 'Pending'),
             'density': w.get('density'),
