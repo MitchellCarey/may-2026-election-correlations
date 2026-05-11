@@ -15,6 +15,9 @@ from pathlib import Path
 
 import pandas as pd
 
+from _councils import load as load_councils
+from _ward_lookup import wd_codes_for_lad
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 SOURCE = DATA / "source"
@@ -30,68 +33,51 @@ def load_overrides():
 
 
 OVERRIDES = load_overrides()
+# Council-name -> LAD24CD, sourced from the registry.
+COUNCIL_LAD = {c["name"]: c["lad_code"] for c in load_councils()}
 
-# Borough's GSS LA codes (E08000xxx) for disambiguating wards that share names across boroughs
-BOROUGH_LA = {
-    'Bolton':     'E08000001',
-    'Bury':       'E08000002',
-    'Manchester': 'E08000003',
-    'Oldham':     'E08000004',
-    'Rochdale':   'E08000005',
-    'Salford':    'E08000006',
-    'Stockport':  'E08000007',
-    'Tameside':   'E08000008',
-    'Trafford':   'E08000009',
-    'Wigan':      'E08000010',
-}
+def _borough_codes_for(borough):
+    """Set of WD24CDs the registry says belong to this council."""
+    lad = COUNCIL_LAD.get(borough)
+    if lad is None:
+        return None  # unknown borough — caller decides how to handle
+    return wd_codes_for_lad(lad)
 
-# Ward GSS code prefix ranges per borough (heuristic; verified by spot-check)
-BOROUGH_CODE_RANGES = {
-    'Bolton':     [('E05000650', 'E05000680')],  # Old wards — used for fuzzy
-    'Bury':       [('E05014152', 'E05014170')],  # New 2022 wards
-    'Manchester': [('E05011350', 'E05011385')],
-    'Oldham':     [('E05000719', 'E05000740')],
-    'Rochdale':   [('E05014033', 'E05014053')],
-    'Salford':    [('E05013018', 'E05013040')],  # E05013018 = Barton & Winton
-    'Stockport':  [('E05000779', 'E05000810')],
-    'Tameside':   [('E05000800', 'E05000820')],
-    'Trafford':   [('E05000819', 'E05000840')],
-    'Wigan':      [('E05000840', 'E05000870')],
-}
 
 def find_gss_code(borough, ward_name, df):
     """Find GSS code for ward with progressive fallback strategies."""
-    # 1. Try exact match within borough's code range
-    ranges = BOROUGH_CODE_RANGES[borough]
-    df_borough = df[df['Electoral wards and divisions Code'].apply(
-        lambda c: any(lo <= c <= hi for lo, hi in ranges))]
-    
+    codes = _borough_codes_for(borough)
+    if codes is None:
+        return None, 'UNKNOWN_BOROUGH'
+    df_borough = df[df['Electoral wards and divisions Code'].isin(codes)]
+
     # Try exact name (within borough)
     match = df_borough[df_borough['Electoral wards and divisions'].str.strip() == ward_name]
     if len(match) >= 1:
         return match.iloc[0]['Electoral wards and divisions Code'], 'exact'
-    
+
     # Try & vs and (within borough)
     w2 = ward_name.replace(' & ', ' and ')
     match = df_borough[df_borough['Electoral wards and divisions'].str.strip() == w2]
     if len(match) >= 1:
         return match.iloc[0]['Electoral wards and divisions Code'], 'punct'
-    
+
     # Try with borough suffix (within borough range)
     w3 = f"{ward_name} ({borough})"
     match = df_borough[df_borough['Electoral wards and divisions'].str.strip() == w3]
     if len(match) >= 1:
         return match.iloc[0]['Electoral wards and divisions Code'], 'suffix'
-    
+
     # Try the (lad_code, scraped_name) override
-    target = OVERRIDES.get((BOROUGH_LA[borough], ward_name))
+    target = OVERRIDES.get((COUNCIL_LAD[borough], ward_name))
     if target is not None:
-        # Search within borough first
+        # Search within borough first. The WD24 lookup is 2024-vintage but the
+        # Census XLSX uses 2021 ward codes, so wards whose code changed in the
+        # 2023/2024 boundary reviews may fall through to the whole-DF search.
         for candidate in [target, f"{target} ({borough})"]:
             match = df_borough[df_borough['Electoral wards and divisions'].str.strip() == candidate]
             if len(match) >= 1:
                 return match.iloc[0]['Electoral wards and divisions Code'], 'fuzzy'
-        # Search whole DF if not in borough range
         match = df[df['Electoral wards and divisions'].str.strip() == target]
         if len(match) == 1:
             return match.iloc[0]['Electoral wards and divisions Code'], 'fuzzy-anywhere'
