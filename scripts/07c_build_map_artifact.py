@@ -56,17 +56,21 @@ def load_overrides() -> dict:
 
 def normalise(s: str) -> str:
     """Loose name match: lowercase, strip dots, slash → space, both apostrophe
-    variants → nothing, ' and ' → ' & ', drop a trailing '(...)' disambiguator,
-    collapse whitespace. Bridges the punctuation drift between the WD24 names
-    in the ONS geom file and the Wikipedia-scraped names in results-side data
-    (e.g. 'Dukinfield/Stalybridge' vs 'Dukinfield Stalybridge', 'Kings Heath'
-    vs "King's Heath", 'St Mary's' with curly vs straight apostrophe). The
-    parenthetical suffix is the Census disambiguator carried in override
-    targets (e.g. 'Barnes (Sunderland)') — WD24 itself uses no parens."""
+    variants → nothing, ' and ' → ' & ', drop a trailing '(...)' disambiguator
+    or ', X' ONS-style suffix, collapse whitespace. Bridges the punctuation
+    drift between the WD24 names in the ONS geom file and the Wikipedia-
+    scraped names in results-side data (e.g. 'Dukinfield/Stalybridge' vs
+    'Dukinfield Stalybridge', 'Kings Heath' vs "King's Heath", 'St Mary's'
+    with curly vs straight apostrophe). The parenthetical suffix is the
+    Census disambiguator carried in override targets (e.g. 'Barnes
+    (Sunderland)') — WD24 itself uses no parens. The ', X' suffix handles
+    ONS borough names like 'Kingston upon Hull, City of' / 'Herefordshire,
+    County of' / 'Bristol, City of' that Wikipedia drops."""
     s = s.lower().replace('/', ' ').replace('.', '')
     s = s.replace("’", "").replace("'", "")
     s = s.replace(' and ', ' & ')
     s = re.sub(r'\s*\([^)]*\)\s*$', '', s)
+    s = re.sub(r'\s*,\s+[^,]+$', '', s)
     return ' '.join(s.split())
 
 
@@ -95,12 +99,18 @@ def main():
               file=sys.stderr)
         return
     geom_lads = {w['lad'] for w in geoms['wards'].values()}
-    missing = region_lad_codes - geom_lads
+    # English county councils (E10*) elect electoral divisions, not WD22/24
+    # wards, so they have no geometry in ward_geoms.json by design. Exclude
+    # them from the coverage check; their results are filtered out upstream
+    # in 01c, so they contribute nothing to the join either. County-level
+    # outlines for the Map view are a follow-up.
+    ward_based_lads = {lad for lad in region_lad_codes if not lad.startswith('E10')}
+    missing = ward_based_lads - geom_lads
     if missing:
-        covered = len(region_lad_codes & geom_lads)
-        print(f'  ! ward_geoms.json covers {covered}/{len(region_lad_codes)} '
-              f'{region} councils; {len(missing)} councils have no geometry. '
-              f'Re-run scripts/09_fetch_ward_boundaries.py --force.',
+        covered = len(ward_based_lads & geom_lads)
+        print(f'  ! ward_geoms.json covers {covered}/{len(ward_based_lads)} '
+              f'{region} ward-based councils; {len(missing)} councils have no '
+              f'geometry. Re-run scripts/09_fetch_ward_boundaries.py --force.',
               file=sys.stderr)
         return
 
@@ -131,35 +141,51 @@ def main():
 
     overrides = load_overrides()
 
+    # Two-pass match so direct hits always win the polygon. Pass 1 resolves
+    # every result that already shares its borough+ward name with a WD24
+    # ward and claims that polygon. Pass 2 walks the rest through the
+    # override CSV and drops any whose proxy polygon was already taken by
+    # a direct match in pass 1 (e.g. Sandwell's 2024 "Bearwood" ward —
+    # proxied to old "Smethwick" — collides with Sandwell's own 2024
+    # "Smethwick" ward, which keeps the polygon).
     matched = []
     unmatched = []
-    polygon_collisions = []  # 2026 wards whose override target is already claimed
+    polygon_collisions = []
     used_codes = set()
+    pending_override = []
     for r in results:
         key = f'{normalise(r["borough"])}::{normalise(r["ward"])}'
         code = geom_by_norm.get(key)
-        via_override = False
         if code is None:
-            # Fall back to the override CSV (same one 02 uses for GSS
-            # matching). For 2024-boundary-review wards, Wikipedia carries
-            # the NEW name while WD24 geom still carries the OLD one — the
-            # override maps NEW → OLD so the geom join can finish.
-            override = overrides.get((r['lad_code'], r['ward']))
-            if override is not None:
-                key2 = f'{normalise(r["borough"])}::{normalise(override)}'
-                code = geom_by_norm.get(key2)
-                via_override = code is not None
-        # If an override-resolved polygon is already taken by an earlier
-        # ward, don't overwrite — Calderdale gained one ward in the 2024
-        # review without a free old-ward proxy, so e.g. Wainhouse and Park
-        # both want the same old Park polygon. The direct-match ward
-        # (processed first by natural iteration) keeps it; the
-        # override-match ward gets dropped from the map.
-        if code is not None and via_override and code in used_codes:
-            polygon_collisions.append((r['borough'], r['ward']))
+            pending_override.append(r)
             continue
+        used_codes.add(code)
+        matched.append({
+            'gss': code,
+            'b':   r['borough'],
+            'wn':  r['ward'],
+            'w':   r.get('winner'),
+            'pp':  r.get('prior_party'),
+            'py':  r.get('prior_year'),
+            'fl':  r.get('flipped'),
+            'mp':  r.get('match_type_prior'),
+        })
+
+    # Pass 2 — walk every result that didn't have a direct WD24 name match
+    # through the override CSV (NEW → OLD ward name for the 2024-review
+    # councils). Drop any whose proxy polygon was already claimed in pass 1
+    # so direct hits always win.
+    for r in pending_override:
+        code = None
+        override = overrides.get((r['lad_code'], r['ward']))
+        if override is not None:
+            key2 = f'{normalise(r["borough"])}::{normalise(override)}'
+            code = geom_by_norm.get(key2)
         if code is None:
             unmatched.append((r['borough'], r['ward']))
+            continue
+        if code in used_codes:
+            polygon_collisions.append((r['borough'], r['ward']))
             continue
         used_codes.add(code)
         matched.append({
@@ -219,6 +245,14 @@ def main():
     # region so the GM page doesn't ship GB-wide polygons.
     ward_paths    = {code: w['path'] for code, w in region_wards.items()}
     borough_paths = {code: b['path'] for code, b in region_boroughs.items()}
+    # Country outlines (E / W / S) — only useful on the GB page, where the
+    # reader can toggle borough outlines off and still see an unbroken UK
+    # silhouette. GM is a single borough cluster; country outlines would
+    # crop entirely outside its viewBox.
+    country_paths = (
+        {code: c['path'] for code, c in geoms.get('countries', {}).items()}
+        if region == 'gb' else {}
+    )
 
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
@@ -229,6 +263,7 @@ def main():
     js.append('const VIEWBOX_REGISTERED = ' + json.dumps(alt) + ';')
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
     js.append('const BOROUGH_PATHS = ' + json.dumps(borough_paths, separators=(',', ':')) + ';')
+    js.append('const COUNTRY_PATHS = ' + json.dumps(country_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(all_wards, separators=(',', ':')) + ';')
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
     js.append('const PARTY_DISPLAY = ' + json.dumps(PARTY_DISPLAY) + ';')
@@ -288,6 +323,12 @@ function renderMap(containerId, fillFor, classFor) {
     const cls = extra ? 'ward ' + extra : 'ward';
     root.appendChild(makePath(d, cls, fill, fmtTitle(w)));
   });
+  // Country outlines underneath the borough outlines so hiding the
+  // boroughs leaves the UK silhouette intact. Only emitted on the GB page;
+  // the object is empty on GM and this loop is a no-op there.
+  Object.values(COUNTRY_PATHS).forEach(d => {
+    root.appendChild(makePath(d, 'country', null, null));
+  });
   Object.values(BOROUGH_PATHS).forEach(d => {
     root.appendChild(makePath(d, 'borough', null, null));
   });
@@ -309,6 +350,25 @@ renderMap('map-after',
 // no-result wards stay neutral grey.
 renderMap('map-flips',
   w => (w.fl === true && w.w) ? PARTY_COLOURS[w.w] : null);
+
+// Toggle borough-outline visibility. Country outlines (E/W/S) stay drawn
+// either way, so when boroughs are hidden the reader sees just the colour
+// fills inside the UK silhouette. The button's label flips to show the
+// destination of the next click. No-ops on GM (no button + no country
+// paths to fall back on).
+const boroughBtn = document.getElementById('borough-toggle');
+if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
+  let hidden = false;
+  const applyBorough = () => {
+    document.querySelectorAll('.map-svg').forEach(svg => {
+      svg.classList.toggle('no-boroughs', hidden);
+    });
+    boroughBtn.setAttribute('aria-pressed', String(hidden));
+    boroughBtn.textContent = hidden ? 'Show borough outlines' : 'Hide borough outlines';
+  };
+  boroughBtn.addEventListener('click', () => { hidden = !hidden; applyBorough(); });
+  applyBorough();
+}
 
 // Toggle between the default viewBox and the registered-councils viewBox.
 // Only wires up if a button exists AND the page emitted an alternate

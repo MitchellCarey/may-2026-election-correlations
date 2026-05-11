@@ -70,6 +70,9 @@ UA = 'gm-2026-ward-analysis/1.0 (mitchellcarey2@gmail.com)'
 
 WARD_SIMPLIFY_TOLERANCE_M = 50
 BOROUGH_SIMPLIFY_TOLERANCE_M = 100
+# Country outlines (England / Wales / Scotland) are drawn at UK scale only,
+# where 1 px ≈ 2 km. 500 m is invisible at that zoom — keep the file small.
+COUNTRY_SIMPLIFY_TOLERANCE_M = 500
 
 # Northern Ireland WD codes start with N09; GB = UK minus NI.
 GB_WHERE = "WD24CD NOT LIKE 'N09%'"
@@ -204,7 +207,11 @@ def main():
     print(f'   got {len(wd_codes)} wards across '
           f'{len({i["lad"] for i in info_by_wd.values()})} councils')
 
-    if RAW_CACHE.exists() and not args.force:
+    if RAW_CACHE.exists():
+        # The raw cache is the expensive bit (~50 MB / ~5 min of HTTP); the
+        # downstream reprojection + simplification is fast. `--force` only
+        # re-processes — delete data/source/wd_may_2024_uk_bgc_gb.geojson by
+        # hand if you actually want a fresh fetch from ONS.
         print(f'2. {RAW_CACHE.relative_to(ROOT)} cached — reusing')
         with open(RAW_CACHE) as f:
             geom = json.load(f)
@@ -250,6 +257,24 @@ def main():
             'name': borough_name,
         }
 
+    print('5b. Dissolving wards → country outlines (E / W / S)...')
+    # LAD24 codes encode the nation in their first letter: E* = England,
+    # W* = Wales, S* = Scotland. Group on that. The GB-page renderer can
+    # hide the borough outlines while keeping these so colours show
+    # cleanly inside an unbroken UK silhouette.
+    countries_out = {}
+    country_label = {'E': 'England', 'W': 'Wales', 'S': 'Scotland'}
+    gdf_by_nation = gdf.assign(_nation=gdf['LAD24CD'].str[0])
+    for nation, group in gdf_by_nation.groupby('_nation'):
+        if nation not in country_label:
+            continue
+        merged = unary_union(group.geometry.tolist())
+        merged = merged.simplify(COUNTRY_SIMPLIFY_TOLERANCE_M, preserve_topology=True)
+        countries_out[nation] = {
+            'path': polygon_to_path(merged, maxy, miny),
+            'name': country_label[nation],
+        }
+
     print('6. Computing per-region viewBoxes...')
     view_boxes = {}
     for region in REGIONS:
@@ -281,6 +306,7 @@ def main():
         'viewBoxes': view_boxes,
         'wards':     wards_out,
         'boroughs':  boroughs_out,
+        'countries': countries_out,
     }
     OUT.write_text(json.dumps(out_data, separators=(',', ':')))
 
@@ -288,7 +314,7 @@ def main():
     gz_kb = len(gzip.compress(OUT.read_bytes())) / 1024
     print(
         f'\nDone. wrote {len(wards_out)} wards + {len(boroughs_out)} councils '
-        f'· {size_kb:.1f} KB (gzip {gz_kb:.1f} KB)'
+        f'+ {len(countries_out)} countries · {size_kb:.1f} KB (gzip {gz_kb:.1f} KB)'
     )
 
 
