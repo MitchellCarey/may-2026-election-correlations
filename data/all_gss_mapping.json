@@ -1056,7 +1056,7 @@
     "match": "exact"
   },
   "Sefton::Netherton North": {
-    "gss": "E05000939",
+    "gss": "E05000951",
     "match": "fuzzy"
   },
   "Sefton::Netherton South & Orrell": {
@@ -1068,7 +1068,7 @@
     "match": "exact"
   },
   "Sefton::Thornton & Hightown": {
-    "gss": "E05000934",
+    "gss": "E05000953",
     "match": "fuzzy"
   },
   "Sefton::Waterloo": {
@@ -1564,11 +1564,11 @@
     "match": "exact"
   },
   "Sunderland::Houghton North": {
-    "gss": "E05001160",
+    "gss": "E05001155",
     "match": "fuzzy"
   },
   "Sunderland::Houghton South and Hetton Downs": {
-    "gss": "E05001159",
+    "gss": "E05001161",
     "match": "fuzzy"
   },
   "Sunderland::Hylton Castle": {
@@ -2072,7 +2072,7 @@
     "match": "fuzzy"
   },
   "Sandwell::Bearwood": {
-    "gss": "E05001277",
+    "gss": "E05001260",
     "match": "fuzzy"
   },
   "Sandwell::Blackheath": {
@@ -2112,7 +2112,7 @@
     "match": "exact"
   },
   "Sandwell::Hill Top": {
-    "gss": "E05001269",
+    "gss": "E05001282",
     "match": "fuzzy"
   },
   "Sandwell::Langley": {
@@ -2168,7 +2168,7 @@
     "match": "exact"
   },
   "Solihull::Balsall & Berkswell": {
-    "gss": "E05001293",
+    "gss": "E05001284",
     "match": "fuzzy"
   },
   "Solihull::Castle Bromwich": {
@@ -2392,7 +2392,7 @@
     "match": "exact"
   },
   "Bradford::Airedale": {
-    "gss": "E05001356",
+    "gss": "E05001349",
     "match": "fuzzy"
   },
   "Bradford::Baildon": {
@@ -2612,7 +2612,7 @@
     "match": "fuzzy"
   },
   "Kirklees::Colne Valley West": {
-    "gss": "E05008559",
+    "gss": "E05001401",
     "match": "fuzzy"
   },
   "Kirklees::Crosland Moor": {
@@ -6011,6 +6011,106 @@
     "gss": "E05002097",
     "match": "exact"
   },
+  "Swindon::Badbury Park, Eldene & Liden": {
+    "gss": "E05008960",
+    "match": "fuzzy"
+  },
+  "Swindon::Blunsdon": {
+    "gss": "E05010755",
+    "match": "fuzzy"
+  },
+  "Swindon::Broadgreen": {
+    "gss": "E05008962",
+    "match": "fuzzy"
+  },
+  "Swindon::Chiseldon & Ridgeway": {
+    "gss": "E05008966",
+    "match": "fuzzy"
+  },
+  "Swindon::Covingham & Nythe": {
+    "gss": "E05008956",
+    "match": "fuzzy"
+  },
+  "Swindon::Gorse Hill": {
+    "gss": "E05008958",
+    "match": "fuzzy"
+  },
+  "Swindon::Haydon Wick": {
+    "gss": "E05010756",
+    "match": "exact"
+  },
+  "Swindon::Highworth": {
+    "gss": "E05010755",
+    "match": "fuzzy"
+  },
+  "Swindon::Kingshill": {
+    "gss": "E05008955",
+    "match": "fuzzy"
+  },
+  "Swindon::Lower Stratton": {
+    "gss": "E05010757",
+    "match": "fuzzy"
+  },
+  "Swindon::Lydiard, Freshbrook & Toothill": {
+    "gss": "E05008961",
+    "match": "fuzzy"
+  },
+  "Swindon::Old Town & Lawn": {
+    "gss": "E05008963",
+    "match": "fuzzy"
+  },
+  "Swindon::Parks": {
+    "gss": "E05008971",
+    "match": "fuzzy"
+  },
+  "Swindon::Penhill & Pinehurst": {
+    "gss": "E05008958",
+    "match": "fuzzy"
+  },
+  "Swindon::Priory Vale": {
+    "gss": "E05008965",
+    "match": "exact"
+  },
+  "Swindon::Queen's Park": {
+    "gss": "E05008954",
+    "match": "fuzzy"
+  },
+  "Swindon::Rodbourne Cheney": {
+    "gss": "E05008967",
+    "match": "exact"
+  },
+  "Swindon::Rodbourne Ferndale and Western": {
+    "gss": "E05008962",
+    "match": "fuzzy"
+  },
+  "Swindon::Shaw & Westlea": {
+    "gss": "E05008970",
+    "match": "fuzzy"
+  },
+  "Swindon::South Marston": {
+    "gss": "E05008969",
+    "match": "fuzzy"
+  },
+  "Swindon::St Andrews East": {
+    "gss": "E05008968",
+    "match": "fuzzy"
+  },
+  "Swindon::St Andrews West and Tadpole": {
+    "gss": "E05010756",
+    "match": "fuzzy"
+  },
+  "Swindon::Upper Stratton": {
+    "gss": "E05010757",
+    "match": "fuzzy"
+  },
+  "Swindon::Walcot": {
+    "gss": "E05008957",
+    "match": "fuzzy"
+  },
+  "Swindon::Wroughton & Wichelstowe": {
+    "gss": "E05008972",
+    "match": "punct"
+  },
   "Peterborough::Bretton": {
     "gss": "E05010806",
     "match": "exact"
@@ -6204,7 +6304,7 @@
     "match": "fuzzy"
   },
   "Thurrock::Purfleet-on-Thames": {
-    "gss": "E05002248",
+    "gss": "E05002242",
     "match": "fuzzy"
   },
   "Thurrock::Stanford-le-Hope South": {
@@ -6368,7 +6468,7 @@
     "match": "fuzzy"
   },
   "Milton Keynes::Bletchley South": {
-    "gss": "E05009408",
+    "gss": "E05009406",
     "match": "fuzzy"
   },
   "Milton Keynes::Bletchley West": {
@@ -6396,7 +6496,7 @@
     "match": "fuzzy"
   },
   "Milton Keynes::Furzton": {
-    "gss": "E05009422",
+    "gss": "E05009419",
     "match": "fuzzy"
   },
   "Milton Keynes::Great Linford": {
@@ -7282,6 +7382,78 @@
   "Colchester::Wivenhoe": {
     "gss": "E05010843",
     "match": "exact"
+  },
+  "Epping Forest::Buckhurst Hill East & Whitebridge": {
+    "gss": "E05004148",
+    "match": "fuzzy"
+  },
+  "Epping Forest::Buckhurst Hill West": {
+    "gss": "E05004149",
+    "match": "exact"
+  },
+  "Epping Forest::Chigwell with Lambourne": {
+    "gss": "E05004158",
+    "match": "fuzzy"
+  },
+  "Epping Forest::Epping East": {
+    "gss": "E05004153",
+    "match": "fuzzy"
+  },
+  "Epping Forest::Epping West & Rural": {
+    "gss": "E05004154",
+    "match": "fuzzy"
+  },
+  "Epping Forest::Grange Hill": {
+    "gss": "E05004155",
+    "match": "exact"
+  },
+  "Epping Forest::Loughton Fairmead": {
+    "gss": "E05004161",
+    "match": "exact"
+  },
+  "Epping Forest::Loughton Forest": {
+    "gss": "E05004162",
+    "match": "exact"
+  },
+  "Epping Forest::Loughton Roding": {
+    "gss": "E05004163",
+    "match": "exact"
+  },
+  "Epping Forest::Loughton St. John's": {
+    "gss": "E05004164",
+    "match": "norm"
+  },
+  "Epping Forest::North Weald Bassett": {
+    "gss": "E05004169",
+    "match": "exact"
+  },
+  "Epping Forest::Ongar": {
+    "gss": "E05004152",
+    "match": "fuzzy"
+  },
+  "Epping Forest::Roydon & Lower Nazeing": {
+    "gss": "E05004171",
+    "match": "fuzzy"
+  },
+  "Epping Forest::Rural East": {
+    "gss": "E05008940",
+    "match": "fuzzy"
+  },
+  "Epping Forest::Theydon Bois with Passingford": {
+    "gss": "E05004173",
+    "match": "fuzzy"
+  },
+  "Epping Forest::Waltham Abbey North": {
+    "gss": "E05004176",
+    "match": "fuzzy"
+  },
+  "Epping Forest::Waltham Abbey South & Rural": {
+    "gss": "E05004174",
+    "match": "fuzzy"
+  },
+  "Epping Forest::Waltham Abbey West": {
+    "gss": "E05004175",
+    "match": "fuzzy"
   },
   "Harlow::Bush Fair": {
     "gss": "E05004179",

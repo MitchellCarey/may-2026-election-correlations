@@ -55,6 +55,18 @@ HOLDGAIN_RE = re.compile(
     re.IGNORECASE | re.DOTALL,
 )
 
+# Some 2026 articles (Swindon, Epping Forest) drop the per-ward H3 headings and
+# put the {{Election box begin}}…{{Election box end}} blocks directly under the
+# H2 ward-results section. Match the begin template and read the ward name from
+# its title= parameter. The alternation lets the title contain wikilinks like
+# `[[Haydon Wick (ward)|Haydon Wick]]` whose internal `|` would otherwise be
+# read as a template-parameter delimiter.
+ELECTION_BOX_BEGIN_RE = re.compile(
+    r'\{\{Election box begin\s*\|\s*title\s*=\s*((?:\[\[[^\]]*\]\]|[^|}\n])+)',
+    re.IGNORECASE,
+)
+ELECTION_BOX_END_RE = re.compile(r'\{\{Election box end\s*\}\}', re.IGNORECASE)
+
 
 def normalize_party(raw: str) -> str:
     """Map Wikipedia party-name strings to the canonical labels used downstream."""
@@ -78,6 +90,28 @@ def normalize_party(raw: str) -> str:
     if s in {'radcliffe first', 'one kearsley', 'heald green ratepayers'}:
         return 'Independent'
     return 'Other'
+
+
+def _extract_winner_party(section: str) -> str | None:
+    """Return the raw party string for the top-of-poll candidate in a wiki
+    section, or None if no candidate template is found. Cascades winning →
+    candidate → hold/gain templates, mirroring the original inline logic."""
+    m = WINNER_RE.search(section) or CANDIDATE_RE.search(section)
+    if not m:
+        m = HOLDGAIN_RE.search(section)
+        if m and not m.group(1).strip():
+            m = None
+    return m.group(1) if m else None
+
+
+def _clean_ward_name(name: str) -> str:
+    """Strip Wikipedia heading/title decorations: collapse wikilinks to their
+    visible label, drop a trailing ward/constituency suffix (Wigan h4 style),
+    drop a trailing seat-count parenthetical like '(2)' or '(3 seats)'."""
+    clean = WIKILINK_RE.sub(r'\1', name)
+    clean = re.sub(r'\s+(ward|constituency)\s*$', '', clean, flags=re.IGNORECASE).strip()
+    clean = re.sub(r'\s*\(\d+(?:\s+seats?)?\)\s*$', '', clean).strip()
+    return clean
 
 
 def parse_article(_council_name: str, year: int, wt: str) -> dict:
@@ -106,29 +140,39 @@ def parse_article(_council_name: str, year: int, wt: str) -> dict:
         segment = wt[r_start:r_end]
         headings = [(m.start(), m.end(), m.group(2).strip())
                     for m in HEADING_RE.finditer(segment)]
+        out_before = len(out)
         for i, (h_start, h_end, name) in enumerate(headings):
             next_start = headings[i + 1][0] if i + 1 < len(headings) else len(segment)
             section = segment[h_end:next_start]
 
-            m = WINNER_RE.search(section) or CANDIDATE_RE.search(section)
-            if not m:
-                m = HOLDGAIN_RE.search(section)
-                if m and not m.group(1).strip():
-                    m = None
-            if not m:
+            party = _extract_winner_party(section)
+            if not party:
                 continue
 
-            # 2026 headings often wrap the ward name in a wikilink; collapse to
-            # just the visible label.
-            clean = WIKILINK_RE.sub(r'\1', name)
-            # Strip "ward" / "constituency" suffix common in Wigan's h4 names.
-            clean = re.sub(r'\s+(ward|constituency)\s*$', '', clean, flags=re.IGNORECASE).strip()
-            # Strip trailing "(N)" or "(N seats)" — Wikipedia conventions for
-            # the number of seats up for election (e.g. "===Roby (2)===" or
-            # "===Underhill (2 seats)==="). Neither is part of the ward name
-            # and the ONS WD24 register has no such suffix.
-            clean = re.sub(r'\s*\(\d+(?:\s+seats?)?\)\s*$', '', clean).strip()
+            clean = _clean_ward_name(name)
             if clean in out:
                 continue
-            out[clean] = {'prior_party': normalize_party(m.group(1)), 'prior_year': year}
+            out[clean] = {'prior_party': normalize_party(party), 'prior_year': year}
+
+        # Fallback for articles that drop the per-ward H3 headings and put
+        # {{Election box begin|title=Ward Name}}…{{Election box end}} blocks
+        # directly under the H2 (Swindon and Epping Forest 2026). Only fires
+        # when the H3/H4 walk yielded nothing in this scan range, so existing
+        # heading-structured articles are unaffected.
+        if len(out) > out_before:
+            continue
+        begins = list(ELECTION_BOX_BEGIN_RE.finditer(segment))
+        for j, bm in enumerate(begins):
+            block_start = bm.end()
+            next_begin = begins[j + 1].start() if j + 1 < len(begins) else len(segment)
+            end_match = ELECTION_BOX_END_RE.search(segment, block_start, next_begin)
+            block_end = end_match.start() if end_match else next_begin
+            block = segment[block_start:block_end]
+            party = _extract_winner_party(block)
+            if not party:
+                continue
+            clean = _clean_ward_name(bm.group(1).strip())
+            if clean in out:
+                continue
+            out[clean] = {'prior_party': normalize_party(party), 'prior_year': year}
     return out

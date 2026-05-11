@@ -7652,6 +7652,133 @@
       null
     ]
   },
+  "Swindon": {
+    "Badbury Park, Eldene & Liden": [
+      "Labour",
+      null,
+      null
+    ],
+    "Blunsdon": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Broadgreen": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Chiseldon & Ridgeway": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Covingham & Nythe": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Gorse Hill": [
+      "Labour",
+      null,
+      null
+    ],
+    "Haydon Wick": [
+      "Reform",
+      null,
+      null
+    ],
+    "Highworth": [
+      "Reform",
+      null,
+      null
+    ],
+    "Kingshill": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Lower Stratton": [
+      "Reform",
+      null,
+      null
+    ],
+    "Lydiard, Freshbrook & Toothill": [
+      "Green",
+      null,
+      null
+    ],
+    "Old Town & Lawn": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Parks": [
+      "Labour",
+      null,
+      null
+    ],
+    "Penhill & Pinehurst": [
+      "Labour",
+      null,
+      null
+    ],
+    "Priory Vale": [
+      "Labour",
+      null,
+      null
+    ],
+    "Queen's Park": [
+      "Green",
+      null,
+      null
+    ],
+    "Rodbourne Cheney": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Rodbourne Ferndale and Western": [
+      "Reform",
+      null,
+      null
+    ],
+    "Shaw & Westlea": [
+      "Green",
+      null,
+      null
+    ],
+    "South Marston": [
+      "Reform",
+      null,
+      null
+    ],
+    "St Andrews East": [
+      "Conservative",
+      null,
+      null
+    ],
+    "St Andrews West and Tadpole": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Upper Stratton": [
+      "Green",
+      null,
+      null
+    ],
+    "Walcot": [
+      "Labour",
+      null,
+      null
+    ],
+    "Wroughton & Wichelstowe": [
+      "LibDem",
+      null,
+      null
+    ]
+  },
   "Peterborough": {
     "Bretton": [
       "Reform",
@@ -9277,6 +9404,98 @@
     ],
     "Wivenhoe": [
       "LibDem",
+      null,
+      null
+    ]
+  },
+  "Epping Forest": {
+    "Buckhurst Hill East & Whitebridge": [
+      "Reform",
+      null,
+      null
+    ],
+    "Buckhurst Hill West": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Chigwell with Lambourne": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Epping East": [
+      "Reform",
+      null,
+      null
+    ],
+    "Epping West & Rural": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Grange Hill": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Loughton Fairmead": [
+      "Reform",
+      null,
+      null
+    ],
+    "Loughton Forest": [
+      "Other",
+      null,
+      null
+    ],
+    "Loughton Roding": [
+      "Other",
+      null,
+      null
+    ],
+    "Loughton St. John's": [
+      "Other",
+      null,
+      null
+    ],
+    "North Weald Bassett": [
+      "Reform",
+      null,
+      null
+    ],
+    "Ongar": [
+      "Reform",
+      null,
+      null
+    ],
+    "Roydon & Lower Nazeing": [
+      "Reform",
+      null,
+      null
+    ],
+    "Rural East": [
+      "Reform",
+      null,
+      null
+    ],
+    "Theydon Bois with Passingford": [
+      "Reform",
+      null,
+      null
+    ],
+    "Waltham Abbey North": [
+      "Reform",
+      null,
+      null
+    ],
+    "Waltham Abbey South & Rural": [
+      "Reform",
+      null,
+      null
+    ],
+    "Waltham Abbey West": [
+      "Reform",
       null,
       null
     ]

@@ -290,3 +290,36 @@ E08000034,Colne Valley West,Golcar,Kirklees 2024 review; Golcar ward is the west
 E06000034,Purfleet-on-Thames,Stanford East and Corringham Town,Thurrock 2024 review; no west-Thurrock unclaimed polygon — Stanford East as placeholder
 E06000042,Bletchley South,Bletchley East,Milton Keynes 2024 review; both south of central MK in Bletchley
 E06000042,Furzton,Shenley Brook End,Milton Keynes 2024 review; Shenley Brook End is adjacent to Furzton
+E06000030,"Badbury Park, Eldene & Liden","Liden, Eldene and Park South",Swindon 2024 review
+E06000030,Blunsdon,Blunsdon and Highworth,Swindon 2024 review
+E06000030,Broadgreen,Mannington and Western,Swindon 2024 review; Broadgreen is in NE Swindon
+E06000030,Chiseldon & Ridgeway,Ridgeway,Swindon 2024 review
+E06000030,Covingham & Nythe,Covingham and Dorcan,Swindon 2024 review
+E06000030,Gorse Hill,Gorse Hill and Pinehurst,Swindon 2024 review
+E06000030,Highworth,Blunsdon and Highworth,Swindon 2024 review (polygon collides with Blunsdon)
+E06000030,Kingshill,Chiseldon and Lawn,Swindon 2024 review; Kingshill is south-central — closest unused proxy
+E06000030,Lower Stratton,Penhill and Upper Stratton,Swindon 2024 review
+E06000030,"Lydiard, Freshbrook & Toothill",Lydiard and Freshbrook,Swindon 2024 review
+E06000030,Old Town & Lawn,Old Town,Swindon 2024 review
+E06000030,Parks,Walcot and Park North,Swindon 2024 review
+E06000030,Penhill & Pinehurst,Gorse Hill and Pinehurst,Swindon 2024 review (polygon collides with Gorse Hill)
+E06000030,Queen's Park,Central,Swindon 2024 review; Queen's Park is in central Swindon
+E06000030,Rodbourne Ferndale and Western,Mannington and Western,Swindon 2024 review (polygon collides with Broadgreen)
+E06000030,Shaw & Westlea,Shaw,Swindon 2024 review
+E06000030,South Marston,St Margaret and South Marston,Swindon 2024 review
+E06000030,St Andrews East,St Andrews,Swindon 2024 review
+E06000030,St Andrews West and Tadpole,Haydon Wick,Swindon 2024 review; Tadpole Garden Village area (polygon collides with direct Haydon Wick)
+E06000030,Upper Stratton,Penhill and Upper Stratton,Swindon 2024 review (polygon collides with Lower Stratton)
+E06000030,Walcot,Eastcott,Swindon 2024 review; Walcot adjacent to Eastcott
+E06000030,Wroughton & Wichelstowe,Wroughton and Wichelstowe,Swindon 2024 review
+E07000072,Buckhurst Hill East & Whitebridge,Buckhurst Hill East,Epping Forest 2024 review
+E07000072,Chigwell with Lambourne,Lambourne,Epping Forest 2024 review
+E07000072,Epping East,Epping Hemnall,Epping Forest 2024 review
+E07000072,Epping West & Rural,Epping Lindsey and Thornwood Common,Epping Forest 2024 review
+E07000072,Ongar,"Chipping Ongar, Greensted and Marden Ash",Epping Forest 2024 review
+E07000072,Roydon & Lower Nazeing,Roydon,Epping Forest 2024 review
+E07000072,Rural East,"Hastingwood, Matching and Sheering Village",Epping Forest 2024 review
+E07000072,Theydon Bois with Passingford,Theydon Bois,Epping Forest 2024 review
+E07000072,Waltham Abbey North,Waltham Abbey North East,Epping Forest 2024 review
+E07000072,Waltham Abbey South & Rural,Waltham Abbey High Beach,Epping Forest 2024 review
+E07000072,Waltham Abbey West,Waltham Abbey Honey Lane,Epping Forest 2024 review

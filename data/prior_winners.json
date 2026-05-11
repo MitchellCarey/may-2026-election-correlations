@@ -3573,6 +3573,30 @@
     "Whalebone": {
       "prior_party": "Labour",
       "prior_year": 2022
+    },
+    "Heath by-election: 30 March 2023": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Mayesbrook by-election: 14 September 2023": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Northbury by-election: 28 November 2024": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Village by-election: 28 November 2024": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Whalebone by-election: 20 February 2025": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Thames View by-election: 31 July 2025": {
+      "prior_party": "Labour",
+      "prior_year": 2022
     }
   },
   "Barnet": {
@@ -3670,6 +3694,30 @@
     },
     "Woodhouse": {
       "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Golders Green by-election: 15 February 2023": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Barnet Vale by-election: 4 July 2024": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Burnt Oak by-election: 13 February 2025": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Finchley Church End by-election: 6 March 2025": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Whetstone by-election: 15th May 2025": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hendon by-election: 30 October 2025<ref>{{Cite web": {
+      "prior_party": "Conservative",
       "prior_year": 2022
     }
   },
@@ -4125,6 +4173,22 @@
     "Woodside": {
       "prior_party": "Labour",
       "prior_year": 2022
+    },
+    "South Croydon by-election, 30 June 2022": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Selsdon Vale and Forestdale by-election, 3 November 2022": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Park Hill and Whitgift by-election, 2 May 2024<ref>{{cite web": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Woodside by-election, 2 May 2024<ref>{{cite web": {
+      "prior_party": "Labour",
+      "prior_year": 2022
     }
   },
   "Ealing": {
@@ -4324,6 +4388,10 @@
     },
     "Winchmore Hill": {
       "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Jubilee by-election: 28 November 2024": {
+      "prior_party": "Labour",
       "prior_year": 2022
     }
   },
@@ -4611,6 +4679,18 @@
     "Wormholt": {
       "prior_party": "Labour",
       "prior_year": 2022
+    },
+    "Hammersmith Broadway by-election: 20 February 2025": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lillie by-election: 20 February 2025": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Fulham Town by-election: 3 July 2025": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
     }
   },
   "Haringey": {
@@ -4699,7 +4779,96 @@
       "prior_year": 2022
     }
   },
-  "Harrow": {},
+  "Harrow": {
+    "Belmont": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Canons": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Centenary": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Edgware": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Greenhill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Harrow on the Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Harrow Weald": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Hatch End": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Headstone": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kenton East": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Kenton West": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Marlborough": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "North Harrow": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Pinner": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Pinner South": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Rayners Lane": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Roxbourne": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Roxeth": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stanmore": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Wealdstone North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wealdstone South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Harrow": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
   "Havering": {
     "Beam Park": {
       "prior_party": "Labour",
@@ -5030,6 +5199,18 @@
     "Tufnell Park": {
       "prior_party": "Labour",
       "prior_year": 2022
+    },
+    "Hillrise by-election, 2 May 2024<ref>{{cite web": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hillrise by-election, 15 August 2024<ref>{{cite web": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Junction by-election, 28 November 2024<ref>{{cite web": {
+      "prior_party": "Labour",
+      "prior_year": 2022
     }
   },
   "Kensington and Chelsea": {
@@ -5186,6 +5367,14 @@
     "Tudor": {
       "prior_party": "LibDem",
       "prior_year": 2022
+    },
+    "Green Lane & St James, 10th November 2022": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Hook & Chessington North by-election: 4 July 2024": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
     }
   },
   "Lambeth": {
@@ -5294,7 +5483,96 @@
       "prior_year": 2022
     }
   },
-  "Lewisham": {},
+  "Lewisham": {
+    "Bellingham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Blackheath": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brockley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Catford South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Crofton Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Deptford": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Downham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Evelyn": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Forest Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Grove Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hither Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ladywell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lee Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lewisham Central": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "New Cross Gate": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Perry Vale": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Rushey Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sydenham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Telegraph Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Deptford by-election, 9 November 2023<ref>{{cite web": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Deptford by-election, 2 May 2024<ref>{{cite web": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "2024 Blackheath by-election": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
   "Merton": {
     "Abbey": {
       "prior_party": "LibDem",
@@ -5374,6 +5652,14 @@
     },
     "Wimbledon Town & Dundonald": {
       "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Figge's Marsh by-election: 4 July 2024": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Helier by-election: 4 July 2024": {
+      "prior_party": "Labour",
       "prior_year": 2022
     }
   },
@@ -5563,6 +5849,18 @@
     "Wanstead Village": {
       "prior_party": "Labour",
       "prior_year": 2022
+    },
+    "Wanstead Park by-election: 14 November 2024": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Mayfield by-election: 27 March 2025": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Hainault by-election: 1 May 2025": {
+      "prior_party": "Labour",
+      "prior_year": 2022
     }
   },
   "Richmond upon Thames": {
@@ -5730,6 +6028,18 @@
     },
     "Surrey Docks": {
       "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Newington by-election, 29 June 2023": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Faraday by-election, 4th July 2024": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Rye Lane by-election, 4th July 2024": {
+      "prior_party": "Labour",
       "prior_year": 2022
     }
   },
@@ -5911,6 +6221,10 @@
     "St Katharine's and Wapping": {
       "prior_party": "Labour",
       "prior_year": 2022
+    },
+    "Bow East by-election: 12 September 2024": {
+      "prior_party": "Labour",
+      "prior_year": 2022
     }
   },
   "Waltham Forest": {
@@ -5999,6 +6313,10 @@
       "prior_year": 2022
     },
     "Wood Street": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Higham Hill by-election: 26 October 2023": {
       "prior_party": "Labour",
       "prior_year": 2022
     }
@@ -6164,6 +6482,22 @@
     },
     "Westbourne": {
       "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Abbey Road by-election: 4 July 2024": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Harrow Road by-election, 19 September 2024<ref>{{Cite web": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West End by-election: 19 September 2024": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Vincent Square by-election: 27 February 2025": {
+      "prior_party": "Conservative",
       "prior_year": 2022
     }
   },
@@ -6933,7 +7267,80 @@
       "prior_year": 2022
     }
   },
-  "Wokingham": {},
+  "Wokingham": {
+    "Arborfield<ref name=results/>": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Bulmershe & Whitegates<ref name=results/>": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Coronation<ref name=results/>": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Emmbrook<ref name=results/>": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Evendons<ref name=results/>": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Finchampstead North<ref name=results/>": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Finchampstead South<ref name=results/>": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hawkedon<ref name=results/>": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hillside<ref name=results/>": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Loddon<ref name=results/>": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Maiden Erlegh<ref name=results/>": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Norreys<ref name=results/>": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Remenham, Wargrave and Ruscombe<ref name=results/>": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Shinfield South<ref name=results/>": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "South Lake<ref name=results/>": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Swallowfield<ref name=results/>": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Winnersh<ref name=results/>": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Wokingham Without<ref name=results/>": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    }
+  },
   "Milton Keynes": {
     "Bletchley East": {
       "prior_party": "Labour",
@@ -7292,6 +7699,14 @@
     "Wroxall, Lowtherville and Bonchurch": {
       "prior_party": "Independent",
       "prior_year": 2021
+    },
+    "Lake North by-election: 1 May 2025": {
+      "prior_party": "Reform",
+      "prior_year": 2021
+    },
+    "Lake North by-election: 2 October 2025<ref>{{Cite web": {
+      "prior_party": "Reform",
+      "prior_year": 2021
     }
   },
   "Cambridge": {
@@ -7456,6 +7871,14 @@
     "Yaxley": {
       "prior_party": "Conservative",
       "prior_year": 2022
+    },
+    "Great Paxton by-election, 2 May 2024<ref>{{cite web": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "St Neots Eatons by-election, 19 September 2024<ref>{{cite web": {
+      "prior_party": "Independent",
+      "prior_year": 2022
     }
   },
   "South Cambridgeshire": {
@@ -7564,7 +7987,60 @@
       "prior_year": 2022
     }
   },
-  "Exeter": {},
+  "Exeter": {
+    "Alphington": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Duryard and St James": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Exwick (2 Seats)": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Heavitree (2 Seats)": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Mincinglake and Whipton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Newtown and St Leonard's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Pennsylvania (2 Seats)": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Pinhoe": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Priory (2 Seats)": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St David's": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "St Loye's": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St Thomas": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Topsham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
   "Hastings": {
     "Ashdown": {
       "prior_party": "Conservative",
@@ -8331,6 +8807,18 @@
     "Rowner and Holbrook": {
       "prior_party": "LibDem",
       "prior_year": 2024
+    },
+    "Grange and Alver Valley by-election: 4th July 2024": {
+      "prior_party": "Labour",
+      "prior_year": 2024
+    },
+    "Harbourside and Town by-election: 21 November 2024": {
+      "prior_party": "Conservative",
+      "prior_year": 2024
+    },
+    "Bridgemary by-election: 15 January 2026<ref name=SOPN />": {
+      "prior_party": "Reform",
+      "prior_year": 2024
     }
   },
   "Hart": {
@@ -8970,6 +9458,10 @@
     },
     "Whitefield and Walverden": {
       "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "December 2022 Barrowford and Pendleside By-Election<ref>{{Cite web": {
+      "prior_party": "Conservative",
       "prior_year": 2022
     }
   },
@@ -9629,6 +10121,10 @@
       "prior_year": 2022
     },
     "Wilnecote": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Belgrave by-election, 2 March 2023": {
       "prior_party": "Conservative",
       "prior_year": 2022
     }

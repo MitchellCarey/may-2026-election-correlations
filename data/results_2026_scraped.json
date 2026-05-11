@@ -3985,7 +3985,83 @@
       "party": "Green"
     }
   },
-  "Swindon": {},
+  "Swindon": {
+    "Badbury Park, Eldene & Liden": {
+      "party": "Labour"
+    },
+    "Blunsdon": {
+      "party": "Conservative"
+    },
+    "Broadgreen": {
+      "party": "Conservative"
+    },
+    "Chiseldon & Ridgeway": {
+      "party": "Conservative"
+    },
+    "Covingham & Nythe": {
+      "party": "Conservative"
+    },
+    "Gorse Hill": {
+      "party": "Labour"
+    },
+    "Haydon Wick": {
+      "party": "Reform"
+    },
+    "Highworth": {
+      "party": "Reform"
+    },
+    "Kingshill": {
+      "party": "Conservative"
+    },
+    "Lower Stratton": {
+      "party": "Reform"
+    },
+    "Lydiard, Freshbrook & Toothill": {
+      "party": "Green"
+    },
+    "Old Town & Lawn": {
+      "party": "Conservative"
+    },
+    "Parks": {
+      "party": "Labour"
+    },
+    "Penhill & Pinehurst": {
+      "party": "Labour"
+    },
+    "Priory Vale": {
+      "party": "Labour"
+    },
+    "Queen's Park": {
+      "party": "Green"
+    },
+    "Rodbourne Cheney": {
+      "party": "Conservative"
+    },
+    "Rodbourne Ferndale and Western": {
+      "party": "Reform"
+    },
+    "Shaw & Westlea": {
+      "party": "Green"
+    },
+    "South Marston": {
+      "party": "Reform"
+    },
+    "St Andrews East": {
+      "party": "Conservative"
+    },
+    "St Andrews West and Tadpole": {
+      "party": "Conservative"
+    },
+    "Upper Stratton": {
+      "party": "Green"
+    },
+    "Walcot": {
+      "party": "Labour"
+    },
+    "Wroughton & Wichelstowe": {
+      "party": "LibDem"
+    }
+  },
   "Peterborough": {
     "Bretton": {
       "party": "Reform"
@@ -4977,7 +5053,62 @@
       "party": "LibDem"
     }
   },
-  "Epping Forest": {},
+  "Epping Forest": {
+    "Buckhurst Hill East & Whitebridge": {
+      "party": "Reform"
+    },
+    "Buckhurst Hill West": {
+      "party": "Conservative"
+    },
+    "Chigwell with Lambourne": {
+      "party": "Conservative"
+    },
+    "Epping East": {
+      "party": "Reform"
+    },
+    "Epping West & Rural": {
+      "party": "Conservative"
+    },
+    "Grange Hill": {
+      "party": "Conservative"
+    },
+    "Loughton Fairmead": {
+      "party": "Reform"
+    },
+    "Loughton Forest": {
+      "party": "Other"
+    },
+    "Loughton Roding": {
+      "party": "Other"
+    },
+    "Loughton St. John's": {
+      "party": "Other"
+    },
+    "North Weald Bassett": {
+      "party": "Reform"
+    },
+    "Ongar": {
+      "party": "Reform"
+    },
+    "Roydon & Lower Nazeing": {
+      "party": "Reform"
+    },
+    "Rural East": {
+      "party": "Reform"
+    },
+    "Theydon Bois with Passingford": {
+      "party": "Reform"
+    },
+    "Waltham Abbey North": {
+      "party": "Reform"
+    },
+    "Waltham Abbey South & Rural": {
+      "party": "Reform"
+    },
+    "Waltham Abbey West": {
+      "party": "Reform"
+    }
+  },
   "Harlow": {
     "Bush Fair": {
       "party": "Conservative"
