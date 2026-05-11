@@ -445,6 +445,88 @@
       "prior_year": 2022
     }
   },
+  "Salford": {
+    "Barton and Winton": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Blackfriars and Trinity": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Boothstown and Ellenbrook": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    },
+    "Broughton": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Cadishead and Lower Irlam": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Claremont": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Eccles": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Higher Irlam and Peel Green": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Kersal and Broughton Park": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    },
+    "Little Hulton": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Ordsall": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Pendlebury and Clifton": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Pendleton and Charlestown": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Quays": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Swinton and Wardley": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Swinton Park": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Walkden North": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Walkden South": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Weaste and Seedley": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Worsley and Westwood Park": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    }
+  },
   "Stockport": {
     "Bramhall North": {
       "prior_party": "LibDem",
@@ -797,86 +879,5380 @@
       "prior_year": 2022
     }
   },
-  "Salford": {
-    "Barton and Winton": {
+  "Knowsley": {
+    "Cherryfield": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Halewood North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Halewood South": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Northwood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Page Moss": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Prescot North": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Prescot South": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Roby": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Shevington": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Gabriels": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "St Michaels": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stockbridge": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Swanside": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Whiston and Cronton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Whitefield": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    }
+  },
+  "Liverpool": {
+    "Aigburth": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "Allerton": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "Anfield": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Arundel": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Belle Vale": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Broadgreen": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Brownlow Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Calderstones": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "Canning": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Childwall": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "Church": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "City Centre North": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "City Centre South": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Clubmoor East": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Clubmoor West": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "County": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Croxteth": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Croxteth Country Park": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Dingle": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Edge Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Everton East": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Everton North": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Everton West": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Fazakerley East": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Fazakerley North": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Fazakerley West": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Festival Gardens": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Garston": {
+      "prior_party": "Independent",
+      "prior_year": 2023
+    },
+    "Gateacre": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "Grassendale & Cressington": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "Greenbank Park": {
+      "prior_party": "Green",
+      "prior_year": 2023
+    },
+    "Kensington & Fairfield": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Kirkdale East": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Kirkdale West": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Knotty Ash & Dovecot Park": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Mossley Hill": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "Much Woolton & Hunts Cross": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "Norris Green": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Old Swan East": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Old Swan West": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Orrell Park": {
+      "prior_party": "Independent",
+      "prior_year": 2023
+    },
+    "Penny Lane": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "Princes Park": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Sandfield Park": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Sefton Park": {
+      "prior_party": "Green",
+      "prior_year": 2023
+    },
+    "Smithdown": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Speke": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Springwood": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "St Michael's": {
+      "prior_party": "Green",
+      "prior_year": 2023
+    },
+    "Stoneycroft": {
+      "prior_party": "Other",
+      "prior_year": 2023
+    },
+    "Toxteth": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Tuebrook Breckside Park": {
+      "prior_party": "Other",
+      "prior_year": 2023
+    },
+    "Tuebrook Larkhill": {
+      "prior_party": "Other",
+      "prior_year": 2023
+    },
+    "Vauxhall": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Walton": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Waterfront North": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Waterfront South": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "Wavertree Garden Suburb": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Wavertree Village": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "West Derby Deysbrook": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "West Derby Leyfield": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "West Derby Muirhead": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    },
+    "Woolton Village": {
+      "prior_party": "LibDem",
+      "prior_year": 2023
+    },
+    "Yew Tree": {
+      "prior_party": "Labour",
+      "prior_year": 2023
+    }
+  },
+  "St. Helens": {
+    "Billinge and Seneley Green": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Blackbrook": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bold and Lea Green": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Eccleston": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Haydock": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Moss Bank": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Newton-Le-Willows East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Newton-Le-Willows West": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Parr": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Peasley Cross and Fingerpost": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Rainford": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Rainhill": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "St Helens Town Centre": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sutton North West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sutton South East": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Thatto Heath": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Windle": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Sefton": {
+    "Ainsdale": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Birkdale": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Blundellsands": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cambridge": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Church": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Derby": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Duke's": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Ford": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Harington": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kew": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Linacre": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Litherland": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Manor": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Meols": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Molyneux": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Netherton and Orrell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Norwood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ravenmeols": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St. Oswald": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sudell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Victoria": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Wirral": {
+    "Bebington": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Bidston and St James": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Birkenhead and Tranmere": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Bromborough": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Clatterbridge": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Claughton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Eastham": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Greasby, Frankby and Irby": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Heswall": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Hoylake and Meols": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Leasowe and Moreton East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Liscard": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Moreton West and Saughall Massie": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "New Brighton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Oxton": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Pensby and Thingwall": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Prenton": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Rock Ferry": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Seacombe": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Upton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wallasey": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "West Kirby and Thurstaston": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Liscard by-election 2022": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Barnsley": {
+    "Central": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cudworth": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Darfield": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Darton East": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Darton West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dearne North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dearne South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dodworth": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hoyland Milton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kingstone": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Monk Bretton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "North East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Old Town": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Penistone East": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Penistone West": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Rockingham": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Royston": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Helen's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stairfoot": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wombwell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Worsbrough": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Doncaster": {
+    "Adwick-Le-Street and Carcroft": {
       "prior_party": "Labour",
       "prior_year": 2021
     },
-    "Blackfriars and Trinity": {
+    "Armthorpe": {
       "prior_party": "Labour",
       "prior_year": 2021
     },
-    "Boothstown and Ellenbrook": {
+    "Balby South": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Bentley": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Bessacarr": {
       "prior_party": "Conservative",
       "prior_year": 2021
     },
-    "Broughton": {
+    "Conisbrough": {
       "prior_party": "Labour",
       "prior_year": 2021
     },
-    "Cadishead and Lower Irlam": {
+    "Edenthorpe & Kirk Sandall": {
       "prior_party": "Labour",
       "prior_year": 2021
     },
-    "Claremont": {
+    "Edlington & Warmsworth": {
       "prior_party": "Labour",
       "prior_year": 2021
     },
-    "Eccles": {
-      "prior_party": "Labour",
-      "prior_year": 2021
-    },
-    "Higher Irlam and Peel Green": {
-      "prior_party": "Labour",
-      "prior_year": 2021
-    },
-    "Kersal and Broughton Park": {
+    "Finningley": {
       "prior_party": "Conservative",
       "prior_year": 2021
     },
-    "Little Hulton": {
+    "Hatfield": {
       "prior_party": "Labour",
       "prior_year": 2021
     },
-    "Ordsall": {
+    "Hexthorpe & Balby North": {
       "prior_party": "Labour",
       "prior_year": 2021
     },
-    "Pendlebury and Clifton": {
+    "Mexborough": {
+      "prior_party": "Other",
+      "prior_year": 2021
+    },
+    "Norton & Askern": {
       "prior_party": "Labour",
       "prior_year": 2021
     },
-    "Pendleton and Charlestown": {
+    "Roman Ridge": {
       "prior_party": "Labour",
       "prior_year": 2021
     },
-    "Quays": {
+    "Rossington & Bawtry": {
       "prior_party": "Labour",
       "prior_year": 2021
     },
-    "Swinton and Wardley": {
-      "prior_party": "Labour",
-      "prior_year": 2021
-    },
-    "Swinton Park": {
-      "prior_party": "Labour",
-      "prior_year": 2021
-    },
-    "Walkden North": {
-      "prior_party": "Labour",
-      "prior_year": 2021
-    },
-    "Walkden South": {
-      "prior_party": "Labour",
-      "prior_year": 2021
-    },
-    "Weaste and Seedley": {
-      "prior_party": "Labour",
-      "prior_year": 2021
-    },
-    "Worsley and Westwood Park": {
+    "Sprotbrough": {
       "prior_party": "Conservative",
       "prior_year": 2021
+    },
+    "Stainforth & Barnby Dun": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Thorne & Moorends": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Tickhill & Wadworth": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    },
+    "Town": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Wheatley Hills & Intake": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    }
+  },
+  "Rotherham": {
+    "Anston & Woodsetts": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    },
+    "Aston & Todwick": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    },
+    "Aughton & Swallownest": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Boston Castle": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Bramley & Ravenfield": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    },
+    "Brinsworth": {
+      "prior_party": "LibDem",
+      "prior_year": 2021
+    },
+    "Dalton & Thrybergh": {
+      "prior_party": "Independent",
+      "prior_year": 2021
+    },
+    "Dinnington": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    },
+    "Greasbrough": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Hellaby & Maltby West": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    },
+    "Hoober": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Keppel": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Kilnhurst & Swinton East": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Maltby East": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    },
+    "Rawmarsh East": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Rawmarsh West": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Rother Vale": {
+      "prior_party": "LibDem",
+      "prior_year": 2021
+    },
+    "Rotherham East": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Rotherham West": {
+      "prior_party": "Other",
+      "prior_year": 2021
+    },
+    "Sitwell": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    },
+    "Swinton Rockingham": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Thurcroft & Wickersley South": {
+      "prior_party": "Conservative",
+      "prior_year": 2021
+    },
+    "Wales": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Wath": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Wickersley North": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    },
+    "Kilnhurst and Swinton East": {
+      "prior_party": "Labour",
+      "prior_year": 2021
+    }
+  },
+  "Sheffield": {
+    "Beauchief & Greenhill": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Beighton": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Birley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Broomhill & Sharrow Vale": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Burngreave": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "City": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Crookes & Crosspool": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Darnall": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dore & Totley": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "East Ecclesfield": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ecclesall": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Firth Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Fulwood": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Gleadless Valley": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Graves Park": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hillsborough": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Manor Castle": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Mosborough": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Nether Edge & Sharrow": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Park & Arbourthorne": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Richmond": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Shiregreen & Brightside": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Southey": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stannington": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Stocksbridge & Upper Don": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Walkley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Ecclesfield": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Woodhouse": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Newcastle upon Tyne": {
+    "Arthur's Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Benwell and Scotswood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Blakelaw": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Byker": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Callerton and Throckley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Castle": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Chapel": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Dene and South Gosforth": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Denton and Westerhope": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Elswick": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Fawdon and West Gosforth": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Gosforth": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Heaton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kenton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kingston Park South and Newbiggin Hall": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lemington": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Manor Park": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Monument": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "North Jesmond": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ouseburn": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Parklands": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "South Jesmond": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Walker": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Walkergate": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Fenham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wingrove": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "North Tyneside": {
+    "Battle Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Benton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Camperdown": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Chirton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Collingwood": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Cullercoats": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Howdon": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Killingworth": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Longbenton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Monkseaton North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Monkseaton South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Northumberland": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Preston": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Riverside": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Mary's": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Tynemouth": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Valley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wallsend": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Weetslade": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Whitley Bay": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "South Tyneside": {
+    "Beacon and Bents": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Bede": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Biddick and All Saints": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Boldon Colliery": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cleadon and East Boldon": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Cleadon Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Fellgate and Hedworth": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Harton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hebburn North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hebburn South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Horsley Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Monkton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Primrose": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Simonside and Rekendyke": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Park": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Westoe": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Whitburn and Marsden": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Whiteleas": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Sunderland": {
+    "Barnes": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Castle": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Copt Hill (countermanded)": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Doxford": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Fulwell": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hendon": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hetton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Houghton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Millfield": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Pallion": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Redhill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ryhope": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sandhill": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Shiney Row": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Silksworth": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Southwick": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St. Anne's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St. Chad's": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St. Michael's": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St. Peter's": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Washington Central": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Washington East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Washington North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Washington South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Washington West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Birmingham": {
+    "Acocks Green": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Allens Cross": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Alum Rock": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Aston": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Balsall Heath West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bartley Green": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Billesley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Birchfield": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bordesley and Highgate": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bordesley Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bournbrook and Selly Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bournville and Cotteridge": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brandwood and Kings Heath": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bromford and Hodge Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Castle Vale": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Druids Heath and Monyhull": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Edgbaston": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Erdington": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Frankley Great Park": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Garretts Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Glebe Farm and Tile Cross": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Gravelly Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hall Green North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hall Green South": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Handsworth": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Handsworth Wood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Harborne": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Heartlands": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Highters Heath": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Holyhead": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kings Norton North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kings Norton South": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Kingstanding": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ladywood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Longbridge and West Heath": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Lozells": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Moseley": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Nechells": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Newtown": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Northfield": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "North Edgbaston": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Oscott": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Perry Barr": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Perry Common": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Pype Hayes": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Quinton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Rubery and Rednal": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Shard End": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sheldon": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Small Heath": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Soho and Jewellery Quarter": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "South Yardley": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "[[Sparkbrook and Balsall Heath East]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sparkhill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stirchley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stockland Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sutton Four Oaks": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Sutton Mere Green": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Sutton Reddicap": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Sutton Roughley": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Sutton Trinity": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Sutton Vesey": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Sutton Walmley and Minworth]]": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Sutton Wylde Green": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Tyseley and Hay Mills": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ward End": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Weoley & Selly Oak": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Yardley East": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Yardley West and Stechford": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    }
+  },
+  "Coventry": {
+    "Bablake": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Binley and Willenhall": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cheylesmore": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Earlsdon": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Foleshill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Henley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Holbrook": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Longford": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lower Stoke": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Radford": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sherbourne": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St. Michaels": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Upper Stoke": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wainbody": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Westwood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Whoberley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Woodlands": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Wyken": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Dudley": {
+    "Amblecote": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Belle Vale": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Brierley Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brockmoor and Pensnett": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Castle and Priory": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Coseley East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cradley and Wollescote": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Gornal": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Halesowen North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Halesowen South": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Hayley Green and Cradley South": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Kingswinford North and Wall Heath": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Kingswinford South": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Lye and Stourbridge North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Netherton, Woodside and St Andrew's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Norton": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Pedmore and Stourbridge East": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Quarry Bank and Dudley Wood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sedgley": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St James's": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St Thomas's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Upper Gornal and Woodsetton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wollaston and Stourbridge Town": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wordsley": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    }
+  },
+  "Sandwell": {
+    "Abbey": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Blackheath": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bristnall": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Charlemont with Grove Vale": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Cradley Heath and Old Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Friar Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Great Barr with Yew Tree": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Great Bridge": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Greets Green and Lyng": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hateley Heath": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Langley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Newton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Old Warley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Oldbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Princes End": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Rowley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Smethwick": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Soho and Victoria": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St. Paul's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Tipton Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Tividale": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Wednesbury North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wednesbury South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Bromwich Central": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Solihull": {
+    "Bickenhill": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Blythe": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Castle Bromwich": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Chelmsley Wood": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Dorridge and Hockley Heath": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Elmdon": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Kingshurst and Fordbridge": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Knowle": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Lyndon": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Meriden": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Olton": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Shirley East": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Shirley South": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Shirley West": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Silhill": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Smith's Wood": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "St. Alphege": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    }
+  },
+  "Walsall": {
+    "Aldridge Central and South": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Aldridge North and Walsall Wood": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Bentley and Darlaston North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Birchills Leamore": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Blakenall": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Bloxwich East": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Bloxwich West": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Brownhills": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Darlaston South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Paddock": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Palfrey": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Pelsall": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Pheasey Park Farm": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Pleck": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Rushall-Shelfield": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Short Heath": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St. Matthews": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Streetly": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Willenhall North": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Willenhall South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Wolverhampton": {
+    "Bilston East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bilston North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Blakenhall": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bushbury North": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Bushbury South and Low Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "East Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ettingshall": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Fallings Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Graiseley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Heath Town": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Merry Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Oxley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Penn": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Spring Vale": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Peter's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Tettenhall Regis": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Tettenhall Wightwick": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Wednesfield North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wednesfield South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Bradford": {
+    "Baildon": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Bingley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bingley Rural": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Bolton & Undercliffe": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bowling & Barkerend": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bradford Moor": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "City": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Clayton & Fairweather Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Craven": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Eccleshill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Great Horton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Heaton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Idle & Thackley": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Ilkley": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Keighley Central": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Keighley East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Keighley West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Little Horton": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Manningham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Queensbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Royds": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Shipley": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Thornton & Allerton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Toller": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Tong": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Wharfedale": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Wibsey": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Windhill & Wrose": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Worth Valley": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Wyke": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Calderdale": {
+    "Brighouse": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Calder": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Elland": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Greetland and Stainland": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hipperholme and Lightcliffe": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Illingworth and Mixenden": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Luddendenfoot": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Northowram and Shelf": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Ovenden": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Rastrick": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Ryburn": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Skircoat": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sowerby Bridge": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Todmorden": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Town": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Warley": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    }
+  },
+  "Kirklees": {
+    "Almondbury": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Ashbrow": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Batley East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Batley West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Birstall & Birkenshaw": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Cleckheaton": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Colne Valley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Crosland Moor & Netherton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dalton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Denby Dale": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dewsbury East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dewsbury South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dewsbury West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Golcar": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Greenhead": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Heckmondwike": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Holme Valley North": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Holme Valley South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kirkburton": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Lindley": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Liversedge & Gomersal": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Mirfield": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Newsome": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    }
+  },
+  "Leeds": {
+    "[[Adel and Wharfedale (ward)|Adel & Wharfedale]]": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "[[Alwoodley (ward)|Alwoodley]]": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "[[Ardsley and Robin Hood (ward)|Ardsley & Robin Hood]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Armley (ward)|Armley]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Beeston and Holbeck (ward)|Beeston & Holbeck]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Bramley and Stanningley (ward)|Bramley & Stanningley]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Burmantofts and Richmond Hill (ward)|Burmantofts & Richmond Hill]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Calverley and Farsley (ward)|Calverley & Farsley]]": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "[[Chapel Allerton (ward)|Chapel Allerton]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Cross Gates and Whinmoor (ward)|Cross Gates & Whinmoor]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Farnley and Wortley (ward)|Farnley & Wortley]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Garforth and Swillington (ward)|Garforth & Swillington]]": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "[[Gipton and Harehills (ward)|Gipton & Harehills]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Guiseley and Rawdon (ward)|Guiseley & Rawdon]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Harewood (ward)|Harewood]]": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "[[Headingley and Hyde Park (ward)|Headingley & Hyde Park]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Horsforth (ward)|Horsforth]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Hunslet and Riverside (ward)|Hunslet & Riverside]]": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "[[Killingbeck and Seacroft (ward)|Killingbeck & Seacroft]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Kippax and Methley (ward)|Kippax & Methley]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Kirkstall (ward)|Kirkstall]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Little London and Woodhouse (ward)|Little London & Woodhouse]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Middleton Park (ward)|Middleton Park]]": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "[[Moortown (ward)|Moortown]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Morley North (ward)|Morley North]]": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "[[Morley South (ward)|Morley South]]": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "[[Otley and Yeadon (ward)|Otley & Yeadon]]": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "[[Pudsey (ward)|Pudsey]]": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "[[Rothwell (ward)|Rothwell]]": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "[[Roundhay (ward)|Roundhay]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Temple Newsam (ward)|Temple Newsam]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Weetwood (ward)|Weetwood]]": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "[[Wetherby (ward)|Wetherby]]": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    }
+  },
+  "Wakefield": {
+    "Ackworth, North Elmsall and Upton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Airedale and Ferry Fryston": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Altofts and Whitwood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Castleford Central and Glasshoughton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Crofton, Ryhill and Walton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Featherstone": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hemsworth": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Horbury and South Ossett": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Knottingley": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Normanton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ossett": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Pontefract North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Pontefract South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "South Elmsall and South Kirkby": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stanley and Outwood East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wakefield East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wakefield North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wakefield Rural": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Wakefield South": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Wakefield West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wrenthorpe and Outwood West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Gateshead": {
+    "Birtley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Blaydon": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bridges": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Chopwell and Rowlands Gill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Chowdene": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Crawcrook and Greenside": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Deckham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dunston and Teams": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dunston Hill and Whickham East": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Felling": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "High Fell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lamesley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lobley Hill and Bensham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Low Fell": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Pelaw and Heworth": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Ryton, Crookhill and Stella": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Saltwell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wardley and Leam Lane": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Whickham North": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Whickham South and Sunniside": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Windy Nook and Whitehills": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Winlaton and High Spen": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Barking and Dagenham": {
+    "Abbey": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Alibon": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Barking Riverside": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Beam": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Becontree": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Chadwell Heath": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Eastbrook and Rush Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Eastbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Gascoigne": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Goresbrook": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Heath": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Longbridge": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Mayesbrook": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Northbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Parsloes": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Thames View": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Valence": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Village": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Whalebone": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Barnet": {
+    "Barnet Vale": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brunswick Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Burnt Oak": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Childs Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Colindale North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Colindale South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cricklewood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "East Barnet": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "East Finchley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Edgware": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Edgwarebury": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Finchley Church End": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Friern Barnet": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Garden Suburb": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Golders Green": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Hendon": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "High Barnet": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Mill Hill": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Totteridge and Woodside": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Underhill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Finchley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Hendon": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Whetstone": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Woodhouse": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Bexley": {
+    "Barnehurst": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Belvedere": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bexleyheath": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Blackfen and Lamorbey": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Blendon and Penhill": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Crayford": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Crook Log": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "East Wickham": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Erith": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Falconwood and Welling": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Longlands": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Northumberland Heath": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sidcup": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Slade Green and Northend": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Mary's and St James": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Thamesmead East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Heath": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    }
+  },
+  "Brent": {
+    "Alperton": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Barnhill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brondesbury Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cricklewood and Mapesbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dollis Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Harlesden and Kensal Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kenton": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Kilburn": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kingsbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Northwick Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Preston": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Queens Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Queensbury": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Roundwood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stonebridge": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sudbury": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Tokyngton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Welsh Harp": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wembley Central": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wembley Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wembley Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Willesden Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Queen's Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Bromley": {
+    "Beckenham Town and Copers Cope": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Bickley & Sundridge": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Biggin Hill": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Bromley Common and Holwood": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Bromley Town": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Chelsfield": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Chislehurst": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Clock House": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Crystal Palace and Anerley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Darwin": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Farnborough and Crofton": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Hayes and Coney Hall": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Kelsey and Eden Park": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Mottingham": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Orpington": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Penge and Cator": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Petts Wood and Knoll": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Plaistow": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Shortlands and Park Langley": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St Mary Cray": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St Paul's Cray": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Wickham": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "By-elections": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    }
+  },
+  "Camden": {
+    "Belsize": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Bloomsbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Camden Square": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Camden Town": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Fortune Green": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Frognal": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Gospel Oak": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hampstead Town": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Haverstock": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Highgate": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Holborn and Covent Garden": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kentish Town North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kentish Town South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kilburn": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "King's Cross": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Primrose Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Regent's Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "South Hampstead": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Pancras and Somers Town": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Hampstead": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Croydon": {
+    "Addiscombe East": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Addiscombe West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bensham Manor": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Broad Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Coulsdon Town": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Crystal Palace and Upper Norwood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Fairfield": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Kenley": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "New Addington North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "New Addington South": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Norbury and Pollards Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Norbury Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Old Coulsdon": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Park Hill and Whitgift": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Purley and Woodcote": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Purley Oaks and Riddlesdown": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Sanderstead": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Selhurst": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Selsdon and Addington Village": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Selsdon Vale and Forestdale": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Shirley North": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Shirley South": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "South Croydon": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "South Norwood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Thornton Heath": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Waddon": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Thornton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Woodside": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Ealing": {
+    "Central Greenford": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dormers Wells": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ealing Broadway": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Ealing Common": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "East Acton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Greenford Broadway": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hanger Hill": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hanwell Broadway": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lady Margaret": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "North Acton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "North Greenford": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "North Hanwell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Northfield": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Northolt Mandeville": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Northolt West End": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Norwood Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Perivale": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Pitshanger": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "South Acton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Southall Broadway": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Southall Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Southall West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Southfield": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Walpole": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Enfield": {
+    "Arnos Grove": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Bowes": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brimsdown": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bullsmoor": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bush Hill Park": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Carterhatch": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cockfosters": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Edmonton Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Enfield Lock": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Grange Park": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Haselbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Highfield": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Jubilee": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lower Edmonton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "New Southgate": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Oakwood": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Palmers Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ponders End": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ridgeway": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Southbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Southgate": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Town": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Upper Edmonton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Whitewebbs": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Winchmore Hill": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    }
+  },
+  "Greenwich": {
+    "Abbey Wood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Blackheath Westcombe": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Charlton Hornfair": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Charlton Village and Riverside": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "East Greenwich": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Eltham Page": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Eltham Park and Progress": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Eltham Town and Avery Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Greenwich Creekside": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Greenwich Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Greenwich Peninsula": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kidbrooke Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kidbrooke Village and Sutcliffe": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Middle Park and Horn Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Mottingham, Coldharbour and New Eltham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Plumstead Common": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Plumstead and Glyndon": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Shooters Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Thamesmead Moorings": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Thamesmead": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Woolwich Arsenal": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Woolwich Common": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Woolwich Dockyard": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Mottingham, Coldharbour & New Eltham by-election": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Eltham Town & Avery Hill by-election": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "2024 Shooters Hill by-election": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Thamesmead by-election": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "2025 Shooters Hill by-election": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    }
+  },
+  "Hackney": {
+    "Brownswood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cazenove": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Clissold": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dalston": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "De Beauvoir": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hackney Central": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hackney Downs": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hackney Wick": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Haggerston": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Homerton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hoxton East & Shoreditch": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hoxton West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "King's Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lea Bridge": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "London Fields": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Shacklewell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Springfield": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Stamford Hill West": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Stoke Newington": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Victoria": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Woodberry Down": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Hammersmith and Fulham": {
+    "Addison": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Avonmore": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brook Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "College Park & Old Oak": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Coningham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Fulham Reach": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Fulham Town": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Grove": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hammersmith Broadway": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lillie": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Munster": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Palace & Hurlingham": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Parsons Green & Sandford": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Ravenscourt": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Sands End": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Shepherd's Bush Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Walham Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wendell Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Kensington": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "White City": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wormholt": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Haringey": {
+    "Alexandra Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bounds Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bruce Castle": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Crouch End": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Fortis Green": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Harringay": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hermitage & Gardens": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Highgate": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hornsey": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Muswell Hill": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Noel Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Northumberland Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Seven Sisters": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "South Tottenham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Ann's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stroud Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Tottenham Central": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Tottenham Hale": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "White Hart Lane": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Woodside": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Harrow": {
+    "Council term": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    }
+  },
+  "Havering": {
+    "Beam Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cranham": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Elm Park": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Emerson Park": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Gooshays": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hacton": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Harold Wood": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Havering-atte-Bower": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Heaton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hylands and Harrow Lodge": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Marshalls and Rise Park": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Mawneys": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Rainham and Wennington": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Rush Green and Crowlands": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "South Hornchurch": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Squirrels Heath": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St Alban's": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St Andrew's": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "St Edward's": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Upminster": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    }
+  },
+  "Hillingdon": {
+    "Belmore": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Charville": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Colham and Cowley": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Eastcote": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Harefield Village": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Hayes Town": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Heathrow Villages": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hillingdon East": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Hillingdon West": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Ickenham and South Harefield": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Northwood": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Northwood Hills": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Pinkwell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ruislip": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Ruislip Manor": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "South Ruislip": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Uxbridge": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "West Drayton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wood End": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Yeading": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Yiewsley": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Hounslow": {
+    "Bedfont": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brentford East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brentford West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Chiswick Gunnersbury": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Chiswick Homefields": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Chiswick Riverside": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Cranford": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Feltham North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Feltham West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hanworth Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hanworth Village": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Heston Central": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Heston East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Heston West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hounslow Central": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hounslow East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hounslow Heath": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hounslow South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hounslow West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Isleworth": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Osterley & Spring Grove": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Syon & Brentford Lock": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "By-elections": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Islington": {
+    "Arsenal": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Barnsbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bunhill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Caledonian": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Canonbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Clerkenwell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Finsbury Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Highbury": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Hillrise": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Holloway": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Junction": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Laycock": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Mildmay": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Mary's & St James'": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Peter's & Canalside": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Tollington": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Tufnell Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Kensington and Chelsea": {
+    "Abingdon": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Brompton and Hans Town": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Campden": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Chelsea Riverside": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Colville": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Courtfield": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Dalgarno": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Earl's Court": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Golborne": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Holland": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Norland": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Notting Dale": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Pembridge": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Queen's Gate": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Redcliffe": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Royal Hospital": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St Helen's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stanley": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Affiliation Changes": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    }
+  },
+  "Kingston upon Thames": {
+    "Alexandra": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Berrylands": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Canbury Gardens": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Chessington South & Malden Rushett": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Coombe Hill": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Coombe Vale": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Green Lane & St James": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hook & Chessington North": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "King George's & Sunray": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Kingston Gate": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Kingston Town": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Motspur Park & Old Malden East": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "New Malden Village": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Norbiton": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Old Malden": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "St Mark's & Seething Wells": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Surbiton Hill": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Tolworth": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Tudor": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    }
+  },
+  "Lambeth": {
+    "Brixton Acre Lane": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brixton North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brixton Rush Common": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Brixton Windrush": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Clapham Common and Abbeville": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Clapham East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Clapham Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Clapham Town": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Gipsy Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Herne Hill and Loughborough Junction": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Kennington": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Knight's Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Myatt's Fields": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Oval": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Martin's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stockwell East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stockwell West and Larkhall": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Streatham Common and Vale": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Streatham Hill East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Streatham Hill West and Thornton": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Streatham St Leonard's": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Streatham Wells": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Vauxhall": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Waterloo and South Bank": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Dulwich": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Knight\u2019s Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Lewisham": {
+    "Council term": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Merton": {
+    "Abbey": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Cannon Hill": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Colliers Wood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cricket Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Figge's Marsh": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Graveney": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hillside": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Lavender Fields": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Longthornton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lower Morden": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Merton Park": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Pollards Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ravensbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Raynes Park": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "St Helier": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Village": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Wandle": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "West Barnes": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Wimbledon Park": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Wimbledon Town & Dundonald": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    }
+  },
+  "Newham": {
+    "Beckton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Boleyn": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Canning Town North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Canning Town South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Custom House": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "East Ham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "East Ham South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Forest Gate North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Forest Gate South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Green Street East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Green Street West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Little Ilford": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Manor Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Maryland": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Plaistow North": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Plaistow South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Plaistow West & Canning Town East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Plashet": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Royal Albert": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Royal Victoria": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stratford": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stratford Olympic Park": {
+      "prior_party": "Green",
+      "prior_year": 2022
+    },
+    "Wall End": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Ham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Redbridge": {
+    "Aldborough": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Barkingside": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bridge": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Chadwell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Churchfields": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Clayhall": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Clementswood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cranbrook": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Fairlop": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Fullwell": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Goodmayes": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hainault": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Ilford Town": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Loxford": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Mayfield": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Monkhams": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Newbury": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Seven Kings": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "South Woodford": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Valentines": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wanstead Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wanstead Village": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Richmond upon Thames": {
+    "Barnes": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "East Sheen": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Fulwell & Hampton Hill": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Ham, Petersham & Richmond Riverside": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hampton": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hampton North": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Hampton Wick & South Teddington": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Heathfield": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Kew": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Mortlake & Barnes Common": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "North Richmond": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "South Richmond": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "South Twickenham": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "St Margarets & North Twickenham": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Teddington": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Twickenham Riverside": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "West Twickenham": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Whitton": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    }
+  },
+  "Southwark": {
+    "Borough & Bankside": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Camberwell Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Champion Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Chaucer": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dulwich Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dulwich Village": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Dulwich Wood": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Faraday": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Goose Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "London Bridge & West Bermondsey": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Newington": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "North Bermondsey": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "North Walworth": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Nunhead & Queen's Road": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Old Kent Road": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Peckham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Peckham Rye": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Rotherhithe": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Rye Lane": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "South Bermondsey": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St George's": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "St Giles": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Surrey Docks": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    }
+  },
+  "Sutton": {
+    "Beddington": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "Belmont": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Carshalton Central": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Carshalton South & Clockhouse": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Cheam": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Hackbridge": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "North Cheam": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "South Beddington & Roundshaw": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St Helier East": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "St Helier West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stonecot": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Sutton Central": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Sutton North": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Sutton South": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Sutton West & East Cheam": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "The Wrythe": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Wallington North": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Wallington South": {
+      "prior_party": "LibDem",
+      "prior_year": 2022
+    },
+    "Worcester Park North": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Worcester Park South": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    }
+  },
+  "Tower Hamlets": {
+    "Bethnal Green East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bethnal Green West": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Blackwall and Cubitt Town": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Bow East": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bow West": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Bromley North": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Bromley South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Canary Wharf": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Island Gardens": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Lansbury": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Limehouse": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Mile End": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Poplar": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Shadwell": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Spitalfields and Banglatown": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "St Dunstan's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St Katharine's and Wapping": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Stepney Green": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Weavers": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    },
+    "Whitechapel": {
+      "prior_party": "Other",
+      "prior_year": 2022
+    }
+  },
+  "Waltham Forest": {
+    "Cann Hall": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Cathall": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Chapel End": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Chingford Green": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Endlebury": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Forest": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Grove Green": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hale End & Highams Park South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hatch Lane & Highams Park North": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "High Street": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Higham Hill": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hoe Street": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Larkswood": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Lea Bridge": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Leyton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Leytonstone": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Markhouse": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "St. James": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Upper Walthamstow": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Valley": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "William Morris": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wood Street": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Wandsworth": {
+    "Balham": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Battersea Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "East Putney": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Falconbrook": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Furzedown": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Lavender": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Nine Elms": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Northcote": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Roehampton": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Shaftesbury & Queenstown": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "South Balham": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Southfields": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St Mary's": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Thamesfield": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Tooting Bec": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Tooting Broadway": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Trinity": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wandle": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Wandsworth Common": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Wandsworth Town": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "West Hill": {
+      "prior_party": "Independent",
+      "prior_year": 2022
+    },
+    "West Putney": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    }
+  },
+  "Westminster": {
+    "Abbey Road": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Bayswater": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Church Street": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Harrow Road": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Hyde Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Knightsbridge and Belgravia": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Lancaster Gate": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Little Venice": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Maida Vale": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Marylebone": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Pimlico North": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Pimlico South": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Queen's Park": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Regent's Park": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "St James's": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "Vincent Square": {
+      "prior_party": "Conservative",
+      "prior_year": 2022
+    },
+    "West End": {
+      "prior_party": "Labour",
+      "prior_year": 2022
+    },
+    "Westbourne": {
+      "prior_party": "Labour",
+      "prior_year": 2022
     }
   }
 }
