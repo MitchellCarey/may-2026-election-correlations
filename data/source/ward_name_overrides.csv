@@ -1,0 +1,64 @@
+lad_code,scraped_name,gss_name,note
+E08000001,"Heaton, Lostock & Chew Moor",Heaton and Lostock,Bolton 2023 boundary review
+E08000001,Horwich North,Horwich North East,Bolton 2023 boundary review
+E08000001,Horwich South & Blackrod,Horwich and Blackrod,Bolton 2023 boundary review
+E08000001,Westhoughton North & Hunger Hill,Westhoughton North and Chew Moor,Bolton 2023 boundary review
+E08000001,Little Lever & Darcy Lever,Little Lever and Darcy Lever,Bolton 2023 boundary review
+E08000001,Farnworth North,Farnworth (Bolton),Bolton: 2023 split into N+S; proxy with combined Farnworth
+E08000001,Farnworth South,Farnworth (Bolton),Bolton: 2023 split into N+S; proxy with combined Farnworth
+E08000001,Queens Park & Central,Crompton (Bolton),Bolton: new ward roughly = old Crompton town-centre area + parts of others
+E08000007,Brinnington & Stockport Central,Brinnington and Central,Stockport 2023 boundary changes
+E08000007,Cheadle East & Cheadle Hulme North,Cheadle Hulme North,Stockport 2023 boundary changes
+E08000007,Cheadle West & Gatley,Cheadle and Gatley,Stockport 2023 boundary changes
+E08000007,Cheadle Hulme South,Cheadle Hulme South,Stockport 2023 boundary changes
+E08000007,Davenport & Cale Green,Davenport and Cale Green,Stockport 2023 boundary changes
+E08000007,Bramhall South & Woodford,Bramhall South and Woodford,Stockport 2023 boundary changes
+E08000007,Bredbury & Woodley,Bredbury and Woodley,Stockport 2023 boundary changes
+E08000007,Bredbury Green & Romiley,Bredbury Green and Romiley,Stockport 2023 boundary changes
+E08000007,Marple South & High Lane,Marple South and High Lane,Stockport 2023 boundary changes
+E08000007,Edgeley,Edgeley and Cheadle Heath,Stockport 2023 boundary changes
+E08000007,Norbury & Woodsmoor,Stepping Hill,Stockport 2023 boundary changes
+E08000009,Ashton upon Mersey,Ashton upon Mersey,Trafford: no change; bypasses borough-code-range filter
+E08000009,Davyhulme,Davyhulme East,Trafford: use one of Davyhulme E/W as proxy
+E08000009,Lostock and Barton,Davyhulme West,Trafford: roughly western Davyhulme + parts of Flixton
+E08000009,Gorse Hill and Cornbrook,Gorse Hill (Trafford),Trafford 2023 boundary changes
+E08000009,Hale,Hale Central,Trafford 2023 boundary changes
+E08000009,Hale Barns and Timperley South,Hale Barns,Trafford 2023 boundary changes
+E08000009,Manor,Priory (Trafford),Trafford: Manor is in Sale; was part of Priory area
+E08000009,Old Trafford,Clifford,Trafford 2023 boundary changes
+E08000009,Sale Central,St Mary's (Trafford),Trafford 2023 boundary changes
+E08000009,Stretford and Humphrey Park,Stretford,Trafford 2023 boundary changes
+E08000009,Timperley Central,Timperley,Trafford 2023 boundary changes
+E08000009,Timperley North,Village (Trafford),Trafford 2023 boundary changes
+E08000006,Higher Irlam & Peel Green,Higher Irlam and Peel Green,Salford: punctuation (& -> and)
+E08000006,Cadishead & Lower Irlam,Cadishead and Lower Irlam,Salford: punctuation (& -> and)
+E08000006,Pendlebury & Clifton,Pendlebury and Clifton,Salford: punctuation (& -> and)
+E08000006,Boothstown & Ellenbrook,Boothstown and Ellenbrook,Salford: punctuation (& -> and)
+E08000006,Worsley & Westwood Park,Worsley and Westwood Park,Salford: punctuation (& -> and)
+E08000006,Walkden North,Walkden North,Salford: bypasses borough-code-range filter
+E08000006,Walkden South,Walkden South,Salford: bypasses borough-code-range filter
+E08000006,Swinton & Wardley,Swinton and Wardley,Salford: punctuation (& -> and)
+E08000006,Pendleton & Charlestown,Pendleton and Charlestown,Salford: punctuation (& -> and)
+E08000006,Weaste & Seedley,Weaste and Seedley,Salford: punctuation (& -> and)
+E08000006,Kersal & Broughton Park,Kersal and Broughton Park,Salford: punctuation (& -> and)
+E08000006,Blackfriars & Trinity,Blackfriars and Trinity,Salford: punctuation (& -> and)
+E08000006,Barton & Winton,Barton and Winton,Salford: punctuation (& -> and)
+E08000002,St Mary's,St. Mary's,Bury: Census uses 'St.' with a period
+E08000002,Radcliffe North & Ainsworth,Radcliffe North and Ainsworth,Bury: punctuation (& -> and)
+E08000010,"Aspull, New Springs & Whelley",Aspull New Springs Whelley,Wigan 2024 boundary changes
+E08000010,Atherton North,Atherton,Wigan: 2021 Atherton split into N + S&L; proxy with combined
+E08000010,Atherton South & Lilford,Atherton,Wigan: 2021 Atherton split into N + S&L; proxy with combined
+E08000010,Astley,Astley Mosley Common,Wigan 2024 boundary changes
+E08000010,Tyldesley & Mosley Common,Tyldesley (Wigan),Wigan 2024 boundary changes
+E08000010,Bryn with Ashton-in-Makerfield North,Bryn (Wigan),Wigan 2024 boundary changes
+E08000010,Ashton-in-Makerfield South,Ashton,Wigan 2024 boundary changes
+E08000010,Leigh Central & Higher Folds,Leigh East,Wigan 2024 boundary changes
+E08000010,Shevington with Lower Ground & Moor,Shevington with Lower Ground,Wigan 2024 boundary changes
+E08000008,Dukinfield/Stalybridge,Dukinfield Stalybridge,Tameside: Census has no slash
+E08000005,"Wardle, Shore & West Littleborough","Wardle, Shore and West Littleborough",Rochdale: punctuation (& -> and)
+E08000005,Smallbridge & Firgrove,Smallbridge and Firgrove,Rochdale: punctuation (& -> and)
+E08000005,Spotland & Falinge,Spotland and Falinge,Rochdale: punctuation (& -> and)
+E08000005,Milnrow & Newhey,Milnrow and Newhey,Rochdale: punctuation (& -> and)
+E08000005,Milkstone & Deeplish,Milkstone and Deeplish,Rochdale: punctuation (& -> and)
+E08000005,Balderstone & Kirkholt,Balderstone & Kirkholt,Rochdale: Census uses ampersand here
+E08000004,Saddleworth West & Lees,Saddleworth West and Lees,Oldham: punctuation (& -> and)
