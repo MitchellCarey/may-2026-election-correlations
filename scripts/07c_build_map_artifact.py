@@ -86,6 +86,12 @@ def main():
         results = json.load(f)
     with open(DATA / 'ward_geoms.json') as f:
         geoms = json.load(f)
+    # County-election data — district-level winners for the 6 English county
+    # councils that contested 2026. Only consumed by the "Show county council
+    # elections" toggle on the GB page; GM ignores it.
+    county_data_path = DATA / 'v1_county_data.json'
+    county_data = (json.loads(county_data_path.read_text())
+                   if region == 'gb' and county_data_path.exists() else {})
 
     results = [r for r in results if r.get('lad_code') in region_lad_codes]
 
@@ -254,6 +260,23 @@ def main():
         if region == 'gb' else {}
     )
 
+    # Pull each county-district's polygon path from the boroughs block; ship
+    # the subset of paths the county overlay actually needs (47 on GB) rather
+    # than relying on borough_paths (which is the same set for GB since GB
+    # ships every council, but stays explicit for clarity and for the day GB
+    # might restrict).
+    county_paths = {
+        lad: geoms['boroughs'][lad]['path']
+        for lad in county_data
+        if lad in geoms.get('boroughs', {})
+    }
+    if county_data:
+        n_with_path = len(county_paths)
+        n_districts = len(county_data)
+        n_counties = len({d['county_lad'] for d in county_data.values()})
+        print(f'county overlay: {n_with_path}/{n_districts} districts have polygons '
+              f'across {n_counties} counties')
+
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
     # GB exposes a second viewBox (zoomed to the registered councils) so
@@ -264,6 +287,8 @@ def main():
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
     js.append('const BOROUGH_PATHS = ' + json.dumps(borough_paths, separators=(',', ':')) + ';')
     js.append('const COUNTRY_PATHS = ' + json.dumps(country_paths, separators=(',', ':')) + ';')
+    js.append('const COUNTY_PATHS = ' + json.dumps(county_paths, separators=(',', ':')) + ';')
+    js.append('const COUNTY_DATA = ' + json.dumps(county_data, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(all_wards, separators=(',', ':')) + ';')
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
     js.append('const PARTY_DISPLAY = ' + json.dumps(PARTY_DISPLAY) + ';')
@@ -306,12 +331,24 @@ function fmtTitle(w) {
   return lines.join('\n');
 }
 
+function fmtCountyTitle(c) {
+  const lines = [c.county + ' County Council · ' + c.district];
+  lines.push('2026: ' + (PARTY_DISPLAY[c.winner_2026] || c.winner_2026)
+    + ' (' + c.seats_won_2026 + '/' + c.total_seats_2026 + ' seats)');
+  if (c.winner_prior) {
+    lines.push('Prior: ' + (PARTY_DISPLAY[c.winner_prior] || c.winner_prior) + ' (2021)');
+  }
+  return lines.join('\n');
+}
+
 /**
  * Render one map into the given container.
- *   fillFor(w) → colour, or null/undefined to use NEUTRAL_FILL
- *   classFor(w) → extra class on the ward path (e.g. 'fuzzy' on Before view)
+ *   fillFor(w)      → ward colour (or null/undefined → NEUTRAL_FILL)
+ *   classFor(w)     → extra class on the ward path (e.g. 'fuzzy')
+ *   countyFillFor(c) → optional district-level colour for the counties
+ *                      overlay (returns null/undefined to leave grey).
  */
-function renderMap(containerId, fillFor, classFor) {
+function renderMap(containerId, fillFor, classFor, countyFillFor) {
   const target = document.getElementById(containerId);
   if (!target) return;
   const root = svgRoot();
@@ -323,6 +360,23 @@ function renderMap(containerId, fillFor, classFor) {
     const cls = extra ? 'ward ' + extra : 'ward';
     root.appendChild(makePath(d, cls, fill, fmtTitle(w)));
   });
+  // Counties overlay — one filled district per English two-tier county that
+  // contested 2026. Hidden by default via CSS; the toggle adds .show-counties
+  // to the .map-svg root to reveal. Sits ABOVE the wards (so a county fill
+  // visually replaces the ward grid in those districts when toggled on) but
+  // BELOW country/borough outlines (so boundaries still read).
+  if (countyFillFor) {
+    const ctyGroup = document.createElementNS(SVG_NS, 'g');
+    ctyGroup.setAttribute('class', 'counties');
+    Object.entries(COUNTY_PATHS).forEach(([lad, d]) => {
+      const c = COUNTY_DATA[lad];
+      if (!c) return;
+      const fill = countyFillFor(c);
+      if (!fill) return;
+      ctyGroup.appendChild(makePath(d, 'county', fill, fmtCountyTitle(c)));
+    });
+    root.appendChild(ctyGroup);
+  }
   // Country outlines underneath the borough outlines so hiding the
   // boroughs leaves the UK silhouette intact. Only emitted on the GB page;
   // the object is empty on GM and this loop is a no-op there.
@@ -340,16 +394,21 @@ function renderMap(containerId, fillFor, classFor) {
 // colours come from a boundary-change carry-over.
 renderMap('map-before',
   w => w.pp ? PARTY_COLOURS[w.pp] : null,
-  w => w.mp === 'fuzzy' ? 'fuzzy' : '');
+  w => w.mp === 'fuzzy' ? 'fuzzy' : '',
+  c => c.winner_prior ? PARTY_COLOURS[c.winner_prior] : null);
 
 // After — fill by 2026 winner.
 renderMap('map-after',
-  w => w.w ? PARTY_COLOURS[w.w] : null);
+  w => w.w ? PARTY_COLOURS[w.w] : null,
+  null,
+  c => c.winner_2026 ? PARTY_COLOURS[c.winner_2026] : null);
 
 // Flips — fill ONLY where the seat changed hands; gainer's colour. Holds and
 // no-result wards stay neutral grey.
 renderMap('map-flips',
-  w => (w.fl === true && w.w) ? PARTY_COLOURS[w.w] : null);
+  w => (w.fl === true && w.w) ? PARTY_COLOURS[w.w] : null,
+  null,
+  c => (c.flipped && c.winner_2026) ? PARTY_COLOURS[c.winner_2026] : null);
 
 // Toggle borough-outline visibility. Country outlines (E/W/S) stay drawn
 // either way, so when boroughs are hidden the reader sees just the colour
@@ -368,6 +427,23 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
   };
   boroughBtn.addEventListener('click', () => { hidden = !hidden; applyBorough(); });
   applyBorough();
+}
+
+// Toggle the counties overlay (English county-council elections painted at
+// constituent district level). Only wires up if the page emits a button AND
+// COUNTY_DATA is non-empty (i.e. the GB page).
+const countyBtn = document.getElementById('counties-toggle');
+if (countyBtn && Object.keys(COUNTY_DATA).length) {
+  let on = false;
+  const applyCounty = () => {
+    document.querySelectorAll('.map-svg').forEach(svg => {
+      svg.classList.toggle('show-counties', on);
+    });
+    countyBtn.setAttribute('aria-pressed', String(on));
+    countyBtn.textContent = on ? 'Hide county council elections' : 'Show county council elections';
+  };
+  countyBtn.addEventListener('click', () => { on = !on; applyCounty(); });
+  applyCounty();
 }
 
 // Toggle between the default viewBox and the registered-councils viewBox.
