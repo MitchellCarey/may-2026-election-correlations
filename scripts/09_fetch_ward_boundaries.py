@@ -1,33 +1,39 @@
-"""Fetch and pre-process ONS WD24 ward boundaries for the 10 GM boroughs.
+"""Fetch and pre-process ONS WD24 ward boundaries for Great Britain.
 
 One-off, idempotent. Skips work if data/ward_geoms.json already exists
 unless --force is passed. Mirrors the pattern in scripts/00_fetch_prior_winners.py.
 
 Pipeline:
-  1. Query WD24_LAD24_UK_LU on the ONS Open Geography Portal for the 10 GM
-     LAD24 codes (E08000001-E08000010) → 215 (WD24CD, LAD24CD) tuples.
-  2. Fetch geometry for those 215 wards from Wards_May_2024_Boundaries_UK_BGC
+  1. Query WD24_LAD24_UK_LU on the ONS Open Geography Portal for every ward
+     in Great Britain (i.e. excluding Northern Ireland, where WD24CD starts
+     with N09) → ~8,000 (WD24CD, LAD24CD) tuples, paginated.
+  2. Fetch geometry for those wards from Wards_May_2024_Boundaries_UK_BGC
      (BGC = Generalised, Clipped — small enough to ship). Cached as raw
-     GeoJSON in data/source/wd_may_2024_uk_bgc_gm.geojson; subsequent runs
-     skip the network call.
+     GeoJSON in data/source/wd_may_2024_uk_bgc_gb.geojson; subsequent runs
+     skip the network call. The cache is ~50 MB so it is gitignored.
   3. Reproject WGS84 → British National Grid (EPSG:27700). Web Mercator
      distorts UK shapes badly at this latitude, so BNG is the right call.
-  4. Simplify each ward at 50 m tolerance (fine for a ~50 km canvas
-     displayed at 340-700 px wide).
+  4. Simplify each ward at 50 m tolerance (fine for any region from a
+     ~50 km GM canvas up to a ~1,500 km GB canvas).
   5. Convert each polygon to an SVG path string. Y-axis is flipped at write
      time so SVG's downward-y matches BNG's northward-y — the renderer can
      drop the path strings straight into <path d="..."> with no transform.
-  6. Dissolve wards by LAD24CD and emit borough outlines too (looser
+     All paths share one global (GB) coordinate system so the same path
+     data is reused across every region's viewBox.
+  6. Dissolve wards by LAD24CD and emit per-council outlines too (looser
      simplification — these are decorative).
-  7. Write data/ward_geoms.json:
-       {"viewBox": [minx, miny, width, height],
-        "wards":    {WD24CD: {"path": "M...Z", "name": "...", "lad": "E08..."}},
-        "boroughs": {LAD24CD: {"path": "M...Z", "name": "..."}}}
+  7. Compute one viewBox per region (gm, gb) from each region's bounds in
+     the shared SVG coordinate system, with a 2% pad.
+  8. Write data/ward_geoms.json:
+       {"viewBoxes": {"gm": [minx, miny, w, h], "gb": [...]},
+        "wards":     {WD24CD: {"path": "M...Z", "name": "...", "lad": "E08..."}},
+        "boroughs":  {LAD24CD: {"path": "M...Z", "name": "..."}}}
      The names/LAD codes let 07c join the results data (which is keyed by
      borough+ward name) to the geometry without a second network call.
 
 Build-only — geopandas/shapely/pyproj are not needed at runtime; the deployed
-artifact is just docs/map.html plus the small JSON file this writes.
+artifact is just docs/map.html (and docs/uk/map.html) plus the JSON file
+this writes.
 """
 import argparse
 import gzip
@@ -40,16 +46,15 @@ from pathlib import Path
 import geopandas as gpd
 from shapely.ops import unary_union
 
+from _councils import lad_codes_for
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 SOURCE = DATA / "source"
 OUT = DATA / "ward_geoms.json"
-RAW_CACHE = SOURCE / "wd_may_2024_uk_bgc_gm.geojson"
+RAW_CACHE = SOURCE / "wd_may_2024_uk_bgc_gb.geojson"
 
-GM_LAD_CODES = [
-    'E08000001', 'E08000002', 'E08000003', 'E08000004', 'E08000005',
-    'E08000006', 'E08000007', 'E08000008', 'E08000009', 'E08000010',
-]
+REGIONS = ["gm", "gb"]
 
 # Open Geography Portal FeatureServer endpoints. Layer names confirmed against
 # the public /rest/services index — these are the canonical names ONS publishes.
@@ -66,6 +71,9 @@ UA = 'gm-2026-ward-analysis/1.0 (mitchellcarey2@gmail.com)'
 WARD_SIMPLIFY_TOLERANCE_M = 50
 BOROUGH_SIMPLIFY_TOLERANCE_M = 100
 
+# Northern Ireland WD codes start with N09; GB = UK minus NI.
+GB_WHERE = "WD24CD NOT LIKE 'N09%'"
+
 
 def http_get(url: str, params: dict) -> dict:
     qs = urllib.parse.urlencode(params)
@@ -75,29 +83,43 @@ def http_get(url: str, params: dict) -> dict:
 
 
 def fetch_lookup() -> dict:
-    """Return {WD24CD: {name, lad, borough}} for all 215 GM wards."""
-    in_list = ','.join(f"'{c}'" for c in GM_LAD_CODES)
-    params = {
-        'where':              f'LAD24CD IN ({in_list})',
-        'outFields':          'WD24CD,WD24NM,LAD24CD,LAD24NM',
-        'returnGeometry':     'false',
-        'f':                  'json',
-        'resultRecordCount':  2000,
-    }
-    d = http_get(LU_ENDPOINT, params)
-    if d.get('error'):
-        raise RuntimeError(f'lookup query failed: {d["error"]}')
-    if d.get('exceededTransferLimit'):
-        raise RuntimeError('lookup query hit transfer limit; not implemented')
-    feats = d.get('features', [])
-    return {
-        f['attributes']['WD24CD']: {
-            'name':    f['attributes']['WD24NM'],
-            'lad':     f['attributes']['LAD24CD'],
-            'borough': f['attributes']['LAD24NM'],
+    """Return {WD24CD: {name, lad, borough}} for every GB ward, paginating
+    the lookup query (the WD24_LAD24_UK_LU layer caps each request at
+    1000 rows; GB has ~8000)."""
+    page_size = 1000
+    offset = 0
+    info_by_wd = {}
+    while True:
+        params = {
+            'where':             GB_WHERE,
+            'outFields':         'WD24CD,WD24NM,LAD24CD,LAD24NM',
+            'returnGeometry':    'false',
+            'f':                 'json',
+            'resultRecordCount': page_size,
+            'resultOffset':      offset,
+            'orderByFields':     'WD24CD',
         }
-        for f in feats
-    }
+        d = http_get(LU_ENDPOINT, params)
+        if d.get('error'):
+            raise RuntimeError(f'lookup query failed: {d["error"]}')
+        feats = d.get('features', [])
+        for f in feats:
+            a = f['attributes']
+            info_by_wd[a['WD24CD']] = {
+                'name':    a['WD24NM'],
+                'lad':     a['LAD24CD'],
+                'borough': a['LAD24NM'],
+            }
+        print(f'  lookup page offset={offset} → {len(feats)} rows '
+              f'(running total {len(info_by_wd)})')
+        # `exceededTransferLimit` is the authoritative "more rows exist"
+        # signal — the server can cap below page_size silently, so don't
+        # also break on `len(feats) < page_size`.
+        if not d.get('exceededTransferLimit'):
+            break
+        offset += len(feats)
+        time.sleep(0.3)
+    return info_by_wd
 
 
 def fetch_geometry(wd_codes: list[str]) -> dict:
@@ -147,6 +169,23 @@ def polygon_to_path(poly, max_y: float, min_y: float) -> str:
     return ''.join(parts)
 
 
+def viewbox_for(gdf_subset, global_maxy: float, global_miny: float) -> list[int]:
+    """Compute the SVG-space viewBox for the given subset of wards, applying
+    the same y-flip as the path coords and padding by 2% of the longer side."""
+    minx, miny, maxx, maxy = gdf_subset['geom_s'].total_bounds
+    svg_miny = global_maxy - maxy + global_miny
+    svg_maxy = global_maxy - miny + global_miny
+    width = maxx - minx
+    height = svg_maxy - svg_miny
+    pad = max(width, height) * 0.02
+    return [
+        round(minx - pad),
+        round(svg_miny - pad),
+        round(width + 2 * pad),
+        round(height + 2 * pad),
+    ]
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
     ap.add_argument('--force', action='store_true', help='Re-run even if outputs exist')
@@ -159,12 +198,11 @@ def main():
     SOURCE.mkdir(parents=True, exist_ok=True)
     DATA.mkdir(parents=True, exist_ok=True)
 
-    print('1. Fetching WD24 → LAD24 lookup for the 10 GM boroughs...')
+    print('1. Fetching WD24 → LAD24 lookup for GB (excluding NI)...')
     info_by_wd = fetch_lookup()
     wd_codes = sorted(info_by_wd.keys())
-    print(f'   got {len(wd_codes)} wards')
-    if len(wd_codes) != 215:
-        print(f'   WARNING: expected 215 GM wards, lookup returned {len(wd_codes)}')
+    print(f'   got {len(wd_codes)} wards across '
+          f'{len({i["lad"] for i in info_by_wd.values()})} councils')
 
     if RAW_CACHE.exists() and not args.force:
         print(f'2. {RAW_CACHE.relative_to(ROOT)} cached — reusing')
@@ -187,10 +225,9 @@ def main():
     gdf['LAD24CD'] = gdf['WD24CD'].map(lambda c: info_by_wd[c]['lad'])
     gdf['geom_s'] = gdf.geometry.simplify(WARD_SIMPLIFY_TOLERANCE_M, preserve_topology=True)
 
-    bounds = gdf['geom_s'].total_bounds  # [minx, miny, maxx, maxy]
-    minx, miny, maxx, maxy = bounds
-    pad = max(maxx - minx, maxy - miny) * 0.02
-    minx, miny, maxx, maxy = minx - pad, miny - pad, maxx + pad, maxy + pad
+    # Single shared SVG coordinate system: y-flip uses the GB bounds, so every
+    # path is in the same space and per-region viewBoxes just crop into it.
+    minx, miny, maxx, maxy = gdf['geom_s'].total_bounds
 
     print('4. Emitting per-ward SVG paths (y-flipped to SVG coords)...')
     wards_out = {
@@ -202,32 +239,43 @@ def main():
         for _, row in gdf.iterrows()
     }
 
-    print('5. Dissolving wards → borough outlines...')
+    print('5. Dissolving wards → council outlines...')
     boroughs_out = {}
     for lad_code, group in gdf.groupby('LAD24CD'):
         merged = unary_union(group.geometry.tolist())
         merged = merged.simplify(BOROUGH_SIMPLIFY_TOLERANCE_M, preserve_topology=True)
-        # Borough name is the same across all rows in the group; pull from any.
         borough_name = info_by_wd[group.iloc[0]['WD24CD']]['borough']
         boroughs_out[lad_code] = {
             'path': polygon_to_path(merged, maxy, miny),
             'name': borough_name,
         }
 
+    print('6. Computing per-region viewBoxes...')
+    view_boxes = {}
+    for region in REGIONS:
+        region_lads = lad_codes_for(region)
+        subset = gdf[gdf['LAD24CD'].isin(region_lads)]
+        if subset.empty:
+            raise RuntimeError(
+                f'region {region!r} matched 0 wards in the fetched set — '
+                f'check councils.yaml lad_codes against ONS WD24 LAD24CDs'
+            )
+        view_boxes[region] = viewbox_for(subset, maxy, miny)
+        print(f'   {region}: {len(subset)} wards · viewBox {view_boxes[region]}')
+
     out_data = {
-        'viewBox': [round(minx), round(miny), round(maxx - minx), round(maxy - miny)],
-        'wards':    wards_out,
-        'boroughs': boroughs_out,
+        'viewBoxes': view_boxes,
+        'wards':     wards_out,
+        'boroughs':  boroughs_out,
     }
     OUT.write_text(json.dumps(out_data, separators=(',', ':')))
 
     size_kb = OUT.stat().st_size / 1024
     gz_kb = len(gzip.compress(OUT.read_bytes())) / 1024
     print(
-        f'\nDone. wrote {len(wards_out)} wards + {len(boroughs_out)} boroughs '
+        f'\nDone. wrote {len(wards_out)} wards + {len(boroughs_out)} councils '
         f'· {size_kb:.1f} KB (gzip {gz_kb:.1f} KB)'
     )
-    print(f'   viewBox: {out_data["viewBox"]}')
 
 
 if __name__ == '__main__':

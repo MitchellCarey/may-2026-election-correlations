@@ -1,15 +1,17 @@
-"""Splice the generated data + map renderer JS into docs/map.html.
+"""Splice the generated data + map renderer JS into docs/map.html (or
+docs/uk/map.html when --region=gb).
 
 Mirror of scripts/07b_build_changes_artifact.py for the Map page. Reads:
 
-  - data/all_wards_with_prior.json (214 ward records: borough, ward,
-    winner, prior_party, flipped, match_type_prior, ...)
-  - data/ward_geoms.json           (215 ward polygons + 10 borough outlines,
-    pre-projected to BNG and emitted as SVG path strings — see scripts/09)
+  - data/all_wards_with_prior.json (ward records: borough, ward, winner,
+    prior_party, flipped, match_type_prior, ...) — filtered to --region.
+  - data/ward_geoms.json           (GB-wide ward + council polygons, pre-
+    projected to BNG and emitted as SVG path strings, plus a per-region
+    viewBox map — see scripts/09)
 
 …joins them via normalised borough+ward name (the geom file is the source of
 truth for the WD24 names), and rewrites the block between the BEGIN/END
-markers in docs/map.html in place.
+markers in the target page in place.
 
 Wards present in the geom set but missing from results data (Bury::Moorside,
 whose election was cancelled) are still rendered, in neutral grey on every
@@ -62,24 +64,40 @@ def main():
 
     results = [r for r in results if r.get('lad_code') in region_lad_codes]
 
-    # If the geom file doesn't cover the full region (e.g. --region=gb but 09
-    # has only fetched GM polygons), refuse to splice — a UK page with only
-    # GM shapes is misleading. Phase B.10 widens 09 to GB.
+    # If the geom file doesn't cover the full region, refuse to splice — a
+    # page with only partial shapes is misleading. 09 emits per-region
+    # viewBoxes; if `region` isn't one of them, the geom file is stale.
+    if region not in geoms.get('viewBoxes', {}):
+        print(f'  ! ward_geoms.json has no viewBox for region={region!r} '
+              f'(found: {sorted(geoms.get("viewBoxes", {}))}). '
+              f'Re-run scripts/09_fetch_ward_boundaries.py --force.',
+              file=sys.stderr)
+        return
     geom_lads = {w['lad'] for w in geoms['wards'].values()}
     missing = region_lad_codes - geom_lads
     if missing:
         covered = len(region_lad_codes & geom_lads)
         print(f'  ! ward_geoms.json covers {covered}/{len(region_lad_codes)} '
               f'{region} councils; {len(missing)} councils have no geometry. '
-              f'Run scripts/09_fetch_ward_boundaries.py with the missing '
-              f'councils in scope (Phase B.10 widens 09 to GB).',
+              f'Re-run scripts/09_fetch_ward_boundaries.py --force.',
               file=sys.stderr)
         return
 
+    # Restrict geometry to the region's councils so a GB-wide geom file
+    # doesn't drag the whole UK into a GM-only page.
+    region_wards = {
+        code: w for code, w in geoms['wards'].items()
+        if w['lad'] in region_lad_codes
+    }
+    region_boroughs = {
+        code: b for code, b in geoms['boroughs'].items()
+        if code in region_lad_codes
+    }
+
     # Normalised name → WD24CD lookup; geom file is the source of truth.
     geom_by_norm = {}
-    for code, w in geoms['wards'].items():
-        borough_name = geoms['boroughs'][w['lad']]['name']
+    for code, w in region_wards.items():
+        borough_name = region_boroughs[w['lad']]['name']
         geom_by_norm[f'{normalise(borough_name)}::{normalise(w["name"])}'] = code
 
     matched = []
@@ -106,10 +124,10 @@ def main():
     # Polygons present in the geom set but missing from results (e.g. cancelled
     # Bury::Moorside). Render them in neutral grey on every view.
     no_result = []
-    for code, w in geoms['wards'].items():
+    for code, w in region_wards.items():
         if code in used_codes:
             continue
-        borough_name = geoms['boroughs'][w['lad']]['name']
+        borough_name = region_boroughs[w['lad']]['name']
         no_result.append({
             'gss': code, 'b': borough_name, 'wn': w['name'],
             'w': None, 'pp': None, 'py': None, 'fl': None, 'mp': None,
@@ -123,7 +141,7 @@ def main():
     no_result_names = ', '.join(f'{w["b"]}::{w["wn"]}' for w in no_result)
     print(f'no-result polygons (rendered grey): {len(no_result)}'
           + (f' — {no_result_names}' if no_result else ''))
-    print(f'total polygons in WARDS: {len(matched) + len(no_result)}/215')
+    print(f'total polygons in WARDS: {len(matched) + len(no_result)}/{len(region_wards)}')
 
     # Surface any party in the data that we don't have a colour for — the
     # renderer would silently fall back to NEUTRAL_FILL otherwise.
@@ -136,12 +154,13 @@ def main():
     all_wards = matched + no_result
 
     # Strip path/borough info into separate maps so we don't duplicate the
-    # ~134 KB of geometry inside three separate per-ward records.
-    ward_paths    = {code: w['path'] for code, w in geoms['wards'].items()}
-    borough_paths = {code: w['path'] for code, w in geoms['boroughs'].items()}
+    # geometry inside three separate per-ward records. Restricted to the
+    # region so the GM page doesn't ship GB-wide polygons.
+    ward_paths    = {code: w['path'] for code, w in region_wards.items()}
+    borough_paths = {code: b['path'] for code, b in region_boroughs.items()}
 
     js = []
-    js.append('const VIEWBOX = ' + json.dumps(geoms['viewBox']) + ';')
+    js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
     js.append('const BOROUGH_PATHS = ' + json.dumps(borough_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(all_wards, separators=(',', ':')) + ';')
