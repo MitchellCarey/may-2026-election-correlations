@@ -32,6 +32,7 @@ CENSUS_FIELDS = [
     'pct_soc123', 'pct_apprentice', 'pct_level4_plus', 'pct_no_qual',
     'pct_owned', 'pct_social_rented', 'pct_private_rented',
     'pct_uk_born', 'pct_wfh', 'pct_female',
+    'pct_white', 'pct_asian', 'pct_black', 'pct_mixed', 'pct_other_ethnic',
 ]
 
 

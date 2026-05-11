@@ -2,6 +2,12 @@
 
 Outputs: all_census.json
   format: {"<Borough>::<Ward>": {gss, density, median_age, pct_18_29, ...}}
+
+TS022 (ethnic group, detailed) lands as five mutually exclusive shares —
+pct_white, pct_asian, pct_black, pct_mixed, pct_other_ethnic — using the
+top-level group sub-totals as numerators and 'All usual residents' as the
+denominator. The two ONS Black sub-groups (African / Caribbean background)
+are combined into pct_black to match the standard 5-category presentation.
 """
 import json
 from pathlib import Path
@@ -233,6 +239,33 @@ for key, info in mapping.items():
         if f + m > 0:
             out[key]['pct_female'] = round(100 * f / (f + m), 2)
 
+# === TS022: Ethnic group (detailed) ===
+# CSV (not XLSX): one row per ward keyed on geography code (GSS). Columns
+# are the full detailed-ethnicity hierarchy; we take the six top-level
+# sub-totals and the residents total, then combine the two Black columns.
+print("=== TS022 Ethnic group ===")
+df = pd.read_csv(SOURCE / 'census2021-ts022-ward.csv', dtype={'geography code': str})
+TS022_TOTAL = 'Ethnic group (detailed): Total: All usual residents'
+TS022_WHITE = 'Ethnic group (detailed): White'
+TS022_ASIAN = 'Ethnic group (detailed): Asian, Asian British or Asian Welsh'
+TS022_BLK_A = 'Ethnic group (detailed): Black, Black British, Black Welsh of African background'
+TS022_BLK_C = 'Ethnic group (detailed): Black, Black British, Black Welsh or Caribbean background'
+TS022_MIXED = 'Ethnic group (detailed): Mixed or Multiple ethnic groups'
+TS022_OTHER = 'Ethnic group (detailed): Other ethnic group'
+ts022_by_gss = df.set_index('geography code')
+for key, info in mapping.items():
+    if info['gss'] not in ts022_by_gss.index:
+        continue
+    row = ts022_by_gss.loc[info['gss']]
+    total = row[TS022_TOTAL]
+    if total == 0:
+        continue
+    out[key]['pct_white']        = round(100 * row[TS022_WHITE] / total, 2)
+    out[key]['pct_asian']        = round(100 * row[TS022_ASIAN] / total, 2)
+    out[key]['pct_black']        = round(100 * (row[TS022_BLK_A] + row[TS022_BLK_C]) / total, 2)
+    out[key]['pct_mixed']        = round(100 * row[TS022_MIXED] / total, 2)
+    out[key]['pct_other_ethnic'] = round(100 * row[TS022_OTHER] / total, 2)
+
 # Save
 with open(DATA / 'all_census.json', 'w') as f:
     json.dump(out, f, indent=2)
@@ -240,7 +273,8 @@ with open(DATA / 'all_census.json', 'w') as f:
 # Stats: how many wards have all expected variables?
 expected_vars = ['density', 'median_age', 'pct_18_29', 'pct_65plus', 'pct_soc123',
                  'pct_apprentice', 'pct_level4_plus', 'pct_owned', 'pct_social_rented',
-                 'pct_private_rented', 'pct_uk_born', 'pct_wfh', 'pct_female']
+                 'pct_private_rented', 'pct_uk_born', 'pct_wfh', 'pct_female',
+                 'pct_white', 'pct_asian', 'pct_black', 'pct_mixed', 'pct_other_ethnic']
 counts = {v: 0 for v in expected_vars}
 complete = 0
 for key, d in out.items():
@@ -251,6 +285,6 @@ for key, d in out.items():
             counts[v] += 1
 
 print(f"\n=== Coverage ===")
-print(f"Wards with all 13 vars: {complete}/{len(out)}")
+print(f"Wards with all {len(expected_vars)} vars: {complete}/{len(out)}")
 for v, n in counts.items():
     print(f"  {v}: {n}/{len(out)}")
