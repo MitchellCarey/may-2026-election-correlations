@@ -1,0 +1,117 @@
+# Master council registry — one entry per principal council.
+#
+# Drives:
+#   scripts/00_fetch_prior_winners.py    via wiki_prior + wiki_prior_year
+#   scripts/00b_fetch_2026_results.py    via wiki_2026                      [added in Phase B]
+#   scripts/_councils.py                 region resolution via region_gm    [+ future region flags]
+#
+# Schema (every field required, use null where no value applies):
+#   lad_code         ONS LAD24 code (e.g. E08000001 for met. boroughs)
+#   name             human-readable council name
+#   nation           england | wales | scotland
+#   cycle            thirds | halves | all-out
+#   region_gm        true for the 10 Greater Manchester boroughs; false otherwise
+#   wiki_2026        Wikipedia article title for the 2026 election, or null
+#                    (null if no 2026 contest, or if results live in
+#                    data/source/results_2026.csv as hand-curated)
+#   wiki_prior       Wikipedia article title for the most-recent prior
+#                    contest of the same seats (4 years back for thirds &
+#                    all-out, 2 years back for halves)
+#   wiki_prior_year  integer year of wiki_prior
+#
+# Seeded with the 10 GM councils only. Phase B.6 extends this to ~390 GB
+# principal councils.
+
+- lad_code: E08000001
+  name: Bolton
+  nation: england
+  cycle: thirds
+  region_gm: true
+  wiki_2026: null
+  wiki_prior: "2022 Bolton Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000002
+  name: Bury
+  nation: england
+  cycle: thirds
+  region_gm: true
+  wiki_2026: null
+  wiki_prior: "2022 Bury Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000003
+  name: Manchester
+  nation: england
+  cycle: thirds
+  region_gm: true
+  wiki_2026: null
+  wiki_prior: "2022 Manchester City Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000004
+  name: Oldham
+  nation: england
+  cycle: thirds
+  region_gm: true
+  wiki_2026: null
+  wiki_prior: "2022 Oldham Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000005
+  name: Rochdale
+  nation: england
+  cycle: thirds
+  region_gm: true
+  wiki_2026: null
+  wiki_prior: "2022 Rochdale Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+# Salford runs all-out every 4 years; the cycle is 2021 -> 2025 -> 2029,
+# so Salford had no whole-council 2026 contest. wiki_2026 stays null;
+# 2026 by-election seats (e.g. Barton & Winton) are captured via the
+# hand-curated CSV.
+- lad_code: E08000006
+  name: Salford
+  nation: england
+  cycle: all-out
+  region_gm: true
+  wiki_2026: null
+  wiki_prior: "2021 Salford City Council election"
+  wiki_prior_year: 2021
+
+- lad_code: E08000007
+  name: Stockport
+  nation: england
+  cycle: thirds
+  region_gm: true
+  wiki_2026: null
+  wiki_prior: "2022 Stockport Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000008
+  name: Tameside
+  nation: england
+  cycle: thirds
+  region_gm: true
+  wiki_2026: null
+  wiki_prior: "2022 Tameside Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000009
+  name: Trafford
+  nation: england
+  cycle: thirds
+  region_gm: true
+  wiki_2026: null
+  wiki_prior: "2022 Trafford Metropolitan Borough Council election"
+  wiki_prior_year: 2022
+
+- lad_code: E08000010
+  name: Wigan
+  nation: england
+  cycle: thirds
+  region_gm: true
+  wiki_2026: null
+  wiki_prior: "2022 Wigan Metropolitan Borough Council election"
+  wiki_prior_year: 2022
