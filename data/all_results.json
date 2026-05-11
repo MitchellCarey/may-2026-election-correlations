@@ -183,6 +183,168 @@
       null
     ]
   },
+  "Manchester": {
+    "Ancoats & Beswick": [
+      "Green",
+      null,
+      null
+    ],
+    "Ardwick": [
+      "Green",
+      null,
+      null
+    ],
+    "Baguley": [
+      "Reform",
+      null,
+      null
+    ],
+    "Brooklands": [
+      "Reform",
+      null,
+      null
+    ],
+    "Burnage": [
+      "Green",
+      null,
+      null
+    ],
+    "Charlestown": [
+      "Reform",
+      null,
+      null
+    ],
+    "Cheetham": [
+      "Labour",
+      null,
+      null
+    ],
+    "Chorlton": [
+      "Green",
+      null,
+      null
+    ],
+    "Chorlton Park": [
+      "Green",
+      null,
+      null
+    ],
+    "Clayton & Openshaw": [
+      "Labour",
+      null,
+      null
+    ],
+    "Crumpsall": [
+      "Labour",
+      null,
+      null
+    ],
+    "Deansgate": [
+      "Green",
+      null,
+      null
+    ],
+    "Didsbury East": [
+      "Labour",
+      null,
+      null
+    ],
+    "Didsbury West": [
+      "LibDem",
+      null,
+      null
+    ],
+    "Fallowfield": [
+      "Green",
+      null,
+      null
+    ],
+    "Gorton & Abbey Hey": [
+      "Green",
+      null,
+      null
+    ],
+    "Harpurhey": [
+      "Labour",
+      null,
+      null
+    ],
+    "Higher Blackley": [
+      "Reform",
+      null,
+      null
+    ],
+    "Hulme": [
+      "Green",
+      null,
+      null
+    ],
+    "Levenshulme": [
+      "Green",
+      null,
+      null
+    ],
+    "Longsight": [
+      "Green",
+      null,
+      null
+    ],
+    "Miles Platting & Newton Heath": [
+      "Pending",
+      null,
+      null
+    ],
+    "Moss Side": [
+      "Green",
+      null,
+      null
+    ],
+    "Moston": [
+      "Reform",
+      null,
+      null
+    ],
+    "Northenden": [
+      "Labour",
+      null,
+      null
+    ],
+    "Old Moat": [
+      "Green",
+      null,
+      null
+    ],
+    "Piccadilly": [
+      "Green",
+      null,
+      null
+    ],
+    "Rusholme": [
+      "Green",
+      null,
+      null
+    ],
+    "Sharston": [
+      "Reform",
+      null,
+      null
+    ],
+    "Whalley Range": [
+      "Green",
+      null,
+      null
+    ],
+    "Withington": [
+      "Green",
+      null,
+      null
+    ],
+    "Woodhouse Park": [
+      "Green",
+      null,
+      null
+    ]
+  },
   "Oldham": {
     "Alexandra": [
       "Other",
@@ -385,6 +547,108 @@
       "Reform",
       36.6,
       30.08
+    ]
+  },
+  "Salford": {
+    "Barton & Winton": [
+      "Labour",
+      null,
+      null
+    ],
+    "Blackfriars & Trinity": [
+      "Green",
+      null,
+      null
+    ],
+    "Boothstown & Ellenbrook": [
+      "Conservative",
+      null,
+      null
+    ],
+    "Broughton": [
+      "Labour",
+      null,
+      null
+    ],
+    "Cadishead & Lower Irlam": [
+      "Reform",
+      null,
+      null
+    ],
+    "Claremont": [
+      "Reform",
+      null,
+      null
+    ],
+    "Eccles": [
+      "Labour",
+      null,
+      null
+    ],
+    "Higher Irlam & Peel Green": [
+      "Reform",
+      null,
+      null
+    ],
+    "Kersal & Broughton Park": [
+      "Independent",
+      null,
+      null
+    ],
+    "Little Hulton": [
+      "Reform",
+      null,
+      null
+    ],
+    "Ordsall": [
+      "Green",
+      null,
+      null
+    ],
+    "Pendlebury & Clifton": [
+      "Reform",
+      null,
+      null
+    ],
+    "Pendleton & Charlestown": [
+      "Reform",
+      null,
+      null
+    ],
+    "Quays": [
+      "Green",
+      null,
+      null
+    ],
+    "Swinton & Wardley": [
+      "Reform",
+      null,
+      null
+    ],
+    "Swinton Park": [
+      "Reform",
+      null,
+      null
+    ],
+    "Walkden North": [
+      "Reform",
+      null,
+      null
+    ],
+    "Walkden South": [
+      "Reform",
+      null,
+      null
+    ],
+    "Weaste & Seedley": [
+      "Reform",
+      null,
+      null
+    ],
+    "Worsley & Westwood Park": [
+      "Reform",
+      null,
+      null
     ]
   },
   "Stockport": {
@@ -821,13 +1085,6 @@
     ],
     "Worsley Mesnes": [
       "Reform",
-      null,
-      null
-    ]
-  },
-  "Salford": {
-    "Barton & Winton": [
-      "Labour",
       null,
       null
     ]

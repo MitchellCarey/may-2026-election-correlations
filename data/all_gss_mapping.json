@@ -143,6 +143,134 @@
     "gss": "E05014168",
     "match": "exact"
   },
+  "Manchester::Ancoats & Beswick": {
+    "gss": "E05011350",
+    "match": "exact"
+  },
+  "Manchester::Ardwick": {
+    "gss": "E05011351",
+    "match": "exact"
+  },
+  "Manchester::Baguley": {
+    "gss": "E05011352",
+    "match": "exact"
+  },
+  "Manchester::Brooklands": {
+    "gss": "E05011353",
+    "match": "suffix"
+  },
+  "Manchester::Burnage": {
+    "gss": "E05011354",
+    "match": "exact"
+  },
+  "Manchester::Charlestown": {
+    "gss": "E05011355",
+    "match": "exact"
+  },
+  "Manchester::Cheetham": {
+    "gss": "E05011356",
+    "match": "exact"
+  },
+  "Manchester::Chorlton": {
+    "gss": "E05011357",
+    "match": "exact"
+  },
+  "Manchester::Chorlton Park": {
+    "gss": "E05011358",
+    "match": "exact"
+  },
+  "Manchester::Clayton & Openshaw": {
+    "gss": "E05011359",
+    "match": "exact"
+  },
+  "Manchester::Crumpsall": {
+    "gss": "E05011360",
+    "match": "exact"
+  },
+  "Manchester::Deansgate": {
+    "gss": "E05011361",
+    "match": "exact"
+  },
+  "Manchester::Didsbury East": {
+    "gss": "E05011362",
+    "match": "exact"
+  },
+  "Manchester::Didsbury West": {
+    "gss": "E05011363",
+    "match": "exact"
+  },
+  "Manchester::Fallowfield": {
+    "gss": "E05011364",
+    "match": "exact"
+  },
+  "Manchester::Gorton & Abbey Hey": {
+    "gss": "E05011365",
+    "match": "exact"
+  },
+  "Manchester::Harpurhey": {
+    "gss": "E05011366",
+    "match": "exact"
+  },
+  "Manchester::Higher Blackley": {
+    "gss": "E05011367",
+    "match": "exact"
+  },
+  "Manchester::Hulme": {
+    "gss": "E05011368",
+    "match": "exact"
+  },
+  "Manchester::Levenshulme": {
+    "gss": "E05011369",
+    "match": "exact"
+  },
+  "Manchester::Longsight": {
+    "gss": "E05011370",
+    "match": "exact"
+  },
+  "Manchester::Miles Platting & Newton Heath": {
+    "gss": "E05011371",
+    "match": "exact"
+  },
+  "Manchester::Moss Side": {
+    "gss": "E05011372",
+    "match": "suffix"
+  },
+  "Manchester::Moston": {
+    "gss": "E05011373",
+    "match": "exact"
+  },
+  "Manchester::Northenden": {
+    "gss": "E05011374",
+    "match": "exact"
+  },
+  "Manchester::Old Moat": {
+    "gss": "E05011375",
+    "match": "exact"
+  },
+  "Manchester::Piccadilly": {
+    "gss": "E05011376",
+    "match": "exact"
+  },
+  "Manchester::Rusholme": {
+    "gss": "E05011377",
+    "match": "exact"
+  },
+  "Manchester::Sharston": {
+    "gss": "E05011378",
+    "match": "exact"
+  },
+  "Manchester::Whalley Range": {
+    "gss": "E05011379",
+    "match": "exact"
+  },
+  "Manchester::Withington": {
+    "gss": "E05011380",
+    "match": "exact"
+  },
+  "Manchester::Woodhouse Park": {
+    "gss": "E05011381",
+    "match": "exact"
+  },
   "Oldham::Alexandra": {
     "gss": "E05000719",
     "match": "suffix"
@@ -301,6 +429,86 @@
   },
   "Rochdale::West Middleton": {
     "gss": "E05014052",
+    "match": "exact"
+  },
+  "Salford::Barton & Winton": {
+    "gss": "E05013018",
+    "match": "exact"
+  },
+  "Salford::Blackfriars & Trinity": {
+    "gss": "E05013019",
+    "match": "exact"
+  },
+  "Salford::Boothstown & Ellenbrook": {
+    "gss": "E05013020",
+    "match": "exact"
+  },
+  "Salford::Broughton": {
+    "gss": "E05013021",
+    "match": "suffix"
+  },
+  "Salford::Cadishead & Lower Irlam": {
+    "gss": "E05013022",
+    "match": "exact"
+  },
+  "Salford::Claremont": {
+    "gss": "E05013023",
+    "match": "suffix"
+  },
+  "Salford::Eccles": {
+    "gss": "E05013024",
+    "match": "exact"
+  },
+  "Salford::Higher Irlam & Peel Green": {
+    "gss": "E05013025",
+    "match": "exact"
+  },
+  "Salford::Kersal & Broughton Park": {
+    "gss": "E05013026",
+    "match": "exact"
+  },
+  "Salford::Little Hulton": {
+    "gss": "E05013027",
+    "match": "exact"
+  },
+  "Salford::Ordsall": {
+    "gss": "E05013028",
+    "match": "exact"
+  },
+  "Salford::Pendlebury & Clifton": {
+    "gss": "E05013029",
+    "match": "exact"
+  },
+  "Salford::Pendleton & Charlestown": {
+    "gss": "E05013030",
+    "match": "exact"
+  },
+  "Salford::Quays": {
+    "gss": "E05013031",
+    "match": "exact"
+  },
+  "Salford::Swinton & Wardley": {
+    "gss": "E05013032",
+    "match": "exact"
+  },
+  "Salford::Swinton Park": {
+    "gss": "E05013033",
+    "match": "exact"
+  },
+  "Salford::Walkden North": {
+    "gss": "E05013034",
+    "match": "exact"
+  },
+  "Salford::Walkden South": {
+    "gss": "E05013035",
+    "match": "exact"
+  },
+  "Salford::Weaste & Seedley": {
+    "gss": "E05013036",
+    "match": "exact"
+  },
+  "Salford::Worsley & Westwood Park": {
+    "gss": "E05013037",
     "match": "exact"
   },
   "Stockport::Bramhall North": {
@@ -645,10 +853,6 @@
   },
   "Wigan::Worsley Mesnes": {
     "gss": "E05000864",
-    "match": "exact"
-  },
-  "Salford::Barton & Winton": {
-    "gss": "E05013018",
     "match": "exact"
   }
 }
