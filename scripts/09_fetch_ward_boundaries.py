@@ -253,13 +253,21 @@ def main():
     print('6. Computing per-region viewBoxes...')
     view_boxes = {}
     for region in REGIONS:
-        region_lads = lad_codes_for(region)
-        subset = gdf[gdf['LAD24CD'].isin(region_lads)]
-        if subset.empty:
-            raise RuntimeError(
-                f'region {region!r} matched 0 wards in the fetched set — '
-                f'check councils.yaml lad_codes against ONS WD24 LAD24CDs'
-            )
+        if region == 'gb':
+            # GB shows the whole UK extent so the registered councils sit
+            # in their real geographic context — boroughs we *don't* render
+            # as data still appear as decorative outlines. The registry
+            # subset would zoom in to wherever the 69 councils happen to
+            # cluster.
+            subset = gdf
+        else:
+            region_lads = lad_codes_for(region)
+            subset = gdf[gdf['LAD24CD'].isin(region_lads)]
+            if subset.empty:
+                raise RuntimeError(
+                    f'region {region!r} matched 0 wards in the fetched set — '
+                    f'check councils.yaml lad_codes against ONS WD24 LAD24CDs'
+                )
         view_boxes[region] = viewbox_for(subset, maxy, miny)
         print(f'   {region}: {len(subset)} wards · viewBox {view_boxes[region]}')
 

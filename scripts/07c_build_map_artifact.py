@@ -104,16 +104,24 @@ def main():
               file=sys.stderr)
         return
 
-    # Restrict geometry to the region's councils so a GB-wide geom file
-    # doesn't drag the whole UK into a GM-only page.
+    # Restrict ward-level geometry to the region's registered councils so
+    # the GM page doesn't drag the whole UK into its <script>, and the GB
+    # page only renders ward fills for the councils we have results for.
     region_wards = {
         code: w for code, w in geoms['wards'].items()
         if w['lad'] in region_lad_codes
     }
-    region_boroughs = {
-        code: b for code, b in geoms['boroughs'].items()
-        if code in region_lad_codes
-    }
+    # Borough outlines: for GB, ship every council in the fetched set so
+    # non-registered areas (the rest of the UK) appear as decorative
+    # outlines and the registered 69 sit in real geographic context. For
+    # GM, restrict to the region (10 boroughs).
+    if region == 'gb':
+        region_boroughs = geoms['boroughs']
+    else:
+        region_boroughs = {
+            code: b for code, b in geoms['boroughs'].items()
+            if code in region_lad_codes
+        }
 
     # Normalised name → WD24CD lookup; geom file is the source of truth.
     geom_by_norm = {}
