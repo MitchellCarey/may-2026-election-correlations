@@ -26,10 +26,13 @@ from _artifact_lib import (
     PARTY_DISPLAY_MAP as PARTY_DISPLAY,
     LEGEND_ORDER_MAP as LEGEND_ORDER,
 )
+from _councils import lad_codes_for
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
+
+GM_LAD_CODES = lad_codes_for('gm')
 
 BEGIN = "// ===== BEGIN GENERATED — see scripts/07c_build_map_artifact.py ====="
 END = "// ===== END GENERATED ====="
@@ -50,6 +53,11 @@ def main():
         results = json.load(f)
     with open(DATA / 'ward_geoms.json') as f:
         geoms = json.load(f)
+
+    # Phase B transitional filter — results is now GB-wide but ward_geoms.json
+    # is still GM-only (09 has its own GM filter). Restrict to GM until
+    # both sides align in Phase B.10 / C.13.
+    results = [r for r in results if r.get('lad_code') in GM_LAD_CODES]
 
     # Normalised name → WD24CD lookup; geom file is the source of truth.
     geom_by_norm = {}

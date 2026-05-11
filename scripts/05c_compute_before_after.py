@@ -18,8 +18,12 @@ import json
 from pathlib import Path
 from statistics import mean
 
+from _councils import lad_codes_for
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
+
+GM_LAD_CODES = lad_codes_for('gm')
 
 PARTIES = ['Reform', 'Green', 'Labour', 'LibDem', 'Conservative', 'Independent', 'Other']
 
@@ -73,6 +77,9 @@ def compute_correlations(sample, indicator):
 def main():
     with open(DATA / 'all_wards_with_prior.json') as f:
         wards = json.load(f)
+
+    # Phase B transitional filter — restrict to GM until 07b accepts --region.
+    wards = [w for w in wards if w.get('lad_code') in GM_LAD_CODES]
 
     # 2022/2021 sample: wards with a known prior_party (boundary-changed wards
     # without a clean predecessor are excluded by definition).

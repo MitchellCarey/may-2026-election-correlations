@@ -9,13 +9,20 @@ Output: data/v1_changes_ward_data.json
 import json
 from pathlib import Path
 
+from _councils import lad_codes_for
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
+
+GM_LAD_CODES = lad_codes_for('gm')
 
 
 def main():
     with open(DATA / 'all_wards_with_prior.json') as f:
         wards = json.load(f)
+
+    # Phase B transitional filter — restrict to GM until 07b accepts --region.
+    wards = [w for w in wards if w.get('lad_code') in GM_LAD_CODES]
 
     out = []
     for w in wards:

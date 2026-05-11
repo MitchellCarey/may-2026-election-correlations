@@ -18,8 +18,12 @@ borough, and Census comes from all_census.json like everything else.
 import json
 from pathlib import Path
 
+from _councils import load as load_councils
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
+
+COUNCIL_LAD = {c["name"]: c["lad_code"] for c in load_councils()}
 
 
 CENSUS_FIELDS = [
@@ -48,6 +52,7 @@ def main():
                 continue
             entry = {
                 'borough': borough,
+                'lad_code': COUNCIL_LAD.get(borough),
                 'ward': ward,
                 'winner': winner,
                 'winner_share': share,

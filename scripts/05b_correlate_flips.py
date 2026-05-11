@@ -13,8 +13,12 @@ import json
 from pathlib import Path
 from statistics import mean
 
+from _councils import lad_codes_for
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
+
+GM_LAD_CODES = lad_codes_for('gm')
 
 MIN_FLIPS = 5  # parties with fewer flipped wards are excluded from the analysis
 
@@ -48,6 +52,9 @@ def pearson(xs, ys):
 def main():
     with open(DATA / 'all_wards_with_prior.json') as f:
         wards = json.load(f)
+
+    # Phase B transitional filter — restrict to GM until 07b accepts --region.
+    wards = [w for w in wards if w.get('lad_code') in GM_LAD_CODES]
 
     # Analysis sample: declared 2026 winner AND known prior party (so flipped is defined)
     sample = [w for w in wards

@@ -8,11 +8,19 @@ import json
 from pathlib import Path
 from statistics import mean
 
+from _councils import lad_codes_for
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
 with open(DATA / 'all_wards.json') as f:
     wards = json.load(f)
+
+# Filter to the GM region — Phase B's renderer scope. A future commit
+# will switch this to per-region output (gm + gb blocks) once 07 grows
+# its --region flag.
+GM_LAD_CODES = lad_codes_for('gm')
+wards = [w for w in wards if w.get('lad_code') in GM_LAD_CODES]
 
 # Filter to declared (drop Pending)
 declared = [w for w in wards if w.get('winner') not in ('Pending', None)]
