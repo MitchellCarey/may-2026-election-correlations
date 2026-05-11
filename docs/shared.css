@@ -884,6 +884,12 @@ body {
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
   fill-opacity: 0.92;
+  cursor: default;
+}
+.map-svg path.county:hover {
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  fill-opacity: 0.78;
 }
 
 .map-legend {

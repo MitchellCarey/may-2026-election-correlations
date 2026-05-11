@@ -146,15 +146,10 @@
   wiki_prior_year: 2022
 
 # Liverpool restructured in 2023 (boundary review + cycle change). The prior
-# whole-council election was 2023, all-out, and the next is 2027 — no 2026.
-- lad_code: E08000012
-  name: Liverpool
-  nation: england
-  cycle: all-out
-  region_gm: false
-  wiki_2026: null
-  wiki_prior: "2023 Liverpool City Council election"
-  wiki_prior_year: 2023
+# whole-council election was 2023, all-out, and the next is 2027 — no May
+# 2026 contest, so omitted from the registry. Re-add with cycle: all-out,
+# wiki_2026: "2027 Liverpool City Council election", wiki_prior: 2023 once
+# that election runs.
 
 - lad_code: E08000013
   name: St. Helens
@@ -190,28 +185,13 @@
   wiki_prior: "2022 Barnsley Metropolitan Borough Council election"
   wiki_prior_year: 2022
 
-# Doncaster moved to all-out 2021 -> 2025 -> 2029, so no 2026 contest. The
-# council was renamed "City of Doncaster Council" after the 2022 city status
-# award; the pre-name-change 2021 article is the correct prior.
-- lad_code: E08000017
-  name: Doncaster
-  nation: england
-  cycle: all-out
-  region_gm: false
-  wiki_2026: null
-  wiki_prior: "2021 Doncaster Metropolitan Borough Council election"
-  wiki_prior_year: 2021
+# Doncaster moved to all-out 2021 -> 2025 -> 2029, so no May 2026 contest.
+# Omitted from the registry; re-add for 2029 alongside the other ex-thirds
+# metropolitan boroughs that switched to four-yearly all-out cycles.
 
-# Rotherham went to all-out 2021 -> 2025 -> 2029 after the post-2014 commissioner
-# period — no 2026 contest.
-- lad_code: E08000018
-  name: Rotherham
-  nation: england
-  cycle: all-out
-  region_gm: false
-  wiki_2026: null
-  wiki_prior: "2021 Rotherham Metropolitan Borough Council election"
-  wiki_prior_year: 2021
+# Rotherham went to all-out 2021 -> 2025 -> 2029 after the post-2014
+# commissioner period — no May 2026 contest. Omitted; re-add for 2029.
+
 
 - lad_code: E08000019
   name: Sheffield
@@ -385,15 +365,9 @@
 # Westminster is a city; City of London has unique Common Council elections
 # with non-comparable wards and is excluded from the scraper.
 
-# City of London Common Council uses ward names like Bishopsgate, Cordwainer, etc. that do not align with the rest of the registry; analytical scope skips it.
-- lad_code: E09000001
-  name: City of London
-  nation: england
-  cycle: all-out
-  region_gm: false
-  wiki_2026: null
-  wiki_prior: null
-  wiki_prior_year: null
+# City of London Common Council uses ward names like Bishopsgate, Cordwainer
+# etc. that don't align with the rest of the registry, and elects every four
+# years in March (last 2025, next 2029) — no May 2026 contest. Omitted.
 
 - lad_code: E09000002
   name: Barking and Dagenham
