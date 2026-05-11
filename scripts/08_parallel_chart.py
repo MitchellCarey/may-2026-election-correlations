@@ -1,15 +1,17 @@
 """Generate the parallel-coordinates SVG (party-win × Census r) and
-splice it into docs/index.html between the BEGIN/END SVG markers.
+splice it into the matching index page between the BEGIN/END SVG markers.
 
 Reads:  data/correlations.json
-Writes: docs/index.html (SVG block only, between marker pair)
+Writes: docs/index.html       (when --region=gm)
+        docs/uk/index.html    (when --region=gb)
 
 The chart shows Pearson r between a 0/1 party-win indicator and ten
-ward-level structural variables across the 213 declared GM wards. We
-emit one SVG per sortable party — each with its own variable order,
+ward-level structural variables across the region's declared wards.
+We emit one SVG per sortable party — each with its own variable order,
 subtitle, and annotations. The default-visible SVG is Reform's; the
-others are hidden until a button in docs/index.html flips visibility.
+others are hidden until a button in the host HTML flips visibility.
 """
+import argparse
 import json
 import re
 from pathlib import Path
@@ -18,8 +20,18 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
 
+REGION_NAME = {"gm": "Greater Manchester", "gb": "Great Britain"}
+
+ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+ap.add_argument("--region", default="gm", choices=["gm", "gb"])
+args = ap.parse_args()
+region = args.region
+region_name = REGION_NAME[region]
+
 with open(DATA / "correlations.json") as f:
-    corr = json.load(f)["correlations"]
+    _corr_full = json.load(f)
+corr = _corr_full["regions"][region]["correlations"]
+n_total = _corr_full["regions"][region]["n_total"]
 
 # Pool of structural variables available to the chart. Each party-view
 # picks its own top-10 by |r| from this pool, ordered most-positive →
@@ -138,7 +150,7 @@ def build_svg(sort_party, is_default):
         f'<svg class="{visibility_class}" data-sort="{sort_party}" '
         f'viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" '
         f'aria-label="Parallel-coordinates chart of party-win '
-        f'correlations with structural variables across 213 Greater Manchester '
+        f'correlations with structural variables across {n_total} {region_name} '
         f'wards, ordered by {DISPLAY_NAME[sort_party]}\'s correlation strength" '
         f'style="width:100%;height:auto;">'
     )
@@ -149,13 +161,13 @@ def build_svg(sort_party, is_default):
     s.append(
         f'<text x="{PL}" y="24" font-family="\'Source Serif 4\', Georgia, serif" '
         f'font-size="18" font-weight="700" fill="#14110d">'
-        f'Where each party wins, structurally — Greater Manchester 2026 wards</text>'
+        f'Where each party wins, structurally — {region_name} 2026 wards</text>'
     )
 
     # Subtitle — Inter Tight, three lines so it doesn't collide with the legend
     sub_lines = [
         "Pearson r between a 0/1 party-win indicator and each ward's Census",
-        "2021 structural profile, across 213 declared wards. Showing the ten",
+        f"2021 structural profile, across {n_total} declared wards. Showing the ten",
         f"variables most correlated with {DISPLAY_NAME[sort_party]}'s wins.",
     ]
     for i, line in enumerate(sub_lines):
@@ -282,10 +294,10 @@ def build_svg(sort_party, is_default):
 svgs = [build_svg(p, is_default=(p == DEFAULT_SORT)) for p in SORT_PARTIES]
 new_block = "\n".join(svgs)
 
-# Splice into docs/index.html
+# Splice into the region's host HTML
 BEGIN = "<!-- ===== BEGIN GENERATED SVG — see scripts/08_parallel_chart.py ===== -->"
 END = "<!-- ===== END GENERATED SVG ===== -->"
-html_path = DOCS / "index.html"
+html_path = DOCS / "index.html" if region == "gm" else DOCS / "uk" / "index.html"
 html = html_path.read_text()
 pattern = re.compile(re.escape(BEGIN) + r".*?" + re.escape(END), re.DOTALL)
 matches = pattern.findall(html)
