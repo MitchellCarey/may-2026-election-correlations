@@ -222,6 +222,11 @@ def main():
 
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
+    # GB exposes a second viewBox (zoomed to the registered councils) so
+    # the page can toggle between the full UK and the data-coloured slice.
+    # GM has nothing to crop to, so it emits null and the toggle stays hidden.
+    alt = geoms['viewBoxes'].get('gb_registered') if region == 'gb' else None
+    js.append('const VIEWBOX_REGISTERED = ' + json.dumps(alt) + ';')
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
     js.append('const BOROUGH_PATHS = ' + json.dumps(borough_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(all_wards, separators=(',', ':')) + ';')
@@ -304,6 +309,24 @@ renderMap('map-after',
 // no-result wards stay neutral grey.
 renderMap('map-flips',
   w => (w.fl === true && w.w) ? PARTY_COLOURS[w.w] : null);
+
+// Toggle between the default viewBox and the registered-councils viewBox.
+// Only wires up if a button exists AND the page emitted an alternate
+// viewBox (i.e. the GB page). The button's label flips to show the
+// destination of the next click, not the current state.
+const zoomBtn = document.getElementById('zoom-toggle');
+if (zoomBtn && VIEWBOX_REGISTERED) {
+  const VIEWBOX_DEFAULT = VIEWBOX.slice();
+  let zoomed = false;
+  const apply = () => {
+    const vb = (zoomed ? VIEWBOX_REGISTERED : VIEWBOX_DEFAULT).join(' ');
+    document.querySelectorAll('.map-svg').forEach(svg => svg.setAttribute('viewBox', vb));
+    zoomBtn.setAttribute('aria-pressed', String(zoomed));
+    zoomBtn.textContent = zoomed ? 'Show full UK' : 'Zoom to contested councils';
+  };
+  zoomBtn.addEventListener('click', () => { zoomed = !zoomed; apply(); });
+  apply();
+}
 
 // Single shared legend, derived from parties actually present in the data.
 const partiesPresent = new Set();

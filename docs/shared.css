@@ -788,6 +788,31 @@ body {
 .ba-row.no-2022 .vals .v22 { display: none; }
 
 /* MAP PAGE (used by docs/map.html) */
+.map-controls {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+  margin: 24px 0 -6px;
+}
+.zoom-toggle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase;
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.zoom-toggle:hover { background: var(--ink); color: var(--paper); }
+.zoom-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.zoom-toggle[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.map-controls-hint {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.08em;
+  color: var(--muted);
+}
+@media (min-width: 720px) {
+  .map-controls-hint { font-size: 10.5px; }
+}
+
 .map-grid {
   display: grid;
   grid-template-columns: 1fr;

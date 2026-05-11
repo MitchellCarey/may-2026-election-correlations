@@ -254,11 +254,9 @@ def main():
     view_boxes = {}
     for region in REGIONS:
         if region == 'gb':
-            # GB shows the whole UK extent so the registered councils sit
-            # in their real geographic context — boroughs we *don't* render
-            # as data still appear as decorative outlines. The registry
-            # subset would zoom in to wherever the 69 councils happen to
-            # cluster.
+            # GB default: the whole UK extent. The registered councils sit
+            # in their real geographic context and the rest of the UK shows
+            # as decorative outlines.
             subset = gdf
         else:
             region_lads = lad_codes_for(region)
@@ -270,6 +268,14 @@ def main():
                 )
         view_boxes[region] = viewbox_for(subset, maxy, miny)
         print(f'   {region}: {len(subset)} wards · viewBox {view_boxes[region]}')
+
+    # Alternate GB viewBox: zoomed to just the registered councils. The
+    # GB page exposes a button that toggles between this and the full-UK
+    # default, so readers can crop in on the coloured-data slice.
+    gb_registered_subset = gdf[gdf['LAD24CD'].isin(lad_codes_for('gb'))]
+    view_boxes['gb_registered'] = viewbox_for(gb_registered_subset, maxy, miny)
+    print(f'   gb_registered: {len(gb_registered_subset)} wards · '
+          f'viewBox {view_boxes["gb_registered"]}')
 
     out_data = {
         'viewBoxes': view_boxes,
