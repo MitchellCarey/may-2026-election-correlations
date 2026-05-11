@@ -2,9 +2,9 @@
 
 Mirror of scripts/07b_build_changes_artifact.py for the Map page. Reads:
 
-  - data/gm_all_wards_with_prior.json (214 ward records: borough, ward,
+  - data/all_wards_with_prior.json (214 ward records: borough, ward,
     winner, prior_party, flipped, match_type_prior, ...)
-  - data/gm_ward_geoms.json           (215 ward polygons + 10 borough outlines,
+  - data/ward_geoms.json           (215 ward polygons + 10 borough outlines,
     pre-projected to BNG and emitted as SVG path strings — see scripts/09)
 
 …joins them via normalised borough+ward name (the geom file is the source of
@@ -46,9 +46,9 @@ def normalise(s: str) -> str:
 
 
 def main():
-    with open(DATA / 'gm_all_wards_with_prior.json') as f:
+    with open(DATA / 'all_wards_with_prior.json') as f:
         results = json.load(f)
-    with open(DATA / 'gm_ward_geoms.json') as f:
+    with open(DATA / 'ward_geoms.json') as f:
         geoms = json.load(f)
 
     # Normalised name → WD24CD lookup; geom file is the source of truth.

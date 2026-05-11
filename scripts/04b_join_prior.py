@@ -1,6 +1,6 @@
 """Join prior winners (data/prior_winners.json) into the 2026 ward dataset.
 
-Adds these fields to each ward in data/gm_all_wards.json:
+Adds these fields to each ward in data/all_wards.json:
 
     prior_party        — string (e.g. 'Labour') or null
     prior_year         — 2022 or 2021, or null
@@ -8,7 +8,7 @@ Adds these fields to each ward in data/gm_all_wards.json:
     match_type_prior   — 'exact', 'norm' (whitespace/punct), 'fuzzy' (manual map),
                          or 'no_prior' (boundary change, no match)
 
-Output: data/gm_all_wards_with_prior.json
+Output: data/all_wards_with_prior.json
 
 Where 2026 ward names don't match prior names directly (common after the 2023
 boundary reviews in Bolton/Stockport/Trafford/Wigan), we apply a small manual
@@ -87,7 +87,7 @@ def normalize_name(name: str) -> str:
 
 
 def main():
-    with open(DATA / 'gm_all_wards.json') as f:
+    with open(DATA / 'all_wards.json') as f:
         wards = json.load(f)
     with open(DATA / 'prior_winners.json') as f:
         prior = json.load(f)
@@ -157,7 +157,7 @@ def main():
             else:
                 held += 1
 
-    with open(DATA / 'gm_all_wards_with_prior.json', 'w') as f:
+    with open(DATA / 'all_wards_with_prior.json', 'w') as f:
         json.dump(wards, f, indent=2)
 
     total = len(wards)

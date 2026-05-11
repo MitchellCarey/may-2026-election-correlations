@@ -1,6 +1,6 @@
 """Extract all Census 2021 variables for all 161 GSS-mapped wards.
 
-Outputs: all_gm_census.json
+Outputs: all_census.json
   format: {"<Borough>::<Ward>": {gss, density, median_age, pct_18_29, ...}}
 """
 import json
@@ -13,7 +13,7 @@ DATA = ROOT / "data"
 SOURCE = DATA / "source"
 
 # Load the GSS mapping
-with open(DATA / 'all_gm_gss_mapping.json') as f:
+with open(DATA / 'all_gss_mapping.json') as f:
     mapping = json.load(f)
 
 # Build reverse: gss -> [(borough, ward, match_type)]
@@ -234,7 +234,7 @@ for key, info in mapping.items():
             out[key]['pct_female'] = round(100 * f / (f + m), 2)
 
 # Save
-with open(DATA / 'all_gm_census.json', 'w') as f:
+with open(DATA / 'all_census.json', 'w') as f:
     json.dump(out, f, indent=2)
 
 # Stats: how many wards have all expected variables?

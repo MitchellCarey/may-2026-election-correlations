@@ -2,7 +2,7 @@
 - All declared GM wards (full sample)
 - Each borough individually (subsample analysis)
 
-Outputs: gm_correlations.json
+Outputs: correlations.json
 """
 import json
 from pathlib import Path
@@ -11,7 +11,7 @@ from statistics import mean
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
-with open(DATA / 'gm_all_wards.json') as f:
+with open(DATA / 'all_wards.json') as f:
     wards = json.load(f)
 
 # Filter to declared (drop Pending)
@@ -99,6 +99,6 @@ output = {
     'correlations': results,
     'means': party_means,
 }
-with open(DATA / 'gm_correlations.json', 'w') as f:
+with open(DATA / 'correlations.json', 'w') as f:
     json.dump(output, f, indent=2)
-print(f"\nSaved gm_correlations.json")
+print(f"\nSaved correlations.json")

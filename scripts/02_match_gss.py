@@ -100,7 +100,7 @@ def find_gss_code(borough, ward_name, df):
 
 
 # Load results and Census
-with open(DATA / 'all_gm_results.json') as f:
+with open(DATA / 'all_results.json') as f:
     results = json.load(f)
 
 df = pd.read_excel(SOURCE / 'TS006-Population-Density-2021-wd-ONS.xlsx', sheet_name='Dataset')
@@ -122,7 +122,7 @@ for b, w in not_found:
     print(f"  {b}: {w}")
 
 # Save
-with open(DATA / 'all_gm_gss_mapping.json', 'w') as f:
+with open(DATA / 'all_gss_mapping.json', 'w') as f:
     json.dump(mapping, f, indent=2)
 
 # Print match type distribution

@@ -5,7 +5,7 @@ Mirror of 05_correlate.py, but the dependent variable is changed:
     won_by_X      = (winner == X)                                 # 05_correlate
     flipped_to_X  = (winner == X AND prior_party != X AND prior_party is not None)  # this script
 
-Output JSON shape matches gm_correlations.json exactly so 07b can reuse the
+Output JSON shape matches correlations.json exactly so 07b can reuse the
 matrix-renderer JS verbatim. Parties with fewer than MIN_FLIPS flipped wards
 are skipped — Pearson r on n<5 is essentially noise.
 """
@@ -46,7 +46,7 @@ def pearson(xs, ys):
 
 
 def main():
-    with open(DATA / 'gm_all_wards_with_prior.json') as f:
+    with open(DATA / 'all_wards_with_prior.json') as f:
         wards = json.load(f)
 
     # Analysis sample: declared 2026 winner AND known prior party (so flipped is defined)
@@ -104,9 +104,9 @@ def main():
         'correlations': correlations,
         'means': means,
     }
-    with open(DATA / 'gm_flip_correlations.json', 'w') as f:
+    with open(DATA / 'flip_correlations.json', 'w') as f:
         json.dump(output, f, indent=2)
-    print(f'\nSaved gm_flip_correlations.json '
+    print(f'\nSaved flip_correlations.json '
           f'({len(correlations)} parties above MIN_FLIPS={MIN_FLIPS})')
 
 

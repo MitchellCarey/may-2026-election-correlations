@@ -38,7 +38,7 @@ def main():
     RESULTS = load_results()
 
     DATA.mkdir(parents=True, exist_ok=True)
-    with open(DATA / "all_gm_results.json", "w") as f:
+    with open(DATA / "all_results.json", "w") as f:
         json.dump(RESULTS, f, indent=2)
 
     total = sum(len(v) for v in RESULTS.values())

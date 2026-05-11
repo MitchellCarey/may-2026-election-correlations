@@ -9,9 +9,9 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
 # Load consolidated data
-with open(DATA / 'gm_all_wards.json') as f:
+with open(DATA / 'all_wards.json') as f:
     wards = json.load(f)
-with open(DATA / 'gm_correlations.json') as f:
+with open(DATA / 'correlations.json') as f:
     corr = json.load(f)
 
 declared = [w for w in wards if w.get('winner') not in ('Pending', None)]

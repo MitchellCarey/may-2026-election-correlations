@@ -37,7 +37,7 @@
   </p>
 
   <div class="byline">
-    <strong>Method:</strong> Ward boundaries are ONS WD24 (May 2024 BGC), filtered to the 10 GM borough LAD codes (E08000001–E08000010), reprojected from WGS84 to British National Grid (EPSG:27700), simplified at 50 m tolerance, and committed to <code>data/gm_ward_geoms.json</code> — see <code>scripts/09_fetch_ward_boundaries.py</code>. Joins to results data via the GSS code map in <code>data/all_gm_gss_mapping.json</code>. Where a 2026 ward name was a fuzzy match to its 2022/2021 predecessor because of the 2023/2024 boundary reviews in Bolton, Stockport, Trafford and Wigan, the prior-party value is rendered onto the closest current shape — flagged with a dashed stroke on the <em>Before</em> map only. See <code>scripts/07c_build_map_artifact.py</code> for the splice.
+    <strong>Method:</strong> Ward boundaries are ONS WD24 (May 2024 BGC), filtered to the 10 GM borough LAD codes (E08000001–E08000010), reprojected from WGS84 to British National Grid (EPSG:27700), simplified at 50 m tolerance, and committed to <code>data/ward_geoms.json</code> — see <code>scripts/09_fetch_ward_boundaries.py</code>. Joins to results data via the GSS code map in <code>data/all_gss_mapping.json</code>. Where a 2026 ward name was a fuzzy match to its 2022/2021 predecessor because of the 2023/2024 boundary reviews in Bolton, Stockport, Trafford and Wigan, the prior-party value is rendered onto the closest current shape — flagged with a dashed stroke on the <em>Before</em> map only. See <code>scripts/07c_build_map_artifact.py</code> for the splice.
   </div>
 
   <!-- §1 — Before / After side by side -->

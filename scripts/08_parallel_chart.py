@@ -1,7 +1,7 @@
 """Generate the parallel-coordinates SVG (party-win × Census r) and
 splice it into docs/index.html between the BEGIN/END SVG markers.
 
-Reads:  data/gm_correlations.json
+Reads:  data/correlations.json
 Writes: docs/index.html (SVG block only, between marker pair)
 
 The chart shows Pearson r between a 0/1 party-win indicator and ten
@@ -18,13 +18,13 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
 
-with open(DATA / "gm_correlations.json") as f:
+with open(DATA / "correlations.json") as f:
     corr = json.load(f)["correlations"]
 
 # Pool of structural variables available to the chart. Each party-view
 # picks its own top-10 by |r| from this pool, ordered most-positive →
 # most-negative. The pool matches the 17 numeric vars in
-# gm_correlations.json (everything except n_wards).
+# correlations.json (everything except n_wards).
 VAR_LABELS = {
     "density":            "Pop. density",
     "median_age":         "Median age",

@@ -14,7 +14,7 @@ DATA = ROOT / "data"
 
 
 def main():
-    with open(DATA / 'gm_all_wards_with_prior.json') as f:
+    with open(DATA / 'all_wards_with_prior.json') as f:
         wards = json.load(f)
 
     out = []

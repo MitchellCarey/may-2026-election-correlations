@@ -24,7 +24,7 @@ END = "// ===== END GENERATED ====="
 
 with open(DATA / 'v12_ward_data.json') as f:
     wards = json.load(f)
-with open(DATA / 'gm_correlations.json') as f:
+with open(DATA / 'correlations.json') as f:
     corr_full = json.load(f)
 
 # Build compact RAW data structure: keyed by "Borough::Ward"

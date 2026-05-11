@@ -1,6 +1,6 @@
 """Fetch and pre-process ONS WD24 ward boundaries for the 10 GM boroughs.
 
-One-off, idempotent. Skips work if data/gm_ward_geoms.json already exists
+One-off, idempotent. Skips work if data/ward_geoms.json already exists
 unless --force is passed. Mirrors the pattern in scripts/00_fetch_prior_winners.py.
 
 Pipeline:
@@ -19,7 +19,7 @@ Pipeline:
      drop the path strings straight into <path d="..."> with no transform.
   6. Dissolve wards by LAD24CD and emit borough outlines too (looser
      simplification — these are decorative).
-  7. Write data/gm_ward_geoms.json:
+  7. Write data/ward_geoms.json:
        {"viewBox": [minx, miny, width, height],
         "wards":    {WD24CD: {"path": "M...Z", "name": "...", "lad": "E08..."}},
         "boroughs": {LAD24CD: {"path": "M...Z", "name": "..."}}}
@@ -43,7 +43,7 @@ from shapely.ops import unary_union
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 SOURCE = DATA / "source"
-OUT = DATA / "gm_ward_geoms.json"
+OUT = DATA / "ward_geoms.json"
 RAW_CACHE = SOURCE / "wd_may_2024_uk_bgc_gm.geojson"
 
 GM_LAD_CODES = [

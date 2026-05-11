@@ -12,7 +12,7 @@ different slice of GM than its 2022 wards, even though both sets are called
 "Labour". Reform's 2022 column is empty because it didn't win any GM ward
 in 2022 — its 104 wins are entirely a new coalition.
 
-Output: data/gm_before_after.json
+Output: data/before_after.json
 """
 import json
 from pathlib import Path
@@ -71,7 +71,7 @@ def compute_correlations(sample, indicator):
 
 
 def main():
-    with open(DATA / 'gm_all_wards_with_prior.json') as f:
+    with open(DATA / 'all_wards_with_prior.json') as f:
         wards = json.load(f)
 
     # 2022/2021 sample: wards with a known prior_party (boundary-changed wards
@@ -118,10 +118,10 @@ def main():
 
         out['parties'][party] = rec
 
-    with open(DATA / 'gm_before_after.json', 'w') as f:
+    with open(DATA / 'before_after.json', 'w') as f:
         json.dump(out, f, indent=2)
 
-    print(f'Saved gm_before_after.json')
+    print(f'Saved before_after.json')
     print(f'  n_total: 2022={out["n_total_2022"]} | 2026={out["n_total_2026"]}\n')
     print(f'  Per-party seat counts (2022 → 2026):')
     for p, r in out['parties'].items():

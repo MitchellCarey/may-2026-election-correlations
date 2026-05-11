@@ -5,8 +5,8 @@ Steps:
 2. Update Manchester pending wards with newly-declared results (Levenshulme/Rusholme = Green)
 3. Add Salford Barton & Winton (missed in earlier extract)
 4. Add pct_female to Manchester wards from earlier salford extract (Manchester data is in salford_2026.json or wards_v6.json)
-5. Add the 161 new wards from all_gm_census.json + all_gm_results.json
-6. Output: gm_all_wards.json (full 213-ward dataset)
+5. Add the 161 new wards from all_census.json + all_results.json
+6. Output: all_wards.json (full 213-ward dataset)
 """
 import json
 from pathlib import Path
@@ -90,9 +90,9 @@ bw_match = df[df['Electoral wards and divisions'].str.strip() == 'Barton and Win
 print(f"\nBarton and Winton GSS: {bw_match.iloc[0]['Electoral wards and divisions Code'] if len(bw_match) else 'NOT FOUND'}")
 
 # === Add the 161 new wards from new GM extraction ===
-with open(DATA / 'all_gm_census.json') as f:
+with open(DATA / 'all_census.json') as f:
     new_census = json.load(f)
-with open(DATA / 'all_gm_results.json') as f:
+with open(DATA / 'all_results.json') as f:
     new_results = json.load(f)
 
 # Build list of new entries
@@ -150,6 +150,6 @@ for b, n in sorted(bcounts.items()):
     print(f"  {b}: {n}")
 
 # Save
-with open(DATA / 'gm_all_wards.json', 'w') as f:
+with open(DATA / 'all_wards.json', 'w') as f:
     json.dump(existing, f, indent=2)
-print(f"\nSaved gm_all_wards.json")
+print(f"\nSaved all_wards.json")

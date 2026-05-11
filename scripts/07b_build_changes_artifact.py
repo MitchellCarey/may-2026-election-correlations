@@ -3,7 +3,7 @@
 Mirror of scripts/07_build_artifact.py for the Changes page. Reads:
 
   - data/v1_changes_ward_data.json  (compact ward array, from 06b)
-  - data/gm_flip_correlations.json  (party × Census Pearson r, from 05b)
+  - data/flip_correlations.json  (party × Census Pearson r, from 05b)
 
 …and rewrites the block between the BEGIN/END markers in docs/changes.html
 in place.
@@ -34,9 +34,9 @@ END = "// ===== END GENERATED ====="
 def main():
     with open(DATA / 'v1_changes_ward_data.json') as f:
         wards = json.load(f)
-    with open(DATA / 'gm_flip_correlations.json') as f:
+    with open(DATA / 'flip_correlations.json') as f:
         corr_full = json.load(f)
-    with open(DATA / 'gm_before_after.json') as f:
+    with open(DATA / 'before_after.json') as f:
         before_after = json.load(f)
 
     # Compact RAW: keyed by "Borough::Ward"
