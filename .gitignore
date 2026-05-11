@@ -22,7 +22,6 @@ Thumbs.db
 # Source data — large public ONS files, see data/source/README.md
 data/source/*.xlsx
 data/source/*.xls
-data/source/*.csv
 
 
 # Build artifacts
