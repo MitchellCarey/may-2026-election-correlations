@@ -38,16 +38,22 @@ body {
   .masthead .kicker, .masthead .date { font-size: 11px; letter-spacing: 0.18em; }
 }
 
-/* PAGE NAV — tab strip, sticky on scroll */
+/* PAGE NAV — two-tier tab strip (region row + view row), sticky on scroll.
+   The region row picks between Greater Manchester and Great Britain; the
+   view row picks Winners / Changes / Map within the active region. */
 .pagenav {
   position: sticky; top: 0; z-index: 5;
-  display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
+  display: flex; flex-direction: column; gap: 4px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px; letter-spacing: 0.10em; text-transform: uppercase;
   padding: 8px 0;
   background: var(--bg);
   box-shadow: 0 1px 0 var(--hairline);
   margin-bottom: 4px;
+}
+.nav-region,
+.nav-view {
+  display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
 }
 .pagenav a,
 .pagenav .here {
@@ -73,7 +79,8 @@ body {
 }
 .pagenav .sep { display: none; }
 @media (min-width: 720px) {
-  .pagenav { font-size: 11px; letter-spacing: 0.14em; gap: 8px; }
+  .pagenav { font-size: 11px; letter-spacing: 0.14em; }
+  .nav-region, .nav-view { gap: 8px; }
 }
 
 /* SKIP LINK — hidden until focused */
