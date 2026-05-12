@@ -52,3 +52,4 @@ build/
 data/county_results_2026_ceds.json
 data/county_results_prior_ceds.json
 data/current_ced_winners_raw.json
+data/source/ced_may_2025_en_bgc.geojson
