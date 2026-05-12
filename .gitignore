@@ -31,6 +31,15 @@ data/source/wd_may_2024_uk_bgc_*.geojson
 data/source/oa21_msoa21_lookup.csv
 data/source/oa21_wd24_lookup.csv
 
+# Cached Wikipedia article JSON from scripts/00, 00b, 10. Hundreds of files
+# at ~200 KB each — re-fetchable; idempotent skip-if-exists means a fresh
+# checkout just re-pulls them on first run.
+data/source/wiki_*.json
+
+# Built per-ward datasets that are reproducible from the cached wiki + geom files.
+data/current_winners.json
+data/current_winners_raw.json
+
 
 # Build artifacts
 *.pyc
