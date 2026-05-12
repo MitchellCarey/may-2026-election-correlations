@@ -117,10 +117,10 @@ Parsers landed for Phase 2 of issue #9:
 - `arcgis_dashboard` — Esri Election Results FeatureServer (East Sussex)
 - `moderngov_per_division` — moderngov.co.uk per-division pages (West Sussex)
 - `cmis_per_division` — DotNetNuke / OpenElection.net RDFa pages (Essex)
+- `powerbi_dashboard` — Power BI publish-to-web DAX scraper (Suffolk)
 - Phase 1 hand-curated CSV pattern still in use for Norfolk (no parser yet)
 
 Phase 2 deferrals (no `official_url` set, see comments on the registry rows):
-- Suffolk — results only via Power BI embed; needs a DAX-query scraper or hand-curation
 - Hampshire — hants.gov.uk Cloudflare-blocks programmatic clients; districts publish only their slices
 
 Common cases:
