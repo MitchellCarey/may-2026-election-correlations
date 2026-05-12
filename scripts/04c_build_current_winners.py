@@ -117,17 +117,20 @@ def load_current_overrides() -> dict[tuple[str, str], str]:
     return overrides
 
 
-def load_official_2026() -> dict[str, dict[str, dict]]:
-    """Read data/source/county_official_2026.csv — hand-curated authoritative
-    per-CED winners scraped from each council's own results page. Indexed by
-    county name → normalised CED name → record. Highest-priority source for
-    2026 county-council CEDs; overrides whatever Wikipedia has parsed (Wiki
-    is partly placeholder for the 5 days post-election as editors backfill).
+def load_county_official(year: int) -> dict[str, dict[str, dict]]:
+    """Read data/source/county_official_<year>.csv — authoritative per-CED
+    winners scraped (or hand-curated) from each council's own results page.
+    Indexed by county name → normalised CED name → record. Highest-priority
+    source for that year's CEDs; overrides Wikipedia in build_ced_winners().
 
     CSV schema: lad_code, county, division, party, candidate, votes, source.
     Missing file is fine — returns {}.
+
+    Phase 1 populated the 2026 file (Norfolk, hand-curated). Phase 2 of
+    issue #9 adds the rest of the 6 × 2026 counties via scripts/13. Phase 3
+    populates county_official_2025.csv via the same dispatcher.
     """
-    path = SOURCE / 'county_official_2026.csv'
+    path = SOURCE / f'county_official_{year}.csv'
     if not path.exists():
         return {}
     out: dict[str, dict[str, dict]] = {}
@@ -135,7 +138,7 @@ def load_official_2026() -> dict[str, dict[str, dict]]:
         for row in csv.DictReader(f):
             out.setdefault(row['county'], {})[normalise_ced(row['division'])] = {
                 'party': row['party'],
-                'year':  2026,
+                'year':  year,
                 'source_ced_name': row['division'],
             }
     return out
@@ -158,7 +161,7 @@ def build_ced_winners(geoms: dict) -> list[dict]:
     intentionally NOT consulted — the 2026 election superseded 2021 even
     where specific CEDs aren't yet published.
     """
-    official_2026 = load_official_2026()
+    official_2026 = load_county_official(2026)
     p_2026  = DATA / 'county_results_2026_ceds.json'
     p_curr  = DATA / 'current_ced_winners_raw.json'
     p_prior = DATA / 'county_results_prior_ceds.json'
