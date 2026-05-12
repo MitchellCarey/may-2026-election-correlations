@@ -1,0 +1,5 @@
+{
+  "setupScript": "bash scripts/conductor/setup.sh",
+  "runScript": "bash scripts/conductor/run.sh",
+  "archiveScript": "bash scripts/conductor/archive.sh"
+}
