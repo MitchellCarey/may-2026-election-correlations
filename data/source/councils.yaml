@@ -1598,6 +1598,14 @@
   wiki_prior_year: 2021
   electoral_system: fptp
   wiki_current_articles: null
+  # Phase 2 deferred: hants.gov.uk returns Cloudflare 403 to programmatic
+  # clients; district councils (Rushmoor, Hart, Eastleigh, New Forest, etc.)
+  # publish only their own slice of HCC divisions. Aggregating across 11
+  # district sites or implementing a Cloudflare-challenge solver are both
+  # follow-ups. Until either is built, Wikipedia is the only source.
+  official_url: null
+  official_parser: null
+  official_year: null
 
 - lad_code: E10000020
   name: Norfolk
@@ -1620,6 +1628,15 @@
   wiki_prior_year: 2021
   electoral_system: fptp
   wiki_current_articles: null
+  # Phase 2 deferred: results live only in a Power BI embed at
+  # app.powerbi.com/view?r=eyJrIjoiOTFkYzM0MjktYTNjYS00NDA1LThhMTYtYzUwMzk2MTBiZjMwIiwidCI6IjEwOWM2YWVjLTUwNDYtNGE5NS04ZjNjLTg0ZjYzYmExOGFmNCJ9 ;
+  # the council's news page lists only party totals (no per-CED), and the
+  # district sites (West Suffolk, East Suffolk, Babergh, Mid Suffolk, Ipswich)
+  # each carry only their own slice. Either a Power BI DAX-query scraper or
+  # a hand-curated CSV (Norfolk-pattern) are the realistic paths.
+  official_url: null
+  official_parser: null
+  official_year: null
 
 - lad_code: E10000032
   name: West Sussex

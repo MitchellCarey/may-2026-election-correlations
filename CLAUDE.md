@@ -111,7 +111,17 @@ The Changes pipeline depends on the Winners pipeline's `all_wards.json` — if u
 04c_build_current_winners.py   → as above, with official rows outranking Wikipedia per-record
 ```
 
-Each council in `councils.yaml` may declare `official_url` + `official_parser` + `official_year`. `12` fetches the URL (default GET; parser modules can override `fetch()` for Power BI etc.) into the cache. `13` dispatches on `official_parser` to `scripts/_official_parsers/<key>.py` and appends rows. CSV schemas: `lad_code,county,division,party,candidate,votes,source` for E10 counties; `lad_code,council,ward,party,candidate,votes,source` for everything else. Parser modules are added one per source pattern (`norfolk_textresults`, `arcgis_dashboard`, `powerbi_dashboard`, `per_division_html`, `per_district_html`, `pdf_declaration`).
+Each council in `councils.yaml` may declare `official_url` + `official_parser` + `official_year`. `12` fetches the URL (default GET; parser modules can override `fetch()` for Power BI etc.) into the cache. `13` dispatches on `official_parser` to `scripts/_official_parsers/<key>.py` and appends rows. CSV schemas: `lad_code,county,division,party,candidate,votes,source` for E10 counties; `lad_code,council,ward,party,candidate,votes,source` for everything else.
+
+Parsers landed for Phase 2 of issue #9:
+- `arcgis_dashboard` — Esri Election Results FeatureServer (East Sussex)
+- `moderngov_per_division` — moderngov.co.uk per-division pages (West Sussex)
+- `cmis_per_division` — DotNetNuke / OpenElection.net RDFa pages (Essex)
+- Phase 1 hand-curated CSV pattern still in use for Norfolk (no parser yet)
+
+Phase 2 deferrals (no `official_url` set, see comments on the registry rows):
+- Suffolk — results only via Power BI embed; needs a DAX-query scraper or hand-curation
+- Hampshire — hants.gov.uk Cloudflare-blocks programmatic clients; districts publish only their slices
 
 Common cases:
 
