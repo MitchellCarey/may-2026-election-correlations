@@ -1565,6 +1565,12 @@
   wiki_prior_year: 2021
   electoral_system: fptp
   wiki_current_articles: null
+  # ArcGIS dashboard at arcgis.com/apps/dashboards/5f38f3a6a0dc4569bb80158ddfac965e,
+  # backed by an Esri Election Results FeatureServer. URL below queries the
+  # results table directly with the contest/category filters baked in.
+  official_url: "https://services7.arcgis.com/US7sVCsS6jE1eTXo/arcgis/rest/services/ElectionResults_dashboard_ae2fc52e67574aabac653a5298f17157/FeatureServer/1/query?where=contest%3D%27Election2026_May%27%20AND%20category%3D%27Elected%20Office%27&outFields=*&returnGeometry=false&f=json&resultRecordCount=10000"
+  official_parser: arcgis_dashboard
+  official_year: 2026
 
 - lad_code: E10000012
   name: Essex
