@@ -1582,6 +1582,11 @@
   wiki_prior_year: 2021
   electoral_system: fptp
   wiki_current_articles: null
+  # CMIS / OpenElection.net-style per-division pages, with RDFa annotations
+  # marking the elected candidate. Index lists all 78 divisions.
+  official_url: "https://cmis.essex.gov.uk/essexcmis5/Elections/tabid/63/ctl/ViewWards/mid/386/ID/31/Default.aspx"
+  official_parser: cmis_per_division
+  official_year: 2026
 
 - lad_code: E10000014
   name: Hampshire
