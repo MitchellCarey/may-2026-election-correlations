@@ -57,6 +57,8 @@ def main():
         records = json.load(f)
     with open(DATA / 'ward_geoms.json') as f:
         geoms = json.load(f)
+    ced_path = DATA / 'ced_winners.json'
+    ced_records = json.loads(ced_path.read_text()) if ced_path.exists() else []
 
     if region not in geoms.get('viewBoxes', {}):
         print(f'  ! ward_geoms.json has no viewBox for region={region!r} '
@@ -117,12 +119,33 @@ def main():
         if region == 'gb' else {}
     )
 
+    # CED-level data + polygons for the county-council layer toggle. Only
+    # populated on the GB page — the GM map has no E10 county-council overlap
+    # (all 10 GM boroughs are single-tier metropolitan, no CEDs sit over them).
+    ced_paths: dict = {}
+    ceds_js: list = []
+    if region == 'gb':
+        all_ceds = geoms.get('ceds', {})
+        ced_paths = {code: c['path'] for code, c in all_ceds.items()}
+        ceds_js = [{
+            'ced':  r['ced'],
+            'n':    r['name'],
+            'c':    r['county'],
+            'w':    r['winner'],
+            'y':    r['year'],
+        } for r in ced_records]
+        n_ced_winner = sum(1 for c in ceds_js if c['w'])
+        print(f'ceds in gb: {len(ceds_js)} (with winner: {n_ced_winner}; '
+              f'grey: {len(ceds_js) - n_ced_winner})')
+
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
     js.append('const BOROUGH_PATHS = ' + json.dumps(borough_paths, separators=(',', ':')) + ';')
     js.append('const COUNTRY_PATHS = ' + json.dumps(country_paths, separators=(',', ':')) + ';')
+    js.append('const CED_PATHS = ' + json.dumps(ced_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
+    js.append('const CEDS = ' + json.dumps(ceds_js, separators=(',', ':')) + ';')
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
     js.append('const PARTY_DISPLAY = ' + json.dumps(PARTY_DISPLAY) + ';')
     js.append('const LEGEND_ORDER = ' + json.dumps(LEGEND_ORDER) + ';')
@@ -165,16 +188,49 @@ function fmtTitle(w) {
   return lines.join('\n');
 }
 
-// Render the one Current-control map.
+function fmtCedTitle(c) {
+  const lines = [c.c + ' County Council · ' + c.n];
+  if (c.w) {
+    lines.push((c.y ? c.y + ' · ' : '') + 'winner: ' + (PARTY_DISPLAY[c.w] || c.w));
+  } else {
+    lines.push('(no county-council data on record)');
+  }
+  return lines.join('\n');
+}
+
+// Render the one Current-control map. Ward fills are the base layer; the CED
+// (county electoral division) layer sits on top, hidden by default, revealed
+// by the #ced-toggle button. CEDs cover ~1,300 polygons across English 2-tier
+// counties — when shown they paint who currently controls the *county-level*
+// services (schools, social care, roads) for that area.
 const target = document.getElementById('map-current');
 if (target) {
   const root = svgRoot();
+  // Base: ward fills (district-council layer).
+  const wardGroup = document.createElementNS(SVG_NS, 'g');
+  wardGroup.setAttribute('class', 'wards');
   WARDS.forEach(w => {
     const d = WARD_PATHS[w.gss];
     if (!d) return;
     const fill = (w.w && PARTY_COLOURS[w.w]) || NEUTRAL_FILL;
-    root.appendChild(makePath(d, 'ward', fill, fmtTitle(w)));
+    wardGroup.appendChild(makePath(d, 'ward', fill, fmtTitle(w)));
   });
+  root.appendChild(wardGroup);
+
+  // Overlay: CED fills (county-council layer). Hidden by default via CSS;
+  // the #ced-toggle button adds .show-ceds to the SVG root to reveal them.
+  if (CEDS.length) {
+    const cedGroup = document.createElementNS(SVG_NS, 'g');
+    cedGroup.setAttribute('class', 'ceds');
+    CEDS.forEach(c => {
+      const d = CED_PATHS[c.ced];
+      if (!d) return;
+      const fill = (c.w && PARTY_COLOURS[c.w]) || NEUTRAL_FILL;
+      cedGroup.appendChild(makePath(d, 'ced', fill, fmtCedTitle(c)));
+    });
+    root.appendChild(cedGroup);
+  }
+
   // Country outlines first so toggling boroughs off still shows the UK
   // silhouette on GB. Empty on GM (no country paths shipped).
   Object.values(COUNTRY_PATHS).forEach(d => {
@@ -200,6 +256,24 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
   };
   boroughBtn.addEventListener('click', () => { hidden = !hidden; applyBorough(); });
   applyBorough();
+}
+
+// CED-layer toggle (GB only — gated on CEDS being non-empty). Reveals the
+// county-council overlay so 2-tier English areas (Norfolk, Essex, Kent etc.)
+// can be read at their CED-level resolution rather than just by the
+// district-council ward fills underneath.
+const cedBtn = document.getElementById('ced-toggle');
+if (cedBtn && CEDS.length) {
+  let visible = false;
+  const applyCed = () => {
+    document.querySelectorAll('.map-svg').forEach(svg => {
+      svg.classList.toggle('show-ceds', visible);
+    });
+    cedBtn.setAttribute('aria-pressed', String(visible));
+    cedBtn.textContent = visible ? 'Hide county-council layer' : 'Show county-council layer';
+  };
+  cedBtn.addEventListener('click', () => { visible = !visible; applyCed(); });
+  applyCed();
 }
 
 // Shared legend, derived from parties actually present.

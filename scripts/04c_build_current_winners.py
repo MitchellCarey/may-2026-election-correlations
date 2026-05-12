@@ -56,11 +56,20 @@ def normalise(s: str) -> str:
     Lowercase, strip dots, slash → space, both apostrophe variants → nothing,
     ' and ' → ' & ', drop trailing '(...)' / ', X' suffixes, collapse spaces."""
     s = s.lower().replace('/', ' ').replace('.', '')
-    s = s.replace("’", "").replace("'", "")
+    s = s.replace("’", "").replace("'", "").replace("`", "")
     s = s.replace(' and ', ' & ')
     s = re.sub(r'\s*\([^)]*\)\s*$', '', s)
     s = re.sub(r'\s*,\s+[^,]+$', '', s)
     return ' '.join(s.split())
+
+
+def normalise_ced(s: str) -> str:
+    """Like normalise(), but also strips the divergent CED suffixes:
+    ONS uses 'X ED' (Electoral Division), Wikipedia uses 'X Division',
+    Wikipedia sometimes uses bare 'X'. Drop any of the three so a single
+    canonical key matches across the data sources."""
+    s = re.sub(r'\s+(ED|Division)\s*$', '', s, flags=re.IGNORECASE)
+    return normalise(s)
 
 
 def year_for_all_wards_source(council: dict) -> int:
@@ -106,6 +115,82 @@ def load_current_overrides() -> dict[tuple[str, str], str]:
         for row in csv.DictReader(f):
             overrides[(row['council'], row['scraped_name'])] = row['gss_name']
     return overrides
+
+
+def build_ced_winners(geoms: dict) -> list[dict]:
+    """Join CED-level winners (from 6 × 2026 + 14 × 2025 county-council
+    Wikipedia articles, parsed by parse_county_article_ceds) onto the
+    CED25 polygons in ward_geoms.json. Mirrors the ward-side join shape:
+    one record per CED25CD with winner / year / county.
+
+    Sources walked in priority order — newest contest wins:
+      1. county_results_2026_ceds.json (the 6 contested 2026 counties)
+      2. current_ced_winners_raw.json  (the 14 contested 2025 counties)
+      3. county_results_prior_ceds.json (2021 priors — fallback for any
+         CED that somehow didn't appear in the newer file)
+    """
+    sources: list[tuple[str, dict]] = []
+    for name in ('county_results_2026_ceds.json',
+                 'current_ced_winners_raw.json',
+                 'county_results_prior_ceds.json'):
+        p = DATA / name
+        if p.exists():
+            sources.append((name, json.loads(p.read_text())))
+
+    # Build per-county lookup: normalised(CED name) → record.
+    by_county_norm: dict[str, dict[str, dict]] = {}
+    for fname, data in sources:
+        for county, ced_map in data.items():
+            target = by_county_norm.setdefault(county, {})
+            for ced_name, rec in ced_map.items():
+                key = normalise_ced(ced_name)
+                if key in target:
+                    continue  # newest-source-wins (sources are walked priority order)
+                # Normalise record shape: 11 emits {party, year, district};
+                # 01b/01c emit {party, year} (and 01b carries seats/totals).
+                target[key] = {
+                    'party':  rec.get('party'),
+                    'year':   rec.get('year'),
+                    'source_ced_name': ced_name,
+                }
+
+    # ONS-side: CED25CD → metadata. Group geoms by parent county for the join.
+    out: list[dict] = []
+    by_cty_norm_to_county_name: dict[str, str] = {}
+    # Map ONS CTY25CD → human county name we use in the data
+    for code, meta in geoms.get('ceds', {}).items():
+        cty_name = meta.get('cty_name', '') or ''
+        # Strip " County" suffix sometimes appended in ONS names.
+        cty_clean = re.sub(r'\s+County\s*$', '', cty_name)
+        by_cty_norm_to_county_name[meta.get('cty', '')] = cty_clean
+
+    counted = {'matched': 0, 'no_winner': 0}
+    for ced_code, meta in geoms.get('ceds', {}).items():
+        cty_clean = by_cty_norm_to_county_name.get(meta.get('cty', ''), '')
+        ced_county_data = by_county_norm.get(cty_clean, {})
+        key = normalise_ced(meta['name'])
+        rec = ced_county_data.get(key)
+        if rec:
+            out.append({
+                'ced':     ced_code,
+                'cty':     meta.get('cty'),
+                'county':  cty_clean,
+                'name':    meta['name'],
+                'winner':  rec['party'],
+                'year':    rec['year'],
+            })
+            counted['matched'] += 1
+        else:
+            out.append({
+                'ced':     ced_code,
+                'cty':     meta.get('cty'),
+                'county':  cty_clean,
+                'name':    meta['name'],
+                'winner':  None,
+                'year':    None,
+            })
+            counted['no_winner'] += 1
+    return out, counted
 
 
 def main():
@@ -242,6 +327,14 @@ def main():
           f'norm={match_counts["norm"]}  '
           f'override={match_counts["override"]}  '
           f'no_match={match_counts["no_match"]}')
+
+    # CED-side join — produces data/ced_winners.json for the county-council
+    # overlay on the Current map page.
+    ced_records, ced_counts = build_ced_winners(geoms)
+    with open(DATA / 'ced_winners.json', 'w') as f:
+        json.dump(ced_records, f, indent=2)
+    print(f'\nWrote ced_winners.json — {len(ced_records)} CEDs '
+          f'(matched={ced_counts["matched"]}, no_winner={ced_counts["no_winner"]})')
     if scrape_unmatched:
         print(f'\nFirst {len(scrape_unmatched)} scrape-side unmatched ward(s) '
               '(consider data/source/current_ward_overrides.csv):',
