@@ -2263,3 +2263,550 @@
   wiki_current_articles:
     - year: 2022
       title: "2022 North Lanarkshire Council election"
+
+# ===== English non-2026 all-out councils =====
+# Unitaries, mets, London and one sui-generis (City of London) whose last
+# all-out election was 2022, 2023, 2024, or 2025 — none of them contested in
+# 2026, so they need one wiki_current_articles entry pointing at their last
+# whole-council contest. Thirds-cycle English districts with a 2026 fallow
+# (electing 2023+2024+2025) are a separate follow-up and need 3 entries each.
+- lad_code: E06000063
+  name: Cumberland
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Cumberland Council election"
+- lad_code: E06000064
+  name: Westmorland and Furness
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Westmorland and Furness Council election"
+- lad_code: E06000065
+  name: North Yorkshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 North Yorkshire Council election"
+- lad_code: E06000066
+  name: Somerset
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Somerset Council election"
+- lad_code: E08000012
+  name: Liverpool
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Liverpool City Council election"
+- lad_code: E08000015
+  name: Wirral
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Wirral Metropolitan Borough Council election"
+- lad_code: E06000022
+  name: Bath and North East Somerset
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Bath and North East Somerset Council election"
+- lad_code: E06000036
+  name: Bracknell Forest
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Bracknell Forest Borough Council election"
+- lad_code: E06000043
+  name: Brighton and Hove
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Brighton and Hove City Council election"
+- lad_code: E06000056
+  name: Central Bedfordshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Central Bedfordshire Council election"
+- lad_code: E06000015
+  name: Derby
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Derby City Council election"
+- lad_code: E06000011
+  name: East Riding of Yorkshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 East Riding of Yorkshire Council election"
+- lad_code: E06000016
+  name: Leicester
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Leicester City Council election"
+- lad_code: E06000035
+  name: Medway
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Medway Council election"
+- lad_code: E06000039
+  name: Slough
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Slough Borough Council election"
+- lad_code: E06000027
+  name: Torbay
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Torbay Council election"
+- lad_code: E07000032
+  name: Amber Valley
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Amber Valley Borough Council election"
+- lad_code: E07000203
+  name: Mid Suffolk
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Mid Suffolk District Council election"
+- lad_code: E07000239
+  name: Wyre Forest
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2023
+      title: "2023 Wyre Forest District Council election"
+- lad_code: E08000018
+  name: Rotherham
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Rotherham Metropolitan Borough Council election"
+- lad_code: E06000023
+  name: Bristol, City of
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Bristol City Council election"
+- lad_code: E06000059
+  name: Dorset
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Dorset Council election"
+- lad_code: E06000007
+  name: Warrington
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Warrington Borough Council election"
+- lad_code: E07000069
+  name: Castle Point
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Castle Point Borough Council election"
+- lad_code: E07000081
+  name: Gloucester
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Gloucester City Council election"
+- lad_code: E07000207
+  name: Elmbridge
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Elmbridge Borough Council election"
+- lad_code: E07000110
+  name: Maidstone
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Maidstone Borough Council election"
+- lad_code: E07000210
+  name: Mole Valley
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Mole Valley District Council election"
+- lad_code: E07000099
+  name: North Hertfordshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 North Hertfordshire District Council election"
+- lad_code: E07000211
+  name: Reigate and Banstead
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Reigate and Banstead Borough Council election"
+- lad_code: E07000212
+  name: Runnymede
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Runnymede Borough Council election"
+- lad_code: E07000082
+  name: Stroud
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Stroud District Council election"
+- lad_code: E07000215
+  name: Tandridge
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Tandridge District Council election"
+- lad_code: E07000217
+  name: Woking
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Woking Borough Council election"
+- lad_code: E07000237
+  name: Worcester
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Worcester City Council election"
+- lad_code: E08000017
+  name: Doncaster
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 City of Doncaster Council election"
+- lad_code: E06000060
+  name: Buckinghamshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Buckinghamshire Council election"
+- lad_code: E06000052
+  name: Cornwall
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Cornwall Council election"
+- lad_code: E06000047
+  name: County Durham
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Durham County Council election"
+- lad_code: E06000061
+  name: North Northamptonshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 North Northamptonshire Council election"
+- lad_code: E06000057
+  name: Northumberland
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Northumberland County Council election"
+- lad_code: E06000051
+  name: Shropshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Shropshire Council election"
+- lad_code: E06000062
+  name: West Northamptonshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 West Northamptonshire Council election"
+- lad_code: E06000054
+  name: Wiltshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Wiltshire Council election"
+- lad_code: E09000001
+  name: City of London
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 City of London Corporation election"
