@@ -117,23 +117,48 @@ def load_current_overrides() -> dict[tuple[str, str], str]:
     return overrides
 
 
+def load_official_2026() -> dict[str, dict[str, dict]]:
+    """Read data/source/county_official_2026.csv — hand-curated authoritative
+    per-CED winners scraped from each council's own results page. Indexed by
+    county name → normalised CED name → record. Highest-priority source for
+    2026 county-council CEDs; overrides whatever Wikipedia has parsed (Wiki
+    is partly placeholder for the 5 days post-election as editors backfill).
+
+    CSV schema: lad_code, county, division, party, candidate, votes, source.
+    Missing file is fine — returns {}.
+    """
+    path = SOURCE / 'county_official_2026.csv'
+    if not path.exists():
+        return {}
+    out: dict[str, dict[str, dict]] = {}
+    with open(path, newline='') as f:
+        for row in csv.DictReader(f):
+            out.setdefault(row['county'], {})[normalise_ced(row['division'])] = {
+                'party': row['party'],
+                'year':  2026,
+                'source_ced_name': row['division'],
+            }
+    return out
+
+
 def build_ced_winners(geoms: dict) -> list[dict]:
-    """Join CED-level winners (from 6 × 2026 + 14 × 2025 county-council
-    Wikipedia articles, parsed by parse_county_article_ceds) onto the
-    CED25 polygons in ward_geoms.json. Mirrors the ward-side join shape:
-    one record per CED25CD with winner / year / county.
+    """Join CED-level winners onto the CED25 polygons in ward_geoms.json.
+    One record per CED25CD with winner / year / county.
 
     Source precedence is per-county, not per-record:
-      - If the county appears in county_results_2026_ceds.json (i.e. it
-        contested in 2026), use ONLY that source. If a specific CED is
-        missing or has no extractable winner, the result is null (do NOT
-        fall through to 2021 priors — the 2026 contest superseded them
-        and showing 2021 data would imply pre-election control).
-      - Else if the county appears in current_ced_winners_raw.json (the
-        14 × 2025 contested counties), use ONLY that source.
-      - Else use county_results_prior_ceds.json (2021 priors — for any
-        county whose most recent contest is captured only in the priors).
+      1. data/source/county_official_2026.csv — hand-curated authoritative
+         data from each council's own results page. Always wins where set.
+      2. county_results_2026_ceds.json — Wikipedia 2026 parsings (partly
+         placeholder while editors catch up post-election).
+      3. current_ced_winners_raw.json — the 14 × 2025 contested counties.
+      4. county_results_prior_ceds.json — 2021 priors, used only for
+         counties not present in 1/2/3.
+
+    For a county that appears in source 1 or 2, source 4 (2021 priors) is
+    intentionally NOT consulted — the 2026 election superseded 2021 even
+    where specific CEDs aren't yet published.
     """
+    official_2026 = load_official_2026()
     p_2026  = DATA / 'county_results_2026_ceds.json'
     p_curr  = DATA / 'current_ced_winners_raw.json'
     p_prior = DATA / 'county_results_prior_ceds.json'
@@ -155,9 +180,15 @@ def build_ced_winners(geoms: dict) -> list[dict]:
         return out
 
     by_county_norm: dict[str, dict[str, dict]] = {}
-    for county_name in set(data_2026) | set(data_curr) | set(data_prior):
-        if county_name in data_2026:
-            by_county_norm[county_name] = index(data_2026[county_name])
+    all_counties = set(official_2026) | set(data_2026) | set(data_curr) | set(data_prior)
+    for county_name in all_counties:
+        if county_name in official_2026 or county_name in data_2026:
+            # Merge official over Wikipedia — official wins on every CED it covers,
+            # Wikipedia fills in the rest (e.g. East Sussex 50/50 in Wiki, no
+            # official rows; Norfolk 84/84 in official, Wiki not consulted).
+            merged = index(data_2026.get(county_name, {}))
+            merged.update(official_2026.get(county_name, {}))
+            by_county_norm[county_name] = merged
         elif county_name in data_curr:
             by_county_norm[county_name] = index(data_curr[county_name])
         elif county_name in data_prior:
