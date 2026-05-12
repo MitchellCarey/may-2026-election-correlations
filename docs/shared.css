@@ -188,6 +188,39 @@ body {
 .finding .fnum.labour { color: var(--labour); }
 .finding .fnum.libdem { color: var(--libdem); }
 
+/* SHIFT-RATIO BAND (Changes page §0 — three cards, not eight) */
+.finding-grid.shift-grid {
+  grid-template-columns: 1fr;
+  margin: 4px 0 2px;
+}
+.shift-grid .finding {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 18px 0;
+}
+.shift-grid .finding .fnum { font-size: 44px; }
+.shift-grid .finding .fnum.shift-ratio {
+  font-size: 56px; letter-spacing: -0.03em;
+}
+.shift-grid .finding .fnum.shift-ratio .sep {
+  color: var(--muted); font-weight: 600; margin: 0 4px;
+}
+.shift-grid .finding .ftxt { color: var(--muted); }
+@media (min-width: 600px) {
+  .finding-grid.shift-grid { grid-template-columns: repeat(3, 1fr); }
+  .shift-grid .finding {
+    padding: 20px 18px;
+    border-right: 1px solid var(--hairline);
+    border-bottom: none;
+  }
+  /* undo the generic 2n/4n exceptions so only 3n loses its right border */
+  .shift-grid .finding:nth-child(2n) { border-right: 1px solid var(--hairline); padding-right: 18px; }
+  .shift-grid .finding:nth-child(3n) { border-right: none; padding-right: 0; }
+  .shift-grid .finding:first-child { padding-left: 0; }
+}
+@media (min-width: 900px) {
+  .finding-grid.shift-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
 /* TRADE-DEGREE PANELS */
 .trade-degree {
   background: var(--paper); border: 1px solid var(--ink);

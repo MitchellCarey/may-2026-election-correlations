@@ -52,6 +52,32 @@ def main():
     corr_full = corr_full['regions'][region]
     before_after = before_after['regions'][region]
 
+    # §0 band: left↔right ward-shift counts. LibDem grouped with the left; Reform
+    # with the right. Independent / Other excluded as too heterogeneous to assign.
+    LEFT_PARTIES = {"Labour", "Green", "LibDem"}
+    RIGHT_PARTIES = {"Conservative", "Reform"}
+    left_to_right = sum(
+        1 for w in wards
+        if w.get('flipped') and w.get('prior_party') in LEFT_PARTIES
+                            and w.get('winner') in RIGHT_PARTIES
+    )
+    right_to_left = sum(
+        1 for w in wards
+        if w.get('flipped') and w.get('prior_party') in RIGHT_PARTIES
+                            and w.get('winner') in LEFT_PARTIES
+    )
+    if right_to_left > 0:
+        ratio_text = f"{round(left_to_right / right_to_left)} : 1"
+    elif left_to_right > 0:
+        ratio_text = f"{left_to_right} : 0"
+    else:
+        ratio_text = "—"
+    party_shift = {
+        "leftToRight": left_to_right,
+        "rightToLeft": right_to_left,
+        "ratioText":   ratio_text,
+    }
+
     # Compact RAW: keyed by "Borough::Ward"
     raw = {}
     for w in wards:
@@ -115,6 +141,7 @@ def main():
     js_lines.append('const meansData = ' + json.dumps(means, separators=(',', ':')) + ';')
     js_lines.append('const flipParties = ' + json.dumps(flip_parties) + ';')
     js_lines.append('const beforeAfter = ' + json.dumps(before_after, separators=(',', ':')) + ';')
+    js_lines.append('const PARTY_SHIFT = ' + json.dumps(party_shift) + ';')
     js_lines.append('')
 
     js_lines.append('\n'.join([
@@ -126,6 +153,23 @@ def main():
         party_short_js(),
         '',
     ]))
+
+    # § 0 band — populate the hand-authored .finding-grid placeholders. Lives
+    # outside the BEGIN/END markers as plain HTML; this snippet fills the spans.
+    js_lines.append('''
+/* ===== § 0 — party shift ratio (populates hand-authored .finding-grid) ===== */
+document.querySelectorAll('[data-shift]').forEach(el => {
+  const key = el.dataset.shift;
+  if (!(key in PARTY_SHIFT)) return;
+  const v = PARTY_SHIFT[key];
+  if (key === 'ratioText' && typeof v === 'string' && v.includes(' : ')) {
+    const [a, b] = v.split(' : ');
+    el.innerHTML = a + '<span class="sep"> : </span>' + b;
+  } else {
+    el.textContent = v;
+  }
+});
+''')
 
     # § 1 matrix renderer — lifted from 07 with a small tweak: column header
     # subtitle reads "n_flipped=X" (not "n=X") so readers know the basis.
@@ -428,6 +472,7 @@ if (flippedList) {
     print(f'  RAW entries: {len(raw)}')
     print(f'  corrData variables: {len(corrData)}')
     print(f'  flip parties (sorted by n_flipped desc): {flip_parties}')
+    print(f'  shift ratio: {left_to_right} L→R · {right_to_left} R→L · {ratio_text}')
 
 
 if __name__ == '__main__':
