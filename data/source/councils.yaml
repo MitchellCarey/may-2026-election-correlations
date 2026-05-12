@@ -85,7 +85,13 @@
   wiki_prior: "2022 Bury Metropolitan Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Bury Metropolitan Borough Council election"
+    - year: 2023
+      title: "2023 Bury Metropolitan Borough Council election"
+    - year: 2022
+      title: "2022 Bury Metropolitan Borough Council election"
 
 - lad_code: E08000003
   name: Manchester
@@ -358,7 +364,13 @@
   wiki_prior: "2022 Solihull Metropolitan Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Solihull Metropolitan Borough Council election"
+    - year: 2023
+      title: "2023 Solihull Metropolitan Borough Council election"
+    - year: 2022
+      title: "2022 Solihull Metropolitan Borough Council election"
 
 - lad_code: E08000030
   name: Walsall
@@ -569,7 +581,9 @@
   wiki_prior: "2022 Greenwich London Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Greenwich London Borough Council election"
 
 - lad_code: E09000012
   name: Hackney
@@ -874,7 +888,13 @@
   wiki_prior: "2022 Hull City Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Hull City Council election"
+    - year: 2023
+      title: "2023 Hull City Council election"
+    - year: 2022
+      title: "2022 Hull City Council election"
 
 - lad_code: E06000012
   name: North East Lincolnshire
@@ -896,7 +916,13 @@
   wiki_prior: "2022 Plymouth City Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Plymouth City Council election"
+    - year: 2023
+      title: "2023 Plymouth City Council election"
+    - year: 2022
+      title: "2022 Plymouth City Council election"
 
 # Normally thirds; 2026 was a one-off all-up due to a 2024 boundary review.
 # Prior 2022 is the most recent thirds-pattern election.
@@ -920,7 +946,13 @@
   wiki_prior: "2022 Peterborough City Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Peterborough City Council election"
+    - year: 2023
+      title: "2023 Peterborough City Council election"
+    - year: 2022
+      title: "2022 Peterborough City Council election"
 
 # Renamed City Council in 2022; the 2022 article uses the pre-rename Borough
 # form.
@@ -968,7 +1000,13 @@
   wiki_prior: "2022 Wokingham Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Wokingham Borough Council election"
+    - year: 2023
+      title: "2023 Wokingham Borough Council election"
+    - year: 2022
+      title: "2022 Wokingham Borough Council election"
 
 # Normally thirds; 2026 was a one-off all-up due to a 2024 boundary review.
 # Prior 2022 is the most recent thirds-pattern election.
@@ -1239,7 +1277,13 @@
   wiki_prior: "2022 Winchester City Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Winchester City Council election"
+    - year: 2023
+      title: "2023 Winchester City Council election"
+    - year: 2022
+      title: "2022 Winchester City Council election"
 
 - lad_code: E07000095
   name: Broxbourne
@@ -1283,7 +1327,13 @@
   wiki_prior: "2022 Tunbridge Wells Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Tunbridge Wells Borough Council election"
+    - year: 2023
+      title: "2023 Tunbridge Wells Borough Council election"
+    - year: 2022
+      title: "2022 Tunbridge Wells Borough Council election"
 
 - lad_code: E07000117
   name: Burnley
@@ -1316,7 +1366,13 @@
   wiki_prior: "2022 Hyndburn Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Hyndburn Borough Council election"
+    - year: 2023
+      title: "2023 Hyndburn Borough Council election"
+    - year: 2022
+      title: "2022 Hyndburn Borough Council election"
 
 - lad_code: E07000122
   name: Pendle
@@ -1327,7 +1383,13 @@
   wiki_prior: "2022 Pendle Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Pendle Borough Council election"
+    - year: 2023
+      title: "2023 Pendle Borough Council election"
+    - year: 2022
+      title: "2022 Pendle Borough Council election"
 
 - lad_code: E07000123
   name: Preston
@@ -1404,7 +1466,13 @@
   wiki_prior: "2022 West Oxfordshire District Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 West Oxfordshire District Council election"
+    - year: 2023
+      title: "2023 West Oxfordshire District Council election"
+    - year: 2022
+      title: "2022 West Oxfordshire District Council election"
 
 - lad_code: E07000192
   name: Cannock Chase
@@ -1426,7 +1494,9 @@
   wiki_prior: "2022 Newcastle-under-Lyme Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Newcastle-under-Lyme Borough Council election"
 
 - lad_code: E07000199
   name: Tamworth
@@ -1470,7 +1540,13 @@
   wiki_prior: "2022 Rugby Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Rugby Borough Council election"
+    - year: 2023
+      title: "2023 Rugby Borough Council election"
+    - year: 2022
+      title: "2022 Rugby Borough Council election"
 
 - lad_code: E07000223
   name: Adur
@@ -1492,7 +1568,13 @@
   wiki_prior: "2022 Crawley Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Crawley Borough Council election"
+    - year: 2023
+      title: "2023 Crawley Borough Council election"
+    - year: 2022
+      title: "2022 Crawley Borough Council election"
 
 - lad_code: E07000229
   name: Worthing
@@ -3146,7 +3228,7 @@
   electoral_system: fptp
   wiki_current_articles:
     - year: 2023
-      title: "2023 Royal Borough of Windsor and Maidenhead Council election"
+      title: "2023 Windsor and Maidenhead Borough Council election"
 
 - lad_code: E06000049
   name: Cheshire East
