@@ -49,6 +49,10 @@
     <strong>Method:</strong> Ward boundaries are ONS WD24 (May 2024 BGC), GB-wide, reprojected from WGS84 to British National Grid (EPSG:27700) and simplified at 50 m tolerance — see <code>scripts/09_fetch_ward_boundaries.py</code>. Per-ward winners are assembled in <code>scripts/04c_build_current_winners.py</code> from two sources: (a) <code>data/all_wards.json</code> for the 134 councils that contested 2026, (b) freshly-scraped Wikipedia articles for every non-2026 council (one or more per council, walked newest-first so a 2025 thirds contest takes precedence over the 2024 one in the same ward) — see <code>scripts/10_fetch_current_winners.py</code> and <code>scripts/11_extract_current.py</code>. Wards shaded grey have no current-control data on record yet — the non-2026 council expansion is incremental.
   </div>
 
+  <p class="note">
+    <strong>Note on 7 May 2026:</strong> the Senedd (Welsh parliament) and Scottish Parliament (Holyrood) elections were held that day, but those elect Members of the Senedd / Scottish Parliament — not council seats. The 22 Welsh principal councils and 32 Scottish council areas are mid-term on a 2022 → 2027 cycle and had no scheduled contests, so the colours shown across Wales and Scotland are the genuinely-current ward control. Two Welsh council by-elections were held the same day but aren't ingested by this page.
+  </p>
+
   <div class="map-controls">
     <button id="borough-toggle" type="button" class="zoom-toggle" aria-pressed="false">Hide borough outlines</button>
     <span class="map-controls-hint">Default is the full UK with every borough boundary drawn. Hide them to read the colour fields inside the UK silhouette without the internal lines.</span>
