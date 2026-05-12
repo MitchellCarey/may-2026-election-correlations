@@ -1626,6 +1626,11 @@
   wiki_prior_year: 2021
   electoral_system: fptp
   wiki_current_articles: null
+  # moderngov-style per-division index; parser walks the per-CED links and
+  # extracts the "Elected" row from each.
+  official_url: "https://westsussex.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=30"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 # ===== Welsh principal councils (W06*) =====
 # All 22 councils elect all-out on a 5-year cycle: 2022 -> 2027.
