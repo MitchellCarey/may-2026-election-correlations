@@ -1604,3 +1604,662 @@
   wiki_prior_year: 2021
   electoral_system: fptp
   wiki_current_articles: null
+
+# ===== Welsh principal councils (W06*) =====
+# All 22 councils elect all-out on a 5-year cycle: 2022 -> 2027.
+# Added Phase B.6 for the Current ward-control page (data/current_winners.json).
+# wiki_prior left null — these councils had no 2026 contest so the Changes /
+# Map pipelines that consume prior_winners.json don't see them.
+- lad_code: W06000001
+  name: Isle of Anglesey
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Isle of Anglesey County Council election"
+- lad_code: W06000002
+  name: Gwynedd
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Gwynedd Council election"
+- lad_code: W06000003
+  name: Conwy
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Conwy County Borough Council election"
+- lad_code: W06000004
+  name: Denbighshire
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Denbighshire County Council election"
+- lad_code: W06000005
+  name: Flintshire
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Flintshire County Council election"
+- lad_code: W06000006
+  name: Wrexham
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Wrexham County Borough Council election"
+- lad_code: W06000008
+  name: Ceredigion
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Ceredigion County Council election"
+- lad_code: W06000009
+  name: Pembrokeshire
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Pembrokeshire County Council election"
+- lad_code: W06000010
+  name: Carmarthenshire
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Carmarthenshire County Council election"
+- lad_code: W06000011
+  name: Swansea
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Swansea Council election"
+- lad_code: W06000012
+  name: Neath Port Talbot
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Neath Port Talbot County Borough Council election"
+- lad_code: W06000013
+  name: Bridgend
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Bridgend County Borough Council election"
+- lad_code: W06000014
+  name: Vale of Glamorgan
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Vale of Glamorgan Council election"
+- lad_code: W06000015
+  name: Cardiff
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Cardiff Council election"
+- lad_code: W06000016
+  name: Rhondda Cynon Taf
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Rhondda Cynon Taf County Borough Council election"
+- lad_code: W06000018
+  name: Caerphilly
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Caerphilly County Borough Council election"
+- lad_code: W06000019
+  name: Blaenau Gwent
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Blaenau Gwent County Borough Council election"
+- lad_code: W06000020
+  name: Torfaen
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Torfaen County Borough Council election"
+- lad_code: W06000021
+  name: Monmouthshire
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Monmouthshire County Council election"
+- lad_code: W06000022
+  name: Newport
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Newport City Council election"
+- lad_code: W06000023
+  name: Powys
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Powys County Council election"
+- lad_code: W06000024
+  name: Merthyr Tydfil
+  nation: wales
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Merthyr Tydfil County Borough Council election"
+
+# ===== Scottish council areas (S12*) =====
+# All 32 councils elect by STV on a 5-year cycle: 2022 -> 2027.
+# wiki_current_articles points at the 2022 article; parse_stv_article
+# (scripts/_wiki_parser.py) extracts winners by largest elected-seat share.
+- lad_code: S12000005
+  name: Clackmannanshire
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Clackmannanshire Council election"
+- lad_code: S12000006
+  name: Dumfries and Galloway
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Dumfries and Galloway Council election"
+- lad_code: S12000008
+  name: East Ayrshire
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 East Ayrshire Council election"
+- lad_code: S12000010
+  name: East Lothian
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 East Lothian Council election"
+- lad_code: S12000011
+  name: East Renfrewshire
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 East Renfrewshire Council election"
+- lad_code: S12000013
+  name: Na h-Eileanan Siar
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Comhairle nan Eilean Siar election"
+- lad_code: S12000014
+  name: Falkirk
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Falkirk Council election"
+- lad_code: S12000017
+  name: Highland
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Highland Council election"
+- lad_code: S12000018
+  name: Inverclyde
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Inverclyde Council election"
+- lad_code: S12000019
+  name: Midlothian
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Midlothian Council election"
+- lad_code: S12000020
+  name: Moray
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Moray Council election"
+- lad_code: S12000021
+  name: North Ayrshire
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 North Ayrshire Council election"
+- lad_code: S12000023
+  name: Orkney Islands
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Orkney Islands Council election"
+- lad_code: S12000026
+  name: Scottish Borders
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Scottish Borders Council election"
+- lad_code: S12000027
+  name: Shetland Islands
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Shetland Islands Council election"
+- lad_code: S12000028
+  name: South Ayrshire
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 South Ayrshire Council election"
+- lad_code: S12000029
+  name: South Lanarkshire
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 South Lanarkshire Council election"
+- lad_code: S12000030
+  name: Stirling
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Stirling Council election"
+- lad_code: S12000033
+  name: Aberdeen City
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Aberdeen City Council election"
+- lad_code: S12000034
+  name: Aberdeenshire
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Aberdeenshire Council election"
+- lad_code: S12000035
+  name: Argyll and Bute
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Argyll and Bute Council election"
+- lad_code: S12000036
+  name: City of Edinburgh
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 City of Edinburgh Council election"
+- lad_code: S12000038
+  name: Renfrewshire
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Renfrewshire Council election"
+- lad_code: S12000039
+  name: West Dunbartonshire
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 West Dunbartonshire Council election"
+- lad_code: S12000040
+  name: West Lothian
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 West Lothian Council election"
+- lad_code: S12000041
+  name: Angus
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Angus Council election"
+- lad_code: S12000042
+  name: Dundee City
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Dundee City Council election"
+- lad_code: S12000045
+  name: East Dunbartonshire
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 East Dunbartonshire Council election"
+- lad_code: S12000047
+  name: Fife
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Fife Council election"
+- lad_code: S12000048
+  name: Perth and Kinross
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Perth and Kinross Council election"
+- lad_code: S12000049
+  name: Glasgow City
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Glasgow City Council election"
+- lad_code: S12000050
+  name: North Lanarkshire
+  nation: scotland
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: stv
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 North Lanarkshire Council election"

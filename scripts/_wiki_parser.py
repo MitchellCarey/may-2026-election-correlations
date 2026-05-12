@@ -203,16 +203,31 @@ def parse_county_article(_council_name: str, year: int, wt: str) -> dict:
     return out
 
 
-# Scottish STV ward sections frequently mark elected candidates either by a
-# bolded row, by a {{Single transferable vote winning candidate}} family template,
-# or by an "Elected" word in a results table. Across years and councils the
-# article shape varies a lot more than the FPTP English templates, so the
-# parser favours a lenient seat-counting approach: count any line/template that
-# attributes a *winning candidate* to a party, group by party, and the largest
-# party wins the ward.
+# Scottish STV articles use {{STV Election box candidate2}} (or its variant
+# without the "2" suffix) blocks inside each ward section. Elected candidates
+# are marked by triple-quote bold on the `candidate=` field — that's the
+# Wikipedia visual convention these articles all share. We treat any candidate
+# template carrying a bolded name as an elected seat for the party named in
+# the same template, then take the party with the most elected seats per ward
+# (alphabetical tie-break, same convention as parse_county_article).
+#
+# Single regex over the whole template body lets us require BOTH a party
+# field and a bolded candidate field in the same template — without that
+# coupling we'd also count non-elected candidates whose stage-N totals
+# happen to be bolded.
+STV_ELECTED_RE = re.compile(
+    r'\{\{STV Election box candidate2?\b'      # template name (with or without "2")
+    r'(?:[^{}]|\{\{[^{}]*\}\})*?'              # non-greedy body, allowing one level of nested templates
+    r'\|\s*party\s*=\s*([^|}\n]+)'             # party=X
+    r'(?:[^{}]|\{\{[^{}]*\}\})*?'
+    r"\|\s*candidate\s*=\s*'''[^']+'''",       # candidate='''Bold Name''' → elected
+    re.IGNORECASE | re.DOTALL,
+)
+# Some Scottish articles use a separate `{{STV Election box winning candidate}}`
+# template family — keep the older regex as a fallback for those.
 STV_WINNING_RE = re.compile(
-    r'\{\{(?:STV\s+(?:winning\s+)?candidate|Single transferable vote winning candidate|'
-    r'Election box STV winning candidate|Election box STV winner|STV winner)'
+    r'\{\{(?:STV\s+winning\s+candidate|Single transferable vote winning candidate|'
+    r'Election box STV winning candidate|STV winner)'
     r'(?:\s+with\s+party\s+link)?[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
     re.IGNORECASE | re.DOTALL,
 )
@@ -252,9 +267,14 @@ def parse_stv_article(_council_name: str, year: int, wt: str) -> dict:
             section = segment[h_end:next_start]
 
             seat_counts: dict[str, int] = {}
-            for pm in STV_WINNING_RE.finditer(section):
+            for pm in STV_ELECTED_RE.finditer(section):
                 normalized = normalize_party(pm.group(1))
                 seat_counts[normalized] = seat_counts.get(normalized, 0) + 1
+            # Fallback for councils using the older "winning candidate" template.
+            if not seat_counts:
+                for pm in STV_WINNING_RE.finditer(section):
+                    normalized = normalize_party(pm.group(1))
+                    seat_counts[normalized] = seat_counts.get(normalized, 0) + 1
             if not seat_counts:
                 continue
 
