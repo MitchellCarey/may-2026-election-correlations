@@ -54,6 +54,8 @@ PARTY_COLOURS_MAP = {
     "LibDem":       "#FAA61A",
     "Reform":       "#12B6CF",
     "Green":        "#6AB023",
+    "SNP":          "#FDF38E",
+    "Plaid":        "#005B54",
     "Independent":  "#888780",
     "Other":        "#a87b3e",
     "Pending":      "#cccccc",
@@ -78,6 +80,8 @@ PARTY_DISPLAY_MAP = {
     "LibDem":       "Liberal Democrats",
     "Reform":       "Reform UK",
     "Green":        "Green",
+    "SNP":          "SNP",
+    "Plaid":        "Plaid Cymru",
     "Independent":  "Independent",
     "Other":        "Other",
     "Pending":      "Awaiting declaration",
@@ -101,7 +105,7 @@ PARTY_ORDER_WINNERS = [
 
 LEGEND_ORDER_MAP = [
     "Labour", "Reform", "Green", "LibDem", "Conservative",
-    "Independent", "Other", "Pending",
+    "SNP", "Plaid", "Independent", "Other", "Pending",
 ]
 
 

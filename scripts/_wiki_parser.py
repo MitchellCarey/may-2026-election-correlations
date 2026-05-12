@@ -97,6 +97,10 @@ def normalize_party(raw: str) -> str:
         return 'Green'
     if 'reform' in s:
         return 'Reform'
+    if 'scottish national' in s or s == 'snp':
+        return 'SNP'
+    if 'plaid' in s:
+        return 'Plaid'
     if 'independent' in s:
         return 'Independent'
     # Local independent groupings — 2026 dataset classifies these as Independent,
@@ -196,6 +200,69 @@ def parse_county_article(_council_name: str, year: int, wt: str) -> dict:
             'total_seats': sum(seat_counts.values()),
             'year':        year,
         }
+    return out
+
+
+# Scottish STV ward sections frequently mark elected candidates either by a
+# bolded row, by a {{Single transferable vote winning candidate}} family template,
+# or by an "Elected" word in a results table. Across years and councils the
+# article shape varies a lot more than the FPTP English templates, so the
+# parser favours a lenient seat-counting approach: count any line/template that
+# attributes a *winning candidate* to a party, group by party, and the largest
+# party wins the ward.
+STV_WINNING_RE = re.compile(
+    r'\{\{(?:STV\s+(?:winning\s+)?candidate|Single transferable vote winning candidate|'
+    r'Election box STV winning candidate|Election box STV winner|STV winner)'
+    r'(?:\s+with\s+party\s+link)?[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
+    re.IGNORECASE | re.DOTALL,
+)
+
+
+def parse_stv_article(_council_name: str, year: int, wt: str) -> dict:
+    """Return {ward_name: {'prior_party', 'prior_year'}} for one STV (Scottish)
+    council-election article.
+
+    STV elects 3 or 4 candidates per ward. "Winner per ward" is inherently
+    lossy; this picks the party with the most elected seats in each ward,
+    alphabetical tie-break — same convention as parse_county_article. Wards
+    with no parseable result are omitted (callers render them as no_match).
+
+    Output shape matches parse_article so 11_extract_current can dispatch on
+    electoral_system without reshaping.
+    """
+    h2_matches = list(H2_RE.finditer(wt))
+    if not h2_matches:
+        scan_ranges = [(0, len(wt))]
+    else:
+        scan_ranges = []
+        for i, m in enumerate(h2_matches):
+            sec_end = h2_matches[i + 1].start() if i + 1 < len(h2_matches) else len(wt)
+            if H2_SKIP.match(m.group(1).strip()):
+                continue
+            scan_ranges.append((m.end(), sec_end))
+        scan_ranges.insert(0, (0, h2_matches[0].start()))
+
+    out: dict[str, dict] = {}
+    for r_start, r_end in scan_ranges:
+        segment = wt[r_start:r_end]
+        headings = [(m.start(), m.end(), m.group(2).strip())
+                    for m in HEADING_RE.finditer(segment)]
+        for i, (h_start, h_end, name) in enumerate(headings):
+            next_start = headings[i + 1][0] if i + 1 < len(headings) else len(segment)
+            section = segment[h_end:next_start]
+
+            seat_counts: dict[str, int] = {}
+            for pm in STV_WINNING_RE.finditer(section):
+                normalized = normalize_party(pm.group(1))
+                seat_counts[normalized] = seat_counts.get(normalized, 0) + 1
+            if not seat_counts:
+                continue
+
+            clean = _clean_ward_name(name)
+            if clean in out:
+                continue
+            top_party = max(sorted(seat_counts), key=lambda p: seat_counts[p])
+            out[clean] = {'prior_party': top_party, 'prior_year': year}
     return out
 
 
