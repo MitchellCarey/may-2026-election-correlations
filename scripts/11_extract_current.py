@@ -25,7 +25,7 @@ import re
 from pathlib import Path
 
 from _councils import for_region
-from _wiki_parser import parse_article, parse_stv_article
+from _wiki_parser import parse_article, parse_stv_article, parse_county_article_ceds
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -38,6 +38,7 @@ def slug(name: str) -> str:
 
 def main():
     all_winners: dict[str, dict[str, dict]] = {}
+    ced_winners: dict[str, dict[str, dict]] = {}  # parallel output for E10 counties
     summary_rows = []
     missing_cache = []
     for council in for_region("gb"):
@@ -46,7 +47,14 @@ def main():
             continue
         name = council["name"]
         system = council.get("electoral_system", "fptp")
-        parser = parse_stv_article if system == "stv" else parse_article
+        is_county = council["lad_code"].startswith("E10")
+        # English counties → CED parser; Scottish councils → STV parser; rest → FPTP ward parser.
+        if is_county:
+            parser = parse_county_article_ceds
+        elif system == "stv":
+            parser = parse_stv_article
+        else:
+            parser = parse_article
 
         ward_map: dict[str, dict] = {}
         for entry in articles:  # newest-first
@@ -58,24 +66,37 @@ def main():
             with open(path) as f:
                 wt = json.load(f)['parse']['wikitext']
             parsed = parser(name, year, wt)
-            for ward, rec in parsed.items():
-                if ward in ward_map:
+            for key, rec in parsed.items():
+                if key in ward_map:
                     continue
-                ward_map[ward] = {'party': rec['prior_party'], 'year': rec['prior_year']}
+                if is_county:
+                    # CED parser returns {ced: {party, district, year}}; keep
+                    # the district context for downstream UX (tooltip / drilldown).
+                    ward_map[key] = {'party': rec['party'], 'year': rec['year'],
+                                     'district': rec.get('district')}
+                else:
+                    ward_map[key] = {'party': rec['prior_party'], 'year': rec['prior_year']}
 
-        all_winners[name] = ward_map
+        target = ced_winners if is_county else all_winners
+        target[name] = ward_map
         counts: dict[str, int] = {}
         for w in ward_map.values():
             counts[w['party']] = counts.get(w['party'], 0) + 1
-        summary_rows.append((name, system, len(ward_map), counts))
+        kind = 'ceds' if is_county else system
+        summary_rows.append((name, kind, len(ward_map), counts))
 
     DATA.mkdir(parents=True, exist_ok=True)
     with open(DATA / 'current_winners_raw.json', 'w') as f:
         json.dump(all_winners, f, indent=2)
+    with open(DATA / 'current_ced_winners_raw.json', 'w') as f:
+        json.dump(ced_winners, f, indent=2)
 
     total_wards = sum(len(v) for v in all_winners.values())
+    total_ceds = sum(len(v) for v in ced_winners.values())
     print(f'Saved current_winners_raw.json — {total_wards} wards across '
           f'{len(all_winners)} councils')
+    print(f'Saved current_ced_winners_raw.json — {total_ceds} CEDs across '
+          f'{len(ced_winners)} county councils')
     if missing_cache:
         print(f'  ({len(missing_cache)} council/year pairs in registry but no cached file; '
               f'run scripts/10_fetch_current_winners.py)')

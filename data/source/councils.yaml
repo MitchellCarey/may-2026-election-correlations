@@ -4877,3 +4877,180 @@
     - year: 2023
       title: "2023 West Suffolk District Council election"
 
+
+# ===== English county councils contested 2025 (E10*) =====
+# 14 county councils on the 2025 -> 2029 all-out cycle. wiki_current_articles
+# points at the 2025 article; scripts/11_extract_current.py dispatches
+# parse_county_article_ceds for E10 lad_codes, emitting CED-level winners into
+# data/current_ced_winners_raw.json (a sibling of current_winners_raw.json).
+# These councils contest electoral divisions, not WD22/24 wards — their
+# results live alongside the 2026-contested 6 in data/county_results_2026_ceds
+# .json + the prior file.
+- lad_code: E10000003
+  name: Cambridgeshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Cambridgeshire County Council election"
+- lad_code: E10000007
+  name: Derbyshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Derbyshire County Council election"
+- lad_code: E10000008
+  name: Devon
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Devon County Council election"
+- lad_code: E10000013
+  name: Gloucestershire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Gloucestershire County Council election"
+- lad_code: E10000015
+  name: Hertfordshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Hertfordshire County Council election"
+- lad_code: E10000016
+  name: Kent
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Kent County Council election"
+- lad_code: E10000017
+  name: Lancashire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Lancashire County Council election"
+- lad_code: E10000018
+  name: Leicestershire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Leicestershire County Council election"
+- lad_code: E10000019
+  name: Lincolnshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Lincolnshire County Council election"
+- lad_code: E10000024
+  name: Nottinghamshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Nottinghamshire County Council election"
+- lad_code: E10000025
+  name: Oxfordshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Oxfordshire County Council election"
+- lad_code: E10000028
+  name: Staffordshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Staffordshire County Council election"
+- lad_code: E10000031
+  name: Warwickshire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Warwickshire County Council election"
+- lad_code: E10000034
+  name: Worcestershire
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2025
+      title: "2025 Worcestershire County Council election"

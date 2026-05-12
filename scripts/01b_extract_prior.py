@@ -28,7 +28,7 @@ import re
 from pathlib import Path
 
 from _councils import for_region
-from _wiki_parser import parse_article, parse_county_article
+from _wiki_parser import parse_article, parse_county_article, parse_county_article_ceds
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -41,6 +41,7 @@ def slug(name: str) -> str:
 def main():
     all_winners = {}
     counties_out = {}
+    counties_ceds_out = {}    # CED-level sibling of counties_out
     summary_rows = []
     counties_summary = []
     missing_cache = []
@@ -60,6 +61,7 @@ def main():
         if council["lad_code"].startswith("E10"):
             districts = parse_county_article(name, year, wt)
             counties_out[name] = districts
+            counties_ceds_out[name] = parse_county_article_ceds(name, year, wt)
             counts = {}
             for d in districts.values():
                 counts[d['party']] = counts.get(d['party'], 0) + 1
@@ -77,11 +79,15 @@ def main():
         json.dump(all_winners, f, indent=2)
     with open(DATA / 'county_results_prior.json', 'w') as f:
         json.dump(counties_out, f, indent=2)
+    with open(DATA / 'county_results_prior_ceds.json', 'w') as f:
+        json.dump(counties_ceds_out, f, indent=2)
 
     total_wards = sum(len(v) for v in all_winners.values())
     cty_total = sum(len(v) for v in counties_out.values())
+    ced_total = sum(len(v) for v in counties_ceds_out.values())
     print(f'Saved prior_winners.json — {total_wards} wards across {len(all_winners)} councils')
     print(f'Saved county_results_prior.json — {cty_total} districts across {len(counties_out)} counties')
+    print(f'Saved county_results_prior_ceds.json — {ced_total} CEDs across {len(counties_ceds_out)} counties')
     if missing_cache:
         print(f'  ({len(missing_cache)} councils have wiki_prior but no cached file; run scripts/00_fetch_prior_winners.py)')
     print()

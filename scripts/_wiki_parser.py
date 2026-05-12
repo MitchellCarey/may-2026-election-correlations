@@ -142,6 +142,8 @@ COUNTY_H2_RE = re.compile(
     r'^==\s*(?:'
     r'Candidates by local authority|Results by local authority|'
     r'Candidates by authority|Results by authority|'
+    r'Candidates by electoral division|Candidates by division|'
+    r'Division results by district|Division results by local authority|'
     r'Results by district|Results by division|Results by electoral division|'
     r'Results'
     r')\s*==\s*$',
@@ -200,6 +202,54 @@ def parse_county_article(_council_name: str, year: int, wt: str) -> dict:
             'total_seats': sum(seat_counts.values()),
             'year':        year,
         }
+    return out
+
+
+def parse_county_article_ceds(_council_name: str, year: int, wt: str) -> dict:
+    """Return {ced_name: {'party', 'district', 'year'}} for one English
+    county-council election article — sibling to parse_county_article that
+    keeps the per-CED detail the aggregator collapses.
+
+    Same H3-district walk as the aggregator, but inside each district we
+    iterate per-{{Election box begin|title=CED}} block and emit one record
+    per CED keyed by its title. The CED name is carried out of
+    bm.group(1) (which the aggregator drops), cleaned with the same
+    _clean_ward_name helper so the keys match other ward-name lookups.
+    """
+    m = COUNTY_H2_RE.search(wt)
+    if not m:
+        return {}
+    rest = wt[m.end():]
+    next_h2 = H2_RE.search(rest)
+    section = rest[:next_h2.start()] if next_h2 else rest
+
+    h3s = list(re.finditer(r'^===\s*([^=\n]+?)\s*===\s*$', section, re.MULTILINE))
+    out: dict[str, dict] = {}
+    for i, hm in enumerate(h3s):
+        district = _clean_ward_name(hm.group(1).strip())
+        body_end = h3s[i + 1].start() if i + 1 < len(h3s) else len(section)
+        body = section[hm.end():body_end]
+
+        begins = list(ELECTION_BOX_BEGIN_RE.finditer(body))
+        for j, bm in enumerate(begins):
+            ced_name = _clean_ward_name(bm.group(1).strip())
+            blk_start = bm.end()
+            next_begin = begins[j + 1].start() if j + 1 < len(begins) else len(body)
+            end_match = ELECTION_BOX_END_RE.search(body, blk_start, next_begin)
+            blk_end = end_match.start() if end_match else next_begin
+            block = body[blk_start:blk_end]
+            party = _extract_winner_party(block)
+            if not party:
+                continue
+            if ced_name in out:
+                # First-write wins — guards against the rare summary-table
+                # template that re-uses a CED name in a non-result context.
+                continue
+            out[ced_name] = {
+                'party':    normalize_party(party),
+                'district': district,
+                'year':     year,
+            }
     return out
 
 
