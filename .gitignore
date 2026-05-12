@@ -36,6 +36,13 @@ data/source/oa21_wd24_lookup.csv
 # checkout just re-pulls them on first run.
 data/source/wiki_*.json
 
+# Cached official-source fetches from scripts/12 — HTML pages, ArcGIS/PowerBI
+# JSON, PDFs. Re-fetchable; skip-if-exists in 12. The extracted CSV
+# (county_official_<year>.csv, ward_official_<year>.csv) IS committed.
+data/source/official_*.html
+data/source/official_*.json
+data/source/official_*.pdf
+
 # Built per-ward datasets that are reproducible from the cached wiki + geom files.
 data/current_winners.json
 data/current_winners_raw.json
