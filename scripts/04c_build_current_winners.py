@@ -123,36 +123,45 @@ def build_ced_winners(geoms: dict) -> list[dict]:
     CED25 polygons in ward_geoms.json. Mirrors the ward-side join shape:
     one record per CED25CD with winner / year / county.
 
-    Sources walked in priority order — newest contest wins:
-      1. county_results_2026_ceds.json (the 6 contested 2026 counties)
-      2. current_ced_winners_raw.json  (the 14 contested 2025 counties)
-      3. county_results_prior_ceds.json (2021 priors — fallback for any
-         CED that somehow didn't appear in the newer file)
+    Source precedence is per-county, not per-record:
+      - If the county appears in county_results_2026_ceds.json (i.e. it
+        contested in 2026), use ONLY that source. If a specific CED is
+        missing or has no extractable winner, the result is null (do NOT
+        fall through to 2021 priors — the 2026 contest superseded them
+        and showing 2021 data would imply pre-election control).
+      - Else if the county appears in current_ced_winners_raw.json (the
+        14 × 2025 contested counties), use ONLY that source.
+      - Else use county_results_prior_ceds.json (2021 priors — for any
+        county whose most recent contest is captured only in the priors).
     """
-    sources: list[tuple[str, dict]] = []
-    for name in ('county_results_2026_ceds.json',
-                 'current_ced_winners_raw.json',
-                 'county_results_prior_ceds.json'):
-        p = DATA / name
-        if p.exists():
-            sources.append((name, json.loads(p.read_text())))
+    p_2026  = DATA / 'county_results_2026_ceds.json'
+    p_curr  = DATA / 'current_ced_winners_raw.json'
+    p_prior = DATA / 'county_results_prior_ceds.json'
+    data_2026  = json.loads(p_2026.read_text())  if p_2026.exists()  else {}
+    data_curr  = json.loads(p_curr.read_text())  if p_curr.exists()  else {}
+    data_prior = json.loads(p_prior.read_text()) if p_prior.exists() else {}
 
-    # Build per-county lookup: normalised(CED name) → record.
+    def index(ced_map: dict) -> dict[str, dict]:
+        out: dict[str, dict] = {}
+        for ced_name, rec in ced_map.items():
+            key = normalise_ced(ced_name)
+            if key in out:
+                continue
+            out[key] = {
+                'party': rec.get('party'),
+                'year':  rec.get('year'),
+                'source_ced_name': ced_name,
+            }
+        return out
+
     by_county_norm: dict[str, dict[str, dict]] = {}
-    for fname, data in sources:
-        for county, ced_map in data.items():
-            target = by_county_norm.setdefault(county, {})
-            for ced_name, rec in ced_map.items():
-                key = normalise_ced(ced_name)
-                if key in target:
-                    continue  # newest-source-wins (sources are walked priority order)
-                # Normalise record shape: 11 emits {party, year, district};
-                # 01b/01c emit {party, year} (and 01b carries seats/totals).
-                target[key] = {
-                    'party':  rec.get('party'),
-                    'year':   rec.get('year'),
-                    'source_ced_name': ced_name,
-                }
+    for county_name in set(data_2026) | set(data_curr) | set(data_prior):
+        if county_name in data_2026:
+            by_county_norm[county_name] = index(data_2026[county_name])
+        elif county_name in data_curr:
+            by_county_norm[county_name] = index(data_curr[county_name])
+        elif county_name in data_prior:
+            by_county_norm[county_name] = index(data_prior[county_name])
 
     # ONS-side: CED25CD → metadata. Group geoms by parent county for the join.
     out: list[dict] = []

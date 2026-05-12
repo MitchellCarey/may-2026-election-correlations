@@ -43,8 +43,19 @@ WINNER_RE = re.compile(
 # winner, with no explicit "winning candidate" marker. Candidates are listed in
 # vote-rank order — the first candidate is the winner. Use this as a fallback
 # when WINNER_RE finds nothing.
+#
+# CRITICAL: the regex also requires a numeric `votes=` field on the SAME template
+# (e.g. `votes = 1,234`), not just any `votes=` line. Several 2026 county-council
+# articles are pre-publication placeholders: every candidate is listed but every
+# `votes=` is empty, and editors picked alphabetical-by-party order. Without the
+# numeric votes guard the parser would pick the alphabetically-first candidate
+# (almost always Conservative) and falsely report every CED as Conservative.
 CANDIDATE_RE = re.compile(
-    r'\{\{Election box candidate(?:\s+with party link)?[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
+    r'\{\{Election box candidate(?:\s+with party link)?'
+    r'(?:[^{}]|\{\{[^{}]*\}\})*?'                          # body (one nested template depth)
+    r'\|\s*party\s*=\s*([^|}\n]+)'
+    r'(?:[^{}]|\{\{[^{}]*\}\})*?'
+    r'\|\s*votes\s*=\s*[\d,]',                             # numeric votes — guards against placeholders
     re.IGNORECASE | re.DOTALL,
 )
 # Last-resort fallback: hold/gain template's winner= field. Many articles leave
@@ -124,9 +135,17 @@ def _extract_winner_party(section: str) -> str | None:
 
 def _clean_ward_name(name: str) -> str:
     """Strip Wikipedia heading/title decorations: collapse wikilinks to their
-    visible label, drop a trailing ward/constituency suffix (Wigan h4 style),
-    drop a trailing seat-count parenthetical like '(2)' or '(3 seats)'."""
+    visible label, drop inline citation tags (<ref>...</ref> / <ref name=...>),
+    drop a trailing ward/constituency suffix (Wigan h4 style), drop a trailing
+    seat-count parenthetical like '(2)' or '(3 seats)'. The ref-stripping
+    matters for several county-council CED H3 titles (Devon, Hertfordshire,
+    Gloucestershire, Worcestershire) that embed citations inside the heading."""
     clean = WIKILINK_RE.sub(r'\1', name)
+    # Closed <ref>...</ref> first (greedy across tags), then any unbalanced
+    # <ref...>/<ref/>/everything-after-the-opening-<ref left in the title.
+    clean = re.sub(r'<ref\b[^>]*?/>', '', clean, flags=re.IGNORECASE)
+    clean = re.sub(r'<ref\b[^>]*>.*?</ref>', '', clean, flags=re.IGNORECASE | re.DOTALL)
+    clean = re.sub(r'<ref\b.*$', '', clean, flags=re.IGNORECASE | re.DOTALL)
     clean = re.sub(r'\s+(ward|constituency)\s*$', '', clean, flags=re.IGNORECASE).strip()
     clean = re.sub(r'\s*\(\d+(?:\s+seats?)?\)\s*$', '', clean).strip()
     return clean
