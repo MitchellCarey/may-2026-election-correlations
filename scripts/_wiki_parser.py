@@ -35,7 +35,7 @@ WIKILINK_RE = re.compile(r'\[\[(?:[^|\]]+\|)?([^\]]+)\]\]')
 # (e.g. "Radcliffe First") without their own Wikipedia article use the
 # link-less variant.
 WINNER_RE = re.compile(
-    r'\{\{Election box winning candidate(?:\s+with party link)?[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
+    r'\{\{\s*Election box winning candidate(?:\s+with party link)?[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
     re.IGNORECASE | re.DOTALL,
 )
 # Some 2026 articles (Walsall, Sandwell, St Helens, Basingstoke & Deane, …) use
@@ -51,7 +51,7 @@ WINNER_RE = re.compile(
 # numeric votes guard the parser would pick the alphabetically-first candidate
 # (almost always Conservative) and falsely report every CED as Conservative.
 CANDIDATE_RE = re.compile(
-    r'\{\{Election box candidate(?:\s+with party link)?'
+    r'\{\{\s*Election box candidate(?:\s+with party link)?'
     r'(?:[^{}]|\{\{[^{}]*\}\})*?'                          # body (one nested template depth)
     r'\|\s*party\s*=\s*([^|}\n]+)'
     r'(?:[^{}]|\{\{[^{}]*\}\})*?'
@@ -62,7 +62,7 @@ CANDIDATE_RE = re.compile(
 # this field blank (the template only flags the seat as a hold), so this is
 # checked after CANDIDATE_RE and a blank match is discarded.
 HOLDGAIN_RE = re.compile(
-    r'\{\{Election box (?:hold|gain)[^|]*\|[^}]*?winner\s*=\s*([^|}\n]+)',
+    r'\{\{\s*Election box (?:hold|gain)[^|]*\|[^}]*?winner\s*=\s*([^|}\n]+)',
     re.IGNORECASE | re.DOTALL,
 )
 
@@ -75,11 +75,11 @@ HOLDGAIN_RE = re.compile(
 # Match plain {{Election box begin}} as well as variants like
 # {{Election box begin no change}} (used in Essex 2026 to flag a hold).
 ELECTION_BOX_BEGIN_RE = re.compile(
-    r'\{\{Election box begin(?:\s+no change)?\s*\|\s*title\s*=\s*'
+    r'\{\{\s*Election box begin(?:\s+no change)?\s*\|\s*title\s*=\s*'
     r'((?:\[\[[^\]]*\]\]|[^|}\n])+)',
     re.IGNORECASE,
 )
-ELECTION_BOX_END_RE = re.compile(r'\{\{Election box end\s*\}\}', re.IGNORECASE)
+ELECTION_BOX_END_RE = re.compile(r'\{\{\s*Election box end\s*\}\}', re.IGNORECASE)
 
 # Havering 2026's per-ward sections delegate their {{Election box ...}} blocks
 # to a separate per-ward Wikipedia article via labeled-section transclusion:

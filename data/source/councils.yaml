@@ -371,7 +371,12 @@
       title: "2023 Solihull Metropolitan Borough Council election"
     - year: 2022
       title: "2022 Solihull Metropolitan Borough Council election"
-
+    - year: 2021
+      title: "2021 Solihull Metropolitan Borough Council election"
+    - year: 2019
+      title: "2019 Solihull Metropolitan Borough Council election"
+    - year: 2018
+      title: "2018 Solihull Metropolitan Borough Council election"
 - lad_code: E08000030
   name: Walsall
   nation: england
@@ -584,7 +589,8 @@
   wiki_current_articles:
     - year: 2022
       title: "2022 Greenwich London Borough Council election"
-
+    - year: 2018
+      title: "2018 Greenwich London Borough Council election"
 - lad_code: E09000012
   name: Hackney
   nation: england
@@ -895,7 +901,12 @@
       title: "2023 Hull City Council election"
     - year: 2022
       title: "2022 Hull City Council election"
-
+    - year: 2021
+      title: "2021 Hull City Council election"
+    - year: 2019
+      title: "2019 Hull City Council election"
+    - year: 2018
+      title: "2018 Hull City Council election"
 - lad_code: E06000012
   name: North East Lincolnshire
   nation: england
@@ -923,7 +934,12 @@
       title: "2023 Plymouth City Council election"
     - year: 2022
       title: "2022 Plymouth City Council election"
-
+    - year: 2021
+      title: "2021 Plymouth City Council election"
+    - year: 2019
+      title: "2019 Plymouth City Council election"
+    - year: 2018
+      title: "2018 Plymouth City Council election"
 # Normally thirds; 2026 was a one-off all-up due to a 2024 boundary review.
 # Prior 2022 is the most recent thirds-pattern election.
 - lad_code: E06000030
@@ -953,7 +969,12 @@
       title: "2023 Peterborough City Council election"
     - year: 2022
       title: "2022 Peterborough City Council election"
-
+    - year: 2021
+      title: "2021 Peterborough City Council election"
+    - year: 2019
+      title: "2019 Peterborough City Council election"
+    - year: 2018
+      title: "2018 Peterborough City Council election"
 # Renamed City Council in 2022; the 2022 article uses the pre-rename Borough
 # form.
 - lad_code: E06000033
@@ -1007,7 +1028,12 @@
       title: "2023 Wokingham Borough Council election"
     - year: 2022
       title: "2022 Wokingham Borough Council election"
-
+    - year: 2021
+      title: "2021 Wokingham Borough Council election"
+    - year: 2019
+      title: "2019 Wokingham Borough Council election"
+    - year: 2018
+      title: "2018 Wokingham Borough Council election"
 # Normally thirds; 2026 was a one-off all-up due to a 2024 boundary review.
 # Prior 2022 is the most recent thirds-pattern election.
 - lad_code: E06000042
@@ -1284,7 +1310,12 @@
       title: "2023 Winchester City Council election"
     - year: 2022
       title: "2022 Winchester City Council election"
-
+    - year: 2021
+      title: "2021 Winchester City Council election"
+    - year: 2019
+      title: "2019 Winchester City Council election"
+    - year: 2018
+      title: "2018 Winchester City Council election"
 - lad_code: E07000095
   name: Broxbourne
   nation: england
@@ -1334,7 +1365,12 @@
       title: "2023 Tunbridge Wells Borough Council election"
     - year: 2022
       title: "2022 Tunbridge Wells Borough Council election"
-
+    - year: 2021
+      title: "2021 Tunbridge Wells Borough Council election"
+    - year: 2019
+      title: "2019 Tunbridge Wells Borough Council election"
+    - year: 2018
+      title: "2018 Tunbridge Wells Borough Council election"
 - lad_code: E07000117
   name: Burnley
   nation: england
@@ -1373,7 +1409,12 @@
       title: "2023 Hyndburn Borough Council election"
     - year: 2022
       title: "2022 Hyndburn Borough Council election"
-
+    - year: 2021
+      title: "2021 Hyndburn Borough Council election"
+    - year: 2019
+      title: "2019 Hyndburn Borough Council election"
+    - year: 2018
+      title: "2018 Hyndburn Borough Council election"
 - lad_code: E07000122
   name: Pendle
   nation: england
@@ -1390,7 +1431,12 @@
       title: "2023 Pendle Borough Council election"
     - year: 2022
       title: "2022 Pendle Borough Council election"
-
+    - year: 2021
+      title: "2021 Pendle Borough Council election"
+    - year: 2019
+      title: "2019 Pendle Borough Council election"
+    - year: 2018
+      title: "2018 Pendle Borough Council election"
 - lad_code: E07000123
   name: Preston
   nation: england
@@ -1473,7 +1519,12 @@
       title: "2023 West Oxfordshire District Council election"
     - year: 2022
       title: "2022 West Oxfordshire District Council election"
-
+    - year: 2021
+      title: "2021 West Oxfordshire District Council election"
+    - year: 2019
+      title: "2019 West Oxfordshire District Council election"
+    - year: 2018
+      title: "2018 West Oxfordshire District Council election"
 - lad_code: E07000192
   name: Cannock Chase
   nation: england
@@ -1497,7 +1548,8 @@
   wiki_current_articles:
     - year: 2022
       title: "2022 Newcastle-under-Lyme Borough Council election"
-
+    - year: 2018
+      title: "2018 Newcastle-under-Lyme Borough Council election"
 - lad_code: E07000199
   name: Tamworth
   nation: england
@@ -1547,7 +1599,12 @@
       title: "2023 Rugby Borough Council election"
     - year: 2022
       title: "2022 Rugby Borough Council election"
-
+    - year: 2021
+      title: "2021 Rugby Borough Council election"
+    - year: 2019
+      title: "2019 Rugby Borough Council election"
+    - year: 2018
+      title: "2018 Rugby Borough Council election"
 - lad_code: E07000223
   name: Adur
   nation: england
@@ -1575,7 +1632,12 @@
       title: "2023 Crawley Borough Council election"
     - year: 2022
       title: "2022 Crawley Borough Council election"
-
+    - year: 2021
+      title: "2021 Crawley Borough Council election"
+    - year: 2019
+      title: "2019 Crawley Borough Council election"
+    - year: 2018
+      title: "2018 Crawley Borough Council election"
 - lad_code: E07000229
   name: Worthing
   nation: england
@@ -2005,6 +2067,8 @@
   wiki_current_articles:
     - year: 2022
       title: "2022 Merthyr Tydfil County Borough Council election"
+    - year: 2017
+      title: "2017 Merthyr Tydfil County Borough Council election"
 
 # ===== Scottish council areas (S12*) =====
 # All 32 councils elect by STV on a 5-year cycle: 2022 -> 2027.
@@ -2394,6 +2458,8 @@
   wiki_current_articles:
     - year: 2022
       title: "2022 North Lanarkshire Council election"
+    - year: 2017
+      title: "2017 North Lanarkshire Council election"
 
 # ===== English non-2026 all-out councils =====
 # Unitaries, mets, London and one sui-generis (City of London) whose last
@@ -2941,6 +3007,12 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 City of London Corporation election"
+    - year: 2022
+      title: "2022 City of London Corporation election"
+    - year: 2021
+      title: "2021 City of London Corporation election"
+    - year: 2017
+      title: "2017 City of London Corporation election"
 
 # ===== English thirds-cycle councils with 2026 fallow =====
 # Most elect 3 of 4 years; their 2026 fallow means per-seat last
@@ -2959,12 +3031,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Middlesbrough Council election"
     - year: 2023
       title: "2023 Middlesbrough Council election"
-    - year: 2022
-      title: "2022 Middlesbrough Council election"
+    - year: 2019
+      title: "2019 Middlesbrough Council election"
 
 - lad_code: E06000003
   name: Redcar and Cleveland
@@ -2976,12 +3046,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Redcar and Cleveland Borough Council election"
     - year: 2023
       title: "2023 Redcar and Cleveland Borough Council election"
-    - year: 2022
-      title: "2022 Redcar and Cleveland Borough Council election"
+    - year: 2019
+      title: "2019 Redcar and Cleveland Borough Council election"
 
 - lad_code: E06000004
   name: Stockton-on-Tees
@@ -2993,12 +3061,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Stockton-on-Tees Borough Council election"
     - year: 2023
       title: "2023 Stockton-on-Tees Borough Council election"
-    - year: 2022
-      title: "2022 Stockton-on-Tees Borough Council election"
+    - year: 2019
+      title: "2019 Stockton-on-Tees Borough Council election"
 
 - lad_code: E06000005
   name: Darlington
@@ -3010,12 +3076,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Darlington Borough Council election"
     - year: 2023
       title: "2023 Darlington Borough Council election"
-    - year: 2022
-      title: "2022 Darlington Borough Council election"
+    - year: 2019
+      title: "2019 Darlington Borough Council election"
 
 - lad_code: E06000009
   name: Blackpool
@@ -3027,12 +3091,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Blackpool Council election"
     - year: 2023
       title: "2023 Blackpool Council election"
-    - year: 2022
-      title: "2022 Blackpool Council election"
+    - year: 2019
+      title: "2019 Blackpool Council election"
 
 - lad_code: E06000013
   name: North Lincolnshire
@@ -3044,12 +3106,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 North Lincolnshire Council election"
     - year: 2023
       title: "2023 North Lincolnshire Council election"
-    - year: 2022
-      title: "2022 North Lincolnshire Council election"
+    - year: 2019
+      title: "2019 North Lincolnshire Council election"
 
 - lad_code: E06000014
   name: York
@@ -3061,12 +3121,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 City of York Council election"
     - year: 2023
       title: "2023 City of York Council election"
-    - year: 2022
-      title: "2022 City of York Council election"
+    - year: 2019
+      title: "2019 City of York Council election"
 
 - lad_code: E06000017
   name: Rutland
@@ -3078,12 +3136,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Rutland County Council election"
     - year: 2023
       title: "2023 Rutland County Council election"
-    - year: 2022
-      title: "2022 Rutland County Council election"
+    - year: 2019
+      title: "2019 Rutland County Council election"
 
 - lad_code: E06000018
   name: Nottingham
@@ -3095,12 +3151,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Nottingham City Council election"
     - year: 2023
       title: "2023 Nottingham City Council election"
-    - year: 2022
-      title: "2022 Nottingham City Council election"
+    - year: 2019
+      title: "2019 Nottingham City Council election"
 
 - lad_code: E06000019
   name: Herefordshire, County of
@@ -3112,12 +3166,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Herefordshire Council election"
     - year: 2023
       title: "2023 Herefordshire Council election"
-    - year: 2022
-      title: "2022 Herefordshire Council election"
+    - year: 2019
+      title: "2019 Herefordshire Council election"
 
 - lad_code: E06000020
   name: Telford and Wrekin
@@ -3129,12 +3181,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Telford and Wrekin Council election"
     - year: 2023
       title: "2023 Telford and Wrekin Council election"
-    - year: 2022
-      title: "2022 Telford and Wrekin Council election"
+    - year: 2019
+      title: "2019 Telford and Wrekin Council election"
 
 - lad_code: E06000021
   name: Stoke-on-Trent
@@ -3146,12 +3196,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Stoke-on-Trent City Council election"
     - year: 2023
       title: "2023 Stoke-on-Trent City Council election"
-    - year: 2022
-      title: "2022 Stoke-on-Trent City Council election"
+    - year: 2019
+      title: "2019 Stoke-on-Trent City Council election"
 
 - lad_code: E06000024
   name: North Somerset
@@ -3163,12 +3211,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 North Somerset Council election"
     - year: 2023
       title: "2023 North Somerset Council election"
-    - year: 2022
-      title: "2022 North Somerset Council election"
+    - year: 2019
+      title: "2019 North Somerset Council election"
 
 - lad_code: E06000025
   name: South Gloucestershire
@@ -3180,12 +3226,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 South Gloucestershire Council election"
     - year: 2023
       title: "2023 South Gloucestershire Council election"
-    - year: 2022
-      title: "2022 South Gloucestershire Council election"
+    - year: 2019
+      title: "2019 South Gloucestershire Council election"
 
 - lad_code: E06000032
   name: Luton
@@ -3199,6 +3243,8 @@
   wiki_current_articles:
     - year: 2023
       title: "2023 Luton Borough Council election"
+    - year: 2019
+      title: "2019 Luton Borough Council election"
 
 - lad_code: E06000037
   name: West Berkshire
@@ -3210,12 +3256,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 West Berkshire Council election"
     - year: 2023
       title: "2023 West Berkshire Council election"
-    - year: 2022
-      title: "2022 West Berkshire Council election"
+    - year: 2019
+      title: "2019 West Berkshire Council election"
 
 - lad_code: E06000040
   name: Windsor and Maidenhead
@@ -3229,6 +3273,8 @@
   wiki_current_articles:
     - year: 2023
       title: "2023 Windsor and Maidenhead Borough Council election"
+    - year: 2019
+      title: "2019 Windsor and Maidenhead Borough Council election"
 
 - lad_code: E06000049
   name: Cheshire East
@@ -3240,12 +3286,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Cheshire East Council election"
     - year: 2023
       title: "2023 Cheshire East Council election"
-    - year: 2022
-      title: "2022 Cheshire East Council election"
+    - year: 2019
+      title: "2019 Cheshire East Council election"
 
 - lad_code: E06000050
   name: Cheshire West and Chester
@@ -3257,12 +3301,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Cheshire West and Chester Council election"
     - year: 2023
       title: "2023 Cheshire West and Chester Council election"
-    - year: 2022
-      title: "2022 Cheshire West and Chester Council election"
+    - year: 2019
+      title: "2019 Cheshire West and Chester Council election"
 
 - lad_code: E06000053
   name: Isles of Scilly
@@ -3276,6 +3318,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Council of the Isles of Scilly election"
+    - year: 2021
+      title: "2021 Council of the Isles of Scilly election"
+    - year: 2017
+      title: "2017 Council of the Isles of Scilly election"
 
 - lad_code: E06000055
   name: Bedford
@@ -3287,12 +3333,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Bedford Borough Council election"
     - year: 2023
       title: "2023 Bedford Borough Council election"
-    - year: 2022
-      title: "2022 Bedford Borough Council election"
+    - year: 2019
+      title: "2019 Bedford Borough Council election"
 
 - lad_code: E06000058
   name: Bournemouth, Christchurch and Poole
@@ -3304,12 +3348,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Bournemouth, Christchurch and Poole Council election"
     - year: 2023
       title: "2023 Bournemouth, Christchurch and Poole Council election"
-    - year: 2022
-      title: "2022 Bournemouth, Christchurch and Poole Council election"
+    - year: 2019
+      title: "2019 Bournemouth, Christchurch and Poole Council election"
 
 - lad_code: E07000009
   name: East Cambridgeshire
@@ -3321,12 +3363,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 East Cambridgeshire District Council election"
     - year: 2023
       title: "2023 East Cambridgeshire District Council election"
-    - year: 2022
-      title: "2022 East Cambridgeshire District Council election"
+    - year: 2019
+      title: "2019 East Cambridgeshire District Council election"
 
 - lad_code: E07000010
   name: Fenland
@@ -3338,12 +3378,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Fenland District Council election"
     - year: 2023
       title: "2023 Fenland District Council election"
-    - year: 2022
-      title: "2022 Fenland District Council election"
+    - year: 2019
+      title: "2019 Fenland District Council election"
 
 - lad_code: E07000033
   name: Bolsover
@@ -3355,12 +3393,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Bolsover District Council election"
     - year: 2023
       title: "2023 Bolsover District Council election"
-    - year: 2022
-      title: "2022 Bolsover District Council election"
+    - year: 2019
+      title: "2019 Bolsover District Council election"
 
 - lad_code: E07000034
   name: Chesterfield
@@ -3372,12 +3408,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Chesterfield Borough Council election"
     - year: 2023
       title: "2023 Chesterfield Borough Council election"
-    - year: 2022
-      title: "2022 Chesterfield Borough Council election"
+    - year: 2019
+      title: "2019 Chesterfield Borough Council election"
 
 - lad_code: E07000035
   name: Derbyshire Dales
@@ -3389,12 +3423,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Derbyshire Dales District Council election"
     - year: 2023
       title: "2023 Derbyshire Dales District Council election"
-    - year: 2022
-      title: "2022 Derbyshire Dales District Council election"
+    - year: 2019
+      title: "2019 Derbyshire Dales District Council election"
 
 - lad_code: E07000036
   name: Erewash
@@ -3406,12 +3438,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Erewash Borough Council election"
     - year: 2023
       title: "2023 Erewash Borough Council election"
-    - year: 2022
-      title: "2022 Erewash Borough Council election"
+    - year: 2019
+      title: "2019 Erewash Borough Council election"
 
 - lad_code: E07000037
   name: High Peak
@@ -3423,12 +3453,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 High Peak Borough Council election"
     - year: 2023
       title: "2023 High Peak Borough Council election"
-    - year: 2022
-      title: "2022 High Peak Borough Council election"
+    - year: 2019
+      title: "2019 High Peak Borough Council election"
 
 - lad_code: E07000038
   name: North East Derbyshire
@@ -3440,12 +3468,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 North East Derbyshire District Council election"
     - year: 2023
       title: "2023 North East Derbyshire District Council election"
-    - year: 2022
-      title: "2022 North East Derbyshire District Council election"
+    - year: 2019
+      title: "2019 North East Derbyshire District Council election"
 
 - lad_code: E07000039
   name: South Derbyshire
@@ -3457,12 +3483,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 South Derbyshire District Council election"
     - year: 2023
       title: "2023 South Derbyshire District Council election"
-    - year: 2022
-      title: "2022 South Derbyshire District Council election"
+    - year: 2019
+      title: "2019 South Derbyshire District Council election"
 
 - lad_code: E07000040
   name: East Devon
@@ -3474,12 +3498,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 East Devon District Council election"
     - year: 2023
       title: "2023 East Devon District Council election"
-    - year: 2022
-      title: "2022 East Devon District Council election"
+    - year: 2019
+      title: "2019 East Devon District Council election"
 
 - lad_code: E07000042
   name: Mid Devon
@@ -3491,12 +3513,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Mid Devon District Council election"
     - year: 2023
       title: "2023 Mid Devon District Council election"
-    - year: 2022
-      title: "2022 Mid Devon District Council election"
+    - year: 2019
+      title: "2019 Mid Devon District Council election"
 
 - lad_code: E07000043
   name: North Devon
@@ -3508,12 +3528,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 North Devon District Council election"
     - year: 2023
       title: "2023 North Devon District Council election"
-    - year: 2022
-      title: "2022 North Devon District Council election"
+    - year: 2019
+      title: "2019 North Devon District Council election"
 
 - lad_code: E07000044
   name: South Hams
@@ -3525,12 +3543,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 South Hams District Council election"
     - year: 2023
       title: "2023 South Hams District Council election"
-    - year: 2022
-      title: "2022 South Hams District Council election"
+    - year: 2019
+      title: "2019 South Hams District Council election"
 
 - lad_code: E07000045
   name: Teignbridge
@@ -3542,12 +3558,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Teignbridge District Council election"
     - year: 2023
       title: "2023 Teignbridge District Council election"
-    - year: 2022
-      title: "2022 Teignbridge District Council election"
+    - year: 2019
+      title: "2019 Teignbridge District Council election"
 
 - lad_code: E07000046
   name: Torridge
@@ -3559,12 +3573,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Torridge District Council election"
     - year: 2023
       title: "2023 Torridge District Council election"
-    - year: 2022
-      title: "2022 Torridge District Council election"
+    - year: 2019
+      title: "2019 Torridge District Council election"
 
 - lad_code: E07000047
   name: West Devon
@@ -3576,12 +3588,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 West Devon Borough Council election"
     - year: 2023
       title: "2023 West Devon Borough Council election"
-    - year: 2022
-      title: "2022 West Devon Borough Council election"
+    - year: 2019
+      title: "2019 West Devon Borough Council election"
 
 - lad_code: E07000061
   name: Eastbourne
@@ -3593,12 +3603,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Eastbourne Borough Council election"
     - year: 2023
       title: "2023 Eastbourne Borough Council election"
-    - year: 2022
-      title: "2022 Eastbourne Borough Council election"
+    - year: 2019
+      title: "2019 Eastbourne Borough Council election"
 
 - lad_code: E07000063
   name: Lewes
@@ -3610,12 +3618,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Lewes District Council election"
     - year: 2023
       title: "2023 Lewes District Council election"
-    - year: 2022
-      title: "2022 Lewes District Council election"
+    - year: 2019
+      title: "2019 Lewes District Council election"
 
 - lad_code: E07000064
   name: Rother
@@ -3627,12 +3633,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Rother District Council election"
     - year: 2023
       title: "2023 Rother District Council election"
-    - year: 2022
-      title: "2022 Rother District Council election"
+    - year: 2019
+      title: "2019 Rother District Council election"
 
 - lad_code: E07000065
   name: Wealden
@@ -3644,12 +3648,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Wealden District Council election"
     - year: 2023
       title: "2023 Wealden District Council election"
-    - year: 2022
-      title: "2022 Wealden District Council election"
+    - year: 2019
+      title: "2019 Wealden District Council election"
 
 - lad_code: E07000067
   name: Braintree
@@ -3661,12 +3663,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Braintree District Council election"
     - year: 2023
       title: "2023 Braintree District Council election"
-    - year: 2022
-      title: "2022 Braintree District Council election"
+    - year: 2019
+      title: "2019 Braintree District Council election"
 
 - lad_code: E07000070
   name: Chelmsford
@@ -3678,12 +3678,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Chelmsford City Council election"
     - year: 2023
       title: "2023 Chelmsford City Council election"
-    - year: 2022
-      title: "2022 Chelmsford City Council election"
+    - year: 2019
+      title: "2019 Chelmsford City Council election"
 
 - lad_code: E07000074
   name: Maldon
@@ -3695,12 +3693,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Maldon District Council election"
     - year: 2023
       title: "2023 Maldon District Council election"
-    - year: 2022
-      title: "2022 Maldon District Council election"
+    - year: 2019
+      title: "2019 Maldon District Council election"
 
 - lad_code: E07000076
   name: Tendring
@@ -3712,12 +3708,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Tendring District Council election"
     - year: 2023
       title: "2023 Tendring District Council election"
-    - year: 2022
-      title: "2022 Tendring District Council election"
+    - year: 2019
+      title: "2019 Tendring District Council election"
 
 - lad_code: E07000077
   name: Uttlesford
@@ -3729,12 +3723,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Uttlesford District Council election"
     - year: 2023
       title: "2023 Uttlesford District Council election"
-    - year: 2022
-      title: "2022 Uttlesford District Council election"
+    - year: 2019
+      title: "2019 Uttlesford District Council election"
 
 - lad_code: E07000079
   name: Cotswold
@@ -3746,12 +3738,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Cotswold District Council election"
     - year: 2023
       title: "2023 Cotswold District Council election"
-    - year: 2022
-      title: "2022 Cotswold District Council election"
+    - year: 2019
+      title: "2019 Cotswold District Council election"
 
 - lad_code: E07000080
   name: Forest of Dean
@@ -3763,12 +3753,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Forest of Dean District Council election"
     - year: 2023
       title: "2023 Forest of Dean District Council election"
-    - year: 2022
-      title: "2022 Forest of Dean District Council election"
+    - year: 2019
+      title: "2019 Forest of Dean District Council election"
 
 - lad_code: E07000083
   name: Tewkesbury
@@ -3780,12 +3768,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Tewkesbury Borough Council election"
     - year: 2023
       title: "2023 Tewkesbury Borough Council election"
-    - year: 2022
-      title: "2022 Tewkesbury Borough Council election"
+    - year: 2019
+      title: "2019 Tewkesbury Borough Council election"
 
 - lad_code: E07000085
   name: East Hampshire
@@ -3797,12 +3783,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 East Hampshire District Council election"
     - year: 2023
       title: "2023 East Hampshire District Council election"
-    - year: 2022
-      title: "2022 East Hampshire District Council election"
+    - year: 2019
+      title: "2019 East Hampshire District Council election"
 
 - lad_code: E07000091
   name: New Forest
@@ -3814,12 +3798,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 New Forest District Council election"
     - year: 2023
       title: "2023 New Forest District Council election"
-    - year: 2022
-      title: "2022 New Forest District Council election"
+    - year: 2019
+      title: "2019 New Forest District Council election"
 
 - lad_code: E07000093
   name: Test Valley
@@ -3831,12 +3813,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Test Valley Borough Council election"
     - year: 2023
       title: "2023 Test Valley Borough Council election"
-    - year: 2022
-      title: "2022 Test Valley Borough Council election"
+    - year: 2019
+      title: "2019 Test Valley Borough Council election"
 
 - lad_code: E07000096
   name: Dacorum
@@ -3848,12 +3828,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Dacorum Borough Council election"
     - year: 2023
       title: "2023 Dacorum Borough Council election"
-    - year: 2022
-      title: "2022 Dacorum Borough Council election"
+    - year: 2019
+      title: "2019 Dacorum Borough Council election"
 
 - lad_code: E07000098
   name: Hertsmere
@@ -3865,12 +3843,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Hertsmere Borough Council election"
     - year: 2023
       title: "2023 Hertsmere Borough Council election"
-    - year: 2022
-      title: "2022 Hertsmere Borough Council election"
+    - year: 2019
+      title: "2019 Hertsmere Borough Council election"
 
 - lad_code: E07000105
   name: Ashford
@@ -3882,12 +3858,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Ashford Borough Council election"
     - year: 2023
       title: "2023 Ashford Borough Council election"
-    - year: 2022
-      title: "2022 Ashford Borough Council election"
+    - year: 2019
+      title: "2019 Ashford Borough Council election"
 
 - lad_code: E07000106
   name: Canterbury
@@ -3899,12 +3873,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Canterbury City Council election"
     - year: 2023
       title: "2023 Canterbury City Council election"
-    - year: 2022
-      title: "2022 Canterbury City Council election"
+    - year: 2019
+      title: "2019 Canterbury City Council election"
 
 - lad_code: E07000107
   name: Dartford
@@ -3916,12 +3888,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Dartford Borough Council election"
     - year: 2023
       title: "2023 Dartford Borough Council election"
-    - year: 2022
-      title: "2022 Dartford Borough Council election"
+    - year: 2019
+      title: "2019 Dartford Borough Council election"
 
 - lad_code: E07000108
   name: Dover
@@ -3933,12 +3903,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Dover District Council election"
     - year: 2023
       title: "2023 Dover District Council election"
-    - year: 2022
-      title: "2022 Dover District Council election"
+    - year: 2019
+      title: "2019 Dover District Council election"
 
 - lad_code: E07000109
   name: Gravesham
@@ -3950,12 +3918,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Gravesham Borough Council election"
     - year: 2023
       title: "2023 Gravesham Borough Council election"
-    - year: 2022
-      title: "2022 Gravesham Borough Council election"
+    - year: 2019
+      title: "2019 Gravesham Borough Council election"
 
 - lad_code: E07000111
   name: Sevenoaks
@@ -3967,12 +3933,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Sevenoaks District Council election"
     - year: 2023
       title: "2023 Sevenoaks District Council election"
-    - year: 2022
-      title: "2022 Sevenoaks District Council election"
+    - year: 2019
+      title: "2019 Sevenoaks District Council election"
 
 - lad_code: E07000112
   name: Folkestone and Hythe
@@ -3984,12 +3948,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Folkestone and Hythe District Council election"
     - year: 2023
       title: "2023 Folkestone and Hythe District Council election"
-    - year: 2022
-      title: "2022 Folkestone and Hythe District Council election"
+    - year: 2019
+      title: "2019 Folkestone and Hythe District Council election"
 
 - lad_code: E07000113
   name: Swale
@@ -4001,12 +3963,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Swale Borough Council election"
     - year: 2023
       title: "2023 Swale Borough Council election"
-    - year: 2022
-      title: "2022 Swale Borough Council election"
+    - year: 2019
+      title: "2019 Swale Borough Council election"
 
 - lad_code: E07000114
   name: Thanet
@@ -4018,12 +3978,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Thanet District Council election"
     - year: 2023
       title: "2023 Thanet District Council election"
-    - year: 2022
-      title: "2022 Thanet District Council election"
+    - year: 2019
+      title: "2019 Thanet District Council election"
 
 - lad_code: E07000115
   name: Tonbridge and Malling
@@ -4035,12 +3993,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Tonbridge and Malling Borough Council election"
     - year: 2023
       title: "2023 Tonbridge and Malling Borough Council election"
-    - year: 2022
-      title: "2022 Tonbridge and Malling Borough Council election"
+    - year: 2019
+      title: "2019 Tonbridge and Malling Borough Council election"
 
 - lad_code: E07000119
   name: Fylde
@@ -4052,12 +4008,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Fylde Borough Council election"
     - year: 2023
       title: "2023 Fylde Borough Council election"
-    - year: 2022
-      title: "2022 Fylde Borough Council election"
+    - year: 2019
+      title: "2019 Fylde Borough Council election"
 
 - lad_code: E07000121
   name: Lancaster
@@ -4069,12 +4023,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Lancaster City Council election"
     - year: 2023
       title: "2023 Lancaster City Council election"
-    - year: 2022
-      title: "2022 Lancaster City Council election"
+    - year: 2019
+      title: "2019 Lancaster City Council election"
 
 - lad_code: E07000124
   name: Ribble Valley
@@ -4086,12 +4038,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Ribble Valley Borough Council election"
     - year: 2023
       title: "2023 Ribble Valley Borough Council election"
-    - year: 2022
-      title: "2022 Ribble Valley Borough Council election"
+    - year: 2019
+      title: "2019 Ribble Valley Borough Council election"
 
 - lad_code: E07000125
   name: Rossendale
@@ -4109,6 +4059,12 @@
       title: "2023 Rossendale Borough Council election"
     - year: 2022
       title: "2022 Rossendale Borough Council election"
+    - year: 2021
+      title: "2021 Rossendale Borough Council election"
+    - year: 2019
+      title: "2019 Rossendale Borough Council election"
+    - year: 2018
+      title: "2018 Rossendale Borough Council election"
 
 - lad_code: E07000126
   name: South Ribble
@@ -4120,12 +4076,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 South Ribble Borough Council election"
     - year: 2023
       title: "2023 South Ribble Borough Council election"
-    - year: 2022
-      title: "2022 South Ribble Borough Council election"
+    - year: 2019
+      title: "2019 South Ribble Borough Council election"
 
 - lad_code: E07000128
   name: Wyre
@@ -4137,12 +4091,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Wyre Borough Council election"
     - year: 2023
       title: "2023 Wyre Borough Council election"
-    - year: 2022
-      title: "2022 Wyre Borough Council election"
+    - year: 2019
+      title: "2019 Wyre Borough Council election"
 
 - lad_code: E07000129
   name: Blaby
@@ -4154,12 +4106,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Blaby District Council election"
     - year: 2023
       title: "2023 Blaby District Council election"
-    - year: 2022
-      title: "2022 Blaby District Council election"
+    - year: 2019
+      title: "2019 Blaby District Council election"
 
 - lad_code: E07000130
   name: Charnwood
@@ -4171,12 +4121,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Charnwood Borough Council election"
     - year: 2023
       title: "2023 Charnwood Borough Council election"
-    - year: 2022
-      title: "2022 Charnwood Borough Council election"
+    - year: 2019
+      title: "2019 Charnwood Borough Council election"
 
 - lad_code: E07000131
   name: Harborough
@@ -4188,12 +4136,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Harborough District Council election"
     - year: 2023
       title: "2023 Harborough District Council election"
-    - year: 2022
-      title: "2022 Harborough District Council election"
+    - year: 2019
+      title: "2019 Harborough District Council election"
 
 - lad_code: E07000132
   name: Hinckley and Bosworth
@@ -4205,12 +4151,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Hinckley and Bosworth Borough Council election"
     - year: 2023
       title: "2023 Hinckley and Bosworth Borough Council election"
-    - year: 2022
-      title: "2022 Hinckley and Bosworth Borough Council election"
+    - year: 2019
+      title: "2019 Hinckley and Bosworth Borough Council election"
 
 - lad_code: E07000133
   name: Melton
@@ -4222,12 +4166,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Melton Borough Council election"
     - year: 2023
       title: "2023 Melton Borough Council election"
-    - year: 2022
-      title: "2022 Melton Borough Council election"
+    - year: 2019
+      title: "2019 Melton Borough Council election"
 
 - lad_code: E07000134
   name: North West Leicestershire
@@ -4239,12 +4181,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 North West Leicestershire District Council election"
     - year: 2023
       title: "2023 North West Leicestershire District Council election"
-    - year: 2022
-      title: "2022 North West Leicestershire District Council election"
+    - year: 2019
+      title: "2019 North West Leicestershire District Council election"
 
 - lad_code: E07000135
   name: Oadby and Wigston
@@ -4256,12 +4196,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Oadby and Wigston Borough Council election"
     - year: 2023
       title: "2023 Oadby and Wigston Borough Council election"
-    - year: 2022
-      title: "2022 Oadby and Wigston Borough Council election"
+    - year: 2019
+      title: "2019 Oadby and Wigston Borough Council election"
 
 - lad_code: E07000136
   name: Boston
@@ -4273,12 +4211,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Boston Borough Council election"
     - year: 2023
       title: "2023 Boston Borough Council election"
-    - year: 2022
-      title: "2022 Boston Borough Council election"
+    - year: 2019
+      title: "2019 Boston Borough Council election"
 
 - lad_code: E07000137
   name: East Lindsey
@@ -4290,12 +4226,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 East Lindsey District Council election"
     - year: 2023
       title: "2023 East Lindsey District Council election"
-    - year: 2022
-      title: "2022 East Lindsey District Council election"
+    - year: 2019
+      title: "2019 East Lindsey District Council election"
 
 - lad_code: E07000139
   name: North Kesteven
@@ -4307,12 +4241,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 North Kesteven District Council election"
     - year: 2023
       title: "2023 North Kesteven District Council election"
-    - year: 2022
-      title: "2022 North Kesteven District Council election"
+    - year: 2019
+      title: "2019 North Kesteven District Council election"
 
 - lad_code: E07000140
   name: South Holland
@@ -4324,12 +4256,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 South Holland District Council election"
     - year: 2023
       title: "2023 South Holland District Council election"
-    - year: 2022
-      title: "2022 South Holland District Council election"
+    - year: 2019
+      title: "2019 South Holland District Council election"
 
 - lad_code: E07000141
   name: South Kesteven
@@ -4341,12 +4271,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 South Kesteven District Council election"
     - year: 2023
       title: "2023 South Kesteven District Council election"
-    - year: 2022
-      title: "2022 South Kesteven District Council election"
+    - year: 2019
+      title: "2019 South Kesteven District Council election"
 
 - lad_code: E07000142
   name: West Lindsey
@@ -4358,12 +4286,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 West Lindsey District Council election"
     - year: 2023
       title: "2023 West Lindsey District Council election"
-    - year: 2022
-      title: "2022 West Lindsey District Council election"
+    - year: 2019
+      title: "2019 West Lindsey District Council election"
 
 - lad_code: E07000143
   name: Breckland
@@ -4377,6 +4303,8 @@
   wiki_current_articles:
     - year: 2023
       title: "2023 Breckland District Council election"
+    - year: 2019
+      title: "2019 Breckland District Council election"
 
 - lad_code: E07000144
   name: Broadland
@@ -4388,12 +4316,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Broadland District Council election"
     - year: 2023
       title: "2023 Broadland District Council election"
-    - year: 2022
-      title: "2022 Broadland District Council election"
+    - year: 2019
+      title: "2019 Broadland District Council election"
 
 - lad_code: E07000145
   name: Great Yarmouth
@@ -4405,12 +4331,12 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Great Yarmouth Borough Council election"
     - year: 2023
       title: "2023 Great Yarmouth Borough Council election"
-    - year: 2022
-      title: "2022 Great Yarmouth Borough Council election"
+    - year: 2019
+      title: "2019 Great Yarmouth Borough Council election"
+    - year: 2018
+      title: "2018 Great Yarmouth Borough Council election"
 
 - lad_code: E07000146
   name: King's Lynn and West Norfolk
@@ -4422,12 +4348,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 King's Lynn and West Norfolk Borough Council election"
     - year: 2023
       title: "2023 King's Lynn and West Norfolk Borough Council election"
-    - year: 2022
-      title: "2022 King's Lynn and West Norfolk Borough Council election"
+    - year: 2019
+      title: "2019 King's Lynn and West Norfolk Borough Council election"
 
 - lad_code: E07000147
   name: North Norfolk
@@ -4439,12 +4363,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 North Norfolk District Council election"
     - year: 2023
       title: "2023 North Norfolk District Council election"
-    - year: 2022
-      title: "2022 North Norfolk District Council election"
+    - year: 2019
+      title: "2019 North Norfolk District Council election"
 
 - lad_code: E07000149
   name: South Norfolk
@@ -4458,6 +4380,8 @@
   wiki_current_articles:
     - year: 2023
       title: "2023 South Norfolk District Council election"
+    - year: 2019
+      title: "2019 South Norfolk District Council election"
 
 - lad_code: E07000170
   name: Ashfield
@@ -4469,12 +4393,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Ashfield District Council election"
     - year: 2023
       title: "2023 Ashfield District Council election"
-    - year: 2022
-      title: "2022 Ashfield District Council election"
+    - year: 2019
+      title: "2019 Ashfield District Council election"
 
 - lad_code: E07000171
   name: Bassetlaw
@@ -4486,12 +4408,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Bassetlaw District Council election"
     - year: 2023
       title: "2023 Bassetlaw District Council election"
-    - year: 2022
-      title: "2022 Bassetlaw District Council election"
+    - year: 2019
+      title: "2019 Bassetlaw District Council election"
 
 - lad_code: E07000172
   name: Broxtowe
@@ -4503,12 +4423,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Broxtowe Borough Council election"
     - year: 2023
       title: "2023 Broxtowe Borough Council election"
-    - year: 2022
-      title: "2022 Broxtowe Borough Council election"
+    - year: 2019
+      title: "2019 Broxtowe Borough Council election"
 
 - lad_code: E07000173
   name: Gedling
@@ -4520,12 +4438,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Gedling Borough Council election"
     - year: 2023
       title: "2023 Gedling Borough Council election"
-    - year: 2022
-      title: "2022 Gedling Borough Council election"
+    - year: 2019
+      title: "2019 Gedling Borough Council election"
 
 - lad_code: E07000174
   name: Mansfield
@@ -4537,12 +4453,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Mansfield District Council election"
     - year: 2023
       title: "2023 Mansfield District Council election"
-    - year: 2022
-      title: "2022 Mansfield District Council election"
+    - year: 2019
+      title: "2019 Mansfield District Council election"
 
 - lad_code: E07000175
   name: Newark and Sherwood
@@ -4554,12 +4468,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Newark and Sherwood District Council election"
     - year: 2023
       title: "2023 Newark and Sherwood District Council election"
-    - year: 2022
-      title: "2022 Newark and Sherwood District Council election"
+    - year: 2019
+      title: "2019 Newark and Sherwood District Council election"
 
 - lad_code: E07000176
   name: Rushcliffe
@@ -4571,12 +4483,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Rushcliffe Borough Council election"
     - year: 2023
       title: "2023 Rushcliffe Borough Council election"
-    - year: 2022
-      title: "2022 Rushcliffe Borough Council election"
+    - year: 2019
+      title: "2019 Rushcliffe Borough Council election"
 
 - lad_code: E07000179
   name: South Oxfordshire
@@ -4588,12 +4498,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 South Oxfordshire District Council election"
     - year: 2023
       title: "2023 South Oxfordshire District Council election"
-    - year: 2022
-      title: "2022 South Oxfordshire District Council election"
+    - year: 2019
+      title: "2019 South Oxfordshire District Council election"
 
 - lad_code: E07000180
   name: Vale of White Horse
@@ -4605,12 +4513,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Vale of White Horse District Council election"
     - year: 2023
       title: "2023 Vale of White Horse District Council election"
-    - year: 2022
-      title: "2022 Vale of White Horse District Council election"
+    - year: 2019
+      title: "2019 Vale of White Horse District Council election"
 
 - lad_code: E07000193
   name: East Staffordshire
@@ -4622,12 +4528,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 East Staffordshire Borough Council election"
     - year: 2023
       title: "2023 East Staffordshire Borough Council election"
-    - year: 2022
-      title: "2022 East Staffordshire Borough Council election"
+    - year: 2019
+      title: "2019 East Staffordshire Borough Council election"
 
 - lad_code: E07000194
   name: Lichfield
@@ -4639,12 +4543,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Lichfield District Council election"
     - year: 2023
       title: "2023 Lichfield District Council election"
-    - year: 2022
-      title: "2022 Lichfield District Council election"
+    - year: 2019
+      title: "2019 Lichfield District Council election"
 
 - lad_code: E07000196
   name: South Staffordshire
@@ -4658,6 +4560,8 @@
   wiki_current_articles:
     - year: 2023
       title: "2023 South Staffordshire District Council election"
+    - year: 2019
+      title: "2019 South Staffordshire District Council election"
 
 - lad_code: E07000197
   name: Stafford
@@ -4669,12 +4573,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Stafford Borough Council election"
     - year: 2023
       title: "2023 Stafford Borough Council election"
-    - year: 2022
-      title: "2022 Stafford Borough Council election"
+    - year: 2019
+      title: "2019 Stafford Borough Council election"
 
 - lad_code: E07000198
   name: Staffordshire Moorlands
@@ -4686,12 +4588,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Staffordshire Moorlands District Council election"
     - year: 2023
       title: "2023 Staffordshire Moorlands District Council election"
-    - year: 2022
-      title: "2022 Staffordshire Moorlands District Council election"
+    - year: 2019
+      title: "2019 Staffordshire Moorlands District Council election"
 
 - lad_code: E07000200
   name: Babergh
@@ -4703,12 +4603,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Babergh District Council election"
     - year: 2023
       title: "2023 Babergh District Council election"
-    - year: 2022
-      title: "2022 Babergh District Council election"
+    - year: 2019
+      title: "2019 Babergh District Council election"
 
 - lad_code: E07000208
   name: Epsom and Ewell
@@ -4720,12 +4618,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Epsom and Ewell Borough Council election"
     - year: 2023
       title: "2023 Epsom and Ewell Borough Council election"
-    - year: 2022
-      title: "2022 Epsom and Ewell Borough Council election"
+    - year: 2019
+      title: "2019 Epsom and Ewell Borough Council election"
 
 - lad_code: E07000209
   name: Guildford
@@ -4737,12 +4633,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Guildford Borough Council election"
     - year: 2023
       title: "2023 Guildford Borough Council election"
-    - year: 2022
-      title: "2022 Guildford Borough Council election"
+    - year: 2019
+      title: "2019 Guildford Borough Council election"
 
 - lad_code: E07000213
   name: Spelthorne
@@ -4754,12 +4648,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Spelthorne Borough Council election"
     - year: 2023
       title: "2023 Spelthorne Borough Council election"
-    - year: 2022
-      title: "2022 Spelthorne Borough Council election"
+    - year: 2019
+      title: "2019 Spelthorne Borough Council election"
 
 - lad_code: E07000214
   name: Surrey Heath
@@ -4771,12 +4663,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Surrey Heath Borough Council election"
     - year: 2023
       title: "2023 Surrey Heath Borough Council election"
-    - year: 2022
-      title: "2022 Surrey Heath Borough Council election"
+    - year: 2019
+      title: "2019 Surrey Heath Borough Council election"
 
 - lad_code: E07000216
   name: Waverley
@@ -4788,12 +4678,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Waverley Borough Council election"
     - year: 2023
       title: "2023 Waverley Borough Council election"
-    - year: 2022
-      title: "2022 Waverley Borough Council election"
+    - year: 2019
+      title: "2019 Waverley Borough Council election"
 
 - lad_code: E07000218
   name: North Warwickshire
@@ -4805,12 +4693,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 North Warwickshire Borough Council election"
     - year: 2023
       title: "2023 North Warwickshire Borough Council election"
-    - year: 2022
-      title: "2022 North Warwickshire Borough Council election"
+    - year: 2019
+      title: "2019 North Warwickshire Borough Council election"
 
 - lad_code: E07000221
   name: Stratford-on-Avon
@@ -4822,12 +4708,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Stratford-on-Avon District Council election"
     - year: 2023
       title: "2023 Stratford-on-Avon District Council election"
-    - year: 2022
-      title: "2022 Stratford-on-Avon District Council election"
+    - year: 2019
+      title: "2019 Stratford-on-Avon District Council election"
 
 - lad_code: E07000222
   name: Warwick
@@ -4839,12 +4723,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Warwick District Council election"
     - year: 2023
       title: "2023 Warwick District Council election"
-    - year: 2022
-      title: "2022 Warwick District Council election"
+    - year: 2019
+      title: "2019 Warwick District Council election"
 
 - lad_code: E07000224
   name: Arun
@@ -4856,12 +4738,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Arun District Council election"
     - year: 2023
       title: "2023 Arun District Council election"
-    - year: 2022
-      title: "2022 Arun District Council election"
+    - year: 2019
+      title: "2019 Arun District Council election"
 
 - lad_code: E07000225
   name: Chichester
@@ -4873,12 +4753,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Chichester District Council election"
     - year: 2023
       title: "2023 Chichester District Council election"
-    - year: 2022
-      title: "2022 Chichester District Council election"
+    - year: 2019
+      title: "2019 Chichester District Council election"
 
 - lad_code: E07000227
   name: Horsham
@@ -4890,12 +4768,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Horsham District Council election"
     - year: 2023
       title: "2023 Horsham District Council election"
-    - year: 2022
-      title: "2022 Horsham District Council election"
+    - year: 2019
+      title: "2019 Horsham District Council election"
 
 - lad_code: E07000228
   name: Mid Sussex
@@ -4907,12 +4783,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Mid Sussex District Council election"
     - year: 2023
       title: "2023 Mid Sussex District Council election"
-    - year: 2022
-      title: "2022 Mid Sussex District Council election"
+    - year: 2019
+      title: "2019 Mid Sussex District Council election"
 
 - lad_code: E07000234
   name: Bromsgrove
@@ -4924,12 +4798,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Bromsgrove District Council election"
     - year: 2023
       title: "2023 Bromsgrove District Council election"
-    - year: 2022
-      title: "2022 Bromsgrove District Council election"
+    - year: 2019
+      title: "2019 Bromsgrove District Council election"
 
 - lad_code: E07000235
   name: Malvern Hills
@@ -4941,12 +4813,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Malvern Hills District Council election"
     - year: 2023
       title: "2023 Malvern Hills District Council election"
-    - year: 2022
-      title: "2022 Malvern Hills District Council election"
+    - year: 2019
+      title: "2019 Malvern Hills District Council election"
 
 - lad_code: E07000238
   name: Wychavon
@@ -4958,12 +4828,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 Wychavon District Council election"
     - year: 2023
       title: "2023 Wychavon District Council election"
-    - year: 2022
-      title: "2022 Wychavon District Council election"
+    - year: 2019
+      title: "2019 Wychavon District Council election"
 
 - lad_code: E07000242
   name: East Hertfordshire
@@ -4975,12 +4843,10 @@
   wiki_prior_year: null
   electoral_system: fptp
   wiki_current_articles:
-    - year: 2024
-      title: "2024 East Hertfordshire District Council election"
     - year: 2023
       title: "2023 East Hertfordshire District Council election"
-    - year: 2022
-      title: "2022 East Hertfordshire District Council election"
+    - year: 2019
+      title: "2019 East Hertfordshire District Council election"
 
 - lad_code: E07000244
   name: East Suffolk
@@ -4994,6 +4860,8 @@
   wiki_current_articles:
     - year: 2023
       title: "2023 East Suffolk District Council election"
+    - year: 2019
+      title: "2019 East Suffolk District Council election"
 
 - lad_code: E07000245
   name: West Suffolk
@@ -5007,6 +4875,8 @@
   wiki_current_articles:
     - year: 2023
       title: "2023 West Suffolk District Council election"
+    - year: 2019
+      title: "2019 West Suffolk District Council election"
 
 
 # ===== English county councils contested 2025 (E10*) =====
@@ -5202,3 +5072,7 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Worcestershire County Council election"
+    - year: 2021
+      title: "2021 Worcestershire County Council election"
+    - year: 2017
+      title: "2017 Worcestershire County Council election"

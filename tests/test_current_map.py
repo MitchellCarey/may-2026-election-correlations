@@ -17,9 +17,10 @@ import pytest
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 
-# Coverage baseline from the backfill commit (c9fa7f3). Tightening it is fine;
-# loosening it should raise a flag in review — bump only with justification.
-GB_GREY_CEILING = 132
+# Coverage ratchet for GB grey wards. Tightening is fine; loosening should
+# raise a flag in review — bump only with justification (e.g. a boundary
+# review temporarily un-paints a cohort).
+GB_GREY_CEILING = 40
 
 
 # ---------------------------------------------------------------------------
