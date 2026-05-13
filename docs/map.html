@@ -58,11 +58,17 @@
 
   <div class="map-grid">
     <div class="map-card">
-      <div class="map-card-label">Before · 2022 (Salford 2021)</div>
+      <div class="map-card-head">
+        <div class="map-card-label">Before · 2022 (Salford 2021)</div>
+        <button type="button" class="export-png-btn" data-export-png data-export-target="map-before" data-filename-slug="map-before">Download PNG</button>
+      </div>
       <div id="map-before"></div>
     </div>
     <div class="map-card">
-      <div class="map-card-label">After · 2026</div>
+      <div class="map-card-head">
+        <div class="map-card-label">After · 2026</div>
+        <button type="button" class="export-png-btn" data-export-png data-export-target="map-after" data-filename-slug="map-after">Download PNG</button>
+      </div>
       <div id="map-after"></div>
     </div>
   </div>
@@ -75,7 +81,10 @@
   </div>
 
   <div class="map-card map-card--wide">
-    <div class="map-card-label">Flipped wards · 2022 → 2026 · gainer's colour</div>
+    <div class="map-card-head">
+      <div class="map-card-label">Flipped wards · 2022 → 2026 · gainer's colour</div>
+      <button type="button" class="export-png-btn" data-export-png data-export-target="map-flips" data-filename-slug="map-flips">Download PNG</button>
+    </div>
     <div id="map-flips"></div>
   </div>
 
@@ -317,6 +326,8 @@ if (legend) {
 
 // ===== END GENERATED =====
 </script>
+
+<script src="export-png.js" defer></script>
 
 </body>
 </html>

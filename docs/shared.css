@@ -875,6 +875,27 @@ body {
   .map-card-label { font-size: 10.5px; letter-spacing: 0.14em; }
 }
 
+.map-card-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.map-card-head .map-card-label { margin-bottom: 0; }
+
+.export-png-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px; letter-spacing: 0.10em; text-transform: uppercase;
+  background: transparent; color: var(--muted);
+  border: 1px solid var(--hairline);
+  padding: 5px 9px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+  white-space: nowrap;
+}
+.export-png-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.export-png-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.export-png-btn[aria-busy="true"] { cursor: progress; opacity: 0.7; }
+
 .map-svg { display: block; width: 100%; height: auto; }
 .map-svg path.ward {
   stroke: var(--paper);
