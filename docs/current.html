@@ -110,6 +110,15 @@ function fmtTitle(w) {
   } else {
     lines.push('(no current-control data)');
   }
+  if (w.cc) {
+    const base = 'County Council · ' + w.cc + ' · ' + w.cn;
+    if (w.cw) {
+      lines.push(base + ' · ' + (w.cy ? w.cy + ' · ' : '')
+        + 'winner: ' + (PARTY_DISPLAY[w.cw] || w.cw));
+    } else {
+      lines.push(base + ' · (no county-council data on record)');
+    }
+  }
   return lines.join('\n');
 }
 

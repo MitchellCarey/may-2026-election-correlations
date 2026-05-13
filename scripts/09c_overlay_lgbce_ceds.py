@@ -139,6 +139,51 @@ def recover_yflip_basis(geoms: dict) -> tuple[int, int]:
     return min_y, max_y
 
 
+def parse_svg_path_to_bng(path: str, min_y: int, max_y: int):
+    """Inverse of polygon_to_path — reconstruct a shapely Polygon/MultiPolygon
+    in BNG from an existing y-flipped SVG path string in ward_geoms.json.
+
+    Used to spatially-join WD24 ward polygons against post-review LGBCE
+    polygons so ward_to_ced can be remapped from old CED25CDs to the new
+    LGBCE synthetic keys without re-fetching the raw ward GeoJSON.
+    """
+    from shapely.geometry import Polygon, MultiPolygon
+    rings: list[list[tuple[int, int]]] = []
+    current: list[tuple[int, int]] = []
+    for m in re.finditer(r'([ML])(-?\d+),(-?\d+)|(Z)', path):
+        cmd, x_str, y_str, close = m.groups()
+        if close:
+            if current:
+                rings.append(current)
+                current = []
+        else:
+            x = int(x_str)
+            y_bng = max_y + min_y - int(y_str)
+            current.append((x, y_bng))
+    polys = []
+    for ring in rings:
+        if len(ring) < 3:
+            continue
+        try:
+            p = Polygon(ring)
+            if not p.is_valid:
+                p = p.buffer(0)
+            if not p.is_valid or p.is_empty:
+                continue
+            # buffer(0) can return a MultiPolygon when fixing self-intersection
+            if p.geom_type == 'MultiPolygon':
+                polys.extend(p.geoms)
+            else:
+                polys.append(p)
+        except Exception:
+            continue
+    if not polys:
+        return None
+    if len(polys) == 1:
+        return polys[0]
+    return MultiPolygon(polys)
+
+
 def polygon_to_path(poly, max_y: float, min_y: float) -> str:
     """SVG path with the same y-flip convention as scripts/09 and 09b.
 
@@ -223,6 +268,8 @@ def main():
 
     print('2. Fetching + reading LGBCE shapefiles for reviewed counties...')
     new_entries: dict[str, dict] = {}
+    # Per-county list of (LGBCE_key, BNG polygon) for the step-4 spatial join.
+    per_cty_polys: dict[str, list[tuple[str, object]]] = {}
     for review in REVIEWS:
         cty = review['cty_code']
         name = review['cty_name']
@@ -263,6 +310,7 @@ def main():
                 'cty':      cty,
                 'cty_name': name,
             }
+            per_cty_polys.setdefault(cty, []).append((key, row['geom_s']))
             n_for_county += 1
         print(f'    → {n_for_county} divisions emitted')
 
@@ -277,6 +325,54 @@ def main():
     geoms['ceds'] = kept
     print(f'   removed {removed} CED25 entries; inserted {len(new_entries)} LGBCE entries')
     print(f'   ceds count: {len(old_ceds)} → {len(kept)}')
+
+    # Step 4: remap ward_to_ced for wards in reviewed counties. Their old
+    # entries point at CED25CDs that no longer exist in geoms['ceds'] (we
+    # just replaced them with LGBCE_* synthetic keys). Without this fix, the
+    # ward-tooltip CED context added in PR #18 would silently lose those
+    # wards. Spatial-join each ward's centroid against the LGBCE polygons
+    # we just emitted to discover its post-review parent CED.
+    ward_to_ced = geoms.get('ward_to_ced')
+    if ward_to_ced is not None:
+        print('4. Remapping ward_to_ced for replaced counties (spatial join)...')
+        # lad → county for reviewed counties only
+        lad_to_cty: dict[str, str] = {}
+        for cty_code, cty_meta in geoms.get('counties', {}).items():
+            if cty_code in reviewed_codes:
+                for lad in cty_meta.get('lads', []):
+                    lad_to_cty[lad] = cty_code
+        remapped = unmapped = 0
+        for wd_code, ward in geoms['wards'].items():
+            cty_code = lad_to_cty.get(ward.get('lad', ''))
+            if cty_code is None:
+                continue
+            poly = parse_svg_path_to_bng(ward['path'], min_y, max_y)
+            if poly is None:
+                unmapped += 1
+                continue
+            probe = poly.representative_point()
+            candidates = per_cty_polys.get(cty_code, [])
+            hit = next((k for k, g in candidates if g.contains(probe)), None)
+            if hit is None and candidates:
+                # Fallback: nearest by distance from centroid. Covers edge
+                # cases where the simplified ward centroid sits just outside
+                # every polygon by a few metres.
+                hit = min(candidates, key=lambda kg: kg[1].distance(probe))[0]
+            if hit is not None:
+                ward_to_ced[wd_code] = hit
+                remapped += 1
+            else:
+                ward_to_ced.pop(wd_code, None)
+                unmapped += 1
+        # Drop any residual stale entries county-wide (CED25CDs no longer
+        # in `ceds`). Belt + braces — covers wards we couldn't spatially
+        # resolve too.
+        valid_ceds = set(geoms['ceds'].keys())
+        stale = [wd for wd, ced in ward_to_ced.items() if ced not in valid_ceds]
+        for wd in stale:
+            ward_to_ced.pop(wd)
+        print(f'   remapped {remapped} wards; unmappable {unmapped}; '
+              f'dropped {len(stale)} stale entries')
 
     OUT.write_text(json.dumps(geoms, separators=(',', ':')))
     print(f'\nDone. {OUT.relative_to(ROOT)} updated.')
