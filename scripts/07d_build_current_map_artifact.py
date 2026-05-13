@@ -93,13 +93,23 @@ def main():
         }
 
     # Compact per-ward records keyed by gss — only fields the renderer needs.
-    wards_js = [{
-        'gss': r['gss'],
-        'b':   r['borough'],
-        'wn':  r['ward'],
-        'w':   r['winner'],
-        'y':   r['year'],
-    } for r in region_records]
+    # cc/cn/cw/cy = parent-CED county / name / winner / year, populated only
+    # for wards in 2-tier English districts (issue #8 acceptance 3 quick-win).
+    wards_js = []
+    for r in region_records:
+        rec = {
+            'gss': r['gss'],
+            'b':   r['borough'],
+            'wn':  r['ward'],
+            'w':   r['winner'],
+            'y':   r['year'],
+        }
+        if r.get('ced_county'):
+            rec['cc'] = r['ced_county']
+            rec['cn'] = r['ced_name']
+            rec['cw'] = r['ced_winner']
+            rec['cy'] = r['ced_year']
+        wards_js.append(rec)
 
     # Coverage report
     n_total = len(wards_js)
@@ -184,6 +194,15 @@ function fmtTitle(w) {
       + 'winner: ' + (PARTY_DISPLAY[w.w] || w.w));
   } else {
     lines.push('(no current-control data)');
+  }
+  if (w.cc) {
+    const base = 'County Council · ' + w.cc + ' · ' + w.cn;
+    if (w.cw) {
+      lines.push(base + ' · ' + (w.cy ? w.cy + ' · ' : '')
+        + 'winner: ' + (PARTY_DISPLAY[w.cw] || w.cw));
+    } else {
+      lines.push(base + ' · (no county-council data on record)');
+    }
   }
   return lines.join('\n');
 }

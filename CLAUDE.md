@@ -123,6 +123,10 @@ Parsers landed for Phase 2 of issue #9:
 Phase 2 deferrals (no `official_url` set, see comments on the registry rows):
 - Hampshire — hants.gov.uk Cloudflare-blocks programmatic clients; districts publish only their slices
 
+For counties where the 2025/2026 LGBCE review redrew divisions, `scripts/09c_overlay_lgbce_ceds.py` replaces the pre-review CED25 polygons in `data/ward_geoms.json` with post-review polygons sourced from each county's LGBCE final-recommendation shapefile (Norfolk, Essex, Suffolk today). The shapefile zips cache under `data/source/lgbce/` and are fetched idempotently. Spelling differences between LGBCE and the council's published CSV are reconciled by the `NAME_FIXES` map at the top of `09c`.
+
+As a fallback for any future county where we have results but no post-review polygons, `04c` also consults `data/source/ced_name_overrides.csv` (schema: `cty_code,ons_name,csv_division,note`) — geometry-side → result-side, mirroring `ward_name_overrides.csv`. Currently empty for Norfolk/Essex/Suffolk because the LGBCE overlay handles them; reserved for future counties.
+
 Common cases:
 
 - **Touched `scripts/0[1-6]_*.py` or input XLSX** → run that Winners script and every later one, ending with 07. If the change touches `all_wards.json`, also re-run `04b → 05b/05c → 06b → 07b` for Changes, `07c` for Map, and `04c → 07d` for Current (all three read downstream of `04`).
@@ -132,6 +136,8 @@ Common cases:
 - **Touched `scripts/10_*.py` / `11_*.py` / `04c_*.py`** → run from that script onwards through `07d --region=gm` and `07d --region=gb`.
 - **Touched `scripts/12_*.py` / `13_*.py` or a module in `scripts/_official_parsers/`** → run `12` → `13` → `04c` → `07d --region=gm` → `07d --region=gb`. The fetcher and extractor are no-ops when no councils have `official_url` set, so a structural change without a registered council should leave `04c` output byte-identical.
 - **Added an `official_url` / `official_parser` / `official_year` triple to a council in `data/source/councils.yaml`** → run `12` → `13` → `04c` → `07d` (both regions).
+- **Added or edited a row in `data/source/ced_name_overrides.csv`** → run `04c` → `07d` (both regions). The override boosts `matched` in 04c's summary line; check the per-county counts to confirm the new row landed where you expected.
+- **Added a county to `scripts/09c_overlay_lgbce_ceds.py` (new LGBCE shapefile)** → run `09c --force` → `04c` → `07d` (both regions). Confirm the per-county count is 100 % (or notes the gap if a specific division has no result).
 - **Touched `scripts/07d_build_current_map_artifact.py`** → run `07d --region=gm` and `07d --region=gb`.
 - **Added rows or `wiki_current_articles` entries in `data/source/councils.yaml`** → run `10` → `11` → `04c` → `07d` (both regions). New rows with `wiki_2026` set also need `00b` and the Winners cascade.
 - **Touched `scripts/09_fetch_ward_boundaries.py` or boundary set** → run `09 --force` then `07c --region=gm`, `07c --region=gb`, `07d --region=gm`, `07d --region=gb`.
