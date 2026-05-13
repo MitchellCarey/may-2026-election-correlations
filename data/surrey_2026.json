@@ -1,0 +1,2283 @@
+[
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::cobham_oxshott_south",
+    "ward_name": "Cobham & Oxshott South",
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 2
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "David Lewis",
+        "votes": 2855
+      },
+      {
+        "party": "Conservative",
+        "candidate": "Alan Parker",
+        "votes": 2469
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Conservative": 5324,
+      "LibDem": 2963,
+      "Reform": 2122,
+      "Green": 369,
+      "Labour": 276
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::esher_claygate_oxshott_north",
+    "ward_name": "Esher, Claygate & Oxshott North",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Alex Coomes",
+        "votes": 2390
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Andrew Burton",
+        "votes": 2241
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 4631,
+      "Conservative": 3619,
+      "Independent": 977,
+      "Reform": 1530,
+      "Green": 663,
+      "Labour": 96,
+      "Other": 36
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::hersham",
+    "ward_name": "Hersham",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 1,
+      "Conservative": 1
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Wendy Gibbs",
+        "votes": 2252
+      },
+      {
+        "party": "Conservative",
+        "candidate": "John Cope",
+        "votes": 1952
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 4198,
+      "Conservative": 3359,
+      "Reform": 2107,
+      "Green": 730,
+      "Independent": 392,
+      "Labour": 150
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::long_ditton_hinchley_wood_weston_green",
+    "ward_name": "Long Ditton, Hinchley Wood & Weston Green",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Fran Fish",
+        "votes": 2651
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Neil Houston",
+        "votes": 2431
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 5082,
+      "Other": 3970,
+      "Reform": 1246,
+      "Conservative": 1167,
+      "Green": 661,
+      "Labour": 208
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::thames_ditton_east_molesey",
+    "ward_name": "Thames Ditton & East Molesey",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Sue Fergy",
+        "votes": 2108
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Vicky Zadeh",
+        "votes": 1865
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3973,
+      "Other": 2974,
+      "Conservative": 1362,
+      "Reform": 1050,
+      "Green": 641,
+      "Labour": 214
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::walton",
+    "ward_name": "Walton",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Nick Dodds",
+        "votes": 2315
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Joshua Lambert",
+        "votes": 1864
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 4179,
+      "Independent": 1235,
+      "Reform": 2338,
+      "Other": 1075,
+      "Conservative": 935,
+      "Green": 669,
+      "Labour": 181
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::walton_south_oatlands",
+    "ward_name": "Walton South & Oatlands",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Kirsty Hewens",
+        "votes": 2712
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Ashley Tilling",
+        "votes": 2317
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 5029,
+      "Conservative": 3142,
+      "Reform": 1909,
+      "Green": 474,
+      "Other": 432,
+      "Labour": 293
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::west_molesey",
+    "ward_name": "West Molesey",
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 1,
+      "Other": 1
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Steve Bax",
+        "votes": 2248
+      },
+      {
+        "party": "Other",
+        "candidate": "Ernest Mallett",
+        "votes": 1410
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Conservative": 3510,
+      "Other": 1410,
+      "LibDem": 2054,
+      "Reform": 1683,
+      "Green": 916,
+      "Labour": 247
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::weybridge",
+    "ward_name": "Weybridge",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Pippa Graeme",
+        "votes": 2334
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Eva Ferlez",
+        "votes": 2001
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 4335,
+      "Conservative": 2767,
+      "Reform": 2016,
+      "Independent": 1003,
+      "Green": 698,
+      "Labour": 257
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::epsom_town_downs",
+    "ward_name": "Epsom Town & Downs",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Melissa Baynes",
+        "votes": 2769
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Roy Deadman",
+        "votes": 2475
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 5244,
+      "Other": 2649,
+      "Reform": 1642,
+      "Conservative": 1239,
+      "Green": 772,
+      "Labour": 469
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::epsom_west",
+    "ward_name": "Epsom West",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "David Buxton",
+        "votes": 2538
+      },
+      {
+        "party": "LibDem",
+        "candidate": "John Hindmarsh",
+        "votes": 2538
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 5076,
+      "Reform": 1905,
+      "Conservative": 1912,
+      "Other": 1412,
+      "Green": 1231,
+      "Labour": 456
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::ewell_court_auriol_cuddington",
+    "ward_name": "Ewell Court, Auriol & Cuddington",
+    "winner": "Other",
+    "seats_won": {
+      "Other": 2
+    },
+    "winners": [
+      {
+        "party": "Other",
+        "candidate": "Eber Kington",
+        "votes": 2567
+      },
+      {
+        "party": "Other",
+        "candidate": "Peter O'Donovan",
+        "votes": 2215
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Other": 4782,
+      "Reform": 1981,
+      "LibDem": 1809,
+      "Conservative": 885,
+      "Green": 839,
+      "Labour": 338
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::ewell_village_stoneleigh_nonsuch",
+    "ward_name": "Ewell Village, Stoneleigh & Nonsuch",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Alan Avis",
+        "votes": 1993
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Julian Freeman",
+        "votes": 1908
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3901,
+      "Other": 3018,
+      "Reform": 2207,
+      "Conservative": 2198,
+      "Green": 736,
+      "Labour": 275
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::west_ewell",
+    "ward_name": "West Ewell",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Jeremy Smith",
+        "votes": 1815
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Sammi Villabon",
+        "votes": 1712
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3527,
+      "Reform": 2508,
+      "Other": 1295,
+      "Green": 826,
+      "Conservative": 722,
+      "Labour": 667,
+      "Independent": 331
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::ashtead",
+    "ward_name": "Ashtead",
+    "winner": "Independent",
+    "seats_won": {
+      "Independent": 2
+    },
+    "winners": [
+      {
+        "party": "Independent",
+        "candidate": "Chris Hunt",
+        "votes": 3059
+      },
+      {
+        "party": "Independent",
+        "candidate": "Andy Smith",
+        "votes": 2712
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Independent": 5771,
+      "LibDem": 1929,
+      "Reform": 1700,
+      "Conservative": 1032,
+      "Green": 811,
+      "Labour": 259
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::bookham_fetcham_west",
+    "ward_name": "Bookham & Fetcham West",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Caroline Joseph",
+        "votes": 3273
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Andrew Matthews",
+        "votes": 3158
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 6431,
+      "Conservative": 3211,
+      "Reform": 2976,
+      "Green": 735,
+      "Labour": 126
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::dorking",
+    "ward_name": "Dorking",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Stephen Cooksey",
+        "votes": 3210
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Bradley Nelson",
+        "votes": 2838
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 6048,
+      "Green": 1920,
+      "Reform": 1744,
+      "Conservative": 1459,
+      "Labour": 250,
+      "Other": 42
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::dorking_hills",
+    "ward_name": "Dorking Hills",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Claire Malcomson",
+        "votes": 2475
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Abhiram Magesh",
+        "votes": 2221
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 4696,
+      "Reform": 2935,
+      "Conservative": 2247,
+      "Green": 891,
+      "Labour": 118
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::dorking_rural",
+    "ward_name": "Dorking Rural",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Jo Farrar-Astrop",
+        "votes": 2115
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Dineke van den Bogerd",
+        "votes": 1969
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 4084,
+      "Reform": 3354,
+      "Conservative": 3024,
+      "Green": 791,
+      "Labour": 109
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::leatherhead_fetcham_east",
+    "ward_name": "Leatherhead & Fetcham East",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Alan Thompson",
+        "votes": 1949
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Jolanta Waugh",
+        "votes": 1893
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3842,
+      "Conservative": 3155,
+      "Reform": 2497,
+      "Green": 1137,
+      "Labour": 419
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::banstead_woodmansterne_chipstead",
+    "ward_name": "Banstead, Woodmansterne & Chipstead",
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 2
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Lynne Fletcher",
+        "votes": 2475
+      },
+      {
+        "party": "Conservative",
+        "candidate": "James King",
+        "votes": 2332
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Conservative": 4807,
+      "Reform": 2837,
+      "LibDem": 1250,
+      "Green": 1028,
+      "Labour": 735
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::earlswood_reigate_south",
+    "ward_name": "Earlswood & Reigate South",
+    "winner": "Green",
+    "seats_won": {
+      "Green": 2
+    },
+    "winners": [
+      {
+        "party": "Green",
+        "candidate": "Neha Boghani",
+        "votes": 1783
+      },
+      {
+        "party": "Green",
+        "candidate": "Robin Whitwell",
+        "votes": 1627
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Green": 3410,
+      "Reform": 2388,
+      "Conservative": 1637,
+      "LibDem": 811,
+      "Labour": 560
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::horley_east",
+    "ward_name": "Horley East",
+    "winner": "Reform",
+    "seats_won": {
+      "Reform": 1,
+      "LibDem": 1
+    },
+    "winners": [
+      {
+        "party": "Reform",
+        "candidate": "David Heaver",
+        "votes": 1625
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Barry Maguire",
+        "votes": 1614
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Reform": 3186,
+      "LibDem": 3088,
+      "Conservative": 2636,
+      "Green": 2225
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::horley_west_salfords_sidlow",
+    "ward_name": "Horley West, Salfords & Sidlow",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Steve Wotton",
+        "votes": 1839
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Andrew Stevens",
+        "votes": 1703
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3542,
+      "Reform": 3232,
+      "Conservative": 1633,
+      "Green": 1079,
+      "Labour": 222
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::merstham_banstead_south",
+    "ward_name": "Merstham & Banstead South",
+    "winner": "Green",
+    "seats_won": {
+      "Green": 2
+    },
+    "winners": [
+      {
+        "party": "Green",
+        "candidate": "Joel Gabriel",
+        "votes": 1589
+      },
+      {
+        "party": "Green",
+        "candidate": "Shasha Khan",
+        "votes": 1544
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Green": 3133,
+      "Reform": 2844,
+      "Conservative": 2042,
+      "LibDem": 836,
+      "Labour": 676
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::nork_tattenham",
+    "ward_name": "Nork & Tattenham",
+    "winner": "Other",
+    "seats_won": {
+      "Other": 2
+    },
+    "winners": [
+      {
+        "party": "Other",
+        "candidate": "Peter Harp",
+        "votes": 2900
+      },
+      {
+        "party": "Other",
+        "candidate": "Tim Snuggs",
+        "votes": 2549
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Other": 5449,
+      "Reform": 2815,
+      "Conservative": 1346,
+      "Green": 587,
+      "LibDem": 492,
+      "Labour": 328
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::redhill_east_north_earlswood",
+    "ward_name": "Redhill East & North Earlswood",
+    "winner": "Green",
+    "seats_won": {
+      "Green": 2
+    },
+    "winners": [
+      {
+        "party": "Green",
+        "candidate": "Jonathan Essex",
+        "votes": 2798
+      },
+      {
+        "party": "Green",
+        "candidate": "Stephen McKenna",
+        "votes": 2391
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Green": 5189,
+      "Reform": 1480,
+      "Conservative": 1237,
+      "LibDem": 723,
+      "Labour": 531
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::redhill_west_meadvale",
+    "ward_name": "Redhill West & Meadvale",
+    "winner": "Green",
+    "seats_won": {
+      "Green": 2
+    },
+    "winners": [
+      {
+        "party": "Green",
+        "candidate": "Nick Abear",
+        "votes": 1482
+      },
+      {
+        "party": "Green",
+        "candidate": "Elly Heaton",
+        "votes": 1475
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Green": 2957,
+      "LibDem": 2562,
+      "Conservative": 2090,
+      "Reform": 1656,
+      "Labour": 827
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::reigate",
+    "ward_name": "Reigate",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Mark Johnston",
+        "votes": 2054
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Mike Robinson",
+        "votes": 1878
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3932,
+      "Conservative": 3328,
+      "Green": 1716,
+      "Reform": 1596,
+      "Independent": 778,
+      "Labour": 509
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::tadworth_walton_kingswood",
+    "ward_name": "Tadworth, Walton & Kingswood",
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 2
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Shelly Newton",
+        "votes": 2289
+      },
+      {
+        "party": "Conservative",
+        "candidate": "George Curry",
+        "votes": 2213
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Conservative": 4502,
+      "Reform": 3082,
+      "Independent": 1181,
+      "Green": 947,
+      "LibDem": 840,
+      "Labour": 437
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::caterham_hill",
+    "ward_name": "Caterham Hill",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Ben Horne",
+        "votes": 1908
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Martin Redman",
+        "votes": 1775
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3683,
+      "Reform": 2691,
+      "Conservative": 1922,
+      "Green": 873,
+      "Labour": 517
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::caterham_valley",
+    "ward_name": "Caterham Valley",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Tony Pearce",
+        "votes": 1871
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Robin Spencer",
+        "votes": 1731
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3602,
+      "Reform": 1895,
+      "Conservative": 1288,
+      "Green": 696,
+      "Labour": 334
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::godstone",
+    "ward_name": "Godstone",
+    "winner": "Reform",
+    "seats_won": {
+      "Reform": 2
+    },
+    "winners": [
+      {
+        "party": "Reform",
+        "candidate": "Simon Lock",
+        "votes": 1468
+      },
+      {
+        "party": "Reform",
+        "candidate": "Steve Paris",
+        "votes": 1456
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Reform": 2924,
+      "Conservative": 2622,
+      "LibDem": 2053,
+      "Green": 1175,
+      "Labour": 459
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::lingfield",
+    "ward_name": "Lingfield",
+    "winner": "Reform",
+    "seats_won": {
+      "Conservative": 1,
+      "Reform": 1
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Lesley Steeds",
+        "votes": 2057
+      },
+      {
+        "party": "Reform",
+        "candidate": "Nick Greenfield",
+        "votes": 2055
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Conservative": 3358,
+      "Reform": 3956,
+      "Independent": 1000,
+      "Green": 768,
+      "LibDem": 1187,
+      "Labour": 495
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::oxted",
+    "ward_name": "Oxted",
+    "winner": "Independent",
+    "seats_won": {
+      "Independent": 1,
+      "Conservative": 1
+    },
+    "winners": [
+      {
+        "party": "Independent",
+        "candidate": "Deb Shiner",
+        "votes": 2216
+      },
+      {
+        "party": "Conservative",
+        "candidate": "Cameron McIntosh",
+        "votes": 2180
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Independent": 4012,
+      "Conservative": 3387,
+      "Reform": 2063,
+      "Green": 910,
+      "Labour": 668,
+      "LibDem": 638,
+      "Other": 42
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSE",
+    "lad_name": "East Surrey",
+    "ward_code": "XSE::warlingham",
+    "ward_name": "Warlingham",
+    "winner": "Reform",
+    "seats_won": {
+      "Independent": 1,
+      "Reform": 1
+    },
+    "winners": [
+      {
+        "party": "Independent",
+        "candidate": "Jeremy Pursehouse",
+        "votes": 1757
+      },
+      {
+        "party": "Reform",
+        "candidate": "Ryan Bloomfield",
+        "votes": 1504
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Independent": 1757,
+      "Reform": 2892,
+      "Conservative": 2274,
+      "LibDem": 1312,
+      "Green": 522,
+      "Labour": 389
+    },
+    "source": "wiki:2026 East Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::ash",
+    "ward_name": "Ash",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Carla Morson",
+        "votes": 2088
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Phil Bellamy",
+        "votes": 1805
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3893,
+      "Conservative": 2427,
+      "Reform": 2382,
+      "Green": 770,
+      "Independent": 243,
+      "Labour": 221
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::guildford_east",
+    "ward_name": "Guildford East",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "George Potter",
+        "votes": 2818
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Jo Shaw",
+        "votes": 2541
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 5359,
+      "Conservative": 2397,
+      "Reform": 1599,
+      "Green": 936,
+      "Labour": 234
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::guildford_north",
+    "ward_name": "Guildford North",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Katie Steel",
+        "votes": 1696
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Masuk Miah",
+        "votes": 1590
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3286,
+      "Reform": 1722,
+      "Green": 1347,
+      "Conservative": 1124,
+      "Labour": 332
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::guildford_south_east",
+    "ward_name": "Guildford South East",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Vanessa King",
+        "votes": 2325
+      },
+      {
+        "party": "LibDem",
+        "candidate": "James Thornton",
+        "votes": 2236
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 4561,
+      "Conservative": 2730,
+      "Green": 1075,
+      "Reform": 993,
+      "Labour": 166,
+      "Independent": 124
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::guildford_south_west",
+    "ward_name": "Guildford South West",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Angela Goodwin",
+        "votes": 2595
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Steve Hives",
+        "votes": 1989
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 4584,
+      "Green": 2140,
+      "Conservative": 1211,
+      "Reform": 976,
+      "Labour": 200
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::guildford_west",
+    "ward_name": "Guildford West",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Julia McShane",
+        "votes": 1534
+      },
+      {
+        "party": "LibDem",
+        "candidate": "James Steel",
+        "votes": 1227
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 2761,
+      "Reform": 1593,
+      "Green": 1474,
+      "Conservative": 708,
+      "Labour": 407,
+      "Other": 100
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::horsleys",
+    "ward_name": "Horsleys",
+    "winner": "Other",
+    "seats_won": {
+      "Other": 1,
+      "Conservative": 1
+    },
+    "winners": [
+      {
+        "party": "Other",
+        "candidate": "Catherine Young",
+        "votes": 1845
+      },
+      {
+        "party": "Conservative",
+        "candidate": "David Evans",
+        "votes": 1446
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Other": 3221,
+      "Conservative": 2861,
+      "LibDem": 2133,
+      "Reform": 1659,
+      "Green": 532,
+      "Labour": 138
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::shalford",
+    "ward_name": "Shalford",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Green": 0,
+      "Conservative": 0,
+      "Reform": 0,
+      "Labour": 0,
+      "LibDem": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::shere",
+    "ward_name": "Shere",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Conservative": 0,
+      "Reform": 0,
+      "LibDem": 0,
+      "Labour": 0,
+      "Green": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::worplesdon",
+    "ward_name": "Worplesdon",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Conservative": 0,
+      "Reform": 0,
+      "Labour": 0,
+      "LibDem": 0,
+      "Green": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::addlestone",
+    "ward_name": "Addlestone",
+    "winner": "Reform",
+    "seats_won": {
+      "Reform": 2
+    },
+    "winners": [
+      {
+        "party": "Reform",
+        "candidate": "Scott Kelly",
+        "votes": 1254
+      },
+      {
+        "party": "Reform",
+        "candidate": "Vinny Mitchell",
+        "votes": 1195
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Reform": 2449,
+      "Conservative": 1826,
+      "Green": 1513,
+      "LibDem": 1164,
+      "Labour": 546
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::chertsey",
+    "ward_name": "Chertsey",
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 2
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Mark Nuti",
+        "votes": 1717
+      },
+      {
+        "party": "Conservative",
+        "candidate": "Shannon Saise-Marshall",
+        "votes": 1303
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Conservative": 3020,
+      "Reform": 2342,
+      "LibDem": 1057,
+      "Green": 972,
+      "Labour": 841
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::egham",
+    "ward_name": "Egham",
+    "winner": "Independent",
+    "seats_won": {
+      "Independent": 1,
+      "Reform": 1
+    },
+    "winners": [
+      {
+        "party": "Independent",
+        "candidate": "Isabel Mullens",
+        "votes": 1113
+      },
+      {
+        "party": "Reform",
+        "candidate": "George Gladstone-New",
+        "votes": 1014
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Independent": 2249,
+      "Reform": 1845,
+      "Labour": 1385,
+      "Green": 701,
+      "Conservative": 1311,
+      "LibDem": 469
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::englefield_green_virginia_water",
+    "ward_name": "Englefield Green & Virginia Water",
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 2
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Marisa Heath",
+        "votes": 1858
+      },
+      {
+        "party": "Conservative",
+        "candidate": "Chris Howorth",
+        "votes": 1683
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Conservative": 3541,
+      "LibDem": 1898,
+      "Reform": 1163,
+      "Green": 711,
+      "Labour": 475
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::thorpe_longcross_ottershaw",
+    "ward_name": "Thorpe, Longcross & Ottershaw",
+    "winner": "Reform",
+    "seats_won": {
+      "Reform": 1,
+      "Conservative": 1
+    },
+    "winners": [
+      {
+        "party": "Reform",
+        "candidate": "Carl Mann",
+        "votes": 1729
+      },
+      {
+        "party": "Conservative",
+        "candidate": "Jonathan Hulley",
+        "votes": 1623
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Reform": 3145,
+      "Conservative": 3026,
+      "LibDem": 2723,
+      "Independent": 426,
+      "Green": 662,
+      "Labour": 392
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::woodham_new_haw",
+    "ward_name": "Woodham & New Haw",
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 2
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Scott Lewis",
+        "votes": 2212
+      },
+      {
+        "party": "Conservative",
+        "candidate": "Josh Brown",
+        "votes": 1792
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Conservative": 4004,
+      "LibDem": 3216,
+      "Reform": 2122,
+      "Green": 422,
+      "Labour": 349
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::ashford",
+    "ward_name": "Ashford",
+    "winner": "Independent",
+    "seats_won": {
+      "Independent": 1,
+      "Reform": 1
+    },
+    "winners": [
+      {
+        "party": "Independent",
+        "candidate": "Joanne Sexton",
+        "votes": 1870
+      },
+      {
+        "party": "Reform",
+        "candidate": "Richard Barratt",
+        "votes": 1465
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Independent": 3079,
+      "Reform": 2900,
+      "Conservative": 1688,
+      "LibDem": 1189,
+      "Green": 474,
+      "Labour": 694
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::laleham_shepperton",
+    "ward_name": "Laleham & Shepperton",
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 2
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Maureen Attewell",
+        "votes": 2702
+      },
+      {
+        "party": "Conservative",
+        "candidate": "Sinead Mooney",
+        "votes": 2046
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Conservative": 4748,
+      "Reform": 2813,
+      "Green": 1452,
+      "LibDem": 1206,
+      "Labour": 512
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::lower_sunbury_halliford",
+    "ward_name": "Lower Sunbury & Halliford",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Green": 0,
+      "Labour": 0,
+      "LibDem": 0,
+      "Reform": 0,
+      "Conservative": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::staines",
+    "ward_name": "Staines",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Laura Barker",
+        "votes": 1989
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Chris Bateson",
+        "votes": 1641
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3630,
+      "Reform": 2252,
+      "Conservative": 1742,
+      "Independent": 661,
+      "Green": 930,
+      "Labour": 526,
+      "Other": 87
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::staines_south_ashford_west",
+    "ward_name": "Staines South & Ashford West",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Independent": 0,
+      "Reform": 0,
+      "LibDem": 0,
+      "Labour": 0,
+      "Conservative": 0,
+      "Green": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::stanwell_stanwell_moor_ashford_north",
+    "ward_name": "Stanwell, Stanwell Moor & Ashford North",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Green": 0,
+      "Labour": 0,
+      "Conservative": 0,
+      "LibDem": 0,
+      "Reform": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::sunbury_common_ashford_common",
+    "ward_name": "Sunbury Common & Ashford Common",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Conservative": 0,
+      "LibDem": 0,
+      "Other": 0,
+      "Independent": 0,
+      "Green": 0,
+      "Reform": 0,
+      "Labour": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::bagshot_windlesham_chobham",
+    "ward_name": "Bagshot, Windlesham & Chobham",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Simon Browne",
+        "votes": 2105
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Richard Wilson*",
+        "votes": 2097
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 4202,
+      "Reform": 2598,
+      "Conservative": 2600,
+      "Green": 483,
+      "Labour": 157
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::camberley_east",
+    "ward_name": "Camberley East",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Jamie Calder",
+        "votes": 1880
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Ying Perrett",
+        "votes": 1604
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3484,
+      "Conservative": 3054,
+      "Reform": 2344,
+      "Green": 621,
+      "Labour": 238
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::camberley_west_and_frimley",
+    "ward_name": "Camberley West and Frimley",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Alan Ashbery",
+        "votes": 1824
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Sarbie Kang",
+        "votes": 1599
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 3423,
+      "Reform": 2046,
+      "Conservative": 993,
+      "Green": 669,
+      "Labour": 263
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::frimley_green_mytchett",
+    "ward_name": "Frimley Green & Mytchett",
+    "winner": "LibDem",
+    "seats_won": {
+      "Conservative": 1,
+      "LibDem": 1
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Paul Deach*",
+        "votes": 2027
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Jacques Olmo*",
+        "votes": 1911
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "Conservative": 3464,
+      "LibDem": 3580,
+      "Reform": 2556,
+      "Green": 586,
+      "Labour": 170
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::heatherside_parkside",
+    "ward_name": "Heatherside & Parkside",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Rob Lee*",
+        "votes": 2912
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Dr Nirmal Kang*",
+        "votes": 2791
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 5703,
+      "Reform": 2816,
+      "Conservative": 1596,
+      "Green": 1018,
+      "Labour": 104
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::lightwater_west_end_bisley",
+    "ward_name": "Lightwater, West End & Bisley",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Julie Hoad*",
+        "votes": 2656
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Shaun Macdonald*",
+        "votes": 2270
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 4926,
+      "Reform": 2668,
+      "Conservative": 2493,
+      "Independent": 561,
+      "Green": 570,
+      "Labour": 128
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::cranleigh_ewhurst",
+    "ward_name": "Cranleigh & Ewhurst",
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Liz Townsend",
+        "votes": 3440
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Brian Steel",
+        "votes": 2681
+      }
+    ],
+    "year": 2026,
+    "votes": {
+      "LibDem": 6121,
+      "Conservative": 3130,
+      "Reform": 2562,
+      "Green": 647,
+      "Labour": 159
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::farnham_central",
+    "ward_name": "Farnham Central",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Other": 0,
+      "Green": 0,
+      "LibDem": 0,
+      "Labour": 0,
+      "Reform": 0,
+      "Conservative": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::farnham_north",
+    "ward_name": "Farnham North",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Green": 0,
+      "LibDem": 0,
+      "Reform": 0,
+      "Other": 0,
+      "Conservative": 0,
+      "Labour": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::farnham_south",
+    "ward_name": "Farnham South",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Green": 0,
+      "Reform": 0,
+      "LibDem": 0,
+      "Other": 0,
+      "Labour": 0,
+      "Conservative": 0,
+      "Independent": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::godalming_north",
+    "ward_name": "Godalming North",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Reform": 0,
+      "Green": 0,
+      "Conservative": 0,
+      "LibDem": 0,
+      "Labour": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::godalming_south_milford_witley",
+    "ward_name": "Godalming South, Milford & Witley",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Green": 0,
+      "Labour": 0,
+      "Independent": 0,
+      "LibDem": 0,
+      "Conservative": 0,
+      "Reform": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::haslemere",
+    "ward_name": "Haslemere",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Reform": 0,
+      "Green": 0,
+      "Conservative": 0,
+      "Labour": 0,
+      "LibDem": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::waverley_eastern_villages",
+    "ward_name": "Waverley Eastern Villages",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Conservative": 0,
+      "LibDem": 0,
+      "Reform": 0,
+      "Green": 0,
+      "Labour": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::waverley_western_villages",
+    "ward_name": "Waverley Western Villages",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Conservative": 0,
+      "LibDem": 0,
+      "Reform": 0,
+      "Labour": 0,
+      "Green": 0,
+      "Independent": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::goldsworth_east_horsell_village",
+    "ward_name": "Goldsworth East & Horsell Village",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Conservative": 0,
+      "Reform": 0,
+      "Labour": 0,
+      "LibDem": 0,
+      "Green": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::knaphill_goldsworth_west",
+    "ward_name": "Knaphill & Goldsworth West",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Independent": 0,
+      "Reform": 0,
+      "Green": 0,
+      "LibDem": 0,
+      "Conservative": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::the_byfleets",
+    "ward_name": "The Byfleets",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Reform": 0,
+      "Independent": 0,
+      "Conservative": 0,
+      "Labour": 0,
+      "LibDem": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::woking_north",
+    "ward_name": "Woking North",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Conservative": 0,
+      "LibDem": 0,
+      "Labour": 0,
+      "Reform": 0,
+      "Independent": 0,
+      "Other": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::woking_south",
+    "ward_name": "Woking South",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Green": 0,
+      "Reform": 0,
+      "LibDem": 0,
+      "Conservative": 0,
+      "Other": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::woking_south_east",
+    "ward_name": "Woking South East",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Reform": 0,
+      "Conservative": 0,
+      "LibDem": 0,
+      "Labour": 0,
+      "Green": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  },
+  {
+    "lad_code": "XSW",
+    "lad_name": "West Surrey",
+    "ward_code": "XSW::woking_south_west",
+    "ward_name": "Woking South West",
+    "winner": "Pending",
+    "seats_won": {},
+    "winners": [],
+    "year": 2026,
+    "votes": {
+      "Conservative": 0,
+      "Reform": 0,
+      "Labour": 0,
+      "Green": 0,
+      "Other": 0,
+      "LibDem": 0
+    },
+    "source": "wiki:2026 West Surrey Council election"
+  }
+]
