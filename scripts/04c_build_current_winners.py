@@ -239,12 +239,14 @@ def build_ced_winners(geoms: dict) -> list[dict]:
         ced_county_data = by_county_norm.get(cty_clean, {})
         key = normalise_ced(meta['name'])
         rec = ced_county_data.get(key)
+        matched_key = key
         if rec is None:
             override_key = ced_overrides.get((meta.get('cty', ''), key))
             if override_key is not None:
                 rec = ced_county_data.get(override_key)
                 if rec is not None:
                     counted['override'] += 1
+                    matched_key = override_key
         if rec:
             out.append({
                 'ced':     ced_code,
@@ -255,7 +257,7 @@ def build_ced_winners(geoms: dict) -> list[dict]:
                 'year':    rec['year'],
             })
             counted['matched'] += 1
-            used_keys.setdefault(cty_clean, set()).add(key)
+            used_keys.setdefault(cty_clean, set()).add(matched_key)
         else:
             out.append({
                 'ced':     ced_code,
