@@ -1710,15 +1710,15 @@
   wiki_prior_year: 2021
   electoral_system: fptp
   wiki_current_articles: null
-  # Phase 2 deferred: results live only in a Power BI embed at
-  # app.powerbi.com/view?r=eyJrIjoiOTFkYzM0MjktYTNjYS00NDA1LThhMTYtYzUwMzk2MTBiZjMwIiwidCI6IjEwOWM2YWVjLTUwNDYtNGE5NS04ZjNjLTg0ZjYzYmExOGFmNCJ9 ;
-  # the council's news page lists only party totals (no per-CED), and the
-  # district sites (West Suffolk, East Suffolk, Babergh, Mid Suffolk, Ipswich)
-  # each carry only their own slice. Either a Power BI DAX-query scraper or
-  # a hand-curated CSV (Norfolk-pattern) are the realistic paths.
-  official_url: null
-  official_parser: null
-  official_year: null
+  # Power BI "publish to web" embed. The DAX-query parser in
+  # scripts/_official_parsers/powerbi_dashboard.py walks the embed page to
+  # resolve the cluster, then POSTs a query against the Esri election
+  # template's `Results` table (ED / Candidate / Party Name / Votes /
+  # Outcome). Multi-seat divisions (Beccles & Kessingland) keep their
+  # top-of-poll councillor — matches the convention in the other parsers.
+  official_url: "https://app.powerbi.com/view?r=eyJrIjoiOTFkYzM0MjktYTNjYS00NDA1LThhMTYtYzUwMzk2MTBiZjMwIiwidCI6IjEwOWM2YWVjLTUwNDYtNGE5NS04ZjNjLTg0ZjYzYmExOGFmNCJ9"
+  official_parser: powerbi_dashboard
+  official_year: 2026
 
 - lad_code: E10000032
   name: West Sussex
