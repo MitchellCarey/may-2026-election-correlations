@@ -1,7 +1,7 @@
 council,scraped_name,gss_name,note
-Central Bedfordshire,Leighton Linslade North,Leighton-Linslade North,Welsh/English hyphen drift
-Central Bedfordshire,Leighton Linslade South,Leighton-Linslade South,Welsh/English hyphen drift
-Central Bedfordshire,Leighton Linslade West,Leighton-Linslade West,Welsh/English hyphen drift
+Central Bedfordshire,Leighton Linslade North,Leighton-Linslade North,hyphen drift
+Central Bedfordshire,Leighton Linslade South,Leighton-Linslade South,hyphen drift
+Central Bedfordshire,Leighton Linslade West,Leighton-Linslade West,hyphen drift
 Forest of Dean,Mitcheldean Ruardean & Drybrook,"Mitcheldean, Ruardean & Drybrook",punctuation drift
 Harborough,Broughton Astley - Primethorpe & Sutton,Broughton Astley-Primethorpe & Sutton,hyphen-vs-spaced-dash drift
 Harborough,Market Harborough - Great Bowden & Arden,Market Harborough-Great Bowden & Arden,hyphen-vs-spaced-dash drift
@@ -56,7 +56,6 @@ Boston,Five Villages,Five Village,Boston pluralisation drift
 East Lindsey,Scarborough and Seacroft,Scarbrough & Seacroft,Scarbrough spelling drift
 Uttlesford,Broad Oak & The Hallingsburys,Broad Oak & the Hallingburys,Uttlesford spelling drift
 Breckland,Attleborough Burgh & Havercroft,Attleborough Burgh & Haverscroft,Breckland spelling drift
-Lichfield,Armitage with Handsacre,Armitage with Handsacre,Lichfield direct
 Lichfield,Armitage & Handsacre,Armitage with Handsacre,Lichfield drift
 East Cambridgeshire,Downham,Downham Villages,E Cambs ward name expansion
 North Norfolk,St Benet,St Benet's,N Norfolk apostrophe drift
