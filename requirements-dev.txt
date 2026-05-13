@@ -1,0 +1,3 @@
+# Developer dependencies on top of requirements.txt — needed to run tests
+# (tests/) but not by the build pipeline or the deployed site.
+pytest>=8.0
