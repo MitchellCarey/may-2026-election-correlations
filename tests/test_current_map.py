@@ -20,7 +20,7 @@ DOCS = ROOT / "docs"
 # Coverage ratchet for GB grey wards. Tightening is fine; loosening should
 # raise a flag in review — bump only with justification (e.g. a boundary
 # review temporarily un-paints a cohort).
-GB_GREY_CEILING = 40
+GB_GREY_CEILING = 15
 
 
 # ---------------------------------------------------------------------------
@@ -56,6 +56,46 @@ def _grey_summary(grey_records):
     return ", ".join(f"{name} ({n})" for (_, name), n in by_council.most_common(8))
 
 
+def test_04c_warns_on_unmatched_override_target(tmp_path):
+    """A typo'd `gss_name` in current_ward_overrides.csv must surface on
+    stderr — under the N:1 additive semantics, a sibling row's success can
+    leave `matched_any=True` and hide the typo from scrape_unmatched, so
+    the loud WARN is the only signal."""
+    import shutil
+    import subprocess
+    import sys
+    repo = Path(__file__).resolve().parent.parent
+    work = tmp_path / "work"
+    # scripts/ is copied (not symlinked) because 04c calls Path(__file__).resolve()
+    # to find DATA — following a symlink would jump it back to the real repo.
+    shutil.copytree(repo / "scripts", work / "scripts")
+    (work / "data").mkdir()
+    for child in (repo / "data").iterdir():
+        # source/ is materialised below with the typo CSV; the two output
+        # JSONs are skipped because 04c writes them and Python follows the
+        # symlink, which would clobber the dev's real build artifacts.
+        if child.name in {"source", "current_winners.json", "ced_winners.json"}:
+            continue
+        (work / "data" / child.name).symlink_to(child)
+    (work / "data" / "source").mkdir()
+    for child in (repo / "data" / "source").iterdir():
+        if child.name == "current_ward_overrides.csv":
+            continue
+        (work / "data" / "source" / child.name).symlink_to(child)
+    src = (repo / "data" / "source" / "current_ward_overrides.csv").read_text()
+    typo_row = "County Durham,Aycliffe South,Definitely Not A Real Ward,test typo\n"
+    (work / "data" / "source" / "current_ward_overrides.csv").write_text(src + typo_row)
+
+    result = subprocess.run(
+        [sys.executable, "scripts/04c_build_current_winners.py"],
+        cwd=work, capture_output=True, text=True, check=True,
+    )
+    assert 'WARNING: current_ward_overrides.csv' in result.stderr, \
+        f"04c should WARN on typo'd override target; got stderr:\n{result.stderr}"
+    assert 'Definitely Not A Real Ward' in result.stderr, \
+        f"WARN should name the offending target; got stderr:\n{result.stderr}"
+
+
 @pytest.mark.parametrize("lad_code,ward", [
     # Bury Moorside — cancelled 2026, picked up from the 2022 backfill.
     ("E08000002", "Moorside"),
@@ -67,6 +107,10 @@ def _grey_summary(grey_records):
     ("E06000040", "Belmont"),
     # Newcastle-under-Lyme — wholly missing wiki_current_articles.
     ("E07000195", "Westlands"),
+    # County Durham boundary-review unitary — pre-review WD24 polygon
+    # picked up by an N:1 row in current_ward_overrides.csv. Regression
+    # here means the additive override loop in 04c lost a target.
+    ("E06000047", "Aycliffe East"),
 ])
 def test_anchor_wards_coloured(pipeline_outputs, lad_code, ward):
     """Specific wards the backfill targeted; regressions here mean the
@@ -123,6 +167,25 @@ def test_shared_css_view_rules():
         "missing CSS rule to hide wards in ceds-only view"
     assert ".show-ceds" not in css, \
         "legacy .show-ceds rule should have been removed"
+
+
+def test_uk_current_has_populated_overlay_arrays():
+    """GB current page must ship populated HOLYROOD / SENEDD / PCON data
+    arrays. An empty `const FOO = []` means 07d was re-run without the
+    upstream pipeline outputs (17→18 for Holyrood, 14→15 for Senedd,
+    19→20 for PCON), and the corresponding overlay silently disappears
+    from the deployed map — the *_PATHS constants stay populated but the
+    renderer iterates the data array to draw layers and the legend."""
+    import re
+    html = (DOCS / "uk" / "current.html").read_text()
+    for var in ("WARDS", "CEDS", "HOLYROOD", "SENEDD", "PCON"):
+        # Match `const FOO = [` followed by `{` (a populated record),
+        # not `const FOO = []` (the empty-fallback shape from 07d when
+        # the input JSON is missing).
+        assert re.search(rf'const {var}\s*=\s*\[\{{', html), (
+            f"{var} array is empty in docs/uk/current.html — regenerate "
+            f"its inputs and re-run 07d --region=gb"
+        )
 
 
 def test_spliced_js_uses_chronological_sort():
