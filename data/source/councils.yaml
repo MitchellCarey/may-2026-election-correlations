@@ -358,8 +358,19 @@
   wiki_prior: "2022 Solihull Metropolitan Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Solihull Metropolitan Borough Council election"
+    - year: 2023
+      title: "2023 Solihull Metropolitan Borough Council election"
+    - year: 2022
+      title: "2022 Solihull Metropolitan Borough Council election"
+    - year: 2021
+      title: "2021 Solihull Metropolitan Borough Council election"
+    - year: 2019
+      title: "2019 Solihull Metropolitan Borough Council election"
+    - year: 2018
+      title: "2018 Solihull Metropolitan Borough Council election"
 - lad_code: E08000030
   name: Walsall
   nation: england
@@ -569,8 +580,11 @@
   wiki_prior: "2022 Greenwich London Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Greenwich London Borough Council election"
+    - year: 2018
+      title: "2018 Greenwich London Borough Council election"
 - lad_code: E09000012
   name: Hackney
   nation: england
@@ -874,8 +888,19 @@
   wiki_prior: "2022 Hull City Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Hull City Council election"
+    - year: 2023
+      title: "2023 Hull City Council election"
+    - year: 2022
+      title: "2022 Hull City Council election"
+    - year: 2021
+      title: "2021 Hull City Council election"
+    - year: 2019
+      title: "2019 Hull City Council election"
+    - year: 2018
+      title: "2018 Hull City Council election"
 - lad_code: E06000012
   name: North East Lincolnshire
   nation: england
@@ -896,8 +921,21 @@
   wiki_prior: "2022 Plymouth City Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Plymouth City Council election"
+    - year: 2023
+      title: "2023 Plymouth City Council election"
+    - year: 2022
+      title: "2022 Plymouth City Council election"
+    - year: 2021
+      title: "2021 Plymouth City Council election"
+    - year: 2020
+      title: "2020 Plymouth City Council election"
+    - year: 2019
+      title: "2019 Plymouth City Council election"
+    - year: 2018
+      title: "2018 Plymouth City Council election"
 # Normally thirds; 2026 was a one-off all-up due to a 2024 boundary review.
 # Prior 2022 is the most recent thirds-pattern election.
 - lad_code: E06000030
@@ -920,8 +958,19 @@
   wiki_prior: "2022 Peterborough City Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Peterborough City Council election"
+    - year: 2023
+      title: "2023 Peterborough City Council election"
+    - year: 2022
+      title: "2022 Peterborough City Council election"
+    - year: 2021
+      title: "2021 Peterborough City Council election"
+    - year: 2019
+      title: "2019 Peterborough City Council election"
+    - year: 2018
+      title: "2018 Peterborough City Council election"
 # Renamed City Council in 2022; the 2022 article uses the pre-rename Borough
 # form.
 - lad_code: E06000033
@@ -968,8 +1017,19 @@
   wiki_prior: "2022 Wokingham Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Wokingham Borough Council election"
+    - year: 2023
+      title: "2023 Wokingham Borough Council election"
+    - year: 2022
+      title: "2022 Wokingham Borough Council election"
+    - year: 2021
+      title: "2021 Wokingham Borough Council election"
+    - year: 2019
+      title: "2019 Wokingham Borough Council election"
+    - year: 2018
+      title: "2018 Wokingham Borough Council election"
 # Normally thirds; 2026 was a one-off all-up due to a 2024 boundary review.
 # Prior 2022 is the most recent thirds-pattern election.
 - lad_code: E06000042
@@ -1239,8 +1299,19 @@
   wiki_prior: "2022 Winchester City Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Winchester City Council election"
+    - year: 2023
+      title: "2023 Winchester City Council election"
+    - year: 2022
+      title: "2022 Winchester City Council election"
+    - year: 2021
+      title: "2021 Winchester City Council election"
+    - year: 2019
+      title: "2019 Winchester City Council election"
+    - year: 2018
+      title: "2018 Winchester City Council election"
 - lad_code: E07000095
   name: Broxbourne
   nation: england
@@ -1283,8 +1354,19 @@
   wiki_prior: "2022 Tunbridge Wells Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Tunbridge Wells Borough Council election"
+    - year: 2023
+      title: "2023 Tunbridge Wells Borough Council election"
+    - year: 2022
+      title: "2022 Tunbridge Wells Borough Council election"
+    - year: 2021
+      title: "2021 Tunbridge Wells Borough Council election"
+    - year: 2019
+      title: "2019 Tunbridge Wells Borough Council election"
+    - year: 2018
+      title: "2018 Tunbridge Wells Borough Council election"
 - lad_code: E07000117
   name: Burnley
   nation: england
@@ -1316,8 +1398,21 @@
   wiki_prior: "2022 Hyndburn Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Hyndburn Borough Council election"
+    - year: 2023
+      title: "2023 Hyndburn Borough Council election"
+    - year: 2022
+      title: "2022 Hyndburn Borough Council election"
+    - year: 2021
+      title: "2021 Hyndburn Borough Council election"
+    - year: 2020
+      title: "2020 Hyndburn Borough Council election"
+    - year: 2019
+      title: "2019 Hyndburn Borough Council election"
+    - year: 2018
+      title: "2018 Hyndburn Borough Council election"
 - lad_code: E07000122
   name: Pendle
   nation: england
@@ -1327,8 +1422,19 @@
   wiki_prior: "2022 Pendle Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Pendle Borough Council election"
+    - year: 2023
+      title: "2023 Pendle Borough Council election"
+    - year: 2022
+      title: "2022 Pendle Borough Council election"
+    - year: 2021
+      title: "2021 Pendle Borough Council election"
+    - year: 2019
+      title: "2019 Pendle Borough Council election"
+    - year: 2018
+      title: "2018 Pendle Borough Council election"
 - lad_code: E07000123
   name: Preston
   nation: england
@@ -1404,8 +1510,19 @@
   wiki_prior: "2022 West Oxfordshire District Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 West Oxfordshire District Council election"
+    - year: 2023
+      title: "2023 West Oxfordshire District Council election"
+    - year: 2022
+      title: "2022 West Oxfordshire District Council election"
+    - year: 2021
+      title: "2021 West Oxfordshire District Council election"
+    - year: 2019
+      title: "2019 West Oxfordshire District Council election"
+    - year: 2018
+      title: "2018 West Oxfordshire District Council election"
 - lad_code: E07000192
   name: Cannock Chase
   nation: england
@@ -1426,8 +1543,11 @@
   wiki_prior: "2022 Newcastle-under-Lyme Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2022
+      title: "2022 Newcastle-under-Lyme Borough Council election"
+    - year: 2018
+      title: "2018 Newcastle-under-Lyme Borough Council election"
 - lad_code: E07000199
   name: Tamworth
   nation: england
@@ -1470,8 +1590,19 @@
   wiki_prior: "2022 Rugby Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Rugby Borough Council election"
+    - year: 2023
+      title: "2023 Rugby Borough Council election"
+    - year: 2022
+      title: "2022 Rugby Borough Council election"
+    - year: 2021
+      title: "2021 Rugby Borough Council election"
+    - year: 2019
+      title: "2019 Rugby Borough Council election"
+    - year: 2018
+      title: "2018 Rugby Borough Council election"
 - lad_code: E07000223
   name: Adur
   nation: england
@@ -1492,8 +1623,19 @@
   wiki_prior: "2022 Crawley Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
-
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Crawley Borough Council election"
+    - year: 2023
+      title: "2023 Crawley Borough Council election"
+    - year: 2022
+      title: "2022 Crawley Borough Council election"
+    - year: 2021
+      title: "2021 Crawley Borough Council election"
+    - year: 2019
+      title: "2019 Crawley Borough Council election"
+    - year: 2018
+      title: "2018 Crawley Borough Council election"
 - lad_code: E07000229
   name: Worthing
   nation: england
