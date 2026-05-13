@@ -103,17 +103,26 @@ def load_geom_overrides() -> dict[tuple[str, str], str]:
     return overrides
 
 
-def load_current_overrides() -> dict[tuple[str, str], str]:
-    """Optional (council_name, scraped_name) → gss_name overrides scoped to
-    the Current scrape (Welsh/Scottish pre-2024 name drift). Missing file
-    returns {}."""
+def load_current_overrides() -> dict[tuple[str, str], list[str]]:
+    """Optional (council_name, scraped_name) → [gss_name, ...] overrides
+    scoped to the Current scrape. Two cases:
+
+      - 1:1 — Welsh/Scottish pre-2024 name drift (one scraped name → one
+              WD24 ward).
+      - N:1 — boundary-review unitaries (Durham, Bucks, etc.) where one
+              post-review scraped ward absorbed two or more pre-review
+              WD24 wards. Same scraped_name appears on multiple rows; each
+              row contributes one WD24 target.
+
+    Missing file returns {}."""
     path = SOURCE / 'current_ward_overrides.csv'
     if not path.exists():
         return {}
-    overrides: dict[tuple[str, str], str] = {}
+    overrides: dict[tuple[str, str], list[str]] = {}
     with open(path, newline='') as f:
         for row in csv.DictReader(f):
-            overrides[(row['council'], row['scraped_name'])] = row['gss_name']
+            key = (row['council'], row['scraped_name'])
+            overrides.setdefault(key, []).append(row['gss_name'])
     return overrides
 
 
@@ -373,18 +382,30 @@ def main():
         if not lad.startswith(GB_LAD_PREFIXES):
             continue
         for ward_name, rec in ward_map.items():
-            gss = geom_by_norm.get((lad, normalise(ward_name)))
-            match_type = 'norm'
-            if gss is None:
-                target = current_overrides.get((council['name'], ward_name))
-                if target is not None:
-                    gss = geom_by_norm.get((lad, normalise(target)))
-                    match_type = 'override'
-            if gss is None:
-                if len(scrape_unmatched) < 25:
-                    scrape_unmatched.append((council['name'], ward_name))
-                continue
-            assign(gss, rec['party'], rec['year'], 'current_scrape', match_type)
+            matched_any = False
+            direct_gss = geom_by_norm.get((lad, normalise(ward_name)))
+            if direct_gss is not None:
+                assign(direct_gss, rec['party'], rec['year'],
+                       'current_scrape', 'norm')
+                matched_any = True
+            # Overrides are additive, not fallback — a 2025 post-review
+            # ward whose name still matches a WD24 polygon (e.g.
+            # "Chester-le-Street North") also paints the WD24 polygons
+            # of the pre-review wards it absorbed. For older 1:1
+            # name-drift rows the direct lookup misses and only the
+            # override target fires; behaviour unchanged.
+            for target in current_overrides.get((council['name'], ward_name), []):
+                target_gss = geom_by_norm.get((lad, normalise(target)))
+                if target_gss is None:
+                    print(f'WARNING: current_ward_overrides.csv: {council["name"]} '
+                          f'"{ward_name}" → "{target}" — target not a WD24 ward '
+                          f'in {lad} (typo? boundary review?)', file=sys.stderr)
+                    continue
+                assign(target_gss, rec['party'], rec['year'],
+                       'current_scrape', 'override')
+                matched_any = True
+            if not matched_any and len(scrape_unmatched) < 25:
+                scrape_unmatched.append((council['name'], ward_name))
 
     # CED-side join — produces data/ced_winners.json for the county-council
     # overlay on the Current map page. Run before the per-ward output so the
