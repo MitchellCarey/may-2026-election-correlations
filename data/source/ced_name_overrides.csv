@@ -1,0 +1,77 @@
+cty_code,ons_name,csv_division,note
+E10000020,Fakenham ED,Fakenham and The Raynhams,Norfolk 2025 review: renamed (Raynhams absorbed)
+E10000020,Gorleston St. Andrews ED,Gorleston,Norfolk 2025 review: renamed
+E10000020,Gayton and Nar Valley ED,Nar and Wissey Valleys,Norfolk 2025 review: renamed
+E10000020,Yarmouth Nelson and Southtown ED,Yarmouth Nelson and South Town,Norfolk: ONS spelling 'Southtown' vs council 'South Town'
+E10000020,Dereham North ED,Dereham North and Scarning,Norfolk 2025 review: Scarning absorbed
+E10000020,Caister-on-Sea ED,North Caister and Ormesby,Norfolk 2025 review: 1-into-2 split (also S Caister and Bure)
+E10000020,Clavering ED,Loddon,Norfolk 2025 review: Clavering Hundred absorbed into Loddon
+E10000020,East Flegg ED,The Fleggs,Norfolk 2025 review: 2-into-1 merge (with West Flegg)
+E10000020,West Flegg ED,The Fleggs,Norfolk 2025 review: 2-into-1 merge (with East Flegg)
+E10000020,Fincham ED,Watlington and The Fens,Norfolk 2025 review: absorbed into Watlington/Fens
+E10000020,Hevingham and Spixworth ED,Coltishall and Spixworth,Norfolk 2025 review: renamed (Coltishall principal village)
+E10000020,Hoveton and Stalham ED,Hoveton,Norfolk 2025 review: 1-into-2 split (Hoveton principal; Stalham via S Smallburgh)
+E10000020,South Smallburgh ED,Stalham,Norfolk 2025 review: absorbed into Stalham
+E10000020,Humbleyard ED,Hethersett,Norfolk 2025 review: Humbleyard Hundred renamed (Hethersett principal)
+E10000020,Melton Constable ED,Holt,Norfolk 2025 review: absorbed into Holt (matched)
+E10000020,Mundesley ED,North Walsham West and Mundesley,Norfolk 2025 review: 2-into-1 merge (with N Walsham W and Erpingham)
+E10000020,North Walsham West and Erpingham ED,North Walsham West and Mundesley,Norfolk 2025 review: principal successor (Erpingham split off)
+E10000020,Necton and Launditch ED,Launditch,Norfolk 2025 review: 1-into-2 split (Launditch principal)
+E10000020,Yare and All Saints ED,Yare Valley,Norfolk 2025 review: renamed
+E10000012,Abbey ED,Colchester Abbey,Essex 2025 review: prefix added
+E10000012,Basildon Pitsea ED,Pitsea,Essex 2025 review: prefix dropped
+E10000012,Basildon Westley Heights ED,Westley Heights,Essex 2025 review: prefix dropped
+E10000012,South Woodham Ferrers ED,Woodham Ferrers,Essex 2025 review: prefix dropped
+E10000012,Great Baddow ED,Great Baddow and Galleywood,Essex 2025 review: Galleywood absorbed
+E10000012,Maypole ED,Colchester Maypole,Essex 2025 review: prefix added
+E10000012,Basildon Laindon Park and Fryerns ED,Gloucester Park,Essex 2025 review: Fryerns absorbed into Gloucester Park (Laindon Park to Laindon Town)
+E10000012,Billericay and Burstead ED,Burstead,Essex 2025 review: 1-into-2 split (Burstead principal; Billericay North new)
+E10000012,Buckhurst Hill and Loughton South ED,Loughton South and Buckhurst Hill West,Essex 2025 review: 2-into-3 Loughton redraw (issue #14)
+E10000012,Chigwell and Loughton Broadway ED,Chigwell and Buckhurst Hill East,Essex 2025 review: 2-into-3 Loughton redraw (issue #14)
+E10000012,Loughton Central ED,Loughton North,Essex 2025 review: 2-into-3 Loughton redraw (issue #14)
+E10000012,Clacton East ED,Clacton South,Essex 2025 review: renamed
+E10000012,Clacton West ED,Clacton West and St Osyth,Essex 2025 review: St Osyth absorbed
+E10000012,Drury ED,Colchester St Johns,Essex 2025 review: Drury (E central Colchester) absorbed into St Johns
+E10000012,Harlow North ED,Old Harlow,Essex 2025 review: NE Harlow rename
+E10000012,Harlow South East ED,Harlow Common and Church Langley,Essex 2025 review: SE Harlow renamed (Church Langley)
+E10000012,Harlow West ED,Harlow Pardon and Toddbrook,Essex 2025 review: W Harlow renamed (Pardon/Toddbrook)
+E10000012,Heybridge and Tollesbury ED,Maldon Rural South,Essex 2025 review: Tollesbury rural absorbed (Heybridge to Maldon Town and Heybridge)
+E10000012,Maldon ED,Maldon Town and Heybridge,Essex 2025 review: town principal
+E10000012,Mile End and Highwoods ED,Colchester North,Essex 2025 review: N Colchester renamed
+E10000012,Parsons Heath and East Gates ED,Colchester St Johns,Essex 2025 review: E Colchester absorbed into St Johns
+E10000012,Rayleigh North ED,Rayleigh West,Essex 2025 review: Rayleigh redraw (N renamed W; S kept)
+E10000012,Rochford West ED,Rochford East,Essex 2025 review: Rochford redraw (W renamed E; N/S kept)
+E10000012,Southminster ED,Burnham and Southminster,Essex 2025 review: Burnham absorbed
+E10000012,Springfield ED,Chelmer,Essex 2025 review: Springfield absorbed into Chelmer (matched)
+E10000012,Stanway and Pyefleet ED,Stanway and Marks Tey,Essex 2025 review: renamed
+E10000012,Stock ED,Danbury and The Hanningfields,Essex 2025 review: Stock absorbed
+E10000012,Wickford Crouch ED,Castledon and Crouch,Essex 2025 review: renamed
+E10000012,Witham Northern ED,Witham Town,Essex 2025 review: Witham N/S renamed Town/West and Rural
+E10000012,Witham Southern ED,Witham West and Rural,Essex 2025 review: Witham N/S renamed Town/West and Rural
+E10000029,Beccles ED,Beccles & Kessingland,Suffolk 2025 review: Kessingland absorbed
+E10000029,Blything ED,Blyth Estuary,Suffolk 2025 review: renamed
+E10000029,Framlingham ED,Framlingham & Wickham Market,Suffolk 2025 review: Wickham Market absorbed
+E10000029,Great Cornard ED,Cornard & Sudbury East,Suffolk 2025 review: renamed (also Sudbury East and Waldingfield ED)
+E10000029,Belstead Brook ED,Belstead Hills,Suffolk 2025 review: renamed
+E10000029,Haverhill East and Kedington ED,Haverhill East & Rural,Suffolk 2025 review: renamed
+E10000029,Chantry ED,Gipping,Suffolk 2025 review: SW Ipswich absorbed into Gipping
+E10000029,Felixstowe Coastal ED,Felixstowe Clifflands,Suffolk 2025 review: 2-into-2 Felixstowe redraw (issue #14)
+E10000029,Felixstowe North and Trimley ED,Walton & Trimleys,Suffolk 2025 review: Trimleys principal successor
+E10000029,Haverhill Cangle ED,Haverhill North West & Withersfield,Suffolk 2025 review: Cangle (N Haverhill) renamed
+E10000029,Kesgrave and Rushmere St. Andrew ED,Kesgrave,Suffolk 2025 review: 1-into-2 split (Kesgrave principal)
+E10000029,Kessingland and Southwold ED,Saxmundham & District,Suffolk 2025 review: Southwold absorbed (Kessingland to Beccles ED override)
+E10000029,Lowestoft South ED,Oulton Broad & Normanston,Suffolk 2025 review: SW Lowestoft renamed
+E10000029,Pakefield ED,Kirkley & Pakefield,Suffolk 2025 review: Pakefield absorbed
+E10000029,Samford ED,Peninsula,Suffolk 2025 review: Samford Hundred absorbed into Peninsula (matched)
+E10000029,St. Helen's ED,St Clement's,Suffolk 2025 review: E Ipswich parishes merged
+E10000029,St. John's ED,Priory Heath,Suffolk 2025 review: E Ipswich absorbed into Priory Heath (matched)
+E10000029,St. Margaret's and Westgate ED,St Margaret's,Suffolk 2025 review: 1-into-2 split (St Margaret's principal; Westgate new)
+E10000029,Stowmarket North and Stowupland ED,Stowmarket East,Suffolk 2025 review: Stowmarket redraw (N/Stowupland → E)
+E10000029,Stowmarket South ED,Stowmarket West,Suffolk 2025 review: Stowmarket redraw (S → W)
+E10000029,Sudbury ED,Sudbury West,Suffolk 2025 review: 1-into-2 split (Sudbury W principal; Sudbury E via Great Cornard ED override)
+E10000029,Sudbury East and Waldingfield ED,Cornard & Sudbury East,Suffolk 2025 review: 2-into-1 merge (with Great Cornard ED)
+E10000029,Thingoe North ED,Barrow & Thingoe,Suffolk 2025 review: Thingoe redraw (N principal successor)
+E10000029,Thingoe South ED,Barrow & Thingoe,Suffolk 2025 review: 2-into-1 merge (with Thingoe North)
+E10000029,Tower ED,Abbeygate & Minden,Suffolk 2025 review: Bury St Edmunds town center renamed
+E10000029,Whitehouse and Whitton ED,Whitton,Suffolk 2025 review: 1-into-2 split (Whitton principal)
+E10000029,Wickham ED,Framlingham & Wickham Market,Suffolk 2025 review: 2-into-1 merge (with Framlingham ED)
