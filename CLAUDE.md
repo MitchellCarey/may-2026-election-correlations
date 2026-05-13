@@ -132,7 +132,7 @@ NI (18 N05 seats) is fetched on disk but **filtered out at render time** in `07d
 ```
 12_fetch_official_results.py   → data/source/official_<slug>_<year>.{html|json|pdf}   (idempotent — skips cached files)
 13_extract_official.py         → data/source/{county,ward}_official_<year>.csv         (appends rows from registered parsers; preserves hand-curated rows for councils without a parser)
-04c_build_current_winners.py   → as above, with official rows outranking Wikipedia per-record
+04c_build_current_winners.py   → as above, with official rows outranking both Wikipedia and all_wards.json per-record (county-side via county_official_<year>.csv, ward-side via ward_official_<year>.csv)
 ```
 
 Each council in `councils.yaml` may declare `official_url` + `official_parser` + `official_year`. `12` fetches the URL (default GET; parser modules can override `fetch()` for Power BI etc.) into the cache. `13` dispatches on `official_parser` to `scripts/_official_parsers/<key>.py` and appends rows. CSV schemas: `lad_code,county,division,party,candidate,votes,source` for E10 counties; `lad_code,council,ward,party,candidate,votes,source` for everything else.
@@ -142,10 +142,10 @@ Parsers landed for Phase 2 of issue #9:
 - `moderngov_per_division` — moderngov.co.uk per-division pages (West Sussex)
 - `cmis_per_division` — DotNetNuke / OpenElection.net RDFa pages (Essex)
 - `powerbi_dashboard` — Power BI publish-to-web DAX scraper (Suffolk)
+- `hampshire_cloudflare` — single all-divisions HTML table behind Cloudflare; uses `scripts/_official_parsers/_cloudflare.py` (curl_cffi Chrome TLS impersonation) to bypass the 403 (Hampshire)
 - Phase 1 hand-curated CSV pattern still in use for Norfolk (no parser yet)
 
-Phase 2 deferrals (no `official_url` set, see comments on the registry rows):
-- Hampshire — hants.gov.uk Cloudflare-blocks programmatic clients; districts publish only their slices
+The `_cloudflare.py` helper (private module — leading underscore, never declared as `official_parser`) exposes `cloudflare_session()` and `fetch_cloudflare()` so any future Phase 4/5 council fronted by Cloudflare can opt in by importing it; `curl_cffi` is lazy-imported to keep contributors who don't run a CF-bypass parser from needing the wheel installed.
 
 For counties where the 2025/2026 LGBCE review redrew divisions, `scripts/09c_overlay_lgbce_ceds.py` replaces the pre-review CED25 polygons in `data/ward_geoms.json` with post-review polygons sourced from each county's LGBCE final-recommendation shapefile (Norfolk, Essex, Suffolk today). The shapefile zips cache under `data/source/lgbce/` and are fetched idempotently. Spelling differences between LGBCE and the council's published CSV are reconciled by the `NAME_FIXES` map at the top of `09c`.
 
@@ -175,7 +175,7 @@ After any rebuild, `git diff docs/*.html` should only show changes inside the BE
 
 1. If the task changed Winners data/scripts/renderer: confirm `07_build_artifact.py` ran cleanly and printed its summary line.
 2. If the task changed Changes data/scripts/renderer: confirm `07b_build_changes_artifact.py` ran cleanly and printed its summary line.
-3. If the task changed Map data/scripts/renderer: confirm `07c_build_map_artifact.py` ran cleanly for both `--region=gm` (must be 215/215 wards) and `--region=gb` (currently ~2,200 wards across the 134 registered councils). Less than the expected count for either region means the GSS join lost wards and needs investigation.
+3. If the task changed Map data/scripts/renderer: confirm `07c_build_map_artifact.py` ran cleanly for both `--region=gm` (must be 215/215 wards) and `--region=gb` (currently `2426/2434 results-side wards joined to a polygon`, with `8 ward(s) dropped from the map: override polygon already claimed by a direct-match ward`). The 8-drop residual is structural and tracked in issue #4 §3: Calderdale (+1), Swindon (+5), and Milton Keynes (+2) each added more 2026 wards than they had pre-2024 polygons, so the surplus new wards have no unclaimed WD24 proxy to claim (the exact list is `Calderdale::Wainhouse`, `Swindon::{Highworth, Penhill & Pinehurst, Rodbourne Ferndale and Western, St Andrews West and Tadpole, Upper Stratton}`, `Milton Keynes::{Great Linford, Ouzel Valley}`). They stay in the analysis tables; only the GB map can't paint them. Any change to the matched / dropped counts beyond this baseline means the GSS join lost wards and needs investigation.
 4. If the task changed Current data/scripts/renderer: confirm `07d_build_current_map_artifact.py` ran cleanly for both `--region=gm` (must be 215/215 wards) and `--region=gb` (today's baseline is 7,934 GB ward-based wards with **7,925 winner-coloured + 9 grey** — the grey residual after issue #7: 8 Scottish wards where the 2022 STV article didn't cover every WD24 polygon (Highland, Inverclyde, Moray, Na h-Eileanan Siar, Shetland), and 1 Runnymede ward absent from its 2023 article. Both buckets are deferred to issue #9 phase 5 official-source backfill. The 2025-all-out boundary-review unitaries (Durham, Bucks, West/North Northamptonshire, Northumberland, Shropshire) closed when `current_ward_overrides.csv` was extended to N:1 mappings — one post-review scraped ward can now paint every pre-review WD24 polygon it absorbed.). The GB run should also log `senedd in gb: 16 (with winner: 16; grey: 0)`, `pcon in gb: 632 (with winner: 632; grey: 0)`, and `15`'s summary should read `16/16 constituencies, 96/96 seats accounted for`.
 5. `git status` / `git diff docs/*.html` — make sure the spliced output is committed alongside the script changes (the deployed artifacts are the HTMLs, not the scripts; an un-rebuilt commit ships stale data).
 6. If you only changed copy/CSS outside the markers, no rebuild is required — say so explicitly rather than running 07/07b/07c/07d "just in case" (a no-op diff is fine, but skip the noise).
