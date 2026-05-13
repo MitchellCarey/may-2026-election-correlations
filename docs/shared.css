@@ -898,8 +898,7 @@ body {
 
 .map-svg { display: block; width: 100%; height: auto; }
 .map-svg path.ward {
-  stroke: var(--paper);
-  stroke-width: 0.6;
+  stroke: none;
   vector-effect: non-scaling-stroke;
   cursor: default;
 }
