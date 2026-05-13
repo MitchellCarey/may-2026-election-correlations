@@ -119,6 +119,23 @@ def main():
     county_data = (json.loads(county_data_path.read_text())
                    if region == 'gb' and county_data_path.exists() else {})
 
+    # Surrey unitary overlay (issue #4 §4) — GB-only layer for the 81 East
+    # Surrey + West Surrey wards from the inaugural 7 May 2026 elections.
+    # The unitaries aren't in WD24 / LAD25 yet, so they side-channel
+    # through scripts 22/23/24. Painted only on the After view (May 2026
+    # winners); the Before and Flips views are silent because there is no
+    # prior election under this geography.
+    surrey_path = DATA / 'surrey_2026.json'
+    surrey_geom_path = DATA / 'surrey_geoms.json'
+    surrey_records = (
+        json.loads(surrey_path.read_text())
+        if region == 'gb' and surrey_path.exists() else []
+    )
+    surrey_geoms = (
+        json.loads(surrey_geom_path.read_text())
+        if region == 'gb' and surrey_geom_path.exists() else {'unitaries': {}}
+    )
+
     results = [r for r in results if r.get('lad_code') in region_lad_codes]
 
     # If the geom file doesn't cover the full region, refuse to splice — a
@@ -308,6 +325,26 @@ def main():
         print(f'county overlay: {n_with_path}/{n_districts} districts have polygons '
               f'across {n_counties} counties')
 
+    # Surrey unitary overlay (GB only) — one record + path per ward in the
+    # two new unitaries. Pending wards (Wikipedia not yet updated post-
+    # election) carry winner='Pending' and paint with the Pending palette.
+    surrey_paths = {
+        code: c['path'] for code, c in surrey_geoms.get('unitaries', {}).items()
+    }
+    surrey_js = [{
+        'c':  r['ward_code'],
+        'l':  r['lad_code'],
+        'ln': r['lad_name'],
+        'n':  r['ward_name'],
+        'w':  r['winner'],
+        'y':  r['year'],
+        'seats': r['seats_won'],
+    } for r in surrey_records]
+    if region == 'gb':
+        n_surrey_decided = sum(1 for s in surrey_js if s['seats'])
+        print(f'surrey in gb: {len(surrey_js)} (decided: {n_surrey_decided}; '
+              f'pending: {len(surrey_js) - n_surrey_decided})')
+
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
     # GB exposes a second viewBox (zoomed to the registered councils) so
@@ -320,6 +357,9 @@ def main():
     js.append('const COUNTRY_PATHS = ' + json.dumps(country_paths, separators=(',', ':')) + ';')
     js.append('const COUNTY_PATHS = ' + json.dumps(county_paths, separators=(',', ':')) + ';')
     js.append('const COUNTY_DATA = ' + json.dumps(county_data, separators=(',', ':')) + ';')
+    js.append('const SURREY_PATHS = ' + json.dumps(surrey_paths, separators=(',', ':')) + ';')
+    js.append('const SURREY = ' + json.dumps(surrey_js, ensure_ascii=False,
+                                             separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(all_wards, separators=(',', ':')) + ';')
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
     js.append('const PARTY_DISPLAY = ' + json.dumps(PARTY_DISPLAY) + ';')
@@ -384,14 +424,30 @@ function fmtCountyTitle(c) {
   return lines.join('\n');
 }
 
+function fmtSurreyTitle(s) {
+  const lines = [s.ln + ' · ' + s.n];
+  const seatEntries = Object.entries(s.seats || {}).sort((a, b) => b[1] - a[1]);
+  if (seatEntries.length) {
+    lines.push('2026 · seats: ' + seatEntries.map(
+      ([p, n]) => (PARTY_DISPLAY[p] || p) + ' ' + n
+    ).join(' · '));
+  } else {
+    lines.push('2026 · result pending (Wikipedia not yet updated)');
+  }
+  return lines.join('\n');
+}
+
 /**
  * Render one map into the given container.
  *   fillFor(w)      → ward colour (or null/undefined → NEUTRAL_FILL)
  *   classFor(w)     → extra class on the ward path (e.g. 'fuzzy')
  *   countyFillFor(c) → optional district-level colour for the counties
  *                      overlay (returns null/undefined to leave grey).
+ *   surreyFillFor(s) → optional per-ward colour for the East/West Surrey
+ *                      unitary overlay (null = skip; passing null/undefined
+ *                      for this argument skips the entire layer).
  */
-function renderMap(containerId, fillFor, classFor, countyFillFor) {
+function renderMap(containerId, fillFor, classFor, countyFillFor, surreyFillFor) {
   const target = document.getElementById(containerId);
   if (!target) return;
   const root = svgRoot();
@@ -420,6 +476,22 @@ function renderMap(containerId, fillFor, classFor, countyFillFor) {
     });
     root.appendChild(ctyGroup);
   }
+  // Surrey unitary overlay — paints East Surrey + West Surrey wards on top
+  // of any underlying grey (no 2026 contest sat under these areas at WD24
+  // level because the predecessor districts were abolished). Sits ABOVE
+  // the wards/counties group but BELOW country/borough outlines, same as
+  // the counties layer.
+  if (surreyFillFor) {
+    const surreyGroup = document.createElementNS(SVG_NS, 'g');
+    surreyGroup.setAttribute('class', 'surrey');
+    SURREY.forEach(s => {
+      const d = SURREY_PATHS[s.c];
+      if (!d) return;
+      const fill = surreyFillFor(s) || NEUTRAL_FILL;
+      surreyGroup.appendChild(makePath(d, 'surrey', fill, fmtSurreyTitle(s)));
+    });
+    root.appendChild(surreyGroup);
+  }
   // Country outlines underneath the borough outlines so hiding the
   // boroughs leaves the UK silhouette intact. Only emitted on the GB page;
   // the object is empty on GM and this loop is a no-op there.
@@ -438,20 +510,23 @@ function renderMap(containerId, fillFor, classFor, countyFillFor) {
 renderMap('map-before',
   w => w.pp ? PARTY_COLOURS[w.pp] : null,
   w => w.mp === 'fuzzy' ? 'fuzzy' : '',
-  c => c.winner_prior ? PARTY_COLOURS[c.winner_prior] : null);
+  c => c.winner_prior ? PARTY_COLOURS[c.winner_prior] : null,
+  null);  // no Surrey overlay on Before — no prior election under this geography
 
-// After — fill by 2026 winner.
+// After — fill by 2026 winner. Surrey unitaries paint here only.
 renderMap('map-after',
   w => w.w ? PARTY_COLOURS[w.w] : null,
   null,
-  c => c.winner_2026 ? PARTY_COLOURS[c.winner_2026] : null);
+  c => c.winner_2026 ? PARTY_COLOURS[c.winner_2026] : null,
+  s => (s.w && PARTY_COLOURS[s.w]) || null);
 
 // Flips — fill ONLY where the seat changed hands; gainer's colour. Holds and
 // no-result wards stay neutral grey.
 renderMap('map-flips',
   w => (w.fl === true && w.w) ? PARTY_COLOURS[w.w] : null,
   null,
-  c => (c.flipped && c.winner_2026) ? PARTY_COLOURS[c.winner_2026] : null);
+  c => (c.flipped && c.winner_2026) ? PARTY_COLOURS[c.winner_2026] : null,
+  null);  // no Surrey overlay on Flips — no prior winners to compare against
 
 // Toggle borough-outline visibility. Country outlines (E/W/S) stay drawn
 // either way, so when boroughs are hidden the reader sees just the colour
@@ -515,6 +590,7 @@ WARDS.forEach(w => {
   if (w.w)  partiesPresent.add(w.w);
   if (w.pp) partiesPresent.add(w.pp);
 });
+SURREY.forEach(s => { if (s.w && s.w !== 'Pending') partiesPresent.add(s.w); });
 const legend = document.getElementById('map-legend');
 if (legend) {
   LEGEND_ORDER.forEach(p => {
