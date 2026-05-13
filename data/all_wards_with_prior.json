@@ -51066,10 +51066,10 @@
     "pct_black": 7.01,
     "pct_mixed": 5.98,
     "pct_other_ethnic": 4.92,
-    "prior_party": "Labour",
+    "prior_party": "Other",
     "prior_year": 2022,
     "match_type_prior": "norm",
-    "flipped": true
+    "flipped": false
   },
   {
     "borough": "Tower Hamlets",
@@ -51142,7 +51142,7 @@
     "pct_black": 5.52,
     "pct_mixed": 5.65,
     "pct_other_ethnic": 3.36,
-    "prior_party": "Other",
+    "prior_party": "Labour",
     "prior_year": 2022,
     "match_type_prior": "exact",
     "flipped": true
@@ -51294,10 +51294,10 @@
     "pct_black": 5.39,
     "pct_mixed": 5.49,
     "pct_other_ethnic": 4.16,
-    "prior_party": "Labour",
+    "prior_party": "Conservative",
     "prior_year": 2022,
     "match_type_prior": "exact",
-    "flipped": true
+    "flipped": false
   },
   {
     "borough": "Tower Hamlets",
@@ -51370,10 +51370,10 @@
     "pct_black": 6.16,
     "pct_mixed": 4.91,
     "pct_other_ethnic": 3.97,
-    "prior_party": "Other",
+    "prior_party": "Labour",
     "prior_year": 2022,
     "match_type_prior": "exact",
-    "flipped": true
+    "flipped": false
   },
   {
     "borough": "Tower Hamlets",
@@ -51446,10 +51446,10 @@
     "pct_black": 8.85,
     "pct_mixed": 4.07,
     "pct_other_ethnic": 3.43,
-    "prior_party": "Labour",
+    "prior_party": "Other",
     "prior_year": 2022,
     "match_type_prior": "exact",
-    "flipped": true
+    "flipped": false
   },
   {
     "borough": "Tower Hamlets",
@@ -51560,10 +51560,10 @@
     "pct_black": 6.97,
     "pct_mixed": 4.17,
     "pct_other_ethnic": 2.78,
-    "prior_party": "Other",
+    "prior_party": "Labour",
     "prior_year": 2022,
     "match_type_prior": "exact",
-    "flipped": false
+    "flipped": true
   },
   {
     "borough": "Tower Hamlets",
@@ -51636,10 +51636,10 @@
     "pct_black": 6.37,
     "pct_mixed": 3.81,
     "pct_other_ethnic": 3.63,
-    "prior_party": "Labour",
+    "prior_party": "Other",
     "prior_year": 2022,
     "match_type_prior": "exact",
-    "flipped": true
+    "flipped": false
   },
   {
     "borough": "Tower Hamlets",
@@ -51712,10 +51712,10 @@
     "pct_black": 4.95,
     "pct_mixed": 4.55,
     "pct_other_ethnic": 4.62,
-    "prior_party": "Labour",
+    "prior_party": "Other",
     "prior_year": 2022,
     "match_type_prior": "exact",
-    "flipped": true
+    "flipped": false
   },
   {
     "borough": "Waltham Forest",
@@ -61516,10 +61516,10 @@
     "pct_black": 9.35,
     "pct_mixed": 5.92,
     "pct_other_ethnic": 2.98,
-    "prior_party": "Labour",
+    "prior_party": "Conservative",
     "prior_year": 2022,
     "match_type_prior": "exact",
-    "flipped": false
+    "flipped": true
   },
   {
     "borough": "Wokingham",
@@ -61630,10 +61630,10 @@
     "pct_black": 1.41,
     "pct_mixed": 3.05,
     "pct_other_ethnic": 1.46,
-    "prior_party": null,
-    "prior_year": null,
-    "match_type_prior": "no_prior",
-    "flipped": null
+    "prior_party": "LibDem",
+    "prior_year": 2022,
+    "match_type_prior": "exact",
+    "flipped": false
   },
   {
     "borough": "Wokingham",
@@ -61668,10 +61668,10 @@
     "pct_black": 1.86,
     "pct_mixed": 2.94,
     "pct_other_ethnic": 1.19,
-    "prior_party": null,
-    "prior_year": null,
-    "match_type_prior": "no_prior",
-    "flipped": null
+    "prior_party": "LibDem",
+    "prior_year": 2022,
+    "match_type_prior": "exact",
+    "flipped": false
   },
   {
     "borough": "Wokingham",
@@ -61744,10 +61744,10 @@
     "pct_black": 3.36,
     "pct_mixed": 3.19,
     "pct_other_ethnic": 2.9,
-    "prior_party": null,
-    "prior_year": null,
-    "match_type_prior": "no_prior",
-    "flipped": null
+    "prior_party": "LibDem",
+    "prior_year": 2022,
+    "match_type_prior": "exact",
+    "flipped": false
   },
   {
     "borough": "Wokingham",
@@ -61782,10 +61782,10 @@
     "pct_black": 2.92,
     "pct_mixed": 2.94,
     "pct_other_ethnic": 3.22,
-    "prior_party": null,
-    "prior_year": null,
-    "match_type_prior": "no_prior",
-    "flipped": null
+    "prior_party": "LibDem",
+    "prior_year": 2022,
+    "match_type_prior": "exact",
+    "flipped": false
   },
   {
     "borough": "Wokingham",
@@ -61820,10 +61820,10 @@
     "pct_black": 2.6,
     "pct_mixed": 3.67,
     "pct_other_ethnic": 1.59,
-    "prior_party": null,
-    "prior_year": null,
-    "match_type_prior": "no_prior",
-    "flipped": null
+    "prior_party": "Conservative",
+    "prior_year": 2022,
+    "match_type_prior": "exact",
+    "flipped": false
   },
   {
     "borough": "Wokingham",
@@ -61896,10 +61896,10 @@
     "pct_black": 2.12,
     "pct_mixed": 2.92,
     "pct_other_ethnic": 1.39,
-    "prior_party": null,
-    "prior_year": null,
-    "match_type_prior": "no_prior",
-    "flipped": null
+    "prior_party": "Labour",
+    "prior_year": 2022,
+    "match_type_prior": "exact",
+    "flipped": false
   },
   {
     "borough": "Wokingham",
@@ -61972,10 +61972,10 @@
     "pct_black": 2.37,
     "pct_mixed": 2.79,
     "pct_other_ethnic": 1.4,
-    "prior_party": null,
-    "prior_year": null,
-    "match_type_prior": "no_prior",
-    "flipped": null
+    "prior_party": "LibDem",
+    "prior_year": 2022,
+    "match_type_prior": "exact",
+    "flipped": false
   },
   {
     "borough": "Wokingham",
@@ -62124,10 +62124,10 @@
     "pct_black": 3.09,
     "pct_mixed": 3.62,
     "pct_other_ethnic": 2.17,
-    "prior_party": null,
-    "prior_year": null,
-    "match_type_prior": "no_prior",
-    "flipped": null
+    "prior_party": "LibDem",
+    "prior_year": 2022,
+    "match_type_prior": "exact",
+    "flipped": false
   },
   {
     "borough": "Wokingham",
@@ -62162,10 +62162,10 @@
     "pct_black": 0.82,
     "pct_mixed": 2.33,
     "pct_other_ethnic": 0.87,
-    "prior_party": null,
-    "prior_year": null,
-    "match_type_prior": "no_prior",
-    "flipped": null
+    "prior_party": "Conservative",
+    "prior_year": 2022,
+    "match_type_prior": "exact",
+    "flipped": false
   },
   {
     "borough": "Milton Keynes",
