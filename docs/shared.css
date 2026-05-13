@@ -926,19 +926,27 @@ body {
 }
 
 /* Current map view modes. The renderer builds one z-ordered fill layer
-   with wards, CEDs, and Senedd constituencies interleaved by election
-   year; CSS hides the inactive classes in each single-layer mode.
-   .view-recent shows everything (chronological default — Senedd 2026
-   paints on top of 2022 Welsh wards). .view-wards hides CEDs + Senedd
-   (legacy district-council view); .view-ceds hides wards + Senedd
-   (legacy county-council view); .view-senedd hides wards + CEDs
-   (the 16 Welsh Senedd constituencies in isolation, GB page only). */
-.map-svg.view-wards  path.ced    { display: none; }
-.map-svg.view-wards  path.senedd { display: none; }
-.map-svg.view-ceds   path.ward   { display: none; }
-.map-svg.view-ceds   path.senedd { display: none; }
-.map-svg.view-senedd path.ward   { display: none; }
-.map-svg.view-senedd path.ced    { display: none; }
+   with wards, CEDs, Holyrood SPCs, and Senedd constituencies interleaved
+   by election year; CSS hides the inactive classes in each single-layer
+   mode. .view-recent shows everything (chronological default — Holyrood
+   and Senedd 2026 paint on top of older council colours). .view-wards
+   hides CEDs + Holyrood + Senedd (legacy district-council view); .view-ceds
+   hides wards + Holyrood + Senedd (legacy county-council view);
+   .view-holyrood isolates the 73 Scottish Parliament constituencies;
+   .view-senedd isolates the 16 Welsh Senedd constituencies (GB page only
+   for both). */
+.map-svg.view-wards    path.ced      { display: none; }
+.map-svg.view-wards    path.holyrood { display: none; }
+.map-svg.view-wards    path.senedd   { display: none; }
+.map-svg.view-ceds     path.ward     { display: none; }
+.map-svg.view-ceds     path.holyrood { display: none; }
+.map-svg.view-ceds     path.senedd   { display: none; }
+.map-svg.view-holyrood path.ward     { display: none; }
+.map-svg.view-holyrood path.ced      { display: none; }
+.map-svg.view-holyrood path.senedd   { display: none; }
+.map-svg.view-senedd   path.ward     { display: none; }
+.map-svg.view-senedd   path.ced      { display: none; }
+.map-svg.view-senedd   path.holyrood { display: none; }
 .map-svg path.ced {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
@@ -952,6 +960,7 @@ body {
   stroke-width: 1.4;
   fill-opacity: 0.78;
 }
+.map-svg path.holyrood,
 .map-svg path.senedd {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
@@ -960,6 +969,7 @@ body {
   fill-opacity: 0.92;
   cursor: default;
 }
+.map-svg path.holyrood:hover,
 .map-svg path.senedd:hover {
   stroke: var(--ink);
   stroke-width: 1.4;
