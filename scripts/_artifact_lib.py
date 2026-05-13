@@ -57,6 +57,10 @@ PARTY_COLOURS_MAP = {
     "SNP":          "#FDF38E",
     "Plaid":        "#005B54",
     "Independent":  "#888780",
+    # The Speaker of the House contests as "Speaker" rather than a party
+    # (Lindsay Hoyle, Chorley). Same grey as Independent so the map reads
+    # "non-party" at a glance.
+    "Speaker":      "#888780",
     "Other":        "#a87b3e",
     "Pending":      "#cccccc",
 }
@@ -83,6 +87,7 @@ PARTY_DISPLAY_MAP = {
     "SNP":          "SNP",
     "Plaid":        "Plaid Cymru",
     "Independent":  "Independent",
+    "Speaker":      "Speaker of the House",
     "Other":        "Other",
     "Pending":      "Awaiting declaration",
 }
@@ -105,7 +110,7 @@ PARTY_ORDER_WINNERS = [
 
 LEGEND_ORDER_MAP = [
     "Labour", "Reform", "Green", "LibDem", "Conservative",
-    "SNP", "Plaid", "Independent", "Other", "Pending",
+    "SNP", "Plaid", "Independent", "Speaker", "Other", "Pending",
 ]
 
 
