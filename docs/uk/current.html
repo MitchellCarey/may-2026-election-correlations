@@ -63,7 +63,10 @@
   </div>
 
   <div class="map-card map-card--wide">
-    <div class="map-card-label">Most-recent ward winner · Great Britain</div>
+    <div class="map-card-head">
+      <div class="map-card-label">Most-recent ward winner · Great Britain</div>
+      <button type="button" class="export-png-btn" data-export-png data-export-target="map-current" data-filename-slug="current">Download PNG</button>
+    </div>
     <div id="map-current"></div>
   </div>
 
@@ -267,5 +270,6 @@ if (legend) {
 
 // ===== END GENERATED =====
 </script>
+<script src="../export-png.js" defer></script>
 </body>
 </html>
