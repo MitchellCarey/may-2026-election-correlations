@@ -1,13 +1,13 @@
 """Single source of truth for the two new Surrey unitary authorities first
-elected on 7 May 2026. Imported by 22 (Wikipedia fetch), 23 (results parser)
-and 24 (geometry split) so they agree without a third coordination file.
+elected on 7 May 2026. Imported by 22 (Wikipedia fetch) and 23 (results
+parser) so they agree without a third coordination file.
 
 Codes are synthetic (XSE, XSW) because ONS has not assigned LAD25 codes —
-the unitaries don't take administrative effect until 1 April 2027. The 11
-predecessor districts in each registry tuple's third element are the WD24
-LAD GSS codes for the constituent boroughs/districts; 24 uses them to
-assign each LGBCE post-review polygon to East or West Surrey via a
-centroid-in-WD24-LAD test.
+the unitaries don't take administrative effect until 1 April 2027. The
+fourth tuple element lists each unitary's predecessor district WD24 LAD
+GSS codes — provenance only, not consumed programmatically (24 splits
+LGBCE polygons via the shapefile's District column with hardcoded names,
+not codes).
 """
 
 # (code, council_display_name, wiki_article_title, [predecessor LAD GSS codes])

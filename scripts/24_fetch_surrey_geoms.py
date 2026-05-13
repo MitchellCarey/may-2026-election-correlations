@@ -31,8 +31,6 @@ from pathlib import Path
 
 import geopandas as gpd
 
-from _surrey_unitaries import SURREY_UNITARIES
-
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 SOURCE = DATA / "source"
@@ -50,9 +48,10 @@ UA = 'gm-2026-ward-analysis/1.0 (mitchellcarey2@gmail.com)'
 
 SIMPLIFY_TOLERANCE_M = 50
 
-# East Surrey predecessor districts (matched against the LGBCE District column).
-# These come from the SURREY_UNITARIES registry, but the shapefile uses the
-# district's plain name rather than its ONS code, so map by name here.
+# East Surrey predecessor districts (matched against the LGBCE District
+# column). Hardcoded as names because the shapefile uses district names
+# rather than ONS codes; see _surrey_unitaries.py for the GSS-code
+# provenance.
 EAST_DISTRICTS = {
     'Elmbridge', 'Epsom & Ewell', 'Mole Valley', 'Reigate & Banstead', 'Tandridge',
 }
