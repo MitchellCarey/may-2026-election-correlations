@@ -208,6 +208,7 @@ def build_ced_winners(geoms: dict) -> list[dict]:
         by_cty_norm_to_county_name[meta.get('cty', '')] = cty_clean
 
     counted = {'matched': 0, 'no_winner': 0}
+    used_keys: dict[str, set[str]] = {}
     for ced_code, meta in geoms.get('ceds', {}).items():
         cty_clean = by_cty_norm_to_county_name.get(meta.get('cty', ''), '')
         ced_county_data = by_county_norm.get(cty_clean, {})
@@ -223,6 +224,7 @@ def build_ced_winners(geoms: dict) -> list[dict]:
                 'year':    rec['year'],
             })
             counted['matched'] += 1
+            used_keys.setdefault(cty_clean, set()).add(key)
         else:
             out.append({
                 'ced':     ced_code,
@@ -233,6 +235,18 @@ def build_ced_winners(geoms: dict) -> list[dict]:
                 'year':    None,
             })
             counted['no_winner'] += 1
+
+    # Source-side rows that didn't join to any ONS polygon — usually a sign
+    # of a boundary review the ONS CED25 set predates (Essex May 2026), or a
+    # name-normalisation drift. Print so the gap is visible in build logs.
+    for county, ced_county_data in by_county_norm.items():
+        unmatched = sorted(set(ced_county_data) - used_keys.get(county, set()))
+        if not unmatched:
+            continue
+        sample = ', '.join(ced_county_data[k]['source_ced_name'] for k in unmatched[:3])
+        more = '' if len(unmatched) <= 3 else f' (+{len(unmatched) - 3} more)'
+        print(f'  WARN {county}: {len(unmatched)} source CED name(s) had no '
+              f'ONS CED25 match — e.g. {sample}{more}', file=sys.stderr)
     return out, counted
 
 
@@ -329,12 +343,45 @@ def main():
                 continue
             assign(gss, rec['party'], rec['year'], 'current_scrape', match_type)
 
+    # CED-side join — produces data/ced_winners.json for the county-council
+    # overlay on the Current map page. Run before the per-ward output so the
+    # ward records can pick up their parent-CED context for the tooltip
+    # quick-win (issue #8 acceptance 3).
+    ced_records, ced_counts = build_ced_winners(geoms)
+    with open(DATA / 'ced_winners.json', 'w') as f:
+        json.dump(ced_records, f, indent=2)
+    print(f'Wrote ced_winners.json — {len(ced_records)} CEDs '
+          f'(matched={ced_counts["matched"]}, no_winner={ced_counts["no_winner"]})')
+
+    # Per-ward CED enrichment: every WD25 ward in a 2-tier English district
+    # gets its parent CED's winner attached, so hovering the ward on the
+    # Current page surfaces who controls schools/social-care/roads there.
+    # WD25CD ≈ WD24CD for any ward without a 2024→2025 boundary review (none
+    # known in 2-tier shire districts); wards that don't resolve are silently
+    # skipped and fall through to a ward-only tooltip.
+    ced_by_code = {r['ced']: r for r in ced_records}
+    ward_to_ced = geoms.get('ward_to_ced', {})
+    ced_context: dict[str, dict] = {}
+    for wd, ced in ward_to_ced.items():
+        if wd not in geom_meta:
+            continue
+        rec = ced_by_code.get(ced)
+        if not rec:
+            continue
+        ced_context[wd] = {
+            'ced_county': rec['county'],
+            'ced_name':   rec['name'],
+            'ced_winner': rec['winner'],
+            'ced_year':   rec['year'],
+        }
+
     # --- Output: one record per GB-prefixed geom ward ---
     out: list[dict] = []
     src_counts = {'2026': 0, 'current_scrape': 0, 'none': 0}
     match_counts = {'exact': 0, 'norm': 0, 'override': 0, 'no_match': 0}
     for gss, meta in geom_meta.items():
         rec = assigned.get(gss)
+        ced_extra = ced_context.get(gss, {})
         if rec is None:
             out.append({
                 'gss':        gss,
@@ -345,6 +392,7 @@ def main():
                 'year':       None,
                 'source':     'none',
                 'match_type': 'no_match',
+                **ced_extra,
             })
             src_counts['none'] += 1
             match_counts['no_match'] += 1
@@ -355,6 +403,7 @@ def main():
             'borough':    meta['borough'],
             'ward':       meta['ward'],
             **rec,
+            **ced_extra,
         })
         src_counts[rec['source']] += 1
         match_counts[rec['match_type']] += 1
@@ -370,14 +419,9 @@ def main():
           f'norm={match_counts["norm"]}  '
           f'override={match_counts["override"]}  '
           f'no_match={match_counts["no_match"]}')
-
-    # CED-side join — produces data/ced_winners.json for the county-council
-    # overlay on the Current map page.
-    ced_records, ced_counts = build_ced_winners(geoms)
-    with open(DATA / 'ced_winners.json', 'w') as f:
-        json.dump(ced_records, f, indent=2)
-    print(f'\nWrote ced_winners.json — {len(ced_records)} CEDs '
-          f'(matched={ced_counts["matched"]}, no_winner={ced_counts["no_winner"]})')
+    with_ced = sum(1 for r in out if r.get('ced_county'))
+    counties_seen = {r['ced_county'] for r in out if r.get('ced_county')}
+    print(f'  with CED context: {with_ced} wards across {len(counties_seen)} counties')
     if scrape_unmatched:
         print(f'\nFirst {len(scrape_unmatched)} scrape-side unmatched ward(s) '
               '(consider data/source/current_ward_overrides.csv):',
