@@ -925,14 +925,13 @@ body {
   fill-opacity: 0.78;
 }
 
-/* CED (county electoral division) overlay on the Current page. Hidden by
-   default; the GB page's "Show county-council layer" toggle adds .show-ceds
-   to the .map-svg root to reveal them. Sits above the ward fills (so they
-   visually replace the underlying district-council fills in the 2-tier
-   areas they cover) but below the borough/country outlines (so the
-   boundaries still read at the top). */
-.map-svg .ceds { display: none; }
-.map-svg.show-ceds .ceds { display: block; }
+/* Current map view modes. The renderer builds one z-ordered fill layer with
+   both wards and CEDs interleaved by election year; CSS hides the inactive
+   class in the two single-layer modes. .view-recent shows everything (the
+   chronological default); .view-wards hides CEDs (legacy district-council
+   view); .view-ceds hides wards (legacy county-council view). */
+.map-svg.view-wards path.ced  { display: none; }
+.map-svg.view-ceds  path.ward { display: none; }
 .map-svg path.ced {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;

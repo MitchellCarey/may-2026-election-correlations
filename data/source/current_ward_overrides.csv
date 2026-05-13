@@ -1,178 +1,191 @@
-council,scraped_name,gss_name
-Pembrokeshire,Fishguard North East,Fishguard: North East
-Pembrokeshire,Fishguard North West,Fishguard: North West
-Pembrokeshire,Haverfordwest Garth,Haverfordwest: Garth
-Pembrokeshire,Haverfordwest Portfield,Haverfordwest: Portfield
-Pembrokeshire,Haverfordwest Prendergast,Haverfordwest: Prendergast
-Pembrokeshire,Haverfordwest Priory,Haverfordwest: Priory
-Pembrokeshire,Milford Central,Milford: Central
-Pembrokeshire,Milford East,Milford: East
-Pembrokeshire,Milford Hakin,Milford: Hakin
-Pembrokeshire,Milford Hubberston,Milford: Hubberston
-Pembrokeshire,Milford North,Milford: North
-Pembrokeshire,Milford West,Milford: West
-Pembrokeshire,Narberth,Narberth: Urban
-Pembrokeshire,Narberth Rural,Narberth: Rural
-Pembrokeshire,Neyland East,Neyland: East
-Pembrokeshire,Neyland West,Neyland: West
-Pembrokeshire,"Pembroke Dock, Bufferland",Pembroke Dock: Bufferland
-Pembrokeshire,"Pembroke Dock, Bush",Pembroke Dock: Bush
-Pembrokeshire,"Pembroke Dock, Central",Pembroke Dock: Central
-Pembrokeshire,"Pembroke Dock, Market",Pembroke Dock: Market
-Pembrokeshire,"Pembroke Dock, Pennar",Pembroke Dock: Pennar
-Pembrokeshire,Pembroke Monkton and St Mary South (two seats),Pembroke: Monkton and St Mary South
-Pembrokeshire,Pembroke St Mary North,Pembroke: St Mary North
-Pembrokeshire,Pembroke St Michael,Pembroke: St Michael
-Pembrokeshire,Tenby North,Tenby: North
-Pembrokeshire,Tenby South,Tenby: South
-Gwynedd,Arthrog a Llangelynnin,Arthog a Llangelynnin
-Gwynedd,Bontnewydd,Y Bontnewydd
-Gwynedd,Bowydd and Rhiw,Bowydd a'r Rhiw
-Gwynedd,Brithdir and Llanfachreth / Y Ganllwyd / Llanelltyd,Brithdir and Llanfachreth/Ganllwyd/Llanelltyd
-Gwynedd,Cwm y Glo,Cwm-y-glo
-Gwynedd,Diffwys and Maenofferen,Diffwys a Maenofferen
-Gwynedd,Penisarwaun,Penisa'r-waun
-Gwynedd,Tregarth a Mynydd Llandygai,Tre-garth a Mynydd Llandygái
-Neath Port Talbot,Alltwen (one seat),Allt-wen
-Neath Port Talbot,Bryncoch North (one seat),Bryn-coch North
-Neath Port Talbot,Bryncoch South (two seats),Bryn-coch South
-Neath Port Talbot,Cymmer and Glyncorrwg (one seat),Cymer and Glyncorrwg
-Neath Port Talbot,Gwaun Cae Gurwen and Lower Brynaman (two seats),Gwaun-Cae-Gurwen and Lower Brynamman
-Neath Port Talbot,Margam and Taibach (three seats),Margam and Tai-bach
-Powys,Aber Craf and Ystradgynlais,Aber-craf and Ystradgynlais
-Powys,Llanrhaeadr-ym-Mochant and Llansilin,Llanrhaeadr-ym-Mochnant and Llansilin
-Denbighshire,Rhyl Trellewellyn (two seats),Rhyl Trellewelyn
-Denbighshire,Rhyl Ty Newydd (two seats),Rhyl Tŷ Newydd
-Conwy,Eglwysbach a Llangernyw,Eglwys-bach a Llangernyw
-Conwy,Tywyn/Towyn,Towyn
-Caerphilly,Cwm Aber/ Aber Valley,Aber Valley
-Caerphilly,Darren Valley,Darran Valley
-Monmouthshire,Llanelly Hill,Llanelly
-Monmouthshire,Llanfoist & Govilon,Llanfoist Fawr and Govilon
-Swansea,Bon-y-maen (two seats),Bôn-y-maen
-Bridgend,Cefn Glas,Cefn-glas
-Torfaen,Llanyravon,Llanyrafon
-Flintshire,Llanfyndd,Llanfynydd
-County Durham,"Elvet, Gilesgate and Shincliffe",Elvet and Gilesgate
-County Durham,Bishop Auckland,Bishop Auckland Town
-County Durham,Barnard Castle,Barnard Castle West
-County Durham,Annfield Plain and Tanfield,Annfield Plain
-County Durham,Trimdon and Wingate,Wingate
-County Durham,Sacriston and Witton Gilbert,Esh and Witton Gilbert
-County Durham,Pittington and Sherburn,Sherburn
-County Durham,Peterlee,Peterlee West
-County Durham,Lanchester and Burnhope,Lanchester
-County Durham,Easington and Shotton,Easington
-County Durham,Dalton and Dawdon,Dawdon
-County Durham,Bowburn and Coxhoe,Coxhoe
-County Durham,Blackhalls and Hesledens,Blackhalls
-Buckinghamshire,"Penn, Tylers Green & Loudwater",Tylers Green and Loudwater
-Buckinghamshire,Chalfont St Giles & Little Chalfont,Chalfont St Giles
-Buckinghamshire,Grendon Underwood & The Claydons,Grendon Underwood
-Buckinghamshire,Gerrards Cross & Denham,Gerrards Cross
-Buckinghamshire,Booker and Cressex,"Booker, Cressex and Castlefield"
-Buckinghamshire,West Wycombe & Lane End,West Wycombe
-Buckinghamshire,Waddesdon,Stone and Waddesdon
-Buckinghamshire,Farnhams & Stoke Poges,Stoke Poges and Wexham
-Buckinghamshire,Chesham South,Chesham
-Buckinghamshire,Buckingham,Buckingham West
-Buckinghamshire,Aston Clinton and Weston Turville,Aston Clinton and Bierton
-West Northamptonshire,2024 East Hunsbury and Shelfleys by-election,East Hunsbury and Shelfleys
-West Northamptonshire,Daventry North West (1 member),Daventry West
-West Northamptonshire,Daventry North East (1 member),Daventry East
-West Northamptonshire,Towcester (3 member),Towcester and Roade
-West Northamptonshire,Parklands (1 member),Boothville and Parklands
-West Northamptonshire,Duston (3 member),Duston East
-West Northamptonshire,Deanshanger & Paulerspury (2 member),Deanshanger
-West Northamptonshire,Blackthorn & Rectory Farm (2 member),Billing and Rectory Farm
-Shropshire,Market Drayton East and Rural,Market Drayton East
-Shropshire,Shifnal South,Shifnal South and Cosford
-Shropshire,Oswestry South East,Oswestry East
-Shropshire,Selattyn and Gobowen,"Gobowen, Selattyn and Weston Rhyn"
-Shropshire,Market Drayton South,Market Drayton West
-Shropshire,Craven Arms,Church Stretton and Craven Arms
-Shropshire,Claverley and Worfield,Worfield
-Shropshire,Bridgnorth East,Bridgnorth East and Astley Abbotts
-Northumberland,Prudhoe North & Wylam,Prudhoe North
-Northumberland,Cramlington South West,Cramlington West
-Northumberland,Bebside & Kitty Brewster,Kitty Brewster
-Northumberland,Stocksfield & Bywell,Bywell
-Northumberland,Cramlington East & Double Row,Cramlington East
-Northumberland,Choppington & Hepscott,Choppington
-Northumberland,Alnwick Hotspur,Alnwick
-County Durham,Lumley and West Rainton,Lumley
-County Durham,Horden and Dene House,Horden
-County Durham,Castle Eden and Passfield,Passfield
-County Durham,Aycliffe South,Durham South
-Buckinghamshire,Marsh & Micklefield,Ryemead and Micklefield
-Buckinghamshire,"Bierton, Kingsbrook and Wing",Wing
-North Northamptonshire,Pemberton,Rushden Pemberton West
-North Northamptonshire,Lloyds & Corby Village,Lloyds
-Northumberland,College with North Seaton,College
-Harborough,Market Harborough - Welland,Market Harborough-Welland
-Harborough,Market Harborough - Logan,Market Harborough-Logan
-Harborough,Market Harborough - Little Bowden,Market Harborough-Little Bowden
-Harborough,Market Harborough - Great Bowden & Arden,Market Harborough-Great Bowden & Arden
-Harborough,Broughton Astley - Primethorpe & Sutton,Broughton Astley-Primethorpe & Sutton
-Shropshire,Whitchurch West,Oswestry West
-Shropshire,Sundorne and Old Heath,Sundorne
-Central Bedfordshire,Leighton Linslade West,Leighton-Linslade West
-Central Bedfordshire,Leighton Linslade South,Leighton-Linslade South
-Central Bedfordshire,Leighton Linslade North,Leighton-Linslade North
-Highland,Thurso and North West Caithness,Thurso and Northwest Caithness
-Chelmsford,South Woodham - Elmwood and Woodville,South Woodham-Elmwood and Woodville
-Chelmsford,South Woodham - Chetwood and Collingwood,South Woodham-Chetwood and Collingwood
-Melton,Waltham on the Wolds,Waltham-on-the-Wolds
-Melton,Frisby on the Wreake,Frisby-on-the-Wreake
-Doncaster,Adwick-Le-Street and Carcroft,Adwick le Street & Carcroft
-Doncaster,Tickhill & Wadworth,Tickhill & Wadsworth
-Aberdeenshire,Mid-Formartine,Mid Formartine
-Aberdeenshire,Banchory and Mid-Deeside,Banchory and Mid Deeside
-East Riding of Yorkshire,"Snaith, Airmyn and Rawcliffe and Marshland","Snaith, Airmyn, Rawcliffe and Marshland"
-Boston,Five Villages,Five Village
-West Lindsey,Gainsborough South West,Gainsborough South-West
-Uttlesford,Broad Oak & The Hallingsburys,Broad Oak & the Hallingburys
-Breckland,Attleborough Burgh & Havercroft,Attleborough Burgh & Haverscroft
-East Cambridgeshire,Downham,Downham Villages
-Ribble Valley,Alston and Hothershall,Alston & Hothersall
-Bath and North East Somerset,Publow with Whitchurch,Publow & Whitchurch
-Mid Suffolk,Stadbroke and Laxfield,Stradbroke & Laxfield
-Stoke-on-Trent,Trent Vale & Oakhill,Trent Vale & Oak Hill
-Tonbridge and Malling,"East Peckham, West Peckham, Mereworth & Wateringbury","East and West Peckham, Mereworth & Wateringbury"
-Waverley,Witley & Milford,Milford & Witley
-Blaby,Ravenhurst & Fosse,Braunstone Ravenhurst
-Mole Valley,Ashstead Park,Ashtead Park
-North Hertfordshire,Hitchin Highbury,Hitchen Highbury
-Worcester,St. Peter's,St Peter's Parish
-Tandridge,"Warlingham East, Chelsham & Farleigh",Warlingham East & Chelsham & Farleigh
-Aberdeen City,George Street/Harbour,George St/Harbour
-East Lothian,Preston Seton and Gosford,"Preston, Seton and Gosford"
-Buckinghamshire,Flackwell Heath & The Wooburns,"Flackwell Heath, Little Marlow and Marlow South East"
-Buckinghamshire,Burnham,Farnham Common and Burnham Beeches
-Buckinghamshire,Princes Risborough,The Risboroughs
-Buckinghamshire,The Missendens,Great Missenden
-Buckinghamshire,Quainton,Bernwood
-Buckinghamshire,Long Crendon,Chess Valley
-West Northamptonshire,Hackleton & Roade (2 member),Hackleton and Grange Park
-West Northamptonshire,"Far Cotton, Delapre & Briar Hill (3 member)",Delapre and Rushmere
-West Northamptonshire,Hunsbury (3 member),Sixfields
-West Northamptonshire,Upton (2 member),St. George
-North Northamptonshire,Barton Seagrave & Burton Latimer,Burton and Broughton
-North Northamptonshire,Geddington & Stanion,Corby Rural
-North Northamptonshire,Avondale Grange,Wicksteed
-North Northamptonshire,St Michael,Northall
-North Northamptonshire,St Peter,Windmill
-Northumberland,Newbiggin-by-the-Sea,Newbiggin Central and East
-Northumberland,Seaton with Spital,Seaton with Newbiggin West
-Northumberland,Hexham North,Hexham Central with Acomb
-Shropshire,Bridgnorth South and Alveley,Alveley and Claverley
-Shropshire,Bicton Heath,Bowbrook
-County Durham,Derwent and Pont Valley,Burnopfield and Dipton
-County Durham,Thornley and Wheatley Hill,Trimdon and Thornley
-County Durham,Langley and Esh,Sacriston
-County Durham,Lower Teesdale,Barnard Castle East
-County Durham,Upper Teesdale,Bishop Middleham and Cornforth
-Highland,Eilean a' Cheò,Eilean á Chèo
-North Norfolk,St Benet,St Benet's
-North Norfolk,North Waltham East,North Walsham East
-North Norfolk,North Waltham West,North Walsham West
+council,scraped_name,gss_name,note
+Central Bedfordshire,Leighton Linslade North,Leighton-Linslade North,hyphen drift
+Central Bedfordshire,Leighton Linslade South,Leighton-Linslade South,hyphen drift
+Central Bedfordshire,Leighton Linslade West,Leighton-Linslade West,hyphen drift
+Forest of Dean,Mitcheldean Ruardean & Drybrook,"Mitcheldean, Ruardean & Drybrook",punctuation drift
+Harborough,Broughton Astley - Primethorpe & Sutton,Broughton Astley-Primethorpe & Sutton,hyphen-vs-spaced-dash drift
+Harborough,Market Harborough - Great Bowden & Arden,Market Harborough-Great Bowden & Arden,hyphen-vs-spaced-dash drift
+Harborough,Market Harborough - Little Bowden,Market Harborough-Little Bowden,hyphen-vs-spaced-dash drift
+Harborough,Market Harborough - Logan,Market Harborough-Logan,hyphen-vs-spaced-dash drift
+Harborough,Market Harborough - Welland,Market Harborough-Welland,hyphen-vs-spaced-dash drift
+Melton,Frisby on the Wreake,Frisby-on-the-Wreake,hyphen drift
+Melton,Waltham on the Wolds,Waltham-on-the-Wolds,hyphen drift
+West Lindsey,Gainsborough South West,Gainsborough South-West,hyphen drift
+Doncaster,Adwick-Le-Street and Carcroft,Adwick le Street & Carcroft,case + spacing drift
+East Lothian,Preston Seton and Gosford,"Preston, Seton and Gosford",comma drift
+Highland,Eilean a' Cheò,Eilean á Chèo,Scottish Gaelic diacritic drift
+Aberdeenshire,Mid-Formartine,Mid Formartine,hyphen drift
+Aberdeenshire,Banchory and Mid-Deeside,Banchory and Mid Deeside,hyphen drift
+Gwynedd,Cwm y Glo,Cwm-y-glo,Welsh hyphen drift
+Denbighshire,Rhyl Ty Newydd (two seats),Rhyl Tŷ Newydd,Welsh diacritic drift
+Pembrokeshire,Fishguard North East,Fishguard: North East,Welsh colon drift
+Pembrokeshire,Fishguard North West,Fishguard: North West,Welsh colon drift
+Pembrokeshire,Haverfordwest Garth,Haverfordwest: Garth,Welsh colon drift
+Pembrokeshire,Haverfordwest Portfield,Haverfordwest: Portfield,Welsh colon drift
+Pembrokeshire,Haverfordwest Prendergast,Haverfordwest: Prendergast,Welsh colon drift
+Pembrokeshire,Haverfordwest Priory,Haverfordwest: Priory,Welsh colon drift
+Pembrokeshire,Milford Central,Milford: Central,Welsh colon drift
+Pembrokeshire,Milford East,Milford: East,Welsh colon drift
+Pembrokeshire,Milford Hakin,Milford: Hakin,Welsh colon drift
+Pembrokeshire,Milford Hubberston,Milford: Hubberston,Welsh colon drift
+Pembrokeshire,Milford North,Milford: North,Welsh colon drift
+Pembrokeshire,Milford West,Milford: West,Welsh colon drift
+Pembrokeshire,Narberth Rural,Narberth: Rural,Welsh colon drift
+Pembrokeshire,Neyland East,Neyland: East,Welsh colon drift
+Pembrokeshire,Neyland West,Neyland: West,Welsh colon drift
+Pembrokeshire,Pembroke Monkton and St Mary South (two seats),Pembroke: Monkton and St Mary South,Welsh colon drift
+Pembrokeshire,Pembroke St Mary North,Pembroke: St Mary North,Welsh colon drift
+Pembrokeshire,Pembroke St Michael,Pembroke: St Michael,Welsh colon drift
+Pembrokeshire,"Pembroke Dock, Bufferland",Pembroke Dock: Bufferland,Welsh colon-vs-comma drift
+Pembrokeshire,"Pembroke Dock, Bush",Pembroke Dock: Bush,Welsh colon-vs-comma drift
+Pembrokeshire,"Pembroke Dock, Central",Pembroke Dock: Central,Welsh colon-vs-comma drift
+Pembrokeshire,"Pembroke Dock, Market",Pembroke Dock: Market,Welsh colon-vs-comma drift
+Pembrokeshire,"Pembroke Dock, Pennar",Pembroke Dock: Pennar,Welsh colon-vs-comma drift
+Pembrokeshire,Tenby North,Tenby: North,Welsh colon drift
+Pembrokeshire,Tenby South,Tenby: South,Welsh colon drift
+Swansea,Bon-y-maen (two seats),Bôn-y-maen,Welsh diacritic drift
+Bridgend,Cefn Glas,Cefn-glas,Welsh hyphen drift
+Powys,Aber Craf and Ystradgynlais,Aber-craf and Ystradgynlais,Welsh hyphen drift
+Chelmsford,South Woodham Ferrers – Chetwood and Collingwood,South Woodham-Chetwood and Collingwood,Chelmsford boundary review
+Chelmsford,South Woodham Ferrers – Elmwood and Woodville,South Woodham-Elmwood and Woodville,Chelmsford boundary review
+Wyre,Brock with Caterall,Brock with Catterall,Wyre spelling drift
+Wyre,Hambleton and Stalmine-with-Staynall,Hambleton & Stalmine,Wyre name drift
+North West Leicestershire,Hugglestone St John's,Hugglescote St John's,Hugglescote/Hugglestone drift
+North West Leicestershire,Hugglestone St Mary's,Hugglescote St Mary's,Hugglescote/Hugglestone drift
+Boston,Five Villages,Five Village,Boston pluralisation drift
+East Lindsey,Scarborough and Seacroft,Scarbrough & Seacroft,Scarbrough spelling drift
+Uttlesford,Broad Oak & The Hallingsburys,Broad Oak & the Hallingburys,Uttlesford spelling drift
+Breckland,Attleborough Burgh & Havercroft,Attleborough Burgh & Haverscroft,Breckland spelling drift
+Lichfield,Armitage & Handsacre,Armitage with Handsacre,Lichfield drift
+East Cambridgeshire,Downham,Downham Villages,E Cambs ward name expansion
+North Norfolk,St Benet,St Benet's,N Norfolk apostrophe drift
+Ribble Valley,Alston and Hothershall,Alston & Hothersall,Ribble Valley spelling drift
+South Gloucestershire,Bitton and Oldham Common,Bitton & Oldland Common,S Gloucs scrape typo (Oldham→Oldland)
+Bath and North East Somerset,Publow with Whitchurch,Publow & Whitchurch,B&NES with→and drift
+Mid Suffolk,Stadbroke and Laxfield,Stradbroke & Laxfield,Mid Suffolk spelling drift
+Stoke-on-Trent,Trent Vale & Oakhill,Trent Vale & Oak Hill,Stoke spacing drift
+Stockton-on-Tees,Stainsby,Stainsby Hill,Stockton ward name shortening
+Rushcliffe,Neville & Langar,Nevile & Langar,Rushcliffe spelling drift
+Tonbridge and Malling,"East Peckham, West Peckham, Mereworth & Wateringbury","East and West Peckham, Mereworth & Wateringbury",Tonbridge ward name combination
+North Lincolnshire,Kingsway & Lincoln Gardens,Kingsway with Lincoln Gardens,N Lincs &→with drift
+Mole Valley,Ashstead Park,Ashtead Park,Mole Valley spelling drift
+North Hertfordshire,Hitchin Highbury,Hitchen Highbury,N Herts spelling drift
+Worcester,St. Peter's,St Peter's Parish,Worcester name expansion
+Tandridge,"Warlingham East, Chelsham & Farleigh",Warlingham East & Chelsham & Farleigh,Tandridge comma→&  drift
+Gwynedd,Arthrog a Llangelynnin,Arthog a Llangelynnin,Gwynedd typo (Arthrog→Arthog)
+Gwynedd,Bowydd and Rhiw,Bowydd a'r Rhiw,Gwynedd English→Welsh
+Gwynedd,Brithdir and Llanfachreth / Y Ganllwyd / Llanelltyd,Brithdir and Llanfachreth/Ganllwyd/Llanelltyd,Gwynedd spacing
+Gwynedd,Diffwys and Maenofferen,Diffwys a Maenofferen,Gwynedd English→Welsh
+Gwynedd,Penisarwaun,Penisa'r-waun,Gwynedd apostrophe/hyphen
+Gwynedd,Tregarth a Mynydd Llandygai,Tre-garth a Mynydd Llandygái,Gwynedd hyphen/diacritic
+Gwynedd,Bontnewydd,Y Bontnewydd,Gwynedd Welsh article
+Conwy,Eglwysbach a Llangernyw,Eglwys-bach a Llangernyw,Conwy hyphen drift
+Conwy,Tywyn/Towyn,Towyn,Conwy ward variant
+Caerphilly,Cwm Aber/ Aber Valley,Aber Valley,Caerphilly alt naming
+Caerphilly,Darren Valley,Darran Valley,Caerphilly spelling drift
+Monmouthshire,Llanelly Hill,Llanelly,Monmouthshire ward name (drop Hill)
+Monmouthshire,Llanfoist & Govilon,Llanfoist Fawr and Govilon,Monmouthshire ward name (add Fawr)
+Aberdeen City,George Street/Harbour,George St/Harbour,Aberdeen abbreviation drift
+Highland,Thurso and North West Caithness,Thurso and Northwest Caithness,Highland spelling
+Powys,Llanrhaeadr-ym-Mochant and Llansilin,Llanrhaeadr-ym-Mochnant and Llansilin,Powys typo (missing n)
+Denbighshire,Rhyl Trellewellyn (two seats),Rhyl Trellewelyn,Denbighshire spelling (extra l)
+Torfaen,Llanyravon,Llanyrafon,Torfaen v/f drift
+Pembrokeshire,Narberth,Narberth: Urban,Pembrokeshire (Narberth scrape = Urban ward)
+Flintshire,Llanfyndd,Llanfynydd,Flintshire spelling
+Neath Port Talbot,Alltwen (one seat),Allt-wen,NPT hyphen drift
+Neath Port Talbot,Bryncoch North (one seat),Bryn-coch North,NPT hyphen drift
+Neath Port Talbot,Bryncoch South (two seats),Bryn-coch South,NPT hyphen drift
+Neath Port Talbot,Cymmer and Glyncorrwg (one seat),Cymer and Glyncorrwg,NPT spelling (mm→m)
+Neath Port Talbot,Gwaun Cae Gurwen and Lower Brynaman (two seats),Gwaun-Cae-Gurwen and Lower Brynamman,NPT hyphen + spelling
+Neath Port Talbot,Margam and Taibach (three seats),Margam and Tai-bach,NPT hyphen drift
+Waverley,Witley & Milford,Milford & Witley,Waverley word order
+East Riding of Yorkshire,"Snaith, Airmyn and Rawcliffe and Marshland","Snaith, Airmyn, Rawcliffe and Marshland",E Riding comma drift
+Doncaster,Tickhill & Wadworth,Tickhill & Wadsworth,Doncaster typo (Wadworth→Wadsworth)
+County Durham,"Elvet, Gilesgate and Shincliffe",Elvet and Gilesgate,
+County Durham,Bishop Auckland,Bishop Auckland Town,
+County Durham,Barnard Castle,Barnard Castle West,
+County Durham,Annfield Plain and Tanfield,Annfield Plain,
+County Durham,Trimdon and Wingate,Wingate,
+County Durham,Sacriston and Witton Gilbert,Esh and Witton Gilbert,
+County Durham,Pittington and Sherburn,Sherburn,
+County Durham,Peterlee,Peterlee West,
+County Durham,Lanchester and Burnhope,Lanchester,
+County Durham,Easington and Shotton,Easington,
+County Durham,Dalton and Dawdon,Dawdon,
+County Durham,Bowburn and Coxhoe,Coxhoe,
+County Durham,Blackhalls and Hesledens,Blackhalls,
+Buckinghamshire,"Penn, Tylers Green & Loudwater",Tylers Green and Loudwater,
+Buckinghamshire,Chalfont St Giles & Little Chalfont,Chalfont St Giles,
+Buckinghamshire,Grendon Underwood & The Claydons,Grendon Underwood,
+Buckinghamshire,Gerrards Cross & Denham,Gerrards Cross,
+Buckinghamshire,Booker and Cressex,"Booker, Cressex and Castlefield",
+Buckinghamshire,West Wycombe & Lane End,West Wycombe,
+Buckinghamshire,Waddesdon,Stone and Waddesdon,
+Buckinghamshire,Farnhams & Stoke Poges,Stoke Poges and Wexham,
+Buckinghamshire,Chesham South,Chesham,
+Buckinghamshire,Buckingham,Buckingham West,
+Buckinghamshire,Aston Clinton and Weston Turville,Aston Clinton and Bierton,
+West Northamptonshire,2024 East Hunsbury and Shelfleys by-election,East Hunsbury and Shelfleys,
+West Northamptonshire,Daventry North West (1 member),Daventry West,
+West Northamptonshire,Daventry North East (1 member),Daventry East,
+West Northamptonshire,Towcester (3 member),Towcester and Roade,
+West Northamptonshire,Parklands (1 member),Boothville and Parklands,
+West Northamptonshire,Duston (3 member),Duston East,
+West Northamptonshire,Deanshanger & Paulerspury (2 member),Deanshanger,
+West Northamptonshire,Blackthorn & Rectory Farm (2 member),Billing and Rectory Farm,
+Shropshire,Market Drayton East and Rural,Market Drayton East,
+Shropshire,Shifnal South,Shifnal South and Cosford,
+Shropshire,Oswestry South East,Oswestry East,
+Shropshire,Selattyn and Gobowen,"Gobowen, Selattyn and Weston Rhyn",
+Shropshire,Market Drayton South,Market Drayton West,
+Shropshire,Craven Arms,Church Stretton and Craven Arms,
+Shropshire,Claverley and Worfield,Worfield,
+Shropshire,Bridgnorth East,Bridgnorth East and Astley Abbotts,
+Northumberland,Prudhoe North & Wylam,Prudhoe North,
+Northumberland,Cramlington South West,Cramlington West,
+Northumberland,Bebside & Kitty Brewster,Kitty Brewster,
+Northumberland,Stocksfield & Bywell,Bywell,
+Northumberland,Cramlington East & Double Row,Cramlington East,
+Northumberland,Choppington & Hepscott,Choppington,
+Northumberland,Alnwick Hotspur,Alnwick,
+County Durham,Lumley and West Rainton,Lumley,
+County Durham,Horden and Dene House,Horden,
+County Durham,Castle Eden and Passfield,Passfield,
+County Durham,Aycliffe South,Durham South,
+Buckinghamshire,Marsh & Micklefield,Ryemead and Micklefield,
+Buckinghamshire,"Bierton, Kingsbrook and Wing",Wing,
+North Northamptonshire,Pemberton,Rushden Pemberton West,
+North Northamptonshire,Lloyds & Corby Village,Lloyds,
+Northumberland,College with North Seaton,College,
+Shropshire,Whitchurch West,Oswestry West,
+Shropshire,Sundorne and Old Heath,Sundorne,
+Chelmsford,South Woodham - Elmwood and Woodville,South Woodham-Elmwood and Woodville,
+Chelmsford,South Woodham - Chetwood and Collingwood,South Woodham-Chetwood and Collingwood,
+Blaby,Ravenhurst & Fosse,Braunstone Ravenhurst,
+Buckinghamshire,Flackwell Heath & The Wooburns,"Flackwell Heath, Little Marlow and Marlow South East",
+Buckinghamshire,Burnham,Farnham Common and Burnham Beeches,
+Buckinghamshire,Princes Risborough,The Risboroughs,
+Buckinghamshire,The Missendens,Great Missenden,
+Buckinghamshire,Quainton,Bernwood,
+Buckinghamshire,Long Crendon,Chess Valley,
+West Northamptonshire,Hackleton & Roade (2 member),Hackleton and Grange Park,
+West Northamptonshire,"Far Cotton, Delapre & Briar Hill (3 member)",Delapre and Rushmere,
+West Northamptonshire,Hunsbury (3 member),Sixfields,
+West Northamptonshire,Upton (2 member),St. George,
+North Northamptonshire,Barton Seagrave & Burton Latimer,Burton and Broughton,
+North Northamptonshire,Geddington & Stanion,Corby Rural,
+North Northamptonshire,Avondale Grange,Wicksteed,
+North Northamptonshire,St Michael,Northall,
+North Northamptonshire,St Peter,Windmill,
+Northumberland,Newbiggin-by-the-Sea,Newbiggin Central and East,
+Northumberland,Seaton with Spital,Seaton with Newbiggin West,
+Northumberland,Hexham North,Hexham Central with Acomb,
+Shropshire,Bridgnorth South and Alveley,Alveley and Claverley,
+Shropshire,Bicton Heath,Bowbrook,
+County Durham,Derwent and Pont Valley,Burnopfield and Dipton,
+County Durham,Thornley and Wheatley Hill,Trimdon and Thornley,
+County Durham,Langley and Esh,Sacriston,
+County Durham,Lower Teesdale,Barnard Castle East,
+County Durham,Upper Teesdale,Bishop Middleham and Cornforth,
+North Norfolk,North Waltham East,North Walsham East,
+North Norfolk,North Waltham West,North Walsham West,

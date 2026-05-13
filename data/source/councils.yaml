@@ -85,7 +85,13 @@
   wiki_prior: "2022 Bury Metropolitan Borough Council election"
   wiki_prior_year: 2022
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2024
+      title: "2024 Bury Metropolitan Borough Council election"
+    - year: 2023
+      title: "2023 Bury Metropolitan Borough Council election"
+    - year: 2022
+      title: "2022 Bury Metropolitan Borough Council election"
 
 - lad_code: E08000003
   name: Manchester
@@ -5025,6 +5031,23 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Staffordshire County Council election"
+# Surrey's scheduled 2025 election was delayed to support the East/West Surrey
+# unitary reorganisation (new unitaries elected 7 May 2026, in force April 2027).
+# Most-recent CED-level contest is 2021; later contests would be on the new
+# unitary boundaries, which aren't in WD24 yet (East/West Surrey deferred —
+# see comment at top of file).
+- lad_code: E10000030
+  name: Surrey
+  nation: england
+  cycle: all-out
+  region_gm: false
+  wiki_2026: null
+  wiki_prior: null
+  wiki_prior_year: null
+  electoral_system: fptp
+  wiki_current_articles:
+    - year: 2021
+      title: "2021 Surrey County Council election"
 - lad_code: E10000031
   name: Warwickshire
   nation: england

@@ -217,38 +217,32 @@ function fmtCedTitle(c) {
   return lines.join('\n');
 }
 
-// Render the one Current-control map. Ward fills are the base layer; the CED
-// (county electoral division) layer sits on top, hidden by default, revealed
-// by the #ced-toggle button. CEDs cover ~1,300 polygons across English 2-tier
-// counties — when shown they paint who currently controls the *county-level*
-// services (schools, social care, roads) for that area.
+// Render the one Current-control map. Ward + CED fills are interleaved into
+// a single layer in chronological order — older elections paint first, newer
+// ones on top — so the topmost visible polygon at every point shows whichever
+// vote was most recent. CSS view-class toggles (.view-recent / .view-wards /
+// .view-ceds) gate per-path visibility for the three-way picker below.
 const target = document.getElementById('map-current');
 if (target) {
   const root = svgRoot();
-  // Base: ward fills (district-council layer).
-  const wardGroup = document.createElementNS(SVG_NS, 'g');
-  wardGroup.setAttribute('class', 'wards');
-  WARDS.forEach(w => {
-    const d = WARD_PATHS[w.gss];
-    if (!d) return;
-    const fill = (w.w && PARTY_COLOURS[w.w]) || NEUTRAL_FILL;
-    wardGroup.appendChild(makePath(d, 'ward', fill, fmtTitle(w)));
-  });
-  root.appendChild(wardGroup);
-
-  // Overlay: CED fills (county-council layer). Hidden by default via CSS;
-  // the #ced-toggle button adds .show-ceds to the SVG root to reveal them.
-  if (CEDS.length) {
-    const cedGroup = document.createElementNS(SVG_NS, 'g');
-    cedGroup.setAttribute('class', 'ceds');
-    CEDS.forEach(c => {
-      const d = CED_PATHS[c.ced];
-      if (!d) return;
-      const fill = (c.w && PARTY_COLOURS[c.w]) || NEUTRAL_FILL;
-      cedGroup.appendChild(makePath(d, 'ced', fill, fmtCedTitle(c)));
-    });
-    root.appendChild(cedGroup);
-  }
+  // Combine ward + CED records into one list. Sort ascending by year so
+  // newer elections paint last (= on top in SVG paint order). Wards beat
+  // CEDs of the same year as a tie-break — wards are more granular. Records
+  // with y=null sort to the bottom (treated as oldest); after the
+  // companion backfill pass those should be rare on GB.
+  const items = [
+    ...WARDS.map(w => ({ kind: 'ward', d: WARD_PATHS[w.gss], y: w.y,
+                         fill: (w.w && PARTY_COLOURS[w.w]) || NEUTRAL_FILL,
+                         title: fmtTitle(w) })),
+    ...CEDS.map(c => ({  kind: 'ced',  d: CED_PATHS[c.ced], y: c.y,
+                         fill: (c.w && PARTY_COLOURS[c.w]) || NEUTRAL_FILL,
+                         title: fmtCedTitle(c) })),
+  ].filter(it => it.d);
+  items.sort((a, b) => (a.y ?? 0) - (b.y ?? 0) || (a.kind === 'ced' ? -1 : 1));
+  const fills = document.createElementNS(SVG_NS, 'g');
+  fills.setAttribute('class', 'fills');
+  items.forEach(it => fills.appendChild(makePath(it.d, it.kind, it.fill, it.title)));
+  root.appendChild(fills);
 
   // Country outlines first so toggling boroughs off still shows the UK
   // silhouette on GB. Empty on GM (no country paths shipped).
@@ -277,22 +271,25 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
   applyBorough();
 }
 
-// CED-layer toggle (GB only — gated on CEDS being non-empty). Reveals the
-// county-council overlay so 2-tier English areas (Norfolk, Essex, Kent etc.)
-// can be read at their CED-level resolution rather than just by the
-// district-council ward fills underneath.
-const cedBtn = document.getElementById('ced-toggle');
-if (cedBtn && CEDS.length) {
-  let visible = false;
-  const applyCed = () => {
-    document.querySelectorAll('.map-svg').forEach(svg => {
-      svg.classList.toggle('show-ceds', visible);
-    });
-    cedBtn.setAttribute('aria-pressed', String(visible));
-    cedBtn.textContent = visible ? 'Hide county-council layer' : 'Show county-council layer';
-  };
-  cedBtn.addEventListener('click', () => { visible = !visible; applyCed(); });
-  applyCed();
+// View picker (GB only — gated on CEDS being non-empty). Three buttons with
+// data-view attributes flip the SVG root between .view-recent (default;
+// chronological z-order), .view-wards (only ward polygons visible), and
+// .view-ceds (only CED polygons visible). DOM is built once; CSS does the
+// per-mode hiding.
+const VIEWS = ['recent', 'wards', 'ceds'];
+const setView = name => {
+  document.querySelectorAll('.map-svg').forEach(svg => {
+    VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
+  });
+  document.querySelectorAll('[data-view]').forEach(btn => {
+    btn.setAttribute('aria-pressed', String(btn.dataset.view === name));
+  });
+};
+if (CEDS.length) {
+  document.querySelectorAll('[data-view]').forEach(btn => {
+    btn.addEventListener('click', () => setView(btn.dataset.view));
+  });
+  setView('recent');
 }
 
 // Shared legend, derived from parties actually present.
