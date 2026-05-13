@@ -87,9 +87,14 @@ def test_uk_current_has_three_view_buttons():
     html = (DOCS / "uk" / "current.html").read_text()
     for view in ("recent", "wards", "ceds"):
         assert f'data-view="{view}"' in html, f"missing data-view={view!r} button"
-    # Default-pressed button is the 'recent' one.
-    assert 'data-view="recent" type="button" class="zoom-toggle" aria-pressed="true"' \
-        in html, "the 'recent' button should start aria-pressed=true"
+    # Default-pressed button is the 'recent' one. Check only that the two
+    # attributes coexist in the same <button> tag, not their order/spacing —
+    # cosmetic edits to the chrome shouldn't break the test.
+    import re
+    recent_button = re.search(r'<button\b[^>]*data-view="recent"[^>]*>', html)
+    assert recent_button, "missing <button data-view='recent'> tag"
+    assert 'aria-pressed="true"' in recent_button.group(0), \
+        f"the 'recent' button should start aria-pressed=true; got: {recent_button.group(0)!r}"
 
 
 def test_gm_current_has_no_view_picker():
