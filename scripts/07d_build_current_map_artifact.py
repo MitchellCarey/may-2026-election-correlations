@@ -59,6 +59,8 @@ def main():
         geoms = json.load(f)
     ced_path = DATA / 'ced_winners.json'
     ced_records = json.loads(ced_path.read_text()) if ced_path.exists() else []
+    holyrood_path = DATA / 'holyrood_winners.json'
+    holyrood_records = json.loads(holyrood_path.read_text()) if holyrood_path.exists() else []
 
     if region not in geoms.get('viewBoxes', {}):
         print(f'  ! ward_geoms.json has no viewBox for region={region!r} '
@@ -134,6 +136,8 @@ def main():
     # (all 10 GM boroughs are single-tier metropolitan, no CEDs sit over them).
     ced_paths: dict = {}
     ceds_js: list = []
+    holyrood_paths: dict = {}
+    holyrood_js: list = []
     if region == 'gb':
         all_ceds = geoms.get('ceds', {})
         ced_paths = {code: c['path'] for code, c in all_ceds.items()}
@@ -148,14 +152,30 @@ def main():
         print(f'ceds in gb: {len(ceds_js)} (with winner: {n_ced_winner}; '
               f'grey: {len(ceds_js) - n_ced_winner})')
 
+        # Holyrood 2026 constituencies (issue #21). Same GB-only gate as CEDs:
+        # the SPC layer only paints over Scotland, which the GM map doesn't show.
+        all_spcs = geoms.get('spcs', {})
+        holyrood_paths = {code: s['path'] for code, s in all_spcs.items()}
+        holyrood_js = [{
+            'spc':  r['spc'],
+            'n':    r['name'],
+            'w':    r['winner'],
+            'y':    r['year'],
+        } for r in holyrood_records]
+        n_h_winner = sum(1 for h in holyrood_js if h['w'])
+        print(f'holyrood spcs in gb: {len(holyrood_js)} (with winner: {n_h_winner}; '
+              f'grey: {len(holyrood_js) - n_h_winner})')
+
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
     js.append('const BOROUGH_PATHS = ' + json.dumps(borough_paths, separators=(',', ':')) + ';')
     js.append('const COUNTRY_PATHS = ' + json.dumps(country_paths, separators=(',', ':')) + ';')
     js.append('const CED_PATHS = ' + json.dumps(ced_paths, separators=(',', ':')) + ';')
+    js.append('const HOLYROOD_PATHS = ' + json.dumps(holyrood_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
     js.append('const CEDS = ' + json.dumps(ceds_js, separators=(',', ':')) + ';')
+    js.append('const HOLYROOD = ' + json.dumps(holyrood_js, separators=(',', ':')) + ';')
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
     js.append('const PARTY_DISPLAY = ' + json.dumps(PARTY_DISPLAY) + ';')
     js.append('const LEGEND_ORDER = ' + json.dumps(LEGEND_ORDER) + ';')
@@ -217,19 +237,33 @@ function fmtCedTitle(c) {
   return lines.join('\n');
 }
 
-// Render the one Current-control map. Ward + CED fills are interleaved into
-// a single layer in chronological order — older elections paint first, newer
-// ones on top — so the topmost visible polygon at every point shows whichever
-// vote was most recent. CSS view-class toggles (.view-recent / .view-wards /
-// .view-ceds) gate per-path visibility for the three-way picker below.
+function fmtHolyroodTitle(h) {
+  const lines = ['Scottish Parliament · ' + h.n];
+  if (h.w) {
+    lines.push((h.y ? h.y + ' · ' : '') + 'winner: ' + (PARTY_DISPLAY[h.w] || h.w));
+  } else {
+    lines.push('(no constituency result on record)');
+  }
+  return lines.join('\n');
+}
+
+// Render the one Current-control map. Ward + CED + Holyrood fills are
+// interleaved into a single layer in chronological order — older elections
+// paint first, newer ones on top — so the topmost visible polygon at every
+// point shows whichever vote was most recent. CSS view-class toggles
+// (.view-recent / .view-wards / .view-ceds / .view-holyrood) gate per-path
+// visibility for the four-way picker below.
 const target = document.getElementById('map-current');
 if (target) {
   const root = svgRoot();
-  // Combine ward + CED records into one list. Sort ascending by year so
-  // newer elections paint last (= on top in SVG paint order). Wards beat
-  // CEDs of the same year as a tie-break — wards are more granular. Records
-  // with y=null sort to the bottom (treated as oldest); after the
-  // companion backfill pass those should be rare on GB.
+  // Combine ward + CED + Holyrood records into one list. Sort ascending by
+  // year so newer elections paint last (= on top in SVG paint order). Within
+  // a year, wards beat CEDs (more granular district vs. county), and Holyrood
+  // beats both (no overlap in practice — SPCs are Scotland-only — but treat
+  // it as the most specific so the order is deterministic). Records with
+  // y=null sort to the bottom (treated as oldest); after the companion
+  // backfill pass those should be rare on GB.
+  const KIND_ORDER = { ced: 0, ward: 1, holyrood: 2 };
   const items = [
     ...WARDS.map(w => ({ kind: 'ward', d: WARD_PATHS[w.gss], y: w.y,
                          fill: (w.w && PARTY_COLOURS[w.w]) || NEUTRAL_FILL,
@@ -237,8 +271,11 @@ if (target) {
     ...CEDS.map(c => ({  kind: 'ced',  d: CED_PATHS[c.ced], y: c.y,
                          fill: (c.w && PARTY_COLOURS[c.w]) || NEUTRAL_FILL,
                          title: fmtCedTitle(c) })),
+    ...HOLYROOD.map(h => ({ kind: 'holyrood', d: HOLYROOD_PATHS[h.spc], y: h.y,
+                            fill: (h.w && PARTY_COLOURS[h.w]) || NEUTRAL_FILL,
+                            title: fmtHolyroodTitle(h) })),
   ].filter(it => it.d);
-  items.sort((a, b) => (a.y ?? 0) - (b.y ?? 0) || (a.kind === 'ced' ? -1 : 1));
+  items.sort((a, b) => (a.y ?? 0) - (b.y ?? 0) || (KIND_ORDER[a.kind] - KIND_ORDER[b.kind]));
   const fills = document.createElementNS(SVG_NS, 'g');
   fills.setAttribute('class', 'fills');
   items.forEach(it => fills.appendChild(makePath(it.d, it.kind, it.fill, it.title)));
@@ -271,12 +308,12 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
   applyBorough();
 }
 
-// View picker (GB only — gated on CEDS being non-empty). Three buttons with
-// data-view attributes flip the SVG root between .view-recent (default;
-// chronological z-order), .view-wards (only ward polygons visible), and
-// .view-ceds (only CED polygons visible). DOM is built once; CSS does the
-// per-mode hiding.
-const VIEWS = ['recent', 'wards', 'ceds'];
+// View picker (GB only — gated on CEDS or HOLYROOD being non-empty). Four
+// buttons with data-view attributes flip the SVG root between .view-recent
+// (default; chronological z-order), .view-wards (only ward polygons),
+// .view-ceds (only CED polygons), and .view-holyrood (only Holyrood 2026
+// constituencies). DOM is built once; CSS does the per-mode hiding.
+const VIEWS = ['recent', 'wards', 'ceds', 'holyrood'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -285,7 +322,7 @@ const setView = name => {
     btn.setAttribute('aria-pressed', String(btn.dataset.view === name));
   });
 };
-if (CEDS.length) {
+if (CEDS.length || HOLYROOD.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });

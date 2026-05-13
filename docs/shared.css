@@ -926,12 +926,18 @@ body {
 }
 
 /* Current map view modes. The renderer builds one z-ordered fill layer with
-   both wards and CEDs interleaved by election year; CSS hides the inactive
-   class in the two single-layer modes. .view-recent shows everything (the
-   chronological default); .view-wards hides CEDs (legacy district-council
-   view); .view-ceds hides wards (legacy county-council view). */
-.map-svg.view-wards path.ced  { display: none; }
-.map-svg.view-ceds  path.ward { display: none; }
+   wards, CEDs and Holyrood constituencies interleaved by election year; CSS
+   hides the inactive classes in the single-layer modes. .view-recent shows
+   everything (the chronological default); .view-wards hides CEDs + Holyrood
+   (legacy district-council view); .view-ceds hides wards + Holyrood (legacy
+   county-council view); .view-holyrood hides wards + CEDs (isolates the 73
+   Scottish Parliament constituencies). */
+.map-svg.view-wards    path.ced      { display: none; }
+.map-svg.view-wards    path.holyrood { display: none; }
+.map-svg.view-ceds     path.ward     { display: none; }
+.map-svg.view-ceds     path.holyrood { display: none; }
+.map-svg.view-holyrood path.ward     { display: none; }
+.map-svg.view-holyrood path.ced      { display: none; }
 .map-svg path.ced {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
@@ -941,6 +947,19 @@ body {
   cursor: default;
 }
 .map-svg path.ced:hover {
+  stroke: var(--ink);
+  stroke-width: 1.4;
+  fill-opacity: 0.78;
+}
+.map-svg path.holyrood {
+  stroke: rgba(20,17,13,0.45);
+  stroke-width: 0.4;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  fill-opacity: 0.92;
+  cursor: default;
+}
+.map-svg path.holyrood:hover {
   stroke: var(--ink);
   stroke-width: 1.4;
   fill-opacity: 0.78;

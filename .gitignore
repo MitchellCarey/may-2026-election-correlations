@@ -65,3 +65,5 @@ data/county_results_prior_ceds.json
 data/current_ced_winners_raw.json
 data/source/ced_may_2025_en_bgc.geojson
 data/ced_winners.json
+data/source/spc_may_2026_sc_bgc.geojson
+data/holyrood_winners.json
