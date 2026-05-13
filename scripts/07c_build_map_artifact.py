@@ -434,6 +434,11 @@ function fmtSurreyTitle(s) {
   } else {
     lines.push('2026 · result pending (Wikipedia not yet updated)');
   }
+  // Surface the painted-fill party for split-seat wards (e.g. 1-1 ties
+  // resolved by votes in _plurality_winner) so the colour is legible.
+  if (s.w && s.w !== 'Pending') {
+    lines.push('Plurality: ' + (PARTY_DISPLAY[s.w] || s.w));
+  }
   return lines.join('\n');
 }
 
