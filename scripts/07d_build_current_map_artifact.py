@@ -61,6 +61,20 @@ def main():
     ced_records = json.loads(ced_path.read_text()) if ced_path.exists() else []
     holyrood_path = DATA / 'holyrood_winners.json'
     holyrood_records = json.loads(holyrood_path.read_text()) if holyrood_path.exists() else []
+    # Senedd 2026 overlay — GB-only layer that paints all of Wales by the
+    # plurality party of each Senedd constituency. Skipped on GM (no
+    # Welsh polygons in the GM viewBox) and when the data files don't
+    # exist (so a partial pipeline run doesn't break the renderer).
+    senedd_path = DATA / 'senedd_2026.json'
+    senedd_geom_path = DATA / 'senedd_geoms.json'
+    senedd_records = (
+        json.loads(senedd_path.read_text())
+        if region == 'gb' and senedd_path.exists() else []
+    )
+    senedd_geoms = (
+        json.loads(senedd_geom_path.read_text())
+        if region == 'gb' and senedd_geom_path.exists() else {'constituencies': {}}
+    )
 
     if region not in geoms.get('viewBoxes', {}):
         print(f'  ! ward_geoms.json has no viewBox for region={region!r} '
@@ -166,6 +180,24 @@ def main():
         print(f'holyrood spcs in gb: {len(holyrood_js)} (with winner: {n_h_winner}; '
               f'grey: {len(holyrood_js) - n_h_winner})')
 
+    # Senedd 2026 overlay (GB only) — one record + path per constituency,
+    # painted by plurality party with the 6-seat split in the tooltip.
+    senedd_paths: dict = {
+        code: c['path'] for code, c in senedd_geoms.get('constituencies', {}).items()
+    }
+    senedd_js = [{
+        's':     r['code'],
+        'n':     r['name'],
+        'w':     r['plurality_party'],
+        'y':     r['year'],
+        'seats': r['seats'],
+        'votes': r['votes'],
+    } for r in senedd_records]
+    if region == 'gb':
+        n_senedd_winner = sum(1 for s in senedd_js if s['w'])
+        print(f'senedd in gb: {len(senedd_js)} (with winner: {n_senedd_winner}; '
+              f'grey: {len(senedd_js) - n_senedd_winner})')
+
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
@@ -173,9 +205,12 @@ def main():
     js.append('const COUNTRY_PATHS = ' + json.dumps(country_paths, separators=(',', ':')) + ';')
     js.append('const CED_PATHS = ' + json.dumps(ced_paths, separators=(',', ':')) + ';')
     js.append('const HOLYROOD_PATHS = ' + json.dumps(holyrood_paths, separators=(',', ':')) + ';')
+    js.append('const SENEDD_PATHS = ' + json.dumps(senedd_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
     js.append('const CEDS = ' + json.dumps(ceds_js, separators=(',', ':')) + ';')
     js.append('const HOLYROOD = ' + json.dumps(holyrood_js, separators=(',', ':')) + ';')
+    js.append('const SENEDD = ' + json.dumps(senedd_js, ensure_ascii=False,
+                                             separators=(',', ':')) + ';')
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
     js.append('const PARTY_DISPLAY = ' + json.dumps(PARTY_DISPLAY) + ';')
     js.append('const LEGEND_ORDER = ' + json.dumps(LEGEND_ORDER) + ';')
@@ -247,23 +282,37 @@ function fmtHolyroodTitle(h) {
   return lines.join('\n');
 }
 
-// Render the one Current-control map. Ward + CED + Holyrood fills are
-// interleaved into a single layer in chronological order — older elections
-// paint first, newer ones on top — so the topmost visible polygon at every
-// point shows whichever vote was most recent. CSS view-class toggles
-// (.view-recent / .view-wards / .view-ceds / .view-holyrood) gate per-path
-// visibility for the four-way picker below.
+function fmtSeneddTitle(s) {
+  const lines = ['Senedd · ' + s.n];
+  const seatEntries = Object.entries(s.seats || {}).sort((a, b) => b[1] - a[1]);
+  if (seatEntries.length) {
+    lines.push(s.y + ' · seats: ' + seatEntries.map(
+      ([p, n]) => (PARTY_DISPLAY[p] || p) + ' ' + n
+    ).join(' · '));
+  }
+  if (s.w) {
+    lines.push('Plurality: ' + (PARTY_DISPLAY[s.w] || s.w));
+  }
+  return lines.join('\n');
+}
+
+// Render the one Current-control map. Ward + CED + Holyrood + Senedd fills
+// are interleaved into a single layer in chronological order — older
+// elections paint first, newer ones on top — so the topmost visible polygon
+// at every point shows whichever vote was most recent. CSS view-class
+// toggles (.view-recent / .view-wards / .view-ceds / .view-holyrood /
+// .view-senedd) gate per-path visibility for the picker below.
 const target = document.getElementById('map-current');
 if (target) {
   const root = svgRoot();
-  // Combine ward + CED + Holyrood records into one list. Sort ascending by
-  // year so newer elections paint last (= on top in SVG paint order). Within
-  // a year, wards beat CEDs (more granular district vs. county), and Holyrood
-  // beats both (no overlap in practice — SPCs are Scotland-only — but treat
-  // it as the most specific so the order is deterministic). Records with
-  // y=null sort to the bottom (treated as oldest); after the companion
-  // backfill pass those should be rare on GB.
-  const KIND_ORDER = { ced: 0, ward: 1, holyrood: 2 };
+  // Combine ward + CED + Holyrood + Senedd records into one list. Sort
+  // ascending by year so newer elections paint last (= on top in SVG paint
+  // order). Within a year, wards beat CEDs (more granular district vs.
+  // county); Holyrood and Senedd beat both (Holyrood paints Scotland,
+  // Senedd paints Wales — no overlap with each other, but treat them as
+  // the most specific layer so the order is deterministic). Records with
+  // y=null sort to the bottom (treated as oldest).
+  const KIND_ORDER = { ced: 0, ward: 1, holyrood: 2, senedd: 3 };
   const items = [
     ...WARDS.map(w => ({ kind: 'ward', d: WARD_PATHS[w.gss], y: w.y,
                          fill: (w.w && PARTY_COLOURS[w.w]) || NEUTRAL_FILL,
@@ -274,6 +323,9 @@ if (target) {
     ...HOLYROOD.map(h => ({ kind: 'holyrood', d: HOLYROOD_PATHS[h.spc], y: h.y,
                             fill: (h.w && PARTY_COLOURS[h.w]) || NEUTRAL_FILL,
                             title: fmtHolyroodTitle(h) })),
+    ...SENEDD.map(s => ({ kind: 'senedd', d: SENEDD_PATHS[s.s], y: s.y,
+                          fill: (s.w && PARTY_COLOURS[s.w]) || NEUTRAL_FILL,
+                          title: fmtSeneddTitle(s) })),
   ].filter(it => it.d);
   items.sort((a, b) => (a.y ?? 0) - (b.y ?? 0) || (KIND_ORDER[a.kind] - KIND_ORDER[b.kind]));
   const fills = document.createElementNS(SVG_NS, 'g');
@@ -308,12 +360,13 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
   applyBorough();
 }
 
-// View picker (GB only — gated on CEDS or HOLYROOD being non-empty). Four
-// buttons with data-view attributes flip the SVG root between .view-recent
-// (default; chronological z-order), .view-wards (only ward polygons),
-// .view-ceds (only CED polygons), and .view-holyrood (only Holyrood 2026
-// constituencies). DOM is built once; CSS does the per-mode hiding.
-const VIEWS = ['recent', 'wards', 'ceds', 'holyrood'];
+// View picker (GB only — gated on CEDS / HOLYROOD / SENEDD being non-empty).
+// Five buttons with data-view attributes flip the SVG root between
+// .view-recent (default; chronological z-order), .view-wards (only ward
+// polygons), .view-ceds (only CED polygons), .view-holyrood (only Holyrood
+// SPCs), and .view-senedd (only Senedd constituencies). DOM is built once;
+// CSS does the per-mode hiding.
+const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -322,7 +375,7 @@ const setView = name => {
     btn.setAttribute('aria-pressed', String(btn.dataset.view === name));
   });
 };
-if (CEDS.length || HOLYROOD.length) {
+if (CEDS.length || HOLYROOD.length || SENEDD.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
@@ -332,6 +385,8 @@ if (CEDS.length || HOLYROOD.length) {
 // Shared legend, derived from parties actually present.
 const partiesPresent = new Set();
 WARDS.forEach(w => { if (w.w) partiesPresent.add(w.w); });
+HOLYROOD.forEach(h => { if (h.w) partiesPresent.add(h.w); });
+SENEDD.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 const legend = document.getElementById('map-legend');
 if (legend) {
   LEGEND_ORDER.forEach(p => {
