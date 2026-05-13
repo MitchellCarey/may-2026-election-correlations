@@ -1,0 +1,338 @@
+[
+  {
+    "code": "S01",
+    "name": "Afan Ogwr Rhondda",
+    "plurality_party": "Plaid",
+    "year": 2026,
+    "seats": {
+      "Plaid": 3,
+      "Reform": 2,
+      "Labour": 1
+    },
+    "votes": {
+      "Plaid": 24538,
+      "Reform": 22345,
+      "Labour": 11123,
+      "Conservative": 2831,
+      "Green": 2561,
+      "LibDem": 1800,
+      "Other": 747,
+      "Independent": 504
+    }
+  },
+  {
+    "code": "S02",
+    "name": "Bangor Conwy Môn",
+    "plurality_party": "Plaid",
+    "year": 2026,
+    "seats": {
+      "Plaid": 3,
+      "Reform": 2,
+      "Conservative": 1
+    },
+    "votes": {
+      "Plaid": 31057,
+      "Reform": 19440,
+      "Conservative": 8555,
+      "Labour": 4733,
+      "Green": 3101,
+      "LibDem": 1591,
+      "Other": 653
+    }
+  },
+  {
+    "code": "S03",
+    "name": "Blaenau Gwent Caerffili Rhymni",
+    "plurality_party": "Plaid",
+    "year": 2026,
+    "seats": {
+      "Plaid": 3,
+      "Reform": 3
+    },
+    "votes": {
+      "Plaid": 29314,
+      "Reform": 23955,
+      "Labour": 7739,
+      "Conservative": 3353,
+      "Green": 2447,
+      "LibDem": 1284,
+      "Independent": 1376,
+      "Other": 364
+    }
+  },
+  {
+    "code": "S04",
+    "name": "Brycheiniog Tawe Nedd",
+    "plurality_party": "Reform",
+    "year": 2026,
+    "seats": {
+      "Reform": 3,
+      "Plaid": 2,
+      "LibDem": 1
+    },
+    "votes": {
+      "Reform": 26897,
+      "Plaid": 23276,
+      "LibDem": 9549,
+      "Labour": 7086,
+      "Conservative": 6281,
+      "Green": 5405,
+      "Independent": 1127,
+      "Other": 935
+    }
+  },
+  {
+    "code": "S05",
+    "name": "Caerdydd Ffynnon Taf",
+    "plurality_party": "Plaid",
+    "year": 2026,
+    "seats": {
+      "Plaid": 3,
+      "Reform": 1,
+      "Labour": 1,
+      "Green": 1
+    },
+    "votes": {
+      "Plaid": 32617,
+      "Reform": 17335,
+      "Labour": 11261,
+      "Green": 9036,
+      "Conservative": 8479,
+      "LibDem": 8442,
+      "Other": 333,
+      "Independent": 156
+    }
+  },
+  {
+    "code": "S06",
+    "name": "Caerdydd Penarth",
+    "plurality_party": "Plaid",
+    "year": 2026,
+    "seats": {
+      "Plaid": 3,
+      "Reform": 1,
+      "Green": 1,
+      "Labour": 1
+    },
+    "votes": {
+      "Plaid": 36136,
+      "Reform": 15525,
+      "Green": 12113,
+      "Labour": 10907,
+      "Conservative": 6818,
+      "Other": 3880,
+      "LibDem": 2260,
+      "Independent": 414
+    }
+  },
+  {
+    "code": "S07",
+    "name": "Casnewydd Islwyn",
+    "plurality_party": "Reform",
+    "year": 2026,
+    "seats": {
+      "Labour": 1,
+      "Plaid": 2,
+      "Reform": 2,
+      "Conservative": 1
+    },
+    "votes": {
+      "Reform": 25571,
+      "Plaid": 23069,
+      "Labour": 10622,
+      "Conservative": 8847,
+      "Green": 5898,
+      "LibDem": 2683,
+      "Other": 784,
+      "Independent": 224
+    }
+  },
+  {
+    "code": "S08",
+    "name": "Ceredigion Penfro",
+    "plurality_party": "Plaid",
+    "year": 2026,
+    "seats": {
+      "Conservative": 1,
+      "Plaid": 3,
+      "Reform": 2
+    },
+    "votes": {
+      "Plaid": 31943,
+      "Reform": 23003,
+      "Conservative": 14789,
+      "Labour": 6495,
+      "Green": 6324,
+      "LibDem": 4613,
+      "Other": 1244,
+      "Independent": 742
+    }
+  },
+  {
+    "code": "S09",
+    "name": "Clwyd",
+    "plurality_party": "Reform",
+    "year": 2026,
+    "seats": {
+      "Conservative": 1,
+      "Plaid": 2,
+      "Reform": 3
+    },
+    "votes": {
+      "Reform": 25741,
+      "Plaid": 22583,
+      "Conservative": 16193,
+      "Labour": 8314,
+      "Green": 4219,
+      "LibDem": 2355,
+      "Other": 352
+    }
+  },
+  {
+    "code": "S10",
+    "name": "Fflint Wrecsam",
+    "plurality_party": "Reform",
+    "year": 2026,
+    "seats": {
+      "Reform": 2,
+      "Plaid": 2,
+      "Conservative": 1,
+      "Labour": 1
+    },
+    "votes": {
+      "Reform": 25349,
+      "Plaid": 18440,
+      "Conservative": 9017,
+      "Labour": 8555,
+      "Green": 5138,
+      "LibDem": 2647,
+      "Independent": 429,
+      "Other": 421
+    }
+  },
+  {
+    "code": "S11",
+    "name": "Gwynedd Maldwyn",
+    "plurality_party": "Plaid",
+    "year": 2026,
+    "seats": {
+      "Plaid": 4,
+      "Reform": 2
+    },
+    "votes": {
+      "Plaid": 36087,
+      "Reform": 22667,
+      "Conservative": 5650,
+      "LibDem": 4554,
+      "Labour": 4466,
+      "Green": 4090,
+      "Independent": 3169,
+      "Other": 1007
+    }
+  },
+  {
+    "code": "S12",
+    "name": "Gŵyr Abertawe",
+    "plurality_party": "Plaid",
+    "year": 2026,
+    "seats": {
+      "Plaid": 3,
+      "Reform": 2,
+      "Labour": 1
+    },
+    "votes": {
+      "Plaid": 25076,
+      "Reform": 21641,
+      "Labour": 11195,
+      "Conservative": 7523,
+      "Green": 6383,
+      "LibDem": 6262,
+      "Other": 346,
+      "Independent": 296
+    }
+  },
+  {
+    "code": "S13",
+    "name": "Pen-y-bont Bro Morgannwg",
+    "plurality_party": "Plaid",
+    "year": 2026,
+    "seats": {
+      "Labour": 1,
+      "Plaid": 2,
+      "Conservative": 1,
+      "Reform": 2
+    },
+    "votes": {
+      "Plaid": 27407,
+      "Reform": 24602,
+      "Conservative": 12464,
+      "Labour": 9518,
+      "Green": 4220,
+      "LibDem": 2175,
+      "Independent": 986,
+      "Other": 429
+    }
+  },
+  {
+    "code": "S14",
+    "name": "Pontypridd Cynon Merthyr",
+    "plurality_party": "Plaid",
+    "year": 2026,
+    "seats": {
+      "Labour": 1,
+      "Plaid": 3,
+      "Reform": 2
+    },
+    "votes": {
+      "Conservative": 4339,
+      "Green": 3466,
+      "Other": 633,
+      "Independent": 2549,
+      "Labour": 9344,
+      "LibDem": 1393,
+      "Plaid": 28687,
+      "Reform": 22217
+    }
+  },
+  {
+    "code": "S15",
+    "name": "Sir Fynwy Torfaen",
+    "plurality_party": "Reform",
+    "year": 2026,
+    "seats": {
+      "Labour": 1,
+      "Plaid": 2,
+      "Conservative": 1,
+      "Reform": 2
+    },
+    "votes": {
+      "Reform": 24155,
+      "Plaid": 18275,
+      "Conservative": 13394,
+      "Labour": 11627,
+      "Green": 6375,
+      "LibDem": 2742,
+      "Independent": 438,
+      "Other": 655
+    }
+  },
+  {
+    "code": "S16",
+    "name": "Sir Gaerfyrddin",
+    "plurality_party": "Plaid",
+    "year": 2026,
+    "seats": {
+      "Plaid": 3,
+      "Reform": 3
+    },
+    "votes": {
+      "Plaid": 36160,
+      "Reform": 27542,
+      "Labour": 6458,
+      "Green": 3832,
+      "LibDem": 1662,
+      "Independent": 1653,
+      "Other": 823
+    }
+  }
+]

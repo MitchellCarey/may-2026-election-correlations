@@ -26,6 +26,10 @@ data/source/*.xls
 # Raw cached ward boundary GeoJSON from scripts/09 (~50 MB GB-wide)
 data/source/wd_may_2024_uk_bgc_*.geojson
 
+# Raw cached Senedd 2026 boundary GeoJSON from scripts/16 (~8 MB).
+# Re-fetchable from DataMapWales; skip-if-exists in 16.
+data/source/senedd_final_2026.geojson
+
 # Raw cached LGBCE post-review CED shapefiles from scripts/09c (~15 MB zipped,
 # ~37 MB extracted). Re-fetchable; the zips download idempotently.
 data/source/lgbce/

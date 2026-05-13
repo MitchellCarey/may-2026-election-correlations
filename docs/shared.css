@@ -925,13 +925,20 @@ body {
   fill-opacity: 0.78;
 }
 
-/* Current map view modes. The renderer builds one z-ordered fill layer with
-   both wards and CEDs interleaved by election year; CSS hides the inactive
-   class in the two single-layer modes. .view-recent shows everything (the
-   chronological default); .view-wards hides CEDs (legacy district-council
-   view); .view-ceds hides wards (legacy county-council view). */
-.map-svg.view-wards path.ced  { display: none; }
-.map-svg.view-ceds  path.ward { display: none; }
+/* Current map view modes. The renderer builds one z-ordered fill layer
+   with wards, CEDs, and Senedd constituencies interleaved by election
+   year; CSS hides the inactive classes in each single-layer mode.
+   .view-recent shows everything (chronological default — Senedd 2026
+   paints on top of 2022 Welsh wards). .view-wards hides CEDs + Senedd
+   (legacy district-council view); .view-ceds hides wards + Senedd
+   (legacy county-council view); .view-senedd hides wards + CEDs
+   (the 16 Welsh Senedd constituencies in isolation, GB page only). */
+.map-svg.view-wards  path.ced    { display: none; }
+.map-svg.view-wards  path.senedd { display: none; }
+.map-svg.view-ceds   path.ward   { display: none; }
+.map-svg.view-ceds   path.senedd { display: none; }
+.map-svg.view-senedd path.ward   { display: none; }
+.map-svg.view-senedd path.ced    { display: none; }
 .map-svg path.ced {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
@@ -941,6 +948,19 @@ body {
   cursor: default;
 }
 .map-svg path.ced:hover {
+  stroke: var(--ink);
+  stroke-width: 1.4;
+  fill-opacity: 0.78;
+}
+.map-svg path.senedd {
+  stroke: rgba(20,17,13,0.45);
+  stroke-width: 0.4;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  fill-opacity: 0.92;
+  cursor: default;
+}
+.map-svg path.senedd:hover {
   stroke: var(--ink);
   stroke-width: 1.4;
   fill-opacity: 0.78;

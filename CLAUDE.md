@@ -103,6 +103,17 @@ The Changes pipeline depends on the Winners pipeline's `all_wards.json` — if u
 
 `10` walks `wiki_current_articles` in `data/source/councils.yaml` — a per-council list of `{year, title}` pairs in newest-first order. Councils that contested 2026 leave the field `null` (their winner is sourced from `all_wards.json`); non-2026 councils list every article needed for their per-seat last-contest coverage (one entry for all-out councils, 2-3 entries for thirds councils covering the years between their last all-out and now). `11` dispatches on `electoral_system` (`fptp` → `parse_article`, `stv` → `parse_stv_article` for Scottish councils). `04c` joins to WD24 names with the same two-pass match `07c` uses (normalised name + `ward_name_overrides.csv`); an optional `data/source/current_ward_overrides.csv` covers Welsh/Scottish pre-WD24 drift.
 
+### Senedd 2026 overlay pipeline (issue #20) → feeds the GB current map only
+
+```
+14_fetch_senedd_results.py     → data/source/wiki_senedd_*_2026.json  (idempotent — skips cached files)
+15_extract_senedd.py           → data/senedd_2026.json                (16 records: code, name, plurality_party, year, seats, votes)
+16_fetch_senedd_geoms.py       → data/senedd_geoms.json               (16 SVG paths sharing the gb viewBox; raw cache at data/source/senedd_final_2026.geojson)
+07d_build_current_map_artifact.py → consumes the two outputs and emits SENEDD / SENEDD_PATHS arrays
+```
+
+The 16 new Senedd constituencies don't map 1:1 to councils, so the registry lives at `scripts/_senedd_constituencies.py` (synthetic codes `S01..S16` because ONS hasn't shipped an SPC_MAY_2026 lookup yet) and is shared between `14`/`15`/`16`. `15` derives the 6-seat split per constituency from the "Members of the Senedd" table in each per-constituency Wikipedia article (uniform anchor across all 16; the elected-marker conventions inside the per-party Election box rows diverge between Bangor-style `(E)` and Blaenau-style `(elected N)` and Brycheiniog-style no-marker, so we don't rely on them). `16` fetches the DataMapWales GeoServer WFS layer `geonode:senedd_final_2026` in EPSG:27700 GeoJSON, simplifies at 100 m, and re-applies the same y-flip 09 used (bounds re-discovered by scanning ward path integers in `ward_geoms.json`) so Senedd polygons overlay the wards in the same SVG coord space. `07d` only loads the two Senedd JSONs on `--region=gb`; the GM page is byte-identical with or without them.
+
 ### Official-source pipeline (issue #9) → feeds 04c at higher priority than Wikipedia
 
 ```
@@ -140,7 +151,8 @@ Common cases:
 - **Added a county to `scripts/09c_overlay_lgbce_ceds.py` (new LGBCE shapefile)** → run `09c --force` → `04c` → `07d` (both regions). Confirm the per-county count is 100 % (or notes the gap if a specific division has no result).
 - **Touched `scripts/07d_build_current_map_artifact.py`** → run `07d --region=gm` and `07d --region=gb`.
 - **Added rows or `wiki_current_articles` entries in `data/source/councils.yaml`** → run `10` → `11` → `04c` → `07d` (both regions). New rows with `wiki_2026` set also need `00b` and the Winners cascade.
-- **Touched `scripts/09_fetch_ward_boundaries.py` or boundary set** → run `09 --force` then `07c --region=gm`, `07c --region=gb`, `07d --region=gm`, `07d --region=gb`.
+- **Touched `scripts/14` / `15` / `16` or `scripts/_senedd_constituencies.py`** → run from that script onwards through `07d --region=gm` and `07d --region=gb`. The GM page is gated on `region == 'gb'` and will produce a byte-identical diff.
+- **Touched `scripts/09_fetch_ward_boundaries.py` or boundary set** → run `09 --force` then `07c --region=gm`, `07c --region=gb`, `07d --region=gm`, `07d --region=gb`. The Senedd y-flip in `16` reads bounds from `ward_geoms.json`, so re-run `16 --force` too if 09's bounds shift.
 - **Touched only copy/CSS in any of the four HTMLs** → no rebuild needed, but verify the BEGIN/END block didn't drift.
 
 After any rebuild, `git diff docs/*.html` should only show changes inside the BEGIN/END markers (plus whatever you intentionally edited outside them). If unrelated chunks moved, something's wrong — investigate before committing.
@@ -150,7 +162,7 @@ After any rebuild, `git diff docs/*.html` should only show changes inside the BE
 1. If the task changed Winners data/scripts/renderer: confirm `07_build_artifact.py` ran cleanly and printed its summary line.
 2. If the task changed Changes data/scripts/renderer: confirm `07b_build_changes_artifact.py` ran cleanly and printed its summary line.
 3. If the task changed Map data/scripts/renderer: confirm `07c_build_map_artifact.py` ran cleanly for both `--region=gm` (must be 215/215 wards) and `--region=gb` (currently ~2,200 wards across the 134 registered councils). Less than the expected count for either region means the GSS join lost wards and needs investigation.
-4. If the task changed Current data/scripts/renderer: confirm `07d_build_current_map_artifact.py` ran cleanly for both `--region=gm` (must be 215 wards; 214 with a winner + 1 grey for cancelled Bury · Moorside) and `--region=gb` (today's baseline is 7,934 GB ward-based wards with **7,898 winner-coloured + 36 grey** — the grey residual is the long tail from issue #7 phase D: ~26 WD24 wards in the six 2025-all-out boundary-review unitaries (Durham, Bucks, West/North Northamptonshire, Northumberland, Shropshire) where two pre-review wards merged into one new ward (the override schema is 1:1, so only one of each pair gets the proxy); ~8 Scottish wards where the 2022 article didn't cover every WD24 polygon; 1 cancelled Bury · Moorside; and 1 Runnymede ward absent from its 2023 article).
+4. If the task changed Current data/scripts/renderer: confirm `07d_build_current_map_artifact.py` ran cleanly for both `--region=gm` (must be 215 wards; 214 with a winner + 1 grey for cancelled Bury · Moorside) and `--region=gb` (today's baseline is 7,934 GB ward-based wards with **7,898 winner-coloured + 36 grey** — the grey residual is the long tail from issue #7 phase D: ~26 WD24 wards in the six 2025-all-out boundary-review unitaries (Durham, Bucks, West/North Northamptonshire, Northumberland, Shropshire) where two pre-review wards merged into one new ward (the override schema is 1:1, so only one of each pair gets the proxy); ~8 Scottish wards where the 2022 article didn't cover every WD24 polygon; 1 cancelled Bury · Moorside; and 1 Runnymede ward absent from its 2023 article). The GB run should also log `senedd in gb: 16 (with winner: 16; grey: 0)` and `15`'s summary should read `16/16 constituencies, 96/96 seats accounted for`.
 5. `git status` / `git diff docs/*.html` — make sure the spliced output is committed alongside the script changes (the deployed artifacts are the HTMLs, not the scripts; an un-rebuilt commit ships stale data).
 6. If you only changed copy/CSS outside the markers, no rebuild is required — say so explicitly rather than running 07/07b/07c/07d "just in case" (a no-op diff is fine, but skip the noise).
 
