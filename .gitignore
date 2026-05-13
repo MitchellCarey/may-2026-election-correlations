@@ -15,6 +15,9 @@ env/
 *.swp
 *.swo
 
+# Claude Code harness runtime state (per-session locks etc.)
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db
@@ -29,6 +32,10 @@ data/source/wd_may_2024_uk_bgc_*.geojson
 # Raw cached Senedd 2026 boundary GeoJSON from scripts/16 (~8 MB).
 # Re-fetchable from DataMapWales; skip-if-exists in 16.
 data/source/senedd_final_2026.geojson
+
+# Raw cached PCON_JUL_2024 (Westminster) boundary GeoJSON from scripts/21
+# (~30–50 MB). Re-fetchable from ONS Open Geography Portal; skip-if-exists in 21.
+data/source/pcon_jul_2024.geojson
 
 # Raw cached LGBCE post-review CED shapefiles from scripts/09c (~15 MB zipped,
 # ~37 MB extracted). Re-fetchable; the zips download idempotently.
