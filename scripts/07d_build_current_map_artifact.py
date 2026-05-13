@@ -96,6 +96,24 @@ def main():
     GB_PCON_PREFIXES = ('E14', 'W07', 'S14')
     pcon_records = [r for r in pcon_records if r['code'].startswith(GB_PCON_PREFIXES)]
 
+    # Surrey unitary overlay (issue #4 §4) — GB-only layer that paints the
+    # 36 East Surrey + 45 West Surrey wards from the inaugural 7 May 2026
+    # elections. The unitaries aren't in WD24 / LAD25 yet (administrative
+    # effect 1 April 2027), so they side-channel through scripts 22/23/24
+    # rather than the main councils.yaml pipeline. Synthetic LAD codes
+    # XSE / XSW; ward polygons sourced from the LGBCE Surrey post-review
+    # final-recommendation shapefile.
+    surrey_path = DATA / 'surrey_2026.json'
+    surrey_geom_path = DATA / 'surrey_geoms.json'
+    surrey_records = (
+        json.loads(surrey_path.read_text())
+        if region == 'gb' and surrey_path.exists() else []
+    )
+    surrey_geoms = (
+        json.loads(surrey_geom_path.read_text())
+        if region == 'gb' and surrey_geom_path.exists() else {'unitaries': {}}
+    )
+
     if region not in geoms.get('viewBoxes', {}):
         print(f'  ! ward_geoms.json has no viewBox for region={region!r} '
               f'(found: {sorted(geoms.get("viewBoxes", {}))}). '
@@ -238,6 +256,28 @@ def main():
         print(f'pcon in gb: {len(pcon_js)} (with winner: {n_pcon_winner}; '
               f'grey: {len(pcon_js) - n_pcon_winner})')
 
+    # Surrey unitary overlay (GB only) — one record + path per ward in the
+    # two new unitaries, painted by 2026 plurality with seats + votes in
+    # the tooltip. "Pending" wards (where Wikipedia hasn't been updated
+    # post-election) paint with the Pending palette colour.
+    surrey_paths: dict = {
+        code: c['path'] for code, c in surrey_geoms.get('unitaries', {}).items()
+    }
+    surrey_js = [{
+        'c':     r['ward_code'],
+        'l':     r['lad_code'],
+        'ln':    r['lad_name'],
+        'n':     r['ward_name'],
+        'w':     r['winner'],
+        'y':     r['year'],
+        'seats': r['seats_won'],
+        'votes': r['votes'],
+    } for r in surrey_records]
+    if region == 'gb':
+        n_surrey_decided = sum(1 for s in surrey_js if s['seats'])
+        print(f'surrey in gb: {len(surrey_js)} (decided: {n_surrey_decided}; '
+              f'pending: {len(surrey_js) - n_surrey_decided})')
+
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
@@ -247,6 +287,7 @@ def main():
     js.append('const HOLYROOD_PATHS = ' + json.dumps(holyrood_paths, separators=(',', ':')) + ';')
     js.append('const SENEDD_PATHS = ' + json.dumps(senedd_paths, separators=(',', ':')) + ';')
     js.append('const PCON_PATHS = ' + json.dumps(pcon_paths, separators=(',', ':')) + ';')
+    js.append('const SURREY_PATHS = ' + json.dumps(surrey_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
     js.append('const CEDS = ' + json.dumps(ceds_js, separators=(',', ':')) + ';')
     js.append('const HOLYROOD = ' + json.dumps(holyrood_js, separators=(',', ':')) + ';')
@@ -254,6 +295,8 @@ def main():
                                              separators=(',', ':')) + ';')
     js.append('const PCON = ' + json.dumps(pcon_js, ensure_ascii=False,
                                            separators=(',', ':')) + ';')
+    js.append('const SURREY = ' + json.dumps(surrey_js, ensure_ascii=False,
+                                             separators=(',', ':')) + ';')
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
     js.append('const PARTY_DISPLAY = ' + json.dumps(PARTY_DISPLAY) + ';')
     js.append('const LEGEND_ORDER = ' + json.dumps(LEGEND_ORDER) + ';')
@@ -350,6 +393,22 @@ function fmtPconTitle(p) {
   return lines.join('\n');
 }
 
+function fmtSurreyTitle(s) {
+  const lines = [s.ln + ' · ' + s.n];
+  const seatEntries = Object.entries(s.seats || {}).sort((a, b) => b[1] - a[1]);
+  if (seatEntries.length) {
+    lines.push(s.y + ' · seats: ' + seatEntries.map(
+      ([p, n]) => (PARTY_DISPLAY[p] || p) + ' ' + n
+    ).join(' · '));
+  } else {
+    lines.push(s.y + ' · result pending (Wikipedia not yet updated)');
+  }
+  if (s.w && s.w !== 'Pending') {
+    lines.push('Plurality: ' + (PARTY_DISPLAY[s.w] || s.w));
+  }
+  return lines.join('\n');
+}
+
 // Render the one Current-control map. Ward + CED + Holyrood + Senedd + PCON
 // fills are interleaved into a single layer in chronological order — older
 // elections paint first, newer ones on top — so the topmost visible polygon
@@ -369,7 +428,7 @@ if (target) {
   // tiebreak but the year sort puts it below 2025 CEDs and 2026 devolved
   // layers regardless. Records with y=null sort to the bottom (treated
   // as oldest).
-  const KIND_ORDER = { ced: 0, ward: 1, pcon: 2, holyrood: 3, senedd: 4 };
+  const KIND_ORDER = { ced: 0, ward: 1, surrey: 2, pcon: 3, holyrood: 4, senedd: 5 };
   const items = [
     ...WARDS.map(w => ({ kind: 'ward', d: WARD_PATHS[w.gss], y: w.y,
                          fill: (w.w && PARTY_COLOURS[w.w]) || NEUTRAL_FILL,
@@ -386,6 +445,9 @@ if (target) {
     ...PCON.map(p => ({ kind: 'pcon', d: PCON_PATHS[p.p], y: p.y,
                         fill: (p.w && PARTY_COLOURS[p.w]) || NEUTRAL_FILL,
                         title: fmtPconTitle(p) })),
+    ...SURREY.map(s => ({ kind: 'surrey', d: SURREY_PATHS[s.c], y: s.y,
+                          fill: (s.w && PARTY_COLOURS[s.w]) || NEUTRAL_FILL,
+                          title: fmtSurreyTitle(s) })),
   ].filter(it => it.d);
   items.sort((a, b) => (a.y ?? 0) - (b.y ?? 0) || (KIND_ORDER[a.kind] - KIND_ORDER[b.kind]));
   const fills = document.createElementNS(SVG_NS, 'g');
@@ -427,7 +489,7 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 // (only Holyrood SPCs), .view-senedd (only Senedd constituencies), and
 // .view-pcon (only GE 2024 PCONs). DOM is built once; CSS does the
 // per-mode hiding.
-const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon'];
+const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon', 'surrey'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -436,7 +498,7 @@ const setView = name => {
     btn.setAttribute('aria-pressed', String(btn.dataset.view === name));
   });
 };
-if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length) {
+if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length || SURREY.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
@@ -449,6 +511,7 @@ WARDS.forEach(w => { if (w.w) partiesPresent.add(w.w); });
 HOLYROOD.forEach(h => { if (h.w) partiesPresent.add(h.w); });
 SENEDD.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 PCON.forEach(p => { if (p.w) partiesPresent.add(p.w); });
+SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 const legend = document.getElementById('map-legend');
 if (legend) {
   LEGEND_ORDER.forEach(p => {
