@@ -1614,8 +1614,8 @@
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
-    "ward_code": "XSW::ashford_ref_cite_web",
-    "ward_name": "Ashford<ref>{{Cite web",
+    "ward_code": "XSW::ashford",
+    "ward_name": "Ashford",
     "winner": "Independent",
     "seats_won": {
       "Independent": 1,
@@ -1647,8 +1647,8 @@
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
-    "ward_code": "XSW::laleham_shepperton_ref_cite_web",
-    "ward_name": "Laleham & Shepperton<ref>{{Cite web",
+    "ward_code": "XSW::laleham_shepperton",
+    "ward_name": "Laleham & Shepperton",
     "winner": "Conservative",
     "seats_won": {
       "Conservative": 2
@@ -1696,8 +1696,8 @@
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
-    "ward_code": "XSW::staines_ref_cite_web",
-    "ward_name": "Staines<ref>{{Cite web",
+    "ward_code": "XSW::staines",
+    "ward_name": "Staines",
     "winner": "LibDem",
     "seats_won": {
       "LibDem": 2

@@ -73,7 +73,14 @@ def _slug(name: str) -> str:
 
 
 def _clean_ward_name(raw: str) -> str:
-    return SEATS_SUFFIX_RE.sub('', raw.strip())
+    s = raw.strip()
+    # West Surrey's article has three ward boxes whose title field embeds an
+    # inline <ref>{{Cite web ...}}</ref> (Ashford, Laleham & Shepperton,
+    # Staines). The title regex stops at the first '|' inside the cite template,
+    # so the capture ends with "Ashford<ref>{{Cite web". Drop the trailing junk.
+    if '<' in s:
+        s = s.split('<', 1)[0].strip()
+    return SEATS_SUFFIX_RE.sub('', s).strip()
 
 
 def _parse_block(block: str) -> tuple[dict[str, int], dict[str, int], list[dict]]:
