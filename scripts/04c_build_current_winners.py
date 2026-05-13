@@ -264,6 +264,18 @@ def build_ced_winners(geoms: dict) -> list[dict]:
                 'year':    None,
             })
             counted['no_winner'] += 1
+
+    # Validate that every override row points to a real CSV division. A typo
+    # in csv_division would silently miss (no exception, just unpainted) — flag
+    # it explicitly to stderr so editors see broken rows on the next 04c run.
+    for (cty_code, ons_key), csv_key in ced_overrides.items():
+        county_name = by_cty_norm_to_county_name.get(cty_code, '')
+        if not county_name:
+            continue
+        if csv_key not in by_county_norm.get(county_name, {}):
+            print(f'WARNING: ced_name_overrides.csv: {county_name} '
+                  f'"{ons_key}" → "{csv_key}" — target not in result data '
+                  f'(typo? or 2025-county data not loaded)', file=sys.stderr)
     return out, counted
 
 
