@@ -132,7 +132,7 @@ NI (18 N05 seats) is fetched on disk but **filtered out at render time** in `07d
 ```
 12_fetch_official_results.py   → data/source/official_<slug>_<year>.{html|json|pdf}   (idempotent — skips cached files)
 13_extract_official.py         → data/source/{county,ward}_official_<year>.csv         (appends rows from registered parsers; preserves hand-curated rows for councils without a parser)
-04c_build_current_winners.py   → as above, with official rows outranking Wikipedia per-record
+04c_build_current_winners.py   → as above, with official rows outranking both Wikipedia and all_wards.json per-record (county-side via county_official_<year>.csv, ward-side via ward_official_<year>.csv)
 ```
 
 Each council in `councils.yaml` may declare `official_url` + `official_parser` + `official_year`. `12` fetches the URL (default GET; parser modules can override `fetch()` for Power BI etc.) into the cache. `13` dispatches on `official_parser` to `scripts/_official_parsers/<key>.py` and appends rows. CSV schemas: `lad_code,county,division,party,candidate,votes,source` for E10 counties; `lad_code,council,ward,party,candidate,votes,source` for everything else.
