@@ -117,6 +117,30 @@ def load_current_overrides() -> dict[tuple[str, str], str]:
     return overrides
 
 
+def load_ced_overrides() -> dict[tuple[str, str], str]:
+    """(cty_code, normalised ONS CED name) → normalised CSV division name.
+
+    Bridges the divergence between the ONS CED25 polygon set (pre-2025
+    boundary review names like 'Fakenham ED') and the post-review division
+    names councils publish ('Fakenham and The Raynhams'). Mirrors the role
+    of ward_name_overrides.csv for ward-level WD24 boundary-review drift —
+    but applied geometry → result (the CED join iterates polygons first),
+    so the override translates the ONS name into the CSV name we need to
+    look up. Missing file returns {}.
+
+    Schema: cty_code, ons_name, csv_division, note.
+    """
+    path = SOURCE / 'ced_name_overrides.csv'
+    if not path.exists():
+        return {}
+    overrides: dict[tuple[str, str], str] = {}
+    with open(path, newline='') as f:
+        for row in csv.DictReader(f):
+            key = (row['cty_code'], normalise_ced(row['ons_name']))
+            overrides[key] = normalise_ced(row['csv_division'])
+    return overrides
+
+
 def load_county_official(year: int) -> dict[str, dict[str, dict]]:
     """Read data/source/county_official_<year>.csv — authoritative per-CED
     winners scraped (or hand-curated) from each council's own results page.
@@ -162,6 +186,7 @@ def build_ced_winners(geoms: dict) -> list[dict]:
     where specific CEDs aren't yet published.
     """
     official_2026 = load_county_official(2026)
+    ced_overrides = load_ced_overrides()
     p_2026  = DATA / 'county_results_2026_ceds.json'
     p_curr  = DATA / 'current_ced_winners_raw.json'
     p_prior = DATA / 'county_results_prior_ceds.json'
@@ -207,13 +232,19 @@ def build_ced_winners(geoms: dict) -> list[dict]:
         cty_clean = re.sub(r'\s+County\s*$', '', cty_name)
         by_cty_norm_to_county_name[meta.get('cty', '')] = cty_clean
 
-    counted = {'matched': 0, 'no_winner': 0}
+    counted = {'matched': 0, 'override': 0, 'no_winner': 0}
     used_keys: dict[str, set[str]] = {}
     for ced_code, meta in geoms.get('ceds', {}).items():
         cty_clean = by_cty_norm_to_county_name.get(meta.get('cty', ''), '')
         ced_county_data = by_county_norm.get(cty_clean, {})
         key = normalise_ced(meta['name'])
         rec = ced_county_data.get(key)
+        if rec is None:
+            override_key = ced_overrides.get((meta.get('cty', ''), key))
+            if override_key is not None:
+                rec = ced_county_data.get(override_key)
+                if rec is not None:
+                    counted['override'] += 1
         if rec:
             out.append({
                 'ced':     ced_code,
@@ -235,6 +266,18 @@ def build_ced_winners(geoms: dict) -> list[dict]:
                 'year':    None,
             })
             counted['no_winner'] += 1
+
+    # Validate that every override row points to a real CSV division. A typo
+    # in csv_division would silently miss (no exception, just unpainted) — flag
+    # it explicitly to stderr so editors see broken rows on the next 04c run.
+    for (cty_code, ons_key), csv_key in ced_overrides.items():
+        county_name = by_cty_norm_to_county_name.get(cty_code, '')
+        if not county_name:
+            continue
+        if csv_key not in by_county_norm.get(county_name, {}):
+            print(f'WARNING: ced_name_overrides.csv: {county_name} '
+                  f'"{ons_key}" → "{csv_key}" — target not in result data '
+                  f'(typo? or 2025-county data not loaded)', file=sys.stderr)
 
     # Source-side rows that didn't join to any ONS polygon — usually a sign
     # of a boundary review the ONS CED25 set predates (Essex May 2026), or a
@@ -351,7 +394,9 @@ def main():
     with open(DATA / 'ced_winners.json', 'w') as f:
         json.dump(ced_records, f, indent=2)
     print(f'Wrote ced_winners.json — {len(ced_records)} CEDs '
-          f'(matched={ced_counts["matched"]}, no_winner={ced_counts["no_winner"]})')
+          f'(matched={ced_counts["matched"]} '
+          f'[incl. override={ced_counts["override"]}], '
+          f'no_winner={ced_counts["no_winner"]})')
 
     # Per-ward CED enrichment: every WD25 ward in a 2-tier English district
     # gets its parent CED's winner attached, so hovering the ward on the
