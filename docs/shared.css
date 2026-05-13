@@ -947,27 +947,38 @@ body {
 }
 
 /* Current map view modes. The renderer builds one z-ordered fill layer
-   with wards, CEDs, Holyrood SPCs, and Senedd constituencies interleaved
-   by election year; CSS hides the inactive classes in each single-layer
-   mode. .view-recent shows everything (chronological default — Holyrood
-   and Senedd 2026 paint on top of older council colours). .view-wards
-   hides CEDs + Holyrood + Senedd (legacy district-council view); .view-ceds
-   hides wards + Holyrood + Senedd (legacy county-council view);
-   .view-holyrood isolates the 73 Scottish Parliament constituencies;
-   .view-senedd isolates the 16 Welsh Senedd constituencies (GB page only
-   for both). */
+   with wards, CEDs, Holyrood SPCs, Senedd constituencies and PCONs
+   (Westminster GE 2024) interleaved by election year; CSS hides the
+   inactive classes in each single-layer mode. .view-recent shows
+   everything (chronological default — Holyrood and Senedd 2026 paint
+   on top of older council colours; PCON 2024 sits below the 2025/2026
+   layers but above older ward colours). .view-wards hides every other
+   layer (legacy district-council view); .view-ceds hides every other
+   layer (legacy county-council view); .view-holyrood isolates the 73
+   Scottish Parliament constituencies; .view-senedd isolates the 16
+   Welsh Senedd constituencies; .view-pcon isolates the 632 GB
+   Westminster constituencies as voted on 4 July 2024 (GB page only for
+   all four single-layer overlays). */
 .map-svg.view-wards    path.ced      { display: none; }
 .map-svg.view-wards    path.holyrood { display: none; }
 .map-svg.view-wards    path.senedd   { display: none; }
+.map-svg.view-wards    path.pcon     { display: none; }
 .map-svg.view-ceds     path.ward     { display: none; }
 .map-svg.view-ceds     path.holyrood { display: none; }
 .map-svg.view-ceds     path.senedd   { display: none; }
+.map-svg.view-ceds     path.pcon     { display: none; }
 .map-svg.view-holyrood path.ward     { display: none; }
 .map-svg.view-holyrood path.ced      { display: none; }
 .map-svg.view-holyrood path.senedd   { display: none; }
+.map-svg.view-holyrood path.pcon     { display: none; }
 .map-svg.view-senedd   path.ward     { display: none; }
 .map-svg.view-senedd   path.ced      { display: none; }
 .map-svg.view-senedd   path.holyrood { display: none; }
+.map-svg.view-senedd   path.pcon     { display: none; }
+.map-svg.view-pcon     path.ward     { display: none; }
+.map-svg.view-pcon     path.ced      { display: none; }
+.map-svg.view-pcon     path.holyrood { display: none; }
+.map-svg.view-pcon     path.senedd   { display: none; }
 .map-svg path.ced {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
@@ -982,7 +993,8 @@ body {
   fill-opacity: 0.78;
 }
 .map-svg path.holyrood,
-.map-svg path.senedd {
+.map-svg path.senedd,
+.map-svg path.pcon {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
   stroke-linejoin: round;
@@ -991,7 +1003,8 @@ body {
   cursor: default;
 }
 .map-svg path.holyrood:hover,
-.map-svg path.senedd:hover {
+.map-svg path.senedd:hover,
+.map-svg path.pcon:hover {
   stroke: var(--ink);
   stroke-width: 1.4;
   fill-opacity: 0.78;
