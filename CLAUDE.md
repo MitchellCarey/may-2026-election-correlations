@@ -142,10 +142,10 @@ Parsers landed for Phase 2 of issue #9:
 - `moderngov_per_division` — moderngov.co.uk per-division pages (West Sussex)
 - `cmis_per_division` — DotNetNuke / OpenElection.net RDFa pages (Essex)
 - `powerbi_dashboard` — Power BI publish-to-web DAX scraper (Suffolk)
+- `hampshire_cloudflare` — single all-divisions HTML table behind Cloudflare; uses `scripts/_official_parsers/_cloudflare.py` (curl_cffi Chrome TLS impersonation) to bypass the 403 (Hampshire)
 - Phase 1 hand-curated CSV pattern still in use for Norfolk (no parser yet)
 
-Phase 2 deferrals (no `official_url` set, see comments on the registry rows):
-- Hampshire — hants.gov.uk Cloudflare-blocks programmatic clients; districts publish only their slices
+The `_cloudflare.py` helper (private module — leading underscore, never declared as `official_parser`) exposes `cloudflare_session()` and `fetch_cloudflare()` so any future Phase 4/5 council fronted by Cloudflare can opt in by importing it; `curl_cffi` is lazy-imported to keep contributors who don't run a CF-bypass parser from needing the wheel installed.
 
 For counties where the 2025/2026 LGBCE review redrew divisions, `scripts/09c_overlay_lgbce_ceds.py` replaces the pre-review CED25 polygons in `data/ward_geoms.json` with post-review polygons sourced from each county's LGBCE final-recommendation shapefile (Norfolk, Essex, Suffolk today). The shapefile zips cache under `data/source/lgbce/` and are fetched idempotently. Spelling differences between LGBCE and the council's published CSV are reconciled by the `NAME_FIXES` map at the top of `09c`.
 

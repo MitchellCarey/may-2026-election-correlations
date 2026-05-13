@@ -9,3 +9,11 @@ pyyaml>=6.0
 geopandas>=0.14
 shapely>=2.0
 pyproj>=3.6
+
+# build-only — used by scripts/_official_parsers/_cloudflare.py to impersonate a
+# real Chrome TLS fingerprint so Cloudflare-gated council sites (hants.gov.uk)
+# return 200 instead of 403. Not required at runtime; the deployed docs/
+# artifacts never re-fetch. Pinned to the 0.7 line — if a PyPI wheel isn't
+# available for the contributor's Python+arch combo, install needs a C
+# toolchain (libcurl-impersonate is built from source).
+curl_cffi>=0.7,<0.8
