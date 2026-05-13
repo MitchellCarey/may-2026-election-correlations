@@ -1,1 +1,5 @@
 cty_code,ons_name,csv_division,note
+E10000014,Botley & Hedge End North ED,Botley and Hedge End,HCC drops the "North" suffix that ONS keeps
+E10000014,"Liphook, Headley & Grayshott ED",Liphook Headley and Grayshott,HCC drops the comma after Liphook
+E10000014,Purbrook & Stakes South ED,Purbook and Stakes South,HCC page typo: "Purbook" → "Purbrook"
+E10000014,Totton South & Marchwood ED,Totton South and Marshwood,HCC page typo: "Marshwood" → "Marchwood"

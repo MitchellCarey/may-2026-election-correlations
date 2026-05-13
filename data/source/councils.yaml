@@ -1742,14 +1742,13 @@
   wiki_prior_year: 2021
   electoral_system: fptp
   wiki_current_articles: null
-  # Phase 2 deferred: hants.gov.uk returns Cloudflare 403 to programmatic
-  # clients; district councils (Rushmoor, Hart, Eastleigh, New Forest, etc.)
-  # publish only their own slice of HCC divisions. Aggregating across 11
-  # district sites or implementing a Cloudflare-challenge solver are both
-  # follow-ups. Until either is built, Wikipedia is the only source.
-  official_url: null
-  official_parser: null
-  official_year: null
+  # hants.gov.uk is behind Cloudflare; hampshire_cloudflare uses curl_cffi
+  # via scripts/_official_parsers/_cloudflare.py to impersonate Chrome's
+  # TLS fingerprint past the 403. HCC publishes one all-divisions table
+  # inline on the index page (no per-division pages, no vote counts).
+  official_url: "https://www.hants.gov.uk/aboutthecouncil/electionsandvoting/election-results"
+  official_parser: hampshire_cloudflare
+  official_year: 2026
 
 - lad_code: E10000020
   name: Norfolk
