@@ -36,44 +36,100 @@ Live: https://mitchellcarey.github.io/may-2026-election-correlations/
 
 ```
 .
-├── docs/
-│   └── index.html                      # Final deliverable — served by GitHub Pages
+├── docs/                               # Deployed by GitHub Pages, no build step
+│   ├── index.html                      # Winners — census × who-won-each-ward correlations
+│   ├── changes.html                    # Changes — census × who-flipped-each-ward correlations
+│   ├── map.html                        # Map — choropleth of GM wards
+│   ├── current.html                    # Current — every council's most-recent winner
+│   ├── shared.css                      # Shared styling for all four pages
+│   └── uk/                             # GB-wide siblings of map.html + current.html
 ├── data/
-│   ├── all_gm_results.json             # 2026 election winners, per ward
-│   ├── all_gm_gss_mapping.json         # Ward-name → ONS GSS code
-│   ├── all_gm_census.json              # Census 2021 vars, per ward
-│   ├── gm_all_wards.json               # Consolidated 214-ward dataset
-│   ├── gm_correlations.json            # Pearson r and party means
-│   ├── v12_ward_data.json              # JS-ready ward array
-│   ├── combined_wards.json             # Snapshot: Manchester + Salford
-│   ├── wards_v6.json                   # Snapshot: Manchester w/ CTS
-│   └── source/                         # Place to drop ONS XLSX files
-└── scripts/
-    ├── 01_build_results.py             # Encode 2026 election results
-    ├── 02_match_gss.py                 # Map ward names to GSS codes
-    ├── 03_extract_census.py            # Pull from 8 ONS XLSX files
-    ├── 04_consolidate.py               # Merge into single dataset
-    ├── 05_correlate.py                 # Compute Pearson r and means
-    ├── 06_prep_artifact_data.py        # Build JS-ready data
-    └── 07_build_artifact.py            # Splice into docs/index.html
+│   ├── *.json                          # Generated intermediates (committed)
+│   └── source/                         # Inputs — see "Required source data" below
+└── scripts/                            # 33 numbered scripts across four pipelines
+                                        # (Winners 01–08, Changes 00/01b/04b/05b/05c/06b/07b,
+                                        #  Map 09/09b/09c/09d/07c, Current 10/11/04c/07d,
+                                        #  Official 12/13, Holyrood 17/18). Full pipeline
+                                        #  graph + re-run rules live in CLAUDE.md.
 ```
 
-## Reproduce
+## Setup
+
+- Python 3.10+
+- `python -m venv .venv && source .venv/bin/activate`
+- `pip install -r requirements.txt`
+
+`geopandas` / `shapely` / `pyproj` in `requirements.txt` are build-only —
+they're only needed if you rebuild ward boundaries with script 09 (or the
+related 09b/09c/09d). The deployed artifacts ship as static HTML + JSON
+and need none of them at runtime.
+
+## Required source data
+
+Two categories: manual downloads you fetch once, and caches that the build
+scripts populate on first run. Everything below is gitignored.
+
+**Manual (one-time, you download these):**
+
+8 ONS Census 2021 ward XLSXs + 1 small-area income XLSX. Drop them into
+`data/source/` — see [data/source/README.md](data/source/README.md) for
+the exact filenames and NOMIS / ONS download links.
+
+**Fetched on demand (the build scripts download these on first run; all
+idempotent / skip-if-cached):**
+
+| Cached file(s) under `data/source/`               | Populated by | Approx. size       |
+|---------------------------------------------------|--------------|--------------------|
+| `oa21_msoa21_lookup.csv`, `oa21_wd24_lookup.csv`  | script 03b   | 5–10 MB each       |
+| `wd_may_2024_uk_bgc_*.geojson`                    | script 09    | ~50 MB             |
+| `ced_may_2025_en_bgc.geojson`                     | script 09b   | ~10 MB             |
+| `lgbce/*.zip` + extracted shapefiles              | script 09c   | ~37 MB             |
+| `spc_may_2026_sc_bgc.geojson`                     | script 09d   | ~5 MB              |
+| `wiki_*.json` (prior winners, 2026 results, most-recent winners) | scripts 00 / 00b / 10 | hundreds of files, ~200 KB each |
+| `official_*.{html,json,pdf}`                      | script 12    | varies per council |
+
+First end-to-end run pulls everything (slow on a cold cache). Subsequent
+runs hit the cache and skip the network.
+
+Hand-curated CSVs that *are* committed under `data/source/` —
+`county_official_2026.csv`, `ward_official_2026.csv`,
+`ward_name_overrides.csv`, `current_ward_overrides.csv`,
+`ced_name_overrides.csv`, `census2021-ts022-ward.csv`, `councils.yaml` —
+supplement what the scrapers can do automatically. Don't delete them.
+
+## Rebuild the four pages
+
+Each page has its own pipeline. Quick reference (full re-run rules and
+dependencies live in [CLAUDE.md](CLAUDE.md) under "Keeping the artifacts current"):
+
+```
+Winners  → docs/index.html
+           scripts 01 → 02 → 03 → 04 → 05 → 06 → 07 → 08
+
+Changes  → docs/changes.html
+           scripts 00 → 01b → 04b → 05b → 05c → 06b → 07b   (depends on Winners 04)
+
+Map      → docs/map.html  +  docs/uk/map.html
+           script 09 → 07c --region=gm and 07c --region=gb
+
+Current  → docs/current.html  +  docs/uk/current.html
+           scripts 10 → 11 → (optional 12 → 13 for official sources) → 04c
+                    → 07d --region=gm and 07d --region=gb
+```
+
+CLAUDE.md also documents the LGBCE overlay (09c), Holyrood (17/18), and the
+official-source parser registry under `scripts/_official_parsers/`.
+
+## View locally
+
+Each page is static HTML — open `docs/index.html` (or any other) directly
+in a browser, no dev server required. To preview the full GitHub Pages
+layout including the `docs/uk/` siblings with their relative paths, run a
+static server from the repo root:
 
 ```bash
-pip install -r requirements.txt
-
-# Drop the 8 ONS Census 2021 XLSX files into data/source/
-# (see data/source/README.md for download links)
-
-# Run the pipeline
-python scripts/01_build_results.py
-python scripts/02_match_gss.py
-python scripts/03_extract_census.py
-python scripts/04_consolidate.py
-python scripts/05_correlate.py
-python scripts/06_prep_artifact_data.py
-python scripts/07_build_artifact.py
+python -m http.server -d docs 8000
+# then visit http://localhost:8000
 ```
 
 ## Methodology
