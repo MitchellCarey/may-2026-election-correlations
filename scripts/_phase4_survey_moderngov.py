@@ -166,10 +166,6 @@ def classify(url: str) -> tuple[str, bytes]:
     return 'none', body
 
 
-DATE_2026_RE = re.compile(r'(?:07[/&#47;]05[/&#47;]2026|2026-05-07|7(?:th)?\s*May\s*2026|May\s*2026|\b2026\b)',
-                          re.IGNORECASE)
-
-
 def find_2026_eid(host_url: str, body: bytes, *, fetch_via: str) -> tuple[str | None, str | None]:
     """Look for a May-2026 EID either in the body we already have, or via the
     public mgElectionResults.aspx?bcr=1 listing. Returns (eid, title-snippet).
