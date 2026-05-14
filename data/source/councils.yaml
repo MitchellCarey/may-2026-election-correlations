@@ -125,6 +125,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://democracy.rochdale.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=49&RPID=119717225"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 # Salford runs all-out every 4 years; the cycle is 2021 -> 2025 -> 2029,
 # so Salford had no whole-council 2026 contest. wiki_2026 stays null;
