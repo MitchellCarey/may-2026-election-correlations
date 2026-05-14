@@ -196,6 +196,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.trafford.gov.uk/council-data-and-democracy/elections/notices-and-results/election-results/2026-local-election-results"
+  official_parser: trafford
+  official_year: 2026
 
 - lad_code: E08000010
   name: Wigan
