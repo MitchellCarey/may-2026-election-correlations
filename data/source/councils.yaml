@@ -4898,6 +4898,9 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Cambridgeshire County Council election"
+  official_url: "https://cambridgeshire.cmis.uk.com/ccc_live/Elections/tabid/71/ctl/ViewWards/mid/399/ID/13/Default.aspx"
+  official_parser: cmis_per_division
+  official_year: 2025
 - lad_code: E10000007
   name: Derbyshire
   nation: england
@@ -4910,6 +4913,9 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Derbyshire County Council election"
+  official_url: "https://democracy.derbyshire.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=5"
+  official_parser: moderngov_per_division
+  official_year: 2025
 - lad_code: E10000008
   name: Devon
   nation: england
@@ -4922,6 +4928,9 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Devon County Council election"
+  official_url: "https://elections.devon.gov.uk/wp-json/wp/v2/election/division?per_page=100"
+  official_parser: devon_wp_rest
+  official_year: 2025
 - lad_code: E10000013
   name: Gloucestershire
   nation: england
@@ -4934,6 +4943,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Gloucestershire County Council election"
+  official_url: "https://glostext.gloucestershire.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=14"
+  official_parser: moderngov_per_division
+  official_year: 2025
+  official_moderngov_strip: "^[^:]+: "
 - lad_code: E10000015
   name: Hertfordshire
   nation: england
@@ -4946,6 +4959,9 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Hertfordshire County Council election"
+  official_url: "https://democracy.hertfordshire.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=16"
+  official_parser: moderngov_per_division
+  official_year: 2025
 - lad_code: E10000016
   name: Kent
   nation: england
@@ -4958,6 +4974,9 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Kent County Council election"
+  official_url: "https://democracy.kent.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=51"
+  official_parser: moderngov_per_division
+  official_year: 2025
 - lad_code: E10000017
   name: Lancashire
   nation: england
@@ -4970,6 +4989,9 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Lancashire County Council election"
+  official_url: "https://council.lancashire.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=43"
+  official_parser: moderngov_per_division
+  official_year: 2025
 - lad_code: E10000018
   name: Leicestershire
   nation: england
@@ -4982,6 +5004,9 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Leicestershire County Council election"
+  official_url: "https://democracy.leics.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=20"
+  official_parser: moderngov_per_division
+  official_year: 2025
 - lad_code: E10000019
   name: Lincolnshire
   nation: england
@@ -4994,6 +5019,9 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Lincolnshire County Council election"
+  official_url: "https://www.lincolnshire.gov.uk/council-business/elections/2"
+  official_parser: lincolnshire_html
+  official_year: 2025
 - lad_code: E10000024
   name: Nottinghamshire
   nation: england
@@ -5006,6 +5034,9 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Nottinghamshire County Council election"
+  official_url: "https://electionresults.nottinghamshire.gov.uk/2025/DetailedResults"
+  official_parser: notts_custom
+  official_year: 2025
 - lad_code: E10000025
   name: Oxfordshire
   nation: england
@@ -5018,6 +5049,9 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Oxfordshire County Council election"
+  official_url: "https://mycouncil.oxfordshire.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=23"
+  official_parser: moderngov_per_division
+  official_year: 2025
 - lad_code: E10000028
   name: Staffordshire
   nation: england
@@ -5030,6 +5064,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Staffordshire County Council election"
+  official_url: "https://staffordshire.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=38"
+  official_parser: moderngov_per_division
+  official_year: 2025
+  official_moderngov_strip: "^[^-]+ - "
 # Surrey's scheduled 2025 election was delayed to support the East/West Surrey
 # unitary reorganisation (new unitaries elected 7 May 2026, in force April 2027).
 # Most-recent CED-level contest is 2021; later contests would be on the new
@@ -5047,6 +5085,14 @@
   wiki_current_articles:
     - year: 2021
       title: "2021 Surrey County Council election"
+  # Surrey's mycouncil.surreycc.gov.uk results portal is fronted by Incapsula
+  # (Imperva), which requires JS execution to pass — curl_cffi's Chrome TLS
+  # impersonation is rejected on every profile. No PDF/CSV mirror of the 2021
+  # results exists on surreycc.gov.uk either. Wikipedia (wiki_current_articles
+  # above) remains the source of truth here.
+  official_url: null
+  official_parser: null
+  official_year: null
 - lad_code: E10000031
   name: Warwickshire
   nation: england
@@ -5059,6 +5105,9 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Warwickshire County Council election"
+  official_url: "https://apps.warwickshire.gov.uk/ElectionResults/elections/2025"
+  official_parser: warwickshire_custom
+  official_year: 2025
 - lad_code: E10000034
   name: Worcestershire
   nation: england
@@ -5075,3 +5124,6 @@
       title: "2021 Worcestershire County Council election"
     - year: 2017
       title: "2017 Worcestershire County Council election"
+  official_url: "https://gis.worcestershire.gov.uk/ArcGIS/rest/services/ElectionResults/MapServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&f=json&resultRecordCount=10000"
+  official_parser: worcestershire_arcgis
+  official_year: 2025
