@@ -182,31 +182,42 @@ def load_county_official(year: int) -> dict[str, dict[str, dict]]:
     return out
 
 
-def load_ward_official(year: int) -> dict[str, list[dict]]:
-    """Read data/source/ward_official_<year>.csv — authoritative per-ward
-    winners scraped (or hand-curated) from each council's own results page.
-    Indexed by lad_code → list of records (preserves per-council row counts
-    so coverage M/N can be reported per council, including misses). Highest-
-    priority ward source; outranks both all_wards.json (2026 councils) and
-    current_winners_raw.json (non-2026 councils) in main().
+def load_ward_official() -> dict[str, list[dict]]:
+    """Read every data/source/ward_official_<year>.csv — authoritative
+    per-ward winners scraped (or hand-curated) from each council's own
+    results page. Indexed by lad_code → list of records (preserves per-
+    council row counts so coverage M/N can be reported per council,
+    including misses). Highest-priority ward source; outranks both
+    all_wards.json (2026 councils) and current_winners_raw.json
+    (non-2026 councils) in main().
 
     CSV schema: lad_code, council, ward, party, candidate, votes, source.
-    Missing file is fine — returns {}.
+
+    Multi-year because not every council had a 2026 contest — Salford ran
+    all-out in 2025 and gets official_year: 2025 in councils.yaml, so its
+    rows live in ward_official_2025.csv. Each row is tagged with its source
+    year so downstream rendering and the disagreement WARN can compare
+    against the right Wiki baseline. No matching file is fine — returns {}.
     """
-    path = SOURCE / f'ward_official_{year}.csv'
-    if not path.exists():
-        return {}
     out: dict[str, list[dict]] = {}
-    with open(path, newline='') as f:
-        for row in csv.DictReader(f):
-            if not row.get('party') or not row.get('ward'):
-                continue
-            out.setdefault(row['lad_code'], []).append({
-                'council': row['council'],
-                'ward':    row['ward'],
-                'party':   row['party'],
-                'year':    year,
-            })
+    # Newest year first so Pass 0's assign() (first-write-wins) prefers
+    # the most recent contest if a ward somehow appears in multiple years.
+    paths = sorted(SOURCE.glob('ward_official_*.csv'), reverse=True)
+    for path in paths:
+        m = re.match(r'ward_official_(\d{4})\.csv$', path.name)
+        if not m:
+            continue
+        year = int(m.group(1))
+        with open(path, newline='') as f:
+            for row in csv.DictReader(f):
+                if not row.get('party') or not row.get('ward'):
+                    continue
+                out.setdefault(row['lad_code'], []).append({
+                    'council': row['council'],
+                    'ward':    row['ward'],
+                    'party':   row['party'],
+                    'year':    year,
+                })
     return out
 
 
@@ -376,14 +387,15 @@ def main():
         return True
 
     # --- Pass 0: ward_official_<year>.csv (authoritative; outranks every other ward source) ---
-    # Per-LAD (matched, total, unmatched_wards) — feeds the per-council
+    # Per-LAD (matched, total, year, unmatched_wards) — feeds the per-council
     # "Norfolk 84/84 in official" coverage lines + stderr WARNs for rows
     # that didn't join to a WD24 polygon.
-    ward_official = load_ward_official(2026)
-    official_stats: list[tuple[str, str, int, int, list[str]]] = []
+    ward_official = load_ward_official()
+    official_stats: list[tuple[str, str, int, int, int, list[str]]] = []
     for lad in sorted(ward_official):
         rows = ward_official[lad]
         council_name = rows[0]['council']
+        council_year = rows[0]['year']
         matched = 0
         unmatched: list[str] = []
         for row in rows:
@@ -399,7 +411,7 @@ def main():
                 continue
             if assign(gss, row['party'], row['year'], 'official_ward', match_type):
                 matched += 1
-        official_stats.append((lad, council_name, matched, len(rows), unmatched))
+        official_stats.append((lad, council_name, matched, len(rows), council_year, unmatched))
 
     # --- Pass 1a: all_wards.json, exact normalised match by (lad, ward) ---
     all_wards_pending: list[dict] = []
@@ -548,17 +560,17 @@ def main():
           f'override={match_counts["override"]}  '
           f'no_match={match_counts["no_match"]}')
     n_off_councils = len(official_stats)
-    n_off_wards = sum(m for _, _, m, _, _ in official_stats)
+    n_off_wards = sum(m for _, _, m, _, _, _ in official_stats)
     print(f'  ward official: {n_off_councils} councils, {n_off_wards} wards')
-    for _, council_name, matched, total, _unm in official_stats:
-        print(f'    {council_name} {matched}/{total} in official')
-    for _, council_name, _matched, _total, unmatched in official_stats:
+    for _, council_name, matched, total, year, _unm in official_stats:
+        print(f'    {council_name} {matched}/{total} in official ({year})')
+    for _, council_name, _matched, _total, year, unmatched in official_stats:
         if not unmatched:
             continue
         sample = ', '.join(unmatched[:3])
         more = '' if len(unmatched) <= 3 else f' (+{len(unmatched) - 3} more)'
         print(f'  WARN {council_name}: {len(unmatched)} ward(s) in '
-              f'ward_official_2026.csv had no WD24 match — '
+              f'ward_official_{year}.csv had no WD24 match — '
               f'e.g. {sample}{more}', file=sys.stderr)
     with_ced = sum(1 for r in out if r.get('ced_county'))
     counties_seen = {r['ced_county'] for r in out if r.get('ced_county')}
