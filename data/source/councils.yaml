@@ -79,6 +79,15 @@
   official_parser: bolton
   official_year: 2026
 
+# Bury 2026 official results live behind a Contensis SPA on bury.gov.uk
+# whose Delivery API is auth-gated (401 to anonymous requests) and whose
+# server-rendered HTML carries no per-ward votes/winners — JS execution
+# against the live page is the only path to scrape it without significant
+# reverse-engineering. councildecisions.bury.gov.uk (the moderngov mirror)
+# also has no 2026 data published. Until a Bury parser lands, all_wards.json
+# (Wikipedia) supplies Bury's 16 declared 2026 winners; Bury Moorside stays
+# the structural grey on the GM map (re-poll within 35 days of 7 May 2026
+# following a candidate's death). Tracked under issue #35 follow-up.
 - lad_code: E08000002
   name: Bury
   nation: england
