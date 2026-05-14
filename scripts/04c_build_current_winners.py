@@ -84,14 +84,13 @@ def year_for_all_wards_source(council: dict) -> int:
     ward — but the year of that contest depends on the council's cycle:
 
       - Non-GM contested councils: wiki_2026 set, year = 2026.
-      - GM thirds councils: hand-curated CSV, wiki_2026 null, but every
-        ward had a 2026 thirds contest — year = 2026.
-      - Salford: hand-curated CSV, wiki_2026 null, all-out cycle, only one
-        ward (Barton & Winton) had a 2026 by-election; the other 19 wards
-        carry their 2021 all-out winners — year = wiki_prior_year (2021).
-
-    Discriminator: an all-out council with no wiki_2026 is the Salford
-    pattern; everyone else is 2026.
+      - GM thirds councils (incl. Salford from 2026): hand-curated CSV,
+        wiki_2026 null, but every ward had a 2026 thirds contest — year
+        = 2026.
+      - Future all-out councils whose most recent contest predates 2026:
+        wiki_2026 null, all-out cycle, fall back to wiki_prior_year. No
+        live council triggers this branch today, but the path exists for
+        any future addition.
     """
     if council.get('wiki_2026') is None and council.get('cycle') == 'all-out':
         return council['wiki_prior_year']
@@ -182,31 +181,42 @@ def load_county_official(year: int) -> dict[str, dict[str, dict]]:
     return out
 
 
-def load_ward_official(year: int) -> dict[str, list[dict]]:
-    """Read data/source/ward_official_<year>.csv — authoritative per-ward
-    winners scraped (or hand-curated) from each council's own results page.
-    Indexed by lad_code → list of records (preserves per-council row counts
-    so coverage M/N can be reported per council, including misses). Highest-
-    priority ward source; outranks both all_wards.json (2026 councils) and
-    current_winners_raw.json (non-2026 councils) in main().
+def load_ward_official() -> dict[str, list[dict]]:
+    """Read every data/source/ward_official_<year>.csv — authoritative
+    per-ward winners scraped (or hand-curated) from each council's own
+    results page. Indexed by lad_code → list of records (preserves per-
+    council row counts so coverage M/N can be reported per council,
+    including misses). Highest-priority ward source; outranks both
+    all_wards.json (2026 councils) and current_winners_raw.json
+    (non-2026 councils) in main().
 
     CSV schema: lad_code, council, ward, party, candidate, votes, source.
-    Missing file is fine — returns {}.
+
+    Multi-year because not every council had a 2026 contest — Salford ran
+    all-out in 2025 and gets official_year: 2025 in councils.yaml, so its
+    rows live in ward_official_2025.csv. Each row is tagged with its source
+    year so downstream rendering and the disagreement WARN can compare
+    against the right Wiki baseline. No matching file is fine — returns {}.
     """
-    path = SOURCE / f'ward_official_{year}.csv'
-    if not path.exists():
-        return {}
     out: dict[str, list[dict]] = {}
-    with open(path, newline='') as f:
-        for row in csv.DictReader(f):
-            if not row.get('party') or not row.get('ward'):
-                continue
-            out.setdefault(row['lad_code'], []).append({
-                'council': row['council'],
-                'ward':    row['ward'],
-                'party':   row['party'],
-                'year':    year,
-            })
+    # Newest year first so Pass 0's assign() (first-write-wins) prefers
+    # the most recent contest if a ward somehow appears in multiple years.
+    paths = sorted(SOURCE.glob('ward_official_*.csv'), reverse=True)
+    for path in paths:
+        m = re.match(r'ward_official_(\d{4})\.csv$', path.name)
+        if not m:
+            continue
+        year = int(m.group(1))
+        with open(path, newline='') as f:
+            for row in csv.DictReader(f):
+                if not row.get('party') or not row.get('ward'):
+                    continue
+                out.setdefault(row['lad_code'], []).append({
+                    'council': row['council'],
+                    'ward':    row['ward'],
+                    'party':   row['party'],
+                    'year':    year,
+                })
     return out
 
 
@@ -375,15 +385,48 @@ def main():
                          'match_type': match_type}
         return True
 
+    # Wiki-side lookup (gss → {year, party}) used for the official-vs-wiki
+    # disagreement WARN below. Mirrors Pass 1a/1b's join logic so any wiki
+    # ward we'd otherwise have painted is comparable. all_wards.json only
+    # carries the 134 councils that contested 2026 (plus Salford carrying
+    # 2021 priors), so non-2026 councils — England 2-tier districts, most
+    # of Wales/Scotland — aren't here and won't trigger a WARN.
+    wiki_by_gss: dict[str, dict] = {}
+    for w in all_wards:
+        if not w.get('winner'):
+            continue
+        lad = w['lad_code']
+        if not lad.startswith(GB_LAD_PREFIXES):
+            continue
+        council = council_by_lad.get(lad)
+        if council is None:
+            continue
+        gss = geom_by_norm.get((lad, normalise(w['ward'])))
+        if gss is None:
+            override = geom_overrides.get((lad, w['ward']))
+            if override is not None:
+                gss = geom_by_norm.get((lad, normalise(override)))
+        if gss is None:
+            continue
+        wiki_by_gss[gss] = {
+            'year':  year_for_all_wards_source(council),
+            'party': w['winner'],
+        }
+
     # --- Pass 0: ward_official_<year>.csv (authoritative; outranks every other ward source) ---
-    # Per-LAD (matched, total, unmatched_wards) — feeds the per-council
+    # Per-LAD (matched, total, year, unmatched_wards) — feeds the per-council
     # "Norfolk 84/84 in official" coverage lines + stderr WARNs for rows
-    # that didn't join to a WD24 polygon.
-    ward_official = load_ward_official(2026)
-    official_stats: list[tuple[str, str, int, int, list[str]]] = []
+    # that didn't join to a WD24 polygon. Disagreements between official and
+    # the wiki baseline are also collected here for a stderr WARN block —
+    # only when the years match (Salford official 2025 vs wiki 2021 are
+    # different elections and aren't expected to agree).
+    ward_official = load_ward_official()
+    disagreements: list[tuple[str, str, str, int, str, str]] = []
+    official_stats: list[tuple[str, str, int, int, int, list[str]]] = []
     for lad in sorted(ward_official):
         rows = ward_official[lad]
         council_name = rows[0]['council']
+        council_year = rows[0]['year']
         matched = 0
         unmatched: list[str] = []
         for row in rows:
@@ -397,9 +440,13 @@ def main():
             if gss is None:
                 unmatched.append(row['ward'])
                 continue
+            wiki = wiki_by_gss.get(gss)
+            if wiki and wiki['year'] == row['year'] and wiki['party'] != row['party']:
+                disagreements.append((council_name, row['ward'], gss,
+                                      row['year'], row['party'], wiki['party']))
             if assign(gss, row['party'], row['year'], 'official_ward', match_type):
                 matched += 1
-        official_stats.append((lad, council_name, matched, len(rows), unmatched))
+        official_stats.append((lad, council_name, matched, len(rows), council_year, unmatched))
 
     # --- Pass 1a: all_wards.json, exact normalised match by (lad, ward) ---
     all_wards_pending: list[dict] = []
@@ -548,18 +595,26 @@ def main():
           f'override={match_counts["override"]}  '
           f'no_match={match_counts["no_match"]}')
     n_off_councils = len(official_stats)
-    n_off_wards = sum(m for _, _, m, _, _ in official_stats)
+    n_off_wards = sum(m for _, _, m, _, _, _ in official_stats)
     print(f'  ward official: {n_off_councils} councils, {n_off_wards} wards')
-    for _, council_name, matched, total, _unm in official_stats:
-        print(f'    {council_name} {matched}/{total} in official')
-    for _, council_name, _matched, _total, unmatched in official_stats:
+    for _, council_name, matched, total, year, _unm in official_stats:
+        print(f'    {council_name} {matched}/{total} in official ({year})')
+    for _, council_name, _matched, _total, year, unmatched in official_stats:
         if not unmatched:
             continue
         sample = ', '.join(unmatched[:3])
         more = '' if len(unmatched) <= 3 else f' (+{len(unmatched) - 3} more)'
         print(f'  WARN {council_name}: {len(unmatched)} ward(s) in '
-              f'ward_official_2026.csv had no WD24 match — '
+              f'ward_official_{year}.csv had no WD24 match — '
               f'e.g. {sample}{more}', file=sys.stderr)
+    if disagreements:
+        print(f'\n{len(disagreements)} ward(s) where official source disagrees '
+              f'with all_wards.json (Wiki) — official wins; review these:',
+              file=sys.stderr)
+        for council_name, ward, gss, year, off_party, wiki_party in disagreements:
+            print(f'  WARN official ≠ wiki at {council_name} :: {ward} '
+                  f'({gss}, year={year}): official={off_party}, wiki={wiki_party}',
+                  file=sys.stderr)
     with_ced = sum(1 for r in out if r.get('ced_county'))
     counties_seen = {r['ced_county'] for r in out if r.get('ced_county')}
     print(f'  with CED context: {with_ced} wards across {len(counties_seen)} counties')

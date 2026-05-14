@@ -75,7 +75,19 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.bolton.gov.uk/news/article/2037/local-election-results-2026"
+  official_parser: bolton
+  official_year: 2026
 
+# Bury 2026 official results live behind a Contensis SPA on bury.gov.uk
+# whose Delivery API is auth-gated (401 to anonymous requests) and whose
+# server-rendered HTML carries no per-ward votes/winners — JS execution
+# against the live page is the only path to scrape it without significant
+# reverse-engineering. councildecisions.bury.gov.uk (the moderngov mirror)
+# also has no 2026 data published. Until a Bury parser lands, all_wards.json
+# (Wikipedia) supplies Bury's 16 declared 2026 winners; Bury Moorside stays
+# the structural grey on the GM map (re-poll within 35 days of 7 May 2026
+# following a candidate's death). Tracked under issue #35 follow-up.
 - lad_code: E08000002
   name: Bury
   nation: england
@@ -103,6 +115,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.manchester.gov.uk/online-directories/the-council-and-democracy-directories/elections-and-voting-directories/elections-directories/election-results/local-elections/local-elections-2026"
+  official_parser: manchester
+  official_year: 2026
 
 - lad_code: E08000004
   name: Oldham
@@ -114,6 +129,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.oldham.gov.uk/election_results_may7_2026"
+  official_parser: oldham
+  official_year: 2026
 
 - lad_code: E08000005
   name: Rochdale
@@ -125,21 +143,29 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://democracy.rochdale.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=49&RPID=119717225"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
-# Salford runs all-out every 4 years; the cycle is 2021 -> 2025 -> 2029,
-# so Salford had no whole-council 2026 contest. wiki_2026 stays null;
-# 2026 by-election seats (e.g. Barton & Winton) are captured via the
-# hand-curated CSV.
+# Salford ran an all-out election in 2024 under new boundaries and has
+# returned to thirds since: one councillor per ward elected on 7 May 2026
+# (plus a second seat in Cadishead and Lower Irlam to fill a vacancy).
+# wiki_2026 stays null because per-ward 2026 results come from the
+# council's own page via the official-source pipeline below, not a
+# whole-council Wikipedia article.
 - lad_code: E08000006
   name: Salford
   nation: england
-  cycle: all-out
+  cycle: thirds
   region_gm: true
   wiki_2026: null
   wiki_prior: "2021 Salford City Council election"
   wiki_prior_year: 2021
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.salford.gov.uk/your-council/elections-and-voting/election-results/"
+  official_parser: salford
+  official_year: 2026
 
 - lad_code: E08000007
   name: Stockport
@@ -151,6 +177,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://democracy.stockport.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=70&RPID=246295677"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E08000008
   name: Tameside
@@ -162,6 +191,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://tameside.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=67&RPID=40902715"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E08000009
   name: Trafford
@@ -173,6 +205,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.trafford.gov.uk/council-data-and-democracy/elections/notices-and-results/election-results/2026-local-election-results"
+  official_parser: trafford
+  official_year: 2026
 
 - lad_code: E08000010
   name: Wigan
@@ -184,6 +219,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://electionresults.wigan.gov.uk/LocalElections/Home/Index/19"
+  official_parser: wigan
+  official_year: 2026
 
 # Non-GM English metropolitan boroughs (E08).
 # All run thirds; the 2026 election was their next thirds year after 2024.
@@ -1810,6 +1848,9 @@
   wiki_prior: "2021 Norfolk County Council election"
   wiki_prior_year: 2021
   electoral_system: fptp
+  official_url: "https://elections.norfolk.gov.uk/textresults.aspx"
+  official_parser: norfolk_textresults
+  official_year: 2026
   wiki_current_articles: null
 
 - lad_code: E10000029
