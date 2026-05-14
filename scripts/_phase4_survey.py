@@ -50,7 +50,6 @@ TIMEOUT = 8.0
 # where the auto-derivation gets it wrong.
 SLUG_OVERRIDES: dict[str, str] = {
     "Hammersmith and Fulham": "lbhf",
-    "Kingston upon Hull, City of": "hull",
     "Kingston upon Thames": "kingston",
     "Richmond upon Thames": "richmond",
     "Newcastle upon Tyne": "newcastle",
@@ -121,7 +120,6 @@ SLUG_OVERRIDES: dict[str, str] = {
     "West Oxfordshire": "westoxon",
     "South Cambridgeshire": "scambs",
     "North East Lincolnshire": "nelincs",
-    "Kingston upon Hull, City of": "hullcc",
     "Isle of Wight": "iow",
     "Redditch": "redditchbc",
     "Mid Sussex": "midsussex",
