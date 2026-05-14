@@ -39,15 +39,15 @@ DIV_LINK_RE = re.compile(
 # "mgTopText" / "Not elected". The leading <span> is the party-colour swatch.
 # Candidate names may be bare text (West Sussex pattern) or wrapped in an
 # <a href="mgUserInfo.aspx?…"> link to a sitting councillor's profile
-# (Stockport / Derbyshire pattern); the optional <a>/</a> groups around the
-# name capture either form. Vote counts are tolerant of comma-grouped digits
-# (e.g. "1,476").
+# (Stockport, Lincoln, Crawley, Milton Keynes, Derbyshire, and most non-WSC
+# instances); the optional <a>/</a> groups around the name capture either
+# form. Vote counts are tolerant of comma-grouped digits (e.g. "1,476").
 ELECTED_ROW_RE = re.compile(
     r'<td[^>]*class="mgTopText"[^>]*>(?:<span[^>]*>.*?</span>\s*)?'
     r'(?:<a[^>]*>)?\s*([^<]+?)\s*(?:</a>)?\s*</td>\s*'
     r'<td[^>]*class="mgBottomText"[^>]*>([^<]+?)</td>\s*'
     r'<td[^>]*class="mgAlignRightCell"[^>]*>([\d,]+)</td>\s*'
-    r'<td[^>]*class="mgAlignRightCell"[^>]*>[^<]*</td>\s*'
+    r'(?:<td[^>]*class="mgAlignRightCell"[^>]*>[^<]*</td>\s*)?'
     r'<td[^>]*class="mgMainTxtBold"[^>]*>\s*Elected\s*</td>',
     re.DOTALL | re.IGNORECASE,
 )

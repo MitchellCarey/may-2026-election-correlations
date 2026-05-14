@@ -1,0 +1,889 @@
+lad_code,county,division,party,candidate,votes,source
+E10000003,Cambridgeshire,Abbey,Green,Elliot Tong,1113,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Alconbury and Kimbolton ,Conservative,Ian Gardener,1510,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Arbury,Labour,Mike Black,941,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Bar Hill ,LibDem,Edna Murphy,1430,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Brampton and Buckden ,LibDem,Liam  Beckett,1172,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Burwell,LibDem,Yannifer  Malinowski,940,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Cambourne,LibDem,Lucy Nethsingha,1127,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Castle,LibDem,Rory Clark,943,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Chatteris,Reform,Daniel Divine,941,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Cherry Hinton,Labour,Bryony Goodliffe,1101,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Chesterton,LibDem,Ian Manning,1254,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Cottenham and Willingham,LibDem,Yasmin  Deter,1250,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Duxford,LibDem,Peter McDonald,1580,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Ely North,LibDem,Alison Whelan,1411,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Ely South,LibDem,Christine Whelan,1551,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Fulbourn,LibDem,Matthew  Morgan,1024,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Gamlingay,LibDem,James  Stuart,1241,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Godmanchester and Huntingdon South,LibDem,Graham Wilson,1008,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Hardwick,LibDem,Christopher  Morris,1410,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Histon and Impington,LibDem,Ros Hathorn,1593,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Huntingdon North and Hartford,Conservative,Leedo George,703,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Huntingdon West ,Independent,Tom Sanderson,917,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Kings Hedges ,Labour,Elisa Meschini,908,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Linton,LibDem,Henry Batchelor,1584,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Littleport,Reform,John  Wells,675,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,"Longstanton, Northstowe and Over",LibDem,Luis  Navarro,1329,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,March North and Waldersey,Reform,Stefan  Fisher,2105,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,March South and Rural,Reform,Christopher  Thornhill,1056,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Market ,LibDem,Alex Beckett,595,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Melbourn and Bassingbourn,LibDem,Adam  Bostanci,1413,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Newnham,Green,Peter Rees,887,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Papworth and Swavesey,LibDem,Chris  Poulton,974,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Petersfield,Labour,Richard Howitt,1221,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Queen Ediths,LibDem,Karen Young,1258,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Ramsey and Bury,Reform,Jim  Sidlow,1357,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Roman Bank and Peckover,Reform,Andy  Osborn,1398,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Romsey,Green,Darren  Green,1355,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Sawston and Shelford,LibDem,Peter Fane,2577,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Sawtry and Stilton,Conservative,Simon Bywater,1749,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Soham North and Isleham,Conservative,Mark Goldsack,903,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Soham South and Haddenham ,LibDem,Tom  Hawker,1110,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Somersham and Earith,Conservative,Charlotte  Lowe,832,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,St Ives North and Wyton ,Independent,Julie  Kerr,749,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,St Ives South and Needingworth,Labour,Alex Bulat,676,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,St Neots East and Gransden,LibDem,Sarah  Caine,648,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,St Neots Eynesbury,Reform,Ricky  Ioannides,687,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,St Neots Priory Park and Little Paxton,LibDem,Robin  Wyatt,1072,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,St Neots The Eatons,LibDem,Geoff Seeff,1115,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Sutton,LibDem,Lorna Dupre,1642,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,The Hemingfords and Fenstanton,Conservative,David  Keane,965,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Trumpington,LibDem,David Levien,1111,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Warboys and the Stukeleys,Conservative,Ross Martin,832,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Waterbeach,LibDem,Anna Bradnam,1332,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Whittlesey North,Conservative,Chris Boden,1215,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Whittlesey South,Reform,Michael  Fisher,1191,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Wisbech East,Conservative,Samantha Hoy,974,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Wisbech West,Conservative,Steve Tierney,874,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Woodditton,LibDem,Jonny  Edge,1114,cambridgeshire.cmis.uk.com
+E10000003,Cambridgeshire,Yaxley and Farcet,Reform,Des  Watt,1088,cambridgeshire.cmis.uk.com
+E10000007,Derbyshire,Alfreton and Somercotes,Reform,Stuart Bent,1476,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Alport and Duffield,Green,Rachael Hatchett,1914,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Ashbourne South,Conservative,Steve Bull,1644,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Aston,Reform,Alan Graves,1030,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Bakewell,Conservative,Alasdair Sutton,1494,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Barlborough and Clowne,Reform,Kevin Harper,2008,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Bolsover,Reform,Carol Wood,1641,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Breadsall and West Hallam,Conservative,Carol Hart,1437,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Breaston,Reform,John Lawson,1512,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Brimington,Reform,Richard Smith,1240,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Buxton North and East,Reform,Melandra Smith,1075,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Buxton South and West,Conservative,Linda Grooby,1311,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Chapel and Hope Valley,Conservative,Nigel Gourlay,1432,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Clay Cross and Tupton,Reform,Stephen Reed,1353,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,"Codnor, Aldercar, Langley Mill and Loscoe",Reform,Darran Furness,1524,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Derwent Valley,Conservative,Susan Hobson,1307,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Dovedale and Ashbourne North,Reform,Nick Adams,1517,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Dronfield and Unstone,Conservative,Alex Dale,1641,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Dronfield Woodhouse and Walton,Conservative,Angelique Foster,1749,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Dunston,Reform,Joss Barnes,1296,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Eckington and Coal Aston,Reform,Jamie Hodgson,1429,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Elmton with Creswell and Whitwell,Reform,Roy Hallett,1708,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Etherow,Reform,Jason Isherwood,1069,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Etwall and Findern,Conservative,Martyn Ford,1005,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Glossop North,Conservative,Jean Wharmby,1083,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Glossop South,Labour,Damien Greenhalgh,1211,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Hardwick,Reform,David Harvey,1925,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Hasland and Rother,Reform,Lewis Whitbread,1285,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Heanor,Reform,Peter Mathews,1131,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Hilton,Reform,Sam Redfern,1424,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Horsley,Reform,Richard Morgan,1401,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Ilkeston Central,Reform,Richard Hatfield,1914,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Ilkeston North,Reform,Dan Price,1814,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Ilkeston South and Kirk Hallam,Reform,Simon Mabbott,1405,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Killamarsh and Renishaw,Reform,David Elsdon,1255,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Linacre and Loundsley Green,Reform,Alex Millward,1141,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Linton,Independent,Amy Wheelton,1519,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Long Eaton North,Reform,Jack Bradley,1121,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Long Eaton South,Reform,Jodie Brown,1115,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Matlock,LibDem,Sue Burfoot,2007,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Melbourne and Woodville,Reform,Charlotte Hill,1508,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,New Mills and Hayfield,Labour,Anne Clarke,1493,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,North Belper,Labour,Emma Monkman,983,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,"North Wingfield, Pilsley and Morton",Reform,Darren Muizelaar,1436,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Repton and Stenson,Reform,Matthew Benfield,1247,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Ripley East,Reform,Tony Wilson,1505,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Ripley West and Crich,Reform,Mark Chambers,1656,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Sandiacre,Conservative,Wayne Major,1298,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Sawley,Conservative,Paul Maginnis,1328,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Shirebrook and Pleasley,Reform,Sarah Reaney,1733,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Shirland and Wingerworth South,Reform,Paul Parkin,1422,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,South Belper and Holbrook,Green,Gez Kinsella,1805,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,South Normanton and Pinxton,Reform,Nephi Somerville,1795,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Spire,LibDem,Ed Fordham,1248,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Staveley,Reform,Dawn Abbott,1183,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Staveley North and Whittington,Reform,Mark Cliff,1324,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Sutton,Reform,Robert Reaney,1668,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Swadlincote East,Reform,Martin Bromley,1394,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Swadlincote South,Reform,Paul Oxberry,1342,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Swadlincote West,Reform,Joseph Turrell,1430,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Swanwick and Riddings,Reform,Charlotte Gates,1554,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,"Walton, Brampton and Boythorpe",LibDem,Tom Snowdon,1276,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Whaley Bridge,Independent,Ruth George,2662,democracy.derbyshire.gov.uk
+E10000007,Derbyshire,Wirksworth,Reform,Adrian Hunter,1306,democracy.derbyshire.gov.uk
+E10000008,Devon,Yelverton Rural,Reform,Michael FIFE COOK,1300,elections.devon.gov.uk
+E10000008,Devon,Wonford & St. Loye’s,Reform,Angela NASH,950,elections.devon.gov.uk
+E10000008,Devon,Willand & Uffculme,LibDem,Simon CLIST,1574,elections.devon.gov.uk
+E10000008,Devon,Whimple & Blackdown,LibDem,Cathy CONNOR,1352,elections.devon.gov.uk
+E10000008,Devon,Wearside & Topsham,Conservative,Andrew Robert LEADBETTER,1479,elections.devon.gov.uk
+E10000008,Devon,Totnes & Dartington,Green,Jacqi HODGSON,2350,elections.devon.gov.uk
+E10000008,Devon,Torrington Rural,LibDem,Cheryl Lavinia COTTLE-HUNKIN,2228,elections.devon.gov.uk
+E10000008,Devon,Tiverton West,LibDem,Steve LODGE,1372,elections.devon.gov.uk
+E10000008,Devon,Tiverton East,Reform,Neale Stephen Peter RALEIGH,1121,elections.devon.gov.uk
+E10000008,Devon,Teignmouth,LibDem,David COX,1415,elections.devon.gov.uk
+E10000008,Devon,Tavistock,Conservative,Debo SELLIS,1316,elections.devon.gov.uk
+E10000008,Devon,St. Sidwell’s & St. James,Green,Thomas Morgan RICHARDSON,1049,elections.devon.gov.uk
+E10000008,Devon,South Molton,Reform,Richard Leonard Alan HOPLEY,1298,elections.devon.gov.uk
+E10000008,Devon,South Brent & Yealmpton,LibDem,Dan THOMAS,2397,elections.devon.gov.uk
+E10000008,Devon,St. David’s & Haven Banks,Green,Andy KETCHIN,1486,elections.devon.gov.uk
+E10000008,Devon,Sidmouth,LibDem,Denise BICKLEY,2392,elections.devon.gov.uk
+E10000008,Devon,Seaton & Colyton,LibDem,Paul ARNOTT,2015,elections.devon.gov.uk
+E10000008,Devon,Salcombe,LibDem,Louise WAINWRIGHT,1534,elections.devon.gov.uk
+E10000008,Devon,Pinhoe & Mincinglake,Reform,Edward Clive Andrew HILL,1313,elections.devon.gov.uk
+E10000008,Devon,Otter Valley,Independent,Jess BAILEY,2997,elections.devon.gov.uk
+E10000008,Devon,Okehampton Rural,Reform,James George GRAINGER,1380,elections.devon.gov.uk
+E10000008,Devon,Northam,Conservative,Dermot MCGEOUGH,1500,elections.devon.gov.uk
+E10000008,Devon,Newton Abbot South,Reform,Mick COCKERHAM,1045,elections.devon.gov.uk
+E10000008,Devon,Newton Abbot North,Reform,Jacqueline Ann FRY,1008,elections.devon.gov.uk
+E10000008,Devon,Kingsteignton & Teign Estuary,Reform,Tony DEMPSTER,1315,elections.devon.gov.uk
+E10000008,Devon,Kingsbridge,LibDem,Julian BRAZIL,2040,elections.devon.gov.uk
+E10000008,Devon,Ivybridge,LibDem,Victor James ABBOTT,1210,elections.devon.gov.uk
+E10000008,Devon,Ipplepen & The Kerswells,Reform,Heather Maureen HORNER,1019,elections.devon.gov.uk
+E10000008,Devon,Ilfracombe,Green,Sara Jane WILSON,1040,elections.devon.gov.uk
+E10000008,Devon,Holsworthy Rural,Reform,Lynne Phyllis ROWSELL,1753,elections.devon.gov.uk
+E10000008,Devon,Heavitree & Whipton Barton,Green,Jack Stanley EADE,1070,elections.devon.gov.uk
+E10000008,Devon,Hatherleigh & Chagford,Reform,Sue DAVIES,1350,elections.devon.gov.uk
+E10000008,Devon,Fremington Rural,LibDem,Frank Lindsay BIEDERMAN,2284,elections.devon.gov.uk
+E10000008,Devon,Feniton & Honiton,LibDem,Richard JEFFERIES,1478,elections.devon.gov.uk
+E10000008,Devon,Exwick & St. Thomas,Reform,Tony STEVENS,1040,elections.devon.gov.uk
+E10000008,Devon,Exmouth,Reform,Helen BROWN,2601,elections.devon.gov.uk
+E10000008,Devon,Exmouth & Budleigh Salterton Coastal,LibDem,Nick HOOKWAY,1518,elections.devon.gov.uk
+E10000008,Devon,Exminster & Haldon,LibDem,Alan Michael CONNETT,2014,elections.devon.gov.uk
+E10000008,Devon,Duryard & Pennsylvania,LibDem,Michael Norman MITCHELL,886,elections.devon.gov.uk
+E10000008,Devon,Dawlish,LibDem,Rosie DAWSON,1923,elections.devon.gov.uk
+E10000008,Devon,Dartmouth & Marldon,LibDem,Simon John RAKE,1234,elections.devon.gov.uk
+E10000008,Devon,Cullompton & Bradninch,LibDem,James Timothy BUCZKOWSKI,1531,elections.devon.gov.uk
+E10000008,Devon,Creedy Taw & Mid Exe,LibDem,Steve KEABLE,1652,elections.devon.gov.uk
+E10000008,Devon,Crediton,LibDem,Jim CAIRNEY,1259,elections.devon.gov.uk
+E10000008,Devon,Combe Martin Rural,Conservative,Andrea Vivienne DAVIS,1365,elections.devon.gov.uk
+E10000008,Devon,Chulmleigh & Landkey,LibDem,Ed TYLDESLEY,1262,elections.devon.gov.uk
+E10000008,Devon,Chudleigh & Teign Valley,LibDem,Richard Michael KEELING,1217,elections.devon.gov.uk
+E10000008,Devon,Broadclyst,Green,Henry GENT,1475,elections.devon.gov.uk
+E10000008,Devon,Braunton Rural,LibDem,Graham Matthew BELL,1310,elections.devon.gov.uk
+E10000008,Devon,Bovey Rural,LibDem,Sally Angela MORGAN,1281,elections.devon.gov.uk
+E10000008,Devon,Bideford West & Hartland,Reform,Robin JULIAN,1079,elections.devon.gov.uk
+E10000008,Devon,Bideford East,Reform,Mark Andrew BARRY,1117,elections.devon.gov.uk
+E10000008,Devon,Bickleigh & Wembury,Conservative,Tony CARSON,1289,elections.devon.gov.uk
+E10000008,Devon,Barnstaple South,LibDem,Caroline Frances Herringham LEAVER,1348,elections.devon.gov.uk
+E10000008,Devon,Barnstaple North,LibDem,Syed JUSEF,1433,elections.devon.gov.uk
+E10000008,Devon,Axminster,Independent,Paul Graham HAYWARD,1393,elections.devon.gov.uk
+E10000008,Devon,Ashburton & Buckfastleigh,Conservative,Stuart ROGERS,1021,elections.devon.gov.uk
+E10000008,Devon,Alphington & Cowick,Reform,Neil STEVENS,1126,elections.devon.gov.uk
+E10000013,Gloucestershire,All Saints and Oakley,LibDem,Colin Hay,1250,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Battledown and Charlton Kings,LibDem,Angela Boyd Boyes,1593,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Benhall and Up Hatherley,LibDem,Roger Whyborn,2061,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Charlton Park and College,LibDem,Iain Dobie,1779,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Hesters Way and Springbank,LibDem,Suzanne Williams,987,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Lansdown and Park,LibDem,Glenn Andrews,1466,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Leckhampton and Warden Hill,LibDem,Martin Charles Horwood,1932,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Pittville & St Paul's,LibDem,Julian Charles George Tooke,1429,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Prestbury & Swindon Village,Green,Ian Alexander Cameron,944,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,St Mark's and St Peter's,LibDem,Dr David Willingham,1413,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Bourton-on-the-Water and Northleach,LibDem,Paul Hodgkinson,2063,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Campden-Vale,Conservative,Tom Bradley,1549,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Cirencester North with Ermin,LibDem,Mark Harris,1574,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Cirencester Park,LibDem,Joe Harris,1546,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Fairford and Lechlade on Thames,Conservative,Dom Morris,1433,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,"Moreton, Stow & the Rissingtons",Conservative,Daryl John Corps,1293,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,South Cerney,LibDem,Lisa Spivey,1668,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Tetbury,LibDem,Ian David Watson,1246,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Blakeney and Bream,Green,Beki Hoyland,1501,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Cinderford,Reform,Ray Donaghue,1081,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Coleford,Reform,Leigh Jayne Challis,1002,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Drybrook and Lydbrook,Reform,Piers Camp,1088,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Lydney,Reform,Mark Howard,1104,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Mitcheldean,Reform,Stuart Graham,1050,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Newent,LibDem,Gill Moseley,920,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Sedbury,Green,Chris McFarling,1502,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Abbey,Conservative,Andrew Gravells MBE,1312,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Barnwood and Hucclecote,LibDem,Ashley James Bowkett,1528,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Barton and Tredworth,Conservative,Sajid Patel,855,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Coney Hill and Matson,Independent,Alastair Chambers,798,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Grange and Kingsway,Reform,Jason Preece,1090,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Hempsted and Westgate,LibDem,Rebecca Trimnell,735,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Kingsholm and Wotton,LibDem,Jeremy Eric Hilton,1326,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Longlevens,LibDem,Sarah Dawn Sawyer,1334,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Quedgeley,Reform,Chris Mayo,883,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Tuffley & Moreland,Reform,Vernon John Gray,971,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Bisley and Painswick,Green,Gary Luff,1753,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Cam Valley,Reform,Michael Alun Rees,1111,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Dursley,Green,Richard Dean,970,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Hardwicke and Severn,Conservative,Stephen  Davies,1113,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Haresfield & Upton St Leonards,Green,John Graham Patient,916,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Minchinhampton,Green,Chloe Turner,2199,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Nailsworth,Labour,Steve Robinson,1675,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Rodborough,Green,Craig Alan Horrocks,1150,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Stonehouse,Reform,Dean Raymond Luke Botterill,825,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Stroud Central,Green,Natalie Rothwell-Warn,2166,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Wotton-under-Edge,LibDem,Linda Cohen,1804,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Bishop's Cleeve,LibDem,Alex Hegenbarth,1817,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Brockworth,LibDem,Cllr Ben Evans,1067,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Churchdown,LibDem,Stewart Richard Dove,1523,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Highnam,LibDem,Sarah Jane Hands,1074,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Severn Vale,LibDem,Richard John Stanley,1680,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Tewkesbury East,LibDem,Kate Usmar,846,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Tewkesbury West,Reform,Vernon Dennis Smith,1225,glostext.gloucestershire.gov.uk
+E10000013,Gloucestershire,Winchcombe and Woodmancote,LibDem,Cheryl Agg,1586,glostext.gloucestershire.gov.uk
+E10000015,Hertfordshire,Abbots Langley (59),LibDem,Stephen Giles-Medhurst,1389,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Baldock and Letchworth East (34),Labour,Alistair WiIloughby,1432,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Bedwell (53),Reform,Peter Colley,1196,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Berkhamsted (7),LibDem,Nigel Taylor,2250,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Bishop's Stortford East (17),LibDem,Calvin Horner,1536,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Bishop's Stortford Rural (18),Conservative,Mark Pope,1087,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Bishop's Stortford West (19),LibDem,Miriam Swainston,1072,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Borehamwood North (27),Reform,Simon Rhodes,972,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Borehamwood South (28),Reform,Saul Jacob,1018,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Bridgewater (8),LibDem,Caroline Smith-Wright,1411,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Broadwater (54),Reform,Janet Bainbridge,1254,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Buntingford (20),Reform,Terry Smith,1584,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Bushey North (29),LibDem,Laurence Brass,1640,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Bushey South (30),Conservative,Seamus Quilty,1502,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Central Watford and Oxhey (65),LibDem,Peter Taylor,1850,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Chells (55),LibDem,Robin Parker,1556,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Cheshunt Central (1),Conservative,Paul Seeby,1169,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Colney Heath and Marshalswick (43),LibDem,John Hale,2234,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Croxley (60),LibDem,Chris Lloyd,1895,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Flamstead End and Turnford (2),Reform,Tony Hill,1197,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Goffs Oak and Bury Green (3),Reform,Anthony Owen,1472,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Haldens (71),LibDem,Hillary Skoczylas,1238,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Handside and Peartree (72),LibDem,Gemma Moore,1532,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Harpenden North East (44),LibDem,Stuart Roberts,1730,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Harpenden Rural (45),LibDem,Dr Allison Wren,1661,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Harpenden South West (46),Conservative,Matt Cowley,2365,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hatfield East (73),Reform,Michael Blissett,661,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hatfield North (74),Labour,Beth Kelly,714,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hatfield Rural (75),Conservative,Fiona Thomson,1481,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hatfield South (76),LibDem,Paul Zukowskyj,1146,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hemel Hempstead East (9),Conservative,Andrew Williams MBE,991,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hemel Hempstead North East (10),Conservative,Colette Wyatt-Lowe,1133,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hemel Hempstead North West (11),Reform,David Herring,1015,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hemel Hempstead South East (12),Independent,Jan Maddern,1138,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hemel Hempstead St Paul's (13),Reform,Christopher Wright,966,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hemel Hempstead Town (14),LibDem,Adrian England,1332,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hertford All Saints (21),Green,Dr Ben Crystall,1870,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hertford Rural (22),Conservative,Ken Crofton,1670,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hertford St Andrew's (23),Green,Rachel Carter,1194,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hitchin North (35),Labour,Ian Albert,1718,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hitchin Rural (36),Conservative,David Barnard,1302,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hitchin South (37),LibDem,Chris Lucas,2020,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hoddesdon North (4),Conservative,Alexander Curtis,1460,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Hoddesdon South (5),Conservative,Steve Wortley,1669,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Kings Langley (15),Conservative,Richard Roberts,1370,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Knebworth and Codicote (38),Conservative,Ralph Muncer,1531,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Letchworth North (39),Labour,Tina Bhartwas,1141,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Letchworth South (40),LibDem,Sean Prendergast,1489,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,London Colney (47),LibDem,Liz Needham,965,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Meriden Tudor (66),LibDem,Penelope Hill,1165,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Nascot Park (67),LibDem,Mark Watkin,2149,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,North Watford (68),LibDem,Richard Short,1450,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Old Stevenage (56),Reform,Douglas Bainbridge,1283,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Potters Bar East (31),Conservative,John Graham,1362,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Potters Bar West and Shenley (32),Conservative,Morris Bright MBE,1261,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Rickmansworth East and Oxhey Park (61),Conservative,Vishal Patel,1533,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Rickmansworth West (62),Conservative,Paula Hiscocks,1278,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Royston East and Ermine (41),LibDem,Ruth Brown,1711,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Royston West and Rural (42),LibDem,Steve Jarvis,2217,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Sawbridgeworth (24),Conservative,Eric Buckmaster,1802,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Shephall (57),Reform,Wendy Rouse,1207,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,South Oxhey and Eastbury (63),Conservative,Christopher Alley,1011,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,St Albans Central (48),Green,Matt Fisher,1801,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,St Albans East (49),LibDem,Anthony Rowlands,2344,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,St Albans North (50),LibDem,Helen Campbell,2080,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,St Albans South (51),LibDem,Sandy Walkington,2555,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,St Nicholas (58),Reform,Matthew Hurst,1051,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,St Stephen's (52),LibDem,Ajanta Hilton,1863,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Three Rivers Rural (64),LibDem,Louise Price,1448,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Tring (16),LibDem,Sally Symington,2154,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Waltham Cross (6),Conservative,Dee Hart,939,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Ware North (25),Green,Kirsty Taylor-Moran,1100,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Ware South (26),Green,Steven Watson,1140,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Watling (33),Conservative,Caroline Clapper,2499,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Welwyn (77),Conservative,Tony Kingsbury,1854,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Welwyn Garden City South (78),Reform,Mark Biddle,1028,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,West Watford (69),Labour,Nigel Bell,1323,democracy.hertfordshire.gov.uk
+E10000015,Hertfordshire,Woodside Stanborough (70),LibDem,Tim Williams,1284,democracy.hertfordshire.gov.uk
+E10000016,Kent,Ashford Central,Reform,Pamela Ann Williams,1939,democracy.kent.gov.uk
+E10000016,Kent,Ashford East,Reform,Dean Edward Burns,1965,democracy.kent.gov.uk
+E10000016,Kent,Ashford Rural East,Reform,Brian Philip Collins,2260,democracy.kent.gov.uk
+E10000016,Kent,Ashford Rural South,Reform,Bill Barrett,2471,democracy.kent.gov.uk
+E10000016,Kent,Ashford Rural West,Reform,Jeremy Waring Eustace,2195,democracy.kent.gov.uk
+E10000016,Kent,Ashford South,Reform,Nick Wibberley,1794,democracy.kent.gov.uk
+E10000016,Kent,Birchington & Rural,Reform,Luke Evans,3766,democracy.kent.gov.uk
+E10000016,Kent,Broadstairs,Reform,John Graham Finch,1947,democracy.kent.gov.uk
+E10000016,Kent,Canterbury City North,Labour,Alister John Brady,1727,democracy.kent.gov.uk
+E10000016,Kent,Canterbury City South,Labour,Connie Nolan,1776,democracy.kent.gov.uk
+E10000016,Kent,Canterbury North,LibDem,Alex Ricketts,1630,democracy.kent.gov.uk
+E10000016,Kent,Canterbury South,LibDem,Mike Sole,3017,democracy.kent.gov.uk
+E10000016,Kent,Cheriton Sandgate & Hythe East,LibDem,Tim Prater,2051,democracy.kent.gov.uk
+E10000016,Kent,Cliftonville,Reform,Daniel Colin Taylor,1922,democracy.kent.gov.uk
+E10000016,Kent,Cranbrook,Conservative,Claudine Jane Russell,1442,democracy.kent.gov.uk
+E10000016,Kent,Dartford East,Reform,Ryan Andrew Waters,1591,democracy.kent.gov.uk
+E10000016,Kent,Dartford North East,Reform,Ben Robert Fryer,1514,democracy.kent.gov.uk
+E10000016,Kent,Dartford Rural,Reform,Michael David Brown,2086,democracy.kent.gov.uk
+E10000016,Kent,Dartford West,Reform,Beverley Fordham,1615,democracy.kent.gov.uk
+E10000016,Kent,Deal & Walmer,Reform,Chris Burwash,3317,democracy.kent.gov.uk
+E10000016,Kent,Dover North,Reform,Bridget Anne Porter,2041,democracy.kent.gov.uk
+E10000016,Kent,Dover Town,Reform,James Robert Defriend,3650,democracy.kent.gov.uk
+E10000016,Kent,Dover West,Reform,Paul John King,2482,democracy.kent.gov.uk
+E10000016,Kent,Elham Valley,Reform,Christopher Hespe,2522,democracy.kent.gov.uk
+E10000016,Kent,Faversham,LibDem,Antony James Hook,2750,democracy.kent.gov.uk
+E10000016,Kent,Folkestone East,Reform,Mary Elizabeth Lawes,1712,democracy.kent.gov.uk
+E10000016,Kent,Folkestone West,Reform,John Baker,1748,democracy.kent.gov.uk
+E10000016,Kent,Gravesend East,Reform,Georgia Louise Foster,3721,democracy.kent.gov.uk
+E10000016,Kent,Gravesham Rural,Reform,Diane Morton,2591,democracy.kent.gov.uk
+E10000016,Kent,Herne Bay East,Reform,Paul David Chamberlain,1935,democracy.kent.gov.uk
+E10000016,Kent,Herne Village & Sturry,Reform,Mark Francis Mulvihill,2239,democracy.kent.gov.uk
+E10000016,Kent,Hythe West,Reform,Peter Andrew Osborne,2421,democracy.kent.gov.uk
+E10000016,Kent,Maidstone Central,Reform,Oliver James Bradshaw,2477,democracy.kent.gov.uk
+E10000016,Kent,Maidstone North East,LibDem,Geoffrey Richard Samme,1637,democracy.kent.gov.uk
+E10000016,Kent,Maidstone Rural East,Reform,Sarah Elizabeth Emberson,2709,democracy.kent.gov.uk
+E10000016,Kent,Maidstone Rural North,Reform,Spencer Anthony Dixon,1697,democracy.kent.gov.uk
+E10000016,Kent,Maidstone Rural South,Reform,Brian Black,1874,democracy.kent.gov.uk
+E10000016,Kent,Maidstone Rural West,Reform,Robert Ford,1854,democracy.kent.gov.uk
+E10000016,Kent,Maidstone South,Reform,Paul Thomas,1803,democracy.kent.gov.uk
+E10000016,Kent,Maidstone South East,Reform,Linden Mary Kemkaran,1689,democracy.kent.gov.uk
+E10000016,Kent,Malling Central,LibDem,Trudy Dean,2398,democracy.kent.gov.uk
+E10000016,Kent,Malling North,Reform,Dodger Sian,1755,democracy.kent.gov.uk
+E10000016,Kent,Malling North East,Conservative,Andrew Malcolm Kennedy,2290,democracy.kent.gov.uk
+E10000016,Kent,Malling Rural East,Conservative,Sarah Anne Hudson,2140,democracy.kent.gov.uk
+E10000016,Kent,Malling West,Conservative,Harry Rayner,2162,democracy.kent.gov.uk
+E10000016,Kent,Margate,Reform,Jamie Henderson,1332,democracy.kent.gov.uk
+E10000016,Kent,Northfleet & Gravesend West,Reform,Matthew Herbert Fraser Moat,3237,democracy.kent.gov.uk
+E10000016,Kent,Ramsgate,Reform,Trevor Leslie Shonk,3939,democracy.kent.gov.uk
+E10000016,Kent,Romney Marsh,Reform,David Wimble,3903,democracy.kent.gov.uk
+E10000016,Kent,Sandwich,Reform,Peter Kenneth Evans,1742,democracy.kent.gov.uk
+E10000016,Kent,Sevenoaks North & Darent Valley,Reform,Marc Logen,2133,democracy.kent.gov.uk
+E10000016,Kent,Sevenoaks Rural North East,Reform,Maxine Patricia Fothergill,2259,democracy.kent.gov.uk
+E10000016,Kent,Sevenoaks Rural South,Reform,Robert Henry Mayall,1172,democracy.kent.gov.uk
+E10000016,Kent,Sevenoaks Town,LibDem,Richard Giles Streatfeild,2510,democracy.kent.gov.uk
+E10000016,Kent,Sevenoaks West,Conservative,Nigel Edward Staddon Williams,1983,democracy.kent.gov.uk
+E10000016,Kent,Sheppey,Reform,Maxwell Stanley Harrison,5060,democracy.kent.gov.uk
+E10000016,Kent,Sittingbourne North,Reform,Chris Palmer,1885,democracy.kent.gov.uk
+E10000016,Kent,Sittingbourne South,Reform,Paul William Webb,1735,democracy.kent.gov.uk
+E10000016,Kent,Swale East,Green,Rich Lehmann,1976,democracy.kent.gov.uk
+E10000016,Kent,Swale West,Reform,Richard Palmer,2550,democracy.kent.gov.uk
+E10000016,Kent,Swanley,Reform,Dean Anthony Truder,1780,democracy.kent.gov.uk
+E10000016,Kent,Swanscombe and Greenhithe,Reform,Thomas Mallon,1245,democracy.kent.gov.uk
+E10000016,Kent,Tenterden,Reform,Wayne Chapman,2130,democracy.kent.gov.uk
+E10000016,Kent,Tonbridge,Green,Mark Antony James Hood,5415,democracy.kent.gov.uk
+E10000016,Kent,Tunbridge Wells East,LibDem,Colin Michael Sefton,1690,democracy.kent.gov.uk
+E10000016,Kent,Tunbridge Wells North,LibDem,Mark Strafford Ellis,2026,democracy.kent.gov.uk
+E10000016,Kent,Tunbridge Wells Rural,LibDem,Mark Gavin Munday,1767,democracy.kent.gov.uk
+E10000016,Kent,Tunbridge Wells South,LibDem,Martin Dale Brice,2001,democracy.kent.gov.uk
+E10000016,Kent,Tunbridge Wells West,LibDem,John Joseph Moreland,1869,democracy.kent.gov.uk
+E10000016,Kent,Whitstable East & Herne Bay West,Reform,Adrian John Kibble,2062,democracy.kent.gov.uk
+E10000016,Kent,Whitstable West,Green,Stuart Heaver,2097,democracy.kent.gov.uk
+E10000016,Kent,Wilmington,Reform,Alan Stanley Cecil,1946,democracy.kent.gov.uk
+E10000017,Lancashire,Accrington North,Reform,Joel Michael Tetlow,1615,council.lancashire.gov.uk
+E10000017,Lancashire,Accrington South,Reform,Ashley Joynes,1297,council.lancashire.gov.uk
+E10000017,Lancashire,Accrington West & Oswaldtwistle Central,Green,Sohail Asghar,1337,council.lancashire.gov.uk
+E10000017,Lancashire,Brierfield and Nelson West,Independent,Mohammed Iqbal,2928,council.lancashire.gov.uk
+E10000017,Lancashire,Burnley Central East,Independent,Maheen Kamran,1357,council.lancashire.gov.uk
+E10000017,Lancashire,Burnley Central West,Reform,Liam Thomson,1387,council.lancashire.gov.uk
+E10000017,Lancashire,Burnley North East,Independent,Usman Arif,2430,council.lancashire.gov.uk
+E10000017,Lancashire,Burnley Rural,Reform,Mark Poulton,1798,council.lancashire.gov.uk
+E10000017,Lancashire,Burnley South West,Reform,Eddie Kutavicius,1659,council.lancashire.gov.uk
+E10000017,Lancashire,Burscough & Rufford,Reform,Richard Edwards,1416,council.lancashire.gov.uk
+E10000017,Lancashire,Chorley Central,Labour,Chris Snow,1307,council.lancashire.gov.uk
+E10000017,Lancashire,Chorley North,Reform,Martin Topp,1140,council.lancashire.gov.uk
+E10000017,Lancashire,Chorley Rural East,Labour,Kim Snape,1667,council.lancashire.gov.uk
+E10000017,Lancashire,Chorley Rural West,Reform,Mark Wade,1614,council.lancashire.gov.uk
+E10000017,Lancashire,Chorley South,Reform,Lee Hutchinson,1472,council.lancashire.gov.uk
+E10000017,Lancashire,Clayton with Whittle,Labour,Mark Edward Clifford,1411,council.lancashire.gov.uk
+E10000017,Lancashire,Cleveleys East,Reform,James Crawford,1631,council.lancashire.gov.uk
+E10000017,Lancashire,Cleveleys South & Carleton,Reform,Jan Schofield,1764,council.lancashire.gov.uk
+E10000017,Lancashire,Clitheroe,Reform,Warren Goldsworthy,1516,council.lancashire.gov.uk
+E10000017,Lancashire,"Euxton, Buckshaw & Astley",Conservative,Aidy Riggott,1507,council.lancashire.gov.uk
+E10000017,Lancashire,Fleetwood East,Reform,David Charles Shaw,1782,council.lancashire.gov.uk
+E10000017,Lancashire,Fleetwood West & Cleveleys West,Reform,Alice Jones,1928,council.lancashire.gov.uk
+E10000017,Lancashire,Fylde East,Reform,Joshua Connor Roberts,1314,council.lancashire.gov.uk
+E10000017,Lancashire,Fylde South,Reform,David Michael Dwyer,1310,council.lancashire.gov.uk
+E10000017,Lancashire,Fylde West,Conservative,John Rossall Singleton,1563,council.lancashire.gov.uk
+E10000017,Lancashire,"Great Harwood, Rishton & Clayton-le-Moors",Reform,Jordan John Fox,3292,council.lancashire.gov.uk
+E10000017,Lancashire,Heysham,Reform,Graeme Paul Austin,1633,council.lancashire.gov.uk
+E10000017,Lancashire,Hoghton with Wheelton,Reform,John Clemson,1277,council.lancashire.gov.uk
+E10000017,Lancashire,Lancaster Central,Green,Gina Dowding,2157,council.lancashire.gov.uk
+E10000017,Lancashire,Lancaster East,Green,Paul Byron Stubbins,1822,council.lancashire.gov.uk
+E10000017,Lancashire,Lancaster Rural East,Reform,Shaun Patrick Crimmins,1149,council.lancashire.gov.uk
+E10000017,Lancashire,Lancaster Rural North,Reform,Graham John Dalton,1159,council.lancashire.gov.uk
+E10000017,Lancashire,Lancaster South East,Green,Hamish Mills,1719,council.lancashire.gov.uk
+E10000017,Lancashire,Leyland Central,Reform,Hannah Alice Whalley,1539,council.lancashire.gov.uk
+E10000017,Lancashire,Leyland South,Reform,Ellie Close,1456,council.lancashire.gov.uk
+E10000017,Lancashire,Longridge with Bowland,Reform,Ian Duxbury,1534,council.lancashire.gov.uk
+E10000017,Lancashire,Lostock Hall & Bamber Bridge,Reform,Simon Gummer,1331,council.lancashire.gov.uk
+E10000017,Lancashire,Lytham,Conservative,Tim Ashton,1868,council.lancashire.gov.uk
+E10000017,Lancashire,Mid Rossendale,Reform,Clive Balchin,1895,council.lancashire.gov.uk
+E10000017,Lancashire,Morecambe Central,Reform,Gary Andrew Kniveton,1104,council.lancashire.gov.uk
+E10000017,Lancashire,Morecambe North,Reform,Russell Robert Walsh,1613,council.lancashire.gov.uk
+E10000017,Lancashire,Morecambe South,Reform,Brian Edward Moore,1407,council.lancashire.gov.uk
+E10000017,Lancashire,Moss Side and Farington,Reform,Andy Blake,1371,council.lancashire.gov.uk
+E10000017,Lancashire,Nelson East,Independent,Azhar Ali,1976,council.lancashire.gov.uk
+E10000017,Lancashire,Ormskirk,Other,Gordon Paul Johnson,1585,council.lancashire.gov.uk
+E10000017,Lancashire,Oswaldtwistle,Reform,Gaynor Louise Hargreaves,1475,council.lancashire.gov.uk
+E10000017,Lancashire,Padiham and Burnley West,Reform,Thomas Pickup,1483,council.lancashire.gov.uk
+E10000017,Lancashire,Pendle Central,Reform,Marion Ellen Atkinson,1417,council.lancashire.gov.uk
+E10000017,Lancashire,Pendle Hill,Conservative,Howard Hartley,1599,council.lancashire.gov.uk
+E10000017,Lancashire,Pendle Rural,LibDem,David Michael Baxter Whipp,2869,council.lancashire.gov.uk
+E10000017,Lancashire,Penwortham East & Walton-le-Dale,Reform,Lorenzo More,1223,council.lancashire.gov.uk
+E10000017,Lancashire,Penwortham West,LibDem,David Howarth,2281,council.lancashire.gov.uk
+E10000017,Lancashire,Poulton le Fylde,Conservative,Alf Clempson,1857,council.lancashire.gov.uk
+E10000017,Lancashire,Preston Central East,Independent,Michael Lavalette,1782,council.lancashire.gov.uk
+E10000017,Lancashire,Preston Central West,Labour,Matthew John Brown,799,council.lancashire.gov.uk
+E10000017,Lancashire,Preston City,Independent,Yousuf Motala,989,council.lancashire.gov.uk
+E10000017,Lancashire,Preston East,Reform,Luke Parker,1181,council.lancashire.gov.uk
+E10000017,Lancashire,Preston North,LibDem,Fiona Duke,1601,council.lancashire.gov.uk
+E10000017,Lancashire,Preston Rural,Reform,Maria Jones,1876,council.lancashire.gov.uk
+E10000017,Lancashire,Preston South East,Independent,Almas Razakazi,750,council.lancashire.gov.uk
+E10000017,Lancashire,Preston South West,LibDem,Mark Jewell,1411,council.lancashire.gov.uk
+E10000017,Lancashire,Preston West,LibDem,John Potter,1652,council.lancashire.gov.uk
+E10000017,Lancashire,Ribble Valley North East,Reform,Ged Mirfin,1959,council.lancashire.gov.uk
+E10000017,Lancashire,Ribble Valley South West,Reform,Steve Atkinson,2174,council.lancashire.gov.uk
+E10000017,Lancashire,Rossendale East,Reform,Mackenzie Lee Ritson,1963,council.lancashire.gov.uk
+E10000017,Lancashire,Rossendale South,Reform,Joanne Ash,1512,council.lancashire.gov.uk
+E10000017,Lancashire,Rossendale West,Labour,Samara Barnes,1364,council.lancashire.gov.uk
+E10000017,Lancashire,Skelmersdale Central,Reform,Simon Evans,1171,council.lancashire.gov.uk
+E10000017,Lancashire,Skelmersdale East,Reform,Nigel Swales,1420,council.lancashire.gov.uk
+E10000017,Lancashire,Skelmersdale West,Reform,Ella Worthington,1304,council.lancashire.gov.uk
+E10000017,Lancashire,Skerton,Reform,Martyn Sutton,1068,council.lancashire.gov.uk
+E10000017,Lancashire,South Ribble East,Reform,Fred Cottam,1560,council.lancashire.gov.uk
+E10000017,Lancashire,South Ribble West,Reform,Tom Lord,1818,council.lancashire.gov.uk
+E10000017,Lancashire,St Annes North,Conservative,Peter Ian Buckley,1224,council.lancashire.gov.uk
+E10000017,Lancashire,St Annes South,Conservative,Steve Rigby,1375,council.lancashire.gov.uk
+E10000017,Lancashire,Thornton & Hambleton,Reform,Nigel Alderson,1816,council.lancashire.gov.uk
+E10000017,Lancashire,West Lancashire East,Other,Adrian Edward Owens,1472,council.lancashire.gov.uk
+E10000017,Lancashire,West Lancashire North,Conservative,Thomas Andrew de Freitas,2000,council.lancashire.gov.uk
+E10000017,Lancashire,West Lancashire West,Reform,Leon Graham,1320,council.lancashire.gov.uk
+E10000017,Lancashire,Whitworth & Bacup,Reform,Daniel Robert Matchett,1533,council.lancashire.gov.uk
+E10000017,Lancashire,Wyre Rural Central,Reform,Matthew Jacques Salter,1830,council.lancashire.gov.uk
+E10000017,Lancashire,Wyre Rural East,Reform,James David Tomlinson,2122,council.lancashire.gov.uk
+E10000018,Leicestershire,Ashby de la Zouch,Reform,Dan Harrison,1457,democracy.leics.gov.uk
+E10000018,Leicestershire,Belvoir,Conservative,Bryan John Lovegrove,1629,democracy.leics.gov.uk
+E10000018,Leicestershire,Birstall,Conservative,Daniel John Grimley,1433,democracy.leics.gov.uk
+E10000018,Leicestershire,Blaby & Glen Parva,Reform,John Andrew Bloxham,1366,democracy.leics.gov.uk
+E10000018,Leicestershire,Bradgate,Conservative,Deborah Taylor,1898,democracy.leics.gov.uk
+E10000018,Leicestershire,Braunstone,Reform,Kim Paul Robinson,965,democracy.leics.gov.uk
+E10000018,Leicestershire,Broughton Astley,Reform,Bill Piper,1164,democracy.leics.gov.uk
+E10000018,Leicestershire,Bruntingthorpe,Reform,Harrison Fowler,1493,democracy.leics.gov.uk
+E10000018,Leicestershire,Burbage,LibDem,Barry Richard Walker,1266,democracy.leics.gov.uk
+E10000018,Leicestershire,Castle Donington & Kegworth,Reform,Charles Andrew Frank Pugsley,1146,democracy.leics.gov.uk
+E10000018,Leicestershire,Coalville North,Conservative,Craig Andrew Smith,1280,democracy.leics.gov.uk
+E10000018,Leicestershire,Coalville South,Reform,Paul Harrison,1611,democracy.leics.gov.uk
+E10000018,Leicestershire,Cosby & Countesthorpe,Reform,Graham Cooke,1333,democracy.leics.gov.uk
+E10000018,Leicestershire,De Montfort,LibDem,Michael Timothy Mullaney,1653,democracy.leics.gov.uk
+E10000018,Leicestershire,Earl Shilton,Reform,Martin Richard England,1191,democracy.leics.gov.uk
+E10000018,Leicestershire,East Wigston,Independent,Michael Henry Charlesworth,1099,democracy.leics.gov.uk
+E10000018,Leicestershire,Enderby & Lubbesthorpe,LibDem,Nick Holt,802,democracy.leics.gov.uk
+E10000018,Leicestershire,Forest & Measham,Reform,Adam Rowland Tilbury,1353,democracy.leics.gov.uk
+E10000018,Leicestershire,Gartree,Conservative,Phil King,1832,democracy.leics.gov.uk
+E10000018,Leicestershire,"Glenfields, Kirby Muxloe & Leicester Forests",Conservative,Nick Chapman,1953,democracy.leics.gov.uk
+E10000018,Leicestershire,Groby & Ratby,Conservative,Ozzy O'Shea,1582,democracy.leics.gov.uk
+E10000018,Leicestershire,Hollycroft,LibDem,Ann Pendlebury,1372,democracy.leics.gov.uk
+E10000018,Leicestershire,Ibstock & Appleby,Reform,Virge Richichi,1699,democracy.leics.gov.uk
+E10000018,Leicestershire,Launde,LibDem,Simon James Galton,1732,democracy.leics.gov.uk
+E10000018,Leicestershire,Loughborough East,Labour,Jewel Miah,1017,democracy.leics.gov.uk
+E10000018,Leicestershire,Loughborough North,Reform,Pete Morris,1040,democracy.leics.gov.uk
+E10000018,Leicestershire,Loughborough North West,Reform,Andrew Charles Hamilton-Gray,857,democracy.leics.gov.uk
+E10000018,Leicestershire,Loughborough South,Labour,Beverley Gray,854,democracy.leics.gov.uk
+E10000018,Leicestershire,Loughborough South West,Conservative,Richard George Bailey,1144,democracy.leics.gov.uk
+E10000018,Leicestershire,Lutterworth,Conservative,Rosita Page,1317,democracy.leics.gov.uk
+E10000018,Leicestershire,Mallory,LibDem,Mark Bools,1179,democracy.leics.gov.uk
+E10000018,Leicestershire,Market Bosworth,Conservative,Joshua Melen,1357,democracy.leics.gov.uk
+E10000018,Leicestershire,Market Harborough East,LibDem,Sarah Hill,1335,democracy.leics.gov.uk
+E10000018,Leicestershire,Market Harborough West & Foxton,Conservative,David John Page,1008,democracy.leics.gov.uk
+E10000018,Leicestershire,"Markfield, Desford & Thornton",Reform,Charles Whitford,1244,democracy.leics.gov.uk
+E10000018,Leicestershire,Melton East,Reform,Andrew Colin Gordon Innes,1090,democracy.leics.gov.uk
+E10000018,Leicestershire,Melton West,Reform,Kerry Lyn Knight,1017,democracy.leics.gov.uk
+E10000018,Leicestershire,Melton Wolds,Conservative,Joe Orson,1321,democracy.leics.gov.uk
+E10000018,Leicestershire,Narborough & Whetstone,Reform,Andrew Peter Thorp,1403,democracy.leics.gov.uk
+E10000018,Leicestershire,North Wigston,LibDem,Linda Margaret Broadley,882,democracy.leics.gov.uk
+E10000018,Leicestershire,Oadby,LibDem,Moin Durrani,2456,democracy.leics.gov.uk
+E10000018,Leicestershire,Quorn & Barrow,Reform,Paul John Rudkin,1316,democracy.leics.gov.uk
+E10000018,Leicestershire,Rothley & Mountsorrel,Reform,Linda Danks,1217,democracy.leics.gov.uk
+E10000018,Leicestershire,Shepshed,Reform,Helen Butler,1859,democracy.leics.gov.uk
+E10000018,Leicestershire,Sileby & The Wolds,Green,Naomi Eleanor Bottomley,1335,democracy.leics.gov.uk
+E10000018,Leicestershire,South & West Wigston,Reform,John Mulhearn McDonald,908,democracy.leics.gov.uk
+E10000018,Leicestershire,St Marys,LibDem,Stuart Lee Bray,1113,democracy.leics.gov.uk
+E10000018,Leicestershire,Stoney Stanton & Croft,Reform,Carl Walter Abbott,1352,democracy.leics.gov.uk
+E10000018,Leicestershire,Syston Fosse,Conservative,James Mark Poland,1297,democracy.leics.gov.uk
+E10000018,Leicestershire,Syston Ridgeway,Conservative,Simon John Bradshaw,896,democracy.leics.gov.uk
+E10000018,Leicestershire,Thurmaston Ridgemere,Conservative,Brenda Seaton,1197,democracy.leics.gov.uk
+E10000018,Leicestershire,Valley,Reform,Michael Squires,1467,democracy.leics.gov.uk
+E10000018,Leicestershire,Whitwick,Reform,Joseph Boam,1601,democracy.leics.gov.uk
+E10000019,Lincolnshire,Alford and Sutton,Reform,Mike BEECHAM,1527,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Bardney and Cherry Willingham,Reform,Trevor John BRIDGWOOD,1350,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Bassingham and Welbourn,Labour,Callum Joseph GOODGE,279,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Birchwood,LibDem,Jim CHARTERS,245,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Boston Coastal,Reform,Alistair Stanley ARUNDELL,1451,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Boston North,Green,Michael Antony BROADHURST,116,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Boston Rural,Labour,Mark DEITH,198,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Boston South,Conservative,James William Steven Geoff CANTWELL,484,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Boston West,Conservative,Paula ASHLEIGH-MORRIS,274,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Boultham,Reform,Mike BAILEY,598,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Bourne North and Morton,Reform,Alan JACK,692,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Bourne South and Thurlby,Green,Emma Louise BAKER,237,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Carholme,Other,Tinashe CHIPAWE,35,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Colsterworth Rural,Green,Michael Robert BROOMAN,172,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Crowland,LibDem,Lisa Collier BREWIN,171,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,"Deepings, East",Reform,Emily Martha Mary BATES,795,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Deepings West and Rural,Independent,Ashley John BAXTER,926,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Donington Rural,Conservative,Henry John  William BINGHAM,770,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Eagle and Hykeham West,Conservative,Alan William BRIGGS,699,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Ermine and Cathedral,LibDem,James BROWN,177,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Folkingham Rural,Conservative,Martin John HILL,1282,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Gainsborough Hill,LibDem,Matt BOLES,632,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Gainsborough Rural South,Conservative,Richard BUTROID,1147,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Gainsborough Trent,Independent,Richard John CRAIG,128,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Grantham Barrowby,Green,Brynley HEAVEN,128,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Grantham East,Labour,David Aaron BURLING,175,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Grantham North,Labour,Joseph Day ARCHER,307,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Grantham South,Reform,Carl Peter EDGOOSE-ZAGORSKIY,575,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Grantham West,Reform,Kyle Mark ABEL,546,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Hartsholme,Labour,Biff BEAN,923,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Heckington,Conservative,Christine COLLARD,867,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Holbeach,Green,Janet Siobhan Nevin DUTTON,167,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Holbeach Rural,Independent,Paul Stephen BARNES,414,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Horncastle and the Keals,Conservative,William GRAY,1092,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Hough,Reform,Ken BAMFORD,1068,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Hykeham Forum,LibDem,Corinne BYRON,149,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Ingoldmells Rural,Reform,Danny BROOKES,1704,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Louth North,Labour,Claire Elizabeth ARNOLD,355,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Louth South,Green,Adam John BEBBINGTON,135,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Louth Wolds,Labour,Robert BUSHELL,285,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Mablethorpe,Labour,Graham Edward CULLEN,588,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Market Rasen Wolds,LibDem,Stephen BUNNEY,1626,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Metheringham Rural,LibDem,Mark BEARDER,167,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Nettleham and Saxilby,Conservative,Jackie BROCKWAY,1566,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,North Wolds,Reform,James BEAN,1207,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Park,Labour,Debra ARMIGER,597,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Potterhanworth and Coleby,Conservative,Ian CARRINGTON,1055,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Ruskington,Reform,Dave CONWAY,1079,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,St Giles,Conservative,Victoria Carolyn BROOKS,284,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Saltfleet and the Cotes,Labour,Elizabeth Susan Carole FOREMAN,234,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Scotter Rural,Conservative,Sheila BIBB,563,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Skegness North,Reform,Adrian FINDLEY,1502,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Skegness South,Reform,Jimmy BROOKES,1493,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Skirbeck,Independent,Neil John DRAYTON,379,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Sleaford,Independent,Anthony BRAND,132,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Sleaford Rural,Independent,Dave DARMON,404,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Spalding East,Conservative,Anthony CASSON,846,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Spalding Elloe,Green,Martin Christopher BLAKE,172,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Spalding South,Labour,Lesley Joan ALLINSON,155,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Spalding West,Labour,Stephen George FOLLETT,159,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Stamford East,LibDem,Harrish BISNAUTHSING,521,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Stamford West,Conservative,Stefan CALVERT,497,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,The Suttons,Independent,Chris BREWIS,605,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Swallow Beck & Witham,Green,Sally Anne HORSCROFT,199,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Tattershall Castle,Conservative,Tom ASHTON,1317,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Waddington & Hykeham East,Green,Jim BARLING,247,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Wainfleet,Conservative,Wendy BOWKETT,1169,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Washingborough,Labour,Funmi ADEYEMI,333,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Welton Rural,Conservative,Tracey Jane COULSON,830,www.lincolnshire.gov.uk
+E10000019,Lincolnshire,Woodhall Spa and Wragby,Conservative,Patricia BRADWELL,1184,www.lincolnshire.gov.uk
+E10000024,Nottinghamshire,Arnold North,Reform,Wendy Lukacs,2571,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Arnold South,Labour,John Clarke,2531,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Ashfields,Reform,Alan Bite,1687,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Balderton,Conservative,Johno Lee,1351,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Beeston Central and Rylands,Other,Teresa Ann Cullen,1035,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Bingham East,Conservative,Stephen Thomas Pearson,1374,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Bingham West,Conservative,Neil Clarke,1093,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Blidworth,Reform,Richard Steven Ward,1122,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Blyth and Harworth,Reform,Hana John,1540,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Bramcote and Beeston North,Independent,Steve Carr,2104,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Calverton,Reform,Jody Etienne Stoll,1197,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Carlton East,Conservative,Mike Adams,1391,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Carlton West,Reform,Paul Brill,2399,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Collingham,Conservative,Janette Barlow,999,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Cotgrave,Conservative,Richard Langton Butler,1151,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Eastwood,Reform,James Donovan Adrian Walker-Gurley,1326,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Farndon and Trent,Conservative,Sue Saddington,1199,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Greasley and Brinsley,Reform,Glyn Pepper,1679,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Hucknall North,Independent,John Morton Anthony Wilmott,1231,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Hucknall South,Reform,Darro Darrington,1289,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Hucknall West,Reform,Chris Adegoke,1208,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Keyworth,Conservative,John Cottee,1833,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Kirkby North,Reform,Simon Wright,1604,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Kirkby South,Reform,Rory Green,2082,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Leake and Ruddington,Conservative,Andy Brown,2241,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Mansfield East,Reform,Mick Barton,3653,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Mansfield North,Reform,Gaynor Mann,3077,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Mansfield South,Reform,Kevin Brown,2349,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Mansfield West,Reform,Barry Answer,2841,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Misterton,Reform,Mike Robertson,1962,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Muskham and Farnsfield,Conservative,Bruce Laughton,1786,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Newark East,Conservative,Sam Thomas Smith,935,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Newark West,Reform,Desmond Clarke,909,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Newstead,Conservative,Stuart James Bestwick,1291,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Nuthall and Kimberley,Reform,James Rawson,1253,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Ollerton,Reform,David Clark,1796,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Radcliffe on Trent,Conservative,Roger Glyn Upton,1717,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Retford East,Conservative,Mike Introna,1317,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Retford West,Reform,Daniel Carl Saban,1276,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Selston,Reform,Dawn Justice,2398,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Sherwood Forest,Reform,James Gamble,1610,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Southwell,Conservative,Roger James Jackson,1768,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Stapleford and Broxtowe Central,Reform,Doctor John Doddy,2372,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Sutton Central and East,Reform,Joseph Rich,1644,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Sutton North,Reform,Cathy Mason,2362,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Sutton West,Reform,Terry Cox,2120,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,"Toton, Chilwell and Attenborough",Reform,Richard Gordon Lowe,1807,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Tuxford,Reform,Warren John Limber,1502,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Warsop,Reform,Andy McCormack,1564,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,West Bridgford North,Labour,Penny Gowland,1518,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,West Bridgford South,Conservative,Jonathan Gordon Alexander Wheeler,2305,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,West Bridgford West,Conservative,Hari Om,1857,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Worksop East,Reform,Russell Dodd,1392,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Worksop North,Reform,Kevin George Dale,1650,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Worksop South,Reform,Kelvin Donald Wright,1622,electionresults.nottinghamshire.gov.uk
+E10000024,Nottinghamshire,Worksop West,Reform,Bert Kevin Bingham,1967,electionresults.nottinghamshire.gov.uk
+E10000025,Oxfordshire,Abingdon East,LibDem,Tom Greenaway,1657,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Abingdon North,LibDem,Nathan Benjamin Ley,1785,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Abingdon South,LibDem,Neil Fawcett,1214,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,"Adderbury, Bloxham & Bodicote",LibDem,David Richard Hingley,1156,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Bampton & Carterton South,Conservative,Ted Fenton,1360,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Banbury Calthorpe,Labour,Isabel Creed,721,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Banbury Easington,Conservative,Kieron Mallon,1103,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Banbury Grimsbury & Castle,Conservative,Paul Austin Sargent,713,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Banbury Hardwick,Labour,Andrew Crichton,567,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Banbury Ruscote,Labour,Mark Cherry,847,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Bartlemas,Green,Emily Jane Elisabeth Kerr,1367,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,"Barton, Sandhills & Risinghurst",Labour,Glynis Mary Phillips,647,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Benson & Crowmarsh,Green,Gavin Ian McLauchlan,1070,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Berinsfield & Garsington,Green,Robin David Jones,703,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Bicester East,LibDem,Sean Robert Martin Gaul,858,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Bicester North,LibDem,Matt Webb,951,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Bicester South,LibDem,Nicholas Michael Cotter,946,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Bicester West,LibDem,John Shiri,669,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Brize Norton & Carterton East,LibDem,Toyah Jade Leah Overton,661,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Burford & Carterton West,Conservative,Nick Field-Johnson,1022,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Chalgrove & Thame West,LibDem,Judith Geraldine Edwards,1222,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Charlbury & Wychwood,LibDem,Liz Leffman,1828,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,"Charlton, Ardington & Hendreds",LibDem,Jane Hanna,1280,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Chesterton & Launton,LibDem,William Boucher-Giles,935,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Chinnor,LibDem,Georgina Heritage,965,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Chipping Norton,Labour,Geoff Saul,965,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Cholsey & The Hagbournes,LibDem,Johnny Hope-Smith,1447,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Churchill & Lye Valley,Labour,Liz Brighouse,834,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Cowley,Independent,Saj Malik,1299,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Cropredy & Hook Norton,LibDem,Christopher David Brant,1401,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Deddington,LibDem,Gareth Daniel Epps,1050,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Didcot Ladygrove,LibDem,Tony Worgan,979,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Didcot South,Reform,Hao Du,842,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Didcot West,Conservative,Ian Kenneth Snowdon,1192,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,"Drayton, Sutton Courtenay & Steventon",LibDem,Peter Alexander Stevens,1157,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Eynsham,LibDem,Dan Levy,1298,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Faringdon,LibDem,Bethia Jane Thomas,1261,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Goring & Woodcote,LibDem,Maggie Filipova-Rivers,1611,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Grove,LibDem,Ron Batstone,886,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Hanborough & Hailey,Conservative,Liam Walker,1270,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,"Harwell, Western Valley & Blewbury",LibDem,Rebekah Jane Fletcher,1102,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Headington & Quarry,LibDem,Roz Smith,1451,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Henley,Other,Stefan John Gawrysiak,1483,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Isis,Labour,Brad Todd Baines,1346,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Jericho & Osney,Labour,Susanna Pressel,1131,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Kennington & Radley,LibDem,Diana Lugova,1409,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Kidlington East,Green,Ian Michael Middleton,998,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Kidlington North & Otmoor,LibDem,Laura Gordon,1275,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Kidlington West,LibDem,Lesley McLean,556,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Kingston & Stanford,Conservative,Lee Evans,1166,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Leys,Labour,Imade Uzoma Edosomwan,753,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Marcham & Cumnor,Conservative,James Richard Plumb,1002,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Marston & Northway,Labour,Mark Robert Lygo,1091,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,North Hinksey,LibDem,Judy Roberts,1458,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Parks,Green,Emma Elizabeth Garnett,687,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Rose Hill & Littlemore,Independent,Dave Henwood,1240,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Shrivenham,Green,Emma Markham,1050,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Sonning Common & Henley South,LibDem,Leigh Rawlins,1209,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Summertown & Walton Manor,Labour,James Fry,1398,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Thame,LibDem,Kate Gregory,1678,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Wallingford,Green,James Barlow,1350,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Wantage West,LibDem,Jenny Hannaby,1380,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Watlington & Rotherfield,LibDem,Benjamin James Higgins,1000,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Wheatley,LibDem,Tim Bearder,1271,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Witney North & East,Conservative,James Robertshaw,1078,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Witney South & Central,Labour,Andrew Stanley Coles,992,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Witney West & Ducklington,Conservative,Thomas Ashby,1075,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Wolvercote & Cutteslowe,LibDem,Andrew John Gant,1080,mycouncil.oxfordshire.gov.uk
+E10000025,Oxfordshire,Woodstock,LibDem,Andy Graham,1517,mycouncil.oxfordshire.gov.uk
+E10000028,Staffordshire,Brereton and Ravenhill,Reform,Neil Andrew Parton,1210,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Cannock Town,Reform,Martin Paul Murray,1982,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Chadsmoor,Reform,Alex Robert Hunt,2053,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Etching Hill & The Heath,Reform,Jon Pendleton,1525,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,"Hawks Green, Rawnsley & Cannock Wood",Reform,Rhys Anthony Mandry,1973,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Hednesford North,Reform,Paul Jones,2019,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,"Norton Canes, Heath Hayes & Wimblebury",Reform,Daniel Cecil,2250,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Burton South,Reform,Peter Mason,1062,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Burton Tower,Conservative,Conor Wileman,1376,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Burton Town,Reform,Michael Denis Laval Carver,685,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Burton Trent,Labour,Syed Anwar Hussain,1021,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Dove,Conservative,Philip John White,1414,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Needwood Forest,Conservative,Catherine Brown,1312,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Stretton,Reform,Barry Martin,1214,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Uttoxeter Rural,Reform,Gary Robert Hales,1432,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Uttoxeter Town,Reform,Patrick Nigel Allen,1492,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Burntwood North,Reform,Andrew John Clissett,1888,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Burntwood South,Reform,Robin Jeremy Hall,1407,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Lichfield City North,Reform,Matthew John Wallens,1260,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Lichfield City South,Conservative,Colin Greatorex,1109,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Lichfield Rural East,Reform,Tracey Dougherty,1197,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Lichfield Rural North,Conservative,Richard Holland,964,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Lichfield Rural South,Conservative,Alex Farrell,1825,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Lichfield Rural West,Reform,Janet Higgins,1586,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Audley and Chesterton,Reform,Rhys James Machin,1605,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Bradwell and Porthill,Reform,Nicholas Ronald Lakin,1471,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Kidsgrove,Reform,Tony Screen,1878,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,May Bank & Wolstanton,Reform,Lynn Dean,1142,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Newcastle Rural,Reform,Helen Elizabeth Arnold,1497,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Newcastle South,Reform,Adam Brent Griffiths,1238,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Silverdale & Knutton,Reform,Mark Nixon,1344,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Talke and Red Street,Reform,Martin Gavin Rogerson,1971,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,"Westlands, Thistleberry & Keele",Conservative,Simon John Tagg,1757,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Brewood,Reform,Chris Large,1618,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,"Cheslyn Hay Village, Featherstone & Shareshill",Reform,Thomas Roddy Baker,1685,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Codsall,Conservative,Val Chapman,1317,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Great Wyrley & Essington,Reform,Michelle Woods,1679,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Kinver,Conservative,Victoria Helena Wilson,1804,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Penkridge,Reform,Craig Roger Humphreyson,1438,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Perton,Reform,James Hodges,1084,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Wombourne,Reform,Marie Shortland,1751,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Eccleshall & Gnosall,Reform,Wayne Titley,1584,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Stafford Central,Reform,Paul Graham Williams,1080,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Stafford North,Reform,Chris Gilbert,1058,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Stafford South East,Conservative,Ann Edgeller,2137,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Stafford South West,Reform,Antonia Orlandi-Fantinin,1189,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Stafford Trent Valley,Reform,Andrew Towers Mynors,1273,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Stafford West & Rural,Green,Jack Thomas Rose,1297,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Stone Rural North,Reform,Sean McAllister Bagguley,1461,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Stone Urban,Independent,Jill Hood,1589,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Biddulph North,Reform,Mike Broom,1404,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Biddulph South and Endon,Reform,Bob Egginton,1824,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Caverswall,Reform,Warwick McKenzie,1711,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Cheadle and Checkley,Reform,Gary Bentley,1650,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Churnet Valley,Reform,Su Beardmore,1882,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Leek Rural,Reform,Charlotte Kelly,1887,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Leek South,Reform,Sonny Rooney Edwards,1452,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Perrycrofts,Reform,Ian Stuart Cooper,1517,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,The Cotes/Two Rivers,Reform,Nicholas Thompson,1972,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,The Heaths,Reform,Hayley Coles,2020,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Watling,Reform,Wayne Luca,2164,staffordshire.moderngov.co.uk
+E10000028,Staffordshire,Wilnecote,Reform,Gordon Munro,1934,staffordshire.moderngov.co.uk
+E10000031,Warwickshire,Bidford & Welford,LibDem,Cliff Brown,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Studley,Reform,Luke Stephen Cooper,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Stour & the Vale,LibDem,David Curtis,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Alcester,LibDem,James Michael Norris,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Arden,Reform,James Phillip Crocker,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Shipston,Conservative,Jo Barker,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,"Southam, Stockton & Napton",Conservative,Andy Crump,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Kingsbury,Reform,Stuart James Green,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Coleshill North & Water Orton,Reform,Robert Neale Aitkenhead,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Coleshill South & Arley,Reform,Scott David Cameron,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Baddesley & Dordon,Reform,Edward Harris,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Polesworth,Reform,Stephen Shaw,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Hartshill & Mancetter,Reform,Jennifer Warren,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Atherstone,Reform,Robert Gisbourne,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Arbury,Reform,Wayne Briggs,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Stockingford,Reform,Nigel Golby,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Weddington,Green,Keith Kondakor,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Nuneaton Abbey,Reform,Mike Bannister,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Bulkington & Whitestone,Reform,John Waine,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Nuneaton East,Reform,Darren Edward Cheshire,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Attleborough,Reform,Rob Howard,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Camp Hill,Reform,Dale Kirk Bridgewater,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Galley Common,Independent,Luke Francis Shingler,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Bedworth East,Reform,Stan Carvell,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Stratford West,LibDem,Steve Albon,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Lapworth & West Kenilworth,Green,Mark Laurence Stevens,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Stratford North,LibDem,Lorraine Grocott,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Stratford South,LibDem,Kate Rolfe,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Kenilworth St John's,LibDem,Richard Dickson,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Kenilworth Park Hill,Green,Tracey Jane Drew,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Leamington Willes,Green,Will Roberts,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Leamington North,LibDem,Sarah Elizabeth Boad,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Leamington Clarendon,LibDem,Max Hugo Langer,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Kineton & Red Horse,Conservative,Christopher John Mills,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Fosse,Conservative,Adrian David Warwick,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Brownsover & Coton Park,Labour,Senthil Karadiar,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Eastlands,LibDem,Jerry Roodhouse,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Hillmorton,Conservative,Yousef Dahmash,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Dunsmore & Leam Valley,Conservative,Dale Keeling,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Admirals & Cawston,Conservative,Dean Richards,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Benn,Labour,Sarah Yvonne Elizabeth Feeney,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Bilton & Hillside,LibDem,Stephen Warwick Pimm,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,New Bilton & Overslade,Reform,Dan Glover,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Earl Craven,Reform,Anne-Marie Sonko,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Bedworth North,Reform,Neil Garland,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Bedworth West,Reform,Chris Morris,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Bedworth Central,Reform,George Finch,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Feldon,Conservative,Christopher Kettle,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Warwick North,Green,Sam Jones,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Leamington Brunswick,Green,Jonathan Chilvers,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Whitnash,Other,Judy Falp,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Leamington Milverton,LibDem,Jennifer McAllister,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Wellesbourne,LibDem,George Cowcher,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Cubbington & Leek Wootton,LibDem,Ben Edwards,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Budbrooke & Bishop's Tachbrook,Conservative,Jan Baltazy Matecki,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Warwick West,Labour,John Holland,0,apps.warwickshire.gov.uk
+E10000031,Warwickshire,Warwick South,Green,Nicki Scott,0,apps.warwickshire.gov.uk
+E10000034,Worcestershire,Evesham South,Reform,Michele Jayne HULME,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Evesham North West,Reform,Sam BASTOW,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Malvern Chase,Green,Malcolm Gordon VICTORY,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Bredon,Conservative,Adrian Ingleby HARDMAN,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Malvern Langland,LibDem,Paul BENNETT,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Broadway,Conservative,Emma Jane KEARSEY,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Malvern Trinity,Green,Natalie Maria MCVEY,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Littletons,Green,Hannah Mary ROBSON,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Croome,Green,Martin John ALLEN,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Pershore,LibDem,Dan BOATRIGHT-GREENE,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Powick & Longdon,Independent,Tom WELLS,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,St Peter,Green,Louis STEPHEN,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Bedwardine,Reform,Alan AMOS,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Nunnery,Reform,Dave AUBREY,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,St John,Labour,Richard Mark UDALL,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Malvern Link,LibDem,Chris MCSWEENY,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Rainbow Hill & Fort Royal,Labour,Jabba RIAZ,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Riverside,Green,Tor PINGREE,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,St Stephen,Green,Matt JENKINS,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Warndon Villages,Green,Andrew CROSS,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Warndon & Elbury Park,Reform,Owen Tomas CLEARY,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Upton Snodsbury,Conservative,Linda ROBINSON,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Claines,LibDem,Mel ALLCOTT,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Harvington,Reform,Satinder BELL,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Bowbrook,Conservative,Seb JAMES,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Droitwich East,Conservative,Daniel Brian BIRCH,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Droitwich West,Conservative,Richard Julian MORRIS,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Redditch South,Reform,shared seat,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Redditch West,Reform,shared seat,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Redditch East,Reform,shared seat,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Redditch Central,Reform,shared seat,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Bromsgrove South,Reform,Gaynor JEAN-LOUIS,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Hallow,Conservative,Mel FORDINGTON,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Bromsgrove West,Reform,Nik PRICE,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Bromsgrove Central,LibDem,Joshua William ROBINSON,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Stourport Areley Kings & Riverside,Reform,Karl PERKS,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Ombersley,Conservative,Tony MILLER,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Stourport Mitton,Reform,Ian Robert CRESSWELL,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Tenbury,Reform,Justin BOWEN,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Bromsgrove East,LibDem,Samuel Marc EVANS,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,St Peters,Reform,Rob WHARTON,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,St Johns,Reform,Matthew JONES,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Alvechurch,Independent,Alan BAILES,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,St Chads,Reform,Bill HOPKINS,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Woodvale,Reform,Mark Richard DUNKLEY,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Beacon,Reform,Peter Desmond TURNER,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,St Georges,Reform,Mark CROSBY,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,St Barnabas,Reform,Anthony UPTON,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Wythall,Conservative,Adam David KENT,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Chaddesley,Conservative,Marcus John HART,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Clent Hills,Conservative,Karen Jane MAY,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,"Cookley, Wolverley & Wribbenhall",Reform,Jenny SHAW,0,gis.worcestershire.gov.uk
+E10000034,Worcestershire,Bewdley,Conservative,Dan MOREHEAD,0,gis.worcestershire.gov.uk

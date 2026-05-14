@@ -451,6 +451,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://bradford.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=84"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E08000033
   name: Calderdale
@@ -473,6 +476,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://democracy.kirklees.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=35"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E08000035
   name: Leeds
@@ -548,6 +554,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://bexley.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=18"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E09000005
   name: Brent
@@ -559,6 +568,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://democracy.brent.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=52"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E09000006
   name: Bromley
@@ -672,6 +684,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://harrow.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=48"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E09000016
   name: Havering
@@ -760,6 +775,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://lewisham.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=14"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E09000024
   name: Merton
@@ -771,6 +789,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://merton.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=26"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E09000025
   name: Newham
@@ -826,6 +847,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://sutton.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=32"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E09000030
   name: Tower Hamlets
@@ -837,6 +861,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://towerhamlets.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=56"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E09000031
   name: Waltham Forest
@@ -859,6 +886,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://democracy.wandsworth.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=12"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E09000033
   name: Westminster
@@ -1038,6 +1068,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://thurrock.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=68"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E06000038
   name: Reading
@@ -1072,6 +1105,9 @@
       title: "2019 Wokingham Borough Council election"
     - year: 2018
       title: "2018 Wokingham Borough Council election"
+  official_url: "https://wokingham.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=54"
+  official_parser: moderngov_per_division
+  official_year: 2026
 # Normally thirds; 2026 was a one-off all-up due to a 2024 boundary review.
 # Prior 2022 is the most recent thirds-pattern election.
 - lad_code: E06000042
@@ -1084,6 +1120,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://milton-keynes.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=39"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E06000044
   name: Portsmouth
@@ -1095,6 +1134,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://portsmouth.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=20"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E06000045
   name: Southampton
@@ -1118,6 +1160,9 @@
   wiki_prior_year: 2021
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://iow.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=7"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 # --- English non-metropolitan districts (E07*) ---
 # Mix of all-out, halves and thirds cycles; cycle field captures the steady-state pattern.
@@ -1133,6 +1178,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://democracy.cambridge.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=42"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E07000011
   name: Huntingdonshire
@@ -1177,6 +1225,9 @@
   wiki_prior_year: 2024
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://hastings.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=61"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E07000066
   name: Basildon
@@ -1199,6 +1250,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://brentwood.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=14"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E07000071
   name: Colchester
@@ -1221,6 +1275,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://eppingforest.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=88"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E07000073
   name: Harlow
@@ -1243,6 +1300,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://rochford.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=3"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E07000078
   name: Cheltenham
@@ -1254,6 +1314,9 @@
   wiki_prior_year: 2024
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://democracy.cheltenham.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=24"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E07000084
   name: Basingstoke and Deane
@@ -1287,6 +1350,9 @@
   wiki_prior_year: 2024
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://fareham.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=28"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E07000088
   name: Gosport
@@ -1298,6 +1364,9 @@
   wiki_prior_year: 2024
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://gosport.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=33"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E07000089
   name: Hart
@@ -1309,6 +1378,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://hart.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=11"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E07000090
   name: Havant
@@ -1409,6 +1481,9 @@
       title: "2019 Tunbridge Wells Borough Council election"
     - year: 2018
       title: "2018 Tunbridge Wells Borough Council election"
+  official_url: "https://tunbridgewells.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=31"
+  official_parser: moderngov_per_division
+  official_year: 2026
 - lad_code: E07000117
   name: Burnley
   nation: england
@@ -1507,6 +1582,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://lincoln.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=27"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E07000148
   name: Norwich
@@ -1676,6 +1754,9 @@
       title: "2019 Crawley Borough Council election"
     - year: 2018
       title: "2018 Crawley Borough Council election"
+  official_url: "https://crawley.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=40"
+  official_parser: moderngov_per_division
+  official_year: 2026
 - lad_code: E07000229
   name: Worthing
   nation: england
