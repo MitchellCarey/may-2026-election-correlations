@@ -84,14 +84,13 @@ def year_for_all_wards_source(council: dict) -> int:
     ward — but the year of that contest depends on the council's cycle:
 
       - Non-GM contested councils: wiki_2026 set, year = 2026.
-      - GM thirds councils: hand-curated CSV, wiki_2026 null, but every
-        ward had a 2026 thirds contest — year = 2026.
-      - Salford: hand-curated CSV, wiki_2026 null, all-out cycle, only one
-        ward (Barton & Winton) had a 2026 by-election; the other 19 wards
-        carry their 2021 all-out winners — year = wiki_prior_year (2021).
-
-    Discriminator: an all-out council with no wiki_2026 is the Salford
-    pattern; everyone else is 2026.
+      - GM thirds councils (incl. Salford from 2026): hand-curated CSV,
+        wiki_2026 null, but every ward had a 2026 thirds contest — year
+        = 2026.
+      - Future all-out councils whose most recent contest predates 2026:
+        wiki_2026 null, all-out cycle, fall back to wiki_prior_year. No
+        live council triggers this branch today, but the path exists for
+        any future addition.
     """
     if council.get('wiki_2026') is None and council.get('cycle') == 'all-out':
         return council['wiki_prior_year']

@@ -138,20 +138,25 @@
   official_parser: moderngov_per_division
   official_year: 2026
 
-# Salford runs all-out every 4 years; the cycle is 2021 -> 2025 -> 2029,
-# so Salford had no whole-council 2026 contest. wiki_2026 stays null;
-# 2026 by-election seats (e.g. Barton & Winton) are captured via the
-# hand-curated CSV.
+# Salford ran an all-out election in 2024 under new boundaries and has
+# returned to thirds since: one councillor per ward elected on 7 May 2026
+# (plus a second seat in Cadishead and Lower Irlam to fill a vacancy).
+# wiki_2026 stays null because per-ward 2026 results come from the
+# council's own page via the official-source pipeline below, not a
+# whole-council Wikipedia article.
 - lad_code: E08000006
   name: Salford
   nation: england
-  cycle: all-out
+  cycle: thirds
   region_gm: true
   wiki_2026: null
   wiki_prior: "2021 Salford City Council election"
   wiki_prior_year: 2021
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.salford.gov.uk/your-council/elections-and-voting/election-results/"
+  official_parser: salford
+  official_year: 2026
 
 - lad_code: E08000007
   name: Stockport
