@@ -120,6 +120,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.oldham.gov.uk/election_results_may7_2026"
+  official_parser: oldham
+  official_year: 2026
 
 - lad_code: E08000005
   name: Rochdale
