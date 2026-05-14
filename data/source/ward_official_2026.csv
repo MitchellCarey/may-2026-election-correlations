@@ -1,1 +1,199 @@
 lad_code,council,ward,party,candidate,votes,source
+E08000001,Bolton,Astley Bridge,Reform,BAILEY Ryan,1635,www.bolton.gov.uk
+E08000001,Bolton,Bradshaw,Conservative,WEBB Les,1801,www.bolton.gov.uk
+E08000001,Bolton,Breightmet,Reform,TUCKER Mike,1890,www.bolton.gov.uk
+E08000001,Bolton,Bromley Cross,Conservative,CADDEN Charlotte Anne,1794,www.bolton.gov.uk
+E08000001,Bolton,Farnworth North,Labour,AYUB Nadeem,1131,www.bolton.gov.uk
+E08000001,Bolton,Farnworth South,Reform,PATTISON Julie,1220,www.bolton.gov.uk
+E08000001,Bolton,Great Lever,Labour,IQBAL Mohammed,1918,www.bolton.gov.uk
+E08000001,Bolton,Halliwell,Green,KHAN Baggy,1752,www.bolton.gov.uk
+E08000001,Bolton,"Heaton, Lostock & Chew Moor",Conservative,GALLOWAY Anne Barbara,2112,www.bolton.gov.uk
+E08000001,Bolton,Horwich North,Independent,FINNEY Andrea Jane,1905,www.bolton.gov.uk
+E08000001,Bolton,Horwich South & Blackrod,Independent,WRIGHT Peter,1775,www.bolton.gov.uk
+E08000001,Bolton,Hulton,Reform,BULLOCK Derek,1939,www.bolton.gov.uk
+E08000001,Bolton,Kearsley,Reform,PEDLEY Roger,1564,www.bolton.gov.uk
+E08000001,Bolton,Little Lever & Darcy Lever,Reform,WUNDERLEY Derek,2040,www.bolton.gov.uk
+E08000001,Bolton,Queens Park & Central,Green,ARIF Zan,1090,www.bolton.gov.uk
+E08000001,Bolton,Rumworth,Green,IBRAHIM Ismail,2346,www.bolton.gov.uk
+E08000001,Bolton,Smithills,LibDem,PRIEST Sue,1713,www.bolton.gov.uk
+E08000001,Bolton,Tonge with the Haulgh,Reform,JONES Trevor,2089,www.bolton.gov.uk
+E08000001,Bolton,Westhoughton North & Hunger Hill,Reform,LEWIS David,1781,www.bolton.gov.uk
+E08000001,Bolton,Westhoughton South,Reform,CLARKE Glen,1644,www.bolton.gov.uk
+E08000003,Manchester,Ancoats & Beswick,Green,"SALEM, Hussayn",1776,www.manchester.gov.uk
+E08000003,Manchester,Ardwick,Green,"IMRAN, Alex-Salik",1607,www.manchester.gov.uk
+E08000003,Manchester,Baguley,Reform,"ASTLEY, Sian",1329,www.manchester.gov.uk
+E08000003,Manchester,Brooklands,Reform,"HODGKISS, Steven John",1198,www.manchester.gov.uk
+E08000003,Manchester,Burnage,Green,"ALAM, Asma",2257,www.manchester.gov.uk
+E08000003,Manchester,Charlestown,Reform,"EVANS, Dylan Anthony",1566,www.manchester.gov.uk
+E08000003,Manchester,Cheetham,Labour,"HASSAN, Naeem",1398,www.manchester.gov.uk
+E08000003,Manchester,Chorlton,Green,"KERR-SHEPPARD, Chantal Lyn",2549,www.manchester.gov.uk
+E08000003,Manchester,Chorlton Park,Green,"WORRALL, Grace",2474,www.manchester.gov.uk
+E08000003,Manchester,Clayton & Openshaw,Labour,"ROBINSON, Thomas Frederick",1308,www.manchester.gov.uk
+E08000003,Manchester,Crumpsall,Labour,"AMIN, Jawad",1425,www.manchester.gov.uk
+E08000003,Manchester,Deansgate,Green,"WAKEFIELD, Sarah Elizabeth",1380,www.manchester.gov.uk
+E08000003,Manchester,Didsbury East,Labour,"SIMCOCK, Andrew",2104,www.manchester.gov.uk
+E08000003,Manchester,Didsbury West,LibDem,"LEECH, John",2504,www.manchester.gov.uk
+E08000003,Manchester,Fallowfield,Green,"JASAT, Sufyaan",1328,www.manchester.gov.uk
+E08000003,Manchester,Gorton & Abbey Hey,Green,"OGDEN, Chris",1489,www.manchester.gov.uk
+E08000003,Manchester,Harpurhey,Labour,"GODFREY, David",1135,www.manchester.gov.uk
+E08000003,Manchester,Higher Blackley,Reform,"POWER, Martin",1084,www.manchester.gov.uk
+E08000003,Manchester,Hulme,Green,"EKBERY, Bernard Joseph",2059,www.manchester.gov.uk
+E08000003,Manchester,Levenshulme,Green,"REZA-KHAN, Fesl",3073,www.manchester.gov.uk
+E08000003,Manchester,Longsight,Green,"RANJHA, Asif Iqbal",2307,www.manchester.gov.uk
+E08000003,Manchester,Miles Platting & Newton Heath,Reform,"LANE, Tom Alexander Grendon",1243,www.manchester.gov.uk
+E08000003,Manchester,Moss Side,Green,"ASANGA-RAE, Thirza Amina",2371,www.manchester.gov.uk
+E08000003,Manchester,Moston,Reform,"FISHER, Blake Steven",1683,www.manchester.gov.uk
+E08000003,Manchester,Northenden,Labour,"MORAN, Angela Jane",1465,www.manchester.gov.uk
+E08000003,Manchester,Old Moat,Green,"EASTERBY-SMITH, Sam",1829,www.manchester.gov.uk
+E08000003,Manchester,Piccadilly,Green,"STEVEN, Ross",1684,www.manchester.gov.uk
+E08000003,Manchester,Rusholme,Green,"SYED, Shams",1919,www.manchester.gov.uk
+E08000003,Manchester,Sharston,Reform,"MCCULLOUGH, David Maurice",1203,www.manchester.gov.uk
+E08000003,Manchester,Whalley Range,Green,"ZAFAR, Ati",2498,www.manchester.gov.uk
+E08000003,Manchester,Withington,Green,"HARTNESS, Beth",1604,www.manchester.gov.uk
+E08000003,Manchester,Woodhouse Park,Green,"JOHNSON, Astrid",1411,www.manchester.gov.uk
+E08000004,Oldham,Alexandra,Other,Shabir Hussain,1552,www.oldham.gov.uk
+E08000004,Oldham,Chadderton Central,Labour,Nazrul Islam,1215,www.oldham.gov.uk
+E08000004,Oldham,Chadderton North,Reform,Jon Ford,2107,www.oldham.gov.uk
+E08000004,Oldham,Chadderton South,Reform,Rob Jackson,1833,www.oldham.gov.uk
+E08000004,Oldham,Coldhurst,Independent,Mohammed Mohib Abu Taleb,1892,www.oldham.gov.uk
+E08000004,Oldham,Crompton,Reform,Peter Hanlon,1773,www.oldham.gov.uk
+E08000004,Oldham,Failsworth East,Reform,Andrew Barry Brooks,2050,www.oldham.gov.uk
+E08000004,Oldham,Failsworth West,Reform,Mark Christopher Ruthven,1878,www.oldham.gov.uk
+E08000004,Oldham,Hollinwood,Reform,Robert Barnes,1472,www.oldham.gov.uk
+E08000004,Oldham,Medlock Vale,Labour,Junaid Hussain,1283,www.oldham.gov.uk
+E08000004,Oldham,Royton North,Reform,Paul Robinson,2502,www.oldham.gov.uk
+E08000004,Oldham,Royton South,Reform,Tony Pinder,1922,www.oldham.gov.uk
+E08000004,Oldham,Saddleworth North,Reform,Ioan Williams,1752,www.oldham.gov.uk
+E08000004,Oldham,Saddleworth South,LibDem,Helen Louise Bishop,1594,www.oldham.gov.uk
+E08000004,Oldham,Saddleworth West & Lees,Reform,Peter Klonowski,1808,www.oldham.gov.uk
+E08000004,Oldham,Shaw,Reform,Steve Eyre,1555,www.oldham.gov.uk
+E08000004,Oldham,St James',Reform,Gary Tarbuck,1938,www.oldham.gov.uk
+E08000004,Oldham,St Mary's,Other,Sonny Shah Arstan,2554,www.oldham.gov.uk
+E08000004,Oldham,Waterhead,Reform,Paul Taylor,1459,www.oldham.gov.uk
+E08000004,Oldham,Werneth,Labour,Fida Hussain,1748,www.oldham.gov.uk
+E08000005,Rochdale,Balderstone and Kirkholt,Reform,Ashley-Louise Gilbert,1205,democracy.rochdale.gov.uk
+E08000005,Rochdale,Bamford,Conservative,Angela Jennifer Smith,1230,democracy.rochdale.gov.uk
+E08000005,Rochdale,Castleton,Reform,Dave Jones,1379,democracy.rochdale.gov.uk
+E08000005,Rochdale,Central Rochdale,Other,Waqar Khan,1944,democracy.rochdale.gov.uk
+E08000005,Rochdale,East Middleton,Labour,Gina Jacques,1315,democracy.rochdale.gov.uk
+E08000005,Rochdale,Healey,Reform,Mark Stephens,1300,democracy.rochdale.gov.uk
+E08000005,Rochdale,Hopwood Hall,Reform,Steve Potter,1536,democracy.rochdale.gov.uk
+E08000005,Rochdale,Kingsway,Labour,Shakil Ahmed,1176,democracy.rochdale.gov.uk
+E08000005,Rochdale,Littleborough Lakeside,Reform,Victoria Howard,1391,democracy.rochdale.gov.uk
+E08000005,Rochdale,Milkstone and Deeplish,Other,Mohammed Shafiq,1560,democracy.rochdale.gov.uk
+E08000005,Rochdale,Milnrow and Newhey,Reform,Anthony Gilbert,1400,democracy.rochdale.gov.uk
+E08000005,Rochdale,Norden,Conservative,Paul Ellison,1662,democracy.rochdale.gov.uk
+E08000005,Rochdale,North Heywood,Reform,Michael Howard,1365,democracy.rochdale.gov.uk
+E08000005,Rochdale,North Middleton,Reform,Lee Wolf,1450,democracy.rochdale.gov.uk
+E08000005,Rochdale,Smallbridge and Firgrove,LibDem,Mohammed Khizer,917,democracy.rochdale.gov.uk
+E08000005,Rochdale,South Middleton,Reform,Matthew Pilkington,1674,democracy.rochdale.gov.uk
+E08000005,Rochdale,Spotland and Falinge,Reform,Carl Faulkner,1018,democracy.rochdale.gov.uk
+E08000005,Rochdale,"Wardle, Shore and West Littleborough",Reform,Philip Barrett,1466,democracy.rochdale.gov.uk
+E08000005,Rochdale,West Heywood,Reform,Stuart Crawford,1474,democracy.rochdale.gov.uk
+E08000005,Rochdale,West Middleton,Reform,Trevor Taylor,936,democracy.rochdale.gov.uk
+E08000006,Salford,Barton and Winton,Labour,"MULLEN, John",1348,www.salford.gov.uk
+E08000006,Salford,Blackfriars and Trinity,Green,"JONES, David",1611,www.salford.gov.uk
+E08000006,Salford,Boothstown and Ellenbrook,Conservative,"BARRINGTON, Jan",1616,www.salford.gov.uk
+E08000006,Salford,Broughton,Labour,"MERRY, John David",803,www.salford.gov.uk
+E08000006,Salford,Cadishead and Lower Irlam,Reform,"HART, James Richard",1626,www.salford.gov.uk
+E08000006,Salford,Claremont,Reform,"BATES, Christopher",1497,www.salford.gov.uk
+E08000006,Salford,Eccles,Labour,"TETTEH, Nathaniel Djangmah",1663,www.salford.gov.uk
+E08000006,Salford,Higher Irlam and Peel Green,Reform,"EVANS, Christopher",1403,www.salford.gov.uk
+E08000006,Salford,Kersal and Broughton Park,Independent,"WALTERS, Andrew Avrohom Yitzchok",1016,www.salford.gov.uk
+E08000006,Salford,Little Hulton,Reform,"CRODEN, Lewis",1121,www.salford.gov.uk
+E08000006,Salford,Ordsall,Green,"STOCKLEY, Martyn",1125,www.salford.gov.uk
+E08000006,Salford,Pendlebury and Clifton,Reform,"ROWLAND, Natalie Anne",1627,www.salford.gov.uk
+E08000006,Salford,Pendleton and Charlestown,Reform,"STONE-SHAW, Daryl",963,www.salford.gov.uk
+E08000006,Salford,Quays,Green,"ROMERO O`BRIEN, Andrea",1062,www.salford.gov.uk
+E08000006,Salford,Swinton and Wardley,Reform,"JONES, Peter Charles",1543,www.salford.gov.uk
+E08000006,Salford,Swinton Park,Reform,"PUCHALSKA, Monika Katarzyna",1450,www.salford.gov.uk
+E08000006,Salford,Walkden North,Reform,"HENDERSON, Miles Alexander",1209,www.salford.gov.uk
+E08000006,Salford,Walkden South,Reform,"VORONOV, Ivan",1422,www.salford.gov.uk
+E08000006,Salford,Weaste and Seedley,Reform,"DOYLE, Paul",1173,www.salford.gov.uk
+E08000006,Salford,Worsley and Westwood Park,Reform,"MORRISON, Kaiden Jason",1342,www.salford.gov.uk
+E08000007,Stockport,Bramhall North,LibDem,Taya Rose Clarke,2188,democracy.stockport.gov.uk
+E08000007,Stockport,Bramhall South & Woodford,LibDem,Dallas Ann Jones,2417,democracy.stockport.gov.uk
+E08000007,Stockport,Bredbury & Woodley,LibDem,Niki Meerman,2013,democracy.stockport.gov.uk
+E08000007,Stockport,Bredbury Green & Romiley,LibDem,Angie Clark,2097,democracy.stockport.gov.uk
+E08000007,Stockport,Brinnington & Stockport Central,Reform,Shaun Regan,843,democracy.stockport.gov.uk
+E08000007,Stockport,Cheadle East & Cheadle Hulme North,LibDem,Jilly Julian,2105,democracy.stockport.gov.uk
+E08000007,Stockport,Cheadle Hulme South,LibDem,Helen Foster-Grime,3026,democracy.stockport.gov.uk
+E08000007,Stockport,Cheadle West & Gatley,LibDem,Ian Hunter,2299,democracy.stockport.gov.uk
+E08000007,Stockport,Davenport & Cale Green,LibDem,Alice Delemare,1323,democracy.stockport.gov.uk
+E08000007,Stockport,Edgeley,Other,Jess Meller,1770,democracy.stockport.gov.uk
+E08000007,Stockport,Hazel Grove,LibDem,Wendy Meikle,1742,democracy.stockport.gov.uk
+E08000007,Stockport,Heald Green,Independent,Anna Mary Charles-Jones,1780,democracy.stockport.gov.uk
+E08000007,Stockport,Heatons North,Labour,Jo Williams,1743,democracy.stockport.gov.uk
+E08000007,Stockport,Heatons South,Labour,Dean Fitzpatrick,2138,democracy.stockport.gov.uk
+E08000007,Stockport,Manor,Reform,Brian John Battle,1521,democracy.stockport.gov.uk
+E08000007,Stockport,Marple North,LibDem,Megan Axon,2754,democracy.stockport.gov.uk
+E08000007,Stockport,Marple South & High Lane,LibDem,Dominic Warner,2267,democracy.stockport.gov.uk
+E08000007,Stockport,Norbury & Woodsmoor,LibDem,Dominic Francis Thomas Hardwick,2227,democracy.stockport.gov.uk
+E08000007,Stockport,Offerton,LibDem,Jamie Hirst,1736,democracy.stockport.gov.uk
+E08000007,Stockport,Reddish North,Green,David White,1588,democracy.stockport.gov.uk
+E08000007,Stockport,Reddish South,Green,Laura Smith,2515,democracy.stockport.gov.uk
+E08000008,Tameside,Ashton Hurst,Reform,Keiron Lawrence,1410,tameside.moderngov.co.uk
+E08000008,Tameside,Ashton St Michael's,Reform,Danny Carr,1265,tameside.moderngov.co.uk
+E08000008,Tameside,Ashton Waterloo,Reform,Raymond Dunning,1672,tameside.moderngov.co.uk
+E08000008,Tameside,Audenshaw,Reform,Kim Roberts,1906,tameside.moderngov.co.uk
+E08000008,Tameside,Denton North East,Reform,Aron Webb,1668,tameside.moderngov.co.uk
+E08000008,Tameside,Denton South,Reform,Audra Murray,1732,tameside.moderngov.co.uk
+E08000008,Tameside,Denton West,Reform,Dan Bennett,1981,tameside.moderngov.co.uk
+E08000008,Tameside,Droylsden East,Reform,Caroline England,1683,tameside.moderngov.co.uk
+E08000008,Tameside,Droylsden West,Reform,Sharon Barker,1627,tameside.moderngov.co.uk
+E08000008,Tameside,Dukinfield,Reform,James Anthony Rhodes,1571,tameside.moderngov.co.uk
+E08000008,Tameside,Dukinfield/Stalybridge,Reform,Jake Frater,1718,tameside.moderngov.co.uk
+E08000008,Tameside,Hyde Godley,Reform,Mark Beese,1287,tameside.moderngov.co.uk
+E08000008,Tameside,Hyde Newton,Reform,Sam Mooney,1482,tameside.moderngov.co.uk
+E08000008,Tameside,Hyde Werneth,Reform,Christopher Stones,1287,tameside.moderngov.co.uk
+E08000008,Tameside,Longdendale,Reform,Greg McNally,1581,tameside.moderngov.co.uk
+E08000008,Tameside,Mossley,Reform,Gary Roylance,1625,tameside.moderngov.co.uk
+E08000008,Tameside,St Peter's,Labour,Atta Ul-Rasool,1352,tameside.moderngov.co.uk
+E08000008,Tameside,Stalybridge North,Reform,Liam Duff,1748,tameside.moderngov.co.uk
+E08000008,Tameside,Stalybridge South,Reform,Jenny Ardron-Adams,1311,tameside.moderngov.co.uk
+E08000009,Trafford,Altrincham,Green,Dan JERROME,1744,www.trafford.gov.uk
+E08000009,Trafford,Ashton Upon Mersey,Labour,Ben HARTLEY,1476,www.trafford.gov.uk
+E08000009,Trafford,Bowdon,Conservative,Shengke ZHI,2616,www.trafford.gov.uk
+E08000009,Trafford,Broadheath,Conservative,Prakash NATHANI,1721,www.trafford.gov.uk
+E08000009,Trafford,Brooklands,Labour,Rose THOMPSON,1417,www.trafford.gov.uk
+E08000009,Trafford,Bucklow-St Martins,Reform,Charlotte Amy Eileen WATERWORTH,1226,www.trafford.gov.uk
+E08000009,Trafford,Davyhulme,Reform,Billy BURKE,1294,www.trafford.gov.uk
+E08000009,Trafford,Flixton,Labour,Dolores Catherine O`SULLIVAN,1314,www.trafford.gov.uk
+E08000009,Trafford,Gorse Hill and Cornbrook,Green,Aaron James FRADLEY,1417,www.trafford.gov.uk
+E08000009,Trafford,Hale,Conservative,Rupert Owen KELLY,1941,www.trafford.gov.uk
+E08000009,Trafford,Hale Barns and Timperley South,Conservative,Nathan EVANS,2138,www.trafford.gov.uk
+E08000009,Trafford,Longford,Green,Gareth Adam TWOSE,1719,www.trafford.gov.uk
+E08000009,Trafford,Lostock and Barton,Labour,Mark Gregory TOBIN,1068,www.trafford.gov.uk
+E08000009,Trafford,Manor,Conservative,Rupali PAUL,2037,www.trafford.gov.uk
+E08000009,Trafford,Old Trafford,Green,Jennie Patricia WADSWORTH,1952,www.trafford.gov.uk
+E08000009,Trafford,Sale Central,Labour,Eve Rebecca PARKER,1405,www.trafford.gov.uk
+E08000009,Trafford,Sale Moor,Labour,Liz PATEL,1471,www.trafford.gov.uk
+E08000009,Trafford,Stretford and Humphrey Park,Labour,Jane Winifred SLATER,1380,www.trafford.gov.uk
+E08000009,Trafford,Timperley Central,LibDem,Julian David NEWGROSH,1693,www.trafford.gov.uk
+E08000009,Trafford,Timperley North,LibDem,Will FRASS,2276,www.trafford.gov.uk
+E08000009,Trafford,Urmston,Labour,Clare SHERIDAN,1555,www.trafford.gov.uk
+E08000010,Wigan,Abram,Reform,David William BOWKER,1958,electionresults.wigan.gov.uk
+E08000010,Wigan,Ashton-in-Makerfield South,Reform,Katherine-Ann MORRILL-ASHFORD,1572,electionresults.wigan.gov.uk
+E08000010,Wigan,"Aspull, New Springs & Whelley",Reform,Joanne MEADOWS,2050,electionresults.wigan.gov.uk
+E08000010,Wigan,Astley,Reform,Eileen Patricia STRATHEARN,2100,electionresults.wigan.gov.uk
+E08000010,Wigan,Atherton North,Independent,Jamie HODGKINSON,1635,electionresults.wigan.gov.uk
+E08000010,Wigan,Atherton South & Lilford,Reform,Martin James FARRIMOND,2027,electionresults.wigan.gov.uk
+E08000010,Wigan,Bryn with Ashton-in-Makerfield North,Reform,Robert Francis KENYON,1770,electionresults.wigan.gov.uk
+E08000010,Wigan,Douglas,Reform,Matthew Joel LAMBERT,1293,electionresults.wigan.gov.uk
+E08000010,Wigan,Golborne & Lowton West,Reform,Susan Jayne FRAME,1478,electionresults.wigan.gov.uk
+E08000010,Wigan,Hindley,Reform,Paul David MANNIEX,1832,electionresults.wigan.gov.uk
+E08000010,Wigan,Hindley Green,Reform,Liam Alfie CLARKE,1878,electionresults.wigan.gov.uk
+E08000010,Wigan,Ince,Reform,Gemma PAINTER,1809,electionresults.wigan.gov.uk
+E08000010,Wigan,Leigh Central & Higher Folds,Reform,Tina KENNEDY,1696,electionresults.wigan.gov.uk
+E08000010,Wigan,Leigh South,Reform,Leon PETERS,1827,electionresults.wigan.gov.uk
+E08000010,Wigan,Leigh West,Reform,David John EVANS,1945,electionresults.wigan.gov.uk
+E08000010,Wigan,Lowton East,Reform,Simon SMITH,1817,electionresults.wigan.gov.uk
+E08000010,Wigan,Orrell,Reform,Paul Kevin BANNISTER,1621,electionresults.wigan.gov.uk
+E08000010,Wigan,Pemberton,Reform,Simon SILCOCK,1623,electionresults.wigan.gov.uk
+E08000010,Wigan,Shevington with Lower Ground & Moor,Reform,Lilian Carol ROGERS,1916,electionresults.wigan.gov.uk
+E08000010,Wigan,Standish with Langtree,Reform,Michael John WHALLEY,1679,electionresults.wigan.gov.uk
+E08000010,Wigan,Tyldesley & Mosley Common,Reform,Adrian WHITE,1768,electionresults.wigan.gov.uk
+E08000010,Wigan,Wigan Central,Reform,Lee MOFFITT,1771,electionresults.wigan.gov.uk
+E08000010,Wigan,Wigan West,Reform,Sam ASHTON,1746,electionresults.wigan.gov.uk
+E08000010,Wigan,Winstanley,Reform,Paul FORBES,1881,electionresults.wigan.gov.uk
+E08000010,Wigan,Worsley Mesnes,Reform,Keith Andrew WHALLEY,1711,electionresults.wigan.gov.uk
