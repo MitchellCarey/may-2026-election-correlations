@@ -210,6 +210,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://electionresults.wigan.gov.uk/LocalElections/Home/Index/19"
+  official_parser: wigan
+  official_year: 2026
 
 # Non-GM English metropolitan boroughs (E08).
 # All run thirds; the 2026 election was their next thirds year after 2024.
