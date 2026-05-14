@@ -165,6 +165,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://tameside.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=67&RPID=40902715"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E08000009
   name: Trafford
