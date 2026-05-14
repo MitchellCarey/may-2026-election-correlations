@@ -37,8 +37,12 @@ DIV_LINK_RE = re.compile(
 # Per-candidate row in the main results table. Marks the elected candidate
 # via the "mgMainTxtBold" class on the outcome cell — losers have
 # "mgTopText" / "Not elected". The leading <span> is the party-colour swatch.
+# The candidate name may be bare text (West Sussex pattern) or wrapped in
+# an <a> tag pointing to a sitting councillor's profile (Stockport
+# pattern); the optional groups around the name capture either form.
 ELECTED_ROW_RE = re.compile(
-    r'<td[^>]*class="mgTopText"[^>]*>(?:<span[^>]*>.*?</span>\s*)?([^<]+?)</td>\s*'
+    r'<td[^>]*class="mgTopText"[^>]*>(?:<span[^>]*>.*?</span>\s*)?'
+    r'(?:<a[^>]*>)?\s*([^<]+?)\s*(?:</a>)?\s*</td>\s*'
     r'<td[^>]*class="mgBottomText"[^>]*>([^<]+?)</td>\s*'
     r'<td[^>]*class="mgAlignRightCell"[^>]*>(\d+)</td>\s*'
     r'<td[^>]*class="mgAlignRightCell"[^>]*>[^<]*</td>\s*'
