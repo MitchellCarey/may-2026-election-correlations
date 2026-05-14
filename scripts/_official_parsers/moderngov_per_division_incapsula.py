@@ -19,13 +19,14 @@ in data/source/councils.yaml).
 import html
 import json
 import re
+import sys
 import time
 import urllib.parse
 
-from _cloudflare import cloudflare_session
+from ._cloudflare import cloudflare_session
 # Re-export the HTML extraction logic — the per-division template is the
 # same across plain and Incapsula-fronted ModernGov instances.
-from moderngov_per_division import (  # noqa: F401
+from .moderngov_per_division import (  # noqa: F401
     DIV_LINK_RE,
     ELECTED_ROW_RE,
     extension,
@@ -79,13 +80,22 @@ def fetch(url: str, *, council: dict, year: int) -> bytes:
     parsed = urllib.parse.urlparse(url)
     base = f'{parsed.scheme}://{parsed.netloc}{parsed.path.rsplit("/", 1)[0]}/'
     divisions: dict[str, str] = {}
+    skipped: list[tuple[str, str]] = []
     for m in DIV_LINK_RE.finditer(index_html):
         href = m.group(1)
         name = html.unescape(m.group(2))
         div_url = urllib.parse.urljoin(base, href)
         time.sleep(0.5)  # be polite + amortise Incapsula rate limiter
-        divisions[name] = _fetch_with_retry(div_url, referer=url).decode(
-            'utf-8', errors='replace'
+        try:
+            divisions[name] = _fetch_with_retry(div_url, referer=url).decode(
+                'utf-8', errors='replace'
+            )
+        except RuntimeError as e:
+            skipped.append((name, str(e)))
+            print(f'WARN: skipping {name}: {e}', file=sys.stderr)
+    if skipped and not divisions:
+        raise RuntimeError(
+            f'all {len(skipped)} divisions failed; first: {skipped[0][1]}'
         )
     return json.dumps({
         'index_url': url,
