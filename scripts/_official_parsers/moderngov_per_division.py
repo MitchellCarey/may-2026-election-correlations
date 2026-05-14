@@ -37,11 +37,21 @@ DIV_LINK_RE = re.compile(
 # Per-candidate row in the main results table. Marks the elected candidate
 # via the "mgMainTxtBold" class on the outcome cell — losers have
 # "mgTopText" / "Not elected". The leading <span> is the party-colour swatch.
+# The candidate-name cell comes in two shapes across ModernGov instances:
+#   - plain text after the swatch (West Sussex style)
+#   - wrapped in <a href="mgUserInfo.aspx?...">NAME</a> linking to the
+#     councillor's bio page (Lincoln, Crawley, Milton Keynes, etc.)
+# The optional <a>...</a> group captures both forms.
 ELECTED_ROW_RE = re.compile(
-    r'<td[^>]*class="mgTopText"[^>]*>(?:<span[^>]*>.*?</span>\s*)?([^<]+?)</td>\s*'
+    r'<td[^>]*class="mgTopText"[^>]*>'
+    r'(?:<span[^>]*>.*?</span>\s*)?'
+    r'(?:<a\b[^>]*>\s*)?'
+    r'([^<]+?)'
+    r'(?:\s*</a>)?'
+    r'\s*</td>\s*'
     r'<td[^>]*class="mgBottomText"[^>]*>([^<]+?)</td>\s*'
     r'<td[^>]*class="mgAlignRightCell"[^>]*>(\d+)</td>\s*'
-    r'<td[^>]*class="mgAlignRightCell"[^>]*>[^<]*</td>\s*'
+    r'(?:<td[^>]*class="mgAlignRightCell"[^>]*>[^<]*</td>\s*)?'
     r'<td[^>]*class="mgMainTxtBold"[^>]*>\s*Elected\s*</td>',
     re.DOTALL | re.IGNORECASE,
 )
