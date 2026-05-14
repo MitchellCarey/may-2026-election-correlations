@@ -154,30 +154,37 @@ def load_ced_overrides() -> dict[tuple[str, str], str]:
     return overrides
 
 
-def load_county_official(year: int) -> dict[str, dict[str, dict]]:
-    """Read data/source/county_official_<year>.csv — authoritative per-CED
-    winners scraped (or hand-curated) from each council's own results page.
-    Indexed by county name → normalised CED name → record. Highest-priority
-    source for that year's CEDs; overrides Wikipedia in build_ced_winners().
+def load_county_official() -> dict[str, dict[str, dict]]:
+    """Read every data/source/county_official_<year>.csv — authoritative
+    per-CED winners scraped (or hand-curated) from each council's own
+    results page. Indexed by county name → normalised CED name → record.
+    Highest-priority CED source; overrides Wikipedia in build_ced_winners().
 
     CSV schema: lad_code, county, division, party, candidate, votes, source.
-    Missing file is fine — returns {}.
+    No matching files is fine — returns {}.
 
-    Phase 1 populated the 2026 file (Norfolk, hand-curated). Phase 2 of
-    issue #9 adds the rest of the 6 × 2026 counties via scripts/13. Phase 3
-    populates county_official_2025.csv via the same dispatcher.
+    Multi-year because the 6 × 2026 counties live in county_official_2026.csv
+    and the 14 × 2025 counties in county_official_2025.csv (with 2021
+    reserved for future backfills). Newest year wins on per-CED conflicts so
+    the most recent contest takes precedence if two CSVs disagree.
     """
-    path = SOURCE / f'county_official_{year}.csv'
-    if not path.exists():
-        return {}
     out: dict[str, dict[str, dict]] = {}
-    with open(path, newline='') as f:
-        for row in csv.DictReader(f):
-            out.setdefault(row['county'], {})[normalise_ced(row['division'])] = {
-                'party': row['party'],
-                'year':  year,
-                'source_ced_name': row['division'],
-            }
+    # Oldest year first so the newer year's rows overwrite on per-CED key
+    # collisions — counties that re-contested the same CED in a later year
+    # should reflect the later result.
+    paths = sorted(SOURCE.glob('county_official_*.csv'))
+    for path in paths:
+        m = re.match(r'county_official_(\d{4})\.csv$', path.name)
+        if not m:
+            continue
+        year = int(m.group(1))
+        with open(path, newline='') as f:
+            for row in csv.DictReader(f):
+                out.setdefault(row['county'], {})[normalise_ced(row['division'])] = {
+                    'party': row['party'],
+                    'year':  year,
+                    'source_ced_name': row['division'],
+                }
     return out
 
 
@@ -225,19 +232,24 @@ def build_ced_winners(geoms: dict) -> list[dict]:
     One record per CED25CD with winner / year / county.
 
     Source precedence is per-county, not per-record:
-      1. data/source/county_official_2026.csv — hand-curated authoritative
-         data from each council's own results page. Always wins where set.
+      1. data/source/county_official_<year>.csv (all years merged) —
+         authoritative data from each council's own results page. Always
+         wins on every CED it covers, regardless of the year of contest.
       2. county_results_2026_ceds.json — Wikipedia 2026 parsings (partly
          placeholder while editors catch up post-election).
-      3. current_ced_winners_raw.json — the 14 × 2025 contested counties.
+      3. current_ced_winners_raw.json — the 14 × 2025 contested counties
+         from Wikipedia, used only for counties not in 1 or 2.
       4. county_results_prior_ceds.json — 2021 priors, used only for
          counties not present in 1/2/3.
 
-    For a county that appears in source 1 or 2, source 4 (2021 priors) is
-    intentionally NOT consulted — the 2026 election superseded 2021 even
-    where specific CEDs aren't yet published.
+    For a county that appears in source 1 or 2, sources 3 and 4 are
+    intentionally NOT consulted — the official CSV is assumed to cover the
+    council's full CED slate, and a 2026 Wikipedia result supersedes an
+    earlier Wiki snapshot. The AC for issue #34 requires each county's
+    official CSV row count to match its declared CED count, so per-CED
+    fallback to Wikipedia 2025 isn't needed.
     """
-    official_2026 = load_county_official(2026)
+    official_by_county = load_county_official()
     ced_overrides = load_ced_overrides()
     p_2026  = DATA / 'county_results_2026_ceds.json'
     p_curr  = DATA / 'current_ced_winners_raw.json'
@@ -260,14 +272,14 @@ def build_ced_winners(geoms: dict) -> list[dict]:
         return out
 
     by_county_norm: dict[str, dict[str, dict]] = {}
-    all_counties = set(official_2026) | set(data_2026) | set(data_curr) | set(data_prior)
+    all_counties = set(official_by_county) | set(data_2026) | set(data_curr) | set(data_prior)
     for county_name in all_counties:
-        if county_name in official_2026 or county_name in data_2026:
+        if county_name in official_by_county or county_name in data_2026:
             # Merge official over Wikipedia — official wins on every CED it covers,
             # Wikipedia fills in the rest (e.g. East Sussex 50/50 in Wiki, no
             # official rows; Norfolk 84/84 in official, Wiki not consulted).
             merged = index(data_2026.get(county_name, {}))
-            merged.update(official_2026.get(county_name, {}))
+            merged.update(official_by_county.get(county_name, {}))
             by_county_norm[county_name] = merged
         elif county_name in data_curr:
             by_county_norm[county_name] = index(data_curr[county_name])
