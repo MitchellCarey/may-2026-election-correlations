@@ -227,7 +227,7 @@ def build_ced_winners(geoms: dict) -> list[dict]:
     intentionally NOT consulted — the 2026 election superseded 2021 even
     where specific CEDs aren't yet published.
     """
-    official_2026 = load_county_official(2026)
+    official_2026 = {**load_county_official(2021), **load_county_official(2025), **load_county_official(2026)}
     ced_overrides = load_ced_overrides()
     p_2026  = DATA / 'county_results_2026_ceds.json'
     p_curr  = DATA / 'current_ced_winners_raw.json'
@@ -379,7 +379,7 @@ def main():
     # Per-LAD (matched, total, unmatched_wards) — feeds the per-council
     # "Norfolk 84/84 in official" coverage lines + stderr WARNs for rows
     # that didn't join to a WD24 polygon.
-    ward_official = load_ward_official(2026)
+    ward_official = {**load_ward_official(2021), **load_ward_official(2025), **load_ward_official(2026)}
     official_stats: list[tuple[str, str, int, int, list[str]]] = []
     for lad in sorted(ward_official):
         rows = ward_official[lad]
