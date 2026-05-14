@@ -106,6 +106,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.manchester.gov.uk/online-directories/the-council-and-democracy-directories/elections-and-voting-directories/elections-directories/election-results/local-elections/local-elections-2026"
+  official_parser: manchester
+  official_year: 2026
 
 - lad_code: E08000004
   name: Oldham
