@@ -386,11 +386,43 @@ def main():
                          'match_type': match_type}
         return True
 
+    # Wiki-side lookup (gss → {year, party}) used for the official-vs-wiki
+    # disagreement WARN below. Mirrors Pass 1a/1b's join logic so any wiki
+    # ward we'd otherwise have painted is comparable. all_wards.json only
+    # carries the 134 councils that contested 2026 (plus Salford carrying
+    # 2021 priors), so non-2026 councils — England 2-tier districts, most
+    # of Wales/Scotland — aren't here and won't trigger a WARN.
+    wiki_by_gss: dict[str, dict] = {}
+    for w in all_wards:
+        if not w.get('winner'):
+            continue
+        lad = w['lad_code']
+        if not lad.startswith(GB_LAD_PREFIXES):
+            continue
+        council = council_by_lad.get(lad)
+        if council is None:
+            continue
+        gss = geom_by_norm.get((lad, normalise(w['ward'])))
+        if gss is None:
+            override = geom_overrides.get((lad, w['ward']))
+            if override is not None:
+                gss = geom_by_norm.get((lad, normalise(override)))
+        if gss is None:
+            continue
+        wiki_by_gss[gss] = {
+            'year':  year_for_all_wards_source(council),
+            'party': w['winner'],
+        }
+
     # --- Pass 0: ward_official_<year>.csv (authoritative; outranks every other ward source) ---
     # Per-LAD (matched, total, year, unmatched_wards) — feeds the per-council
     # "Norfolk 84/84 in official" coverage lines + stderr WARNs for rows
-    # that didn't join to a WD24 polygon.
+    # that didn't join to a WD24 polygon. Disagreements between official and
+    # the wiki baseline are also collected here for a stderr WARN block —
+    # only when the years match (Salford official 2025 vs wiki 2021 are
+    # different elections and aren't expected to agree).
     ward_official = load_ward_official()
+    disagreements: list[tuple[str, str, str, int, str, str]] = []
     official_stats: list[tuple[str, str, int, int, int, list[str]]] = []
     for lad in sorted(ward_official):
         rows = ward_official[lad]
@@ -409,6 +441,10 @@ def main():
             if gss is None:
                 unmatched.append(row['ward'])
                 continue
+            wiki = wiki_by_gss.get(gss)
+            if wiki and wiki['year'] == row['year'] and wiki['party'] != row['party']:
+                disagreements.append((council_name, row['ward'], gss,
+                                      row['year'], row['party'], wiki['party']))
             if assign(gss, row['party'], row['year'], 'official_ward', match_type):
                 matched += 1
         official_stats.append((lad, council_name, matched, len(rows), council_year, unmatched))
@@ -572,6 +608,14 @@ def main():
         print(f'  WARN {council_name}: {len(unmatched)} ward(s) in '
               f'ward_official_{year}.csv had no WD24 match — '
               f'e.g. {sample}{more}', file=sys.stderr)
+    if disagreements:
+        print(f'\n{len(disagreements)} ward(s) where official source disagrees '
+              f'with all_wards.json (Wiki) — official wins; review these:',
+              file=sys.stderr)
+        for council_name, ward, gss, year, off_party, wiki_party in disagreements:
+            print(f'  WARN official ≠ wiki at {council_name} :: {ward} '
+                  f'({gss}, year={year}): official={off_party}, wiki={wiki_party}',
+                  file=sys.stderr)
     with_ced = sum(1 for r in out if r.get('ced_county'))
     counties_seen = {r['ced_county'] for r in out if r.get('ced_county')}
     print(f'  with CED context: {with_ced} wards across {len(counties_seen)} counties')
