@@ -37,12 +37,14 @@ DIV_LINK_RE = re.compile(
 # Per-candidate row in the main results table. Marks the elected candidate
 # via the "mgMainTxtBold" class on the outcome cell — losers have
 # "mgTopText" / "Not elected". The leading <span> is the party-colour swatch.
-# Sitting-councillor names are wrapped in an <a href="mgUserInfo.aspx?…"> link
-# (first-time candidates are plain text); the (?:<a[^>]*>)?…(?:</a>)? handles
-# both. Vote counts are tolerant of comma-grouped digits (e.g. "1,476").
+# Candidate names may be bare text (West Sussex pattern) or wrapped in an
+# <a href="mgUserInfo.aspx?…"> link to a sitting councillor's profile
+# (Stockport / Derbyshire pattern); the optional <a>/</a> groups around the
+# name capture either form. Vote counts are tolerant of comma-grouped digits
+# (e.g. "1,476").
 ELECTED_ROW_RE = re.compile(
     r'<td[^>]*class="mgTopText"[^>]*>(?:<span[^>]*>.*?</span>\s*)?'
-    r'(?:<a[^>]*>)?([^<]+?)(?:</a>)?</td>\s*'
+    r'(?:<a[^>]*>)?\s*([^<]+?)\s*(?:</a>)?\s*</td>\s*'
     r'<td[^>]*class="mgBottomText"[^>]*>([^<]+?)</td>\s*'
     r'<td[^>]*class="mgAlignRightCell"[^>]*>([\d,]+)</td>\s*'
     r'<td[^>]*class="mgAlignRightCell"[^>]*>[^<]*</td>\s*'
