@@ -58,6 +58,13 @@ data/source/official_*.html
 data/source/official_*.json
 data/source/official_*.pdf
 
+# Cached Surrey CC mycouncil + electionmap HTML fetches from scripts/22 —
+# Incapsula-fronted so re-fetching may be rate-limited; the parsed
+# surrey_2026.json IS committed so downstream renderers don't need
+# these caches.
+data/source/surrey_council_*.html
+data/source/surrey_electionmap_*.html
+
 # Built per-ward datasets that are reproducible from the cached wiki + geom files.
 data/current_winners.json
 data/current_winners_raw.json

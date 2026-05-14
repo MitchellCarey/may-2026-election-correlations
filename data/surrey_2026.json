@@ -11,12 +11,12 @@
     "winners": [
       {
         "party": "Conservative",
-        "candidate": "David Lewis",
+        "candidate": "David John Lewis",
         "votes": 2855
       },
       {
         "party": "Conservative",
-        "candidate": "Alan Parker",
+        "candidate": "Alan Charles Parker",
         "votes": 2469
       }
     ],
@@ -28,7 +28,7 @@
       "Green": 369,
       "Labour": 276
     },
-    "source": "wiki:2026 East Surrey Council election"
+    "source": "surrey-cc:357"
   },
   {
     "lad_code": "XSE",
@@ -981,7 +981,7 @@
       "Green": 873,
       "Labour": 517
     },
-    "source": "wiki:2026 East Surrey Council election"
+    "source": "surrey-cc:355"
   },
   {
     "lad_code": "XSE",
@@ -1012,7 +1012,7 @@
       "Green": 696,
       "Labour": 334
     },
-    "source": "wiki:2026 East Surrey Council election"
+    "source": "surrey-cc:356"
   },
   {
     "lad_code": "XSE",
@@ -1157,12 +1157,12 @@
     "winners": [
       {
         "party": "LibDem",
-        "candidate": "Carla Morson",
+        "candidate": "Carla Jane Morson",
         "votes": 2088
       },
       {
         "party": "LibDem",
-        "candidate": "Phil Bellamy",
+        "candidate": "Philip Edward Bellamy",
         "votes": 1805
       }
     ],
@@ -1175,7 +1175,7 @@
       "Independent": 243,
       "Labour": 221
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:389"
   },
   {
     "lad_code": "XSW",
@@ -1189,12 +1189,12 @@
     "winners": [
       {
         "party": "LibDem",
-        "candidate": "George Potter",
+        "candidate": "George Matthew Potter",
         "votes": 2818
       },
       {
         "party": "LibDem",
-        "candidate": "Jo Shaw",
+        "candidate": "Joanne Helen Shaw",
         "votes": 2541
       }
     ],
@@ -1206,7 +1206,7 @@
       "Green": 936,
       "Labour": 234
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:405"
   },
   {
     "lad_code": "XSW",
@@ -1220,7 +1220,7 @@
     "winners": [
       {
         "party": "LibDem",
-        "candidate": "Katie Steel",
+        "candidate": "Catherine Anne Steel (known as Katie Steel)",
         "votes": 1696
       },
       {
@@ -1237,7 +1237,7 @@
       "Conservative": 1124,
       "Labour": 332
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:406"
   },
   {
     "lad_code": "XSW",
@@ -1256,7 +1256,7 @@
       },
       {
         "party": "LibDem",
-        "candidate": "James Thornton",
+        "candidate": "James Sebastian Thornton",
         "votes": 2236
       }
     ],
@@ -1267,9 +1267,9 @@
       "Green": 1075,
       "Reform": 993,
       "Labour": 166,
-      "Independent": 124
+      "Independent": 126
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:407"
   },
   {
     "lad_code": "XSW",
@@ -1283,12 +1283,12 @@
     "winners": [
       {
         "party": "LibDem",
-        "candidate": "Angela Goodwin",
+        "candidate": "Angela Marie Goodwin",
         "votes": 2595
       },
       {
         "party": "LibDem",
-        "candidate": "Steve Hives",
+        "candidate": "Stephen James Hives (Known as Steve Hives)",
         "votes": 1989
       }
     ],
@@ -1300,7 +1300,7 @@
       "Reform": 976,
       "Labour": 200
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:408"
   },
   {
     "lad_code": "XSW",
@@ -1314,12 +1314,12 @@
     "winners": [
       {
         "party": "LibDem",
-        "candidate": "Julia McShane",
+        "candidate": "Julia Maureen McShane",
         "votes": 1534
       },
       {
         "party": "LibDem",
-        "candidate": "James Steel",
+        "candidate": "James Harry Alfred Steel",
         "votes": 1227
       }
     ],
@@ -1332,7 +1332,7 @@
       "Labour": 407,
       "Other": 100
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:409"
   },
   {
     "lad_code": "XSW",
@@ -1347,12 +1347,12 @@
     "winners": [
       {
         "party": "Other",
-        "candidate": "Catherine Young",
+        "candidate": "Catherine-Anne Young (Known as Catherine Young)",
         "votes": 1845
       },
       {
         "party": "Conservative",
-        "candidate": "David Evans",
+        "candidate": "David Timothy Evans",
         "votes": 1446
       }
     ],
@@ -1365,61 +1365,100 @@
       "Green": 532,
       "Labour": 138
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:412"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::shalford",
     "ward_name": "Shalford",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 2
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Matthew Paul Furniss (Known as Matt Furniss)",
+        "votes": 2062
+      },
+      {
+        "party": "Conservative",
+        "candidate": "Sally Anne Barker (Known as Sallie Barker)",
+        "votes": 1889
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Green": 0,
-      "Conservative": 0,
-      "Reform": 0,
-      "Labour": 0,
-      "LibDem": 0
+      "Conservative": 3951,
+      "LibDem": 2739,
+      "Reform": 1811,
+      "Green": 824,
+      "Labour": 161
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:417"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::shere",
     "ward_name": "Shere",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 2
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Robert Gurth Hughes (Known as Bob Hughes)",
+        "votes": 2297
+      },
+      {
+        "party": "Conservative",
+        "candidate": "Victoria Lisa Nadine Sena",
+        "votes": 2130
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Conservative": 0,
-      "Reform": 0,
-      "LibDem": 0,
-      "Labour": 0,
-      "Green": 0
+      "Conservative": 4427,
+      "LibDem": 2602,
+      "Reform": 2020,
+      "Green": 841,
+      "Labour": 174
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:418"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::worplesdon",
     "ward_name": "Worplesdon",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 2
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Bilal Hassan Akhtar",
+        "votes": 1775
+      },
+      {
+        "party": "Conservative",
+        "candidate": "Jonathan George Caladine Lord",
+        "votes": 1705
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Conservative": 0,
-      "Reform": 0,
-      "Labour": 0,
-      "LibDem": 0,
-      "Green": 0
+      "Conservative": 3480,
+      "LibDem": 2692,
+      "Reform": 2149,
+      "Green": 857,
+      "Labour": 196
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:432"
   },
   {
     "lad_code": "XSW",
@@ -1433,12 +1472,12 @@
     "winners": [
       {
         "party": "Reform",
-        "candidate": "Scott Kelly",
+        "candidate": "Scott Michael Kelly",
         "votes": 1254
       },
       {
         "party": "Reform",
-        "candidate": "Vinny Mitchell",
+        "candidate": "Vincent Roy Mitchell",
         "votes": 1195
       }
     ],
@@ -1450,7 +1489,7 @@
       "LibDem": 1164,
       "Labour": 546
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:388"
   },
   {
     "lad_code": "XSW",
@@ -1464,12 +1503,12 @@
     "winners": [
       {
         "party": "Conservative",
-        "candidate": "Mark Nuti",
+        "candidate": "Mark Gordon Nuti",
         "votes": 1717
       },
       {
         "party": "Conservative",
-        "candidate": "Shannon Saise-Marshall",
+        "candidate": "Shannon Kerry Niomi Saise-Marshall",
         "votes": 1303
       }
     ],
@@ -1481,7 +1520,7 @@
       "Green": 972,
       "Labour": 841
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:394"
   },
   {
     "lad_code": "XSW",
@@ -1496,12 +1535,12 @@
     "winners": [
       {
         "party": "Independent",
-        "candidate": "Isabel Mullens",
+        "candidate": "Isabel Alice Mullens",
         "votes": 1113
       },
       {
         "party": "Reform",
-        "candidate": "George Gladstone-New",
+        "candidate": "George Henry Gladstone-New",
         "votes": 1014
       }
     ],
@@ -1514,7 +1553,7 @@
       "Conservative": 1311,
       "LibDem": 469
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:396"
   },
   {
     "lad_code": "XSW",
@@ -1528,7 +1567,7 @@
     "winners": [
       {
         "party": "Conservative",
-        "candidate": "Marisa Heath",
+        "candidate": "Marisa Natalie Heath",
         "votes": 1858
       },
       {
@@ -1545,7 +1584,7 @@
       "Green": 711,
       "Labour": 475
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:397"
   },
   {
     "lad_code": "XSW",
@@ -1560,12 +1599,12 @@
     "winners": [
       {
         "party": "Reform",
-        "candidate": "Carl Mann",
+        "candidate": "Carl Jonathan Mann",
         "votes": 1729
       },
       {
         "party": "Conservative",
-        "candidate": "Jonathan Hulley",
+        "candidate": "Jonathan Roger Hulley",
         "votes": 1623
       }
     ],
@@ -1578,7 +1617,7 @@
       "Green": 662,
       "Labour": 392
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:424"
   },
   {
     "lad_code": "XSW",
@@ -1592,7 +1631,7 @@
     "winners": [
       {
         "party": "Conservative",
-        "candidate": "Scott Lewis",
+        "candidate": "Scott Alderson Lewis",
         "votes": 2212
       },
       {
@@ -1609,7 +1648,7 @@
       "Green": 422,
       "Labour": 349
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:431"
   },
   {
     "lad_code": "XSW",
@@ -1624,12 +1663,12 @@
     "winners": [
       {
         "party": "Independent",
-        "candidate": "Joanne Sexton",
+        "candidate": "Joanne Rose Sexton",
         "votes": 1870
       },
       {
         "party": "Reform",
-        "candidate": "Richard Barratt",
+        "candidate": "Richard Owen Barratt",
         "votes": 1465
       }
     ],
@@ -1642,7 +1681,7 @@
       "Green": 474,
       "Labour": 694
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:390"
   },
   {
     "lad_code": "XSW",
@@ -1673,25 +1712,38 @@
       "LibDem": 1206,
       "Labour": 512
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:414"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::lower_sunbury_halliford",
     "ward_name": "Lower Sunbury & Halliford",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Richard Herman",
+        "votes": 1731
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Paul Vanni",
+        "votes": 1682
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Green": 0,
-      "Labour": 0,
-      "LibDem": 0,
-      "Reform": 0,
-      "Conservative": 0
+      "LibDem": 3413,
+      "Conservative": 3167,
+      "Reform": 2345,
+      "Green": 748,
+      "Labour": 450
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:416"
   },
   {
     "lad_code": "XSW",
@@ -1724,64 +1776,105 @@
       "Labour": 526,
       "Other": 87
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:420"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::staines_south_ashford_west",
     "ward_name": "Staines South & Ashford West",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "Reform",
+    "seats_won": {
+      "Reform": 1,
+      "LibDem": 1
+    },
+    "winners": [
+      {
+        "party": "Reform",
+        "candidate": "Phil Basey",
+        "votes": 1481
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Harleen Boparai",
+        "votes": 1448
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Independent": 0,
-      "Reform": 0,
-      "LibDem": 0,
-      "Labour": 0,
-      "Conservative": 0,
-      "Green": 0
+      "Reform": 2909,
+      "LibDem": 2808,
+      "Conservative": 2238,
+      "Green": 417,
+      "Labour": 642,
+      "Independent": 607
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:419"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::stanwell_stanwell_moor_ashford_north",
     "ward_name": "Stanwell, Stanwell Moor & Ashford North",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "Reform",
+    "seats_won": {
+      "Reform": 2
+    },
+    "winners": [
+      {
+        "party": "Reform",
+        "candidate": "Jim McIlroy",
+        "votes": 1478
+      },
+      {
+        "party": "Reform",
+        "candidate": "Harry Phillips",
+        "votes": 1427
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Green": 0,
-      "Labour": 0,
-      "Conservative": 0,
-      "LibDem": 0,
-      "Reform": 0
+      "Reform": 2905,
+      "Conservative": 1749,
+      "Labour": 1455,
+      "Green": 813,
+      "LibDem": 391
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:421"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::sunbury_common_ashford_common",
     "ward_name": "Sunbury Common & Ashford Common",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 1,
+      "Reform": 1
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Harry Boparai",
+        "votes": 1896
+      },
+      {
+        "party": "Reform",
+        "candidate": "Rory O'Brien",
+        "votes": 1428
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Conservative": 0,
-      "LibDem": 0,
-      "Other": 0,
-      "Independent": 0,
-      "Green": 0,
-      "Reform": 0,
-      "Labour": 0
+      "LibDem": 3248,
+      "Reform": 2645,
+      "Conservative": 1280,
+      "Green": 463,
+      "Independent": 691,
+      "Labour": 512,
+      "Other": 65
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:422"
   },
   {
     "lad_code": "XSW",
@@ -1795,12 +1888,12 @@
     "winners": [
       {
         "party": "LibDem",
-        "candidate": "Simon Browne",
+        "candidate": "Simon Richard Mackintosh Browne",
         "votes": 2105
       },
       {
         "party": "LibDem",
-        "candidate": "Richard Wilson*",
+        "candidate": "Richard Michael Wilson",
         "votes": 2097
       }
     ],
@@ -1812,7 +1905,7 @@
       "Green": 483,
       "Labour": 157
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:391"
   },
   {
     "lad_code": "XSW",
@@ -1843,7 +1936,7 @@
       "Green": 621,
       "Labour": 238
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:392"
   },
   {
     "lad_code": "XSW",
@@ -1857,7 +1950,7 @@
     "winners": [
       {
         "party": "LibDem",
-        "candidate": "Alan Ashbery",
+        "candidate": "Alan Robert Ashbery",
         "votes": 1824
       },
       {
@@ -1874,7 +1967,7 @@
       "Green": 669,
       "Labour": 263
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:393"
   },
   {
     "lad_code": "XSW",
@@ -1889,12 +1982,12 @@
     "winners": [
       {
         "party": "Conservative",
-        "candidate": "Paul Deach*",
+        "candidate": "Paul Deach",
         "votes": 2027
       },
       {
         "party": "LibDem",
-        "candidate": "Jacques Olmo*",
+        "candidate": "Jacques Olmo",
         "votes": 1911
       }
     ],
@@ -1906,7 +1999,7 @@
       "Green": 586,
       "Labour": 170
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:401"
   },
   {
     "lad_code": "XSW",
@@ -1920,12 +2013,12 @@
     "winners": [
       {
         "party": "LibDem",
-        "candidate": "Rob Lee*",
+        "candidate": "Rob Lee",
         "votes": 2912
       },
       {
         "party": "LibDem",
-        "candidate": "Dr Nirmal Kang*",
+        "candidate": "Nirmal Kang",
         "votes": 2791
       }
     ],
@@ -1937,7 +2030,7 @@
       "Green": 1018,
       "Labour": 104
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:411"
   },
   {
     "lad_code": "XSW",
@@ -1951,12 +2044,12 @@
     "winners": [
       {
         "party": "LibDem",
-        "candidate": "Julie Hoad*",
+        "candidate": "Julie Caron Hoad",
         "votes": 2656
       },
       {
         "party": "LibDem",
-        "candidate": "Shaun Macdonald*",
+        "candidate": "Shaun Peter MacDonald",
         "votes": 2270
       }
     ],
@@ -1969,7 +2062,7 @@
       "Green": 570,
       "Labour": 128
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:415"
   },
   {
     "lad_code": "XSW",
@@ -1988,7 +2081,7 @@
       },
       {
         "party": "LibDem",
-        "candidate": "Brian Steel",
+        "candidate": "Brian David Steel",
         "votes": 2681
       }
     ],
@@ -2000,284 +2093,480 @@
       "Green": 647,
       "Labour": 159
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:395"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::farnham_central",
     "ward_name": "Farnham Central",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Tony Fairclough",
+        "votes": 1710
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Richard Peter Steijger",
+        "votes": 1509
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Other": 0,
-      "Green": 0,
-      "LibDem": 0,
-      "Labour": 0,
-      "Reform": 0,
-      "Conservative": 0
+      "LibDem": 3219,
+      "Other": 2532,
+      "Conservative": 1401,
+      "Reform": 1344,
+      "Green": 1014,
+      "Labour": 172
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:398"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::farnham_north",
     "ward_name": "Farnham North",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "Other",
+    "seats_won": {
+      "Other": 2
+    },
+    "winners": [
+      {
+        "party": "Other",
+        "candidate": "Catherine Powell",
+        "votes": 1987
+      },
+      {
+        "party": "Other",
+        "candidate": "Sally Dickson",
+        "votes": 1690
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Green": 0,
-      "LibDem": 0,
-      "Reform": 0,
-      "Other": 0,
-      "Conservative": 0,
-      "Labour": 0
+      "Other": 3702,
+      "Reform": 1995,
+      "LibDem": 1352,
+      "Conservative": 967,
+      "Green": 1010,
+      "Labour": 220
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:399"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::farnham_south",
     "ward_name": "Farnham South",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Benjamin John Barratt Bristow",
+        "votes": 1492
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Sally Jane Shorthose",
+        "votes": 1305
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Green": 0,
-      "Reform": 0,
-      "LibDem": 0,
-      "Other": 0,
-      "Labour": 0,
-      "Conservative": 0,
-      "Independent": 0
+      "LibDem": 2797,
+      "Other": 2261,
+      "Conservative": 2175,
+      "Reform": 1264,
+      "Green": 686,
+      "Independent": 172,
+      "Labour": 156
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:400"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::godalming_north",
     "ward_name": "Godalming North",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Penny Rivers",
+        "votes": 2818
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Ruth Thomson",
+        "votes": 2291
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Reform": 0,
-      "Green": 0,
-      "Conservative": 0,
-      "LibDem": 0,
-      "Labour": 0
+      "LibDem": 5109,
+      "Conservative": 3051,
+      "Green": 1969,
+      "Reform": 1373,
+      "Labour": 143
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:402"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::godalming_south_milford_witley",
     "ward_name": "Godalming South, Milford & Witley",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Paul David Follows",
+        "votes": 2809
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Victoria Claire Kiehl",
+        "votes": 2287
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Green": 0,
-      "Labour": 0,
-      "Independent": 0,
-      "LibDem": 0,
-      "Conservative": 0,
-      "Reform": 0
+      "LibDem": 5096,
+      "Conservative": 2816,
+      "Independent": 1537,
+      "Reform": 1214,
+      "Green": 829,
+      "Labour": 114
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:403"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::haslemere",
     "ward_name": "Haslemere",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Oli Leach",
+        "votes": 2441
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Terry Weldon",
+        "votes": 1814
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Reform": 0,
-      "Green": 0,
-      "Conservative": 0,
-      "Labour": 0,
-      "LibDem": 0
+      "LibDem": 4255,
+      "Conservative": 2391,
+      "Reform": 1592,
+      "Green": 1441,
+      "Labour": 115
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:410"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::waverley_eastern_villages",
     "ward_name": "Waverley Eastern Villages",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "Conservative",
+    "seats_won": {
+      "Conservative": 2
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Jane Kathryn Austin",
+        "votes": 3359
+      },
+      {
+        "party": "Conservative",
+        "candidate": "Kevin Neil Deanus",
+        "votes": 2893
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Conservative": 0,
-      "LibDem": 0,
-      "Reform": 0,
-      "Green": 0,
-      "Labour": 0
+      "Conservative": 6252,
+      "LibDem": 3184,
+      "Reform": 1369,
+      "Green": 637,
+      "Labour": 130
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:425"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::waverley_western_villages",
     "ward_name": "Waverley Western Villages",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "Conservative": 1,
+      "LibDem": 1
+    },
+    "winners": [
+      {
+        "party": "Conservative",
+        "candidate": "Phoebe Sullivan",
+        "votes": 1961
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Keith McDonald Buchanan",
+        "votes": 1941
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Conservative": 0,
-      "LibDem": 0,
-      "Reform": 0,
-      "Labour": 0,
-      "Green": 0,
-      "Independent": 0
+      "Conservative": 3776,
+      "LibDem": 3794,
+      "Independent": 990,
+      "Reform": 1473,
+      "Green": 639,
+      "Labour": 108
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:426"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::goldsworth_east_horsell_village",
     "ward_name": "Goldsworth East & Horsell Village",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "John Morley",
+        "votes": 3029
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Lance Patrick Spencer",
+        "votes": 2746
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Conservative": 0,
-      "Reform": 0,
-      "Labour": 0,
-      "LibDem": 0,
-      "Green": 0
+      "LibDem": 5775,
+      "Reform": 1529,
+      "Conservative": 1309,
+      "Green": 626,
+      "Labour": 403
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:404"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::knaphill_goldsworth_west",
     "ward_name": "Knaphill & Goldsworth West",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Ann-Marie Barker",
+        "votes": 2556
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Steve Greentree",
+        "votes": 2190
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Independent": 0,
-      "Reform": 0,
-      "Green": 0,
-      "LibDem": 0,
-      "Conservative": 0
+      "LibDem": 4746,
+      "Independent": 1122,
+      "Reform": 2036,
+      "Conservative": 1100,
+      "Green": 705
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:413"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::the_byfleets",
     "ward_name": "The Byfleets",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Liam Lyons",
+        "votes": 1743
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Ian Richardson",
+        "votes": 1453
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Reform": 0,
-      "Independent": 0,
-      "Conservative": 0,
-      "Labour": 0,
-      "LibDem": 0
+      "LibDem": 3196,
+      "Independent": 2687,
+      "Reform": 1917,
+      "Conservative": 1036,
+      "Labour": 289
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:423"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::woking_north",
     "ward_name": "Woking North",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Attia Aslam",
+        "votes": 2356
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Zafar Rasab",
+        "votes": 2222
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Conservative": 0,
-      "LibDem": 0,
-      "Labour": 0,
-      "Reform": 0,
-      "Independent": 0,
-      "Other": 0
+      "LibDem": 4578,
+      "Labour": 1791,
+      "Reform": 1329,
+      "Conservative": 1244,
+      "Independent": 574,
+      "Other": 118
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:427"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::woking_south",
     "ward_name": "Woking South",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Ian Johnson",
+        "votes": 2489
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Louise Mary Nell Morales",
+        "votes": 2480
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Green": 0,
-      "Reform": 0,
-      "LibDem": 0,
-      "Conservative": 0,
-      "Other": 0
+      "LibDem": 4969,
+      "Reform": 1540,
+      "Green": 1170,
+      "Conservative": 874,
+      "Other": 52
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:429"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::woking_south_east",
     "ward_name": "Woking South East",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Peter Graves",
+        "votes": 2859
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Ellen Nicholson",
+        "votes": 2713
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Reform": 0,
-      "Conservative": 0,
-      "LibDem": 0,
-      "Labour": 0,
-      "Green": 0
+      "LibDem": 5572,
+      "Conservative": 1695,
+      "Reform": 1688,
+      "Green": 398,
+      "Labour": 281
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:428"
   },
   {
     "lad_code": "XSW",
     "lad_name": "West Surrey",
     "ward_code": "XSW::woking_south_west",
     "ward_name": "Woking South West",
-    "winner": "Pending",
-    "seats_won": {},
-    "winners": [],
+    "winner": "LibDem",
+    "seats_won": {
+      "LibDem": 2
+    },
+    "winners": [
+      {
+        "party": "LibDem",
+        "candidate": "Leslie Rice",
+        "votes": 2820
+      },
+      {
+        "party": "LibDem",
+        "candidate": "Dale Shaun Roberts",
+        "votes": 2588
+      }
+    ],
     "year": 2026,
     "votes": {
-      "Conservative": 0,
-      "Reform": 0,
-      "Labour": 0,
-      "Green": 0,
-      "Other": 0,
-      "LibDem": 0
+      "LibDem": 5408,
+      "Conservative": 2432,
+      "Reform": 1876,
+      "Green": 820,
+      "Labour": 247,
+      "Other": 66
     },
-    "source": "wiki:2026 West Surrey Council election"
+    "source": "surrey-cc:430"
   }
 ]
