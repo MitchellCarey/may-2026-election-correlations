@@ -1759,6 +1759,9 @@
   wiki_prior: "2021 Norfolk County Council election"
   wiki_prior_year: 2021
   electoral_system: fptp
+  official_url: "https://elections.norfolk.gov.uk/textresults.aspx"
+  official_parser: norfolk_textresults
+  official_year: 2026
   wiki_current_articles: null
 
 - lad_code: E10000029
