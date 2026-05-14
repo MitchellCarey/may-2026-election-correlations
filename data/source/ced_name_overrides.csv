@@ -3,3 +3,8 @@ E10000014,Botley & Hedge End North ED,Botley and Hedge End,HCC drops the "North"
 E10000014,"Liphook, Headley & Grayshott ED",Liphook Headley and Grayshott,HCC drops the comma after Liphook
 E10000014,Purbrook & Stakes South ED,Purbook and Stakes South,HCC page typo: "Purbook" → "Purbrook"
 E10000014,Totton South & Marchwood ED,Totton South and Marshwood,HCC page typo: "Marshwood" → "Marchwood"
+E10000017,Mid-Rossendale ED,Mid Rossendale,LCC drops the hyphen between Mid and Rossendale
+E10000017,Poulton-le-Fylde ED,Poulton le Fylde,LCC drops the hyphens in "Poulton-le-Fylde"
+E10000016,"Cheriton, Sandgate & Hythe East ED",Cheriton Sandgate & Hythe East,KCC drops the comma after Cheriton
+E10000019,Deepings East ED,"Deepings, East",LCC inverts to "Deepings, East" with comma — and our normaliser strips ", East" as a trailing suffix
+E10000008,"Creedy, Taw & Mid Exe ED",Creedy Taw & Mid Exe,DCC drops the comma after Creedy

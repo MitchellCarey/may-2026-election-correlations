@@ -37,14 +37,16 @@ DIV_LINK_RE = re.compile(
 # Per-candidate row in the main results table. Marks the elected candidate
 # via the "mgMainTxtBold" class on the outcome cell — losers have
 # "mgTopText" / "Not elected". The leading <span> is the party-colour swatch.
-# The candidate name may be bare text (West Sussex pattern) or wrapped in
-# an <a> tag pointing to a sitting councillor's profile (Stockport
-# pattern); the optional groups around the name capture either form.
+# Candidate names may be bare text (West Sussex pattern) or wrapped in an
+# <a href="mgUserInfo.aspx?…"> link to a sitting councillor's profile
+# (Stockport / Derbyshire pattern); the optional <a>/</a> groups around the
+# name capture either form. Vote counts are tolerant of comma-grouped digits
+# (e.g. "1,476").
 ELECTED_ROW_RE = re.compile(
     r'<td[^>]*class="mgTopText"[^>]*>(?:<span[^>]*>.*?</span>\s*)?'
     r'(?:<a[^>]*>)?\s*([^<]+?)\s*(?:</a>)?\s*</td>\s*'
     r'<td[^>]*class="mgBottomText"[^>]*>([^<]+?)</td>\s*'
-    r'<td[^>]*class="mgAlignRightCell"[^>]*>(\d+)</td>\s*'
+    r'<td[^>]*class="mgAlignRightCell"[^>]*>([\d,]+)</td>\s*'
     r'<td[^>]*class="mgAlignRightCell"[^>]*>[^<]*</td>\s*'
     r'<td[^>]*class="mgMainTxtBold"[^>]*>\s*Elected\s*</td>',
     re.DOTALL | re.IGNORECASE,
@@ -85,6 +87,13 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
     blob = json.loads(content)
     is_county = council['lad_code'].startswith('E10')
     source = urllib.parse.urlparse(blob.get('index_url', council['official_url'])).netloc
+    # Optional council-specific prefix strip. Staffordshire labels divisions
+    # "Cannock Chase - Brereton and Ravenhill" and Gloucestershire labels
+    # them "Cheltenham: All Saints and Oakley" on their moderngov pages, but
+    # ONS CED25 names are just the division portion. The yaml field is a
+    # regex applied to the left-hand side of each division name.
+    strip_re_str = council.get('official_moderngov_strip')
+    strip_re = re.compile(strip_re_str) if strip_re_str else None
     out: list[dict] = []
     for name, page_html in blob.get('divisions', {}).items():
         m = ELECTED_ROW_RE.search(page_html)
@@ -92,7 +101,8 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
             continue
         candidate = html.unescape(m.group(1).strip())
         party_raw = html.unescape(m.group(2).strip())
-        votes = int(m.group(3))
+        votes = int(m.group(3).replace(',', ''))
+        division = strip_re.sub('', name, count=1) if strip_re else name
         row = {
             'lad_code':  council['lad_code'],
             'party':     normalize_party(party_raw),
@@ -102,9 +112,9 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
         }
         if is_county:
             row['county']   = council['name']
-            row['division'] = name
+            row['division'] = division
         else:
             row['council'] = council['name']
-            row['ward']    = name
+            row['ward']    = division
         out.append(row)
     return out
