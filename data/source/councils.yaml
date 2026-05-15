@@ -303,6 +303,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.sheffield.gov.uk/your-city-council/elections/local-elections-results-2026"
+  official_parser: sheffield
+  official_year: 2026
 
 # Wikipedia drops "upon Tyne" in the council article name.
 - lad_code: E08000021
