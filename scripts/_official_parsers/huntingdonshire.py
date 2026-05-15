@@ -74,6 +74,10 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
         # on the page is canonical, prefer it when available.
         h1m = H1_RE.search(page_html)
         canonical = html.unescape(h1m.group(1).strip()) if h1m else ward_name
+        # Both the H1 and the index link text carry a literal " Ward" suffix
+        # ("Alconbury Ward"); strip it so the name matches the WD24 polygon
+        # set used by 04c.
+        canonical = re.sub(r'\s+Ward$', '', canonical, flags=re.IGNORECASE)
         elected: list[tuple[str, str, int]] = []
         for rm in ROW_RE.finditer(page_html):
             row = rm.group(1)
