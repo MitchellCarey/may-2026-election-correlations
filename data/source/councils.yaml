@@ -343,6 +343,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://portal.southtyneside.info/elections/LocalGovernment.aspx?id=47"
+  official_parser: south_tyneside
+  official_year: 2026
 
 - lad_code: E08000024
   name: Sunderland
