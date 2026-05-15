@@ -830,12 +830,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
-  # deferred to #53 (PDF tail): Newham's /council/local-elections-2026-
-  # results portal has one nav-only HTML subpage per ward, each linking
-  # only to a per-ward declaration PDF. No vote data inline.
-  official_url: null
-  official_parser: null
-  official_year: null
+  official_url: "https://www.newham.gov.uk/council/local-elections-2026-results"
+  official_parser: newham
+  official_year: 2026
 
 - lad_code: E09000026
   name: Redbridge
