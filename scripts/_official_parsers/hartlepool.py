@@ -61,6 +61,7 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
     out: list[dict] = []
     for ward_name, pdf_bytes in iter_pdfs(content):
         with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
+            done = False
             for page in pdf.pages:
                 for table in page.extract_tables():
                     for row in table:
@@ -85,8 +86,10 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
                             'votes':     int(votes_raw),
                             'source':    'hartlepool.gov.uk',
                         })
+                        done = True
                         break
-                    else:
-                        continue
+                    if done:
+                        break
+                if done:
                     break
     return out
