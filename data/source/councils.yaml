@@ -368,6 +368,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.birmingham.gov.uk/info/50385/election_2026_candidates"
+  official_parser: birmingham
+  official_year: 2026
 
 - lad_code: E08000026
   name: Coventry
