@@ -975,12 +975,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
-  # deferred to #53 (PDF tail): Hartlepool publishes results as a single
-  # PDF /downloads/download/634/local-government-elections---declaration-
-  # of-results-7-may-2026 with no parseable HTML on /elections.
-  official_url: null
-  official_parser: null
-  official_year: null
+  official_url: "https://www.hartlepool.gov.uk/downloads/download/634/local-government-elections-declaration-of-results-7-may-2026"
+  official_parser: hartlepool
+  official_year: 2026
 
 - lad_code: E06000006
   name: Halton
