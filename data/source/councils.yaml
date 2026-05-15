@@ -694,6 +694,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://haringey.gov.uk/council-elections/elections-voting/local-elections-may-2026"
+  official_parser: haringey
+  official_year: 2026
 
 - lad_code: E09000015
   name: Harrow
