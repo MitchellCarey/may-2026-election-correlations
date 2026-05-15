@@ -19,7 +19,7 @@ pyproj>=3.6
 curl_cffi>=0.7,<0.8
 
 # build-only — used by the PDF declaration-of-poll parsers under
-# scripts/_official_parsers/ (hartlepool, newham, redditch, richmond_upon_thames)
+# scripts/_official_parsers/ (hartlepool, newham, redditch, sunderland)
 # to extract per-ward elected rows from council PDFs. Lazy-imported inside each
 # parser so contributors not running a PDF council don't need the wheel.
 pdfplumber>=0.11
