@@ -830,6 +830,12 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  # deferred to #53 (PDF tail): Newham's /council/local-elections-2026-
+  # results portal has one nav-only HTML subpage per ward, each linking
+  # only to a per-ward declaration PDF. No vote data inline.
+  official_url: null
+  official_parser: null
+  official_year: null
 
 - lad_code: E09000026
   name: Redbridge
@@ -855,6 +861,12 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  # deferred to #53 (PDF tail): Richmond's local-council-elections-2026
+  # page links to ~56 per-ward declaration PDFs; no parseable HTML
+  # ward results on the council site.
+  official_url: null
+  official_parser: null
+  official_year: null
 
 - lad_code: E09000028
   name: Southwark
@@ -963,6 +975,12 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  # deferred to #53 (PDF tail): Hartlepool publishes results as a single
+  # PDF /downloads/download/634/local-government-elections---declaration-
+  # of-results-7-may-2026 with no parseable HTML on /elections.
+  official_url: null
+  official_parser: null
+  official_year: null
 
 - lad_code: E06000006
   name: Halton
