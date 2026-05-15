@@ -21,6 +21,7 @@ import urllib.parse
 import urllib.request
 
 from _wiki_parser import normalize_party
+from _official_parsers._pick_winner import pick_plurality
 
 extension = 'json'
 
@@ -70,16 +71,25 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
         blob.get('index_url', council['official_url'])).netloc
     out: list[dict] = []
     for ward_name, page_html in blob.get('wards', {}).items():
-        m = ELECTED_ROW_RE.search(page_html)
-        if not m:
+        elected = [
+            (
+                html.unescape(m.group(2).strip()),
+                html.unescape(m.group(1).strip()),
+                int(m.group(3).replace(',', '')),
+            )
+            for m in ELECTED_ROW_RE.finditer(page_html)
+        ]
+        winner = pick_plurality(elected)
+        if winner is None:
             continue
+        party_raw, candidate, votes = winner
         out.append({
             'lad_code':  council['lad_code'],
             'council':   council['name'],
             'ward':      ward_name,
-            'party':     normalize_party(html.unescape(m.group(2).strip())),
-            'candidate': html.unescape(m.group(1).strip()),
-            'votes':     int(m.group(3).replace(',', '')),
+            'party':     normalize_party(party_raw),
+            'candidate': candidate,
+            'votes':     votes,
             'source':    source,
         })
     return out
