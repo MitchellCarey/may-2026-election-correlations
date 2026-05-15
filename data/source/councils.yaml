@@ -1804,6 +1804,11 @@
   wiki_prior_year: 2024
   electoral_system: fptp
   wiki_current_articles: null
+  # Joint Adur + Worthing portal — same URL, the parser filters by
+  # lad_code to emit only this district's ward blocks.
+  official_url: "https://www.adur-worthing.gov.uk/elections-and-voting/election-results/2026/"
+  official_parser: adur_worthing
+  official_year: 2026
 
 - lad_code: E07000226
   name: Crawley
@@ -1840,6 +1845,10 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  # Joint Adur + Worthing portal — see Adur (E07000223) for context.
+  official_url: "https://www.adur-worthing.gov.uk/elections-and-voting/election-results/2026/"
+  official_parser: adur_worthing
+  official_year: 2026
 
 - lad_code: E07000236
   name: Redditch
