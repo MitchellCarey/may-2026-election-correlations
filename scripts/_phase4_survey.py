@@ -168,6 +168,17 @@ MANUAL_OVERRIDES: dict[str, dict] = {
         "page_form": "single results HTML",
         "notes": "",
     },
+    "E08000027": {  # Dudley — bespoke single-page summary on online.* subdomain
+        "results_url": "https://online.dudley.gov.uk/elections/local2026-live.asp",
+        "platform": "bespoke",
+        "http_status": 200,
+        "page_form": "single results HTML",
+        # cmis.dudley.gov.uk now 302s every request to the generic
+        # council-meetings page, so the bare hostname is no signal of
+        # an active CMIS install — the survey's auto-detection picked it
+        # up as cmis on hostname alone; pin to the real Umbraco results URL.
+        "notes": "real results on online.dudley.gov.uk; cmis.dudley.gov.uk is a 302 trap",
+    },
     "E07000223": {  # Adur — joint council with Worthing
         "results_url": "https://www.adur-worthing.gov.uk/elections-and-voting/election-results/2026/",
         "platform": "bespoke",
@@ -325,7 +336,10 @@ def detect_platform(url: str, body: bytes, content_type: str) -> tuple[str, str]
     )
     if moderngov_url or moderngov_body:
         return "moderngov", "per-ward HTML"
-    if re.search(r"https?://cmis\.[^/]+\.gov\.uk/", url_l) or b"openelection:" in body_l:
+    if b"openelection:" in body_l:
+        # Hostname alone (e.g. cmis.<council>.gov.uk) isn't enough — some
+        # councils have decommissioned the CMIS subdomain and now 302
+        # every request to a generic landing page (Dudley E08000027).
         return "cmis", "per-ward HTML"
     if "services" in url_l and "arcgis.com" in url_l and "/featureserver/" in url_l:
         return "arcgis", "JSON"
