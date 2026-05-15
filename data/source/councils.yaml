@@ -1668,6 +1668,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://cannockchasedc.gov.uk/council/elections-voting/elections/election-results/cannock-chase-district-council-elections-7-may"
+  official_parser: cannock
+  official_year: 2026
 
 - lad_code: E07000195
   name: Newcastle-under-Lyme
