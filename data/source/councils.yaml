@@ -591,6 +591,12 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  # Bromley's bespoke /news/article/979 page is a summary table with no
+  # vote counts; the council's ModernGov backend at cds.bromley.gov.uk
+  # carries the full per-ward breakdown. Pivot to it (Phase 0 Round 3).
+  official_url: "https://cds.bromley.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=17"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E09000007
   name: Camden
