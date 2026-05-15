@@ -995,6 +995,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.nelincs.gov.uk/your-council/elections-and-voting/election-dates-and-results/local-elections/"
+  official_parser: ne_lincs
+  official_year: 2026
 
 - lad_code: E06000026
   name: Plymouth
