@@ -1731,6 +1731,9 @@
   wiki_prior_year: 2024
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.nuneatonandbedworth.gov.uk/election-results"
+  official_parser: nuneaton
+  official_year: 2026
 
 - lad_code: E07000220
   name: Rugby
