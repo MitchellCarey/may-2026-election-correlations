@@ -41,6 +41,9 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
     ward_heads = list(WARD_HEAD_RE.finditer(src))
     for i, m in enumerate(ward_heads):
         ward_name = html.unescape(m.group(1).strip())
+        # Accordion headings carry a literal " Ward" suffix; strip it so the
+        # name matches the WD24 polygon set used by 04c.
+        ward_name = re.sub(r'\s+Ward$', '', ward_name, flags=re.IGNORECASE)
         block_start = m.end()
         block_end = ward_heads[i + 1].start() if i + 1 < len(ward_heads) else len(src)
         elected: list[tuple[str, str, int]] = []
