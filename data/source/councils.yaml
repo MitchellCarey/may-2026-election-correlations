@@ -981,6 +981,10 @@
       title: "2019 Hull City Council election"
     - year: 2018
       title: "2018 Hull City Council election"
+  official_url: "https://news.hull.gov.uk/07/05/2026/local-elections-live-blog/"
+  official_parser: hull
+  official_year: 2026
+
 - lad_code: E06000012
   name: North East Lincolnshire
   nation: england
