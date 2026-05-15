@@ -1741,6 +1741,10 @@
       title: "2019 Rugby Borough Council election"
     - year: 2018
       title: "2018 Rugby Borough Council election"
+  official_url: "https://www.rugby.gov.uk/w/2026-elections"
+  official_parser: rugby
+  official_year: 2026
+
 - lad_code: E07000223
   name: Adur
   nation: england
