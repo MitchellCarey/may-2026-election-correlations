@@ -48,7 +48,6 @@ def _http_get(url: str) -> bytes:
 def fetch(url: str, *, council: dict, year: int) -> bytes:
     index_html = _http_get(url).decode('utf-8', errors='replace')
     parsed = urllib.parse.urlparse(url)
-    base = f'{parsed.scheme}://{parsed.path.rsplit("/", 1)[0]}'
     base_url = f'{parsed.scheme}://{parsed.netloc}{parsed.path.rsplit("/", 1)[0]}/'
     wards: dict[str, str] = {}
     for m in WARD_LINK_RE.finditer(index_html):
@@ -75,10 +74,8 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
             cells_raw = list(CELL_RE.finditer(row))
             if len(cells_raw) < 5:
                 continue
-            # Elected row: every cell carries the `bold` class; loser rows
-            # carry `Undec`. Test the 5th cell's class for `bold`.
-            col5_open = re.search(r'<td[^>]*>', row.split('</td>')[3] + '</td>') if False else None
             cells = [_cell_text(c.group(1)) for c in cells_raw]
+            # Elected row: 5th cell text is "Yes" (loser rows are empty).
             if cells[4].strip().lower() != 'yes':
                 continue
             try:
