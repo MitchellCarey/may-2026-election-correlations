@@ -858,12 +858,13 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
-  # deferred to #53 (PDF tail): Richmond's local-council-elections-2026
-  # page links to ~56 per-ward declaration PDFs; no parseable HTML
-  # ward results on the council site.
-  official_url: null
-  official_parser: null
-  official_year: null
+  # The www.richmond.gov.uk/local_council_elections_2026 page deferred
+  # to #53 turned out to redirect (via a "Full borough election results"
+  # link) to a populated ModernGov instance at cabnet.richmond.gov.uk —
+  # using moderngov_per_division means no PDF parser needed.
+  official_url: "https://cabnet.richmond.gov.uk/mgElectionElectionAreaResults.aspx?EID=500000006&RPID=621538709"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E09000028
   name: Southwark
