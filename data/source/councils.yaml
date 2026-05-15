@@ -431,6 +431,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://go.walsall.gov.uk/your-council/voting-and-elections/election/local-election-results-walsall-borough-2026/results"
+  official_parser: walsall
+  official_year: 2026
 
 # Wolverhampton was renamed "City of Wolverhampton Council" between 2022
 # and 2026; the 2026 article uses the new name. The cached 2022 article
