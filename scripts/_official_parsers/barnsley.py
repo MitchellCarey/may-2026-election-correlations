@@ -36,9 +36,17 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
     out: list[dict] = []
     ward_heads = list(WARD_HEAD_RE.finditer(src))
     for i, m in enumerate(ward_heads):
-        ward_name = html.unescape(m.group(1).strip())
+        # Re-strip post-unescape so a trailing `&nbsp;` (Central) collapses.
+        ward_name = html.unescape(m.group(1).strip()).strip()
         block_start = m.end()
         block_end = ward_heads[i + 1].start() if i + 1 < len(ward_heads) else len(src)
+        # The page tail repeats the same h3+table layout for Parish/Town
+        # Council seats — skip those since they aren't WD24 wards.
+        if 'Council' in ward_name or not ward_name.lower().endswith(' ward'):
+            continue
+        # H3 heads carry a literal " ward" suffix ("Central ward"); strip
+        # it so the name matches the WD24 polygon set used by 04c.
+        ward_name = re.sub(r'\s+ward$', '', ward_name, flags=re.IGNORECASE)
         elected: list[tuple[str, str, int]] = []
         for rm in ROW_RE.finditer(src, block_start, block_end):
             cells = [_cell_text(c.group(1)) for c in CELL_RE.finditer(rm.group(1))]
