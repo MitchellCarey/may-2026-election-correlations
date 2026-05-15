@@ -16,6 +16,7 @@ with " - elected" (e.g. `<strong>632 - elected</strong>`).
 """
 import html
 import re
+import sys
 import urllib.parse
 
 from _wiki_parser import normalize_party
@@ -55,8 +56,25 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
     source = urllib.parse.urlparse(council['official_url']).netloc
 
     am = ADUR_BOUNDARY_RE.search(src)
-    adur_end = am.start() if am else len(src)
     wm = WORTHING_BOUNDARY_RE.search(src)
+    # Surface boundary-detection misses: if either heading wording shifts
+    # the slicing fails silently — Adur picks up Worthing's wards (wrong
+    # lad_code) and / or Worthing's slice collapses to empty.
+    if am is None:
+        print(
+            '  ! adur_worthing: "Adur District election results" boundary '
+            'heading not found — Adur slice will over-include Worthing '
+            'wards and Worthing slice will be empty',
+            file=sys.stderr,
+        )
+    if wm is None:
+        print(
+            '  ! adur_worthing: "Worthing Borough election results" '
+            'boundary heading not found — Worthing slice runs to EOF and '
+            'may pick up trailing non-result chrome',
+            file=sys.stderr,
+        )
+    adur_end = am.start() if am else len(src)
     worthing_end = wm.start() if wm else len(src)
 
     lad = council['lad_code']
@@ -71,8 +89,12 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
     captions = [m for m in CAPTION_RE.finditer(src, block_start, block_end)]
     for i, m in enumerate(captions):
         ward_name = html.unescape(m.group(1).strip())
-        # Strip trailing " Ward" suffix where it appears.
-        ward_name = re.sub(r'\s+Ward$', '', ward_name, flags=re.IGNORECASE)
+        # Strip the " Ward" suffix; the two Marine wards (one per district)
+        # are captioned "Marine Ward (Shoreham-by-Sea)" / "Marine Ward
+        # (Worthing)" — drop both the suffix and the disambiguation since
+        # WD24 keys both as "Marine" under their distinct lad_code.
+        ward_name = re.sub(
+            r'\s+Ward(\s*\(.*\))?\s*$', '', ward_name, flags=re.IGNORECASE)
         cb_start = m.end()
         cb_end = captions[i + 1].start() if i + 1 < len(captions) else block_end
         elected: list[tuple[str, str, int]] = []
