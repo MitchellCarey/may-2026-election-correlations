@@ -1,17 +1,11 @@
-"""Parse Wigan Council's bespoke per-ward election results subdomain.
+"""Parse Haringey Council 2026 ward results from haringey.gov.uk.
 
-Wigan publishes per-ward results on a dedicated ASP.NET MVC subdomain
-(electionresults.wigan.gov.uk) with the URL pattern
-    /LocalElections/Home/Index/{election-id}        — index of wards
-    /LocalElections/Ward/Index/{ward-id}            — per-ward detail
-The 7 May 2026 election is election-id 19 and ward-ids run 455–479.
-
-`official_url` in the registry is the index page. The custom fetch()
-walks the index, follows every per-ward link, and caches the combined
-response as a single JSON blob keyed by ward name. parse() then walks
-each ward's HTML and extracts the row whose result cell contains
-<strong>Elected</strong>; losing rows carry an empty <strong></strong>
-in that cell.
+The bespoke `/council-elections/elections-voting/local-elections-may-
+2026/` index links to per-ward subpages at `/council-elections/elections
+-voting/local-elections-may-2026/{slug}-ward`. Each per-ward page has
+the results as an `<ul>` of `<li>SURNAME, Forename (Party) – votes:
+NNN[, elected: Yes]</li>` items. Elected items are wrapped in
+`<strong>...</strong>` and the "elected: Yes" suffix appears inside.
 """
 import html
 import json
@@ -30,18 +24,19 @@ UA = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
       'gm-2026-ward-analysis/1.0 (mitchellcarey2@gmail.com)')
 
 WARD_LINK_RE = re.compile(
-    r'<a[^>]+href="(/LocalElections/Ward/Index/\d+)"[^>]*>\s*([^<]+?)\s*</a>',
+    r'<a[^>]+href="(/council-elections/elections-voting/local-elections-may-2026/[^"#]+?-ward)"[^>]*>\s*([^<]+?)\s*</a>',
     re.IGNORECASE,
 )
 
-ELECTED_ROW_RE = re.compile(
-    r'<tr[^>]*>\s*'
-    r'<td[^>]*>\s*([^<]+?)\s*</td>\s*'
-    r'<td[^>]*>\s*([^<]+?)\s*</td>\s*'
-    r'<td[^>]*>\s*([\d,]+)\s*</td>\s*'
-    r'<td[^>]*>\s*<strong[^>]*>\s*Elected\s*</strong>\s*</td>',
+# Elected <li>: <strong>NAME (Party) – votes: NNN, elected: Yes</strong>.
+ELECTED_LI_RE = re.compile(
+    r'<li[^>]*>\s*<strong[^>]*>\s*'
+    r'([^<()]+?)\s*\(\s*([^)]+?)\s*\)\s*[–-]\s*votes:\s*([\d,]+)\s*,\s*elected:\s*Yes'
+    r'\s*</strong>\s*</li>',
     re.DOTALL | re.IGNORECASE,
 )
+
+H1_RE = re.compile(r'<h1[^>]*>\s*([^<]+?)\s*</h1>', re.IGNORECASE)
 
 
 def _http_get(url: str) -> bytes:
@@ -60,7 +55,7 @@ def fetch(url: str, *, council: dict, year: int) -> bytes:
         name = html.unescape(m.group(2).strip())
         if name in wards:
             continue
-        time.sleep(0.3)  # be polite
+        time.sleep(0.3)
         wards[name] = _http_get(base + href).decode('utf-8', errors='replace')
     return json.dumps({'index_url': url, 'wards': wards}).encode()
 
@@ -71,14 +66,19 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
         blob.get('index_url', council['official_url'])).netloc
     out: list[dict] = []
     for ward_name, page_html in blob.get('wards', {}).items():
-        elected = [
-            (
-                html.unescape(m.group(2).strip()),
-                html.unescape(m.group(1).strip()),
-                int(m.group(3).replace(',', '')),
-            )
-            for m in ELECTED_ROW_RE.finditer(page_html)
-        ]
+        h1m = H1_RE.search(page_html)
+        canonical = html.unescape(h1m.group(1).strip()) if h1m else ward_name
+        # Strip trailing " ward" to match WD24 naming.
+        canonical = re.sub(r'\s+ward$', '', canonical, flags=re.IGNORECASE)
+        elected: list[tuple[str, str, int]] = []
+        for lm in ELECTED_LI_RE.finditer(page_html):
+            candidate = html.unescape(lm.group(1).strip())
+            party_raw = html.unescape(lm.group(2).strip())
+            try:
+                votes = int(lm.group(3).replace(',', ''))
+            except ValueError:
+                continue
+            elected.append((party_raw, candidate, votes))
         winner = pick_plurality(elected)
         if winner is None:
             continue
@@ -86,7 +86,7 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
         out.append({
             'lad_code':  council['lad_code'],
             'council':   council['name'],
-            'ward':      ward_name,
+            'ward':      canonical,
             'party':     normalize_party(party_raw),
             'candidate': candidate,
             'votes':     votes,

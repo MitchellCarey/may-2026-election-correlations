@@ -23,6 +23,7 @@ import urllib.parse
 import urllib.request
 
 from _wiki_parser import normalize_party
+from _official_parsers._pick_winner import pick_plurality
 
 extension = 'json'
 
@@ -96,12 +97,22 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
     strip_re = re.compile(strip_re_str) if strip_re_str else None
     out: list[dict] = []
     for name, page_html in blob.get('divisions', {}).items():
-        m = ELECTED_ROW_RE.search(page_html)
-        if not m:
+        elected = [
+            (
+                html.unescape(m.group(2).strip()),
+                html.unescape(m.group(1).strip()),
+                int(m.group(3).replace(',', '')),
+            )
+            for m in ELECTED_ROW_RE.finditer(page_html)
+        ]
+        # All-up borough wards elect 2-3 candidates per ward and can return a
+        # split slate (e.g. Wandsworth East Putney: 2 Con + 1 Lab). The page
+        # is vote-rank ordered so top-of-poll comes first, but that's not
+        # always the plurality party — let pick_plurality decide.
+        winner = pick_plurality(elected)
+        if winner is None:
             continue
-        candidate = html.unescape(m.group(1).strip())
-        party_raw = html.unescape(m.group(2).strip())
-        votes = int(m.group(3).replace(',', ''))
+        party_raw, candidate, votes = winner
         division = strip_re.sub('', name, count=1) if strip_re else name
         row = {
             'lad_code':  council['lad_code'],

@@ -8,10 +8,11 @@ elected candidate's row wraps each cell's contents in <strong>...
 </p> with stray <strong> </strong> wrappers around the <p>; party
 and votes cells just hold a single <strong>X</strong>).
 
-Cadishead and Lower Irlam carries a double vacancy in 2026 — two
-elected rows, both Reform UK; following the existing parser convention
-(see moderngov_per_division.py) we yield only the first-listed
-elected candidate per ward, which is enough to paint the map.
+Cadishead and Lower Irlam carries a double vacancy — two elected rows,
+both Reform UK today. To stay correct if a future double-vacancy ward
+elects councillors from different parties, we collect every elected
+row in a block and let _pick_winner.pick_plurality decide the row that
+should land in the CSV.
 
 `official_url` is the article page; default urllib GET works (no
 Cloudflare). The cached file is the raw HTML.
@@ -21,6 +22,7 @@ import re
 import urllib.parse
 
 from _wiki_parser import normalize_party
+from _official_parsers._pick_winner import pick_plurality
 
 extension = 'html'
 
@@ -63,16 +65,25 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
         ward_name = html.unescape(m.group(1).strip())
         block_start = m.end()
         block_end = ward_heads[i + 1].start() if i + 1 < len(ward_heads) else len(src)
-        em = ELECTED_ROW_RE.search(src, block_start, block_end)
-        if not em:
+        elected = [
+            (
+                html.unescape(em.group(2).strip()),
+                _candidate_text(em.group(1)),
+                int(em.group(3).replace(',', '')),
+            )
+            for em in ELECTED_ROW_RE.finditer(src, block_start, block_end)
+        ]
+        winner = pick_plurality(elected)
+        if winner is None:
             continue
+        party_raw, candidate, votes = winner
         out.append({
             'lad_code':  council['lad_code'],
             'council':   council['name'],
             'ward':      ward_name,
-            'party':     normalize_party(html.unescape(em.group(2).strip())),
-            'candidate': _candidate_text(em.group(1)),
-            'votes':     int(em.group(3).replace(',', '')),
+            'party':     normalize_party(party_raw),
+            'candidate': candidate,
+            'votes':     votes,
             'source':    source,
         })
     return out

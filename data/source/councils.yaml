@@ -284,6 +284,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.barnsley.gov.uk/services/voting-and-elections/election-results/local-government-and-parish-council-elections-7-may-2026/"
+  official_parser: barnsley
+  official_year: 2026
 
 # Doncaster moved to all-out 2021 -> 2025 -> 2029, so no May 2026 contest.
 # Omitted from the registry; re-add for 2029 alongside the other ex-thirds
@@ -303,6 +306,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.sheffield.gov.uk/your-city-council/elections/local-elections-results-2026"
+  official_parser: sheffield
+  official_year: 2026
 
 # Wikipedia drops "upon Tyne" in the council article name.
 - lad_code: E08000021
@@ -337,6 +343,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://portal.southtyneside.info/elections/LocalGovernment.aspx?id=47"
+  official_parser: south_tyneside
+  official_year: 2026
 
 - lad_code: E08000024
   name: Sunderland
@@ -359,6 +368,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.birmingham.gov.uk/info/50385/election_2026_candidates"
+  official_parser: birmingham
+  official_year: 2026
 
 - lad_code: E08000026
   name: Coventry
@@ -425,6 +437,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://go.walsall.gov.uk/your-council/voting-and-elections/election/local-election-results-walsall-borough-2026/results"
+  official_parser: walsall
+  official_year: 2026
 
 # Wolverhampton was renamed "City of Wolverhampton Council" between 2022
 # and 2026; the 2026 article uses the new name. The cached 2022 article
@@ -582,6 +597,12 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  # Bromley's bespoke /news/article/979 page is a summary table with no
+  # vote counts; the council's ModernGov backend at cds.bromley.gov.uk
+  # carries the full per-ward breakdown. Pivot to it (Phase 0 Round 3).
+  official_url: "https://cds.bromley.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=17"
+  official_parser: moderngov_per_division
+  official_year: 2026
 
 - lad_code: E09000007
   name: Camden
@@ -673,6 +694,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://haringey.gov.uk/council-elections/elections-voting/local-elections-may-2026"
+  official_parser: haringey
+  official_year: 2026
 
 - lad_code: E09000015
   name: Harrow
@@ -720,6 +744,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.hounslow.gov.uk/elections-voting/local-elections-7-may-2026/8"
+  official_parser: hounslow
+  official_year: 2026
 
 - lad_code: E09000019
   name: Islington
@@ -803,6 +830,12 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  # deferred to #53 (PDF tail): Newham's /council/local-elections-2026-
+  # results portal has one nav-only HTML subpage per ward, each linking
+  # only to a per-ward declaration PDF. No vote data inline.
+  official_url: null
+  official_parser: null
+  official_year: null
 
 - lad_code: E09000026
   name: Redbridge
@@ -814,6 +847,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.redbridge.gov.uk/voting-and-elections/local-election-results/"
+  official_parser: redbridge
+  official_year: 2026
 
 - lad_code: E09000027
   name: Richmond upon Thames
@@ -825,6 +861,12 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  # deferred to #53 (PDF tail): Richmond's local-council-elections-2026
+  # page links to ~56 per-ward declaration PDFs; no parseable HTML
+  # ward results on the council site.
+  official_url: null
+  official_parser: null
+  official_year: null
 
 - lad_code: E09000028
   name: Southwark
@@ -836,6 +878,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.southwark.gov.uk/about-council/voting-and-elections/local-elections-2026/results-2026-local-elections"
+  official_parser: southwark
+  official_year: 2026
 
 - lad_code: E09000029
   name: Sutton
@@ -930,6 +975,12 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  # deferred to #53 (PDF tail): Hartlepool publishes results as a single
+  # PDF /downloads/download/634/local-government-elections---declaration-
+  # of-results-7-may-2026 with no parseable HTML on /elections.
+  official_url: null
+  official_parser: null
+  official_year: null
 
 - lad_code: E06000006
   name: Halton
@@ -975,6 +1026,10 @@
       title: "2019 Hull City Council election"
     - year: 2018
       title: "2018 Hull City Council election"
+  official_url: "https://news.hull.gov.uk/07/05/2026/local-elections-live-blog/"
+  official_parser: hull
+  official_year: 2026
+
 - lad_code: E06000012
   name: North East Lincolnshire
   nation: england
@@ -985,6 +1040,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.nelincs.gov.uk/your-council/elections-and-voting/election-dates-and-results/local-elections/"
+  official_parser: ne_lincs
+  official_year: 2026
 
 - lad_code: E06000026
   name: Plymouth
@@ -1008,6 +1066,10 @@
       title: "2019 Plymouth City Council election"
     - year: 2018
       title: "2018 Plymouth City Council election"
+  official_url: "https://www.plymouth.gov.uk/election-results"
+  official_parser: plymouth
+  official_year: 2026
+
 # Normally thirds; 2026 was a one-off all-up due to a 2024 boundary review.
 # Prior 2022 is the most recent thirds-pattern election.
 - lad_code: E06000030
@@ -1020,6 +1082,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.swindon.gov.uk/info/20073/elections_and_voting/769/election_results"
+  official_parser: swindon
+  official_year: 2026
 
 - lad_code: E06000031
   name: Peterborough
@@ -1192,6 +1257,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.huntingdonshire.gov.uk/election-2026/may-2026-election-results/"
+  official_parser: huntingdonshire
+  official_year: 2026
 
 - lad_code: E07000012
   name: South Cambridgeshire
@@ -1264,6 +1332,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.new.colchester.gov.uk/elections/2026-election-results/colchester-city-council-election-results-2026"
+  official_parser: colchester
+  official_year: 2026
 
 - lad_code: E07000072
   name: Epping Forest
@@ -1550,6 +1621,10 @@
       title: "2019 Pendle Borough Council election"
     - year: 2018
       title: "2018 Pendle Borough Council election"
+  official_url: "https://www.pendle.gov.uk/results"
+  official_parser: pendle
+  official_year: 2026
+
 - lad_code: E07000123
   name: Preston
   nation: england
@@ -1596,6 +1671,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.norwich.gov.uk/your-council-explained/elections-and-voting/elections-and-voting/elections-2026/norwich-city-council-election-results-2026"
+  official_parser: norwich
+  official_year: 2026
 
 - lad_code: E07000177
   name: Cherwell
@@ -1618,6 +1696,9 @@
   wiki_prior_year: 2024
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.oxford.gov.uk/elections-voting/oxford-city-council-election-results-7-may-2026"
+  official_parser: oxford
+  official_year: 2026
 
 - lad_code: E07000181
   name: West Oxfordshire
@@ -1651,6 +1732,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://cannockchasedc.gov.uk/council/elections-voting/elections/election-results/cannock-chase-district-council-elections-7-may"
+  official_parser: cannock
+  official_year: 2026
 
 - lad_code: E07000195
   name: Newcastle-under-Lyme
@@ -1698,6 +1782,9 @@
   wiki_prior_year: 2024
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.nuneatonandbedworth.gov.uk/election-results"
+  official_parser: nuneaton
+  official_year: 2026
 
 - lad_code: E07000220
   name: Rugby
@@ -1721,6 +1808,10 @@
       title: "2019 Rugby Borough Council election"
     - year: 2018
       title: "2018 Rugby Borough Council election"
+  official_url: "https://www.rugby.gov.uk/w/2026-elections"
+  official_parser: rugby
+  official_year: 2026
+
 - lad_code: E07000223
   name: Adur
   nation: england
@@ -1731,6 +1822,11 @@
   wiki_prior_year: 2024
   electoral_system: fptp
   wiki_current_articles: null
+  # Joint Adur + Worthing portal — same URL, the parser filters by
+  # lad_code to emit only this district's ward blocks.
+  official_url: "https://www.adur-worthing.gov.uk/elections-and-voting/election-results/2026/"
+  official_parser: adur_worthing
+  official_year: 2026
 
 - lad_code: E07000226
   name: Crawley
@@ -1767,6 +1863,10 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  # Joint Adur + Worthing portal — see Adur (E07000223) for context.
+  official_url: "https://www.adur-worthing.gov.uk/elections-and-voting/election-results/2026/"
+  official_parser: adur_worthing
+  official_year: 2026
 
 - lad_code: E07000236
   name: Redditch

@@ -1,17 +1,13 @@
-"""Parse Wigan Council's bespoke per-ward election results subdomain.
+"""Parse South Tyneside Council 2026 ward results from
+portal.southtyneside.info.
 
-Wigan publishes per-ward results on a dedicated ASP.NET MVC subdomain
-(electionresults.wigan.gov.uk) with the URL pattern
-    /LocalElections/Home/Index/{election-id}        — index of wards
-    /LocalElections/Ward/Index/{ward-id}            — per-ward detail
-The 7 May 2026 election is election-id 19 and ward-ids run 455–479.
+The .info portal hosts an ASP.NET app with per-ward subpages at
+`Ward.aspx?id={N}`. The index URL
+`/elections/LocalGovernment.aspx?id=47` lists every ward link.
 
-`official_url` in the registry is the index page. The custom fetch()
-walks the index, follows every per-ward link, and caches the combined
-response as a single JSON blob keyed by ward name. parse() then walks
-each ward's HTML and extracts the row whose result cell contains
-<strong>Elected</strong>; losing rows carry an empty <strong></strong>
-in that cell.
+Per-ward subpage: 5-col table with class-based markers — the elected
+row's cells carry the `bold` CSS class and the 5th cell text is "Yes"
+(losers carry `Undec` class with empty 5th cell).
 """
 import html
 import json
@@ -30,18 +26,17 @@ UA = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
       'gm-2026-ward-analysis/1.0 (mitchellcarey2@gmail.com)')
 
 WARD_LINK_RE = re.compile(
-    r'<a[^>]+href="(/LocalElections/Ward/Index/\d+)"[^>]*>\s*([^<]+?)\s*</a>',
+    r'<a[^>]+href="(Ward\.aspx\?id=\d+)"[^>]*>\s*([^<]+?)\s*</a>',
     re.IGNORECASE,
 )
 
-ELECTED_ROW_RE = re.compile(
-    r'<tr[^>]*>\s*'
-    r'<td[^>]*>\s*([^<]+?)\s*</td>\s*'
-    r'<td[^>]*>\s*([^<]+?)\s*</td>\s*'
-    r'<td[^>]*>\s*([\d,]+)\s*</td>\s*'
-    r'<td[^>]*>\s*<strong[^>]*>\s*Elected\s*</strong>\s*</td>',
-    re.DOTALL | re.IGNORECASE,
-)
+ROW_RE = re.compile(r'<tr[^>]*>(.*?)</tr>', re.DOTALL | re.IGNORECASE)
+CELL_RE = re.compile(r'<td[^>]*>(.*?)</td>', re.DOTALL | re.IGNORECASE)
+TAG_RE = re.compile(r'<[^>]+>')
+
+
+def _cell_text(raw: str) -> str:
+    return ' '.join(html.unescape(TAG_RE.sub(' ', raw)).split())
 
 
 def _http_get(url: str) -> bytes:
@@ -53,15 +48,15 @@ def _http_get(url: str) -> bytes:
 def fetch(url: str, *, council: dict, year: int) -> bytes:
     index_html = _http_get(url).decode('utf-8', errors='replace')
     parsed = urllib.parse.urlparse(url)
-    base = f'{parsed.scheme}://{parsed.netloc}'
+    base_url = f'{parsed.scheme}://{parsed.netloc}{parsed.path.rsplit("/", 1)[0]}/'
     wards: dict[str, str] = {}
     for m in WARD_LINK_RE.finditer(index_html):
         href = m.group(1)
         name = html.unescape(m.group(2).strip())
         if name in wards:
             continue
-        time.sleep(0.3)  # be polite
-        wards[name] = _http_get(base + href).decode('utf-8', errors='replace')
+        time.sleep(0.3)
+        wards[name] = _http_get(base_url + href).decode('utf-8', errors='replace')
     return json.dumps({'index_url': url, 'wards': wards}).encode()
 
 
@@ -71,14 +66,23 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
         blob.get('index_url', council['official_url'])).netloc
     out: list[dict] = []
     for ward_name, page_html in blob.get('wards', {}).items():
-        elected = [
-            (
-                html.unescape(m.group(2).strip()),
-                html.unescape(m.group(1).strip()),
-                int(m.group(3).replace(',', '')),
-            )
-            for m in ELECTED_ROW_RE.finditer(page_html)
-        ]
+        # The per-page H1 is always "South Tyneside Council" — the ward
+        # name only appears in the index link text (the JSON dict key).
+        elected: list[tuple[str, str, int]] = []
+        for rm in ROW_RE.finditer(page_html):
+            row = rm.group(1)
+            cells_raw = list(CELL_RE.finditer(row))
+            if len(cells_raw) < 5:
+                continue
+            cells = [_cell_text(c.group(1)) for c in cells_raw]
+            # Elected row: 5th cell text is "Yes" (loser rows are empty).
+            if cells[4].strip().lower() != 'yes':
+                continue
+            try:
+                votes = int(cells[3].replace(',', ''))
+            except ValueError:
+                continue
+            elected.append((cells[2], cells[1], votes))
         winner = pick_plurality(elected)
         if winner is None:
             continue

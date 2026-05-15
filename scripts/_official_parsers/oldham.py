@@ -15,6 +15,7 @@ import re
 import urllib.parse
 
 from _wiki_parser import normalize_party
+from _official_parsers._pick_winner import pick_plurality
 
 extension = 'html'
 
@@ -39,16 +40,25 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
         ward_name = html.unescape(m.group(1).strip())
         block_start = m.end()
         block_end = ward_heads[i + 1].start() if i + 1 < len(ward_heads) else len(src)
-        em = ELECTED_ROW_RE.search(src, block_start, block_end)
-        if not em:
+        elected = [
+            (
+                html.unescape(em.group(2).strip()),
+                html.unescape(em.group(1).strip()),
+                int(em.group(3).replace(',', '')),
+            )
+            for em in ELECTED_ROW_RE.finditer(src, block_start, block_end)
+        ]
+        winner = pick_plurality(elected)
+        if winner is None:
             continue
+        party_raw, candidate, votes = winner
         out.append({
             'lad_code':  council['lad_code'],
             'council':   council['name'],
             'ward':      ward_name,
-            'party':     normalize_party(html.unescape(em.group(2).strip())),
-            'candidate': html.unescape(em.group(1).strip()),
-            'votes':     int(em.group(3).replace(',', '')),
+            'party':     normalize_party(party_raw),
+            'candidate': candidate,
+            'votes':     votes,
             'source':    source,
         })
     return out
