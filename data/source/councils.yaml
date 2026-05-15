@@ -357,6 +357,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.sunderland.gov.uk/article/39917/Result-of-Poll-By-Ward-7-May-2026"
+  official_parser: sunderland
+  official_year: 2026
 
 - lad_code: E08000025
   name: Birmingham
