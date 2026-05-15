@@ -284,6 +284,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.barnsley.gov.uk/services/voting-and-elections/election-results/local-government-and-parish-council-elections-7-may-2026/"
+  official_parser: barnsley
+  official_year: 2026
 
 # Doncaster moved to all-out 2021 -> 2025 -> 2029, so no May 2026 contest.
 # Omitted from the registry; re-add for 2029 alongside the other ex-thirds
