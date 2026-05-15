@@ -1563,6 +1563,10 @@
       title: "2019 Pendle Borough Council election"
     - year: 2018
       title: "2018 Pendle Borough Council election"
+  official_url: "https://www.pendle.gov.uk/results"
+  official_parser: pendle
+  official_year: 2026
+
 - lad_code: E07000123
   name: Preston
   nation: england
