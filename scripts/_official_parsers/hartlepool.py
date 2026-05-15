@@ -35,7 +35,10 @@ def _ward_name_from_slug(href: str) -> str:
     m = re.search(r'/local-election-results-([a-z0-9-]+)-ward$', href, re.I)
     if not m:
         raise ValueError(f'unrecognised Hartlepool ward href: {href}')
-    return m.group(1).replace('-', ' ').title()
+    # Slugs lower-case the council's '&' to '-and-'; .title() would then
+    # capitalise to ' And '. WD24 uses '&' (e.g. 'Fens & Greatham',
+    # 'Headland & Harbour'), so undo the slug substitution to match.
+    return m.group(1).replace('-', ' ').title().replace(' And ', ' & ')
 
 
 def fetch(url: str, *, council: dict, year: int) -> bytes:
