@@ -866,6 +866,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.southwark.gov.uk/about-council/voting-and-elections/local-elections-2026/results-2026-local-elections"
+  official_parser: southwark
+  official_year: 2026
 
 - lad_code: E09000029
   name: Sutton
