@@ -1020,6 +1020,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://www.swindon.gov.uk/info/20073/elections_and_voting/769/election_results"
+  official_parser: swindon
+  official_year: 2026
 
 - lad_code: E06000031
   name: Peterborough
