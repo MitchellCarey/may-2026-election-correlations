@@ -43,14 +43,17 @@ ELECTED_VOTES_RE = re.compile(r'^([\d,]+)\s+E$', re.IGNORECASE)
 def _walk_subpages(url: str) -> dict[str, str]:
     """Walk the paginated CMS document, return {ward_name: pdf_url}.
 
-    Stops at the first 404. Skips pages whose title is "Newham Council
-    Elections 2026" (intro) or "Mayoral Election Result".
+    Stops at the first 404, or at MAX_PAGES if the CMS ever serves a
+    soft-200 for missing chapters instead of raising. Skips pages whose
+    title is "Newham Council Elections 2026" (intro) or "Mayoral
+    Election Result".
     """
+    MAX_PAGES = 50  # Newham has 24 wards + intro + mayoral = 26 chapters
     parsed = urllib.parse.urlparse(url)
     base = f'{parsed.scheme}://{parsed.netloc}'
     pairs: dict[str, str] = {}
     n = 1
-    while True:
+    while n <= MAX_PAGES:
         try:
             page = http_get(f'{url.rstrip("/")}/{n}' if n > 1 else url
                             ).decode('utf-8', errors='replace')
