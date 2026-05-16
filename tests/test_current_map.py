@@ -30,7 +30,13 @@ DOCS = ROOT / "docs"
 # this back to 0 needs a wiki-cache refresh once those articles publish votes.
 # Tightened 175 → 166 after refreshing Islington's wiki cache (Bunhill et al
 # now carry real winners); tighten further as other stale boroughs refresh.
-GB_GREY_CEILING = 166
+# Tightened 166 → 46 after re-fetching the remaining 18 stale 2026 wiki caches
+# (Sefton, Leeds, Basingstoke, Blackburn, Burnley, Eastleigh, Cherwell,
+# Croydon, Tamworth, Camden, Kingston, Hackney, Hillingdon, St Helens, Isle of
+# Wight, Nuneaton, Swindon, Bradford) — Wikipedia editors backfilled |votes=
+# fields after our 2026-05-16 morning fetch; the same-day refresh recovered
+# 120 wards.
+GB_GREY_CEILING = 46
 
 
 # ---------------------------------------------------------------------------
