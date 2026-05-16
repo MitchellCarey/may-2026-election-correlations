@@ -1,0 +1,513 @@
+[
+  {
+    "spc": "S16000151",
+    "name": "Aberdeen Central",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000152",
+    "name": "Aberdeen Deeside and North Kincardine",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000153",
+    "name": "Aberdeen Donside",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000154",
+    "name": "Aberdeenshire East",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000155",
+    "name": "Aberdeenshire West",
+    "winner": "Conservative",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000156",
+    "name": "Airdrie",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000157",
+    "name": "Almond Valley",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000158",
+    "name": "Angus North and Mearns",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000159",
+    "name": "Angus South",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000160",
+    "name": "Argyll and Bute",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000161",
+    "name": "Ayr",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000162",
+    "name": "Banffshire and Buchan Coast",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000163",
+    "name": "Bathgate",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000164",
+    "name": "Caithness, Sutherland and Ross",
+    "winner": "LibDem",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000165",
+    "name": "Carrick, Cumnock and Doon Valley",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000166",
+    "name": "Clackmannanshire and Dunblane",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000167",
+    "name": "Clydebank and Milngavie",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000168",
+    "name": "Clydesdale",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000169",
+    "name": "Coatbridge and Chryston",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000170",
+    "name": "Cowdenbeath",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000171",
+    "name": "Cumbernauld and Kilsyth",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000172",
+    "name": "Cunninghame North",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000173",
+    "name": "Cunninghame South",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000174",
+    "name": "Dumbarton",
+    "winner": "Labour",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000175",
+    "name": "Dumfriesshire",
+    "winner": "Conservative",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000176",
+    "name": "Dundee City East",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000177",
+    "name": "Dundee City West",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000178",
+    "name": "Dunfermline",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000179",
+    "name": "East Kilbride",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000180",
+    "name": "East Lothian Coast and Lammermuirs",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000181",
+    "name": "Eastwood",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000182",
+    "name": "Edinburgh Central",
+    "winner": "Green",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000183",
+    "name": "Edinburgh Eastern, Musselburgh and Tranent",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000184",
+    "name": "Edinburgh North Eastern and Leith",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000185",
+    "name": "Edinburgh North Western",
+    "winner": "LibDem",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000186",
+    "name": "Edinburgh Northern",
+    "winner": "LibDem",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000187",
+    "name": "Edinburgh South Western",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000188",
+    "name": "Edinburgh Southern",
+    "winner": "Labour",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000189",
+    "name": "Ettrick, Roxburgh and Berwickshire",
+    "winner": "Conservative",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000190",
+    "name": "Falkirk East and Linlithgow",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000191",
+    "name": "Falkirk West",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000192",
+    "name": "Fife North East",
+    "winner": "LibDem",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000193",
+    "name": "Galloway and West Dumfries",
+    "winner": "Conservative",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000194",
+    "name": "Glasgow Anniesland",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000195",
+    "name": "Glasgow Baillieston and Shettleston",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000196",
+    "name": "Glasgow Cathcart and Pollok",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000197",
+    "name": "Glasgow Central",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000198",
+    "name": "Glasgow Easterhouse and Springburn",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000199",
+    "name": "Glasgow Kelvin and Maryhill",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000200",
+    "name": "Glasgow Southside",
+    "winner": "Green",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000201",
+    "name": "Hamilton, Larkhall and Stonehouse",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000202",
+    "name": "Inverclyde",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000203",
+    "name": "Inverness and Nairn",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000204",
+    "name": "Kilmarnock and Irvine Valley",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000205",
+    "name": "Kirkcaldy",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000206",
+    "name": "Mid Fife and Glenrothes",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000207",
+    "name": "Midlothian North",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000208",
+    "name": "Midlothian South, Tweeddale and Lauderdale",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000209",
+    "name": "Moray",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000210",
+    "name": "Motherwell and Wishaw",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000211",
+    "name": "Na h-Eileanan an Iar",
+    "winner": "Labour",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000212",
+    "name": "Orkney Islands",
+    "winner": "LibDem",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000213",
+    "name": "Paisley",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000214",
+    "name": "Perthshire North",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000215",
+    "name": "Perthshire South and Kinross-shire",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000216",
+    "name": "Renfrewshire North and Cardonald",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000217",
+    "name": "Renfrewshire West and Levern Valley",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000218",
+    "name": "Rutherglen and Cambuslang",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000219",
+    "name": "Shetland Islands",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000220",
+    "name": "Skye, Lochaber and Badenoch",
+    "winner": "LibDem",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000221",
+    "name": "Stirling",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000222",
+    "name": "Strathkelvin and Bearsden",
+    "winner": "LibDem",
+    "year": 2026,
+    "source": "wiki_2026"
+  },
+  {
+    "spc": "S16000223",
+    "name": "Uddingston and Bellshill",
+    "winner": "SNP",
+    "year": 2026,
+    "source": "wiki_2026"
+  }
+]
