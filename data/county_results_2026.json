@@ -7,7 +7,7 @@
       "year": 2026
     },
     "Hastings": {
-      "party": "Green",
+      "party": "Reform",
       "seats_won": 6,
       "total_seats": 8,
       "year": 2026
@@ -59,7 +59,7 @@
     "Chelmsford": {
       "party": "Reform",
       "seats_won": 4,
-      "total_seats": 9,
+      "total_seats": 8,
       "year": 2026
     },
     "Colchester": {
@@ -188,64 +188,40 @@
     },
     "Great Yarmouth": {
       "party": "Other",
-      "seats_won": 9,
+      "seats_won": 7,
       "total_seats": 9,
-      "year": 2026
-    },
-    "King's Lynn & West Norfolk": {
-      "party": "Conservative",
-      "seats_won": 14,
-      "total_seats": 14,
-      "year": 2026
-    },
-    "North Norfolk": {
-      "party": "Conservative",
-      "seats_won": 10,
-      "total_seats": 10,
-      "year": 2026
-    },
-    "Norwich": {
-      "party": "Conservative",
-      "seats_won": 13,
-      "total_seats": 13,
       "year": 2026
     },
     "South Norfolk": {
       "party": "Conservative",
-      "seats_won": 13,
-      "total_seats": 13,
+      "seats_won": 1,
+      "total_seats": 1,
       "year": 2026
     }
   },
   "Suffolk": {
-    "Babergh": {
-      "party": "LibDem",
-      "seats_won": 4,
-      "total_seats": 9,
-      "year": 2026
-    },
     "East Suffolk": {
-      "party": "Conservative",
-      "seats_won": 10,
-      "total_seats": 23,
+      "party": "Reform",
+      "seats_won": 9,
+      "total_seats": 14,
       "year": 2026
     },
     "Ipswich": {
-      "party": "Labour",
-      "seats_won": 6,
-      "total_seats": 12,
+      "party": "Reform",
+      "seats_won": 3,
+      "total_seats": 3,
       "year": 2026
     },
     "Mid Suffolk": {
-      "party": "Conservative",
-      "seats_won": 2,
-      "total_seats": 10,
+      "party": "Reform",
+      "seats_won": 1,
+      "total_seats": 1,
       "year": 2026
     },
     "West Suffolk": {
       "party": "Reform",
-      "seats_won": 6,
-      "total_seats": 15,
+      "seats_won": 3,
+      "total_seats": 3,
       "year": 2026
     }
   },
