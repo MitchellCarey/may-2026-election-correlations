@@ -36,7 +36,11 @@ DOCS = ROOT / "docs"
 # Wight, Nuneaton, Swindon, Bradford) — Wikipedia editors backfilled |votes=
 # fields after our 2026-05-16 morning fetch; the same-day refresh recovered
 # 120 wards.
-GB_GREY_CEILING = 46
+# Tightened 46 → 37 by hand-curating the 9 Leeds wards Wikipedia still has
+# placeholder |votes= for (Kippax & Methley, Morley N/S, Otley & Yeadon,
+# Pudsey, Rothwell, Roundhay, Temple Newsam, Weetwood). Source:
+# www.leeds.gov.uk/your-council/elections/leeds-city-council-election-results.
+GB_GREY_CEILING = 37
 
 
 # ---------------------------------------------------------------------------
