@@ -48,7 +48,10 @@ DOCS = ROOT / "docs"
 # Thackley → 2024 LibDem) plus an "and"-form ward_name_overrides row for
 # Swindon Shaw (council site uses "and" form; existing override only covered
 # the "&" form).
-GB_GREY_CEILING = 32
+# Tightened 32 → 21 by hand-curating 11 Cherwell wards from
+# cherwell.gov.uk/directory-record/<id>/<ward-slug> — bespoke per-ward
+# results pages with the elected candidate marked in the "Elected?" column.
+GB_GREY_CEILING = 21
 
 
 # ---------------------------------------------------------------------------
