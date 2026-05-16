@@ -51,7 +51,22 @@ DOCS = ROOT / "docs"
 # Tightened 32 → 21 by hand-curating 11 Cherwell wards from
 # cherwell.gov.uk/directory-record/<id>/<ward-slug> — bespoke per-ward
 # results pages with the elected candidate marked in the "Elected?" column.
-GB_GREY_CEILING = 21
+# Tightened 21 → 3 by hand-curating Blackburn with Darwen (16 wards from
+# blackburn.gov.uk/elections-and-voting/election-results/borough-council-
+# election-results-7-may-2026) + Eastleigh (2 wards via the council's
+# per-ward Declaration of Result PDFs at eastleigh.gov.uk/media/<id>/...,
+# fetched through the Cloudflare-bypass session helper).
+#
+# Structural residual of 3 wards (all on Isle of Wight): Freshwater South,
+# Nettlestone & Seaview, Newport Central. The IoW Council publishes 2026
+# results only as a 39-page scanned/image PDF
+# (iow.gov.uk/media/3450/Declarations-of-Result/pdf/...) with zero
+# extractable text under pdfplumber. Wikipedia carries candidate names but
+# every |votes= is still empty placeholder; mainstream local press
+# (countypress.co.uk) doesn't index ward-level results. Closing these
+# three would require either OCR infrastructure (Tesseract dependency) or
+# a fresh Wikipedia backfill — both out of scope for #64.
+GB_GREY_CEILING = 3
 
 
 # ---------------------------------------------------------------------------
