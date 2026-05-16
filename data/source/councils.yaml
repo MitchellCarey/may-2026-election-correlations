@@ -396,6 +396,9 @@
   wiki_prior_year: 2022
   electoral_system: fptp
   wiki_current_articles: null
+  official_url: "https://online.dudley.gov.uk/elections/local2026-live.asp"
+  official_parser: dudley
+  official_year: 2026
 
 - lad_code: E08000028
   name: Sandwell
