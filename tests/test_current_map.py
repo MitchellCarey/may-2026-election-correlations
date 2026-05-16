@@ -20,7 +20,7 @@ DOCS = ROOT / "docs"
 # Coverage ratchet for GB grey wards. Tightening is fine; loosening should
 # raise a flag in review — bump only with justification (e.g. a boundary
 # review temporarily un-paints a cohort).
-GB_GREY_CEILING = 15
+GB_GREY_CEILING = 0
 
 
 # ---------------------------------------------------------------------------
