@@ -43,7 +43,12 @@ DOCS = ROOT / "docs"
 # Tightened 37 → 36 by backfilling Hillingdon West (2026 poll postponed after
 # candidate's death, like Bury Moorside) from its 2022 Conservative result
 # via a row in ward_official_2022.csv.
-GB_GREY_CEILING = 36
+# Tightened 36 → 32 by backfilling 3 more postponed wards (Tamworth Wilnecote
+# → 2024 Labour, St Helens Town Centre → 2022 Labour, Bradford Idle and
+# Thackley → 2024 LibDem) plus an "and"-form ward_name_overrides row for
+# Swindon Shaw (council site uses "and" form; existing override only covered
+# the "&" form).
+GB_GREY_CEILING = 32
 
 
 # ---------------------------------------------------------------------------
