@@ -38,29 +38,30 @@ WINNER_RE = re.compile(
     r'\{\{\s*Election box winning candidate(?:\s+with party link)?[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
     re.IGNORECASE | re.DOTALL,
 )
-# Some 2026 articles (Walsall, Sandwell, St Helens, Basingstoke & Deane, …) use
-# plain {{Election box candidate}} templates for every candidate including the
-# winner, with no explicit "winning candidate" marker. Candidates are listed in
-# vote-rank order — the first candidate is the winner. Use this as a fallback
-# when WINNER_RE finds nothing.
+# Some 2026 articles (Walsall, Sandwell, St Helens, Basingstoke & Deane, several
+# London boroughs, …) use plain {{Election box candidate}} templates for every
+# candidate including the winner, with no explicit "winning candidate" marker.
+# Editors are inconsistent: some boroughs list candidates in vote-rank order,
+# but many London boroughs (Kingston, Islington, …) list alphabetically by
+# surname. So we enumerate every candidate template in the section and pick the
+# one with the highest numeric `votes=` value rather than relying on order.
 #
-# CRITICAL: the regex also requires a numeric `votes=` field on the SAME template
-# (e.g. `votes = 1,234`), not just any `votes=` line. Several 2026 county-council
-# articles are pre-publication placeholders: every candidate is listed but every
-# `votes=` is empty, and editors picked alphabetical-by-party order. Without the
-# numeric votes guard the parser would pick the alphabetically-first candidate
-# (almost always Conservative) and falsely report every CED as Conservative.
-CANDIDATE_RE = re.compile(
-    r'\{\{\s*Election box candidate(?:\s+with party link)?'
-    r'(?:[^{}]|\{\{[^{}]*\}\})*?'                          # body (one nested template depth)
-    r'\|\s*party\s*=\s*([^|}\n]+)'
-    r'(?:[^{}]|\{\{[^{}]*\}\})*?'
-    r'\|\s*votes\s*=\s*[\d,]',                             # numeric votes — guards against placeholders
+# The numeric-votes guard is also load-bearing for pre-publication placeholder
+# articles: every candidate is listed but every `votes=` is empty. A candidate
+# with no numeric votes is ignored, so a section where every candidate is a
+# placeholder returns no winner (and `_extract_winner_party` falls through to
+# the hold/gain template).
+CANDIDATE_BLOCK_RE = re.compile(
+    r'\{\{\s*Election box candidate\b'
+    r'((?:[^{}]|\{\{[^{}]*\}\})*?)'                        # body (one nested template depth)
+    r'\}\}',
     re.IGNORECASE | re.DOTALL,
 )
+PARTY_PARAM_RE = re.compile(r'\|\s*party\s*=\s*([^|}\n]+)', re.IGNORECASE)
+VOTES_PARAM_RE = re.compile(r'\|\s*votes\s*=\s*([\d,]+)', re.IGNORECASE)
 # Last-resort fallback: hold/gain template's winner= field. Many articles leave
 # this field blank (the template only flags the seat as a hold), so this is
-# checked after CANDIDATE_RE and a blank match is discarded.
+# checked after the candidate-template scan and a blank match is discarded.
 HOLDGAIN_RE = re.compile(
     r'\{\{\s*Election box (?:hold|gain)[^|]*\|[^}]*?winner\s*=\s*([^|}\n]+)',
     re.IGNORECASE | re.DOTALL,
@@ -121,16 +122,44 @@ def normalize_party(raw: str) -> str:
     return 'Other'
 
 
+def _top_candidate_by_votes(section: str) -> str | None:
+    """Scan every {{Election box candidate ...}} template in a section and
+    return the raw `party=` string of the candidate with the highest numeric
+    `votes=` value. Returns None if no candidate has a numeric votes field —
+    which is what we want for pre-publication placeholder articles (every
+    `votes=` empty), so the caller falls through to the hold/gain fallback."""
+    best_party: str | None = None
+    best_votes = -1
+    for m in CANDIDATE_BLOCK_RE.finditer(section):
+        body = m.group(1)
+        pm = PARTY_PARAM_RE.search(body)
+        vm = VOTES_PARAM_RE.search(body)
+        if not pm or not vm:
+            continue
+        try:
+            votes = int(vm.group(1).replace(',', ''))
+        except ValueError:
+            continue
+        if votes > best_votes:
+            best_votes = votes
+            best_party = pm.group(1)
+    return best_party
+
+
 def _extract_winner_party(section: str) -> str | None:
     """Return the raw party string for the top-of-poll candidate in a wiki
     section, or None if no candidate template is found. Cascades winning →
-    candidate → hold/gain templates, mirroring the original inline logic."""
-    m = WINNER_RE.search(section) or CANDIDATE_RE.search(section)
-    if not m:
-        m = HOLDGAIN_RE.search(section)
-        if m and not m.group(1).strip():
-            m = None
-    return m.group(1) if m else None
+    highest-vote candidate → hold/gain templates."""
+    m = WINNER_RE.search(section)
+    if m:
+        return m.group(1)
+    top = _top_candidate_by_votes(section)
+    if top is not None:
+        return top
+    m = HOLDGAIN_RE.search(section)
+    if m and m.group(1).strip():
+        return m.group(1)
+    return None
 
 
 def _clean_ward_name(name: str) -> str:

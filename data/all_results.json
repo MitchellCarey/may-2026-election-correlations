@@ -1168,7 +1168,7 @@
   },
   "St. Helens": {
     "Billinge and Seneley Green": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
@@ -1183,27 +1183,27 @@
       null
     ],
     "Eccleston": [
-      "Labour",
+      "LibDem",
       null,
       null
     ],
     "Haydock": [
-      "Independent",
+      "Reform",
       null,
       null
     ],
     "Moss Bank": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Newton\u2011le\u2011Willows East": [
-      "Conservative",
+      "Labour",
       null,
       null
     ],
     "Newton\u2011le\u2011Willows West": [
-      "Labour",
+      "Independent",
       null,
       null
     ],
@@ -1213,27 +1213,22 @@
       null
     ],
     "Peasley Cross and Fingerpost": [
-      "Conservative",
+      "Reform",
       null,
       null
     ],
     "Rainford": [
-      "Conservative",
+      "Reform",
       null,
       null
     ],
     "Rainhill": [
-      "Reform",
-      null,
-      null
-    ],
-    "St Helens Town Centre": [
-      "Reform",
+      "Independent",
       null,
       null
     ],
     "Sutton North West": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
@@ -1243,17 +1238,17 @@
       null
     ],
     "Thatto Heath": [
-      "LibDem",
+      "Reform",
       null,
       null
     ],
     "West Park": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Windle": [
-      "Labour",
+      "Reform",
       null,
       null
     ]
@@ -1261,111 +1256,6 @@
   "Sefton": {
     "Ainsdale": [
       "LibDem",
-      null,
-      null
-    ],
-    "Aintree and Maghull South": [
-      "Labour",
-      null,
-      null
-    ],
-    "Birkdale": [
-      "Green",
-      null,
-      null
-    ],
-    "Blundellsands": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Bootle East": [
-      "Reform",
-      null,
-      null
-    ],
-    "Bootle West": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Cambridge": [
-      "Labour",
-      null,
-      null
-    ],
-    "Duke's": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Ford": [
-      "Independent",
-      null,
-      null
-    ],
-    "Formby East": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Formby West": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Great Crosby": [
-      "Green",
-      null,
-      null
-    ],
-    "Kew": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Litherland": [
-      "Green",
-      null,
-      null
-    ],
-    "Lydiate & Maghull West": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Maghull East": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Meols": [
-      "Green",
-      null,
-      null
-    ],
-    "Netherton North": [
-      "Reform",
-      null,
-      null
-    ],
-    "Netherton South & Orrell": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Norwood": [
-      "Green",
-      null,
-      null
-    ],
-    "Thornton & Hightown": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Waterloo": [
-      "Conservative",
       null,
       null
     ]
@@ -2128,11 +2018,6 @@
       null,
       null
     ],
-    "Bournville & Cotteridge": [
-      "Labour",
-      null,
-      null
-    ],
     "Brandwood & Kings Heath": [
       "Green",
       null,
@@ -2170,11 +2055,6 @@
     ],
     "Garretts Green": [
       "Labour",
-      null,
-      null
-    ],
-    "Glebe Farm & Tile Cross": [
-      "Reform",
       null,
       null
     ],
@@ -2640,102 +2520,102 @@
       null
     ],
     "Blackheath": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Bristnall": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Charlemont & Grove Vale": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Cradley Heath & Old Hill": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Friar Park  & Stone Cross": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Great Barr, Tamebridge & Yew Tree": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Great Bridge": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Greets Green & Lyng": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Hateley Heath": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Hill Top": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Langley": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Newton & Valley": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Old Warley": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Oldbury": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Princes End": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Rowley": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Smethwick": [
-      "Labour",
+      "Green",
       null,
       null
     ],
     "Soho & Victoria": [
-      "Labour",
+      "Green",
       null,
       null
     ],
     "St Pauls": [
-      "Labour",
+      "Green",
       null,
       null
     ],
     "Tipton Green": [
-      "Independent",
+      "Labour",
       null,
       null
     ],
@@ -2745,12 +2625,12 @@
       null
     ],
     "Wednesbury": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "West Bromwich Central": [
-      "Labour",
+      "Reform",
       null,
       null
     ]
@@ -2766,175 +2646,13 @@
       null,
       null
     ],
-    "Chelmsley Wood": [
-      "Reform",
-      null,
-      null
-    ],
     "Dorridge & Hockley Heath": [
       "Conservative",
       null,
       null
     ],
-    "Elmdon": [
-      "Labour",
-      null,
-      null
-    ],
-    "Fordbridge": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Kingshurst & Smith\u2019s Wood": [
-      "Labour",
-      null,
-      null
-    ],
-    "Knowle": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Lyndon": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Meriden & Arden": [
-      "Green",
-      null,
-      null
-    ],
     "Olton": [
       "LibDem",
-      null,
-      null
-    ],
-    "St Alphege with Monkspath and Hillfields": [
-      "Reform",
-      null,
-      null
-    ],
-    "Shirley East & Sharmans Cross": [
-      "Reform",
-      null,
-      null
-    ],
-    "Shirley South": [
-      "Green",
-      null,
-      null
-    ],
-    "Shirley West": [
-      "Labour",
-      null,
-      null
-    ],
-    "Silhill": [
-      "Conservative",
-      null,
-      null
-    ]
-  },
-  "Walsall": {
-    "Aldridge Central & South": [
-      "Labour",
-      null,
-      null
-    ],
-    "Aldridge North & Walsall Wood": [
-      "Labour",
-      null,
-      null
-    ],
-    "Beechdale, Leamore & Reedswood": [
-      "Independent",
-      null,
-      null
-    ],
-    "Bentley & Darlaston North": [
-      "Independent",
-      null,
-      null
-    ],
-    "Bloxwich East & Blakenall Heath": [
-      "Reform",
-      null,
-      null
-    ],
-    "Bloxwich West": [
-      "Reform",
-      null,
-      null
-    ],
-    "Brownhills": [
-      "Reform",
-      null,
-      null
-    ],
-    "Darlaston South": [
-      "Reform",
-      null,
-      null
-    ],
-    "Harden, Goscote & Ryecroft": [
-      "Reform",
-      null,
-      null
-    ],
-    "New Invention": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Paddock": [
-      "Independent",
-      null,
-      null
-    ],
-    "Palfrey & The Delves": [
-      "Labour",
-      null,
-      null
-    ],
-    "Pelsall": [
-      "Reform",
-      null,
-      null
-    ],
-    "Pheasey Park Farm": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Pleck": [
-      "Independent",
-      null,
-      null
-    ],
-    "Rushall-Shelfield": [
-      "Labour",
-      null,
-      null
-    ],
-    "Short Heath": [
-      "Green",
-      null,
-      null
-    ],
-    "St Matthew's": [
-      "Independent",
-      null,
-      null
-    ],
-    "Streetly": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Willenhall": [
-      "Labour",
       null,
       null
     ]
@@ -3104,11 +2822,6 @@
     ],
     "Holme Wood & Bierley": [
       "Green",
-      null,
-      null
-    ],
-    "Idle & Thackley": [
-      "Conservative",
       null,
       null
     ],
@@ -3315,91 +3028,6 @@
       "LibDem",
       null,
       null
-    ],
-    "Colne Valley East": [
-      "Green",
-      null,
-      null
-    ],
-    "Colne Valley West": [
-      "Green",
-      null,
-      null
-    ],
-    "Crosland Moor": [
-      "Independent",
-      null,
-      null
-    ],
-    "Dalton": [
-      "Labour",
-      null,
-      null
-    ],
-    "Denby Dale": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Dewsbury East": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Dewsbury South": [
-      "Independent",
-      null,
-      null
-    ],
-    "Dewsbury West": [
-      "Independent",
-      null,
-      null
-    ],
-    "Greenhead": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Heckmondwike": [
-      "Independent",
-      null,
-      null
-    ],
-    "Holme Valley North": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Holme Valley South": [
-      "Reform",
-      null,
-      null
-    ],
-    "Kirkburton": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Lindley": [
-      "Reform",
-      null,
-      null
-    ],
-    "Liversedge and Gomersal": [
-      "Reform",
-      null,
-      null
-    ],
-    "Mirfield": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Netherton and Newsome": [
-      "Labour",
-      null,
-      null
     ]
   },
   "Leeds": {
@@ -3453,11 +3081,6 @@
       null,
       null
     ],
-    "Farnley and Wortley": [
-      "Independent",
-      null,
-      null
-    ],
     "Garforth and Swillington": [
       "Independent",
       null,
@@ -3468,98 +3091,13 @@
       null,
       null
     ],
-    "Guiseley and Rawdon": [
-      "Green",
-      null,
-      null
-    ],
-    "Harewood": [
-      "Labour",
-      null,
-      null
-    ],
     "Headingley and Hyde Park": [
       "Green",
       null,
       null
     ],
-    "Horsforth": [
-      "Green",
-      null,
-      null
-    ],
-    "Hunslet and Riverside": [
-      "Green",
-      null,
-      null
-    ],
-    "Killingbeck and Seacroft": [
-      "Reform",
-      null,
-      null
-    ],
-    "Kippax and Methley": [
-      "Labour",
-      null,
-      null
-    ],
-    "Kirkstall": [
-      "Labour",
-      null,
-      null
-    ],
-    "Little London and Woodhouse": [
-      "Labour",
-      null,
-      null
-    ],
     "Middleton Park": [
       "Other",
-      null,
-      null
-    ],
-    "Moortown": [
-      "Labour",
-      null,
-      null
-    ],
-    "Morley North": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Morley South": [
-      "Green",
-      null,
-      null
-    ],
-    "Otley and Yeadon": [
-      "Green",
-      null,
-      null
-    ],
-    "Pudsey": [
-      "Green",
-      null,
-      null
-    ],
-    "Rothwell": [
-      "Other",
-      null,
-      null
-    ],
-    "Roundhay": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Temple Newsam": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Weetwood": [
-      "Green",
       null,
       null
     ],
@@ -4373,51 +3911,6 @@
       "Green",
       null,
       null
-    ],
-    "Kentish Town North": [
-      "Green",
-      null,
-      null
-    ],
-    "Kentish Town South": [
-      "Labour",
-      null,
-      null
-    ],
-    "Kilburn": [
-      "Green",
-      null,
-      null
-    ],
-    "King's Cross": [
-      "Other",
-      null,
-      null
-    ],
-    "Primrose Hill": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Regent's Park": [
-      "Labour",
-      null,
-      null
-    ],
-    "South Hampstead": [
-      "Conservative",
-      null,
-      null
-    ],
-    "St Pancras and Somers Town": [
-      "Other",
-      null,
-      null
-    ],
-    "West Hampstead": [
-      "Conservative",
-      null,
-      null
     ]
   },
   "Croydon": {
@@ -4441,11 +3934,6 @@
       null,
       null
     ],
-    "Coulsdon Town": [
-      "Labour",
-      null,
-      null
-    ],
     "Crystal Palace and Upper Norwood": [
       "LibDem",
       null,
@@ -4453,16 +3941,6 @@
     ],
     "Fairfield": [
       "Green",
-      null,
-      null
-    ],
-    "Kenley": [
-      "LibDem",
-      null,
-      null
-    ],
-    "New Addington North": [
-      "Labour",
       null,
       null
     ],
@@ -4476,11 +3954,6 @@
       null,
       null
     ],
-    "Norbury Park": [
-      "Green",
-      null,
-      null
-    ],
     "Old Coulsdon": [
       "Conservative",
       null,
@@ -4491,18 +3964,8 @@
       null,
       null
     ],
-    "Purley and Woodcote": [
-      "Reform",
-      null,
-      null
-    ],
     "Purley Oaks and Riddlesdown": [
-      "Labour",
-      null,
-      null
-    ],
-    "Sanderstead": [
-      "Reform",
+      "Conservative",
       null,
       null
     ],
@@ -4511,38 +3974,8 @@
       null,
       null
     ],
-    "Selsdon and Addington Village": [
-      "Labour",
-      null,
-      null
-    ],
-    "Selsdon Vale and Forestdale": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Shirley North": [
-      "Labour",
-      null,
-      null
-    ],
-    "Shirley South": [
-      "Green",
-      null,
-      null
-    ],
-    "South Croydon": [
-      "Reform",
-      null,
-      null
-    ],
     "South Norwood": [
       "Green",
-      null,
-      null
-    ],
-    "Thornton Heath": [
-      "Reform",
       null,
       null
     ],
@@ -4686,102 +4119,102 @@
   },
   "Enfield": {
     "Arnos Grove": [
-      "Conservative",
+      "Green",
       null,
       null
     ],
     "Bowes": [
-      "Labour",
+      "Conservative",
       null,
       null
     ],
     "Brimsdown": [
-      "Labour",
+      "Conservative",
       null,
       null
     ],
     "Bullsmoor": [
-      "Labour",
+      "Conservative",
       null,
       null
     ],
     "Bush Hill Park": [
-      "Conservative",
+      "Green",
       null,
       null
     ],
     "Carterhatch": [
-      "Labour",
+      "Green",
       null,
       null
     ],
     "Cockfosters": [
-      "Conservative",
+      "Green",
       null,
       null
     ],
     "Edmonton Green": [
-      "Labour",
+      "Green",
       null,
       null
     ],
     "Enfield Lock": [
-      "Green",
+      "Labour",
       null,
       null
     ],
     "Grange Park": [
-      "Conservative",
+      "Green",
       null,
       null
     ],
     "Haselbury": [
-      "Labour",
+      "Green",
       null,
       null
     ],
     "Highfield": [
-      "Conservative",
+      "Green",
       null,
       null
     ],
     "Jubilee": [
-      "Labour",
+      "Conservative",
       null,
       null
     ],
     "Lower Edmonton": [
-      "Labour",
+      "Green",
       null,
       null
     ],
     "New Southgate": [
-      "Green",
-      null,
-      null
-    ],
-    "Oakwood": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Palmers Green": [
       "Labour",
       null,
       null
     ],
-    "Ponders End": [
+    "Oakwood": [
       "Green",
       null,
       null
     ],
+    "Palmers Green": [
+      "Green",
+      null,
+      null
+    ],
+    "Ponders End": [
+      "Labour",
+      null,
+      null
+    ],
     "Ridgeway": [
-      "Conservative",
+      "Green",
       null,
       null
     ],
     "Southbury": [
-      "Conservative",
+      "Green",
       null,
       null
     ],
@@ -4791,22 +4224,22 @@
       null
     ],
     "Town": [
-      "Conservative",
+      "Green",
       null,
       null
     ],
     "Upper Edmonton": [
-      "Labour",
+      "Green",
       null,
       null
     ],
     "Whitewebbs": [
-      "Conservative",
+      "Green",
       null,
       null
     ],
     "Winchmore Hill": [
-      "Conservative",
+      "Green",
       null,
       null
     ]
@@ -4837,37 +4270,7 @@
       null,
       null
     ],
-    "Eltham Park and Progress": [
-      "Labour",
-      null,
-      null
-    ],
-    "Eltham Town and Avery Hill": [
-      "Labour",
-      null,
-      null
-    ],
-    "Greenwich Creekside": [
-      "Labour",
-      null,
-      null
-    ],
-    "Greenwich Park": [
-      "Labour",
-      null,
-      null
-    ],
-    "Greenwich Peninsula": [
-      "Labour",
-      null,
-      null
-    ],
     "Kidbrooke Park": [
-      "Labour",
-      null,
-      null
-    ],
-    "Kidbrooke Village and Sutcliffe": [
       "Labour",
       null,
       null
@@ -4882,28 +4285,8 @@
       null,
       null
     ],
-    "Plumstead and Glyndon": [
-      "Labour",
-      null,
-      null
-    ],
     "Plumstead Common": [
-      "Labour",
-      null,
-      null
-    ],
-    "Shooters Hill": [
-      "Labour",
-      null,
-      null
-    ],
-    "Thamesmead Moorings": [
-      "Labour",
-      null,
-      null
-    ],
-    "West Thamesmead": [
-      "Labour",
+      "Green",
       null,
       null
     ],
@@ -4931,11 +4314,6 @@
     ],
     "Cazenove": [
       "Green",
-      null,
-      null
-    ],
-    "Clissold": [
-      "Labour",
       null,
       null
     ],
@@ -5403,12 +4781,12 @@
       null
     ],
     "Hylands and Harrow Lodge": [
-      "Other",
+      "Reform",
       null,
       null
     ],
     "Marshalls and Rise Park": [
-      "Green",
+      "Reform",
       null,
       null
     ],
@@ -5418,12 +4796,12 @@
       null
     ],
     "Rainham and Wennington": [
-      "Labour",
+      "Other",
       null,
       null
     ],
     "Rush Green and Crowlands": [
-      "LibDem",
+      "Reform",
       null,
       null
     ],
@@ -5448,12 +4826,12 @@
       null
     ],
     "St Edward's": [
-      "Green",
+      "Reform",
       null,
       null
     ],
     "Upminster": [
-      "Labour",
+      "Other",
       null,
       null
     ]
@@ -5496,11 +4874,6 @@
     ],
     "Hillingdon East": [
       "Conservative",
-      null,
-      null
-    ],
-    "Hillingdon West": [
-      "Labour",
       null,
       null
     ],
@@ -5596,83 +4969,13 @@
       null,
       null
     ],
-    "Cranford": [
-      "Green",
-      null,
-      null
-    ],
-    "Feltham North": [
-      "Green",
-      null,
-      null
-    ],
-    "Feltham West": [
-      "Independent",
-      null,
-      null
-    ],
-    "Hanworth Park": [
-      "Green",
-      null,
-      null
-    ],
-    "Hanworth Village": [
-      "Reform",
-      null,
-      null
-    ],
-    "Heston Central": [
-      "Labour",
-      null,
-      null
-    ],
     "Heston East": [
       "Green",
       null,
       null
     ],
-    "Heston West": [
-      "Labour",
-      null,
-      null
-    ],
-    "Hounslow Central": [
-      "Conservative",
-      null,
-      null
-    ],
     "Hounslow East": [
       "Labour",
-      null,
-      null
-    ],
-    "Hounslow Heath": [
-      "Labour",
-      null,
-      null
-    ],
-    "Hounslow South": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Hounslow West": [
-      "Reform",
-      null,
-      null
-    ],
-    "Isleworth": [
-      "Green",
-      null,
-      null
-    ],
-    "Osterley & Spring Grove": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Syon & Brentford Lock": [
-      "Green",
       null,
       null
     ]
@@ -5684,17 +4987,17 @@
       null
     ],
     "Barnsbury": [
-      "Green",
+      "Labour",
       null,
       null
     ],
     "Bunhill": [
-      "Conservative",
+      "Labour",
       null,
       null
     ],
     "Caledonian": [
-      "Green",
+      "Labour",
       null,
       null
     ],
@@ -5719,22 +5022,22 @@
       null
     ],
     "Hillrise": [
-      "Conservative",
+      "Labour",
       null,
       null
     ],
     "Holloway": [
-      "LibDem",
+      "Labour",
       null,
       null
     ],
     "Junction": [
-      "Conservative",
+      "Labour",
       null,
       null
     ],
     "Laycock": [
-      "LibDem",
+      "Labour",
       null,
       null
     ],
@@ -5744,12 +5047,12 @@
       null
     ],
     "St Mary's & St James'": [
-      "Green",
+      "Labour",
       null,
       null
     ],
     "St Peter's & Canalside": [
-      "Conservative",
+      "Labour",
       null,
       null
     ],
@@ -5858,27 +5161,27 @@
   },
   "Kingston upon Thames": {
     "Alexandra": [
-      "Reform",
+      "LibDem",
       null,
       null
     ],
     "Berrylands": [
-      "Reform",
+      "LibDem",
       null,
       null
     ],
     "Canbury Gardens": [
-      "Conservative",
+      "LibDem",
       null,
       null
     ],
     "Chessington South & Malden Rushett": [
-      "Reform",
+      "LibDem",
       null,
       null
     ],
     "Coombe Hill": [
-      "LibDem",
+      "Conservative",
       null,
       null
     ],
@@ -5898,12 +5201,12 @@
       null
     ],
     "King George's & Sunray": [
-      "Conservative",
+      "LibDem",
       null,
       null
     ],
     "Kingston Gate": [
-      "Green",
+      "LibDem",
       null,
       null
     ],
@@ -5913,42 +5216,27 @@
       null
     ],
     "Motspur Park & Old Malden East": [
-      "Labour",
+      "LibDem",
       null,
       null
     ],
     "New Malden Village": [
-      "Reform",
+      "LibDem",
       null,
       null
     ],
     "Norbiton": [
-      "Labour",
+      "LibDem",
       null,
       null
     ],
     "Old Malden": [
-      "Reform",
-      null,
-      null
-    ],
-    "St Mark's & Seething Wells": [
-      "Labour",
-      null,
-      null
-    ],
-    "Surbiton Hill": [
-      "Reform",
-      null,
-      null
-    ],
-    "Tolworth": [
-      "Green",
+      "LibDem",
       null,
       null
     ],
     "Tudor": [
-      "Reform",
+      "LibDem",
       null,
       null
     ]
@@ -6403,17 +5691,17 @@
   },
   "Redbridge": {
     "Aldborough": [
-      "Labour",
+      "Conservative",
       null,
       null
     ],
     "Barkingside": [
-      "Labour",
+      "Independent",
       null,
       null
     ],
     "Bridge": [
-      "Conservative",
+      "Reform",
       null,
       null
     ],
@@ -6423,12 +5711,12 @@
       null
     ],
     "Churchfields": [
-      "Labour",
+      "Independent",
       null,
       null
     ],
     "Clayhall": [
-      "Labour",
+      "Conservative",
       null,
       null
     ],
@@ -6438,22 +5726,22 @@
       null
     ],
     "Cranbrook": [
-      "Independent",
+      "Labour",
       null,
       null
     ],
     "Fairlop": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Fullwell": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Goodmayes": [
-      "Labour",
+      "Independent",
       null,
       null
     ],
@@ -6463,12 +5751,12 @@
       null
     ],
     "Ilford Town": [
-      "Labour",
+      "Independent",
       null,
       null
     ],
     "Loxford": [
-      "Labour",
+      "Green",
       null,
       null
     ],
@@ -6478,12 +5766,12 @@
       null
     ],
     "Monkhams": [
-      "Conservative",
+      "Reform",
       null,
       null
     ],
     "Newbury": [
-      "Labour",
+      "Independent",
       null,
       null
     ],
@@ -6503,12 +5791,12 @@
       null
     ],
     "Wanstead Park": [
-      "Labour",
+      "Green",
       null,
       null
     ],
     "Wanstead Village": [
-      "Labour",
+      "Green",
       null,
       null
     ]
@@ -7397,88 +6685,8 @@
     ]
   },
   "Blackburn with Darwen": {
-    "Audley & Queen's Park": [
-      "Independent",
-      null,
-      null
-    ],
-    "Bastwell & Daisyfield": [
-      "Labour",
-      null,
-      null
-    ],
-    "Billinge & Beardwood": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Blackburn Central": [
-      "Reform",
-      null,
-      null
-    ],
-    "Blackburn South & Lower Darwen": [
-      "Reform",
-      null,
-      null
-    ],
-    "Blackburn South East": [
-      "Green",
-      null,
-      null
-    ],
-    "Darwen East": [
-      "Green",
-      null,
-      null
-    ],
-    "Darwen South": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Darwen West": [
-      "Reform",
-      null,
-      null
-    ],
-    "Ewood": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Little Harwood & Whitebrik": [
-      "Reform",
-      null,
-      null
-    ],
-    "Livesey with Pleasington": [
-      "Green",
-      null,
-      null
-    ],
-    "Mill Hill & Moorgate": [
-      "Green",
-      null,
-      null
-    ],
-    "Roe Lee": [
-      "Independent",
-      null,
-      null
-    ],
     "Shear Brow & Corporation Park": [
       "Labour",
-      null,
-      null
-    ],
-    "Wensley Fold": [
-      "Conservative",
-      null,
-      null
-    ],
-    "West Pennine": [
-      "Green",
       null,
       null
     ]
@@ -7583,76 +6791,6 @@
   "North East Lincolnshire": {
     "Croft Baker": [
       "Reform",
-      null,
-      null
-    ],
-    "East Marsh": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Freshney": [
-      "Reform",
-      null,
-      null
-    ],
-    "Haverstoe": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Heneage": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Humberston & New Waltham": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Immingham": [
-      "Green",
-      null,
-      null
-    ],
-    "Park": [
-      "Labour",
-      null,
-      null
-    ],
-    "Scartho": [
-      "Reform",
-      null,
-      null
-    ],
-    "Sidney Sussex": [
-      "Reform",
-      null,
-      null
-    ],
-    "South": [
-      "Reform",
-      null,
-      null
-    ],
-    "Waltham": [
-      "Labour",
-      null,
-      null
-    ],
-    "West Marsh": [
-      "Reform",
-      null,
-      null
-    ],
-    "Wolds": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Yarborough": [
-      "Conservative",
       null,
       null
     ]
@@ -7787,96 +6925,6 @@
     ],
     "Haydon Wick": [
       "Reform",
-      null,
-      null
-    ],
-    "Highworth": [
-      "Reform",
-      null,
-      null
-    ],
-    "Kingshill": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Lower Stratton": [
-      "Reform",
-      null,
-      null
-    ],
-    "Lydiard, Freshbrook & Toothill": [
-      "Green",
-      null,
-      null
-    ],
-    "Old Town & Lawn": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Parks": [
-      "Labour",
-      null,
-      null
-    ],
-    "Penhill & Pinehurst": [
-      "Labour",
-      null,
-      null
-    ],
-    "Priory Vale": [
-      "Labour",
-      null,
-      null
-    ],
-    "Queen's Park": [
-      "Green",
-      null,
-      null
-    ],
-    "Rodbourne Cheney": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Rodbourne Ferndale and Western": [
-      "Reform",
-      null,
-      null
-    ],
-    "Shaw & Westlea": [
-      "Green",
-      null,
-      null
-    ],
-    "South Marston": [
-      "Reform",
-      null,
-      null
-    ],
-    "St Andrews East": [
-      "Conservative",
-      null,
-      null
-    ],
-    "St Andrews West and Tadpole": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Upper Stratton": [
-      "Green",
-      null,
-      null
-    ],
-    "Walcot": [
-      "Labour",
-      null,
-      null
-    ],
-    "Wroughton & Wichelstowe": [
-      "LibDem",
       null,
       null
     ]
@@ -8062,27 +7110,27 @@
   },
   "Thurrock": {
     "Aveley": [
-      "Conservative",
+      "Reform",
       null,
       null
     ],
     "Belhus": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Chadwell St Mary": [
-      "Conservative",
+      "Reform",
       null,
       null
     ],
     "Chafford Hundred East": [
-      "Green",
+      "Reform",
       null,
       null
     ],
     "Chafford Hundred West": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
@@ -8092,27 +7140,27 @@
       null
     ],
     "East Tilbury, Linford & West Tilbury": [
-      "LibDem",
+      "Reform",
       null,
       null
     ],
     "Grays Riverside": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Grays Town": [
-      "Conservative",
+      "Reform",
       null,
       null
     ],
     "Little Thurrock Blackshots": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Little Thurrock Rectory": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
@@ -8127,7 +7175,7 @@
       null
     ],
     "Purfleet-on-Thames": [
-      "Green",
+      "Labour",
       null,
       null
     ],
@@ -8142,17 +7190,17 @@
       null
     ],
     "The Homesteads & Stanford-le-Hope North": [
-      "Conservative",
+      "Reform",
       null,
       null
     ],
     "Tilbury Riverside": [
-      "Green",
+      "Reform",
       null,
       null
     ],
     "Tilbury St Chads": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
@@ -8357,33 +7405,8 @@
       null,
       null
     ],
-    "Broughton & Moulsoe": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Campbell Park & Willen": [
-      "Labour",
-      null,
-      null
-    ],
     "Central Milton Keynes": [
       "Labour",
-      null,
-      null
-    ],
-    "Danesborough": [
-      "Labour",
-      null,
-      null
-    ],
-    "Furzton": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Great Linford": [
-      "LibDem",
       null,
       null
     ],
@@ -8397,43 +7420,23 @@
       null,
       null
     ],
-    "Newport Pagnell": [
+    "Ouzel Valley": [
       "LibDem",
       null,
       null
     ],
-    "Olney & Rural": [
-      "Reform",
-      null,
-      null
-    ],
-    "Ouzel Valley": [
-      "Labour",
-      null,
-      null
-    ],
-    "Stony Stratford": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Tattenhoe": [
-      "Green",
-      null,
-      null
-    ],
     "Walton": [
-      "Conservative",
+      "LibDem",
       null,
       null
     ],
     "Watling": [
-      "Green",
+      "Conservative",
       null,
       null
     ],
     "Wolverton": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
@@ -8547,17 +7550,17 @@
       null
     ],
     "Freemantle": [
-      "Other",
+      "Green",
       null,
       null
     ],
     "Harefield": [
-      "Green",
+      "Reform",
       null,
       null
     ],
     "Millbrook": [
-      "Green",
+      "Reform",
       null,
       null
     ],
@@ -8567,7 +7570,7 @@
       null
     ],
     "Portswood": [
-      "LibDem",
+      "Green",
       null,
       null
     ],
@@ -8577,12 +7580,12 @@
       null
     ],
     "Shirley": [
-      "Reform",
+      "LibDem",
       null,
       null
     ],
     "Sholing": [
-      "LibDem",
+      "Reform",
       null,
       null
     ],
@@ -8592,7 +7595,7 @@
       null
     ],
     "Thornhill": [
-      "LibDem",
+      "Reform",
       null,
       null
     ],
@@ -8619,7 +7622,7 @@
       null
     ],
     "Brighstone, Calbourne and Shalfleet": [
-      "Conservative",
+      "LibDem",
       null,
       null
     ],
@@ -8638,143 +7641,13 @@
       null,
       null
     ],
-    "Cowes Medina": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Cowes North": [
-      "Reform",
-      null,
-      null
-    ],
-    "Cowes South and Northwood": [
-      "Reform",
-      null,
-      null
-    ],
-    "Cowes West and Gurnard": [
-      "Independent",
-      null,
-      null
-    ],
-    "East Cowes": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Fairlee and Whippingham": [
-      "Green",
-      null,
-      null
-    ],
-    "Freshwater North and Yarmouth": [
-      "Labour",
-      null,
-      null
-    ],
-    "Freshwater South": [
-      "Independent",
-      null,
-      null
-    ],
-    "Haylands and Swanmore": [
-      "Green",
-      null,
-      null
-    ],
-    "Lake North": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Lake South": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Mountjoy and Shide": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Nettlestone and Seaview": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Newchurch, Havenstreet and Ashey": [
-      "Reform",
-      null,
-      null
-    ],
-    "Newport Central": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Newport West": [
-      "Reform",
-      null,
-      null
-    ],
-    "Osborne": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Pan and Barton": [
-      "Reform",
-      null,
-      null
-    ],
     "Parkhurst and Hunnyhill": [
       "LibDem",
       null,
       null
     ],
     "Ryde Appley and Elmfield": [
-      "Reform",
-      null,
-      null
-    ],
-    "Ryde Monktonmead": [
-      "Reform",
-      null,
-      null
-    ],
-    "Ryde North West": [
-      "Green",
-      null,
-      null
-    ],
-    "Ryde South East": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Ryde West": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Sandown North": [
-      "Independent",
-      null,
-      null
-    ],
-    "Sandown South": [
-      "Reform",
-      null,
-      null
-    ],
-    "Shanklin Central": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Shanklin South": [
-      "Green",
+      "LibDem",
       null,
       null
     ],
@@ -8783,18 +7656,8 @@
       null,
       null
     ],
-    "Ventnor and St Lawrence": [
-      "Reform",
-      null,
-      null
-    ],
     "Wootton Bridge": [
       "Reform",
-      null,
-      null
-    ],
-    "Wroxall, Lowtherville and Bonchurch": [
-      "Conservative",
       null,
       null
     ]
@@ -8877,123 +7740,8 @@
       null,
       null
     ],
-    "Brampton": [
-      "Labour",
-      null,
-      null
-    ],
-    "Buckden": [
-      "Green",
-      null,
-      null
-    ],
-    "Fenstanton": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Godmanchester and Hemingford Abbots": [
-      "Conservative",
-      null,
-      null
-    ],
     "Great Paxton": [
       "LibDem",
-      null,
-      null
-    ],
-    "Great Staughton": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Hemingford Grey and Houghton": [
-      "Labour",
-      null,
-      null
-    ],
-    "Holywell-cum-Needingworth": [
-      "Reform",
-      null,
-      null
-    ],
-    "Huntingdon East": [
-      "Reform",
-      null,
-      null
-    ],
-    "Huntingdon North": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Kimbolton": [
-      "Reform",
-      null,
-      null
-    ],
-    "Ramsey": [
-      "Independent",
-      null,
-      null
-    ],
-    "Sawtry": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Somersham": [
-      "Reform",
-      null,
-      null
-    ],
-    "St Neots East": [
-      "Green",
-      null,
-      null
-    ],
-    "St Neots Eatons": [
-      "Independent",
-      null,
-      null
-    ],
-    "St Neots Priory Park and Little Paxton": [
-      "Green",
-      null,
-      null
-    ],
-    "St. Ives East": [
-      "Conservative",
-      null,
-      null
-    ],
-    "St. Ives South": [
-      "Green",
-      null,
-      null
-    ],
-    "St. Ives West": [
-      "Conservative",
-      null,
-      null
-    ],
-    "St. Neots Eynesbury": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Stilton, Folksworth and Washingley": [
-      "Conservative",
-      null,
-      null
-    ],
-    "The Stukeleys": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Warboys": [
-      "Green",
       null,
       null
     ],
@@ -9005,7 +7753,7 @@
   },
   "South Cambridgeshire": {
     "Balsham": [
-      "LibDem",
+      "Conservative",
       null,
       null
     ],
@@ -9015,7 +7763,7 @@
       null
     ],
     "Barrington": [
-      "LibDem",
+      "Reform",
       null,
       null
     ],
@@ -9204,12 +7952,12 @@
   },
   "Hastings": {
     "Ashdown": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Baird": [
-      "Conservative",
+      "Green",
       null,
       null
     ],
@@ -9228,18 +7976,8 @@
       null,
       null
     ],
-    "Conquest": [
-      "Reform",
-      null,
-      null
-    ],
     "Gensing": [
       "Green",
-      null,
-      null
-    ],
-    "Hollington": [
-      "Conservative",
       null,
       null
     ],
@@ -9263,23 +8001,8 @@
       null,
       null
     ],
-    "St Helens": [
-      "Independent",
-      null,
-      null
-    ],
     "Tressell": [
       "Green",
-      null,
-      null
-    ],
-    "West St Leonards": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Wishing Tree": [
-      "Independent",
       null,
       null
     ]
@@ -9828,381 +8551,6 @@
       null
     ]
   },
-  "Basingstoke and Deane": {
-    "Basing & Upton Grey": [
-      "Reform",
-      null,
-      null
-    ],
-    "Bramley": [
-      "Labour",
-      null,
-      null
-    ],
-    "Brighton Hill": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Brookvale & Kings Furlong": [
-      "Labour",
-      null,
-      null
-    ],
-    "Chineham": [
-      "Green",
-      null,
-      null
-    ],
-    "Eastrop & Grove": [
-      "Reform",
-      null,
-      null
-    ],
-    "Evingar": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Hatch Warren & Beggarwood": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Kempshott & Buckskin": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Norden": [
-      "Reform",
-      null,
-      null
-    ],
-    "Oakley & The Candovers": [
-      "Reform",
-      null,
-      null
-    ],
-    "Popley": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Sherborne St John & Rooksdown": [
-      "Green",
-      null,
-      null
-    ],
-    "South Ham": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Tadley & Pamber": [
-      "Green",
-      null,
-      null
-    ],
-    "Tadley North, Kingsclere & Baughurst": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Whitchurch, Overton & Laverstoke": [
-      "Independent",
-      null,
-      null
-    ],
-    "Winklebury & Manydown": [
-      "Independent",
-      null,
-      null
-    ]
-  },
-  "Eastleigh": {
-    "Bishopstoke": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Botley": [
-      "Reform",
-      null,
-      null
-    ],
-    "Burlesdon & Hound North": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Chandler's Ford": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Eastleigh Central": [
-      "Green",
-      null,
-      null
-    ],
-    "Eastleigh North": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Eastleigh South": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Fair Oak & Horton Heath": [
-      "Labour",
-      null,
-      null
-    ],
-    "Hamble & Netley": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Hedge End North": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Hedge End South": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Hittingbury": [
-      "LibDem",
-      null,
-      null
-    ],
-    "West End North": [
-      "Green",
-      null,
-      null
-    ],
-    "West End South": [
-      "LibDem",
-      null,
-      null
-    ]
-  },
-  "Fareham": {
-    "Avenue": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Fareham Park": [
-      "Green",
-      null,
-      null
-    ],
-    "Fareham Town": [
-      "Reform",
-      null,
-      null
-    ],
-    "Fort Fareham": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Hill Head": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Hook-with-Warsash": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Locks Heath": [
-      "Reform",
-      null,
-      null
-    ],
-    "Park Gate": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Portchester Castle": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Portchester Wicor": [
-      "Green",
-      null,
-      null
-    ],
-    "Sarisbury & Whiteley": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Stubbington": [
-      "Labour",
-      null,
-      null
-    ],
-    "Titchfield": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Titchfield Common": [
-      "Labour",
-      null,
-      null
-    ],
-    "Uplands & Funtley": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Wallington & Downend": [
-      "Conservative",
-      null,
-      null
-    ]
-  },
-  "Gosport": {
-    "Alverstoke": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Anglesey": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Bridgemary": [
-      "Green",
-      null,
-      null
-    ],
-    "Brockhurst & Privett": [
-      "Green",
-      null,
-      null
-    ],
-    "Elson": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Forton": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Grange & Alver Valley": [
-      "Labour",
-      null,
-      null
-    ],
-    "Harbourside & Town": [
-      "Labour",
-      null,
-      null
-    ],
-    "Hardway": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Lee East": [
-      "Reform",
-      null,
-      null
-    ],
-    "Lee West": [
-      "Labour",
-      null,
-      null
-    ],
-    "Leesland & Newtown": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Peel Common": [
-      "Labour",
-      null,
-      null
-    ],
-    "Rowner & Holbrook": [
-      "Conservative",
-      null,
-      null
-    ]
-  },
-  "Hart": {
-    "Blackwater & Hawley": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Crookham East": [
-      "Other",
-      null,
-      null
-    ],
-    "Crookham West & Ewshot": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Fleet Central": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Fleet East": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Fleet West": [
-      "Green",
-      null,
-      null
-    ],
-    "Hartley Wintney": [
-      "Green",
-      null,
-      null
-    ],
-    "Hook": [
-      "Labour",
-      null,
-      null
-    ],
-    "Odiham": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Yateley East": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Yateley West": [
-      "Reform",
-      null,
-      null
-    ]
-  },
   "Havant": {
     "Bedhampton": [
       "Reform",
@@ -10411,12 +8759,12 @@
   },
   "Broxbourne": {
     "Broxbourne and Hoddesdon South": [
-      "Reform",
+      "Conservative",
       null,
       null
     ],
     "Cheshunt North": [
-      "Other",
+      "Conservative",
       null,
       null
     ],
@@ -10426,7 +8774,7 @@
       null
     ],
     "Flamstead End": [
-      "Reform",
+      "Conservative",
       null,
       null
     ],
@@ -10436,27 +8784,27 @@
       null
     ],
     "Hoddesdon North": [
-      "Reform",
+      "Conservative",
       null,
       null
     ],
     "Hoddesdon Town and Rye Park": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Rosedale and Bury Green": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Waltham Cross": [
       "Reform",
       null,
       null
     ],
+    "Rosedale and Bury Green": [
+      "Reform",
+      null,
+      null
+    ],
+    "Waltham Cross": [
+      "Labour",
+      null,
+      null
+    ],
     "Wormley and Turnford": [
-      "Green",
+      "Conservative",
       null,
       null
     ]
@@ -10590,150 +8938,6 @@
       null
     ]
   },
-  "Tunbridge Wells": {
-    "Cranbrook, Sissinghurst & Frittenden": [
-      "Reform",
-      null,
-      null
-    ],
-    "Culverden": [
-      "Independent",
-      null,
-      null
-    ],
-    "Hawkhurst, Sandhurst & Benenden": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Paddock Wood": [
-      "Green",
-      null,
-      null
-    ],
-    "Pantiles": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Park": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Pembury & Capel": [
-      "Reform",
-      null,
-      null
-    ],
-    "Rural Tunbridge Wells": [
-      "Reform",
-      null,
-      null
-    ],
-    "Rusthall & Speldhurst": [
-      "Green",
-      null,
-      null
-    ],
-    "Sherwood": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Southborough & Bidborough": [
-      "Conservative",
-      null,
-      null
-    ],
-    "St James": [
-      "Conservative",
-      null,
-      null
-    ],
-    "St John's": [
-      "Labour",
-      null,
-      null
-    ]
-  },
-  "Burnley": {
-    "Bank Hall": [
-      "Labour",
-      null,
-      null
-    ],
-    "Briercliffe": [
-      "Labour",
-      null,
-      null
-    ],
-    "Brunshaw": [
-      "Reform",
-      null,
-      null
-    ],
-    "Cliviger with Worsthorne": [
-      "Labour",
-      null,
-      null
-    ],
-    "Coalclough with Deerplay": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Daneshouse with Stoneyholme": [
-      "Labour",
-      null,
-      null
-    ],
-    "Gannow": [
-      "Labour",
-      null,
-      null
-    ],
-    "Gawthorpe": [
-      "Labour",
-      null,
-      null
-    ],
-    "Hapton with Park": [
-      "Labour",
-      null,
-      null
-    ],
-    "Lanehead": [
-      "Independent",
-      null,
-      null
-    ],
-    "Queensgate": [
-      "Independent",
-      null,
-      null
-    ],
-    "Rosegrove with Lowerhouse": [
-      "Green",
-      null,
-      null
-    ],
-    "Rosehill with Burnley Wood": [
-      "Labour",
-      null,
-      null
-    ],
-    "Trinity": [
-      "Green",
-      null,
-      null
-    ],
-    "Whittlefield with Ightenhill": [
-      "Green",
-      null,
-      null
-    ]
-  },
   "Chorley": {
     "Adlington & Anderton": [
       "Labour",
@@ -10859,58 +9063,6 @@
     ],
     "St Oswald's": [
       "Reform",
-      null,
-      null
-    ]
-  },
-  "Pendle": {
-    "Barnoldswick": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Barrowford & Pendleside": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Boughsworth & Foulridge": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Bradley": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Brierfield East & Clover Hill": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Earby & Coates": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Marsden & Southfield": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Vivary Bridge": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Waterside & Horsfield": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Whitefield & Walverden": [
-      "Conservative",
       null,
       null
     ]
@@ -11076,12 +9228,12 @@
   },
   "Lincoln": {
     "Abbey": [
-      "Green",
+      "LibDem",
       null,
       null
     ],
     "Birchwood": [
-      "LibDem",
+      "Reform",
       null,
       null
     ],
@@ -11095,38 +9247,8 @@
       null,
       null
     ],
-    "Castle": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Glebe": [
-      "Labour",
-      null,
-      null
-    ],
-    "Hartsholme": [
-      "Green",
-      null,
-      null
-    ],
-    "Minster": [
-      "Reform",
-      null,
-      null
-    ],
-    "Moorland": [
-      "Labour",
-      null,
-      null
-    ],
     "Park": [
       "Green",
-      null,
-      null
-    ],
-    "Witham": [
-      "Conservative",
       null,
       null
     ]
@@ -11216,66 +9338,6 @@
     ],
     "Banbury Grimsbury & Hightown": [
       "Labour",
-      null,
-      null
-    ],
-    "Banbury Hardwick": [
-      "Labour",
-      null,
-      null
-    ],
-    "Banbury Ruscote": [
-      "Independent",
-      null,
-      null
-    ],
-    "Bicester East": [
-      "Independent",
-      null,
-      null
-    ],
-    "Bicester North & Caversfield": [
-      "Labour",
-      null,
-      null
-    ],
-    "Bicester South & Ambrosden": [
-      "Reform",
-      null,
-      null
-    ],
-    "Bicester West": [
-      "Green",
-      null,
-      null
-    ],
-    "Cropredy, Sibfords & Wroxton": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Deddington": [
-      "Green",
-      null,
-      null
-    ],
-    "Fringford & Heyfords": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Kidlington East": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Kidlington West": [
-      "Green",
-      null,
-      null
-    ],
-    "Launton & Otmoor": [
-      "LibDem",
       null,
       null
     ]
@@ -11404,32 +9466,32 @@
   },
   "West Oxfordshire": {
     "Ascott & Shipton": [
-      "Conservative",
+      "LibDem",
       null,
       null
     ],
     "Bampton & Clanfield": [
-      "Green",
+      "LibDem",
       null,
       null
     ],
     "Brize Norton & Shilton": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Burford": [
       "Green",
       null,
       null
     ],
+    "Burford": [
+      "Conservative",
+      null,
+      null
+    ],
     "Carterton North East": [
-      "Reform",
+      "Conservative",
       null,
       null
     ],
     "Carterton North West": [
-      "Conservative",
+      "Reform",
       null,
       null
     ],
@@ -11444,17 +9506,17 @@
       null
     ],
     "Ducklington": [
-      "Reform",
-      null,
-      null
-    ],
-    "Eynsham & Cassington": [
       "Conservative",
       null,
       null
     ],
-    "Freeland & Hanborough": [
+    "Eynsham & Cassington": [
       "LibDem",
+      null,
+      null
+    ],
+    "Freeland & Hanborough": [
+      "Conservative",
       null,
       null
     ],
@@ -11464,84 +9526,22 @@
       null
     ],
     "The Bartons": [
-      "Labour",
-      null,
-      null
-    ],
-    "Witney East": [
       "LibDem",
       null,
       null
     ],
+    "Witney East": [
+      "Conservative",
+      null,
+      null
+    ],
     "Witney South": [
-      "Labour",
+      "Conservative",
       null,
       null
     ],
     "Woodstock & Bladon": [
-      "Reform",
-      null,
-      null
-    ]
-  },
-  "Cannock Chase": {
-    "Brereton and Ravenhill": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Cannock Longford & Bridgtown": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Cannock Park and Old Fallow": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Chadsmoor": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Etching Hill and The Heath": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Hawks Green with Rumer Hill": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Heath Hayes and Wimblebury": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Hednesford Green Heath": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Hednesford Hills and Rawnsley": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Hednesford Pye Green": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Norton Canes": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Western Springs": [
-      "Conservative",
+      "LibDem",
       null,
       null
     ]
@@ -11563,7 +9563,7 @@
       null
     ],
     "Crackley and Red Street": [
-      "Conservative",
+      "Reform",
       null,
       null
     ],
@@ -11583,7 +9583,7 @@
       null
     ],
     "Kidsgrove and Ravenscliffe": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
@@ -11593,7 +9593,7 @@
       null
     ],
     "Loggerheads": [
-      "Labour",
+      "Conservative",
       null,
       null
     ],
@@ -11603,17 +9603,17 @@
       null
     ],
     "Maer and Whitmore": [
-      "Labour",
+      "Conservative",
       null,
       null
     ],
     "May Bank": [
-      "Reform",
+      "Conservative",
       null,
       null
     ],
     "Newchapel and Mow Cop": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
@@ -11623,59 +9623,7 @@
       null
     ],
     "Talke and Butt Lane": [
-      "Labour",
-      null,
-      null
-    ]
-  },
-  "Tamworth": {
-    "Amington": [
       "Reform",
-      null,
-      null
-    ],
-    "Belgrave": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Bolehall": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Castle": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Glascote": [
-      "Reform",
-      null,
-      null
-    ],
-    "Mercian": [
-      "Labour",
-      null,
-      null
-    ],
-    "Spital": [
-      "Green",
-      null,
-      null
-    ],
-    "Stonydelph": [
-      "Other",
-      null,
-      null
-    ],
-    "Trinity": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Wilnecote": [
-      "Other",
       null,
       null
     ]
@@ -11762,305 +9710,14 @@
       null
     ]
   },
-  "Nuneaton and Bedworth": {
-    "Arbury": [
-      "Reform",
-      null,
-      null
-    ],
-    "Attleborough": [
-      "Reform",
-      null,
-      null
-    ],
-    "Bede": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Bulkington": [
-      "Green",
-      null,
-      null
-    ],
-    "Camp Hill": [
-      "Labour",
-      null,
-      null
-    ],
-    "Chilvers Coton": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Eastboro": [
-      "Labour",
-      null,
-      null
-    ],
-    "Exhall": [
-      "Green",
-      null,
-      null
-    ],
-    "Galley Common": [
-      "Reform",
-      null,
-      null
-    ],
-    "Heath": [
-      "Reform",
-      null,
-      null
-    ],
-    "Milby": [
-      "Reform",
-      null,
-      null
-    ],
-    "Poplar": [
-      "Labour",
-      null,
-      null
-    ],
-    "Slough": [
-      "Other",
-      null,
-      null
-    ],
-    "St Mary's": [
-      "Reform",
-      null,
-      null
-    ],
-    "St Nicolas": [
-      "Green",
-      null,
-      null
-    ],
-    "Stockingford East": [
-      "Reform",
-      null,
-      null
-    ],
-    "Stockingford West": [
-      "Reform",
-      null,
-      null
-    ],
-    "Weddington": [
-      "Labour",
-      null,
-      null
-    ],
-    "Whitestone": [
-      "Reform",
-      null,
-      null
-    ]
-  },
-  "Rugby": {
-    "Admirals & Cawston": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Benn": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Bilton": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Coton & Boughton": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Dunsmore": [
-      "Labour",
-      null,
-      null
-    ],
-    "Eastlands": [
-      "Labour",
-      null,
-      null
-    ],
-    "Hillmorton": [
-      "LibDem",
-      null,
-      null
-    ],
-    "New Bilton": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Newbold & Brownsover": [
-      "Green",
-      null,
-      null
-    ],
-    "Paddox": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Revel & Binley Woods": [
-      "Labour",
-      null,
-      null
-    ],
-    "Rokeby & Overslade": [
-      "Labour",
-      null,
-      null
-    ],
-    "Wolston & The Lawfords": [
-      "Reform",
-      null,
-      null
-    ],
-    "Wolvey & Shilton": [
-      "Conservative",
-      null,
-      null
-    ]
-  },
-  "Adur": {
-    "Buckingham": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Churchill": [
-      "Labour",
-      null,
-      null
-    ],
-    "Cokeham": [
-      "Green",
-      null,
-      null
-    ],
-    "Eastbrook": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Hillside": [
-      "Green",
-      null,
-      null
-    ],
-    "Manor": [
-      "Independent",
-      null,
-      null
-    ],
-    "Marine": [
-      "Labour",
-      null,
-      null
-    ],
-    "Mash Barn": [
-      "Labour",
-      null,
-      null
-    ],
-    "Peverel": [
-      "Labour",
-      null,
-      null
-    ],
-    "Southlands": [
-      "Labour",
-      null,
-      null
-    ],
-    "Southwick Green": [
-      "Reform",
-      null,
-      null
-    ],
-    "St Mary's": [
-      "Green",
-      null,
-      null
-    ],
-    "St Nicolas": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Widewater": [
-      "LibDem",
-      null,
-      null
-    ]
-  },
   "Crawley": {
     "Buwbush & North Broadfield": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Broadfield": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Furnace Green": [
-      "Labour",
-      null,
-      null
-    ],
-    "Ifield": [
       "Reform",
-      null,
-      null
-    ],
-    "Langley Green & Tushmore": [
-      "Other",
-      null,
-      null
-    ],
-    "Maidenbower": [
-      "Conservative",
       null,
       null
     ],
     "Northgate & West Green": [
-      "LibDem",
-      null,
-      null
-    ],
-    "Pound Hill North & Forge Wood": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Pound Hill South & Worth": [
-      "Labour",
-      null,
-      null
-    ],
-    "Southgate": [
-      "Conservative",
-      null,
-      null
-    ],
-    "Three Bridges": [
-      "Green",
-      null,
-      null
-    ],
-    "Tilgate": [
-      "Green",
+      "Reform",
       null,
       null
     ]
@@ -12077,12 +9734,12 @@
       null
     ],
     "Central": [
-      "Labour",
+      "Green",
       null,
       null
     ],
     "Durrington": [
-      "Green",
+      "Reform",
       null,
       null
     ],
@@ -12092,22 +9749,22 @@
       null
     ],
     "Goring": [
-      "Labour",
+      "Green",
       null,
       null
     ],
     "Heene": [
-      "LibDem",
+      "Green",
       null,
       null
     ],
     "Marine": [
-      "Reform",
+      "Labour",
       null,
       null
     ],
     "Northbrook": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
@@ -12117,17 +9774,17 @@
       null
     ],
     "Salvington": [
-      "Labour",
+      "Reform",
       null,
       null
     ],
     "Selden": [
-      "LibDem",
+      "Green",
       null,
       null
     ],
     "Tarring": [
-      "Conservative",
+      "LibDem",
       null,
       null
     ]

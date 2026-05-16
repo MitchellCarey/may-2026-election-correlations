@@ -20,7 +20,17 @@ DOCS = ROOT / "docs"
 # Coverage ratchet for GB grey wards. Tightening is fine; loosening should
 # raise a flag in review — bump only with justification (e.g. a boundary
 # review temporarily un-paints a cohort).
-GB_GREY_CEILING = 0
+#
+# Bumped from 0 → 175 alongside the #63 parser fix: the new
+# _top_candidate_by_votes scan correctly returns None for 2026 articles whose
+# cached wikitext has every |votes= empty (Walsall, Sandwell, Basingstoke &
+# Deane, the Sefton/Leeds/Burnley/Eastleigh/Cherwell/Croydon cohort). The
+# old CANDIDATE_RE was masking the same coverage gap with an alphabetically-
+# first placeholder guess, so the underlying gap is pre-existing — tightening
+# this back to 0 needs a wiki-cache refresh once those articles publish votes.
+# Tightened 175 → 166 after refreshing Islington's wiki cache (Bunhill et al
+# now carry real winners); tighten further as other stale boroughs refresh.
+GB_GREY_CEILING = 166
 
 
 # ---------------------------------------------------------------------------
