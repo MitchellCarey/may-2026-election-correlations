@@ -40,7 +40,10 @@ DOCS = ROOT / "docs"
 # placeholder |votes= for (Kippax & Methley, Morley N/S, Otley & Yeadon,
 # Pudsey, Rothwell, Roundhay, Temple Newsam, Weetwood). Source:
 # www.leeds.gov.uk/your-council/elections/leeds-city-council-election-results.
-GB_GREY_CEILING = 37
+# Tightened 37 → 36 by backfilling Hillingdon West (2026 poll postponed after
+# candidate's death, like Bury Moorside) from its 2022 Conservative result
+# via a row in ward_official_2022.csv.
+GB_GREY_CEILING = 36
 
 
 # ---------------------------------------------------------------------------
