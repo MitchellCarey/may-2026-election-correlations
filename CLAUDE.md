@@ -200,6 +200,14 @@ After any rebuild, `git diff docs/*.html` should only show changes inside the BE
 
 GitHub Pages serves the entire `docs/` directory from `main` directly — `docs/index.html`, `docs/changes.html`, `docs/map.html`, `docs/current.html`, the `docs/uk/` mirrors, and `docs/shared.css` all deploy as-is, no CI build step. The committed HTML *is* the deployment. This makes the "did you re-run 07/07b/07c/07d?" check load-bearing: a commit with updated data scripts but stale HTML will deploy stale numbers.
 
+## PR / issue conventions
+
+When a PR fully resolves an issue, put a GitHub closing keyword (`Closes #N`, `Fixes #N`, `Resolves #N`) on its own line in the PR **body**. Title-only references like `feat(foo): bar (#30)` do not auto-close — they only show up as a backlink. Verify with `gh pr view <PR> --json closingIssuesReferences`; an empty array means the issue will stay open after merge.
+
+When a PR closes only **part** of a larger issue (e.g. one bucket of a meta-issue, one phase of a multi-phase plan), do **not** use a closing keyword. Instead, write `Partially addresses #N — closes the X bucket` in the body so the link is recorded without auto-closing the parent issue. Examples in the wild: PR #43 closed only the boundary-review unitary bucket of #7; PR #40 was Phase 2 of #9, not the whole pipeline.
+
+Sub-issues that exist purely as trackers (e.g. `#9 INFRA`, `#9 GM`) follow the same rule — a PR that implements the full sub-issue scope uses `Closes #N`; a PR that ships one parser inside a multi-parser sub-issue does not.
+
 ## Note on prior-winner data source
 
 The Changes pipeline scrapes per-ward 2022/2021 winners from per-borough Wikipedia articles via `00_fetch_prior_winners.py` (cached in `data/source/wiki_*.json`). The original plan was to use the House of Commons Library annual XLSX handbooks, but `commonslibrary.parliament.uk` is behind a Cloudflare managed challenge that blocks programmatic clients. Wikipedia's per-ward `{{Election box winning candidate}}` templates are at least as easy to parse, and re-runs hit the cached files rather than re-fetching.
