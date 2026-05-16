@@ -2369,6 +2369,15 @@
     "Arsenal": {
       "party": "Labour"
     },
+    "Barnsbury": {
+      "party": "Labour"
+    },
+    "Bunhill": {
+      "party": "Labour"
+    },
+    "Caledonian": {
+      "party": "Labour"
+    },
     "Canonbury": {
       "party": "Labour"
     },
@@ -2381,8 +2390,26 @@
     "Highbury": {
       "party": "Green"
     },
+    "Hillrise": {
+      "party": "Labour"
+    },
+    "Holloway": {
+      "party": "Labour"
+    },
+    "Junction": {
+      "party": "Labour"
+    },
+    "Laycock": {
+      "party": "Labour"
+    },
     "Mildmay": {
       "party": "Green"
+    },
+    "St Mary's & St James'": {
+      "party": "Labour"
+    },
+    "St Peter's & Canalside": {
+      "party": "Labour"
     },
     "Tollington": {
       "party": "Green"

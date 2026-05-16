@@ -28,7 +28,9 @@ DOCS = ROOT / "docs"
 # old CANDIDATE_RE was masking the same coverage gap with an alphabetically-
 # first placeholder guess, so the underlying gap is pre-existing — tightening
 # this back to 0 needs a wiki-cache refresh once those articles publish votes.
-GB_GREY_CEILING = 175
+# Tightened 175 → 166 after refreshing Islington's wiki cache (Bunhill et al
+# now carry real winners); tighten further as other stale boroughs refresh.
+GB_GREY_CEILING = 166
 
 
 # ---------------------------------------------------------------------------
