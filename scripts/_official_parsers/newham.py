@@ -15,7 +15,6 @@ import html
 import io
 import re
 import time
-import urllib.parse
 import urllib.error
 
 from _wiki_parser import normalize_party
@@ -49,8 +48,6 @@ def _walk_subpages(url: str) -> dict[str, str]:
     Election Result".
     """
     MAX_PAGES = 50  # Newham has 24 wards + intro + mayoral = 26 chapters
-    parsed = urllib.parse.urlparse(url)
-    base = f'{parsed.scheme}://{parsed.netloc}'
     pairs: dict[str, str] = {}
     n = 1
     while n <= MAX_PAGES:
@@ -67,8 +64,6 @@ def _walk_subpages(url: str) -> dict[str, str]:
             link_m = PDF_LINK_RE.search(page)
             if link_m:
                 pairs[title] = html.unescape(link_m.group(1))
-                if not pairs[title].startswith('http'):
-                    pairs[title] = base + pairs[title]
         n += 1
         time.sleep(0.2)
     return pairs
