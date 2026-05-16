@@ -52,11 +52,14 @@ data/source/oa21_wd24_lookup.csv
 data/source/wiki_*.json
 
 # Cached official-source fetches from scripts/12 — HTML pages, ArcGIS/PowerBI
-# JSON, PDFs. Re-fetchable; skip-if-exists in 12. The extracted CSV
-# (county_official_<year>.csv, ward_official_<year>.csv) IS committed.
+# JSON, PDFs, and ZIPs (PDF councils whose results live one PDF per ward
+# get bundled into a single zip member-per-ward by _pdf_zip). Re-fetchable;
+# skip-if-exists in 12. The extracted CSV (county_official_<year>.csv,
+# ward_official_<year>.csv) IS committed.
 data/source/official_*.html
 data/source/official_*.json
 data/source/official_*.pdf
+data/source/official_*.zip
 
 # Cached Surrey CC mycouncil + electionmap HTML fetches from scripts/22 —
 # Incapsula-fronted so re-fetching may be rate-limited; the parsed
@@ -84,4 +87,3 @@ data/current_ced_winners_raw.json
 data/source/ced_may_2025_en_bgc.geojson
 data/ced_winners.json
 data/source/spc_may_2026_sc_bgc.geojson
-data/holyrood_winners.json

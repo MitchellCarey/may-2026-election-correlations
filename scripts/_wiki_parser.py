@@ -300,6 +300,16 @@ STV_WINNING_RE = re.compile(
     r'(?:\s+with\s+party\s+link)?[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
     re.IGNORECASE | re.DOTALL,
 )
+# Uncontested STV wards (number of candidates = number of seats) sit inside an
+# `Election box (winning candidate )?unopposed( candidate)? with party link`
+# wrapper — the FPTP-style "unopposed" template re-used in Scottish articles.
+# No `candidate='''Bold'''` marker because every candidate is elected by
+# definition; we treat each template instance as one elected seat.
+STV_UNOPPOSED_RE = re.compile(
+    r'\{\{Election box (?:winning candidate )?unopposed(?: candidate)? with party link'
+    r'\b[^}]*?\|\s*party\s*=\s*([^|}\n]+)',
+    re.IGNORECASE | re.DOTALL,
+)
 
 
 def parse_stv_article(_council_name: str, year: int, wt: str) -> dict:
@@ -342,6 +352,13 @@ def parse_stv_article(_council_name: str, year: int, wt: str) -> dict:
             # Fallback for councils using the older "winning candidate" template.
             if not seat_counts:
                 for pm in STV_WINNING_RE.finditer(section):
+                    normalized = normalize_party(pm.group(1))
+                    seat_counts[normalized] = seat_counts.get(normalized, 0) + 1
+            # Fallback for uncontested wards (Highland, Inverclyde, Na h-Eileanan
+            # Siar, Shetland 2022) — every candidate template carries `party=`,
+            # none is bolded.
+            if not seat_counts:
+                for pm in STV_UNOPPOSED_RE.finditer(section):
                     normalized = normalize_party(pm.group(1))
                     seat_counts[normalized] = seat_counts.get(normalized, 0) + 1
             if not seat_counts:

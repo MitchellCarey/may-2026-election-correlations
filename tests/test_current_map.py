@@ -20,7 +20,7 @@ DOCS = ROOT / "docs"
 # Coverage ratchet for GB grey wards. Tightening is fine; loosening should
 # raise a flag in review — bump only with justification (e.g. a boundary
 # review temporarily un-paints a cohort).
-GB_GREY_CEILING = 15
+GB_GREY_CEILING = 0
 
 
 # ---------------------------------------------------------------------------
@@ -159,11 +159,14 @@ def test_gm_current_has_no_view_picker():
 
 
 def test_shared_css_view_rules():
+    import re
     css = (DOCS / "shared.css").read_text()
-    assert ".map-svg.view-wards path.ced" in css, \
+    # Normalise whitespace so the substring checks survive the aligned
+    # multi-space column formatting used by the actual CSS rules.
+    css_ws = re.sub(r"\s+", " ", css)
+    assert ".map-svg.view-wards path.ced" in css_ws, \
         "missing CSS rule to hide CEDs in wards-only view"
-    assert ".map-svg.view-ceds  path.ward" in css or \
-           ".map-svg.view-ceds path.ward" in css, \
+    assert ".map-svg.view-ceds path.ward" in css_ws, \
         "missing CSS rule to hide wards in ceds-only view"
     assert ".show-ceds" not in css, \
         "legacy .show-ceds rule should have been removed"
@@ -199,9 +202,11 @@ def test_spliced_js_uses_chronological_sort():
     assert "(a.y ?? 0) - (b.y ?? 0)" in html, \
         "chronological sort comparator missing from spliced JS"
     assert "items.sort" in html, "items.sort call missing from spliced JS"
-    # Wards-beat-CEDs-on-tie clause.
-    assert "a.kind === 'ced'" in html, \
-        "ward-vs-CED tie-break missing from spliced JS"
+    # Kind-priority tie-break (renderer switched from an `a.kind === 'ced'`
+    # ternary to a KIND_ORDER lookup table; ward/ced ordering on year ties
+    # is preserved and exercised by the test_sort_* Layer 3 tests below).
+    assert "KIND_ORDER[a.kind]" in html, \
+        "kind-priority tie-break missing from spliced JS"
 
 
 # ---------------------------------------------------------------------------
