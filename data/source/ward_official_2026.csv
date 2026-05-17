@@ -1,4 +1,42 @@
 lad_code,council,ward,party,candidate,votes,source
+E08000035,Leeds,Kippax and Methley,Labour,HARLAND Mary Elizabeth,3336,www.leeds.gov.uk
+E08000035,Leeds,Morley North,Independent,GRAYSHON Terry,2780,www.leeds.gov.uk
+E08000035,Leeds,Morley South,Reform,BURNHAM Michael,2564,www.leeds.gov.uk
+E08000035,Leeds,Otley and Yeadon,LibDem,CAMPBELL Colin Andrew,3189,www.leeds.gov.uk
+E08000035,Leeds,Pudsey,Conservative,SEARY Simon Anthony,4415,www.leeds.gov.uk
+E08000035,Leeds,Rothwell,LibDem,GOLTON Stewart,3772,www.leeds.gov.uk
+E08000035,Leeds,Roundhay,Labour,JOHNSTONE Kathleen Anne,3316,www.leeds.gov.uk
+E08000035,Leeds,Temple Newsam,Reform,BARKER Richard,2456,www.leeds.gov.uk
+E08000035,Leeds,Weetwood,Labour,WILSON Izaak,2684,www.leeds.gov.uk
+E07000177,Cherwell,Banbury Hardwick,Reform,Paul Jeffreys,950,www.cherwell.gov.uk
+E07000177,Cherwell,Banbury Ruscote,Reform,Mark Gorman,750,www.cherwell.gov.uk
+E07000177,Cherwell,Bicester East,LibDem,Bryonie Wells,919,www.cherwell.gov.uk
+E07000177,Cherwell,Bicester North and Caversfield,LibDem,Julius Parker,1006,www.cherwell.gov.uk
+E07000177,Cherwell,Bicester West,Reform,Michael Wilson,753,www.cherwell.gov.uk
+E07000177,Cherwell,"Cropredy, Sibfords and Wroxton",LibDem,Nicola Rose Borkmann,1151,www.cherwell.gov.uk
+E07000177,Cherwell,Deddington,Conservative,Eddie Fraser Reeves,1294,www.cherwell.gov.uk
+E07000177,Cherwell,Fringford and Heyfords,LibDem,Jean Margaret Conway,1372,www.cherwell.gov.uk
+E07000177,Cherwell,Kidlington East,Green,Fiona Valerie Mawson,1053,www.cherwell.gov.uk
+E07000177,Cherwell,Kidlington West,LibDem,Lisa Smith,1427,www.cherwell.gov.uk
+E07000177,Cherwell,Launton and Otmoor,LibDem,Timothy Simon Faltermeyer,1244,www.cherwell.gov.uk
+E06000008,Blackburn with Darwen,Audley and Queen's Park,Independent,CHOPDAT Aadil,886,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Bastwell and Daisyfield,Independent,CHOUDHRY Shakeel,1332,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Billinge and Beardwood,Independent,FAZAL Tasleem,1173,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Blackburn Central,Labour,KHAN Zamir,865,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Blackburn South and Lower Darwen,Reform,MATCHETT Daniel,1313,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Blackburn South East,Reform,MAHON Andy,840,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Darwen East,Reform,DAWSON Christine,919,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Darwen South,Reform,LANGFORD Bradley,1405,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Darwen West,Reform,CROOK Janine,1136,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Ewood,Reform,CLAYTON John Alan,1034,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Little Harwood and Whitebirk,Independent,KHAN Haroon,1203,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Livesey with Pleasington,Reform,VOEGT Helen A R,1448,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Mill Hill and Moorgate,Reform,HARTLEY Stephen James,1047,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Roe Lee,Independent,ALI Sajid,1119,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,Wensley Fold,Independent,PATEL Mohmed Siddiq,1100,www.blackburn.gov.uk
+E06000008,Blackburn with Darwen,West Pennine,Reform,CRANE Angela,1264,www.blackburn.gov.uk
+E07000086,Eastleigh,Eastleigh Central,LibDem,SPENCER Cameron Edward,1098,www.eastleigh.gov.uk
+E07000086,Eastleigh,Hiltingbury,LibDem,ATTRILL Maud Nancy,2092,www.eastleigh.gov.uk
 E08000001,Bolton,Astley Bridge,Reform,BAILEY Ryan,1635,www.bolton.gov.uk
 E08000001,Bolton,Bradshaw,Conservative,WEBB Les,1801,www.bolton.gov.uk
 E08000001,Bolton,Breightmet,Reform,TUCKER Mike,1890,www.bolton.gov.uk
@@ -1295,41 +1333,3 @@ E07000236,Redditch,Matchborough and Woodrow,Reform,MEREDITH David Norman,947,red
 E07000236,Redditch,North,Reform,PIOLI Domenico,1177,redditchbc.gov.uk
 E07000236,Redditch,Webheath and Callow Hill,Reform,FARMER Simon Edward,1177,redditchbc.gov.uk
 E07000236,Redditch,Winyates,Reform,ASTON James Jonathan,1212,redditchbc.gov.uk
-E08000035,Leeds,Kippax and Methley,Labour,HARLAND Mary Elizabeth,3336,www.leeds.gov.uk
-E08000035,Leeds,Morley North,Independent,GRAYSHON Terry,2780,www.leeds.gov.uk
-E08000035,Leeds,Morley South,Reform,BURNHAM Michael,2564,www.leeds.gov.uk
-E08000035,Leeds,Otley and Yeadon,LibDem,CAMPBELL Colin Andrew,3189,www.leeds.gov.uk
-E08000035,Leeds,Pudsey,Conservative,SEARY Simon Anthony,4415,www.leeds.gov.uk
-E08000035,Leeds,Rothwell,LibDem,GOLTON Stewart,3772,www.leeds.gov.uk
-E08000035,Leeds,Roundhay,Labour,JOHNSTONE Kathleen Anne,3316,www.leeds.gov.uk
-E08000035,Leeds,Temple Newsam,Reform,BARKER Richard,2456,www.leeds.gov.uk
-E08000035,Leeds,Weetwood,Labour,WILSON Izaak,2684,www.leeds.gov.uk
-E07000177,Cherwell,Banbury Hardwick,Reform,Paul Jeffreys,950,www.cherwell.gov.uk
-E07000177,Cherwell,Banbury Ruscote,Reform,Mark Gorman,750,www.cherwell.gov.uk
-E07000177,Cherwell,Bicester East,LibDem,Bryonie Wells,919,www.cherwell.gov.uk
-E07000177,Cherwell,Bicester North and Caversfield,LibDem,Julius Parker,1006,www.cherwell.gov.uk
-E07000177,Cherwell,Bicester West,Reform,Michael Wilson,753,www.cherwell.gov.uk
-E07000177,Cherwell,"Cropredy, Sibfords and Wroxton",LibDem,Nicola Rose Borkmann,1151,www.cherwell.gov.uk
-E07000177,Cherwell,Deddington,Conservative,Eddie Fraser Reeves,1294,www.cherwell.gov.uk
-E07000177,Cherwell,Fringford and Heyfords,LibDem,Jean Margaret Conway,1372,www.cherwell.gov.uk
-E07000177,Cherwell,Kidlington East,Green,Fiona Valerie Mawson,1053,www.cherwell.gov.uk
-E07000177,Cherwell,Kidlington West,LibDem,Lisa Smith,1427,www.cherwell.gov.uk
-E07000177,Cherwell,Launton and Otmoor,LibDem,Timothy Simon Faltermeyer,1244,www.cherwell.gov.uk
-E06000008,Blackburn with Darwen,Audley and Queen's Park,Independent,CHOPDAT Aadil,886,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Bastwell and Daisyfield,Independent,CHOUDHRY Shakeel,1332,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Billinge and Beardwood,Independent,FAZAL Tasleem,1173,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Blackburn Central,Labour,KHAN Zamir,865,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Blackburn South and Lower Darwen,Reform,MATCHETT Daniel,1313,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Blackburn South East,Reform,MAHON Andy,840,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Darwen East,Reform,DAWSON Christine,919,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Darwen South,Reform,LANGFORD Bradley,1405,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Darwen West,Reform,CROOK Janine,1136,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Ewood,Reform,CLAYTON John Alan,1034,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Little Harwood and Whitebirk,Independent,KHAN Haroon,1203,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Livesey with Pleasington,Reform,VOEGT Helen A R,1448,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Mill Hill and Moorgate,Reform,HARTLEY Stephen James,1047,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Roe Lee,Independent,ALI Sajid,1119,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,Wensley Fold,Independent,PATEL Mohmed Siddiq,1100,www.blackburn.gov.uk
-E06000008,Blackburn with Darwen,West Pennine,Reform,CRANE Angela,1264,www.blackburn.gov.uk
-E07000086,Eastleigh,Eastleigh Central,LibDem,SPENCER Cameron Edward,1098,www.eastleigh.gov.uk
-E07000086,Eastleigh,Hiltingbury,LibDem,ATTRILL Maud Nancy,2092,www.eastleigh.gov.uk

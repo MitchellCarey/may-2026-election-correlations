@@ -5,23 +5,28 @@ nomination list, not the declared results — so we scrape the council's
 own `/council-business/elections/2` page instead, which embeds the full
 70-division result set as 70 sibling `<h3>` + `<table>` blocks.
 
-Per division:
-    <h3>Alford and Sutton</h3>
+Per division, candidates are listed **alphabetically by surname**, and
+the elected row's four `<td>` cells are each wrapped in `<strong>`:
+
+    <h3>Boston North</h3>
     <table><tbody>
-        <tr>  <!-- elected: every <td> wrapped in <strong> -->
-            <td><strong>BEECHAM</strong></td>
-            <td><strong>Mike</strong></td>
+        <tr> <td>BROADHURST</td>           <td>Michael</td> <td>Green</td>       <td>116</td> </tr>
+        <tr> <td>BROOMFIELD-DOUGLAS</td>   <td>Carol</td>   <td>Blue Rev.</td>   <td>40</td>  </tr>
+        <tr> <td>CLARK</td>                 <td>Carole</td>  <td>Labour</td>      <td>143</td> </tr>
+        <tr>  <!-- elected -->
+            <td><strong>CULLEN</strong></td>
+            <td><strong>Maggie</strong></td>
             <td><strong>Reform UK</strong></td>
-            <td><strong>1,527</strong></td>
+            <td><strong>806</strong></td>
         </tr>
-        <tr> <td>BINNS</td> <td>Mark</td> <td>Liberal Democrats</td> <td>68</td> </tr>
+        <tr> <td>DANI</td>                  <td>Anton</td>   <td>Conservative</td><td>327</td> </tr>
         ...
     </tbody></table>
 
-The page lists the winner first (and bolds every cell), so picking the
-first `<tr>` of each table is equivalent to picking the elected row.
-Surnames are uppercased; forename casing is mixed; the CSV emits
-"Forename SURNAME" as a single candidate string.
+`parse()` keys off the `<strong>` wrapping to identify the winner —
+*not* row position, since the alphabetically-first candidate is rarely
+the winner. Surnames are uppercased; forename casing is mixed; the CSV
+emits "Forename SURNAME" as a single candidate string.
 """
 import html
 import re
@@ -36,10 +41,10 @@ SECTION_RE = re.compile(
     re.DOTALL | re.IGNORECASE,
 )
 
-# First <tr> inside the table — the winner row. Cells may be wrapped in
-# <strong>; <td> may carry a width="…" attribute. The bare-text capture
-# groups handle either case (the </?strong> tags are stripped before the
-# tighter inner pattern).
+# A candidate <tr> — surname / forename / party / votes. Cells of the
+# elected row are each wrapped in <strong>; losing rows are bare. The
+# `(?:<strong>)?` optional groups capture the inner text either way.
+# `<td>` may also carry a width="…" attribute.
 ROW_RE = re.compile(
     r'<tr[^>]*>\s*'
     r'<td[^>]*>\s*(?:<strong>)?\s*([^<]+?)\s*(?:</strong>)?\s*</td>\s*'
@@ -59,9 +64,15 @@ def parse(content: bytes, *, council: dict, year: int) -> list[dict]:
     for sec in SECTION_RE.finditer(page):
         division = html.unescape(sec.group(1)).strip()
         table = sec.group(2)
-        row = ROW_RE.search(table)
-        if not row:
+        rows = list(ROW_RE.finditer(table))
+        if not rows:
             continue
+        # Prefer the <strong>-wrapped row (the elected candidate); fall
+        # back to highest-votes only if no row is bolded.
+        strong_rows = [r for r in rows if '<strong>' in table[r.start():r.end()]]
+        row = strong_rows[0] if strong_rows else max(
+            rows, key=lambda r: int(r.group(4).replace(',', ''))
+        )
         surname  = html.unescape(row.group(1)).strip()
         forename = html.unescape(row.group(2)).strip()
         party    = html.unescape(row.group(3)).strip()
