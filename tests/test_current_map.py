@@ -30,7 +30,43 @@ DOCS = ROOT / "docs"
 # this back to 0 needs a wiki-cache refresh once those articles publish votes.
 # Tightened 175 → 166 after refreshing Islington's wiki cache (Bunhill et al
 # now carry real winners); tighten further as other stale boroughs refresh.
-GB_GREY_CEILING = 166
+# Tightened 166 → 46 after re-fetching the remaining 18 stale 2026 wiki caches
+# (Sefton, Leeds, Basingstoke, Blackburn, Burnley, Eastleigh, Cherwell,
+# Croydon, Tamworth, Camden, Kingston, Hackney, Hillingdon, St Helens, Isle of
+# Wight, Nuneaton, Swindon, Bradford) — Wikipedia editors backfilled |votes=
+# fields after our 2026-05-16 morning fetch; the same-day refresh recovered
+# 120 wards.
+# Tightened 46 → 37 by hand-curating the 9 Leeds wards Wikipedia still has
+# placeholder |votes= for (Kippax & Methley, Morley N/S, Otley & Yeadon,
+# Pudsey, Rothwell, Roundhay, Temple Newsam, Weetwood). Source:
+# www.leeds.gov.uk/your-council/elections/leeds-city-council-election-results.
+# Tightened 37 → 36 by backfilling Hillingdon West (2026 poll postponed after
+# candidate's death, like Bury Moorside) from its 2022 Conservative result
+# via a row in ward_official_2022.csv.
+# Tightened 36 → 32 by backfilling 3 more postponed wards (Tamworth Wilnecote
+# → 2024 Labour, St Helens Town Centre → 2022 Labour, Bradford Idle and
+# Thackley → 2024 LibDem) plus an "and"-form ward_name_overrides row for
+# Swindon Shaw (council site uses "and" form; existing override only covered
+# the "&" form).
+# Tightened 32 → 21 by hand-curating 11 Cherwell wards from
+# cherwell.gov.uk/directory-record/<id>/<ward-slug> — bespoke per-ward
+# results pages with the elected candidate marked in the "Elected?" column.
+# Tightened 21 → 3 by hand-curating Blackburn with Darwen (16 wards from
+# blackburn.gov.uk/elections-and-voting/election-results/borough-council-
+# election-results-7-may-2026) + Eastleigh (2 wards via the council's
+# per-ward Declaration of Result PDFs at eastleigh.gov.uk/media/<id>/...,
+# fetched through the Cloudflare-bypass session helper).
+#
+# Structural residual of 3 wards (all on Isle of Wight): Freshwater South,
+# Nettlestone & Seaview, Newport Central. The IoW Council publishes 2026
+# results only as a 39-page scanned/image PDF
+# (iow.gov.uk/media/3450/Declarations-of-Result/pdf/...) with zero
+# extractable text under pdfplumber. Wikipedia carries candidate names but
+# every |votes= is still empty placeholder; mainstream local press
+# (countypress.co.uk) doesn't index ward-level results. Closing these
+# three would require either OCR infrastructure (Tesseract dependency) or
+# a fresh Wikipedia backfill — both out of scope for #64.
+GB_GREY_CEILING = 3
 
 
 # ---------------------------------------------------------------------------

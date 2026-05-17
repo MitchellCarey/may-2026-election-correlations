@@ -16,13 +16,17 @@ CSV schemas:
     ward_official_<year>.csv:
         lad_code, council, ward, party, candidate, votes, source
 
-Hand-curated rows already in either CSV are preserved as long as their
-council has no `official_parser` registered. Once a council acquires a
-parser, its rows are wholly replaced by the parser output on the next run
-(rows are keyed by `lad_code` for replacement). This lets the Phase 1
-Norfolk hand-curated data coexist with Phase 2's scraped data until Norfolk
-itself acquires a parser, at which point the hand-curated rows are cleanly
-superseded.
+Hand-curated rows already in either CSV are preserved by `(lad_code,
+normalised_ward)` key. Parser-emitted rows replace any existing row whose
+(lad_code, ward) matches after normalisation; existing rows whose ward the
+parser did NOT emit survive. This lets a council with a registered parser
+also carry hand-curated supplements for the specific wards the parser
+misses (Wikipedia + official source both silent — see #64 approach (2)).
+
+For a council with no `official_parser` registered, the dedup-by-key has
+no replaced_keys entries for that lad, so every existing row survives —
+preserving the Phase 1 hand-curated pattern (e.g. Norfolk before its
+parser landed).
 
 Until Phase 2 lands the first parser, this is a no-op: zero councils have
 `official_url` set, so nothing is parsed and the CSVs are not touched.
@@ -43,6 +47,16 @@ WARD_FIELDS   = ['lad_code', 'council', 'ward',     'party', 'candidate', 'votes
 
 def slug(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
+
+
+def _norm_ward(s: str) -> str:
+    """Loose ward-name match for dedup. Lowercase, ' and ' → ' & ' (parsers
+    inconsistently use one or the other — moderngov gives 'and', Bradford's
+    bespoke parser gives '&', curators type whichever), collapse whitespace.
+    Keeps the dedup key tight enough that a re-extracted parser run still
+    overrides its own prior rows, but loose enough that 'Astley Bridge' from
+    a hand-curated row dedupes against 'Astley  Bridge' from the parser."""
+    return ' '.join(s.lower().replace(' and ', ' & ').split())
 
 
 def main():
@@ -92,12 +106,19 @@ def main():
     for (year, scope), new_rows in by_target.items():
         path = SOURCE / f'{scope}_official_{year}.csv'
         fields = COUNTY_FIELDS if scope == 'county' else WARD_FIELDS
+        name_field = 'division' if scope == 'county' else 'ward'
+        # Replace existing rows by (lad_code, normalised ward/division) rather
+        # than by lad_code alone. A council with a registered parser can still
+        # carry hand-curated supplements for wards the parser doesn't emit
+        # (e.g. Wikipedia + ModernGov both silent on a single ward) — those
+        # rows survive across re-extracts because they don't share a
+        # normalised key with anything the parser produced this run.
+        replaced_keys = {(r['lad_code'], _norm_ward(r[name_field])) for r in new_rows}
         existing_kept: list[dict] = []
-        replaced_lads = by_target_lads[(year, scope)]
         if path.exists():
             with open(path, newline='') as f:
                 for r in csv.DictReader(f):
-                    if r['lad_code'] not in replaced_lads:
+                    if (r['lad_code'], _norm_ward(r[name_field])) not in replaced_keys:
                         existing_kept.append(r)
         with open(path, 'w', newline='') as f:
             w = csv.DictWriter(f, fieldnames=fields)
@@ -106,6 +127,7 @@ def main():
                 w.writerow({k: r.get(k, '') for k in fields})
             for r in new_rows:
                 w.writerow({k: r.get(k, '') for k in fields})
+        replaced_lads = by_target_lads[(year, scope)]
         print(f'Wrote {path.name} — {len(existing_kept)} kept + {len(new_rows)} new '
               f'= {len(existing_kept) + len(new_rows)} rows '
               f'({len(replaced_lads)} council(s) re-extracted)')
