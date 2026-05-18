@@ -2905,7 +2905,13 @@
   wiki_prior: "2021 East Sussex County Council election"
   wiki_prior_year: 2021
   electoral_system: fptp
-  wiki_current_articles: null
+  # Pre-2026 contests source the per-CED winners for the GB Current time slider
+  # (issue #69 Phase 1B / #73). 2026 itself is sourced from official_url below.
+  wiki_current_articles:
+    - year: 2021
+      title: "2021 East Sussex County Council election"
+    - year: 2017
+      title: "2017 East Sussex County Council election"
   # ArcGIS dashboard at arcgis.com/apps/dashboards/5f38f3a6a0dc4569bb80158ddfac965e,
   # backed by an Esri Election Results FeatureServer. URL below queries the
   # results table directly with the contest/category filters baked in.
@@ -2922,7 +2928,12 @@
   wiki_prior: "2021 Essex County Council election"
   wiki_prior_year: 2021
   electoral_system: fptp
-  wiki_current_articles: null
+  # 2017/2021 painted on pre-LGBCE-review divisions (see scripts/09e).
+  wiki_current_articles:
+    - year: 2021
+      title: "2021 Essex County Council election"
+    - year: 2017
+      title: "2017 Essex County Council election"
   # CMIS / OpenElection.net-style per-division pages, with RDFa annotations
   # marking the elected candidate. Index lists all 78 divisions.
   official_url: "https://cmis.essex.gov.uk/essexcmis5/Elections/tabid/63/ctl/ViewWards/mid/386/ID/31/Default.aspx"
@@ -2938,7 +2949,11 @@
   wiki_prior: "2021 Hampshire County Council election"
   wiki_prior_year: 2021
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2021
+      title: "2021 Hampshire County Council election"
+    - year: 2017
+      title: "2017 Hampshire County Council election"
   # hants.gov.uk is behind Cloudflare; hampshire_cloudflare uses curl_cffi
   # via scripts/_official_parsers/_cloudflare.py to impersonate Chrome's
   # TLS fingerprint past the 403. HCC publishes one all-divisions table
@@ -2959,7 +2974,12 @@
   official_url: "https://elections.norfolk.gov.uk/textresults.aspx"
   official_parser: norfolk_textresults
   official_year: 2026
-  wiki_current_articles: null
+  # 2017/2021 painted on pre-LGBCE-review divisions (see scripts/09e).
+  wiki_current_articles:
+    - year: 2021
+      title: "2021 Norfolk County Council election"
+    - year: 2017
+      title: "2017 Norfolk County Council election"
 
 - lad_code: E10000029
   name: Suffolk
@@ -2970,7 +2990,12 @@
   wiki_prior: "2021 Suffolk County Council election"
   wiki_prior_year: 2021
   electoral_system: fptp
-  wiki_current_articles: null
+  # 2017/2021 painted on pre-LGBCE-review divisions (see scripts/09e).
+  wiki_current_articles:
+    - year: 2021
+      title: "2021 Suffolk County Council election"
+    - year: 2017
+      title: "2017 Suffolk County Council election"
   # Power BI "publish to web" embed. The DAX-query parser in
   # scripts/_official_parsers/powerbi_dashboard.py walks the embed page to
   # resolve the cluster, then POSTs a query against the Esri election
@@ -2990,7 +3015,11 @@
   wiki_prior: "2021 West Sussex County Council election"
   wiki_prior_year: 2021
   electoral_system: fptp
-  wiki_current_articles: null
+  wiki_current_articles:
+    - year: 2021
+      title: "2021 West Sussex County Council election"
+    - year: 2017
+      title: "2017 West Sussex County Council election"
   # moderngov-style per-division index; parser walks the per-CED links and
   # extracts the "Elected" row from each.
   official_url: "https://westsussex.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=30"
@@ -6100,6 +6129,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Cambridgeshire County Council election"
+    - year: 2021
+      title: "2021 Cambridgeshire County Council election"
+    - year: 2017
+      title: "2017 Cambridgeshire County Council election"
   official_url: "https://cambridgeshire.cmis.uk.com/ccc_live/Elections/tabid/71/ctl/ViewWards/mid/399/ID/13/Default.aspx"
   official_parser: cmis_per_division
   official_year: 2025
@@ -6115,6 +6148,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Derbyshire County Council election"
+    - year: 2021
+      title: "2021 Derbyshire County Council election"
+    - year: 2017
+      title: "2017 Derbyshire County Council election"
   official_url: "https://democracy.derbyshire.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=5"
   official_parser: moderngov_per_division
   official_year: 2025
@@ -6130,6 +6167,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Devon County Council election"
+    - year: 2021
+      title: "2021 Devon County Council election"
+    - year: 2017
+      title: "2017 Devon County Council election"
   official_url: "https://elections.devon.gov.uk/wp-json/wp/v2/election/division?per_page=100"
   official_parser: devon_wp_rest
   official_year: 2025
@@ -6145,6 +6186,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Gloucestershire County Council election"
+    - year: 2021
+      title: "2021 Gloucestershire County Council election"
+    - year: 2017
+      title: "2017 Gloucestershire County Council election"
   official_url: "https://glostext.gloucestershire.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=14"
   official_parser: moderngov_per_division
   official_year: 2025
@@ -6161,6 +6206,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Hertfordshire County Council election"
+    - year: 2021
+      title: "2021 Hertfordshire County Council election"
+    - year: 2017
+      title: "2017 Hertfordshire County Council election"
   official_url: "https://democracy.hertfordshire.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=16"
   official_parser: moderngov_per_division
   official_year: 2025
@@ -6176,6 +6225,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Kent County Council election"
+    - year: 2021
+      title: "2021 Kent County Council election"
+    - year: 2017
+      title: "2017 Kent County Council election"
   official_url: "https://democracy.kent.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=51"
   official_parser: moderngov_per_division
   official_year: 2025
@@ -6191,6 +6244,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Lancashire County Council election"
+    - year: 2021
+      title: "2021 Lancashire County Council election"
+    - year: 2017
+      title: "2017 Lancashire County Council election"
   official_url: "https://council.lancashire.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=43"
   official_parser: moderngov_per_division
   official_year: 2025
@@ -6206,6 +6263,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Leicestershire County Council election"
+    - year: 2021
+      title: "2021 Leicestershire County Council election"
+    - year: 2017
+      title: "2017 Leicestershire County Council election"
   official_url: "https://democracy.leics.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=20"
   official_parser: moderngov_per_division
   official_year: 2025
@@ -6221,6 +6282,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Lincolnshire County Council election"
+    - year: 2021
+      title: "2021 Lincolnshire County Council election"
+    - year: 2017
+      title: "2017 Lincolnshire County Council election"
   official_url: "https://www.lincolnshire.gov.uk/council-business/elections/2"
   official_parser: lincolnshire_html
   official_year: 2025
@@ -6236,6 +6301,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Nottinghamshire County Council election"
+    - year: 2021
+      title: "2021 Nottinghamshire County Council election"
+    - year: 2017
+      title: "2017 Nottinghamshire County Council election"
   official_url: "https://electionresults.nottinghamshire.gov.uk/2025/DetailedResults"
   official_parser: notts_custom
   official_year: 2025
@@ -6251,6 +6320,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Oxfordshire County Council election"
+    - year: 2021
+      title: "2021 Oxfordshire County Council election"
+    - year: 2017
+      title: "2017 Oxfordshire County Council election"
   official_url: "https://mycouncil.oxfordshire.gov.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=23"
   official_parser: moderngov_per_division
   official_year: 2025
@@ -6266,6 +6339,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Staffordshire County Council election"
+    - year: 2021
+      title: "2021 Staffordshire County Council election"
+    - year: 2017
+      title: "2017 Staffordshire County Council election"
   official_url: "https://staffordshire.moderngov.co.uk/mgElectionElectionAreaResults.aspx?Page=all&EID=38"
   official_parser: moderngov_per_division
   official_year: 2025
@@ -6287,6 +6364,8 @@
   wiki_current_articles:
     - year: 2021
       title: "2021 Surrey County Council election"
+    - year: 2017
+      title: "2017 Surrey County Council election"
   # Surrey's mycouncil.surreycc.gov.uk results portal is fronted by Incapsula
   # (Imperva), which requires JS execution to pass — curl_cffi's Chrome TLS
   # impersonation is rejected on every profile. No PDF/CSV mirror of the 2021
@@ -6307,6 +6386,10 @@
   wiki_current_articles:
     - year: 2025
       title: "2025 Warwickshire County Council election"
+    - year: 2021
+      title: "2021 Warwickshire County Council election"
+    - year: 2017
+      title: "2017 Warwickshire County Council election"
   official_url: "https://apps.warwickshire.gov.uk/ElectionResults/elections/2025"
   official_parser: warwickshire_custom
   official_year: 2025
