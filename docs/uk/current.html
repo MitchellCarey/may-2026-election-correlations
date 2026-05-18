@@ -376,24 +376,28 @@ const WARD_HISTORY = {"E05000932":{"borough":"Sefton","history":[{"src":"wiki","
 })();
 
 // paintAtYear — rewrite ward fills (and dataset metadata) for the given
-// year. rAF-coalesced; lastPaintedYear short-circuits no-ops so dragging
-// the slider doesn't re-paint at every input event.
+// year. rAF-coalesced: the latest requested year is stored synchronously
+// in _pendingYear and consumed inside the rAF, so fast slider drags don't
+// drop intermediate values. lastPaintedYear short-circuits true no-ops.
 let _lastPaintedYear = null;
+let _pendingYear = null;
 let _rafPending = false;
 function paintAtYear(targetYear) {
-  if (targetYear === _lastPaintedYear) return;
+  _pendingYear = targetYear;
+  if (targetYear === _lastPaintedYear && !_rafPending) return;
   if (_rafPending) return;
   _rafPending = true;
   requestAnimationFrame(() => {
     _rafPending = false;
-    _lastPaintedYear = targetYear;
+    const y = _pendingYear;
+    _lastPaintedYear = y;
     const root = document.querySelector('.map-svg');
     if (!root) return;
     // Each overlay layer paints from its actual contest year onwards.
     // Phases 1B-1E will add historical overlay data and remove these gates.
-    root.classList.toggle('slider-pre-2024', targetYear < 2024);
-    root.classList.toggle('slider-pre-2025', targetYear < 2025);
-    root.classList.toggle('slider-pre-2026', targetYear < 2026);
+    root.classList.toggle('slider-pre-2024', y < 2024);
+    root.classList.toggle('slider-pre-2025', y < 2025);
+    root.classList.toggle('slider-pre-2026', y < 2026);
     root.querySelectorAll('path.ward').forEach(el => {
       const gss = el.dataset.gss;
       const wh = gss && WARD_HISTORY[gss];
@@ -406,7 +410,7 @@ function paintAtYear(targetYear) {
       // history is sorted ascending; find the most recent entry with y<=targetYear.
       let chosen = null;
       for (const entry of wh.history) {
-        if (entry.y <= targetYear) chosen = entry;
+        if (entry.y <= y) chosen = entry;
         else break;
       }
       if (chosen) {
@@ -436,6 +440,9 @@ function paintAtYear(targetYear) {
 
 // Refresh the SVG <title> tooltip on hover so the year + source URL
 // reflect the slider's current position rather than the at-render snapshot.
+// The "viewing year" is the slider's last-requested year (_pendingYear);
+// the per-ward dataset.year is the year the ward was last *contested* and
+// can lag the slider when no entry exists at the current position.
 (function wireTooltips() {
   const root = document.querySelector('.map-svg');
   if (!root) return;
@@ -446,8 +453,10 @@ function paintAtYear(targetYear) {
     if (!gss) return;
     const wh = WARD_HISTORY[gss];
     if (!wh) return;
-    const year = Number(target.dataset.year) || YEARS[YEARS.length - 1];
-    const entry = wh.history.find(e => e.y === year);
+    const viewingYear = (_pendingYear != null) ? _pendingYear
+      : (Number(target.dataset.year) || YEARS[YEARS.length - 1]);
+    const dsYear = Number(target.dataset.year);
+    const entry = dsYear ? wh.history.find(e => e.y === dsYear) : null;
     const titleEl = target.querySelector('title');
     if (!titleEl) return;
     const lines = [wh.borough + ' · ' + wh.ward];
@@ -459,7 +468,7 @@ function paintAtYear(targetYear) {
         } catch (_) { /* invalid URL */ }
       }
     } else {
-      lines.push('(no result for ' + year + ')');
+      lines.push('(no result for ' + viewingYear + ')');
     }
     titleEl.textContent = lines.join('\n');
   });
