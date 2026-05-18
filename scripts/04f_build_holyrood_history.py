@@ -38,6 +38,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _holyrood_constituencies import HOLYROOD_22
+from _wiki_parser import normalize_party
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -112,10 +113,15 @@ def main():
         }
 
     # --- Polygon meta — current (2026) polygons ---
+    # The 2026 review renamed ~20 of the 73 seats so we can't reliably
+    # cross-walk region by name from the SPC22 registry. The SPC26_SPR26
+    # ONS lookup would close the gap, but the renderer doesn't read
+    # `region` today (the tooltip uses `name` only), so we leave it empty
+    # rather than ship partial data.
     for key, meta in spcs_current.items():
         polygon_meta[key] = {
             'name':   meta.get('name', ''),
-            'region': '',  # filled below from 2026 record if available
+            'region': '',
         }
 
     # --- Pass 1: Wikipedia 2016 + 2021 per-constituency extractions ---
@@ -187,7 +193,7 @@ def main():
                     continue
                 upsert(polygon_key, year, {
                     'y':         year,
-                    'w':         party,
+                    'w':         normalize_party(party),
                     'url':       (row.get('url') or '').strip(),
                     'candidate': (row.get('candidate') or '').strip() or None,
                 }, 'official')
