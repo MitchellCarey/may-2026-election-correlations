@@ -122,8 +122,12 @@ TAIL_WIN_RE = re.compile(
 
 
 def clean_candidate(raw: str) -> str:
-    """Strip wikilink wrapping + parenthesised disambiguators from a
-    `candidate = ...` value. Tolerant of trailing refs/HTML noise."""
+    """Strip wikilink wrapping from a `candidate = ...` value, preferring
+    the display label of a piped wikilink (`[[Title|Display]]` → `Display`)
+    over the title. A bare wikilink with a parenthesised disambiguator
+    (`[[Foo (politician)]]`) keeps the disambiguator — today's dataset
+    has zero such candidates, so stripping it hasn't been worthwhile.
+    Tolerant of trailing refs/HTML noise."""
     s = raw.strip()
     s = re.sub(r'<ref.*?(?:/>|</ref>)', '', s, flags=re.DOTALL)
     # [[Foo|Bar]] → Bar; [[Foo]] → Foo
