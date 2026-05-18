@@ -902,6 +902,10 @@ body {
   vector-effect: non-scaling-stroke;
   cursor: default;
 }
+/* On the GB current page the slider JS sets data-url on ward paths and
+   wires a click handler that opens the source. Show a pointer cursor for
+   those wards so the affordance is visible. */
+.map-svg path.ward[data-url] { cursor: pointer; }
 .map-svg path.ward:hover { stroke: var(--ink); stroke-width: 1.4; }
 .map-svg path.ward.fuzzy {
   stroke: rgba(20,17,13,0.55);
@@ -1039,6 +1043,61 @@ body {
   border: 1px solid var(--hairline);
   flex-shrink: 0;
 }
+
+/* TIME SLIDER (issue #70 phase 1A) */
+.time-slider {
+  margin: 18px 0 6px;
+  padding: 12px 14px;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  font-family: 'JetBrains Mono', monospace;
+}
+.time-slider-controls {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 8px; flex-wrap: wrap;
+}
+.time-slider-play,
+.time-slider-speed {
+  font: inherit;
+  font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--ink); padding: 5px 12px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+  min-width: 60px;
+}
+.time-slider-play:hover,
+.time-slider-speed:hover { background: var(--ink); color: var(--paper); }
+.time-slider-play:focus-visible,
+.time-slider-speed:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.time-slider-play[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.time-slider-year {
+  font-weight: 700; font-size: 16px; letter-spacing: 0.04em;
+  color: var(--ink); min-width: 4em;
+}
+.time-slider-hint {
+  font-size: 10px; letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.time-slider-range {
+  width: 100%;
+  accent-color: var(--ink);
+}
+.time-slider-ticks {
+  display: flex; justify-content: space-between;
+  font-size: 10px; color: var(--muted); margin-top: 4px;
+}
+.time-slider-ticks span { font-family: 'JetBrains Mono', monospace; }
+
+/* Overlay layers hide while the slider is below the layer's contest year.
+   Phase 1A is wards-only — we paint each overlay at its actual data year,
+   not below it. Phases 1B-1E will wire HISTORICAL overlays (e.g. PCON 2019,
+   CED 2021) and remove the corresponding gates. */
+.map-svg.slider-pre-2024 path.pcon { display: none; }     /* GE 2024 */
+.map-svg.slider-pre-2025 path.ced { display: none; }      /* CEDs are mostly 2025; six 2026 counties overlay */
+.map-svg.slider-pre-2026 path.holyrood,                   /* Holyrood 7 May 2026 */
+.map-svg.slider-pre-2026 path.senedd,                     /* Senedd 7 May 2026 */
+.map-svg.slider-pre-2026 path.surrey { display: none; }   /* East/West Surrey inaugural 7 May 2026 */
 
 /* FOOTER */
 .footer {

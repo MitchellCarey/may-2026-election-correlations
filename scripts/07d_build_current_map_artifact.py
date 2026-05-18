@@ -114,6 +114,15 @@ def main():
         if region == 'gb' and surrey_geom_path.exists() else {'unitaries': {}}
     )
 
+    # Ward history (issue #70 phase 1A) — GB-only. Drives the time slider
+    # below the legend, letting readers scrub 2018→2026. Missing file is
+    # benign: the slider chrome is hidden when WARD_HISTORY is empty.
+    history_path = DATA / 'ward_history.json'
+    ward_history = (
+        json.loads(history_path.read_text())
+        if region == 'gb' and history_path.exists() else {'years': [], 'wards': {}}
+    )
+
     if region not in geoms.get('viewBoxes', {}):
         print(f'  ! ward_geoms.json has no viewBox for region={region!r} '
               f'(found: {sorted(geoms.get("viewBoxes", {}))}). '
@@ -277,6 +286,14 @@ def main():
         n_surrey_decided = sum(1 for s in surrey_js if s['seats'])
         print(f'surrey in gb: {len(surrey_js)} (decided: {n_surrey_decided}; '
               f'pending: {len(surrey_js) - n_surrey_decided})')
+
+        # Ward-history coverage report — issue #70 acceptance gauge.
+        n_history_wards = len(ward_history.get('wards', {}))
+        n_ward_years = sum(len(w.get('history', []))
+                            for w in ward_history.get('wards', {}).values())
+        print(f'ward history: {n_history_wards:,} wards across '
+              f'{len(ward_history.get("years", []))} year stops, '
+              f'{n_ward_years:,} ward-years')
 
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
@@ -534,6 +551,248 @@ if (legend) {
   neutral.appendChild(document.createTextNode('No current-control data'));
   legend.appendChild(neutral);
 }
+''')
+
+    # === Time slider (issue #70 phase 1A) — GB only ===
+    # Two extra constants + a second render block, gated on --region=gb so
+    # GM output stays byte-identical. The slider chrome lives in the
+    # hand-authored HTML below the legend; this JS finds it and wires it up.
+    if region == 'gb' and ward_history.get('years'):
+        js.append('')
+        js.append('const YEARS = ' + json.dumps(ward_history['years']) + ';')
+        js.append('const WARD_HISTORY = ' + json.dumps(
+            ward_history['wards'], separators=(',', ':')) + ';')
+        js.append(r'''
+// Stamp each ward <path> with data-gss / data-year so paintAtYear can
+// look it up. Done here (GB-only splice) rather than in the shared
+// renderer so docs/current.html (GM) stays byte-identical. Path `d`
+// strings are unique per ward, so a {d -> {gss, y}} map keyed on the
+// ward's own WARD_PATHS entry is a safe join.
+(function attachWardMeta() {
+  const wardByPath = new Map(
+    WARDS.map(w => [WARD_PATHS[w.gss], { gss: w.gss, y: w.y }])
+  );
+  document.querySelectorAll('.map-svg path.ward').forEach(el => {
+    const meta = wardByPath.get(el.getAttribute('d'));
+    if (!meta) return;
+    if (meta.gss) el.dataset.gss = meta.gss;
+    if (meta.y != null) el.dataset.year = String(meta.y);
+  });
+})();
+
+// Attach initial source URLs to each ward <path>. data-gss and data-year
+// were stamped above; look up the matching history entry by gss + year
+// and store its url.
+(function attachWardURLs() {
+  document.querySelectorAll('.map-svg path.ward[data-gss]').forEach(el => {
+    const wh = WARD_HISTORY[el.dataset.gss];
+    if (!wh) return;
+    const dsYear = Number(el.dataset.year);
+    if (!dsYear) return;
+    const cur = wh.history.find(e => e.y === dsYear);
+    if (cur && cur.url) el.dataset.url = cur.url;
+  });
+})();
+
+// paintAtYear — rewrite ward fills (and dataset metadata) for the given
+// year. rAF-coalesced: the latest requested year is stored synchronously
+// in _pendingYear and consumed inside the rAF, so fast slider drags don't
+// drop intermediate values. lastPaintedYear short-circuits true no-ops.
+let _lastPaintedYear = null;
+let _pendingYear = null;
+let _rafPending = false;
+function paintAtYear(targetYear) {
+  _pendingYear = targetYear;
+  if (targetYear === _lastPaintedYear && !_rafPending) return;
+  if (_rafPending) return;
+  _rafPending = true;
+  requestAnimationFrame(() => {
+    _rafPending = false;
+    const y = _pendingYear;
+    _lastPaintedYear = y;
+    const root = document.querySelector('.map-svg');
+    if (!root) return;
+    // Each overlay layer paints from its actual contest year onwards.
+    // Phases 1B-1E will add historical overlay data and remove these gates.
+    root.classList.toggle('slider-pre-2024', y < 2024);
+    root.classList.toggle('slider-pre-2025', y < 2025);
+    root.classList.toggle('slider-pre-2026', y < 2026);
+    root.querySelectorAll('path.ward').forEach(el => {
+      const gss = el.dataset.gss;
+      const wh = gss && WARD_HISTORY[gss];
+      if (!wh) {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+        return;
+      }
+      // history is sorted ascending; find the most recent entry with y<=targetYear.
+      let chosen = null;
+      for (const entry of wh.history) {
+        if (entry.y <= y) chosen = entry;
+        else break;
+      }
+      if (chosen) {
+        el.setAttribute('fill', PARTY_COLOURS[chosen.w] || NEUTRAL_FILL);
+        el.dataset.year = String(chosen.y);
+        // Only set data-url when we actually have a source — an empty
+        // attribute still matches the `path.ward[data-url]` pointer-cursor
+        // rule in shared.css and would advertise a non-functional click.
+        if (chosen.url) el.dataset.url = chosen.url;
+        else delete el.dataset.url;
+      } else {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+      }
+    });
+  });
+}
+
+// Click any ward to open its source URL — lets readers verify accuracy
+// and report errors against the canonical Wikipedia or council page.
+(function wireClicks() {
+  const root = document.querySelector('.map-svg');
+  if (!root) return;
+  root.addEventListener('click', evt => {
+    const target = evt.target.closest('path.ward');
+    if (!target || !target.dataset.url) return;
+    window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
+  });
+})();
+
+// Refresh the SVG <title> tooltip on hover so the year + source URL
+// reflect the slider's current position rather than the at-render snapshot.
+// The "viewing year" is the slider's last-requested year (_pendingYear);
+// the per-ward dataset.year is the year the ward was last *contested* and
+// can lag the slider when no entry exists at the current position.
+// The renderer's fmtTitle appends a "County Council · …" subtitle for
+// 2-tier wards; the slider data has no county info to splice in, so
+// preserve any such trailing line(s) verbatim across the rewrite.
+(function wireTooltips() {
+  const root = document.querySelector('.map-svg');
+  if (!root) return;
+  root.addEventListener('mouseover', evt => {
+    const target = evt.target.closest('path.ward');
+    if (!target) return;
+    const gss = target.dataset.gss;
+    if (!gss) return;
+    const wh = WARD_HISTORY[gss];
+    if (!wh) return;
+    const viewingYear = (_pendingYear != null) ? _pendingYear
+      : (Number(target.dataset.year) || YEARS[YEARS.length - 1]);
+    const dsYear = Number(target.dataset.year);
+    const entry = dsYear ? wh.history.find(e => e.y === dsYear) : null;
+    const titleEl = target.querySelector('title');
+    if (!titleEl) return;
+    // Snapshot any "County Council · …" tail line from the existing title
+    // so the 2-tier subtitle survives the rewrite. Snapshot once per <title>
+    // (the first hover may have already overwritten the textContent on a
+    // re-hovered element — use a data-attribute as the canonical store).
+    if (!('countySuffix' in target.dataset)) {
+      const existing = titleEl.textContent || '';
+      const ccLines = existing.split('\n').filter(l =>
+        l.startsWith('County Council · '));
+      target.dataset.countySuffix = ccLines.join('\n');
+    }
+    const lines = [wh.borough + ' · ' + wh.ward];
+    if (entry) {
+      lines.push('Last election: ' + entry.y + ' · winner: ' + (PARTY_DISPLAY[entry.w] || entry.w));
+      if (entry.url) {
+        try {
+          lines.push('Source: ' + new URL(entry.url).hostname + ' — click to open');
+        } catch (_) { /* invalid URL */ }
+      }
+    } else {
+      lines.push('(no result for ' + viewingYear + ')');
+    }
+    if (target.dataset.countySuffix) {
+      lines.push(target.dataset.countySuffix);
+    }
+    titleEl.textContent = lines.join('\n');
+  });
+})();
+
+// Wire the slider chrome below the legend. If the chrome isn't present
+// (e.g. mid-deploy with stale HTML), the slider silently does nothing.
+(function wireSlider() {
+  const sliderRoot = document.querySelector('.time-slider');
+  if (!sliderRoot) return;
+  const range = sliderRoot.querySelector('.time-slider-range');
+  const playBtn = sliderRoot.querySelector('.time-slider-play');
+  const speedBtn = sliderRoot.querySelector('.time-slider-speed');
+  const yearLabel = sliderRoot.querySelector('.time-slider-year');
+  const ticks = sliderRoot.querySelector('.time-slider-ticks');
+  if (!range || !playBtn || !speedBtn || !yearLabel) return;
+
+  range.min = '0';
+  range.max = String(YEARS.length - 1);
+  range.step = '1';
+  range.value = String(YEARS.length - 1);
+  if (ticks) {
+    ticks.innerHTML = '';
+    YEARS.forEach(y => {
+      const span = document.createElement('span');
+      span.textContent = String(y);
+      ticks.appendChild(span);
+    });
+  }
+  yearLabel.textContent = String(YEARS[YEARS.length - 1]);
+
+  function applyIndex(idx) {
+    idx = Math.max(0, Math.min(YEARS.length - 1, idx));
+    range.value = String(idx);
+    const y = YEARS[idx];
+    yearLabel.textContent = String(y);
+    paintAtYear(y);
+  }
+
+  const SPEEDS_MS = [1000, 500, 250];
+  let speedIdx = 0;
+  let timerId = null;
+  let playing = false;
+
+  function setSpeed(i) {
+    speedIdx = i % SPEEDS_MS.length;
+    speedBtn.textContent = (1 << speedIdx) + '×';
+    if (playing) {
+      clearInterval(timerId);
+      timerId = setInterval(step, SPEEDS_MS[speedIdx]);
+    }
+  }
+
+  function step() {
+    const cur = parseInt(range.value, 10);
+    if (cur >= YEARS.length - 1) { stop(); return; }
+    applyIndex(cur + 1);
+  }
+
+  function play() {
+    if (playing) return;
+    const cur = parseInt(range.value, 10);
+    if (cur >= YEARS.length - 1) applyIndex(0);
+    playing = true;
+    playBtn.textContent = 'Pause';
+    playBtn.setAttribute('aria-pressed', 'true');
+    timerId = setInterval(step, SPEEDS_MS[speedIdx]);
+  }
+
+  function stop() {
+    if (timerId) { clearInterval(timerId); timerId = null; }
+    playing = false;
+    playBtn.textContent = 'Play';
+    playBtn.setAttribute('aria-pressed', 'false');
+  }
+
+  playBtn.addEventListener('click', () => (playing ? stop() : play()));
+  speedBtn.addEventListener('click', () => setSpeed(speedIdx + 1));
+  range.addEventListener('input', () => {
+    if (playing) stop();
+    applyIndex(parseInt(range.value, 10));
+  });
+
+  setSpeed(0);
+})();
 ''')
 
     new_js = '\n'.join(js)
