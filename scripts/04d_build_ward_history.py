@@ -50,9 +50,10 @@ GB_LAD_PREFIXES = ('E06', 'E07', 'E08', 'E09', 'W06', 'S12')
 # Years the slider exposes. 2020 deferred to 2021 under the Coronavirus
 # postponement regulations; no entries useful at that year. Phase 1B
 # (#73) added the 2017 stop so the GB county-tier CED layer can repaint
-# from its 2017 contests — wards inherit it for free via the existing
-# carry-forward logic in paintAtYear.
-SLIDER_YEARS = [2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026]
+# from its 2017 contests; Phase 1C (#74) prepends 2016 so the Holyrood
+# layer can repaint at its first historical year stop. Wards have no
+# 2016 contests — carry-forward in paintAtYear handles the gap.
+SLIDER_YEARS = [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026]
 
 
 def wikipedia_url(title: str) -> str:
