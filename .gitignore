@@ -72,6 +72,7 @@ data/source/surrey_electionmap_*.html
 data/current_winners.json
 data/current_winners_raw.json
 data/ward_history.json
+data/ced_history.json
 
 
 # Build artifacts

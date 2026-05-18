@@ -123,6 +123,17 @@ def main():
         if region == 'gb' and history_path.exists() else {'years': [], 'wards': {}}
     )
 
+    # CED history (issue #69 phase 1B / #73) — GB-only. Per-CED per-year
+    # winners for the county-tier slider repaint. Polygon keys come from
+    # both `ceds` (current era) and `ceds_pre_review` (PRE_ keys for
+    # Norfolk/Essex/Suffolk/Surrey 2017+2021 boundaries). Missing file is
+    # benign: paintAtYear silently leaves CED fills at their initial values.
+    ced_history_path = DATA / 'ced_history.json'
+    ced_history = (
+        json.loads(ced_history_path.read_text())
+        if region == 'gb' and ced_history_path.exists() else {'years': [], 'ceds': {}}
+    )
+
     if region not in geoms.get('viewBoxes', {}):
         print(f'  ! ward_geoms.json has no viewBox for region={region!r} '
               f'(found: {sorted(geoms.get("viewBoxes", {}))}). '
@@ -195,13 +206,30 @@ def main():
     # CED-level data + polygons for the county-council layer toggle. Only
     # populated on the GB page — the GM map has no E10 county-council overlap
     # (all 10 GM boroughs are single-tier metropolitan, no CEDs sit over them).
+    #
+    # Phase 1B (#73) adds a parallel `ceds_pre_review` polygon set for the
+    # four counties whose 2017+2021 boundaries differ from 2025/2026
+    # (Norfolk/Essex/Suffolk: replaced by LGBCE for 2026; Surrey: abolished
+    # April 2027). Each CED path is stamped with a `data-era` attribute so
+    # paintAtYear can show/hide based on slider year:
+    #   'pre'  → visible at year <  2026 (PRE_ keys)
+    #   'post' → visible at year >= 2026 (LGBCE_ keys for the 3 reviewed counties)
+    #   'any'  → always visible (bare CED25CDs in the 17 unchanged counties)
     ced_paths: dict = {}
+    ced_paths_pre: dict = {}
+    ced_eras: dict = {}
     ceds_js: list = []
     holyrood_paths: dict = {}
     holyrood_js: list = []
     if region == 'gb':
         all_ceds = geoms.get('ceds', {})
+        all_ceds_pre = geoms.get('ceds_pre_review', {})
         ced_paths = {code: c['path'] for code, c in all_ceds.items()}
+        ced_paths_pre = {code: c['path'] for code, c in all_ceds_pre.items()}
+        for code in all_ceds:
+            ced_eras[code] = 'post' if code.startswith('LGBCE_') else 'any'
+        for code in all_ceds_pre:
+            ced_eras[code] = 'pre'
         ceds_js = [{
             'ced':  r['ced'],
             'n':    r['name'],
@@ -209,9 +237,26 @@ def main():
             'w':    r['winner'],
             'y':    r['year'],
         } for r in ced_records]
+        # Synthetic CEDS records for the pre-review polygons. They don't
+        # appear in ced_winners.json (04c only joins to `ceds`), but they
+        # still need DOM elements rendered so paintAtYear can light them
+        # up at year < 2026. Initial fill = grey; winner/year come from
+        # CED_HISTORY at slider time. The renderer's chronological sort
+        # places them at the bottom (y=null) — fine because they're
+        # hidden at the initial slider position (year=2026).
+        pre_meta_by_key = ced_history.get('ceds', {}) if region == 'gb' else {}
+        for key, meta in all_ceds_pre.items():
+            ceds_js.append({
+                'ced': key,
+                'n':   meta.get('name', ''),
+                'c':   pre_meta_by_key.get(key, {}).get('county', meta.get('cty_name', '')),
+                'w':   None,
+                'y':   None,
+            })
         n_ced_winner = sum(1 for c in ceds_js if c['w'])
         print(f'ceds in gb: {len(ceds_js)} (with winner: {n_ced_winner}; '
-              f'grey: {len(ceds_js) - n_ced_winner})')
+              f'grey: {len(ceds_js) - n_ced_winner}; '
+              f'incl. {len(all_ceds_pre)} pre-review polygons hidden at year >= 2026)')
 
         # Holyrood 2026 constituencies (issue #21). Same GB-only gate as CEDs:
         # the SPC layer only paints over Scotland, which the GM map doesn't show.
@@ -295,12 +340,22 @@ def main():
               f'{len(ward_history.get("years", []))} year stops, '
               f'{n_ward_years:,} ward-years')
 
+        # CED-history coverage report (issue #69 phase 1B / #73).
+        n_history_ceds = len(ced_history.get('ceds', {}))
+        n_ced_years = sum(len(c.get('history', []))
+                            for c in ced_history.get('ceds', {}).values())
+        print(f'ced history: {n_history_ceds:,} CED polygons across '
+              f'{len(ced_history.get("years", []))} year stops, '
+              f'{n_ced_years:,} CED-years')
+
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
     js.append('const BOROUGH_PATHS = ' + json.dumps(borough_paths, separators=(',', ':')) + ';')
     js.append('const COUNTRY_PATHS = ' + json.dumps(country_paths, separators=(',', ':')) + ';')
     js.append('const CED_PATHS = ' + json.dumps(ced_paths, separators=(',', ':')) + ';')
+    js.append('const CED_PATHS_PRE = ' + json.dumps(ced_paths_pre, separators=(',', ':')) + ';')
+    js.append('const CED_ERAS = ' + json.dumps(ced_eras, separators=(',', ':')) + ';')
     js.append('const HOLYROOD_PATHS = ' + json.dumps(holyrood_paths, separators=(',', ':')) + ';')
     js.append('const SENEDD_PATHS = ' + json.dumps(senedd_paths, separators=(',', ':')) + ';')
     js.append('const PCON_PATHS = ' + json.dumps(pcon_paths, separators=(',', ':')) + ';')
@@ -323,7 +378,7 @@ def main():
     js.append(r'''
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
-function makePath(d, cls, fill, titleText) {
+function makePath(d, cls, fill, titleText, ds) {
   const p = document.createElementNS(SVG_NS, 'path');
   p.setAttribute('d', d);
   p.setAttribute('class', cls);
@@ -332,6 +387,11 @@ function makePath(d, cls, fill, titleText) {
     const t = document.createElementNS(SVG_NS, 'title');
     t.textContent = titleText;
     p.appendChild(t);
+  }
+  if (ds) {
+    for (const k of Object.keys(ds)) {
+      if (ds[k] != null) p.dataset[k] = ds[k];
+    }
   }
   return p;
 }
@@ -450,9 +510,11 @@ if (target) {
     ...WARDS.map(w => ({ kind: 'ward', d: WARD_PATHS[w.gss], y: w.y,
                          fill: (w.w && PARTY_COLOURS[w.w]) || NEUTRAL_FILL,
                          title: fmtTitle(w) })),
-    ...CEDS.map(c => ({  kind: 'ced',  d: CED_PATHS[c.ced], y: c.y,
+    ...CEDS.map(c => ({  kind: 'ced',
+                         d: CED_PATHS[c.ced] || CED_PATHS_PRE[c.ced], y: c.y,
                          fill: (c.w && PARTY_COLOURS[c.w]) || NEUTRAL_FILL,
-                         title: fmtCedTitle(c) })),
+                         title: fmtCedTitle(c),
+                         ds: { ced: c.ced, era: CED_ERAS[c.ced] || 'any' } })),
     ...HOLYROOD.map(h => ({ kind: 'holyrood', d: HOLYROOD_PATHS[h.spc], y: h.y,
                             fill: (h.w && PARTY_COLOURS[h.w]) || NEUTRAL_FILL,
                             title: fmtHolyroodTitle(h) })),
@@ -469,7 +531,9 @@ if (target) {
   items.sort((a, b) => (a.y ?? 0) - (b.y ?? 0) || (KIND_ORDER[a.kind] - KIND_ORDER[b.kind]));
   const fills = document.createElementNS(SVG_NS, 'g');
   fills.setAttribute('class', 'fills');
-  items.forEach(it => fills.appendChild(makePath(it.d, it.kind, it.fill, it.title)));
+  items.forEach(it => fills.appendChild(
+    makePath(it.d, it.kind, it.fill, it.title, it.ds)
+  ));
   root.appendChild(fills);
 
   // Country outlines first so toggling boroughs off still shows the UK
@@ -562,6 +626,8 @@ if (legend) {
         js.append('const YEARS = ' + json.dumps(ward_history['years']) + ';')
         js.append('const WARD_HISTORY = ' + json.dumps(
             ward_history['wards'], separators=(',', ':')) + ';')
+        js.append('const CED_HISTORY = ' + json.dumps(
+            ced_history.get('ceds', {}), separators=(',', ':')) + ';')
         js.append(r'''
 // Stamp each ward <path> with data-gss / data-year so paintAtYear can
 // look it up. Done here (GB-only splice) rather than in the shared
@@ -594,10 +660,18 @@ if (legend) {
   });
 })();
 
-// paintAtYear — rewrite ward fills (and dataset metadata) for the given
-// year. rAF-coalesced: the latest requested year is stored synchronously
-// in _pendingYear and consumed inside the rAF, so fast slider drags don't
-// drop intermediate values. lastPaintedYear short-circuits true no-ops.
+// paintAtYear — rewrite ward + CED fills (and dataset metadata) for the
+// given year. rAF-coalesced: the latest requested year is stored
+// synchronously in _pendingYear and consumed inside the rAF, so fast
+// slider drags don't drop intermediate values. lastPaintedYear short-
+// circuits true no-ops.
+//
+// For CEDs, era visibility kicks in alongside carry-forward fill:
+//   data-era="pre"  → hidden at year >= 2026 (Norfolk/Essex/Suffolk
+//                     2017+2021 boundaries; Surrey CC pre-abolition).
+//   data-era="post" → hidden at year <  2026 (Norfolk/Essex/Suffolk
+//                     LGBCE post-review).
+//   data-era="any"  → always visible (17 counties unchanged 2017–2025).
 let _lastPaintedYear = null;
 let _pendingYear = null;
 let _rafPending = false;
@@ -613,7 +687,10 @@ function paintAtYear(targetYear) {
     const root = document.querySelector('.map-svg');
     if (!root) return;
     // Each overlay layer paints from its actual contest year onwards.
-    // Phases 1B-1E will add historical overlay data and remove these gates.
+    // The .slider-pre-2025 / .slider-pre-2026 classes still gate
+    // Holyrood / Senedd / Surrey / PCON visibility via CSS; CEDs moved
+    // to inline-style era control here (#73 phase 1B) so pre-review
+    // polygons can also light up at year < 2026.
     root.classList.toggle('slider-pre-2024', y < 2024);
     root.classList.toggle('slider-pre-2025', y < 2025);
     root.classList.toggle('slider-pre-2026', y < 2026);
@@ -640,6 +717,47 @@ function paintAtYear(targetYear) {
         // rule in shared.css and would advertise a non-functional click.
         if (chosen.url) el.dataset.url = chosen.url;
         else delete el.dataset.url;
+      } else {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+      }
+    });
+    root.querySelectorAll('path.ced').forEach(el => {
+      const era = el.dataset.era || 'any';
+      const visible = era === 'pre'  ? (y <  2026)
+                    : era === 'post' ? (y >= 2026)
+                    : true;
+      el.style.display = visible ? '' : 'none';
+      if (!visible) return;
+      const key = el.dataset.ced;
+      const ch = key && CED_HISTORY[key];
+      if (!ch) {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+        return;
+      }
+      let chosen = null;
+      for (const entry of ch.history) {
+        if (entry.y <= y) chosen = entry;
+        else break;
+      }
+      if (chosen) {
+        el.setAttribute('fill', PARTY_COLOURS[chosen.w] || NEUTRAL_FILL);
+        el.dataset.year = String(chosen.y);
+        if (chosen.url) el.dataset.url = chosen.url;
+        else delete el.dataset.url;
+        const titleEl = el.querySelector('title');
+        if (titleEl) {
+          const tl = [(ch.county || '') + ' County Council · ' + (ch.division || '')];
+          tl.push(chosen.y + ' · winner: ' + (PARTY_DISPLAY[chosen.w] || chosen.w));
+          if (chosen.url) {
+            try { tl.push('Source: ' + new URL(chosen.url).hostname + ' — click to open'); }
+            catch (_) { /* invalid URL */ }
+          }
+          titleEl.textContent = tl.join('\n');
+        }
       } else {
         el.setAttribute('fill', NEUTRAL_FILL);
         delete el.dataset.year;
@@ -792,6 +910,12 @@ function paintAtYear(targetYear) {
   });
 
   setSpeed(0);
+
+  // Initial paint at the rightmost year so era-gated CEDs hide correctly
+  // on page load. Without this, pre-review polygons would render visible
+  // at year=2026 (the CSS hide rule that previously gated them moved to
+  // inline-style in paintAtYear per issue #69 phase 1B / #73).
+  applyIndex(YEARS.length - 1);
 })();
 ''')
 
