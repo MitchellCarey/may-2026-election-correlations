@@ -98,8 +98,20 @@ def iter_candidate_bodies(block_text: str):
             else:
                 i += 1
 
-PARTY_PARAM_RE  = re.compile(r'\|\s*party\s*=\s*([^\n|}]+)', re.IGNORECASE)
-CANDIDATE_PARAM_RE = re.compile(r'\|\s*candidate\s*=\s*([^\n|}]+)', re.IGNORECASE)
+# The value captures consume either a complete `[[...]]` wikilink (so the
+# internal `|` of disambiguated forms like `[[Kevin Stewart (Scottish
+# politician)|Kevin Stewart]]` doesn't truncate the value) or a single
+# non-terminating character. Without the wikilink alternation the capture
+# stops at the first `|` and `clean_candidate`'s `[[Foo|Bar]]` cleanup
+# regex (which requires the closing `]]`) leaves the broken link verbatim.
+PARTY_PARAM_RE  = re.compile(
+    r'\|\s*party\s*=\s*((?:\[\[[^\]]*\]\]|[^\n|}])+)',
+    re.IGNORECASE,
+)
+CANDIDATE_PARAM_RE = re.compile(
+    r'\|\s*candidate\s*=\s*((?:\[\[[^\]]*\]\]|[^\n|}])+)',
+    re.IGNORECASE,
+)
 WINNER_PARAM_RE = re.compile(r'\|\s*winner\s*=\s*yes\b', re.IGNORECASE)
 
 # Tail templates that record the win for AMS-formatted articles.
