@@ -158,12 +158,22 @@ def main():
         if gss is None:
             continue
         # URL: only use wiki_2026 / wiki_prior when the article's year
-        # matches the entry's year. For thirds councils with wiki_2026 null
-        # and no official_parser (Bury today), neither branch matches and
-        # the URL stays empty — better than linking to a wrong-year article.
-        if year == 2026 and council.get('wiki_2026'):
+        # matches the entry's year AND every ward in all_wards.json for
+        # this council contested that year. Thirds councils elect one seat
+        # in every ward each year, so all_wards.json's 2026 entries all
+        # appear in the wiki_2026 article (see year_for_all_wards_source in
+        # 04c). Halves councils contest only half their wards in 2026, so
+        # the council-level article wouldn't list every ward — leave the
+        # URL empty there and let Pass 2's per-contest-year entries supply
+        # URLs at earlier slider stops.
+        cycle = council.get('cycle')
+        all_wards_in_one_year = cycle in ('all-out', 'thirds')
+        if (year == 2026 and council.get('wiki_2026')
+                and all_wards_in_one_year):
             url = wikipedia_url(council['wiki_2026'])
-        elif year == council.get('wiki_prior_year') and council.get('wiki_prior'):
+        elif (year == council.get('wiki_prior_year')
+                and council.get('wiki_prior')
+                and all_wards_in_one_year):
             url = wikipedia_url(council['wiki_prior'])
         else:
             url = ''
@@ -173,7 +183,9 @@ def main():
     # --- Pass 2: wiki_current_articles — every prior contest with a
     #     cached article, walked via _wiki_history. ---
     pass2_added = 0
-    pass2_unmatched: list[tuple[str, str, int]] = []
+    pass2_unmatched_count = 0
+    pass2_unmatched_sample: list[tuple[str, str, int]] = []
+    pass2_unmatched_by_council: dict[str, int] = {}
     article_titles_by_council_year: dict[tuple[str, int], str] = {}
     for council in for_region('gb'):
         for entry in (council.get('wiki_current_articles') or []):
@@ -205,8 +217,13 @@ def main():
                 if assign(target_gss, year, party, 'wiki', url):
                     pass2_added += 1
                 matched_any = True
-            if not matched_any and len(pass2_unmatched) < 25:
-                pass2_unmatched.append((council['name'], ward_name, year))
+            if not matched_any:
+                pass2_unmatched_count += 1
+                pass2_unmatched_by_council[council['name']] = (
+                    pass2_unmatched_by_council.get(council['name'], 0) + 1
+                )
+                if len(pass2_unmatched_sample) < 25:
+                    pass2_unmatched_sample.append((council['name'], ward_name, year))
 
     # --- Output assembly: stable sort, per-ward history ascending by year ---
     out_wards: dict[str, dict] = {}
@@ -250,10 +267,15 @@ def main():
     print('  per-year coverage: ' + ' · '.join(
         f'{y}: {per_year_coverage.get(y, 0):,}' for y in present_years
     ))
-    if pass2_unmatched:
-        print(f'  pass 2: {len(pass2_unmatched)} council/ward/year tuples unmatched '
-              f'(showing first 25):', file=sys.stderr)
-        for name, ward, year in pass2_unmatched:
+    if pass2_unmatched_count:
+        top_councils = sorted(pass2_unmatched_by_council.items(),
+                              key=lambda kv: -kv[1])[:10]
+        per_council = ', '.join(f'{name}={n}' for name, n in top_councils)
+        print(f'  pass 2: {pass2_unmatched_count:,} council/ward/year tuples unmatched '
+              f'across {len(pass2_unmatched_by_council)} councils '
+              f'(top 10: {per_council}; showing first {len(pass2_unmatched_sample)}):',
+              file=sys.stderr)
+        for name, ward, year in pass2_unmatched_sample:
             print(f'    {year} {name}: "{ward}"', file=sys.stderr)
 
 

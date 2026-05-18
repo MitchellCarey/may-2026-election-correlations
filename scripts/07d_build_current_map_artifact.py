@@ -563,26 +563,34 @@ if (legend) {
         js.append('const WARD_HISTORY = ' + json.dumps(
             ward_history['wards'], separators=(',', ':')) + ';')
         js.append(r'''
-// Replay the items.sort logic from the renderer above on WARDS only, then
-// walk path.ward elements in DOM order and attach dataset.gss/.year/.url.
-// Stable sort preserves WARDS order within the same year, matching DOM
-// order produced by the renderer.
-(function attachWardDatasets() {
-  const wardsSorted = WARDS.filter(w => WARD_PATHS[w.gss]).slice();
-  wardsSorted.sort((a, b) => (a.y ?? 0) - (b.y ?? 0));
-  const els = document.querySelectorAll('.map-svg path.ward');
-  wardsSorted.forEach((w, i) => {
-    const el = els[i];
-    if (!el) return;
-    el.dataset.gss = w.gss;
-    if (w.y != null) el.dataset.year = String(w.y);
-    // Look up the initial source URL from the history entry that matches
-    // the ward's current (most-recent) year. Falls back to '' if absent.
-    const wh = WARD_HISTORY[w.gss];
-    if (wh) {
-      const cur = wh.history.find(e => e.y === w.y);
-      if (cur && cur.url) el.dataset.url = cur.url;
-    }
+// Stamp each ward <path> with data-gss / data-year so paintAtYear can
+// look it up. Done here (GB-only splice) rather than in the shared
+// renderer so docs/current.html (GM) stays byte-identical. Path `d`
+// strings are unique per ward, so a {d -> {gss, y}} map keyed on the
+// ward's own WARD_PATHS entry is a safe join.
+(function attachWardMeta() {
+  const wardByPath = new Map(
+    WARDS.map(w => [WARD_PATHS[w.gss], { gss: w.gss, y: w.y }])
+  );
+  document.querySelectorAll('.map-svg path.ward').forEach(el => {
+    const meta = wardByPath.get(el.getAttribute('d'));
+    if (!meta) return;
+    if (meta.gss) el.dataset.gss = meta.gss;
+    if (meta.y != null) el.dataset.year = String(meta.y);
+  });
+})();
+
+// Attach initial source URLs to each ward <path>. data-gss and data-year
+// were stamped above; look up the matching history entry by gss + year
+// and store its url.
+(function attachWardURLs() {
+  document.querySelectorAll('.map-svg path.ward[data-gss]').forEach(el => {
+    const wh = WARD_HISTORY[el.dataset.gss];
+    if (!wh) return;
+    const dsYear = Number(el.dataset.year);
+    if (!dsYear) return;
+    const cur = wh.history.find(e => e.y === dsYear);
+    if (cur && cur.url) el.dataset.url = cur.url;
   });
 })();
 
@@ -627,7 +635,11 @@ function paintAtYear(targetYear) {
       if (chosen) {
         el.setAttribute('fill', PARTY_COLOURS[chosen.w] || NEUTRAL_FILL);
         el.dataset.year = String(chosen.y);
-        el.dataset.url = chosen.url || '';
+        // Only set data-url when we actually have a source — an empty
+        // attribute still matches the `path.ward[data-url]` pointer-cursor
+        // rule in shared.css and would advertise a non-functional click.
+        if (chosen.url) el.dataset.url = chosen.url;
+        else delete el.dataset.url;
       } else {
         el.setAttribute('fill', NEUTRAL_FILL);
         delete el.dataset.year;
@@ -654,6 +666,9 @@ function paintAtYear(targetYear) {
 // The "viewing year" is the slider's last-requested year (_pendingYear);
 // the per-ward dataset.year is the year the ward was last *contested* and
 // can lag the slider when no entry exists at the current position.
+// The renderer's fmtTitle appends a "County Council · …" subtitle for
+// 2-tier wards; the slider data has no county info to splice in, so
+// preserve any such trailing line(s) verbatim across the rewrite.
 (function wireTooltips() {
   const root = document.querySelector('.map-svg');
   if (!root) return;
@@ -670,9 +685,19 @@ function paintAtYear(targetYear) {
     const entry = dsYear ? wh.history.find(e => e.y === dsYear) : null;
     const titleEl = target.querySelector('title');
     if (!titleEl) return;
+    // Snapshot any "County Council · …" tail line from the existing title
+    // so the 2-tier subtitle survives the rewrite. Snapshot once per <title>
+    // (the first hover may have already overwritten the textContent on a
+    // re-hovered element — use a data-attribute as the canonical store).
+    if (!('countySuffix' in target.dataset)) {
+      const existing = titleEl.textContent || '';
+      const ccLines = existing.split('\n').filter(l =>
+        l.startsWith('County Council · '));
+      target.dataset.countySuffix = ccLines.join('\n');
+    }
     const lines = [wh.borough + ' · ' + wh.ward];
     if (entry) {
-      lines.push(entry.y + ' · winner: ' + (PARTY_DISPLAY[entry.w] || entry.w));
+      lines.push('Last election: ' + entry.y + ' · winner: ' + (PARTY_DISPLAY[entry.w] || entry.w));
       if (entry.url) {
         try {
           lines.push('Source: ' + new URL(entry.url).hostname + ' — click to open');
@@ -680,6 +705,9 @@ function paintAtYear(targetYear) {
       }
     } else {
       lines.push('(no result for ' + viewingYear + ')');
+    }
+    if (target.dataset.countySuffix) {
+      lines.push(target.dataset.countySuffix);
     }
     titleEl.textContent = lines.join('\n');
   });
