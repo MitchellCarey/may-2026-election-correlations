@@ -21,19 +21,13 @@ that contested 2026, and their winner is sourced from data/all_wards.json
 at the join step (04c).
 """
 import json
-import re
 from pathlib import Path
 
 from _councils import for_region
-from _wiki_parser import parse_article, parse_stv_article, parse_county_article_ceds
+from _wiki_history import iter_council_year_records, iter_missing_cache, pick_parser
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-SOURCE = DATA / "source"
-
-
-def slug(name: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
 
 
 def main():
@@ -47,35 +41,23 @@ def main():
             continue
         name = council["name"]
         system = council.get("electoral_system", "fptp")
-        is_county = council["lad_code"].startswith("E10")
-        # English counties → CED parser; Scottish councils → STV parser; rest → FPTP ward parser.
-        if is_county:
-            parser = parse_county_article_ceds
-        elif system == "stv":
-            parser = parse_stv_article
-        else:
-            parser = parse_article
+        _, is_county = pick_parser(council)
+        for year, _path in iter_missing_cache(council):
+            missing_cache.append((council["lad_code"], name, year))
 
+        # Newest-first collapse: the first record to claim a ward key wins,
+        # preserving per-seat last-contest semantics for thirds councils.
         ward_map: dict[str, dict] = {}
-        for entry in articles:  # newest-first
-            year = entry["year"]
-            path = SOURCE / f'wiki_current_{slug(name)}_{year}.json'
-            if not path.exists():
-                missing_cache.append((council["lad_code"], name, year))
+        for _year, key, rec in iter_council_year_records(council):
+            if key in ward_map:
                 continue
-            with open(path) as f:
-                wt = json.load(f)['parse']['wikitext']
-            parsed = parser(name, year, wt)
-            for key, rec in parsed.items():
-                if key in ward_map:
-                    continue
-                if is_county:
-                    # CED parser returns {ced: {party, district, year}}; keep
-                    # the district context for downstream UX (tooltip / drilldown).
-                    ward_map[key] = {'party': rec['party'], 'year': rec['year'],
-                                     'district': rec.get('district')}
-                else:
-                    ward_map[key] = {'party': rec['prior_party'], 'year': rec['prior_year']}
+            if is_county:
+                # CED parser returns {ced: {party, district, year}}; keep
+                # the district context for downstream UX (tooltip / drilldown).
+                ward_map[key] = {'party': rec['party'], 'year': rec['year'],
+                                 'district': rec.get('district')}
+            else:
+                ward_map[key] = {'party': rec['prior_party'], 'year': rec['prior_year']}
 
         target = ced_winners if is_county else all_winners
         target[name] = ward_map
