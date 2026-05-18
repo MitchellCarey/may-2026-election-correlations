@@ -8,3 +8,5 @@ E10000017,Poulton-le-Fylde ED,Poulton le Fylde,LCC drops the hyphens in "Poulton
 E10000016,"Cheriton, Sandgate & Hythe East ED",Cheriton Sandgate & Hythe East,KCC drops the comma after Cheriton
 E10000019,Deepings East ED,"Deepings, East",LCC inverts to "Deepings, East" with comma — and our normaliser strips ", East" as a trailing suffix
 E10000008,"Creedy, Taw & Mid Exe ED",Creedy Taw & Mid Exe,DCC drops the comma after Creedy
+E10000030,Guildford South East ED,Guildford South-East,Surrey CC wiki uses hyphenated South-East / South-West (pre-abolition pre-review polygons only, painted at slider years < 2026)
+E10000030,Guildford South West ED,Guildford South-West,Surrey CC wiki uses hyphenated South-East / South-West (pre-abolition pre-review polygons only, painted at slider years < 2026)
