@@ -157,11 +157,13 @@ def main():
                 gss = geom_by_norm.get((lad, normalise(override)))
         if gss is None:
             continue
-        # URL: the council's 2026 wiki article when the year matches; else
-        # wiki_prior (Salford-pattern fallbacks).
+        # URL: only use wiki_2026 / wiki_prior when the article's year
+        # matches the entry's year. For thirds councils with wiki_2026 null
+        # and no official_parser (Bury today), neither branch matches and
+        # the URL stays empty — better than linking to a wrong-year article.
         if year == 2026 and council.get('wiki_2026'):
             url = wikipedia_url(council['wiki_2026'])
-        elif council.get('wiki_prior'):
+        elif year == council.get('wiki_prior_year') and council.get('wiki_prior'):
             url = wikipedia_url(council['wiki_prior'])
         else:
             url = ''
