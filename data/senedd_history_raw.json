@@ -798,5 +798,169 @@
     "source": "wiki",
     "url": "https://en.wikipedia.org/wiki/Vale_of_Glamorgan_(Senedd_constituency)",
     "kind": "fptp"
+  },
+  {
+    "region": "Mid and West Wales",
+    "year": 2016,
+    "seats": {
+      "Other": 1,
+      "Labour": 2,
+      "Plaid": 1
+    },
+    "seats_raw": {
+      "UK Independence Party": 1,
+      "Welsh Labour": 2,
+      "Plaid Cymru": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Mid_and_West_Wales_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "North Wales",
+    "year": 2016,
+    "seats": {
+      "Conservative": 1,
+      "Other": 2,
+      "Plaid": 1
+    },
+    "seats_raw": {
+      "Welsh Conservatives": 1,
+      "UK Independence Party": 2,
+      "Plaid Cymru": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/North_Wales_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "South Wales Central",
+    "year": 2016,
+    "seats": {
+      "Conservative": 2,
+      "Plaid": 1,
+      "Other": 1
+    },
+    "seats_raw": {
+      "Welsh Conservatives": 2,
+      "Plaid Cymru": 1,
+      "UKIP": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/South_Wales_Central_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "South Wales East",
+    "year": 2016,
+    "seats": {
+      "Other": 2,
+      "Conservative": 1,
+      "Plaid": 1
+    },
+    "seats_raw": {
+      "UK Independence Party": 2,
+      "Welsh Conservative Party": 1,
+      "Plaid Cymru": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/South_Wales_East_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "South Wales West",
+    "year": 2016,
+    "seats": {
+      "Plaid": 2,
+      "Conservative": 1,
+      "Other": 1
+    },
+    "seats_raw": {
+      "Plaid Cymru": 2,
+      "Welsh Conservatives": 1,
+      "UK Independence Party": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/South_Wales_West_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "Mid and West Wales",
+    "year": 2021,
+    "seats": {
+      "Labour": 2,
+      "Plaid": 1,
+      "LibDem": 1
+    },
+    "seats_raw": {
+      "Welsh Labour": 2,
+      "Plaid Cymru": 1,
+      "Welsh Liberal Democrats": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Mid_and_West_Wales_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "North Wales",
+    "year": 2021,
+    "seats": {
+      "Plaid": 1,
+      "Conservative": 2,
+      "Labour": 1
+    },
+    "seats_raw": {
+      "Plaid Cymru": 1,
+      "Welsh Conservatives": 2,
+      "Welsh Labour": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/North_Wales_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "South Wales Central",
+    "year": 2021,
+    "seats": {
+      "Conservative": 2,
+      "Plaid": 2
+    },
+    "seats_raw": {
+      "Welsh Conservatives": 2,
+      "Plaid Cymru": 2
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/South_Wales_Central_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "South Wales East",
+    "year": 2021,
+    "seats": {
+      "Plaid": 2,
+      "Conservative": 2
+    },
+    "seats_raw": {
+      "Plaid Cymru": 2,
+      "Welsh Conservatives": 2
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/South_Wales_East_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "South Wales West",
+    "year": 2021,
+    "seats": {
+      "Conservative": 2,
+      "Plaid": 2
+    },
+    "seats_raw": {
+      "Welsh Conservatives": 2,
+      "Plaid Cymru": 2
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/South_Wales_West_(Senedd_electoral_region)",
+    "kind": "regional"
   }
 ]

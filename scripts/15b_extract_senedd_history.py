@@ -1,7 +1,8 @@
-"""Parse the 40 cached per-constituency Wikipedia articles fetched by
-scripts/14b_fetch_senedd_history.py and emit one record per (constituency,
-year) for the 2016 and 2021 Senedd / National Assembly for Wales
-constituency contests (issue #69 Phase 1D / #72).
+"""Parse the 40 cached per-constituency + 5 cached per-region Wikipedia
+articles fetched by scripts/14b_fetch_senedd_history.py and emit one
+record per (constituency, year) and one per (region, year) for the 2016
+and 2021 Senedd / National Assembly for Wales contests (issue #69
+Phase 1D / #72).
 
 Welsh constituency articles use the same `{{AMS election box ...}}`
 template family as Scottish ones (Wales also runs Additional Member
@@ -32,17 +33,30 @@ Winner detection mirrors 18b:
      |winner = ...}}` template (Welsh tail template differs from
      Holyrood's `{{AMS election box win|hold|gain}}`).
 
-Output: data/senedd_history_raw.json — flat list of records:
+Per-region articles (e.g. "North Wales (Senedd electoral region)") carry
+a `===Regional MSs/AMs elected in YYYY===` section per contest, with a
+wikitable listing the four list-seat winners. Each row identifies its
+party via a `bgcolor={{party color|<PartyName>}}` cell — that's what
+`parse_regional_list` counts.
+
+Output: data/senedd_history_raw.json — flat list of records, mixed by kind:
+  # kind="fptp" — constituency winners
   {"nawc21cd": "W09000022", "name": "Aberavon",
    "year": 2021, "winner": "Labour", "candidate": "David Rees",
    "source": "wiki", "url": "https://en.wikipedia.org/wiki/...",
    "kind": "fptp"}
+  # kind="regional" — list-seat allocations per region
+  {"region": "North Wales", "year": 2021,
+   "seats": {"Plaid": 1, "Conservative": 2, "Labour": 1},
+   "source": "wiki", "url": "https://en.wikipedia.org/wiki/...",
+   "kind": "regional"}
 
-The `kind` field reserves space for commit 3's regional-list records
-(kind: "regional") so 04g can downstream-sort by kind.
+The `kind` discriminator lets 04g split FPTP vs regional list records
+downstream.
 
-Coverage target: 40/40 at both 2016 and 2021. Misses are surfaced to
-stderr per the "WARN on silent join failures" rule.
+Coverage target: 40/40 constituencies at both years; 5/5 regions at
+both years (each with 4 list seats accounted for). Misses are surfaced
+to stderr per the "WARN on silent join failures" rule.
 """
 import argparse
 import json
@@ -52,7 +66,7 @@ import urllib.parse
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _senedd_constituencies_2007 import SENEDD_CONSTITUENCIES_2007
+from _senedd_constituencies_2007 import SENEDD_CONSTITUENCIES_2007, SENEDD_REGIONS_2007
 from _wiki_parser import normalize_party
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -190,6 +204,88 @@ def wiki_url(title: str) -> str:
     return f'https://en.wikipedia.org/wiki/{urllib.parse.quote(title.replace(" ", "_"), safe="_,()/")}'
 
 
+# Section header for the per-year regional-list winner table. Variants
+# observed across the 5 region articles:
+#   ===Regional MSs elected in 2021===     (post-2020 "Senedd Member")
+#   ===Regional AMs elected in 2016===     (pre-2020 "Assembly Member")
+#   ===Regional AMs elected 2011===        ("in" sometimes elided)
+# Captures the year.
+REGIONAL_SECTION_RE = re.compile(
+    r'^===+\s*Regional\s+(?:AMs|MSs)\s+elected\s+(?:in\s+)?(\d{4})\s*===+\s*$',
+    re.MULTILINE | re.IGNORECASE,
+)
+
+# Within each section's wikitable, every list-seat row begins with a
+# `bgcolor={{party color|<PartyName>}}` cell. Some region articles quote
+# the template (`bgcolor="{{...}}"`), others don't — accept either form.
+# Pulling the party name from the colour template is more robust than
+# parsing the candidate-link cell (whose wikilink target uses inconsistent
+# disambiguation).
+REGIONAL_PARTY_RE = re.compile(
+    r'bgcolor\s*=\s*"?\s*\{\{\s*party\s+color\s*\|\s*([^}|]+?)\s*\}\}',
+    re.IGNORECASE,
+)
+
+
+def parse_regional_list(wt: str, region_name: str, region_url: str) -> list[dict]:
+    """Walk a per-region article's wikitext and yield one record per
+    (region, year) in TARGET_YEARS containing a {party: seat_count} dict.
+
+    Each `===Regional <AMs|MSs> elected in YYYY===` section contains a
+    single wikitable whose rows are list-seat winners. The table ends
+    at the next `===` heading or at `|}`, whichever comes first. We
+    only need the party of each row, not the candidate name, so a
+    simple `bgcolor={{party color|...}}` count suffices.
+
+    Each record carries two parallel seat dicts:
+      seats     — normalised labels (Conservative, Labour, Plaid, ...)
+                  for downstream consumers that expect canonical names.
+      seats_raw — original Wikipedia party strings (e.g. "UK Independence
+                  Party", "Welsh Labour") so tooltips can render historical
+                  accuracy where the normaliser flattens to "Other" (UKIP
+                  in 2016 won 7 list seats — visible only via seats_raw).
+    """
+    records: list[dict] = []
+    # Find every regional-list section header.
+    headers = [(m.start(), m.end(), int(m.group(1)))
+               for m in REGIONAL_SECTION_RE.finditer(wt)]
+    for i, (_hs, he, year) in enumerate(headers):
+        if year not in TARGET_YEARS:
+            continue
+        # Section body runs from end-of-header to start of next header (or EOF).
+        next_start = headers[i + 1][0] if i + 1 < len(headers) else len(wt)
+        body = wt[he:next_start]
+        # Restrict to the first wikitable inside the section (some sections
+        # have prose followed by the table; the `{|` ... `|}` delimits it).
+        tbl_start = body.find('{|')
+        if tbl_start < 0:
+            continue
+        tbl_end = body.find('|}', tbl_start)
+        if tbl_end < 0:
+            continue
+        table = body[tbl_start:tbl_end]
+        # Count party occurrences across all rows in the table.
+        seats: dict[str, int] = {}
+        seats_raw: dict[str, int] = {}
+        for pm in REGIONAL_PARTY_RE.finditer(table):
+            raw = pm.group(1).strip()
+            party = normalize_party(raw)
+            seats[party] = seats.get(party, 0) + 1
+            seats_raw[raw] = seats_raw.get(raw, 0) + 1
+        if not seats:
+            continue
+        records.append({
+            'region':    region_name,
+            'year':      year,
+            'seats':     seats,
+            'seats_raw': seats_raw,
+            'source':    'wiki',
+            'url':       region_url,
+            'kind':      'regional',
+        })
+    return records
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
     ap.parse_args()
@@ -240,21 +336,68 @@ def main():
             })
             matches_by_year[year] += 1
 
-    records.sort(key=lambda r: (r['kind'], r['year'], r['nawc21cd']))
+    # Pass 2: regional list seats — one record per (region, year).
+    regional_misses_by_year: dict[int, list[str]] = {y: [] for y in TARGET_YEARS}
+    regional_matches_by_year: dict[int, int] = {y: 0 for y in TARGET_YEARS}
+    regional_seat_totals: dict[int, int] = {y: 0 for y in TARGET_YEARS}
+    for region_name, region_wiki_title in SENEDD_REGIONS_2007:
+        slug = region_name.lower().replace(' ', '_')
+        path = SOURCE / f'wiki_senedd_region_{slug}.json'
+        if not path.exists():
+            print(f'  WARN: {path.relative_to(ROOT)} not cached — '
+                  f'run scripts/14b first.', file=sys.stderr)
+            continue
+        raw = json.loads(path.read_text())
+        wt = raw.get('parse', {}).get('wikitext', '')
+        url = wiki_url(region_wiki_title)
+        region_recs = parse_regional_list(wt, region_name, url)
+        seen_years = {r['year'] for r in region_recs}
+        for r in region_recs:
+            records.append(r)
+            regional_matches_by_year[r['year']] += 1
+            regional_seat_totals[r['year']] += sum(r['seats'].values())
+        for y in TARGET_YEARS:
+            if y not in seen_years:
+                regional_misses_by_year[y].append(f'{region_name}')
+
+    # Sort: fptp records first (by year, code), then regional (by year, region).
+    def sort_key(r):
+        if r['kind'] == 'fptp':
+            return (0, r['year'], r['nawc21cd'])
+        return (1, r['year'], r['region'])
+    records.sort(key=sort_key)
     OUT.write_text(json.dumps(records, indent=2, ensure_ascii=False))
 
-    total = len(SENEDD_CONSTITUENCIES_2007)
+    n_constituency = len(SENEDD_CONSTITUENCIES_2007)
+    n_regions = len(SENEDD_REGIONS_2007)
+    n_fptp = sum(1 for r in records if r['kind'] == 'fptp')
+    n_regional = sum(1 for r in records if r['kind'] == 'regional')
     print(f'\nWrote {OUT.relative_to(ROOT)}: {len(records)} records '
-          f'({len(records)/len(TARGET_YEARS):.0f} avg per year)')
+          f'({n_fptp} fptp + {n_regional} regional)')
+    print('  Constituency winners (kind=fptp):')
     for y in TARGET_YEARS:
         ok = matches_by_year[y]
         miss = len(misses_by_year[y])
-        print(f'  {y}: {ok}/{total} matched · {miss} unmatched')
+        print(f'    {y}: {ok}/{n_constituency} matched · {miss} unmatched')
+    print('  Regional list seats (kind=regional):')
+    for y in TARGET_YEARS:
+        ok = regional_matches_by_year[y]
+        miss = len(regional_misses_by_year[y])
+        seat_total = regional_seat_totals[y]
+        # 5 regions × 4 list seats = 20 seats per year, full coverage.
+        print(f'    {y}: {ok}/{n_regions} regions matched · '
+              f'{seat_total}/20 list seats · {miss} unmatched')
 
     for y in TARGET_YEARS:
         if misses_by_year[y]:
-            print(f'\n  WARN: {y} unmatched ({len(misses_by_year[y])}):', file=sys.stderr)
+            print(f'\n  WARN: {y} constituencies unmatched '
+                  f'({len(misses_by_year[y])}):', file=sys.stderr)
             for m in misses_by_year[y]:
+                print(f'    {m}', file=sys.stderr)
+        if regional_misses_by_year[y]:
+            print(f'\n  WARN: {y} regions unmatched '
+                  f'({len(regional_misses_by_year[y])}):', file=sys.stderr)
+            for m in regional_misses_by_year[y]:
                 print(f'    {m}', file=sys.stderr)
 
 
