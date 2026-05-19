@@ -134,6 +134,17 @@ def main():
         if region == 'gb' and ced_history_path.exists() else {'years': [], 'ceds': {}}
     )
 
+    # Holyrood history (issue #69 phase 1C / #74) — GB-only. Per-SPC per-year
+    # winners for the Holyrood slider repaint. Polygon keys come from both
+    # `spcs` (current SPC26 codes for 2026) and `spcs_pre_review` (PRE_<SPC22CD>
+    # for the 2014 boundary set used at 2016+2021). Missing file is benign:
+    # paintAtYear silently leaves Holyrood fills at their initial values.
+    holyrood_history_path = DATA / 'holyrood_history.json'
+    holyrood_history = (
+        json.loads(holyrood_history_path.read_text())
+        if region == 'gb' and holyrood_history_path.exists() else {'years': [], 'spcs': {}}
+    )
+
     if region not in geoms.get('viewBoxes', {}):
         print(f'  ! ward_geoms.json has no viewBox for region={region!r} '
               f'(found: {sorted(geoms.get("viewBoxes", {}))}). '
@@ -220,6 +231,8 @@ def main():
     ced_eras: dict = {}
     ceds_js: list = []
     holyrood_paths: dict = {}
+    holyrood_paths_pre: dict = {}
+    holyrood_eras: dict = {}
     holyrood_js: list = []
     if region == 'gb':
         all_ceds = geoms.get('ceds', {})
@@ -260,17 +273,43 @@ def main():
 
         # Holyrood 2026 constituencies (issue #21). Same GB-only gate as CEDs:
         # the SPC layer only paints over Scotland, which the GM map doesn't show.
+        #
+        # Phase 1C (#74) adds the pre-review polygon set (SPC22, used at the
+        # 2016 + 2021 elections) under `spcs_pre_review`. Era classification
+        # mirrors the CED layer:
+        #   'pre'  → visible at year <  2026 (PRE_<SPC22CD>; 2014 boundary set)
+        #   'post' → visible at year >= 2026 (bare S16000***; 2026 review)
         all_spcs = geoms.get('spcs', {})
+        all_spcs_pre = geoms.get('spcs_pre_review', {})
         holyrood_paths = {code: s['path'] for code, s in all_spcs.items()}
+        holyrood_paths_pre = {code: s['path'] for code, s in all_spcs_pre.items()}
+        for code in all_spcs:
+            holyrood_eras[code] = 'post'
+        for code in all_spcs_pre:
+            holyrood_eras[code] = 'pre'
         holyrood_js = [{
             'spc':  r['spc'],
             'n':    r['name'],
             'w':    r['winner'],
             'y':    r['year'],
         } for r in holyrood_records]
+        # Synthetic Holyrood records for the pre-review polygons. They don't
+        # appear in holyrood_winners.json (18 only joins to current SPC26),
+        # but DOM elements need to exist for paintAtYear to light them up at
+        # year < 2026. Initial fill = grey; winner/year come from
+        # HOLYROOD_HISTORY at slider time.
+        pre_meta_by_key = holyrood_history.get('spcs', {})
+        for key, meta in all_spcs_pre.items():
+            holyrood_js.append({
+                'spc': key,
+                'n':   meta.get('name', '') or pre_meta_by_key.get(key, {}).get('name', ''),
+                'w':   None,
+                'y':   None,
+            })
         n_h_winner = sum(1 for h in holyrood_js if h['w'])
         print(f'holyrood spcs in gb: {len(holyrood_js)} (with winner: {n_h_winner}; '
-              f'grey: {len(holyrood_js) - n_h_winner})')
+              f'grey: {len(holyrood_js) - n_h_winner}; '
+              f'incl. {len(all_spcs_pre)} pre-review polygons hidden at year >= 2026)')
 
     # Senedd 2026 overlay (GB only) — one record + path per constituency,
     # painted by plurality party with the 6-seat split in the tooltip.
@@ -348,6 +387,14 @@ def main():
               f'{len(ced_history.get("years", []))} year stops, '
               f'{n_ced_years:,} CED-years')
 
+        # Holyrood-history coverage report (issue #69 phase 1C / #74).
+        n_history_spcs = len(holyrood_history.get('spcs', {}))
+        n_spc_years = sum(len(s.get('history', []))
+                            for s in holyrood_history.get('spcs', {}).values())
+        print(f'holyrood history: {n_history_spcs} SPC polygons across '
+              f'{len(holyrood_history.get("years", []))} year stops, '
+              f'{n_spc_years:,} SPC-years')
+
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
@@ -357,6 +404,8 @@ def main():
     js.append('const CED_PATHS_PRE = ' + json.dumps(ced_paths_pre, separators=(',', ':')) + ';')
     js.append('const CED_ERAS = ' + json.dumps(ced_eras, separators=(',', ':')) + ';')
     js.append('const HOLYROOD_PATHS = ' + json.dumps(holyrood_paths, separators=(',', ':')) + ';')
+    js.append('const HOLYROOD_PATHS_PRE = ' + json.dumps(holyrood_paths_pre, separators=(',', ':')) + ';')
+    js.append('const HOLYROOD_ERAS = ' + json.dumps(holyrood_eras, separators=(',', ':')) + ';')
     js.append('const SENEDD_PATHS = ' + json.dumps(senedd_paths, separators=(',', ':')) + ';')
     js.append('const PCON_PATHS = ' + json.dumps(pcon_paths, separators=(',', ':')) + ';')
     js.append('const SURREY_PATHS = ' + json.dumps(surrey_paths, separators=(',', ':')) + ';')
@@ -515,9 +564,12 @@ if (target) {
                          fill: (c.w && PARTY_COLOURS[c.w]) || NEUTRAL_FILL,
                          title: fmtCedTitle(c),
                          ds: { ced: c.ced, era: CED_ERAS[c.ced] || 'any' } })),
-    ...HOLYROOD.map(h => ({ kind: 'holyrood', d: HOLYROOD_PATHS[h.spc], y: h.y,
+    ...HOLYROOD.map(h => ({ kind: 'holyrood',
+                            d: HOLYROOD_PATHS[h.spc] || HOLYROOD_PATHS_PRE[h.spc],
+                            y: h.y,
                             fill: (h.w && PARTY_COLOURS[h.w]) || NEUTRAL_FILL,
-                            title: fmtHolyroodTitle(h) })),
+                            title: fmtHolyroodTitle(h),
+                            ds: { spc: h.spc, era: HOLYROOD_ERAS[h.spc] || 'post' } })),
     ...SENEDD.map(s => ({ kind: 'senedd', d: SENEDD_PATHS[s.s], y: s.y,
                           fill: (s.w && PARTY_COLOURS[s.w]) || NEUTRAL_FILL,
                           title: fmtSeneddTitle(s) })),
@@ -622,12 +674,22 @@ if (legend) {
     # GM output stays byte-identical. The slider chrome lives in the
     # hand-authored HTML below the legend; this JS finds it and wires it up.
     if region == 'gb' and ward_history.get('years'):
+        # Union the year stops across every history source so the slider
+        # exposes a tick for every contest year that drives a repaint —
+        # 2016 is Holyrood-only (no ward contests), but the slider still
+        # needs that tick to land readers there. Sorted ascending.
+        slider_years = sorted(set(ward_history.get('years', []))
+                              | set(ced_history.get('years', []))
+                              | set(holyrood_history.get('years', [])))
         js.append('')
-        js.append('const YEARS = ' + json.dumps(ward_history['years']) + ';')
+        js.append('const YEARS = ' + json.dumps(slider_years) + ';')
         js.append('const WARD_HISTORY = ' + json.dumps(
             ward_history['wards'], separators=(',', ':')) + ';')
         js.append('const CED_HISTORY = ' + json.dumps(
             ced_history.get('ceds', {}), separators=(',', ':')) + ';')
+        js.append('const HOLYROOD_HISTORY = ' + json.dumps(
+            holyrood_history.get('spcs', {}), separators=(',', ':'),
+            ensure_ascii=False) + ';')
         js.append(r'''
 // Stamp each ward <path> with data-gss / data-year so paintAtYear can
 // look it up. Done here (GB-only splice) rather than in the shared
@@ -688,9 +750,9 @@ function paintAtYear(targetYear) {
     if (!root) return;
     // Each overlay layer paints from its actual contest year onwards.
     // The .slider-pre-2025 / .slider-pre-2026 classes still gate
-    // Holyrood / Senedd / Surrey / PCON visibility via CSS; CEDs moved
-    // to inline-style era control here (#73 phase 1B) so pre-review
-    // polygons can also light up at year < 2026.
+    // Senedd / Surrey / PCON visibility via CSS; CEDs (#73 phase 1B)
+    // and Holyrood (#74 phase 1C) moved to inline-style era control
+    // here so pre-review polygons can also light up at year < 2026.
     root.classList.toggle('slider-pre-2024', y < 2024);
     root.classList.toggle('slider-pre-2025', y < 2025);
     root.classList.toggle('slider-pre-2026', y < 2026);
@@ -764,16 +826,59 @@ function paintAtYear(targetYear) {
         delete el.dataset.url;
       }
     });
+    // Holyrood layer — same era + carry-forward shape as CEDs (#74 phase 1C):
+    //   data-era="pre"  → hidden at year >= 2026 (PRE_<SPC22CD>; 2014 boundaries)
+    //   data-era="post" → hidden at year <  2026 (bare S16000***; 2026 review)
+    root.querySelectorAll('path.holyrood').forEach(el => {
+      const era = el.dataset.era || 'post';
+      const visible = era === 'pre' ? (y < 2026) : (y >= 2026);
+      el.style.display = visible ? '' : 'none';
+      if (!visible) return;
+      const key = el.dataset.spc;
+      const sh = key && HOLYROOD_HISTORY[key];
+      if (!sh) {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+        return;
+      }
+      let chosen = null;
+      for (const entry of sh.history) {
+        if (entry.y <= y) chosen = entry;
+        else break;
+      }
+      if (chosen) {
+        el.setAttribute('fill', PARTY_COLOURS[chosen.w] || NEUTRAL_FILL);
+        el.dataset.year = String(chosen.y);
+        if (chosen.url) el.dataset.url = chosen.url;
+        else delete el.dataset.url;
+        const titleEl = el.querySelector('title');
+        if (titleEl) {
+          const tl = ['Scottish Parliament · ' + (sh.name || '')];
+          const winLine = chosen.y + ' · winner: ' + (PARTY_DISPLAY[chosen.w] || chosen.w);
+          tl.push(chosen.candidate ? winLine + ' (' + chosen.candidate + ')' : winLine);
+          if (chosen.url) {
+            try { tl.push('Source: ' + new URL(chosen.url).hostname + ' — click to open'); }
+            catch (_) { /* invalid URL */ }
+          }
+          titleEl.textContent = tl.join('\n');
+        }
+      } else {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+      }
+    });
   });
 }
 
-// Click any ward to open its source URL — lets readers verify accuracy
-// and report errors against the canonical Wikipedia or council page.
+// Click any ward / CED / Holyrood polygon to open its source URL — lets
+// readers verify accuracy and report errors against the canonical source.
 (function wireClicks() {
   const root = document.querySelector('.map-svg');
   if (!root) return;
   root.addEventListener('click', evt => {
-    const target = evt.target.closest('path.ward');
+    const target = evt.target.closest('path.ward, path.ced, path.holyrood');
     if (!target || !target.dataset.url) return;
     window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
   });

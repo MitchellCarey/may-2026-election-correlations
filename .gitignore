@@ -73,6 +73,7 @@ data/current_winners.json
 data/current_winners_raw.json
 data/ward_history.json
 data/ced_history.json
+data/holyrood_history.json
 
 
 # Build artifacts
@@ -89,3 +90,4 @@ data/current_ced_winners_raw.json
 data/source/ced_may_2025_en_bgc.geojson
 data/ced_winners.json
 data/source/spc_may_2026_sc_bgc.geojson
+data/source/spc_dec_2022_sc_bgc.geojson

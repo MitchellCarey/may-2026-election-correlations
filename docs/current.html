@@ -76,6 +76,8 @@ const CED_PATHS = {};
 const CED_PATHS_PRE = {};
 const CED_ERAS = {};
 const HOLYROOD_PATHS = {};
+const HOLYROOD_PATHS_PRE = {};
+const HOLYROOD_ERAS = {};
 const SENEDD_PATHS = {};
 const PCON_PATHS = {};
 const SURREY_PATHS = {};
@@ -230,9 +232,12 @@ if (target) {
                          fill: (c.w && PARTY_COLOURS[c.w]) || NEUTRAL_FILL,
                          title: fmtCedTitle(c),
                          ds: { ced: c.ced, era: CED_ERAS[c.ced] || 'any' } })),
-    ...HOLYROOD.map(h => ({ kind: 'holyrood', d: HOLYROOD_PATHS[h.spc], y: h.y,
+    ...HOLYROOD.map(h => ({ kind: 'holyrood',
+                            d: HOLYROOD_PATHS[h.spc] || HOLYROOD_PATHS_PRE[h.spc],
+                            y: h.y,
                             fill: (h.w && PARTY_COLOURS[h.w]) || NEUTRAL_FILL,
-                            title: fmtHolyroodTitle(h) })),
+                            title: fmtHolyroodTitle(h),
+                            ds: { spc: h.spc, era: HOLYROOD_ERAS[h.spc] || 'post' } })),
     ...SENEDD.map(s => ({ kind: 'senedd', d: SENEDD_PATHS[s.s], y: s.y,
                           fill: (s.w && PARTY_COLOURS[s.w]) || NEUTRAL_FILL,
                           title: fmtSeneddTitle(s) })),
