@@ -758,10 +758,32 @@ if (legend) {
             ensure_ascii=False) + ';')
         # SENEDD_HISTORY shape:
         #   {<polygon_key>: {name, region, history: [{y, w, src, url, candidate?}]}}
-        # Regions live under SENEDD_REGION_HISTORY (commit 6 wires the tooltip).
+        # SENEDD_REGION_HISTORY (issue #69 phase 1D / #72 commit 6) carries
+        # the d'Hondt regional-list seat allocations per region per year for
+        # the 2016+2021 elections. Each entry has both `seats` (normalised
+        # labels for downstream sorting) and `seats_raw` (raw Wikipedia
+        # party strings — e.g. "UK Independence Party" — so the tooltip
+        # can render historical accuracy where normalize_party would flatten
+        # to "Other"). SENEDD_RAW_DISPLAY shortens the raw labels for the
+        # tooltip without losing the distinction.
         js.append('const SENEDD_HISTORY = ' + json.dumps(
             senedd_history.get('constituencies', {}), separators=(',', ':'),
             ensure_ascii=False) + ';')
+        js.append('const SENEDD_REGION_HISTORY = ' + json.dumps(
+            senedd_history.get('regions', {}), separators=(',', ':'),
+            ensure_ascii=False) + ';')
+        js.append('const SENEDD_RAW_DISPLAY = ' + json.dumps({
+            'Welsh Labour':              'Lab',
+            'Welsh Conservatives':       'Con',
+            'Plaid Cymru':               'Plaid',
+            'Welsh Liberal Democrats':   'LibDem',
+            'UK Independence Party':     'UKIP',
+            'Green Party of England and Wales': 'Green',
+            'Reform UK':                 'Reform',
+            'Abolish the Welsh Assembly Party': 'Abolish',
+            'Independent':               'Indep',
+            'Independent (politician)':  'Indep',
+        }) + ';')
         js.append(r'''
 // Stamp each ward <path> with data-gss / data-year so paintAtYear can
 // look it up. Done here (GB-only splice) rather than in the shared
@@ -983,6 +1005,36 @@ function paintAtYear(targetYear) {
             if (sh.region) tl.push('Region: ' + sh.region);
             const winLine = chosen.y + ' · winner: ' + (PARTY_DISPLAY[chosen.w] || chosen.w);
             tl.push(chosen.candidate ? winLine + ' (' + chosen.candidate + ')' : winLine);
+            // Regional list breakdown (issue #69 phase 1D / #72 commit 6).
+            // For each pre-review constituency at year < 2026, splice in
+            // the four list-seat winners for the constituency's electoral
+            // region, carry-forwarded the same way as the constituency
+            // winner. Prefer the raw seat dict over the normalised one so
+            // historically distinct labels like UKIP, Welsh Labour, etc.
+            // render as themselves rather than collapsing to "Other".
+            const rh = sh.region && SENEDD_REGION_HISTORY[sh.region];
+            if (rh && rh.history) {
+              let regionChosen = null;
+              for (const e of rh.history) {
+                if (e.y <= y) regionChosen = e;
+                else break;
+              }
+              if (regionChosen) {
+                const raw = regionChosen.seats_raw || {};
+                const useRaw = Object.keys(raw).length > 0;
+                const seats = useRaw ? raw : (regionChosen.seats || {});
+                const entries = Object.entries(seats).sort((a, b) => b[1] - a[1]);
+                if (entries.length) {
+                  const label = entries.map(([p, n]) => {
+                    const display = useRaw
+                      ? (SENEDD_RAW_DISPLAY[p] || p)
+                      : (PARTY_DISPLAY[p] || p);
+                    return display + ' ' + n;
+                  }).join(', ');
+                  tl.push('Regional list ' + regionChosen.y + ': ' + label);
+                }
+              }
+            }
             if (chosen.url) {
               try { tl.push('Source: ' + new URL(chosen.url).hostname + ' — click to open'); }
               catch (_) { /* invalid URL */ }
