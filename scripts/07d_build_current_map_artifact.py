@@ -107,8 +107,31 @@ def main():
         json.loads(pcon_geom_path.read_text())
         if region == 'gb' and pcon_geom_path.exists() else {'constituencies': {}}
     )
+    # Pre-review PCON polygons + per-PCON history (issue #69 phase 1E / #71).
+    # The 2010-era boundary set (PCON_DEC_2021 = identical geometry to the
+    # boundaries in legal effect at the 2015 / 2017 / 2019 elections; ONS
+    # snapshot date is December 2021) and the per-PCON × per-year winners
+    # sourced from House of Commons Library CBP-8647 (the authoritative
+    # academic-grade source — see CLAUDE.md "Data accuracy is paramount").
+    # Era='pre'/'post' gating in paintAtYear toggles which polygon set is
+    # visible based on the slider year, with the boundary at 2024 (the
+    # July 2024 review).
+    pcon_2010_geom_path = DATA / 'pcon_geoms_2010.json'
+    pcon_history_path = DATA / 'ge_history.json'
+    pcon_geoms_2010 = (
+        json.loads(pcon_2010_geom_path.read_text())
+        if region == 'gb' and pcon_2010_geom_path.exists() else {'constituencies': {}}
+    )
+    ge_history = (
+        json.loads(pcon_history_path.read_text())
+        if region == 'gb' and pcon_history_path.exists()
+        else {'years': [], 'pcons': {}}
+    )
     # NI codes filtered out here so the rest of 07d (and the JS bundle) only
-    # sees the 632 GB seats. England=E14, Wales=W07, Scotland=S14.
+    # sees the 632 GB seats. England=E14, Wales=W07, Scotland=S14 for the
+    # 2024 boundary set; the 2010 set used N06 for NI (codes are largely
+    # disjoint from PCON24CD; only 5 unchanged Scottish constituencies
+    # overlap).
     GB_PCON_PREFIXES = ('E14', 'W07', 'S14')
     pcon_records = [r for r in pcon_records if r['code'].startswith(GB_PCON_PREFIXES)]
 
@@ -381,11 +404,23 @@ def main():
     # GE 2024 overlay (GB only) — one record + path per Westminster
     # constituency, painted by 2024 GE winner with the candidate name in the
     # tooltip. Pre-filtered to GB above.
+    #
+    # Phase 1E (#71) adds the pre-review polygon set (PCON_DEC_2021, same
+    # geometry as PCON_DEC_2010 — Westminster boundaries did not change
+    # between 2010 and the July 2024 review) under `pcon_geoms_2010` plus
+    # per-PCON × per-year history under `ge_history` (HoC Library CBP-8647).
+    # Era classification mirrors Holyrood / Senedd:
+    #   'pre'  → visible at year <  2024 (PRE_<PCON21CD>; 2010 boundary set,
+    #             driven by ge_history at slider time)
+    #   'post' → visible at year >= 2024 (bare PCON24CD; July 2024 review,
+    #             single-year fill from ge2024.json)
     pcon_paths: dict = {
         code: c['path']
         for code, c in pcon_geoms.get('constituencies', {}).items()
         if code.startswith(GB_PCON_PREFIXES)
     }
+    pcon_paths_pre: dict = {}
+    pcon_eras: dict = {}
     pcon_js = [{
         'p': r['code'],
         'n': r['name'],
@@ -394,9 +429,47 @@ def main():
         'y': r['year'],
     } for r in pcon_records]
     if region == 'gb':
+        # Era stamping — 2024 polygons are 'post', 2010 polygons are 'pre'.
+        # Keys for the 2010 set use a PRE_<PCON21CD> prefix to keep them
+        # disjoint from the 5 Scottish PCON24CDs that overlap (boundaries
+        # unchanged for those 5 seats, but the era distinction still matters
+        # because the historical record lives in ge_history, not ge2024).
+        for code in pcon_paths:
+            pcon_eras[code] = 'post'
+        all_pcon_pre = pcon_geoms_2010.get('constituencies', {})
+        # Mirror the GB filter applied to the 2024 set — N06* (NI) gets
+        # excluded at render time. Code prefixes in the 2010 set are
+        # E14/W07/S14/N06 (note N06 vs. 2024's N05 because the 2010 codes
+        # are a separate registry).
+        pcon_paths_pre = {
+            f'PRE_{code}': c['path']
+            for code, c in all_pcon_pre.items()
+            if code.startswith(GB_PCON_PREFIXES)
+        }
+        for key in pcon_paths_pre:
+            pcon_eras[key] = 'pre'
+        # Synthetic PCON records for the pre-review polygons. They don't
+        # appear in ge2024.json (which is 2024-only), but DOM elements need
+        # to exist for paintAtYear to light them up at year < 2024. Initial
+        # fill = grey; winner / year / candidate come from PCON_HISTORY at
+        # slider time.
+        pre_meta_by_key = ge_history.get('pcons', {})
+        for code in all_pcon_pre:
+            if not code.startswith(GB_PCON_PREFIXES):
+                continue
+            key = f'PRE_{code}'
+            meta = pre_meta_by_key.get(code, {})
+            pcon_js.append({
+                'p': key,
+                'n': meta.get('name', all_pcon_pre[code].get('name', '')),
+                'w': None,
+                'c': None,
+                'y': None,
+            })
         n_pcon_winner = sum(1 for p in pcon_js if p['w'])
         print(f'pcon in gb: {len(pcon_js)} (with winner: {n_pcon_winner}; '
-              f'grey: {len(pcon_js) - n_pcon_winner})')
+              f'grey: {len(pcon_js) - n_pcon_winner}; '
+              f'incl. {len(pcon_paths_pre)} pre-review polygons hidden at year >= 2024)')
 
     # Surrey unitary overlay (GB only) — one record + path per ward in the
     # two new unitaries, painted by 2026 plurality with seats + votes in
@@ -456,6 +529,26 @@ def main():
               f'{len(senedd_history.get("years", []))} year stops '
               f'({n_senedd_years} constituency-years, {n_region_years} region-years)')
 
+        # GE-history coverage report (issue #69 phase 1E / #71). Only GB
+        # rows are reported — N06* records sit in ge_history.json but are
+        # filtered out at render time, mirroring the 2024-side N05 filter.
+        gb_history_pcons = [c for c in ge_history.get('pcons', {})
+                            if c.startswith(GB_PCON_PREFIXES)]
+        n_pcon_history_years = sum(
+            len(p.get('history', []))
+            for c, p in ge_history.get('pcons', {}).items()
+            if c.startswith(GB_PCON_PREFIXES)
+        )
+        # Year stops = HoC's 3 (2015/2017/2019) plus the GE 2024 contest
+        # carried in ge2024.json (PCON_HISTORY holds a one-entry history
+        # per post-era key). The two registries stay separate so 19b/20b
+        # regenerates without re-running the GE 2024 pipeline.
+        slider_pcon_years = sorted(set(ge_history.get('years', [])) | {2024})
+        print(f'ge history: {len(gb_history_pcons)} pre-era + {len(pcon_paths)} '
+              f'post-era PCON polygons across {len(slider_pcon_years)} year stops '
+              f'({n_pcon_history_years:,} PCON-years from HoC + '
+              f'{len(pcon_paths)} from ge2024.json)')
+
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
@@ -471,6 +564,8 @@ def main():
     js.append('const SENEDD_PATHS_PRE = ' + json.dumps(senedd_paths_pre, separators=(',', ':')) + ';')
     js.append('const SENEDD_ERAS = ' + json.dumps(senedd_eras, separators=(',', ':')) + ';')
     js.append('const PCON_PATHS = ' + json.dumps(pcon_paths, separators=(',', ':')) + ';')
+    js.append('const PCON_PATHS_PRE = ' + json.dumps(pcon_paths_pre, separators=(',', ':')) + ';')
+    js.append('const PCON_ERAS = ' + json.dumps(pcon_eras, separators=(',', ':')) + ';')
     js.append('const SURREY_PATHS = ' + json.dumps(surrey_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
     js.append('const CEDS = ' + json.dumps(ceds_js, separators=(',', ':')) + ';')
@@ -638,9 +733,11 @@ if (target) {
                           fill: (s.w && PARTY_COLOURS[s.w]) || NEUTRAL_FILL,
                           title: fmtSeneddTitle(s),
                           ds: { senedd: s.s, era: SENEDD_ERAS[s.s] || 'post' } })),
-    ...PCON.map(p => ({ kind: 'pcon', d: PCON_PATHS[p.p], y: p.y,
+    ...PCON.map(p => ({ kind: 'pcon',
+                        d: PCON_PATHS[p.p] || PCON_PATHS_PRE[p.p], y: p.y,
                         fill: (p.w && PARTY_COLOURS[p.w]) || NEUTRAL_FILL,
-                        title: fmtPconTitle(p) })),
+                        title: fmtPconTitle(p),
+                        ds: { pcon: p.p, era: PCON_ERAS[p.p] || 'post' } })),
     ...SURREY.map(s => ({ kind: 'surrey', d: SURREY_PATHS[s.c], y: s.y,
                           fill: (s.w && PARTY_COLOURS[s.w]) || NEUTRAL_FILL,
                           title: fmtSurreyTitle(s) })),
@@ -743,10 +840,13 @@ if (legend) {
         # exposes a tick for every contest year that drives a repaint —
         # 2016 is Holyrood-only (no ward contests), but the slider still
         # needs that tick to land readers there. Sorted ascending.
+        # Phase 1E (#71) adds 2015 (and 2017 / 2019 if they weren't already
+        # in the union — they are, via ward / CED contests).
         slider_years = sorted(set(ward_history.get('years', []))
                               | set(ced_history.get('years', []))
                               | set(holyrood_history.get('years', []))
-                              | set(senedd_history.get('years', [])))
+                              | set(senedd_history.get('years', []))
+                              | set(ge_history.get('years', [])))
         js.append('')
         js.append('const YEARS = ' + json.dumps(slider_years) + ';')
         js.append('const WARD_HISTORY = ' + json.dumps(
@@ -784,6 +884,43 @@ if (legend) {
             'Independent':               'Indep',
             'Independent (politician)':  'Indep',
         }) + ';')
+
+        # PCON_HISTORY (issue #69 phase 1E / #71). Keyed by polygon key —
+        # PRE_<PCON21CD> for pre-era 2010-boundary polygons (3 history
+        # entries: 2015 / 2017 / 2019, from HoC Library CBP-8647), bare
+        # PCON24CD for post-era 2024-boundary polygons (1 history entry:
+        # 2024, from ge2024.json). paintAtYear at year < 2024 walks PRE_*
+        # histories; at year >= 2024 walks bare-code histories.
+        pcon_history: dict = {}
+        for code, p in ge_history.get('pcons', {}).items():
+            if not code.startswith(GB_PCON_PREFIXES):
+                continue
+            pcon_history[f'PRE_{code}'] = {
+                'name': p.get('name', ''),
+                'history': p.get('history', []),
+            }
+        # Seed post-era 2024 records from ge2024.json so the same dict
+        # carries both eras. The renderer's lookup is PCON_HISTORY[el.dataset.pcon]
+        # — eras are disjoint by polygon-key construction (PRE_ prefix vs bare),
+        # so there's no collision.
+        for r in pcon_records:
+            pcon_history[r['code']] = {
+                'name': r['name'],
+                'history': [{
+                    'y': r['year'],
+                    'w': r['winner_party'],
+                    'candidate': r.get('candidate'),
+                    'src': 'wiki',
+                    # ge2024.json doesn't carry a per-PCON URL — the
+                    # tooltip will show "winner: X (Candidate)" without
+                    # a Source line, matching today's behaviour. Leave
+                    # empty so the click handler's `!dataset.url` guard
+                    # keeps the cursor at default for 2024-era seats.
+                    'url': '',
+                }],
+            }
+        js.append('const PCON_HISTORY = ' + json.dumps(
+            pcon_history, separators=(',', ':'), ensure_ascii=False) + ';')
         js.append(r'''
 // Stamp each ward <path> with data-gss / data-year so paintAtYear can
 // look it up. Done here (GB-only splice) rather than in the shared
@@ -843,11 +980,11 @@ function paintAtYear(targetYear) {
     const root = document.querySelector('.map-svg');
     if (!root) return;
     // Each overlay layer paints from its actual contest year onwards.
-    // The .slider-pre-2025 / .slider-pre-2026 classes still gate
-    // Senedd / Surrey / PCON visibility via CSS; CEDs (#73 phase 1B)
-    // and Holyrood (#74 phase 1C) moved to inline-style era control
-    // here so pre-review polygons can also light up at year < 2026.
-    root.classList.toggle('slider-pre-2024', y < 2024);
+    // .slider-pre-2025 is dead code today (CEDs moved to inline-style era
+    // control in #73 phase 1B); .slider-pre-2026 still gates Surrey via
+    // CSS. CEDs (#73 phase 1B), Holyrood (#74 phase 1C), Senedd (#72
+    // phase 1D), and PCON (#71 phase 1E) now use inline-style era control
+    // below so pre-review polygons can light up at year < their era boundary.
     root.classList.toggle('slider-pre-2025', y < 2025);
     root.classList.toggle('slider-pre-2026', y < 2026);
     root.querySelectorAll('path.ward').forEach(el => {
@@ -1048,16 +1185,67 @@ function paintAtYear(targetYear) {
         delete el.dataset.url;
       }
     });
+    // PCON (Westminster) layer — era + carry-forward shape (#71 phase 1E):
+    //   data-era="pre"  → hidden at year >= 2024 (PRE_<PCON21CD>; 2010 boundaries
+    //                     in legal effect at 2015 / 2017 / 2019)
+    //   data-era="post" → hidden at year <  2024 (bare PCON24CD; July 2024 review)
+    // PCON_HISTORY is keyed by polygon key (PRE_<code> for pre-era, bare code
+    // for post-era). Pre-era entries carry a HoC briefing URL for click-through;
+    // post-era entries have an empty URL string (ge2024.json doesn't carry one).
+    root.querySelectorAll('path.pcon').forEach(el => {
+      const era = el.dataset.era || 'post';
+      const visible = era === 'pre' ? (y < 2024) : (y >= 2024);
+      el.style.display = visible ? '' : 'none';
+      if (!visible) return;
+      const key = el.dataset.pcon;
+      const ph = key && PCON_HISTORY[key];
+      if (!ph) {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+        return;
+      }
+      let chosen = null;
+      for (const entry of ph.history) {
+        if (entry.y <= y) chosen = entry;
+        else break;
+      }
+      if (chosen) {
+        el.setAttribute('fill', PARTY_COLOURS[chosen.w] || NEUTRAL_FILL);
+        el.dataset.year = String(chosen.y);
+        if (chosen.url) el.dataset.url = chosen.url;
+        else delete el.dataset.url;
+        const titleEl = el.querySelector('title');
+        if (titleEl) {
+          const tl = ['Westminster · ' + (ph.name || '')];
+          const winLine = chosen.y + ' · winner: ' + (PARTY_DISPLAY[chosen.w] || chosen.w);
+          tl.push(chosen.candidate ? winLine + ' (' + chosen.candidate + ')' : winLine);
+          if (chosen.url) {
+            try { tl.push('Source: ' + new URL(chosen.url).hostname + ' — click to open'); }
+            catch (_) { /* invalid URL */ }
+          }
+          titleEl.textContent = tl.join('\n');
+        }
+      } else {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+      }
+    });
   });
 }
 
-// Click any ward / CED / Holyrood polygon to open its source URL — lets
-// readers verify accuracy and report errors against the canonical source.
+// Click any ward / CED / Holyrood / Senedd / PCON polygon to open its
+// source URL — lets readers verify accuracy and report errors against
+// the canonical source. PCON click-through covers pre-era HoC Library
+// data (2015 / 2017 / 2019); post-era PCON (2024) has no URL in
+// ge2024.json and so does nothing on click, same as today.
 (function wireClicks() {
   const root = document.querySelector('.map-svg');
   if (!root) return;
   root.addEventListener('click', evt => {
-    const target = evt.target.closest('path.ward, path.ced, path.holyrood, path.senedd');
+    const target = evt.target.closest(
+      'path.ward, path.ced, path.holyrood, path.senedd, path.pcon');
     if (!target || !target.dataset.url) return;
     window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
   });
