@@ -68,6 +68,12 @@ data/source/official_*.zip
 data/source/surrey_council_*.html
 data/source/surrey_electionmap_*.html
 
+# Cached House of Commons Library 1918-2019 election dataset (CBP-8647)
+# from scripts/19b. ~5 MB xlsx + ~2 MB csv — re-fetchable via the
+# Cloudflare-bypass helper; the parsed ge_history.json IS committed.
+data/source/hoc_ge_1918_2019_by_pcon.xlsx
+data/source/hoc_ge_1918_2019.csv
+
 # Built per-ward datasets that are reproducible from the cached wiki + geom files.
 data/current_winners.json
 data/current_winners_raw.json
