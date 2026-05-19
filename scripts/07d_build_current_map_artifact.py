@@ -467,9 +467,9 @@ def main():
                 'y': None,
             })
         n_pcon_winner = sum(1 for p in pcon_js if p['w'])
-        print(f'pcon in gb: {len(pcon_js)} (with winner: {n_pcon_winner}; '
-              f'grey: {len(pcon_js) - n_pcon_winner}; '
-              f'incl. {len(pcon_paths_pre)} pre-review polygons hidden at year >= 2024)')
+        print(f'pcon in gb: {len(pcon_js):,} (with winner: {n_pcon_winner:,}; '
+              f'grey: {len(pcon_js) - n_pcon_winner:,}; '
+              f'incl. {len(pcon_paths_pre):,} pre-review polygons hidden at year >= 2024)')
 
     # Surrey unitary overlay (GB only) — one record + path per ward in the
     # two new unitaries, painted by 2026 plurality with seats + votes in
