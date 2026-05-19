@@ -189,10 +189,16 @@ def parse_sheet(ws, year: int) -> list[dict]:
             continue
 
         # Pick the raw winner — the party-group label with the most votes.
-        # Tie-breaking by the iteration order is stable per Python dict,
-        # which mirrors the column order in the XLSX (Con before Lab etc.)
-        # — but a real tie would surface as a stderr WARN.
-        raw_winner_label, _ = max(votes_raw.items(), key=lambda kv: kv[1])
+        # On the (vanishingly rare) tie, `max` returns the first
+        # iteration-order entry; emit a stderr WARN so a real tie is at
+        # least visible in the build log.
+        sorted_votes = sorted(votes_raw.items(), key=lambda kv: kv[1], reverse=True)
+        raw_winner_label, top_votes = sorted_votes[0]
+        if len(sorted_votes) > 1 and sorted_votes[1][1] == top_votes:
+            tied = [lbl for lbl, n in sorted_votes if n == top_votes]
+            print(f'  WARN: {code} {name} ({year}): vote tie at {top_votes:,} '
+                  f'between {", ".join(tied)} — picked {raw_winner_label}',
+                  file=sys.stderr)
 
         # Speaker override beats whatever the votes-max said.
         override = SPEAKER_OVERRIDES.get((code, year))
