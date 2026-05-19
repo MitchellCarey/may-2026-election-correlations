@@ -75,6 +75,22 @@ def main():
         json.loads(senedd_geom_path.read_text())
         if region == 'gb' and senedd_geom_path.exists() else {'constituencies': {}}
     )
+    # Pre-2026 Senedd polygons + per-constituency + per-region history
+    # (issue #69 phase 1D / #72). The 40-seat NAWC21 layout was in legal
+    # effect at the 2016 + 2021 elections; the 16-seat S0x layout came in
+    # for 2026. era="pre"/"post" gating in paintAtYear toggles which
+    # polygon set is visible based on the slider year.
+    senedd_geom_2007_path = DATA / 'senedd_geoms_2007.json'
+    senedd_history_path = DATA / 'senedd_history.json'
+    senedd_geoms_2007 = (
+        json.loads(senedd_geom_2007_path.read_text())
+        if region == 'gb' and senedd_geom_2007_path.exists() else {'constituencies': {}}
+    )
+    senedd_history = (
+        json.loads(senedd_history_path.read_text())
+        if region == 'gb' and senedd_history_path.exists()
+        else {'years': [], 'constituencies': {}, 'regions': {}}
+    )
     # GE 2024 (Westminster) overlay — GB-only layer that paints every
     # constituency by its 4 July 2024 winner. Same gating as Senedd: NI
     # is fetched on disk but filtered out at render time because the gb
@@ -313,9 +329,17 @@ def main():
 
     # Senedd 2026 overlay (GB only) — one record + path per constituency,
     # painted by plurality party with the 6-seat split in the tooltip.
+    #
+    # Phase 1D (#72) adds the pre-review polygon set (NAWC21, used at the
+    # 2016 + 2021 elections) under senedd_geoms_2007 plus per-constituency
+    # history under senedd_history. Era classification mirrors Holyrood:
+    #   'pre'  → visible at year <  2026 (PRE_<NAWC21CD>; 2007 boundary set)
+    #   'post' → visible at year >= 2026 (bare S01..S16; 2026 layout)
     senedd_paths: dict = {
         code: c['path'] for code, c in senedd_geoms.get('constituencies', {}).items()
     }
+    senedd_paths_pre: dict = {}
+    senedd_eras: dict = {}
     senedd_js = [{
         's':     r['code'],
         'n':     r['name'],
@@ -325,9 +349,34 @@ def main():
         'votes': r['votes'],
     } for r in senedd_records]
     if region == 'gb':
+        all_senedd_pre = senedd_geoms_2007.get('constituencies', {})
+        senedd_paths_pre = {f'PRE_{code}': c['path']
+                            for code, c in all_senedd_pre.items()}
+        for code in senedd_paths:
+            senedd_eras[code] = 'post'
+        for key in senedd_paths_pre:
+            senedd_eras[key] = 'pre'
+        # Synthetic Senedd records for the pre-review polygons. They don't
+        # appear in senedd_2026.json (15 only joins to the 2026 16-seat
+        # layout), but DOM elements need to exist for paintAtYear to light
+        # them up at year < 2026. Initial fill = grey; winner/year come
+        # from SENEDD_HISTORY at slider time.
+        pre_meta_by_key = senedd_history.get('constituencies', {})
+        for code in all_senedd_pre:
+            key = f'PRE_{code}'
+            meta = pre_meta_by_key.get(key, {})
+            senedd_js.append({
+                's':     key,
+                'n':     meta.get('name', all_senedd_pre[code].get('name', '')),
+                'w':     None,
+                'y':     None,
+                'seats': {},
+                'votes': {},
+            })
         n_senedd_winner = sum(1 for s in senedd_js if s['w'])
         print(f'senedd in gb: {len(senedd_js)} (with winner: {n_senedd_winner}; '
-              f'grey: {len(senedd_js) - n_senedd_winner})')
+              f'grey: {len(senedd_js) - n_senedd_winner}; '
+              f'incl. {len(senedd_paths_pre)} pre-review polygons hidden at year >= 2026)')
 
     # GE 2024 overlay (GB only) — one record + path per Westminster
     # constituency, painted by 2024 GE winner with the candidate name in the
@@ -395,6 +444,18 @@ def main():
               f'{len(holyrood_history.get("years", []))} year stops, '
               f'{n_spc_years:,} SPC-years')
 
+        # Senedd-history coverage report (issue #69 phase 1D / #72).
+        n_history_senedd = len(senedd_history.get('constituencies', {}))
+        n_senedd_years = sum(len(c.get('history', []))
+                              for c in senedd_history.get('constituencies', {}).values())
+        n_history_regions = len(senedd_history.get('regions', {}))
+        n_region_years = sum(len(r.get('history', []))
+                              for r in senedd_history.get('regions', {}).values())
+        print(f'senedd history: {n_history_senedd} constituency polygons + '
+              f'{n_history_regions} regions across '
+              f'{len(senedd_history.get("years", []))} year stops '
+              f'({n_senedd_years} constituency-years, {n_region_years} region-years)')
+
     js = []
     js.append('const VIEWBOX = ' + json.dumps(geoms['viewBoxes'][region]) + ';')
     js.append('const WARD_PATHS = ' + json.dumps(ward_paths, separators=(',', ':')) + ';')
@@ -407,6 +468,8 @@ def main():
     js.append('const HOLYROOD_PATHS_PRE = ' + json.dumps(holyrood_paths_pre, separators=(',', ':')) + ';')
     js.append('const HOLYROOD_ERAS = ' + json.dumps(holyrood_eras, separators=(',', ':')) + ';')
     js.append('const SENEDD_PATHS = ' + json.dumps(senedd_paths, separators=(',', ':')) + ';')
+    js.append('const SENEDD_PATHS_PRE = ' + json.dumps(senedd_paths_pre, separators=(',', ':')) + ';')
+    js.append('const SENEDD_ERAS = ' + json.dumps(senedd_eras, separators=(',', ':')) + ';')
     js.append('const PCON_PATHS = ' + json.dumps(pcon_paths, separators=(',', ':')) + ';')
     js.append('const SURREY_PATHS = ' + json.dumps(surrey_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
@@ -570,9 +633,11 @@ if (target) {
                             fill: (h.w && PARTY_COLOURS[h.w]) || NEUTRAL_FILL,
                             title: fmtHolyroodTitle(h),
                             ds: { spc: h.spc, era: HOLYROOD_ERAS[h.spc] || 'post' } })),
-    ...SENEDD.map(s => ({ kind: 'senedd', d: SENEDD_PATHS[s.s], y: s.y,
+    ...SENEDD.map(s => ({ kind: 'senedd',
+                          d: SENEDD_PATHS[s.s] || SENEDD_PATHS_PRE[s.s], y: s.y,
                           fill: (s.w && PARTY_COLOURS[s.w]) || NEUTRAL_FILL,
-                          title: fmtSeneddTitle(s) })),
+                          title: fmtSeneddTitle(s),
+                          ds: { senedd: s.s, era: SENEDD_ERAS[s.s] || 'post' } })),
     ...PCON.map(p => ({ kind: 'pcon', d: PCON_PATHS[p.p], y: p.y,
                         fill: (p.w && PARTY_COLOURS[p.w]) || NEUTRAL_FILL,
                         title: fmtPconTitle(p) })),
@@ -680,7 +745,8 @@ if (legend) {
         # needs that tick to land readers there. Sorted ascending.
         slider_years = sorted(set(ward_history.get('years', []))
                               | set(ced_history.get('years', []))
-                              | set(holyrood_history.get('years', [])))
+                              | set(holyrood_history.get('years', []))
+                              | set(senedd_history.get('years', [])))
         js.append('')
         js.append('const YEARS = ' + json.dumps(slider_years) + ';')
         js.append('const WARD_HISTORY = ' + json.dumps(
@@ -689,6 +755,12 @@ if (legend) {
             ced_history.get('ceds', {}), separators=(',', ':')) + ';')
         js.append('const HOLYROOD_HISTORY = ' + json.dumps(
             holyrood_history.get('spcs', {}), separators=(',', ':'),
+            ensure_ascii=False) + ';')
+        # SENEDD_HISTORY shape:
+        #   {<polygon_key>: {name, region, history: [{y, w, src, url, candidate?}]}}
+        # Regions live under SENEDD_REGION_HISTORY (commit 6 wires the tooltip).
+        js.append('const SENEDD_HISTORY = ' + json.dumps(
+            senedd_history.get('constituencies', {}), separators=(',', ':'),
             ensure_ascii=False) + ';')
         js.append(r'''
 // Stamp each ward <path> with data-gss / data-year so paintAtYear can
@@ -869,6 +941,61 @@ function paintAtYear(targetYear) {
         delete el.dataset.url;
       }
     });
+    // Senedd layer — same era + carry-forward shape as Holyrood (#72 phase 1D):
+    //   data-era="pre"  → hidden at year >= 2026 (PRE_<NAWC21CD>; 2007 40-seat layout)
+    //   data-era="post" → hidden at year <  2026 (bare S01..S16; 2026 16-seat layout)
+    // SENEDD_HISTORY is keyed by polygon key (`PRE_<NAWC21CD>` for pre-review,
+    // bare `S0x` for current era).
+    //
+    // Tooltip behaviour: era=pre rebuilds the tooltip from SENEDD_HISTORY
+    // (FPTP winner + region label + source URL); era=post leaves the initial
+    // fmtSeneddTitle tooltip in place because it already carries the rich
+    // 6-seat split that the historical PR layout doesn't have. Only fill /
+    // dataset metadata are refreshed for era=post — the rewrite would
+    // otherwise lose the seats line on every slider tick.
+    root.querySelectorAll('path.senedd').forEach(el => {
+      const era = el.dataset.era || 'post';
+      const visible = era === 'pre' ? (y < 2026) : (y >= 2026);
+      el.style.display = visible ? '' : 'none';
+      if (!visible) return;
+      const key = el.dataset.senedd;
+      const sh = key && SENEDD_HISTORY[key];
+      if (!sh) {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+        return;
+      }
+      let chosen = null;
+      for (const entry of sh.history) {
+        if (entry.y <= y) chosen = entry;
+        else break;
+      }
+      if (chosen) {
+        el.setAttribute('fill', PARTY_COLOURS[chosen.w] || NEUTRAL_FILL);
+        el.dataset.year = String(chosen.y);
+        if (chosen.url) el.dataset.url = chosen.url;
+        else delete el.dataset.url;
+        if (era === 'pre') {
+          const titleEl = el.querySelector('title');
+          if (titleEl) {
+            const tl = ['Senedd · ' + (sh.name || '')];
+            if (sh.region) tl.push('Region: ' + sh.region);
+            const winLine = chosen.y + ' · winner: ' + (PARTY_DISPLAY[chosen.w] || chosen.w);
+            tl.push(chosen.candidate ? winLine + ' (' + chosen.candidate + ')' : winLine);
+            if (chosen.url) {
+              try { tl.push('Source: ' + new URL(chosen.url).hostname + ' — click to open'); }
+              catch (_) { /* invalid URL */ }
+            }
+            titleEl.textContent = tl.join('\n');
+          }
+        }
+      } else {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+      }
+    });
   });
 }
 
@@ -878,7 +1005,7 @@ function paintAtYear(targetYear) {
   const root = document.querySelector('.map-svg');
   if (!root) return;
   root.addEventListener('click', evt => {
-    const target = evt.target.closest('path.ward, path.ced, path.holyrood');
+    const target = evt.target.closest('path.ward, path.ced, path.holyrood, path.senedd');
     if (!target || !target.dataset.url) return;
     window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
   });

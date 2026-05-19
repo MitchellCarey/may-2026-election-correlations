@@ -1094,12 +1094,13 @@ body {
    not below it. Phases 1B-1E will wire HISTORICAL overlays (e.g. PCON 2019,
    CED 2021) and remove the corresponding gates. */
 .map-svg.slider-pre-2024 path.pcon { display: none; }     /* GE 2024 */
-/* CED visibility is era-aware as of #69 phase 1B (#73), and Holyrood as of
-   phase 1C (#74) — paintAtYear in scripts/07d_build_current_map_artifact.py
-   manages display via inline style on each path.ced / path.holyrood based
-   on data-era + slider year. The old '.slider-pre-2025 path.ced' and
-   '.slider-pre-2026 path.holyrood' rules lived here. */
-.map-svg.slider-pre-2026 path.senedd,                     /* Senedd 7 May 2026 */
+/* CED visibility is era-aware as of #69 phase 1B (#73); Holyrood as of
+   phase 1C (#74); Senedd as of phase 1D (#72). paintAtYear in
+   scripts/07d_build_current_map_artifact.py manages display via inline
+   style on each path.ced / path.holyrood / path.senedd based on
+   data-era + slider year. The old '.slider-pre-2025 path.ced',
+   '.slider-pre-2026 path.holyrood', and '.slider-pre-2026 path.senedd'
+   rules lived here. */
 .map-svg.slider-pre-2026 path.surrey { display: none; }   /* East/West Surrey inaugural 7 May 2026 */
 
 /* FOOTER */
