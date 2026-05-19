@@ -71,14 +71,14 @@ def wikipedia_url(title: str) -> str:
 # Used by Pass 2 to recover the source URL for 2026 records (15 doesn't
 # carry per-constituency URLs into senedd_2026.json — it parses one
 # Wikipedia article per constituency, with the registry's wiki_title).
+# The 2026 registry is unrelated to the 2007 registry; the wiki_title
+# for a 2026 constituency lives in scripts/_senedd_constituencies.py.
+from _senedd_constituencies import SENEDD_CONSTITUENCIES as _SENEDD_2026
+_URLS_2026 = {c: wikipedia_url(t) for c, _n, t in _SENEDD_2026}
+
+
 def url_for_2026(code: str) -> str:
-    # The 2026 registry is unrelated to the 2007 registry; the wiki_title
-    # for a 2026 constituency lives in scripts/_senedd_constituencies.py.
-    from _senedd_constituencies import SENEDD_CONSTITUENCIES
-    for c, _name, title in SENEDD_CONSTITUENCIES:
-        if c == code:
-            return wikipedia_url(title)
-    return ''
+    return _URLS_2026.get(code, '')
 
 
 def main():
