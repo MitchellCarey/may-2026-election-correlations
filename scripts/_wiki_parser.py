@@ -422,17 +422,23 @@ def parse_county_article_ceds(_council_name: str, year: int, wt: str) -> dict:
 # the same template, then take the party with the most elected seats per ward
 # (alphabetical tie-break, same convention as parse_county_article).
 #
-# Single regex over the whole template body lets us require BOTH a party
-# field and a bolded candidate field in the same template — without that
-# coupling we'd also count non-elected candidates whose stage-N totals
-# happen to be bolded.
-STV_ELECTED_RE = re.compile(
+# Two-step match (block capture + per-field probes) keeps the "party and
+# bolded candidate must be in the SAME template" coupling without locking
+# the field order — the 2017 East Ayrshire article uses candidate=...|party=...
+# while every other Scottish article uses party=...|candidate=...
+STV_CANDIDATE_BLOCK_RE = re.compile(
     r'\{\{STV Election box candidate2?\b'      # template name (with or without "2")
-    r'(?:[^{}]|\{\{[^{}]*\}\})*?'              # non-greedy body, allowing one level of nested templates
-    r'\|\s*party\s*=\s*([^|}\n]+)'             # party=X
-    r'(?:[^{}]|\{\{[^{}]*\}\})*?'
-    r"\|\s*candidate\s*=\s*'''[^']+'''",       # candidate='''Bold Name''' → elected
+    r'((?:[^{}]|\{\{[^{}]*\}\})*?)'            # captured body, allowing one level of nested templates
+    r'\}\}',
     re.IGNORECASE | re.DOTALL,
+)
+STV_PARTY_FIELD_RE = re.compile(
+    r'\|\s*party\s*=\s*([^|}\n]+)',
+    re.IGNORECASE,
+)
+STV_BOLD_CANDIDATE_FIELD_RE = re.compile(
+    r"\|\s*candidate\s*=\s*'''[^']+'''",       # candidate='''Bold Name''' → elected
+    re.IGNORECASE,
 )
 # Some Scottish articles use a separate `{{STV Election box winning candidate}}`
 # template family — keep the older regex as a fallback for those.
@@ -488,7 +494,13 @@ def parse_stv_article(_council_name: str, year: int, wt: str) -> dict:
             section = segment[h_end:next_start]
 
             seat_counts: dict[str, int] = {}
-            for pm in STV_ELECTED_RE.finditer(section):
+            for tpl in STV_CANDIDATE_BLOCK_RE.finditer(section):
+                body = tpl.group(1)
+                if not STV_BOLD_CANDIDATE_FIELD_RE.search(body):
+                    continue
+                pm = STV_PARTY_FIELD_RE.search(body)
+                if not pm:
+                    continue
                 normalized = normalize_party(pm.group(1))
                 seat_counts[normalized] = seat_counts.get(normalized, 0) + 1
             # Fallback for councils using the older "winning candidate" template.

@@ -15,6 +15,7 @@ from _wiki_parser import (
     _extract_winner_party,
     _top_candidate_by_votes,
     normalize_party,
+    parse_stv_article,
 )
 
 
@@ -186,3 +187,73 @@ def test_extract_winner_handles_plain_text_party_in_wikitable():
     with the party cell as plain text ('Independent') rather than a
     wikilink. The parser must still extract the bare-text party."""
     assert _extract_winner_party(CAERPHILLY_WIKITABLE_PLAIN_PARTY) == "Independent"
+
+
+EAST_AYRSHIRE_ANNICK_CAND_BEFORE_PARTY = """\
+==Ward results==
+===Annick===
+{{STV Election box begin2|title=Annick|numcounts=6}}
+{{STV Election box candidate2
+|candidate='''John McFadzean'''
+|party=Scottish Conservatives
+|percentage=36.8
+|count1='''2,277'''
+}}
+{{STV Election box candidate2
+|candidate='''Gordon Jenkins'''
+|party=Scottish National Party
+|percentage=17.4
+|count1=1,076
+|count6='''1,993'''
+}}
+{{STV Election box candidate2
+|candidate=Eòghann MacColl
+|party=Scottish National Party
+|percentage=14.9
+|count1=925
+}}
+{{STV Election box candidate2
+|candidate='''John McGhee'''
+|party=Scottish Labour Party
+|percentage=13.5
+|count6='''1,207'''
+}}
+{{STV Election box candidate2
+|candidate='''Ellen Freel'''
+|party=Independent (politician)
+|percentage=12.5
+|count6='''1,224'''
+}}
+{{STV Election box end}}
+"""
+
+
+def test_parse_stv_article_handles_candidate_before_party_field_order():
+    """The 2017 East Ayrshire article lists `|candidate=...` before
+    `|party=...` inside each STV Election box candidate2 template, the
+    reverse of the order every other Scottish 2017 article uses. The
+    parser must extract elected candidates regardless of field order;
+    in Annick the fixture has 1 Con + 1 SNP + 1 Lab + 1 Ind elected
+    (4-way tie at 1 seat each), so Conservative wins via the
+    alphabetical tie-break in `max(sorted(seat_counts), key=...)`."""
+    result = parse_stv_article("East Ayrshire", 2017, EAST_AYRSHIRE_ANNICK_CAND_BEFORE_PARTY)
+    assert "Annick" in result
+    assert result["Annick"]["prior_party"] == "Conservative"
+
+
+def test_parse_stv_article_skips_templates_without_bolded_candidate():
+    """Non-elected candidates have `candidate=Plain Name` (no triple-quote
+    bold) but still carry a party= field. The new two-step matcher must
+    not count them as elected seats — the bolded-candidate probe is the
+    coupling that distinguishes winners from losers within a ward."""
+    only_loser = """\
+==Ward results==
+===Annick===
+{{STV Election box candidate2
+|candidate=Loser Lacey
+|party=Scottish Labour Party
+|count1=100
+}}
+"""
+    result = parse_stv_article("East Ayrshire", 2017, only_loser)
+    assert "Annick" not in result
