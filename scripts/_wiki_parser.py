@@ -162,13 +162,25 @@ def _extract_winner_party(section: str) -> str | None:
     return None
 
 
+_WORD_SEAT_COUNT_RE = re.compile(
+    r'\s*\((?:one|two|three|four|five|six|seven|eight|nine|ten)\s+seats?\)\s*$',
+    re.IGNORECASE,
+)
+_WARD_NUMBER_PREFIX_RE = re.compile(
+    r'^\s*Ward\s+\d+\s*[:\-–—]\s*',
+    re.IGNORECASE,
+)
+
+
 def _clean_ward_name(name: str) -> str:
     """Strip Wikipedia heading/title decorations: collapse wikilinks to their
     visible label, drop inline citation tags (<ref>...</ref> / <ref name=...>),
     drop a trailing ward/constituency suffix (Wigan h4 style), drop a trailing
-    seat-count parenthetical like '(2)' or '(3 seats)'. The ref-stripping
-    matters for several county-council CED H3 titles (Devon, Hertfordshire,
-    Gloucestershire, Worcestershire) that embed citations inside the heading."""
+    seat-count parenthetical like '(2)' or '(3 seats)' or '(one seat)' (Welsh
+    2017 multi-member wards), drop a leading 'Ward N:' / 'Ward N —' prefix
+    (Glasgow's 2017 STV article). The ref-stripping matters for several county-
+    council CED H3 titles (Devon, Hertfordshire, Gloucestershire,
+    Worcestershire) that embed citations inside the heading."""
     clean = WIKILINK_RE.sub(r'\1', name)
     # Closed <ref>...</ref> first (greedy across tags), then any unbalanced
     # <ref...>/<ref/>/everything-after-the-opening-<ref left in the title.
@@ -177,6 +189,8 @@ def _clean_ward_name(name: str) -> str:
     clean = re.sub(r'<ref\b.*$', '', clean, flags=re.IGNORECASE | re.DOTALL)
     clean = re.sub(r'\s+(ward|constituency)\s*$', '', clean, flags=re.IGNORECASE).strip()
     clean = re.sub(r'\s*\(\d+(?:\s+seats?)?\)\s*$', '', clean).strip()
+    clean = _WORD_SEAT_COUNT_RE.sub('', clean).strip()
+    clean = _WARD_NUMBER_PREFIX_RE.sub('', clean).strip()
     return clean
 
 
