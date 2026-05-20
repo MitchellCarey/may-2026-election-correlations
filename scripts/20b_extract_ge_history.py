@@ -70,7 +70,7 @@ DATA = ROOT / "data"
 XLSX = DATA / "source" / "hoc_ge_1918_2019_by_pcon.xlsx"
 OUT = DATA / "ge_history.json"
 
-YEARS = (2015, 2017, 2019)
+YEARS = (2010, 2015, 2017, 2019)
 
 # Stable across all three sheets — only England, Wales, Scotland, NI PCON
 # code prefixes flag real data rows. Everything else (footnotes,
@@ -83,12 +83,16 @@ ALL_PREFIXES = GB_PREFIXES + ('N06',)  # NI in dataset is N06xxxxxx for 2010 cod
 SOURCE_URL = 'https://commonslibrary.parliament.uk/research-briefings/cbp-8647/'
 
 # Speaker overrides: (PCON10/15CD, year) → (winner_label, candidate_name).
-# These are the only three (constituency, year) pairs in GB where the
+# These are the only four (constituency, year) pairs in GB where the
 # elected MP sat as Speaker rather than under their original party — HoC
 # folds their votes into "Other" in the per-PCON view, so without these
 # overrides the renderer would paint them with the Other palette colour
-# and lose the Speaker distinction.
+# and lose the Speaker distinction. Bercow was elected Speaker on
+# 22 June 2009 and stood as Speaker at the 6 May 2010 GE; the convention
+# of leaving the Conservative/LibDem/Labour columns blank is visible in
+# the 2010 sheet's Buckingham row (cols 9/12/15 all zero).
 SPEAKER_OVERRIDES: dict[tuple[str, int], tuple[str, str]] = {
+    ('E14000608', 2010): ('Speaker', 'John Bercow'),
     ('E14000608', 2015): ('Speaker', 'John Bercow'),
     ('E14000608', 2017): ('Speaker', 'John Bercow'),
     ('E14000637', 2019): ('Speaker', 'Lindsay Hoyle'),

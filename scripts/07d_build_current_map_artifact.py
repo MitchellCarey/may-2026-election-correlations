@@ -539,10 +539,10 @@ def main():
             for c, p in ge_history.get('pcons', {}).items()
             if c.startswith(GB_PCON_PREFIXES)
         )
-        # Year stops = HoC's 3 (2015/2017/2019) plus the GE 2024 contest
-        # carried in ge2024.json (PCON_HISTORY holds a one-entry history
-        # per post-era key). The two registries stay separate so 19b/20b
-        # regenerates without re-running the GE 2024 pipeline.
+        # Year stops = HoC's 4 (2010/2015/2017/2019) plus the GE 2024
+        # contest carried in ge2024.json (PCON_HISTORY holds a one-entry
+        # history per post-era key). The two registries stay separate so
+        # 19b/20b regenerates without re-running the GE 2024 pipeline.
         slider_pcon_years = sorted(set(ge_history.get('years', [])) | {2024})
         print(f'ge history: {len(gb_history_pcons)} pre-era + {len(pcon_paths)} '
               f'post-era PCON polygons across {len(slider_pcon_years)} year stops '
