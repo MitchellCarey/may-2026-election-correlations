@@ -874,8 +874,12 @@ if (legend) {
             ensure_ascii=False) + ';')
         js.append('const HOLYROOD_RAW_DISPLAY = ' + json.dumps({
             'Scottish Labour':                'Lab',
+            'Scottish Labour Party':          'Lab',
+            'Labour Party (UK)':              'Lab',
             'Scottish Conservatives':         'Con',
+            'Scottish Conservative Party':    'Con',
             'Scottish Conservative and Unionist Party': 'Con',
+            'Conservative Party (UK)':        'Con',
             'Scottish National Party':        'SNP',
             'Scottish Greens':                'Green',
             'Scottish Green Party':           'Green',
