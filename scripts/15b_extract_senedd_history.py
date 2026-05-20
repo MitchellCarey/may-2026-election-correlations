@@ -1,8 +1,8 @@
 """Parse the 40 cached per-constituency + 5 cached per-region Wikipedia
 articles fetched by scripts/14b_fetch_senedd_history.py and emit one
-record per (constituency, year) and one per (region, year) for the 2016
-and 2021 Senedd / National Assembly for Wales contests (issue #69
-Phase 1D / #72).
+record per (constituency, year) and one per (region, year) for the
+2011, 2016 and 2021 Senedd / National Assembly for Wales contests
+(issue #69 Phase 1D / #72; 2011 added in #80).
 
 Welsh constituency articles use the same `{{AMS election box ...}}`
 template family as Scottish ones (Wales also runs Additional Member
@@ -22,10 +22,11 @@ ballot). Per-contest blocks have the shape:
   {{AMS election box end|notes=yes}}
 
 The 2016 contests use `[[YYYY National Assembly for Wales election]]` in
-the title (pre-rename), 2021 uses `[[YYYY Senedd election]]`. Both are
-recognised. (Some articles also link 2003/2007/2011 contests under the
-"Welsh Assembly election" wording — also recognised, though out of the
-SLIDER_YEARS window for Phase 1D.)
+the title (pre-rename), 2021 uses `[[YYYY Senedd election]]`. 2011 uses
+the "Welsh Assembly election" wording (sometimes redirect-anchored).
+All three forms are recognised. 2003/2007 contests are also linked under
+the "Welsh Assembly election" wording but are out of the current
+SLIDER_YEARS window.
 
 Winner detection mirrors 18b:
   1. Prefer the candidate row marked `|winner = yes`.
@@ -54,9 +55,10 @@ Output: data/senedd_history_raw.json — flat list of records, mixed by kind:
 The `kind` discriminator lets 04g split FPTP vs regional list records
 downstream.
 
-Coverage target: 40/40 constituencies at both years; 5/5 regions at
-both years (each with 4 list seats accounted for). Misses are surfaced
-to stderr per the "WARN on silent join failures" rule.
+Coverage target: 40/40 constituencies at each of 2011, 2016, 2021;
+5/5 regions at each of those years (each with 4 list seats accounted
+for). Misses are surfaced to stderr per the "WARN on silent join
+failures" rule.
 """
 import argparse
 import json
@@ -74,7 +76,7 @@ DATA = ROOT / "data"
 SOURCE = DATA / "source"
 OUT = DATA / "senedd_history_raw.json"
 
-TARGET_YEARS = (2016, 2021)
+TARGET_YEARS = (2011, 2016, 2021)
 
 AMS_BEGIN_RE = re.compile(r'\{\{\s*AMS\s+election\s+box\s+begin\b', re.IGNORECASE)
 # The 2021 box closes with `{{AMS election box end|notes=yes}}` but the
