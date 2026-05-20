@@ -6,7 +6,8 @@
     "winner": "SNP",
     "candidate": "Kevin Stewart",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Aberdeen_Central_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Aberdeen_Central_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000075",
@@ -15,7 +16,8 @@
     "winner": "SNP",
     "candidate": "Mark McDonald",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Aberdeen_Donside_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Aberdeen_Donside_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000076",
@@ -24,7 +26,8 @@
     "winner": "SNP",
     "candidate": "Maureen Watt",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Aberdeen_South_and_North_Kincardine_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Aberdeen_South_and_North_Kincardine_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000077",
@@ -33,7 +36,8 @@
     "winner": "SNP",
     "candidate": "Gillian Martin",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Aberdeenshire_East_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Aberdeenshire_East_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000078",
@@ -42,7 +46,8 @@
     "winner": "Conservative",
     "candidate": "Alexander Burnett",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Aberdeenshire_West_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Aberdeenshire_West_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000079",
@@ -51,7 +56,8 @@
     "winner": "SNP",
     "candidate": "Alex Neil",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Airdrie_and_Shotts_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Airdrie_and_Shotts_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000080",
@@ -60,7 +66,8 @@
     "winner": "SNP",
     "candidate": "Angela Constance",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Almond_Valley_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Almond_Valley_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000081",
@@ -69,7 +76,8 @@
     "winner": "SNP",
     "candidate": "Mairi Evans",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Angus_North_and_Mearns_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Angus_North_and_Mearns_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000082",
@@ -78,7 +86,8 @@
     "winner": "SNP",
     "candidate": "Graeme Dey",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Angus_South_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Angus_South_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000083",
@@ -87,7 +96,8 @@
     "winner": "SNP",
     "candidate": "Michael Russell",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Argyll_and_Bute_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Argyll_and_Bute_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000084",
@@ -96,7 +106,8 @@
     "winner": "Conservative",
     "candidate": "John Scott",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Ayr_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Ayr_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000085",
@@ -105,7 +116,8 @@
     "winner": "SNP",
     "candidate": "Stewart Stevenson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Banffshire_and_Buchan_Coast_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Banffshire_and_Buchan_Coast_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000086",
@@ -114,7 +126,8 @@
     "winner": "SNP",
     "candidate": "Gail Ross",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Caithness,_Sutherland_and_Ross_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Caithness,_Sutherland_and_Ross_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000087",
@@ -123,7 +136,8 @@
     "winner": "SNP",
     "candidate": "Jeane Freeman",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Carrick,_Cumnock_and_Doon_Valley_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Carrick,_Cumnock_and_Doon_Valley_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000088",
@@ -132,7 +146,8 @@
     "winner": "SNP",
     "candidate": "Keith Brown",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Clackmannanshire_and_Dunblane_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Clackmannanshire_and_Dunblane_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000089",
@@ -141,7 +156,8 @@
     "winner": "SNP",
     "candidate": "Gil Paterson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Clydebank_and_Milngavie_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Clydebank_and_Milngavie_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000090",
@@ -150,7 +166,8 @@
     "winner": "SNP",
     "candidate": "Aileen Campbell",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Clydesdale_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Clydesdale_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000092",
@@ -159,7 +176,8 @@
     "winner": "SNP",
     "candidate": "Annabelle Ewing",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Cowdenbeath_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Cowdenbeath_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000093",
@@ -168,7 +186,8 @@
     "winner": "SNP",
     "candidate": "Jamie Hepburn",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Cumbernauld_and_Kilsyth_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Cumbernauld_and_Kilsyth_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000094",
@@ -177,7 +196,8 @@
     "winner": "SNP",
     "candidate": "Kenneth Gibson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Cunninghame_North_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Cunninghame_North_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000095",
@@ -186,7 +206,8 @@
     "winner": "SNP",
     "candidate": "Ruth Maguire",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Cunninghame_South_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Cunninghame_South_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000096",
@@ -195,7 +216,8 @@
     "winner": "Labour",
     "candidate": "Jackie Baillie",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Dumbarton_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Dumbarton_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000097",
@@ -204,7 +226,8 @@
     "winner": "Conservative",
     "candidate": "Oliver Mundell",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Dumfriesshire_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Dumfriesshire_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000098",
@@ -213,7 +236,8 @@
     "winner": "SNP",
     "candidate": "Shona Robison",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Dundee_City_East_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Dundee_City_East_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000099",
@@ -222,7 +246,8 @@
     "winner": "SNP",
     "candidate": "Joe FitzPatrick",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Dundee_City_West_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Dundee_City_West_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000100",
@@ -231,7 +256,8 @@
     "winner": "SNP",
     "candidate": "Shirley-Anne Somerville",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Dunfermline_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Dunfermline_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000101",
@@ -240,7 +266,8 @@
     "winner": "SNP",
     "candidate": "Linda Fabiani",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/East_Kilbride_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/East_Kilbride_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000102",
@@ -249,7 +276,8 @@
     "winner": "Labour",
     "candidate": "Iain Gray",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/East_Lothian_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/East_Lothian_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000103",
@@ -258,7 +286,8 @@
     "winner": "Conservative",
     "candidate": "Jackson Carlaw",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Eastwood_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Eastwood_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000104",
@@ -267,7 +296,8 @@
     "winner": "Conservative",
     "candidate": "Ruth Davidson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Central_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Central_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000105",
@@ -276,7 +306,8 @@
     "winner": "SNP",
     "candidate": "Ash Regan",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Eastern_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Eastern_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000106",
@@ -285,7 +316,8 @@
     "winner": "SNP",
     "candidate": "Ben Macpherson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Northern_and_Leith_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Northern_and_Leith_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000107",
@@ -294,7 +326,8 @@
     "winner": "SNP",
     "candidate": "Gordon MacDonald",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Pentlands_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Pentlands_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000108",
@@ -303,7 +336,8 @@
     "winner": "Labour",
     "candidate": "Daniel Johnson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Southern_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Southern_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000109",
@@ -312,7 +346,8 @@
     "winner": "LibDem",
     "candidate": "Alex Cole-Hamilton",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Western_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Western_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000110",
@@ -321,7 +356,8 @@
     "winner": "SNP",
     "candidate": "Alasdair Allan",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Na_h-Eileanan_an_Iar_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Na_h-Eileanan_an_Iar_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000111",
@@ -330,7 +366,8 @@
     "winner": "Conservative",
     "candidate": "John Lamont",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Ettrick,_Roxburgh_and_Berwickshire_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Ettrick,_Roxburgh_and_Berwickshire_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000112",
@@ -339,7 +376,8 @@
     "winner": "SNP",
     "candidate": "Angus MacDonald",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Falkirk_East_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Falkirk_East_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000113",
@@ -348,7 +386,8 @@
     "winner": "SNP",
     "candidate": "Michael Matheson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Falkirk_West_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Falkirk_West_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000114",
@@ -357,7 +396,8 @@
     "winner": "Conservative",
     "candidate": "Finlay Carson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Galloway_and_West_Dumfries_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Galloway_and_West_Dumfries_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000115",
@@ -366,7 +406,8 @@
     "winner": "SNP",
     "candidate": "Bill Kidd",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Anniesland_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Anniesland_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000116",
@@ -375,7 +416,8 @@
     "winner": "SNP",
     "candidate": "James Dornan",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Cathcart_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Cathcart_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000117",
@@ -384,7 +426,8 @@
     "winner": "SNP",
     "candidate": "Sandra White",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Kelvin_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Kelvin_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000118",
@@ -393,7 +436,8 @@
     "winner": "SNP",
     "candidate": "Bob Doris",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Maryhill_and_Springburn_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Maryhill_and_Springburn_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000119",
@@ -402,7 +446,8 @@
     "winner": "SNP",
     "candidate": "Humza Yousaf",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Pollok_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Pollok_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000121",
@@ -411,7 +456,8 @@
     "winner": "SNP",
     "candidate": "John Mason",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Shettleston_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Shettleston_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000122",
@@ -420,7 +466,8 @@
     "winner": "SNP",
     "candidate": "Nicola Sturgeon",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Southside_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Southside_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000123",
@@ -429,7 +476,8 @@
     "winner": "SNP",
     "candidate": "Stuart McMillan",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Greenock_and_Inverclyde_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Greenock_and_Inverclyde_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000124",
@@ -438,7 +486,8 @@
     "winner": "SNP",
     "candidate": "Christina McKelvie",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Hamilton,_Larkhall_and_Stonehouse_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Hamilton,_Larkhall_and_Stonehouse_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000125",
@@ -447,7 +496,8 @@
     "winner": "SNP",
     "candidate": "Fergus Ewing",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Inverness_and_Nairn_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Inverness_and_Nairn_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000126",
@@ -456,7 +506,8 @@
     "winner": "SNP",
     "candidate": "Willie Coffey",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Kilmarnock_and_Irvine_Valley_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Kilmarnock_and_Irvine_Valley_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000127",
@@ -465,7 +516,8 @@
     "winner": "SNP",
     "candidate": "David Torrance",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Kirkcaldy_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Kirkcaldy_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000128",
@@ -474,7 +526,8 @@
     "winner": "SNP",
     "candidate": "Fiona Hyslop",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Linlithgow_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Linlithgow_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000129",
@@ -483,7 +536,8 @@
     "winner": "SNP",
     "candidate": "Jenny Gilruth",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Mid_Fife_and_Glenrothes_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Mid_Fife_and_Glenrothes_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000130",
@@ -492,7 +546,8 @@
     "winner": "SNP",
     "candidate": "Colin Beattie",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Midlothian_North_and_Musselburgh_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Midlothian_North_and_Musselburgh_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000131",
@@ -501,7 +556,8 @@
     "winner": "SNP",
     "candidate": "Christine Grahame",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Midlothian_South,_Tweeddale_and_Lauderdale_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Midlothian_South,_Tweeddale_and_Lauderdale_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000132",
@@ -510,7 +566,8 @@
     "winner": "SNP",
     "candidate": "Richard Lochhead",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Moray_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Moray_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000133",
@@ -519,7 +576,8 @@
     "winner": "SNP",
     "candidate": "Clare Adamson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Motherwell_and_Wishaw_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Motherwell_and_Wishaw_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000134",
@@ -528,7 +586,8 @@
     "winner": "LibDem",
     "candidate": "Willie Rennie",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/North_East_Fife_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/North_East_Fife_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000135",
@@ -537,7 +596,8 @@
     "winner": "LibDem",
     "candidate": "Liam McArthur",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Orkney_Islands_(constituency)"
+    "url": "https://en.wikipedia.org/wiki/Orkney_Islands_(constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000136",
@@ -546,7 +606,8 @@
     "winner": "SNP",
     "candidate": "George Adam",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Paisley_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Paisley_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000137",
@@ -555,7 +616,8 @@
     "winner": "SNP",
     "candidate": "John Swinney",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Perthshire_North_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Perthshire_North_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000138",
@@ -564,7 +626,8 @@
     "winner": "SNP",
     "candidate": "Roseanna Cunningham",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Perthshire_South_and_Kinross-shire_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Perthshire_South_and_Kinross-shire_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000139",
@@ -573,7 +636,8 @@
     "winner": "SNP",
     "candidate": "Derek Mackay",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Renfrewshire_North_and_West_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Renfrewshire_North_and_West_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000140",
@@ -582,7 +646,8 @@
     "winner": "SNP",
     "candidate": "Tom Arthur",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Renfrewshire_South_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Renfrewshire_South_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000141",
@@ -591,7 +656,8 @@
     "winner": "SNP",
     "candidate": "Clare Haughey",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Rutherglen_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Rutherglen_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000142",
@@ -600,7 +666,8 @@
     "winner": "LibDem",
     "candidate": "Tavish Scott",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Shetland_Islands_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Shetland_Islands_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000143",
@@ -609,7 +676,8 @@
     "winner": "SNP",
     "candidate": "Kate Forbes",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Skye,_Lochaber_and_Badenoch_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Skye,_Lochaber_and_Badenoch_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000144",
@@ -618,7 +686,8 @@
     "winner": "SNP",
     "candidate": "Bruce Crawford",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Stirling_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Stirling_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000146",
@@ -627,7 +696,8 @@
     "winner": "SNP",
     "candidate": "Richard Lyle",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Uddingston_and_Bellshill_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Uddingston_and_Bellshill_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000148",
@@ -636,7 +706,8 @@
     "winner": "SNP",
     "candidate": "Rona Mackay",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Strathkelvin_and_Bearsden_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Strathkelvin_and_Bearsden_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000149",
@@ -645,7 +716,8 @@
     "winner": "SNP",
     "candidate": "Fulton MacGregor",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Coatbridge_and_Chryston_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Coatbridge_and_Chryston_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000150",
@@ -654,7 +726,8 @@
     "winner": "SNP",
     "candidate": "Ivan McKee",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Provan_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Provan_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000074",
@@ -663,7 +736,8 @@
     "winner": "SNP",
     "candidate": "Kevin Stewart",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Aberdeen_Central_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Aberdeen_Central_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000075",
@@ -672,7 +746,8 @@
     "winner": "SNP",
     "candidate": "Jackie Dunbar",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Aberdeen_Donside_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Aberdeen_Donside_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000076",
@@ -681,7 +756,8 @@
     "winner": "SNP",
     "candidate": "Audrey Nicoll",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Aberdeen_South_and_North_Kincardine_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Aberdeen_South_and_North_Kincardine_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000077",
@@ -690,7 +766,8 @@
     "winner": "SNP",
     "candidate": "Gillian Martin",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Aberdeenshire_East_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Aberdeenshire_East_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000078",
@@ -699,7 +776,8 @@
     "winner": "Conservative",
     "candidate": "Alexander Burnett",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Aberdeenshire_West_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Aberdeenshire_West_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000079",
@@ -708,7 +786,8 @@
     "winner": "SNP",
     "candidate": "Neil Gray",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Airdrie_and_Shotts_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Airdrie_and_Shotts_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000080",
@@ -717,7 +796,8 @@
     "winner": "SNP",
     "candidate": "Angela Constance",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Almond_Valley_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Almond_Valley_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000081",
@@ -726,7 +806,8 @@
     "winner": "SNP",
     "candidate": "Mairi Gougeon",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Angus_North_and_Mearns_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Angus_North_and_Mearns_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000082",
@@ -735,7 +816,8 @@
     "winner": "SNP",
     "candidate": "Graeme Dey",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Angus_South_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Angus_South_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000083",
@@ -744,7 +826,8 @@
     "winner": "SNP",
     "candidate": "Jenni Minto",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Argyll_and_Bute_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Argyll_and_Bute_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000084",
@@ -753,7 +836,8 @@
     "winner": "SNP",
     "candidate": "Siobhian Brown",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Ayr_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Ayr_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000085",
@@ -762,7 +846,8 @@
     "winner": "SNP",
     "candidate": "Karen Adam",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Banffshire_and_Buchan_Coast_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Banffshire_and_Buchan_Coast_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000086",
@@ -771,7 +856,8 @@
     "winner": "SNP",
     "candidate": "Maree Todd",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Caithness,_Sutherland_and_Ross_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Caithness,_Sutherland_and_Ross_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000087",
@@ -780,7 +866,8 @@
     "winner": "SNP",
     "candidate": "Elena Whitham",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Carrick,_Cumnock_and_Doon_Valley_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Carrick,_Cumnock_and_Doon_Valley_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000088",
@@ -789,7 +876,8 @@
     "winner": "SNP",
     "candidate": "Keith Brown",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Clackmannanshire_and_Dunblane_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Clackmannanshire_and_Dunblane_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000089",
@@ -798,7 +886,8 @@
     "winner": "SNP",
     "candidate": "Marie McNair",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Clydebank_and_Milngavie_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Clydebank_and_Milngavie_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000090",
@@ -807,7 +896,8 @@
     "winner": "SNP",
     "candidate": "Màiri McAllan",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Clydesdale_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Clydesdale_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000092",
@@ -816,7 +906,8 @@
     "winner": "SNP",
     "candidate": "Annabelle Ewing",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Cowdenbeath_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Cowdenbeath_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000093",
@@ -825,7 +916,8 @@
     "winner": "SNP",
     "candidate": "Jamie Hepburn",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Cumbernauld_and_Kilsyth_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Cumbernauld_and_Kilsyth_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000094",
@@ -834,7 +926,8 @@
     "winner": "SNP",
     "candidate": "Kenneth Gibson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Cunninghame_North_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Cunninghame_North_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000095",
@@ -843,7 +936,8 @@
     "winner": "SNP",
     "candidate": "Ruth Maguire",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Cunninghame_South_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Cunninghame_South_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000096",
@@ -852,7 +946,8 @@
     "winner": "Labour",
     "candidate": "Jackie Baillie",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Dumbarton_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Dumbarton_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000097",
@@ -861,7 +956,8 @@
     "winner": "Conservative",
     "candidate": "Oliver Mundell",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Dumfriesshire_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Dumfriesshire_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000098",
@@ -870,7 +966,8 @@
     "winner": "SNP",
     "candidate": "Shona Robison",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Dundee_City_East_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Dundee_City_East_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000099",
@@ -879,7 +976,8 @@
     "winner": "SNP",
     "candidate": "Joe FitzPatrick",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Dundee_City_West_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Dundee_City_West_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000100",
@@ -888,7 +986,8 @@
     "winner": "SNP",
     "candidate": "Shirley-Anne Somerville",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Dunfermline_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Dunfermline_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000101",
@@ -897,7 +996,8 @@
     "winner": "SNP",
     "candidate": "Collette Stevenson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/East_Kilbride_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/East_Kilbride_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000102",
@@ -906,7 +1006,8 @@
     "winner": "SNP",
     "candidate": "Paul McLennan",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/East_Lothian_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/East_Lothian_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000103",
@@ -915,7 +1016,8 @@
     "winner": "Conservative",
     "candidate": "Jackson Carlaw",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Eastwood_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Eastwood_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000104",
@@ -924,7 +1026,8 @@
     "winner": "SNP",
     "candidate": "Angus Robertson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Central_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Central_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000105",
@@ -933,7 +1036,8 @@
     "winner": "SNP",
     "candidate": "Ash Regan",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Eastern_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Eastern_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000106",
@@ -942,7 +1046,8 @@
     "winner": "SNP",
     "candidate": "Ben Macpherson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Northern_and_Leith_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Northern_and_Leith_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000107",
@@ -951,7 +1056,8 @@
     "winner": "SNP",
     "candidate": "Gordon MacDonald",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Pentlands_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Pentlands_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000108",
@@ -960,7 +1066,8 @@
     "winner": "Labour",
     "candidate": "Daniel Johnson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Southern_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Southern_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000109",
@@ -969,7 +1076,8 @@
     "winner": "LibDem",
     "candidate": "Alex Cole-Hamilton",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Edinburgh_Western_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Edinburgh_Western_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000110",
@@ -978,7 +1086,8 @@
     "winner": "SNP",
     "candidate": "Alasdair Allan",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Na_h-Eileanan_an_Iar_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Na_h-Eileanan_an_Iar_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000111",
@@ -987,7 +1096,8 @@
     "winner": "Conservative",
     "candidate": "Rachael Hamilton",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Ettrick,_Roxburgh_and_Berwickshire_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Ettrick,_Roxburgh_and_Berwickshire_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000112",
@@ -996,7 +1106,8 @@
     "winner": "SNP",
     "candidate": "Michelle Thomson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Falkirk_East_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Falkirk_East_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000113",
@@ -1005,7 +1116,8 @@
     "winner": "SNP",
     "candidate": "Michael Matheson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Falkirk_West_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Falkirk_West_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000114",
@@ -1014,7 +1126,8 @@
     "winner": "Conservative",
     "candidate": "Finlay Carson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Galloway_and_West_Dumfries_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Galloway_and_West_Dumfries_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000115",
@@ -1023,7 +1136,8 @@
     "winner": "SNP",
     "candidate": "Bill Kidd",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Anniesland_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Anniesland_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000116",
@@ -1032,7 +1146,8 @@
     "winner": "SNP",
     "candidate": "James Dornan",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Cathcart_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Cathcart_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000117",
@@ -1041,7 +1156,8 @@
     "winner": "SNP",
     "candidate": "Kaukab Stewart",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Kelvin_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Kelvin_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000118",
@@ -1050,7 +1166,8 @@
     "winner": "SNP",
     "candidate": "Bob Doris",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Maryhill_and_Springburn_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Maryhill_and_Springburn_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000119",
@@ -1059,7 +1176,8 @@
     "winner": "SNP",
     "candidate": "Humza Yousaf",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Pollok_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Pollok_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000121",
@@ -1068,7 +1186,8 @@
     "winner": "SNP",
     "candidate": "John Mason",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Shettleston_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Shettleston_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000122",
@@ -1077,7 +1196,8 @@
     "winner": "SNP",
     "candidate": "Nicola Sturgeon",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Southside_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Southside_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000123",
@@ -1086,7 +1206,8 @@
     "winner": "SNP",
     "candidate": "Stuart McMillan",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Greenock_and_Inverclyde_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Greenock_and_Inverclyde_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000124",
@@ -1095,7 +1216,8 @@
     "winner": "SNP",
     "candidate": "Christina McKelvie",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Hamilton,_Larkhall_and_Stonehouse_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Hamilton,_Larkhall_and_Stonehouse_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000125",
@@ -1104,7 +1226,8 @@
     "winner": "SNP",
     "candidate": "Fergus Ewing",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Inverness_and_Nairn_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Inverness_and_Nairn_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000126",
@@ -1113,7 +1236,8 @@
     "winner": "SNP",
     "candidate": "Willie Coffey",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Kilmarnock_and_Irvine_Valley_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Kilmarnock_and_Irvine_Valley_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000127",
@@ -1122,7 +1246,8 @@
     "winner": "SNP",
     "candidate": "David Torrance",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Kirkcaldy_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Kirkcaldy_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000128",
@@ -1131,7 +1256,8 @@
     "winner": "SNP",
     "candidate": "Fiona Hyslop",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Linlithgow_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Linlithgow_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000129",
@@ -1140,7 +1266,8 @@
     "winner": "SNP",
     "candidate": "Jenny Gilruth",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Mid_Fife_and_Glenrothes_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Mid_Fife_and_Glenrothes_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000130",
@@ -1149,7 +1276,8 @@
     "winner": "SNP",
     "candidate": "Colin Beattie",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Midlothian_North_and_Musselburgh_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Midlothian_North_and_Musselburgh_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000131",
@@ -1158,7 +1286,8 @@
     "winner": "SNP",
     "candidate": "Christine Grahame",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Midlothian_South,_Tweeddale_and_Lauderdale_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Midlothian_South,_Tweeddale_and_Lauderdale_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000132",
@@ -1167,7 +1296,8 @@
     "winner": "SNP",
     "candidate": "Richard Lochhead",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Moray_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Moray_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000133",
@@ -1176,7 +1306,8 @@
     "winner": "SNP",
     "candidate": "Clare Adamson",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Motherwell_and_Wishaw_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Motherwell_and_Wishaw_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000134",
@@ -1185,7 +1316,8 @@
     "winner": "LibDem",
     "candidate": "Willie Rennie",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/North_East_Fife_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/North_East_Fife_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000135",
@@ -1194,7 +1326,8 @@
     "winner": "LibDem",
     "candidate": "Liam McArthur",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Orkney_Islands_(constituency)"
+    "url": "https://en.wikipedia.org/wiki/Orkney_Islands_(constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000136",
@@ -1203,7 +1336,8 @@
     "winner": "SNP",
     "candidate": "George Adam",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Paisley_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Paisley_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000138",
@@ -1212,7 +1346,8 @@
     "winner": "SNP",
     "candidate": "Jim Fairlie",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Perthshire_South_and_Kinross-shire_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Perthshire_South_and_Kinross-shire_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000139",
@@ -1221,7 +1356,8 @@
     "winner": "SNP",
     "candidate": "Natalie Don",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Renfrewshire_North_and_West_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Renfrewshire_North_and_West_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000140",
@@ -1230,7 +1366,8 @@
     "winner": "SNP",
     "candidate": "Tom Arthur",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Renfrewshire_South_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Renfrewshire_South_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000141",
@@ -1239,7 +1376,8 @@
     "winner": "SNP",
     "candidate": "Clare Haughey",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Rutherglen_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Rutherglen_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000142",
@@ -1248,7 +1386,8 @@
     "winner": "LibDem",
     "candidate": "Beatrice Wishart",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Shetland_Islands_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Shetland_Islands_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000143",
@@ -1257,7 +1396,8 @@
     "winner": "SNP",
     "candidate": "Kate Forbes",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Skye,_Lochaber_and_Badenoch_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Skye,_Lochaber_and_Badenoch_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000144",
@@ -1266,7 +1406,8 @@
     "winner": "SNP",
     "candidate": "Evelyn Tweed",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Stirling_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Stirling_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000146",
@@ -1275,7 +1416,8 @@
     "winner": "SNP",
     "candidate": "Stephanie Callaghan",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Uddingston_and_Bellshill_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Uddingston_and_Bellshill_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000148",
@@ -1284,7 +1426,8 @@
     "winner": "SNP",
     "candidate": "Rona Mackay",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Strathkelvin_and_Bearsden_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Strathkelvin_and_Bearsden_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000149",
@@ -1293,7 +1436,8 @@
     "winner": "SNP",
     "candidate": "Fulton MacGregor",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Coatbridge_and_Chryston_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Coatbridge_and_Chryston_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
   },
   {
     "spc22cd": "S16000150",
@@ -1302,6 +1446,281 @@
     "winner": "SNP",
     "candidate": "Ivan McKee",
     "source": "wiki",
-    "url": "https://en.wikipedia.org/wiki/Glasgow_Provan_(Scottish_Parliament_constituency)"
+    "url": "https://en.wikipedia.org/wiki/Glasgow_Provan_(Scottish_Parliament_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "region": "Central Scotland",
+    "year": 2016,
+    "seats": {
+      "Labour": 4,
+      "Conservative": 3
+    },
+    "seats_raw": {
+      "Scottish Labour": 4,
+      "Scottish Conservatives": 3
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Central_Scotland_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "Glasgow",
+    "year": 2016,
+    "seats": {
+      "Labour": 4,
+      "Conservative": 2,
+      "Green": 1
+    },
+    "seats_raw": {
+      "Scottish Labour": 4,
+      "Scottish Conservatives": 2,
+      "Scottish Greens": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Glasgow_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "Highlands and Islands",
+    "year": 2016,
+    "seats": {
+      "SNP": 1,
+      "Conservative": 3,
+      "Labour": 2,
+      "Green": 1
+    },
+    "seats_raw": {
+      "Scottish National Party": 1,
+      "Conservative Party (UK)": 3,
+      "Labour Party (UK)": 2,
+      "Scottish Green Party": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Highlands_and_Islands_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "Lothian",
+    "year": 2016,
+    "seats": {
+      "Conservative": 3,
+      "Labour": 2,
+      "Green": 2
+    },
+    "seats_raw": {
+      "Scottish Conservatives": 3,
+      "Scottish Labour": 2,
+      "Scottish Greens": 2
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Lothian_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "Mid Scotland and Fife",
+    "year": 2016,
+    "seats": {
+      "Conservative": 4,
+      "Labour": 2,
+      "Green": 1
+    },
+    "seats_raw": {
+      "Scottish Conservative Party": 4,
+      "Scottish Labour Party": 2,
+      "Scottish Green Party": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Mid_Scotland_and_Fife_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "North East Scotland",
+    "year": 2016,
+    "seats": {
+      "Conservative": 4,
+      "Labour": 2,
+      "LibDem": 1
+    },
+    "seats_raw": {
+      "Scottish Conservatives": 4,
+      "Scottish Labour": 2,
+      "Scottish Liberal Democrats": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/North_East_Scotland_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "South Scotland",
+    "year": 2016,
+    "seats": {
+      "SNP": 3,
+      "Conservative": 2,
+      "Labour": 2
+    },
+    "seats_raw": {
+      "Scottish National Party": 3,
+      "Scottish Conservatives": 2,
+      "Scottish Labour": 2
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/South_Scotland_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "West Scotland",
+    "year": 2016,
+    "seats": {
+      "Labour": 3,
+      "Conservative": 3,
+      "Green": 1
+    },
+    "seats_raw": {
+      "Scottish Labour Party": 3,
+      "Scottish Conservative Party": 3,
+      "Scottish Green Party": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/West_Scotland_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "Central Scotland",
+    "year": 2021,
+    "seats": {
+      "Labour": 3,
+      "Conservative": 3,
+      "Green": 1
+    },
+    "seats_raw": {
+      "Scottish Labour": 3,
+      "Scottish Conservatives": 3,
+      "Scottish Greens": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Central_Scotland_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "Glasgow",
+    "year": 2021,
+    "seats": {
+      "Labour": 4,
+      "Conservative": 2,
+      "Green": 1
+    },
+    "seats_raw": {
+      "Scottish Labour": 4,
+      "Scottish Conservatives": 2,
+      "Scottish Greens": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Glasgow_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "Highlands and Islands",
+    "year": 2021,
+    "seats": {
+      "SNP": 1,
+      "Conservative": 4,
+      "Labour": 1,
+      "Green": 1
+    },
+    "seats_raw": {
+      "Scottish National Party": 1,
+      "Scottish Conservatives": 4,
+      "Scottish Labour": 1,
+      "Scottish Greens": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Highlands_and_Islands_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "Lothian",
+    "year": 2021,
+    "seats": {
+      "Conservative": 3,
+      "Labour": 2,
+      "Green": 2
+    },
+    "seats_raw": {
+      "Scottish Conservatives": 3,
+      "Labour Party (UK)": 2,
+      "Scottish Greens": 2
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Lothian_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "Mid Scotland and Fife",
+    "year": 2021,
+    "seats": {
+      "Conservative": 4,
+      "Labour": 2,
+      "Green": 1
+    },
+    "seats_raw": {
+      "Scottish Conservative Party": 4,
+      "Scottish Labour Party": 2,
+      "Scottish Greens": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Mid_Scotland_and_Fife_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "North East Scotland",
+    "year": 2021,
+    "seats": {
+      "Conservative": 4,
+      "Labour": 2,
+      "Green": 1
+    },
+    "seats_raw": {
+      "Scottish Conservatives": 4,
+      "Scottish Labour": 2,
+      "Scottish Greens": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/North_East_Scotland_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "South Scotland",
+    "year": 2021,
+    "seats": {
+      "SNP": 1,
+      "Conservative": 3,
+      "Labour": 3
+    },
+    "seats_raw": {
+      "Scottish National Party": 1,
+      "Scottish Conservatives": 3,
+      "Scottish Labour": 3
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/South_Scotland_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "West Scotland",
+    "year": 2021,
+    "seats": {
+      "Labour": 3,
+      "Conservative": 3,
+      "Green": 1
+    },
+    "seats_raw": {
+      "Scottish Labour": 3,
+      "Scottish Conservatives": 3,
+      "Scottish Greens": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/West_Scotland_(Scottish_Parliament_electoral_region)",
+    "kind": "regional"
   }
 ]

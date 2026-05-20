@@ -38,9 +38,10 @@ parse_sheet = ge_extract.parse_sheet
 # Speaker overrides
 # ---------------------------------------------------------------------------
 
-def test_speaker_overrides_cover_three_known_seats():
-    """Bercow Buckingham 2015 + 2017 and Hoyle Chorley 2019 — the only three
-    GB seats where HoC folds the elected Speaker's votes into 'Other'."""
+def test_speaker_overrides_cover_four_known_seats():
+    """Bercow Buckingham 2010 + 2015 + 2017 and Hoyle Chorley 2019 — the only
+    four GB seats where HoC folds the elected Speaker's votes into 'Other'."""
+    assert SPEAKER_OVERRIDES[("E14000608", 2010)] == ("Speaker", "John Bercow")
     assert SPEAKER_OVERRIDES[("E14000608", 2015)] == ("Speaker", "John Bercow")
     assert SPEAKER_OVERRIDES[("E14000608", 2017)] == ("Speaker", "John Bercow")
     assert SPEAKER_OVERRIDES[("E14000637", 2019)] == ("Speaker", "Lindsay Hoyle")
