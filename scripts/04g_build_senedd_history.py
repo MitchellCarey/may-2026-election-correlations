@@ -1,5 +1,6 @@
 """Build the per-constituency + per-region history dataset for the GB
-Current map page's Senedd time-slider repaint (issue #69 Phase 1D / #72).
+Current map page's Senedd time-slider repaint (issue #69 Phase 1D / #72;
+2011 extension added in #80).
 
 Sibling of scripts/04f_build_holyrood_history.py — same three-pass
 shape on the constituency side, plus a fourth pass for region records
@@ -11,7 +12,8 @@ Sources, per (polygon, year) precedence (later passes win on tie):
        nawc21cd,year,party,candidate,source,url,note
      (Currently empty — landed as a pattern for future curation.)
   2. data/senedd_history_raw.json kind="fptp" — Wikipedia per-
-     constituency extractions for 2016 + 2021 (output of scripts/15b).
+     constituency extractions for 2011 + 2016 + 2021 (output of
+     scripts/15b).
   3. data/senedd_2026.json — Wikipedia 2026 results (output of
      scripts/15). Routes to current S0x polygons.
 
@@ -22,11 +24,11 @@ Polygon era matching:
 Region records flow through unchanged from 15b's regional pass; the
 per-region history block is keyed by display name (the same name used
 in the registry's 4th field, e.g. "North Wales") and applies only to
-pre-review reads (2016 + 2021 — there are no per-region "list seats"
-under the 2026 closed-list 16-constituency layout).
+pre-review reads (2011 + 2016 + 2021 — there are no per-region "list
+seats" under the 2026 closed-list 16-constituency layout).
 
 Output: data/senedd_history.json with schema:
-  { "years": [2016, 2021, 2026],
+  { "years": [2011, 2016, 2021, 2026],
     "constituencies": { "<polygon_key>": {
         "name":    "Aberavon",
         "region":  "South Wales West",
@@ -54,10 +56,10 @@ DATA = ROOT / "data"
 SOURCE = DATA / "source"
 
 # Senedd-tier year stops the slider exposes. Welsh elections run on a
-# 5-year cycle (2016, 2021 under the old 40-seat AMS layout; 2026 under
-# the new 16-seat closed-list layout). Pre-2016 contests are out of
-# scope for Phase 1D.
-SLIDER_YEARS = [2016, 2021, 2026]
+# 5-year cycle (2011, 2016, 2021 under the old 40-seat AMS layout;
+# 2026 under the new 16-seat closed-list layout). Pre-2011 contests
+# (1999, 2003, 2007) stay out of scope.
+SLIDER_YEARS = [2011, 2016, 2021, 2026]
 
 # Source rank — higher number wins. Mirrors 04f's per-polygon dedup.
 SOURCE_RANK = {'wiki': 0, 'official': 1}
@@ -289,10 +291,10 @@ def main():
     print(f'Wrote senedd_history.json — {total_cons} constituency polygons, '
           f'{total_reg} regions, {len(present_years)} year stops')
     print(f'  constituency-years: {total_cons_years} '
-          f'(passes: 1={pass1_added} wiki 2016+2021, '
+          f'(passes: 1={pass1_added} wiki 2011+2016+2021, '
           f'2={pass2_added} wiki 2026, 3={pass3_added} hand-curated)')
     print(f'  region-years:       {total_reg_years} '
-          f'(pass: 4={pass4_added} wiki 2016+2021)')
+          f'(pass: 4={pass4_added} wiki 2011+2016+2021)')
     print('  per-year coverage (constituencies): ' + ' · '.join(
         f'{y}: {per_year_cov_cons.get(y, 0)}' for y in present_years
     ))
@@ -301,6 +303,7 @@ def main():
     ))
 
     # Per-region pre-review constituency coverage (mirrors 04f's per-region block).
+    pre_years = {y for y in SLIDER_YEARS if y < 2026}
     per_region_polys: dict[str, int] = defaultdict(int)
     per_region_grey: dict[str, int] = defaultdict(int)
     for polygon_key, c in out_constituencies.items():
@@ -308,7 +311,7 @@ def main():
             continue
         reg = c.get('region') or '(unknown)'
         per_region_polys[reg] += 1
-        if not any(e['y'] in (2016, 2021) for e in c['history']):
+        if not any(e['y'] in pre_years for e in c['history']):
             per_region_grey[reg] += 1
     if per_region_polys:
         print('  per-region pre-review coverage (polygons / with-history):')
