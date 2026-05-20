@@ -43,6 +43,19 @@ data/source/pcon_jul_2024.geojson
 # data/pcon_geoms_2010.json (committed).
 data/source/pcon_dec_2021.geojson
 
+# Raw cached LAD_Dec_2016 GB boundary GeoJSON from scripts/27 (~10 MB).
+# Re-fetchable from ONS Open Geography Portal; skip-if-exists in 27.
+# The simplified per-LAD SVG paths land in data/lad_geoms_2016.json
+# (committed). 2016-vintage boundaries: pre-Dorset/BCP, pre-Buckinghamshire,
+# pre-N/W Northants, pre-Cumberland/W&F, pre-Somerset, pre-North Yorkshire.
+data/source/lad_dec_2016_gb_bgc.geojson
+
+# Cached Electoral Commission per-counting-area CSV for the 2016 EU
+# referendum from scripts/25 (~64 KB). Re-fetchable directly from the
+# EC CDN; skip-if-exists in 25. The parsed JSON (data/eu_ref_2016.json)
+# IS committed.
+data/source/ec_eu_referendum_2016.csv
+
 # Raw cached LGBCE post-review CED shapefiles from scripts/09c (~15 MB zipped,
 # ~37 MB extracted). Re-fetchable; the zips download idempotently.
 data/source/lgbce/
