@@ -146,14 +146,56 @@ def _top_candidate_by_votes(section: str) -> str | None:
     return best_party
 
 
+_WIKITABLE_ROW_SEP_RE = re.compile(r'\n\|-+[^\n]*\n')
+_WIKITABLE_CELL_PREFIX_RE = re.compile(r'^\s*(?:align\s*=\s*\w+\s*\|)?\s*')
+_WIKITABLE_PARTY_LINK_RE = re.compile(r'\[\[([^\]|]+?)(?:\|[^\]]*)?\]\]')
+
+
+def _top_wikitable_elected(section: str) -> str | None:
+    """Plain-wikitable fallback for the Caerphilly 2017 format: per-ward
+    candidate tables built with `{| class=wikitable ... |}` rather than
+    {{Election box}} templates. Each candidate row has the shape
+    `|name||party||votes||%||Elected`, where the party cell may carry a
+    wikilink ([[Welsh Labour]]) or be plain text (Independent). Multi-member
+    rows mark every winning candidate as 'Elected'; pick the highest-votes
+    elected row."""
+    best_party: str | None = None
+    best_votes = -1
+    for row in _WIKITABLE_ROW_SEP_RE.split(section):
+        if 'Elected' not in row:
+            continue
+        cells = [c.strip() for c in row.split('||')]
+        if len(cells) < 5:
+            continue
+        if 'Elected' not in cells[4]:
+            continue
+        party_cell = _WIKITABLE_CELL_PREFIX_RE.sub('', cells[1]).strip()
+        if not party_cell:
+            continue
+        link = _WIKITABLE_PARTY_LINK_RE.search(party_cell)
+        party = link.group(1) if link else party_cell
+        votes_cell = _WIKITABLE_CELL_PREFIX_RE.sub('', cells[2]).strip()
+        try:
+            votes = int(votes_cell.replace(',', ''))
+        except ValueError:
+            continue
+        if votes > best_votes:
+            best_votes = votes
+            best_party = party
+    return best_party
+
+
 def _extract_winner_party(section: str) -> str | None:
     """Return the raw party string for the top-of-poll candidate in a wiki
     section, or None if no candidate template is found. Cascades winning →
-    highest-vote candidate → hold/gain templates."""
+    highest-vote candidate → plain-wikitable Elected row → hold/gain templates."""
     m = WINNER_RE.search(section)
     if m:
         return m.group(1)
     top = _top_candidate_by_votes(section)
+    if top is not None:
+        return top
+    top = _top_wikitable_elected(section)
     if top is not None:
         return top
     m = HOLDGAIN_RE.search(section)

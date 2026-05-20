@@ -129,3 +129,60 @@ def test_clean_ward_name_leaves_unrelated_headings_alone():
     assert _clean_ward_name("Forward 1: Other") == "Forward 1: Other"
     assert _clean_ward_name(" Forward 1: Other") == "Forward 1: Other"
     assert _clean_ward_name("Foo Ward 1: Bar") == "Foo Ward 1: Bar"
+
+
+CAERPHILLY_WIKITABLE_WARD = """\
+===Cwm Aber / Aber Valley===
+{| class=wikitable style=text-align:right
+|+Electorate: 4612, Turnout: 30.81%
+|-
+!Candidate
+!Party
+!Votes
+!%
+!Notes
+|-
+|align=left|John Taylor||align=left|[[Plaid Cymru]]||990||26.51%||align=left|Elected
+|-
+|align=left|Lyndon J Binding||align=left|[[Plaid Cymru]]||984||26.35%||align=left|Elected
+|-
+|align=left|David Zenati-Parsons||align=left|[[Welsh Labour]]||307||8.22%||
+|-
+|align=left|Ryan Graham Smith||align=left|[[Welsh Conservative Party]]||212||5.68%||
+|}
+"""
+
+
+CAERPHILLY_WIKITABLE_PLAIN_PARTY = """\
+===Coed Duon / Blackwood===
+{| class=wikitable style=text-align:right
+|+Electorate: 6178, Turnout: 38.02%
+|-
+!Candidate
+!Party
+!Votes
+!%
+!Notes
+|-
+|align=left|Kevin Etheridge||align=left|Independent||1,069||16.52%||align=left|Elected
+|-
+|align=left|Nigel Stuart Dix||align=left|Independent||791||12.23%||align=left|Elected
+|-
+|align=left|Patricia Cook||align=left|[[Welsh Labour]]||604||9.34%||
+|}
+"""
+
+
+def test_extract_winner_picks_highest_votes_elected_row_in_wikitable():
+    """Caerphilly 2017 uses bespoke `class=wikitable` markup with an
+    'Elected' notes-cell marker instead of {{Election box}} templates.
+    The parser must pick the highest-votes elected row's party — both
+    elected candidates here are Plaid, so the winner_party is Plaid."""
+    assert _extract_winner_party(CAERPHILLY_WIKITABLE_WARD) == "Plaid Cymru"
+
+
+def test_extract_winner_handles_plain_text_party_in_wikitable():
+    """Some Caerphilly wards (e.g. Blackwood) list independent candidates
+    with the party cell as plain text ('Independent') rather than a
+    wikilink. The parser must still extract the bare-text party."""
+    assert _extract_winner_party(CAERPHILLY_WIKITABLE_PLAIN_PARTY) == "Independent"
