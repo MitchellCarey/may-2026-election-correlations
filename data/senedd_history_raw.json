@@ -2,6 +2,406 @@
   {
     "nawc21cd": "W09000001",
     "name": "Ynys Môn",
+    "year": 2011,
+    "winner": "Plaid",
+    "candidate": "Ieuan Wyn Jones",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Ynys_M%C3%B4n_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000002",
+    "name": "Arfon",
+    "year": 2011,
+    "winner": "Plaid",
+    "candidate": "Alun Ffred Jones",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Arfon_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000003",
+    "name": "Aberconwy",
+    "year": 2011,
+    "winner": "Conservative",
+    "candidate": "Janet Finch-Saunders",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Aberconwy_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000004",
+    "name": "Clwyd West",
+    "year": 2011,
+    "winner": "Conservative",
+    "candidate": "Darren Millar",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Clwyd_West_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000005",
+    "name": "Vale of Clwyd",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Ann Jones",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Vale_of_Clwyd_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000006",
+    "name": "Delyn",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Sandy Mewies",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Delyn_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000007",
+    "name": "Alyn and Deeside",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Carl Sargeant",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Alyn_and_Deeside_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000008",
+    "name": "Wrexham",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Lesley Griffiths",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Wrexham_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000009",
+    "name": "Clwyd South",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Ken Skates",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Clwyd_South_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000010",
+    "name": "Dwyfor Meirionnydd",
+    "year": 2011,
+    "winner": "Plaid",
+    "candidate": "Dafydd Elis-Thomas",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Dwyfor_Meirionnydd_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000011",
+    "name": "Montgomeryshire",
+    "year": 2011,
+    "winner": "Conservative",
+    "candidate": "Russell George",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Montgomeryshire_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000012",
+    "name": "Ceredigion",
+    "year": 2011,
+    "winner": "Plaid",
+    "candidate": "Elin Jones",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Ceredigion_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000014",
+    "name": "Preseli Pembrokeshire",
+    "year": 2011,
+    "winner": "Conservative",
+    "candidate": "Paul Davies",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Preseli_Pembrokeshire_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000015",
+    "name": "Carmarthen East and Dinefwr",
+    "year": 2011,
+    "winner": "Plaid",
+    "candidate": "Rhodri Glyn Thomas",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Carmarthen_East_and_Dinefwr_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000016",
+    "name": "Carmarthen West and South Pembrokeshire",
+    "year": 2011,
+    "winner": "Conservative",
+    "candidate": "Angela Burns",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Carmarthen_West_and_South_Pembrokeshire_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000017",
+    "name": "Llanelli",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Keith Davies",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Llanelli_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000018",
+    "name": "Gower",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Edwina Hart",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Gower_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000019",
+    "name": "Swansea West",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Julie James",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Swansea_West_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000020",
+    "name": "Swansea East",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Mike Hedges",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Swansea_East_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000021",
+    "name": "Neath",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Gwenda Thomas",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Neath_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000022",
+    "name": "Aberavon",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "David Rees",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Aberavon_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000023",
+    "name": "Bridgend",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Carwyn Jones",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Bridgend_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000025",
+    "name": "Rhondda",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": null,
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Rhondda_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000026",
+    "name": "Cynon Valley",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Christine Chapman",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Cynon_Valley_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000029",
+    "name": "Cardiff West",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Mark Drakeford",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Cardiff_West_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000031",
+    "name": "Cardiff Central",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Jenny Rathbone",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Cardiff_Central_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000034",
+    "name": "Monmouth",
+    "year": 2011,
+    "winner": "Conservative",
+    "candidate": "Nick Ramsay",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Monmouth_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000035",
+    "name": "Caerphilly",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Jeffrey Cuthbert",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Caerphilly_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000036",
+    "name": "Islwyn",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Gwyn R Price",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Islwyn_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000037",
+    "name": "Torfaen",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Lynne Neagle",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Torfaen_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000038",
+    "name": "Blaenau Gwent",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Alun Davies",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Blaenau_Gwent_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000039",
+    "name": "Newport West",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Rosemary Butler",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Newport_West_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000040",
+    "name": "Newport East",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "John Griffiths",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Newport_East_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000041",
+    "name": "Brecon and Radnorshire",
+    "year": 2011,
+    "winner": "LibDem",
+    "candidate": "Kirsty Williams",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Brecon_and_Radnorshire_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000042",
+    "name": "Cardiff North",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Julie Morgan",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Cardiff_North_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000043",
+    "name": "Cardiff South and Penarth",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": null,
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Cardiff_South_and_Penarth_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000044",
+    "name": "Merthyr Tydfil and Rhymney",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Huw Lewis",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Merthyr_Tydfil_and_Rhymney_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000045",
+    "name": "Ogmore",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Janice Gregory",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Ogmore_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000046",
+    "name": "Pontypridd",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Mick Antoniw",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Pontypridd_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000047",
+    "name": "Vale of Glamorgan",
+    "year": 2011,
+    "winner": "Labour",
+    "candidate": "Jane Hutt",
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Vale_of_Glamorgan_(Senedd_constituency)",
+    "kind": "fptp"
+  },
+  {
+    "nawc21cd": "W09000001",
+    "name": "Ynys Môn",
     "year": 2016,
     "winner": "Plaid",
     "candidate": "Rhun ap Iorwerth",
@@ -798,6 +1198,89 @@
     "source": "wiki",
     "url": "https://en.wikipedia.org/wiki/Vale_of_Glamorgan_(Senedd_constituency)",
     "kind": "fptp"
+  },
+  {
+    "region": "Mid and West Wales",
+    "year": 2011,
+    "seats": {
+      "Labour": 2,
+      "LibDem": 1,
+      "Plaid": 1
+    },
+    "seats_raw": {
+      "Welsh Labour": 2,
+      "Welsh Liberal Democrats": 1,
+      "Plaid Cymru": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/Mid_and_West_Wales_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "North Wales",
+    "year": 2011,
+    "seats": {
+      "Conservative": 2,
+      "LibDem": 1,
+      "Plaid": 1
+    },
+    "seats_raw": {
+      "Welsh Conservative Party": 2,
+      "Welsh Liberal Democrats": 1,
+      "Plaid Cymru": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/North_Wales_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "South Wales Central",
+    "year": 2011,
+    "seats": {
+      "Conservative": 2,
+      "LibDem": 1,
+      "Plaid": 1
+    },
+    "seats_raw": {
+      "Welsh Conservatives": 2,
+      "Welsh Liberal Democrats": 1,
+      "Plaid Cymru": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/South_Wales_Central_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "South Wales East",
+    "year": 2011,
+    "seats": {
+      "Conservative": 2,
+      "Plaid": 2
+    },
+    "seats_raw": {
+      "Welsh Conservative Party": 2,
+      "Plaid Cymru": 2
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/South_Wales_East_(Senedd_electoral_region)",
+    "kind": "regional"
+  },
+  {
+    "region": "South Wales West",
+    "year": 2011,
+    "seats": {
+      "Conservative": 2,
+      "LibDem": 1,
+      "Plaid": 1
+    },
+    "seats_raw": {
+      "Welsh Conservative Party": 2,
+      "Welsh Liberal Democrats": 1,
+      "Plaid Cymru": 1
+    },
+    "source": "wiki",
+    "url": "https://en.wikipedia.org/wiki/South_Wales_West_(Senedd_electoral_region)",
+    "kind": "regional"
   },
   {
     "region": "Mid and West Wales",
