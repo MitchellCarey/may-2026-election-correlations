@@ -5,16 +5,16 @@ Reads: data/source/hoc_ge_1918_2019_by_pcon.xlsx  (cached by scripts/19b)
 Writes: data/ge_history.json
 
 Output schema — keyed by ONS PCON code (PCON10/15/19CD code space, which is
-identical for these three elections since Westminster boundaries did not
+identical for these four elections since Westminster boundaries did not
 change between 2010 and the July 2024 review):
 
   {
-    "years": [2015, 2017, 2019],
+    "years": [2010, 2015, 2017, 2019],
     "pcons": {
       "<PCON_DEC_2021_code>": {
         "name": "...",
         "history": [
-          {"y": 2015, "w": "Labour", "candidate": null, "src": "hoc",
+          {"y": 2010, "w": "Labour", "candidate": null, "src": "hoc",
            "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-8647/",
            "votes": {"Labour": 23322, "Conservative": 18792, ...}},
           ...
@@ -31,17 +31,17 @@ section) puts HoC Library at tier 2 (above Wikipedia) because it is
 collected directly from Returning Officers, cross-checked, and publicly
 audited. Wikipedia per-constituency Election boxes transcribe the same
 upstream data with the additional risk of editorial drift; we use them
-as a fallback when HoC has gaps, but HoC's 2015/2017/2019 coverage is
+as a fallback when HoC has gaps, but HoC's 2010/2015/2017/2019 coverage is
 already 650/650 so no fallback is invoked today.
 
-Per-sheet layout in the XLSX (consistent across 2015 / 2017 / 2019, with
-column shifts between years for party order — Conservative col 8 in all
-three, but the next 12 party-group columns vary):
+Per-sheet layout in the XLSX (consistent across 2010 / 2015 / 2017 / 2019,
+with column shifts between years for party order — Conservative col 8 in
+all four, but the next 12 party-group columns vary):
 
   row 1-2: title rows ("YYYY GENERAL ELECTION" / "Results by constituency")
   row 3:   party-group headers ("Conservative", "Liberal Democrats", etc.) —
            positions vary year-on-year. The 'id' header lives in row 3 for
-           2015 and in row 4 for 2017/2019.
+           2010 and 2015, and in row 4 for 2017/2019.
   row 4:   sub-headers ('Constituency', 'County', 'Country/Region',
            'Country', 'Electorate', then per-party 'Votes' / 'Vote share'
            pairs). 'id' lives here in 2017/2019.
@@ -49,11 +49,11 @@ three, but the next 12 party-group columns vary):
            footnotes — filter by code prefix to skip).
 
 Speaker seats are detected via a small hand-curated override map:
-Buckingham 2015 & 2017 (John Bercow), Chorley 2019 (Lindsay Hoyle). HoC
-classifies their votes under "Other" in the simple-table view; without
-the override, the renderer would paint these three (code, year) pairs
-with the "Other" palette colour and lose the Speaker label. North Down
-(Sylvia Hermon, Independent 2015 & 2017) is N05* → filtered out at render
+Buckingham 2010 / 2015 / 2017 (John Bercow), Chorley 2019 (Lindsay Hoyle).
+HoC classifies their votes under "Other" in the simple-table view; without
+the override, the renderer would paint these four (code, year) pairs with
+the "Other" palette colour and lose the Speaker label. North Down (Sylvia
+Hermon, Independent 2010 / 2015 / 2017) is N05* → filtered out at render
 time, no override needed.
 """
 import json
@@ -72,7 +72,7 @@ OUT = DATA / "ge_history.json"
 
 YEARS = (2010, 2015, 2017, 2019)
 
-# Stable across all three sheets — only England, Wales, Scotland, NI PCON
+# Stable across all four sheets — only England, Wales, Scotland, NI PCON
 # code prefixes flag real data rows. Everything else (footnotes,
 # region-name expansion notes) is filtered out.
 GB_PREFIXES = ('E14', 'W07', 'S14')
@@ -104,8 +104,8 @@ def detect_party_columns(ws) -> dict[int, str]:
     Returns {column_index → raw_party_label}. Columns NOT mapped here are
     candidate-vote columns (the 'Votes' sub-header in row 4); we use the
     party_label that immediately precedes each Votes column. Same shape
-    across all three target sheets — only the column *positions* differ
-    (2015 = Con/LD/Lab/UKIP/...; 2019 = Con/Lab/LD/Brexit/...)."""
+    across all four target sheets — only the column *positions* differ
+    (2010/2015/2017 = Con/LD/Lab/UKIP/...; 2019 = Con/Lab/LD/Brexit/...)."""
     party_row = ws[3]  # 1-indexed; row 3 is the party-group header
     out: dict[int, str] = {}
     for cell in party_row:
@@ -121,9 +121,10 @@ def detect_party_columns(ws) -> dict[int, str]:
 
 
 def find_id_column(ws) -> int:
-    """The 'id' header lives in row 3 for the 2015 sheet, row 4 for 2017
-    and 2019. Scan both rows for a cell whose stripped value lowercases
-    to 'id' (or 'ons id', 2019's variant) and return its column index."""
+    """The 'id' header lives in row 3 for the 2010 and 2015 sheets, row 4
+    for 2017 and 2019. Scan both rows for a cell whose stripped value
+    lowercases to 'id' (or 'ons id', 2019's variant) and return its column
+    index."""
     for row_idx in (3, 4):
         for cell in ws[row_idx]:
             v = cell.value
