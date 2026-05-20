@@ -153,6 +153,28 @@ def main():
         if region == 'gb' and surrey_geom_path.exists() else {'unitaries': {}}
     )
 
+    # EU Referendum 2016 LAD-level overlay (issue #85) — GB-only layer.
+    # Each 2016-vintage GB LAD (380 counting areas: 326 E-codes, 22 W06,
+    # 32 S12; NI + Gibraltar filtered out by 26) is painted Leave-purple
+    # or Remain-yellow per the Electoral Commission per-counting-area
+    # results. Polygons come from a separate Dec-2016 LAD layer
+    # (scripts/27) because today's `boroughs` key in ward_geoms.json
+    # bakes in 2019-2025 reorganisations and would smear historical
+    # results across reorganised authorities. Renders only when the
+    # reader opts in via the dedicated "EU Ref 2016" view button —
+    # hidden in every other view by CSS.
+    eu_ref_path = DATA / 'eu_ref_2016.json'
+    lad_2016_geom_path = DATA / 'lad_geoms_2016.json'
+    eu_ref_data = (
+        json.loads(eu_ref_path.read_text())
+        if region == 'gb' and eu_ref_path.exists()
+        else {'years': [], 'lads': {}}
+    )
+    lad_2016_geoms = (
+        json.loads(lad_2016_geom_path.read_text())
+        if region == 'gb' and lad_2016_geom_path.exists() else {'lads': {}}
+    )
+
     # Ward history (issue #70 phase 1A) — GB-only. Drives the time slider
     # below the legend, letting readers scrub 2018→2026. Missing file is
     # benign: the slider chrome is hidden when WARD_HISTORY is empty.
@@ -488,10 +510,46 @@ def main():
         'seats': r['seats_won'],
         'votes': r['votes'],
     } for r in surrey_records]
+    # EU Ref 2016 overlay (issue #85) — empty on GM, populated below on GB.
+    eu_ref_paths: dict = {}
+    eu_ref_js: list = []
     if region == 'gb':
         n_surrey_decided = sum(1 for s in surrey_js if s['seats'])
         print(f'surrey in gb: {len(surrey_js)} (decided: {n_surrey_decided}; '
               f'pending: {len(surrey_js) - n_surrey_decided})')
+
+        # One record + path per 2016-era GB LAD. No era logic — single-
+        # vintage layer, visibility purely CSS-gated by the dedicated
+        # "EU Ref 2016" view button.
+        eu_ref_lads = eu_ref_data.get('lads', {})
+        lad_paths_2016 = {
+            code: l['path'] for code, l in lad_2016_geoms.get('lads', {}).items()
+        }
+        eu_ref_paths = {
+            code: lad_paths_2016[code]
+            for code in eu_ref_lads if code in lad_paths_2016
+        }
+        for code, lad in eu_ref_lads.items():
+            entry = lad['history'][0] if lad.get('history') else None
+            if not entry:
+                continue
+            eu_ref_js.append({
+                'lad':   code,
+                'n':     lad.get('name', ''),
+                'w':     entry['w'],          # "Leave" / "Remain"
+                'y':     entry['y'],
+                'votes': entry.get('votes', {}),
+                'pct':   entry.get('pct', {}),
+                'url':   entry.get('url', ''),
+            })
+        n_eu_decided = sum(1 for r in eu_ref_js if r['w'])
+        n_eu_orphan = sum(1 for code in eu_ref_lads if code not in lad_paths_2016)
+        msg = (f'eu_ref_2016 in gb: {len(eu_ref_js)} '
+               f'(decided: {n_eu_decided}; '
+               f'grey: {len(eu_ref_js) - n_eu_decided})')
+        if n_eu_orphan:
+            msg += f'; {n_eu_orphan} result(s) with no 2016 polygon'
+        print(msg)
 
         # Ward-history coverage report — issue #70 acceptance gauge.
         n_history_wards = len(ward_history.get('wards', {}))
@@ -567,6 +625,7 @@ def main():
     js.append('const PCON_PATHS_PRE = ' + json.dumps(pcon_paths_pre, separators=(',', ':')) + ';')
     js.append('const PCON_ERAS = ' + json.dumps(pcon_eras, separators=(',', ':')) + ';')
     js.append('const SURREY_PATHS = ' + json.dumps(surrey_paths, separators=(',', ':')) + ';')
+    js.append('const EU_REF_PATHS = ' + json.dumps(eu_ref_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
     js.append('const CEDS = ' + json.dumps(ceds_js, separators=(',', ':')) + ';')
     js.append('const HOLYROOD = ' + json.dumps(holyrood_js, separators=(',', ':')) + ';')
@@ -575,6 +634,8 @@ def main():
     js.append('const PCON = ' + json.dumps(pcon_js, ensure_ascii=False,
                                            separators=(',', ':')) + ';')
     js.append('const SURREY = ' + json.dumps(surrey_js, ensure_ascii=False,
+                                             separators=(',', ':')) + ';')
+    js.append('const EU_REF = ' + json.dumps(eu_ref_js, ensure_ascii=False,
                                              separators=(',', ':')) + ';')
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
     js.append('const PARTY_DISPLAY = ' + json.dumps(PARTY_DISPLAY) + ';')
@@ -693,6 +754,23 @@ function fmtSurreyTitle(s) {
   return lines.join('\n');
 }
 
+function fmtEuRefTitle(r) {
+  // "Hartlepool · EU Referendum 2016\nLeave 69.6% / Remain 30.4%\nSource: …"
+  const lines = [r.n + ' · EU Referendum 2016'];
+  const lv = (r.pct && r.pct.Leave  != null) ? (r.pct.Leave  * 100).toFixed(1) : null;
+  const rv = (r.pct && r.pct.Remain != null) ? (r.pct.Remain * 100).toFixed(1) : null;
+  if (lv != null && rv != null) {
+    lines.push('Leave ' + lv + '% / Remain ' + rv + '%');
+  } else if (r.w) {
+    lines.push('Winner: ' + r.w);
+  }
+  if (r.url) {
+    try { lines.push('Source: ' + new URL(r.url).hostname + ' — click to open'); }
+    catch (_) { /* invalid URL */ }
+  }
+  return lines.join('\n');
+}
+
 // Render the one Current-control map. Ward + CED + Holyrood + Senedd + PCON
 // fills are interleaved into a single layer in chronological order — older
 // elections paint first, newer ones on top — so the topmost visible polygon
@@ -712,7 +790,12 @@ if (target) {
   // tiebreak but the year sort puts it below 2025 CEDs and 2026 devolved
   // layers regardless. Records with y=null sort to the bottom (treated
   // as oldest).
-  const KIND_ORDER = { ced: 0, ward: 1, surrey: 2, pcon: 3, holyrood: 4, senedd: 5 };
+  // referendum sorts first so EU-ref polygons paint *below* every other
+  // thematic layer — irrelevant in the default `view-recent` view (where
+  // CSS hides path.referendum) but matters when the dedicated EU Ref
+  // view is active and a viewer paints over an overlapping later layer.
+  const KIND_ORDER = { referendum: -1, ced: 0, ward: 1, surrey: 2,
+                        pcon: 3, holyrood: 4, senedd: 5 };
   const items = [
     ...WARDS.map(w => ({ kind: 'ward', d: WARD_PATHS[w.gss], y: w.y,
                          fill: (w.w && PARTY_COLOURS[w.w]) || NEUTRAL_FILL,
@@ -741,6 +824,10 @@ if (target) {
     ...SURREY.map(s => ({ kind: 'surrey', d: SURREY_PATHS[s.c], y: s.y,
                           fill: (s.w && PARTY_COLOURS[s.w]) || NEUTRAL_FILL,
                           title: fmtSurreyTitle(s) })),
+    ...EU_REF.map(r => ({ kind: 'referendum', d: EU_REF_PATHS[r.lad], y: r.y,
+                          fill: (r.w && PARTY_COLOURS[r.w]) || NEUTRAL_FILL,
+                          title: fmtEuRefTitle(r),
+                          ds: { lad: r.lad, url: r.url || null } })),
   ].filter(it => it.d);
   items.sort((a, b) => (a.y ?? 0) - (b.y ?? 0) || (KIND_ORDER[a.kind] - KIND_ORDER[b.kind]));
   const fills = document.createElementNS(SVG_NS, 'g');
@@ -778,13 +865,15 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 }
 
 // View picker (GB only — gated on CEDS / HOLYROOD / SENEDD / PCON being
-// non-empty). Six buttons with data-view attributes flip the SVG root
+// non-empty). Seven buttons with data-view attributes flip the SVG root
 // between .view-recent (default; chronological z-order), .view-wards
 // (only ward polygons), .view-ceds (only CED polygons), .view-holyrood
-// (only Holyrood SPCs), .view-senedd (only Senedd constituencies), and
-// .view-pcon (only GE 2024 PCONs). DOM is built once; CSS does the
-// per-mode hiding.
-const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon', 'surrey'];
+// (only Holyrood SPCs), .view-senedd (only Senedd constituencies),
+// .view-pcon (only GE 2024 PCONs), .view-surrey (only the two Surrey
+// unitaries) and .view-eu_ref_2016 (only EU referendum LADs). DOM is
+// built once; CSS does the per-mode hiding.
+const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon',
+               'surrey', 'eu_ref_2016'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -793,7 +882,8 @@ const setView = name => {
     btn.setAttribute('aria-pressed', String(btn.dataset.view === name));
   });
 };
-if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length || SURREY.length) {
+if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
+    || SURREY.length || EU_REF.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
@@ -807,6 +897,7 @@ HOLYROOD.forEach(h => { if (h.w) partiesPresent.add(h.w); });
 SENEDD.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 PCON.forEach(p => { if (p.w) partiesPresent.add(p.w); });
 SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
+EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 const legend = document.getElementById('map-legend');
 if (legend) {
   LEGEND_ORDER.forEach(p => {
@@ -1235,17 +1326,18 @@ function paintAtYear(targetYear) {
   });
 }
 
-// Click any ward / CED / Holyrood / Senedd / PCON polygon to open its
-// source URL — lets readers verify accuracy and report errors against
-// the canonical source. PCON click-through covers pre-era HoC Library
-// data (2015 / 2017 / 2019); post-era PCON (2024) has no URL in
-// ge2024.json and so does nothing on click, same as today.
+// Click any ward / CED / Holyrood / Senedd / PCON / referendum polygon
+// to open its source URL — lets readers verify accuracy and report errors
+// against the canonical source. PCON click-through covers pre-era HoC
+// Library data (2015 / 2017 / 2019); post-era PCON (2024) has no URL in
+// ge2024.json and so does nothing on click, same as today. Referendum
+// (EU Ref 2016) opens the Electoral Commission results landing page.
 (function wireClicks() {
   const root = document.querySelector('.map-svg');
   if (!root) return;
   root.addEventListener('click', evt => {
     const target = evt.target.closest(
-      'path.ward, path.ced, path.holyrood, path.senedd, path.pcon');
+      'path.ward, path.ced, path.holyrood, path.senedd, path.pcon, path.referendum');
     if (!target || !target.dataset.url) return;
     window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
   });

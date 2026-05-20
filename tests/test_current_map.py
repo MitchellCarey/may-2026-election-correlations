@@ -227,7 +227,7 @@ def test_uk_current_has_populated_overlay_arrays():
     renderer iterates the data array to draw layers and the legend."""
     import re
     html = (DOCS / "uk" / "current.html").read_text()
-    for var in ("WARDS", "CEDS", "HOLYROOD", "SENEDD", "PCON"):
+    for var in ("WARDS", "CEDS", "HOLYROOD", "SENEDD", "PCON", "EU_REF"):
         # Match `const FOO = [` followed by `{` (a populated record),
         # not `const FOO = []` (the empty-fallback shape from 07d when
         # the input JSON is missing).
