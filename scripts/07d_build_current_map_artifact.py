@@ -107,10 +107,11 @@ def main():
         json.loads(pcon_geom_path.read_text())
         if region == 'gb' and pcon_geom_path.exists() else {'constituencies': {}}
     )
-    # Pre-review PCON polygons + per-PCON history (issue #69 phase 1E / #71).
-    # The 2010-era boundary set (PCON_DEC_2021 = identical geometry to the
-    # boundaries in legal effect at the 2015 / 2017 / 2019 elections; ONS
-    # snapshot date is December 2021) and the per-PCON × per-year winners
+    # Pre-review PCON polygons + per-PCON history (issue #69 phase 1E / #71;
+    # extended back to 2010 in #84). The 2010-era boundary set (PCON_DEC_2021
+    # = identical geometry to the boundaries in legal effect at the 2010 /
+    # 2015 / 2017 / 2019 elections; ONS snapshot date is December 2021) and
+    # the per-PCON × per-year winners
     # sourced from House of Commons Library CBP-8647 (the authoritative
     # academic-grade source — see CLAUDE.md "Data accuracy is paramount").
     # Era='pre'/'post' gating in paintAtYear toggles which polygon set is
@@ -493,16 +494,17 @@ def main():
         # appear in ge2024.json (which is 2024-only), but DOM elements need
         # to exist for paintAtYear to light them up at year < 2024. Initial
         # fill = grey; winner / year / candidate come from PCON_HISTORY at
-        # slider time.
-        pre_meta_by_key = ge_history.get('pcons', {})
+        # slider time. Display name comes from ONS (pcon_geoms_2010) rather
+        # than the HoC sheet — HoC stores names in ALL CAPS with "AND"
+        # (title-cased to "And"), whereas ONS uses the canonical mixed-case
+        # "and" form readers expect in tooltips.
         for code in all_pcon_pre:
             if not code.startswith(GB_PCON_PREFIXES):
                 continue
             key = f'PRE_{code}'
-            meta = pre_meta_by_key.get(code, {})
             pcon_js.append({
                 'p': key,
-                'n': meta.get('name', all_pcon_pre[code].get('name', '')),
+                'n': all_pcon_pre[code].get('name', ''),
                 'w': None,
                 'c': None,
                 'y': None,
@@ -638,10 +640,10 @@ def main():
             for c, p in ge_history.get('pcons', {}).items()
             if c.startswith(GB_PCON_PREFIXES)
         )
-        # Year stops = HoC's 3 (2015/2017/2019) plus the GE 2024 contest
-        # carried in ge2024.json (PCON_HISTORY holds a one-entry history
-        # per post-era key). The two registries stay separate so 19b/20b
-        # regenerates without re-running the GE 2024 pipeline.
+        # Year stops = HoC's 4 (2010/2015/2017/2019) plus the GE 2024
+        # contest carried in ge2024.json (PCON_HISTORY holds a one-entry
+        # history per post-era key). The two registries stay separate so
+        # 19b/20b regenerates without re-running the GE 2024 pipeline.
         slider_pcon_years = sorted(set(ge_history.get('years', [])) | {2024})
         print(f'ge history: {len(gb_history_pcons)} pre-era + {len(pcon_paths)} '
               f'post-era PCON polygons across {len(slider_pcon_years)} year stops '
@@ -1076,17 +1078,20 @@ if (legend) {
         }) + ';')
 
         # PCON_HISTORY (issue #69 phase 1E / #71). Keyed by polygon key —
-        # PRE_<PCON21CD> for pre-era 2010-boundary polygons (3 history
-        # entries: 2015 / 2017 / 2019, from HoC Library CBP-8647), bare
-        # PCON24CD for post-era 2024-boundary polygons (1 history entry:
+        # PRE_<PCON21CD> for pre-era 2010-boundary polygons (4 history
+        # entries: 2010 / 2015 / 2017 / 2019, from HoC Library CBP-8647),
+        # bare PCON24CD for post-era 2024-boundary polygons (1 history entry:
         # 2024, from ge2024.json). paintAtYear at year < 2024 walks PRE_*
-        # histories; at year >= 2024 walks bare-code histories.
+        # histories; at year >= 2024 walks bare-code histories. Display name
+        # comes from ONS (pcon_geoms_2010) so tooltips show the canonical
+        # mixed-case form, not HoC's ALL-CAPS-with-"AND" rendering.
+        ons_pre_names = pcon_geoms_2010.get('constituencies', {})
         pcon_history: dict = {}
         for code, p in ge_history.get('pcons', {}).items():
             if not code.startswith(GB_PCON_PREFIXES):
                 continue
             pcon_history[f'PRE_{code}'] = {
-                'name': p.get('name', ''),
+                'name': ons_pre_names.get(code, {}).get('name') or p.get('name', ''),
                 'history': p.get('history', []),
             }
         # Seed post-era 2024 records from ge2024.json so the same dict
@@ -1435,9 +1440,10 @@ function paintAtYear(targetYear) {
         delete el.dataset.url;
       }
     });
-    // PCON (Westminster) layer — era + carry-forward shape (#71 phase 1E):
+    // PCON (Westminster) layer — era + carry-forward shape (#71 phase 1E,
+    // #84 extended pre-era to 2010):
     //   data-era="pre"  → hidden at year >= 2024 (PRE_<PCON21CD>; 2010 boundaries
-    //                     in legal effect at 2015 / 2017 / 2019)
+    //                     in legal effect at 2010 / 2015 / 2017 / 2019)
     //   data-era="post" → hidden at year <  2024 (bare PCON24CD; July 2024 review)
     // PCON_HISTORY is keyed by polygon key (PRE_<code> for pre-era, bare code
     // for post-era). Pre-era entries carry a HoC briefing URL for click-through;
@@ -1529,9 +1535,10 @@ function paintAtYear(targetYear) {
 // Click any ward / CED / Holyrood / Senedd / PCON / referendum polygon
 // to open its source URL — lets readers verify accuracy and report errors
 // against the canonical source. PCON click-through covers pre-era HoC
-// Library data (2015 / 2017 / 2019); post-era PCON (2024) has no URL in
-// ge2024.json and so does nothing on click, same as today. Referendum
-// (EU Ref 2016) opens the Electoral Commission results landing page.
+// Library data (2010 / 2015 / 2017 / 2019); post-era PCON (2024) has no
+// URL in ge2024.json and so does nothing on click, same as today.
+// Referendum (EU Ref 2016) opens the Electoral Commission results landing
+// page.
 (function wireClicks() {
   const root = document.querySelector('.map-svg');
   if (!root) return;
