@@ -947,6 +947,41 @@ if (legend) {
         js.append('const HOLYROOD_HISTORY = ' + json.dumps(
             holyrood_history.get('spcs', {}), separators=(',', ':'),
             ensure_ascii=False) + ';')
+        # HOLYROOD_REGION_HISTORY (issue #83) carries the d'Hondt
+        # regional-list seat allocations per region per year for the
+        # 2016 + 2021 elections. Each entry has both `seats` (normalised
+        # labels for downstream sorting) and `seats_raw` (raw Wikipedia
+        # party strings — e.g. "Scottish Labour", "Alba Party" — so the
+        # tooltip can render historical accuracy where normalize_party
+        # would flatten minor parties to "Other"). HOLYROOD_RAW_DISPLAY
+        # shortens the raw labels for the tooltip without losing the
+        # party distinction (mirrors SENEDD_RAW_DISPLAY).
+        #
+        # The SPC22-era 8 regions are abolished by the 2026 boundary
+        # review; the renderer only consults this dict for `era==='pre'`
+        # Holyrood polygons, so 2026 data is intentionally absent.
+        js.append('const HOLYROOD_REGION_HISTORY = ' + json.dumps(
+            holyrood_history.get('regions', {}), separators=(',', ':'),
+            ensure_ascii=False) + ';')
+        js.append('const HOLYROOD_RAW_DISPLAY = ' + json.dumps({
+            'Scottish Labour':                'Lab',
+            'Scottish Labour Party':          'Lab',
+            'Labour Party (UK)':              'Lab',
+            'Scottish Conservatives':         'Con',
+            'Scottish Conservative Party':    'Con',
+            'Scottish Conservative and Unionist Party': 'Con',
+            'Conservative Party (UK)':        'Con',
+            'Scottish National Party':        'SNP',
+            'Scottish Greens':                'Green',
+            'Scottish Green Party':           'Green',
+            'Scottish Liberal Democrats':     'LibDem',
+            'Alba Party':                     'Alba',
+            'Reform UK':                      'Reform',
+            'UK Independence Party':          'UKIP',
+            'Scottish Socialist Party':       'SSP',
+            'Independent':                    'Indep',
+            'Independent politician':         'Indep',
+        }) + ';')
         # SENEDD_HISTORY shape:
         #   {<polygon_key>: {name, region, history: [{y, w, src, url, candidate?}]}}
         # SENEDD_REGION_HISTORY (issue #69 phase 1D / #72 commit 6) carries
@@ -1151,6 +1186,16 @@ function paintAtYear(targetYear) {
     // Holyrood layer — same era + carry-forward shape as CEDs (#74 phase 1C):
     //   data-era="pre"  → hidden at year >= 2026 (PRE_<SPC22CD>; 2014 boundaries)
     //   data-era="post" → hidden at year <  2026 (bare S16000***; 2026 review)
+    //
+    // Pre-era tooltip (issue #83): appends a `Region: <name>` line plus
+    // a `Regional list YYYY: <Party> N, ...` line for the d'Hondt list
+    // seats of the polygon's electoral region. Carry-forward picks the
+    // newest region entry with y <= sliderYear. Prefer `seats_raw` when
+    // populated so historically distinct labels (Alba, UKIP, Scottish
+    // Greens) render as themselves rather than collapsing to "Other".
+    // Post-era polygons skip both lines — the SPC22-era regions are
+    // abolished by the 2026 boundary review and 04f leaves `sh.region`
+    // empty for post-era polygons.
     root.querySelectorAll('path.holyrood').forEach(el => {
       const era = el.dataset.era || 'post';
       const visible = era === 'pre' ? (y < 2026) : (y >= 2026);
@@ -1177,8 +1222,34 @@ function paintAtYear(targetYear) {
         const titleEl = el.querySelector('title');
         if (titleEl) {
           const tl = ['Scottish Parliament · ' + (sh.name || '')];
+          if (era === 'pre' && sh.region) tl.push('Region: ' + sh.region);
           const winLine = chosen.y + ' · winner: ' + (PARTY_DISPLAY[chosen.w] || chosen.w);
           tl.push(chosen.candidate ? winLine + ' (' + chosen.candidate + ')' : winLine);
+          if (era === 'pre' && sh.region && typeof HOLYROOD_REGION_HISTORY !== 'undefined') {
+            const rh = HOLYROOD_REGION_HISTORY[sh.region];
+            if (rh && rh.history) {
+              let regionChosen = null;
+              for (const e of rh.history) {
+                if (e.y <= y) regionChosen = e;
+                else break;
+              }
+              if (regionChosen) {
+                const raw = regionChosen.seats_raw || {};
+                const useRaw = Object.keys(raw).length > 0;
+                const seats = useRaw ? raw : (regionChosen.seats || {});
+                const entries = Object.entries(seats).sort((a, b) => b[1] - a[1]);
+                if (entries.length) {
+                  const label = entries.map(([p, n]) => {
+                    const display = useRaw
+                      ? (HOLYROOD_RAW_DISPLAY[p] || p)
+                      : (PARTY_DISPLAY[p] || p);
+                    return display + ' ' + n;
+                  }).join(', ');
+                  tl.push('Regional list ' + regionChosen.y + ': ' + label);
+                }
+              }
+            }
+          }
           if (chosen.url) {
             try { tl.push('Source: ' + new URL(chosen.url).hostname + ' — click to open'); }
             catch (_) { /* invalid URL */ }
