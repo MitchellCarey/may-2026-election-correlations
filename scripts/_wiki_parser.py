@@ -146,14 +146,56 @@ def _top_candidate_by_votes(section: str) -> str | None:
     return best_party
 
 
+_WIKITABLE_ROW_SEP_RE = re.compile(r'\n\|-+[^\n]*\n')
+_WIKITABLE_CELL_PREFIX_RE = re.compile(r'^\s*(?:align\s*=\s*\w+\s*\|)?\s*')
+_WIKITABLE_PARTY_LINK_RE = re.compile(r'\[\[([^\]|]+?)(?:\|[^\]]*)?\]\]')
+
+
+def _top_wikitable_elected(section: str) -> str | None:
+    """Plain-wikitable fallback for the Caerphilly 2017 format: per-ward
+    candidate tables built with `{| class=wikitable ... |}` rather than
+    {{Election box}} templates. Each candidate row has the shape
+    `|name||party||votes||%||Elected`, where the party cell may carry a
+    wikilink ([[Welsh Labour]]) or be plain text (Independent). Multi-member
+    rows mark every winning candidate as 'Elected'; pick the highest-votes
+    elected row."""
+    best_party: str | None = None
+    best_votes = -1
+    for row in _WIKITABLE_ROW_SEP_RE.split(section):
+        if 'Elected' not in row:
+            continue
+        cells = [c.strip() for c in row.split('||')]
+        if len(cells) < 5:
+            continue
+        if 'Elected' not in cells[4]:
+            continue
+        party_cell = _WIKITABLE_CELL_PREFIX_RE.sub('', cells[1]).strip()
+        if not party_cell:
+            continue
+        link = _WIKITABLE_PARTY_LINK_RE.search(party_cell)
+        party = link.group(1) if link else party_cell
+        votes_cell = _WIKITABLE_CELL_PREFIX_RE.sub('', cells[2]).strip()
+        try:
+            votes = int(votes_cell.replace(',', ''))
+        except ValueError:
+            continue
+        if votes > best_votes:
+            best_votes = votes
+            best_party = party
+    return best_party
+
+
 def _extract_winner_party(section: str) -> str | None:
     """Return the raw party string for the top-of-poll candidate in a wiki
     section, or None if no candidate template is found. Cascades winning →
-    highest-vote candidate → hold/gain templates."""
+    highest-vote candidate → plain-wikitable Elected row → hold/gain templates."""
     m = WINNER_RE.search(section)
     if m:
         return m.group(1)
     top = _top_candidate_by_votes(section)
+    if top is not None:
+        return top
+    top = _top_wikitable_elected(section)
     if top is not None:
         return top
     m = HOLDGAIN_RE.search(section)
@@ -162,13 +204,25 @@ def _extract_winner_party(section: str) -> str | None:
     return None
 
 
+_WORD_SEAT_COUNT_RE = re.compile(
+    r'\s*\((?:one|two|three|four|five|six|seven|eight|nine|ten)\s+seats?\)\s*$',
+    re.IGNORECASE,
+)
+_WARD_NUMBER_PREFIX_RE = re.compile(
+    r'^\s*Ward\s+\d+\s*[:\-–—]\s*',
+    re.IGNORECASE,
+)
+
+
 def _clean_ward_name(name: str) -> str:
     """Strip Wikipedia heading/title decorations: collapse wikilinks to their
     visible label, drop inline citation tags (<ref>...</ref> / <ref name=...>),
     drop a trailing ward/constituency suffix (Wigan h4 style), drop a trailing
-    seat-count parenthetical like '(2)' or '(3 seats)'. The ref-stripping
-    matters for several county-council CED H3 titles (Devon, Hertfordshire,
-    Gloucestershire, Worcestershire) that embed citations inside the heading."""
+    seat-count parenthetical like '(2)' or '(3 seats)' or '(one seat)' (Welsh
+    2017 multi-member wards), drop a leading 'Ward N:' / 'Ward N —' prefix
+    (Glasgow's 2017 STV article). The ref-stripping matters for several county-
+    council CED H3 titles (Devon, Hertfordshire, Gloucestershire,
+    Worcestershire) that embed citations inside the heading."""
     clean = WIKILINK_RE.sub(r'\1', name)
     # Closed <ref>...</ref> first (greedy across tags), then any unbalanced
     # <ref...>/<ref/>/everything-after-the-opening-<ref left in the title.
@@ -177,6 +231,8 @@ def _clean_ward_name(name: str) -> str:
     clean = re.sub(r'<ref\b.*$', '', clean, flags=re.IGNORECASE | re.DOTALL)
     clean = re.sub(r'\s+(ward|constituency)\s*$', '', clean, flags=re.IGNORECASE).strip()
     clean = re.sub(r'\s*\(\d+(?:\s+seats?)?\)\s*$', '', clean).strip()
+    clean = _WORD_SEAT_COUNT_RE.sub('', clean).strip()
+    clean = _WARD_NUMBER_PREFIX_RE.sub('', clean).strip()
     return clean
 
 
@@ -366,17 +422,23 @@ def parse_county_article_ceds(_council_name: str, year: int, wt: str) -> dict:
 # the same template, then take the party with the most elected seats per ward
 # (alphabetical tie-break, same convention as parse_county_article).
 #
-# Single regex over the whole template body lets us require BOTH a party
-# field and a bolded candidate field in the same template — without that
-# coupling we'd also count non-elected candidates whose stage-N totals
-# happen to be bolded.
-STV_ELECTED_RE = re.compile(
+# Two-step match (block capture + per-field probes) keeps the "party and
+# bolded candidate must be in the SAME template" coupling without locking
+# the field order — the 2017 East Ayrshire article uses candidate=...|party=...
+# while every other Scottish article uses party=...|candidate=...
+STV_CANDIDATE_BLOCK_RE = re.compile(
     r'\{\{STV Election box candidate2?\b'      # template name (with or without "2")
-    r'(?:[^{}]|\{\{[^{}]*\}\})*?'              # non-greedy body, allowing one level of nested templates
-    r'\|\s*party\s*=\s*([^|}\n]+)'             # party=X
-    r'(?:[^{}]|\{\{[^{}]*\}\})*?'
-    r"\|\s*candidate\s*=\s*'''[^']+'''",       # candidate='''Bold Name''' → elected
+    r'((?:[^{}]|\{\{[^{}]*\}\})*?)'            # captured body, allowing one level of nested templates
+    r'\}\}',
     re.IGNORECASE | re.DOTALL,
+)
+STV_PARTY_FIELD_RE = re.compile(
+    r'\|\s*party\s*=\s*([^|}\n]+)',
+    re.IGNORECASE,
+)
+STV_BOLD_CANDIDATE_FIELD_RE = re.compile(
+    r"\|\s*candidate\s*=\s*'''[^']+'''",       # candidate='''Bold Name''' → elected
+    re.IGNORECASE,
 )
 # Some Scottish articles use a separate `{{STV Election box winning candidate}}`
 # template family — keep the older regex as a fallback for those.
@@ -432,7 +494,13 @@ def parse_stv_article(_council_name: str, year: int, wt: str) -> dict:
             section = segment[h_end:next_start]
 
             seat_counts: dict[str, int] = {}
-            for pm in STV_ELECTED_RE.finditer(section):
+            for tpl in STV_CANDIDATE_BLOCK_RE.finditer(section):
+                body = tpl.group(1)
+                if not STV_BOLD_CANDIDATE_FIELD_RE.search(body):
+                    continue
+                pm = STV_PARTY_FIELD_RE.search(body)
+                if not pm:
+                    continue
                 normalized = normalize_party(pm.group(1))
                 seat_counts[normalized] = seat_counts.get(normalized, 0) + 1
             # Fallback for councils using the older "winning candidate" template.

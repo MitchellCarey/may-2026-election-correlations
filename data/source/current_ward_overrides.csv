@@ -17,7 +17,7 @@ Highland,Eilean a' Cheò,Eilean á Chèo,Scottish Gaelic diacritic drift
 Aberdeenshire,Mid-Formartine,Mid Formartine,hyphen drift
 Aberdeenshire,Banchory and Mid-Deeside,Banchory and Mid Deeside,hyphen drift
 Gwynedd,Cwm y Glo,Cwm-y-glo,Welsh hyphen drift
-Denbighshire,Rhyl Ty Newydd (two seats),Rhyl Tŷ Newydd,Welsh diacritic drift
+Denbighshire,Rhyl Ty Newydd,Rhyl Tŷ Newydd,Welsh diacritic drift
 Pembrokeshire,Fishguard North East,Fishguard: North East,Welsh colon drift
 Pembrokeshire,Fishguard North West,Fishguard: North West,Welsh colon drift
 Pembrokeshire,Haverfordwest Garth,Haverfordwest: Garth,Welsh colon drift
@@ -33,7 +33,7 @@ Pembrokeshire,Milford West,Milford: West,Welsh colon drift
 Pembrokeshire,Narberth Rural,Narberth: Rural,Welsh colon drift
 Pembrokeshire,Neyland East,Neyland: East,Welsh colon drift
 Pembrokeshire,Neyland West,Neyland: West,Welsh colon drift
-Pembrokeshire,Pembroke Monkton and St Mary South (two seats),Pembroke: Monkton and St Mary South,Welsh colon drift
+Pembrokeshire,Pembroke Monkton and St Mary South,Pembroke: Monkton and St Mary South,Welsh colon drift
 Pembrokeshire,Pembroke St Mary North,Pembroke: St Mary North,Welsh colon drift
 Pembrokeshire,Pembroke St Michael,Pembroke: St Michael,Welsh colon drift
 Pembrokeshire,"Pembroke Dock, Bufferland",Pembroke Dock: Bufferland,Welsh colon-vs-comma drift
@@ -43,7 +43,7 @@ Pembrokeshire,"Pembroke Dock, Market",Pembroke Dock: Market,Welsh colon-vs-comma
 Pembrokeshire,"Pembroke Dock, Pennar",Pembroke Dock: Pennar,Welsh colon-vs-comma drift
 Pembrokeshire,Tenby North,Tenby: North,Welsh colon drift
 Pembrokeshire,Tenby South,Tenby: South,Welsh colon drift
-Swansea,Bon-y-maen (two seats),Bôn-y-maen,Welsh diacritic drift
+Swansea,Bon-y-maen,Bôn-y-maen,Welsh diacritic drift
 Bridgend,Cefn Glas,Cefn-glas,Welsh hyphen drift
 Powys,Aber Craf and Ystradgynlais,Aber-craf and Ystradgynlais,Welsh hyphen drift
 Chelmsford,South Woodham Ferrers – Chetwood and Collingwood,South Woodham-Chetwood and Collingwood,Chelmsford boundary review
@@ -88,16 +88,16 @@ Monmouthshire,Llanfoist & Govilon,Llanfoist Fawr and Govilon,Monmouthshire ward 
 Aberdeen City,George Street/Harbour,George St/Harbour,Aberdeen abbreviation drift
 Highland,Thurso and North West Caithness,Thurso and Northwest Caithness,Highland spelling
 Powys,Llanrhaeadr-ym-Mochant and Llansilin,Llanrhaeadr-ym-Mochnant and Llansilin,Powys typo (missing n)
-Denbighshire,Rhyl Trellewellyn (two seats),Rhyl Trellewelyn,Denbighshire spelling (extra l)
+Denbighshire,Rhyl Trellewellyn,Rhyl Trellewelyn,Denbighshire spelling (extra l)
 Torfaen,Llanyravon,Llanyrafon,Torfaen v/f drift
 Pembrokeshire,Narberth,Narberth: Urban,Pembrokeshire (Narberth scrape = Urban ward)
 Flintshire,Llanfyndd,Llanfynydd,Flintshire spelling
-Neath Port Talbot,Alltwen (one seat),Allt-wen,NPT hyphen drift
-Neath Port Talbot,Bryncoch North (one seat),Bryn-coch North,NPT hyphen drift
-Neath Port Talbot,Bryncoch South (two seats),Bryn-coch South,NPT hyphen drift
-Neath Port Talbot,Cymmer and Glyncorrwg (one seat),Cymer and Glyncorrwg,NPT spelling (mm→m)
-Neath Port Talbot,Gwaun Cae Gurwen and Lower Brynaman (two seats),Gwaun-Cae-Gurwen and Lower Brynamman,NPT hyphen + spelling
-Neath Port Talbot,Margam and Taibach (three seats),Margam and Tai-bach,NPT hyphen drift
+Neath Port Talbot,Alltwen,Allt-wen,NPT hyphen drift
+Neath Port Talbot,Bryncoch North,Bryn-coch North,NPT hyphen drift
+Neath Port Talbot,Bryncoch South,Bryn-coch South,NPT hyphen drift
+Neath Port Talbot,Cymmer and Glyncorrwg,Cymer and Glyncorrwg,NPT spelling (mm→m)
+Neath Port Talbot,Gwaun Cae Gurwen and Lower Brynaman,Gwaun-Cae-Gurwen and Lower Brynamman,NPT hyphen + spelling
+Neath Port Talbot,Margam and Taibach,Margam and Tai-bach,NPT hyphen drift
 Waverley,Witley & Milford,Milford & Witley,Waverley word order
 East Riding of Yorkshire,"Snaith, Airmyn and Rawcliffe and Marshland","Snaith, Airmyn, Rawcliffe and Marshland",E Riding comma drift
 Doncaster,Tickhill & Wadworth,Tickhill & Wadsworth,Doncaster typo (Wadworth→Wadsworth)
@@ -216,3 +216,205 @@ West Northamptonshire,Rural South Northamptonshire (3 member),Silverstone,2024 b
 North Northamptonshire,Kettering Central,Clover Hill,2024 boundary review: 2nd pre-review ward absorbed
 Northumberland,Stocksfield & Bywell,Stocksfield and Broomhaugh,2024 boundary review: 2nd pre-review ward absorbed
 Na h-Eileanan Siar,Sgìr' Ùige agus Carlabhagh,Sgìr Ùige agus Càrlabhagh,Wikipedia article orthography differs from WD24
+Aberdeen City,Hazlehead/Ashley/Queens Cross,Hazlehead/Queens Cross/Countesswells,"2022 review: Ashley out, Countesswells in"
+Blaenau Gwent,Abertillery,Abertillery and Six Bells,2017 ward merged with Six Bells
+Blaenau Gwent,Rassau,Rassau and Garnlydan,2017 ward merged with Garnlydan
+Blaenau Gwent,Six Bells,Abertillery and Six Bells,2017 ward merged with Abertillery
+Blaenau Gwent,Tredegar Central & West,Tredegar,2017 ward absorbed into renamed Tredegar
+Bridgend,Brackla,Brackla West,2017 ward split in 2022 review (1 of 4 successors)
+Bridgend,Brackla,Brackla West Central,2017 ward split in 2022 review (2 of 4 successors)
+Bridgend,Brackla,Brackla East Central,2017 ward split in 2022 review (3 of 4 successors)
+Bridgend,Brackla,Brackla East and Coychurch Lower,2017 ward split in 2022 review (4 of 4 successors)
+Bridgend,Coity,Coity Higher,2017 ward absorbed/renamed in 2022 review
+Bridgend,Coychurch Lower,Brackla East and Coychurch Lower,2017 ward merged with Brackla East
+Bridgend,Penprysg,Pencoed and Penprysg,2017 ward merged with Pencoed
+Bridgend,Ynysawdre,St Bride's Minor and Ynysawdre,2017 ward merged with St Bride's Minor
+Cardiff,Creigiau & St. Fagans,Pentyrch and St Fagans,2017 ward merged with Pentyrch
+Cardiff,Lisvane,Lisvane and Thornhill,2017 ward merged with Thornhill
+Cardiff,Pentyrch,Pentyrch and St Fagans,2017 ward merged with Creigiau/St Fagans
+Carmarthenshire,Carmarthen Town North,Carmarthen Town North and South,2017 ward merged with Town South
+Carmarthenshire,Carmarthen Town South,Carmarthen Town North and South,2017 ward merged with Town North
+Carmarthenshire,Cenarth,Cenarth and Llangeler,2017 ward merged with Llangeler
+Carmarthenshire,Dafen,Dafen and Felinfoel,2017 ward merged with Felinfoel
+Carmarthenshire,Felinfoel,Dafen and Felinfoel,2017 ward merged with Dafen
+Carmarthenshire,Kidwelly,Kidwelly and St Ishmael,2017 ward merged with St Ishmael
+Carmarthenshire,Llangeler,Cenarth and Llangeler,2017 ward merged with Cenarth
+Carmarthenshire,Llansteffan,St Clears and Llansteffan,2017 ward merged with St Clears
+Carmarthenshire,Quarter Bach,Cwarter Bach,Welsh spelling change in 2022 review
+Carmarthenshire,St Clears,St Clears and Llansteffan,2017 ward merged with Llansteffan
+Carmarthenshire,St Ishmaels,Kidwelly and St Ishmael,2017 ward merged with Kidwelly; spelling drift
+Ceredigion,Aberaeron,Aberaeron and Aberarth,2017 ward merged with Aberarth
+Ceredigion,Aberporth,Aberporth and Y Ferwig,2017 ward merged with Y Ferwig
+Ceredigion,"Aberystwyth, Bronglais",Aberystwyth Morfa a Glais,2017 sub-ward absorbed into Morfa a Glais
+Ceredigion,"Aberystwyth, North",Aberystwyth Morfa a Glais,2017 sub-ward absorbed into Morfa a Glais
+Ceredigion,"Aberystwyth, Penparcau",Aberystwyth Penparcau,identity match after comma strip
+Ceredigion,"Aberystwyth, Rheidol",Aberystwyth Rheidol,identity match after comma strip
+Ceredigion,Beulah,Beulah and Llangoedmor,2017 ward merged with Llangoedmor
+Ceredigion,New Quay,New Quay and Llanllwchaearn,2017 ward merged with Llanllwchaearn
+Conwy,Betws-y-Coed,Betws-y-Coed and Trefriw,2017 ward merged with Trefriw
+Denbighshire,Denbigh Upper/Henllan,Denbigh Caledfryn Henllan,2017 ward renamed/reorganised in 2022 review
+Denbighshire,Rhyl South East,Rhyl South,2017 ward split (1 of multiple successors)
+Denbighshire,Rhyl South East,Rhyl East,2017 ward split (2 of multiple successors)
+East Lothian,Tranent/Wallyford/Macmerry,"Tranent, Wallyford and Macmerry",slash drift; 2022 review name change
+Gwynedd,Abersoch,Abersoch gyda Llanengan,2017 ward merged with Llanengan
+Gwynedd,Bethel,Bethel a'r Felinheli,2017 ward merged with Y Felinheli
+Gwynedd,Corris/Mawddwy,Corris a Mawddwy,"slash + Welsh ""a"" drift"
+Gwynedd,Dolgellau (North),Gogledd Dolgellau,"Welsh ""Gogledd"" = North"
+Gwynedd,Dolgellau (South),De Dolgellau,"Welsh ""De"" = South"
+Gwynedd,Efailnewydd / Buan,Efailnewydd a Buan,"slash + Welsh ""a"" drift"
+Gwynedd,Groeslon,Y Groeslon,Welsh definite article added in 2022 review
+Gwynedd,Harlech/Talsarnau,Harlech a Llanbedr,2017 ward absorbed in 2022 review
+Gwynedd,Llanbedr,Harlech a Llanbedr,2017 ward merged with Harlech
+Gwynedd,Llanbedrog,Llanbedrog gyda Mynytho,2017 ward merged with Mynytho
+Gwynedd,Llanengan,Abersoch gyda Llanengan,2017 ward merged with Abersoch
+Gwynedd,Llangelynnin,Arthog a Llangelynnin,2017 ward merged with Arthog
+Gwynedd,Morfa Nefyn,Morfa Nefyn a Thudweiliog,2017 ward merged with Tudweiliog
+Gwynedd,Porthmadog (East),Dwyrain Porthmadog,"Welsh ""Dwyrain"" = East"
+Gwynedd,Porthmadog (West),Gorllewin Porthmadog,"Welsh ""Gorllewin"" = West"
+Gwynedd,Pwllheli (North),Gogledd Pwllheli,"Welsh ""Gogledd"" = North"
+Gwynedd,Pwllheli (South),De Pwllheli,"Welsh ""De"" = South"
+Gwynedd,Tudweiliog,Morfa Nefyn a Thudweiliog,2017 ward merged with Morfa Nefyn
+Gwynedd,Tywyn,Morfa Tywyn,2017 ward renamed in 2022 review
+Gwynedd,Y Felinheli,Bethel a'r Felinheli,2017 ward merged with Bethel
+Merthyr Tydfil,Bedlinog,Bedlinog and Trelewis,2017 ward merged with Trelewis
+Merthyr Tydfil,Dowlais,Dowlais and Pant,2017 ward merged with Pant
+Na h-Eileanan Siar,"Barraigh, Bhatarsaigh, Eirisgeigh agus Uibhist a Deas",Barraigh agus Bhatarsaigh,2017 ward split (1 of 2)
+Na h-Eileanan Siar,"Barraigh, Bhatarsaigh, Eirisgeigh agus Uibhist a Deas","Uibhist a Deas, Èirisgeigh agus Beinn na Faoghla",2017 ward split (2 of 2)
+Na h-Eileanan Siar,Beinn na Foghla agus Uibhist a Tuath,Uibhist a Tuath,2017 ward split (1 of 2)
+Na h-Eileanan Siar,Beinn na Foghla agus Uibhist a Tuath,"Uibhist a Deas, Èirisgeigh agus Beinn na Faoghla",2017 ward split (2 of 2)
+Na h-Eileanan Siar,Na Hearadh agus Ceann a Deas nan Loch,Na Hearadh,2017 ward split (1 of 2)
+Na h-Eileanan Siar,Na Hearadh agus Ceann a Deas nan Loch,Sgìre nan Loch,2017 ward split (2 of 2)
+Na h-Eileanan Siar,Sgir' Uige agus Ceann a Tuath nan Loch,Loch a Tuath,2017 ward absorbed; spelling drift
+Neath Port Talbot,Blaengwrach,Blaengwrach and Glynneath West,2017 ward merged with Glynneath West
+Neath Port Talbot,Cimla,Cimla and Pelenna,2017 ward merged with Pelenna
+Neath Port Talbot,Cwmllynfell,Cwmllynfell and Ystalyfera,2017 ward merged with Ystalyfera
+Neath Port Talbot,Cymmer,Cymer and Glyncorrwg,"2017 ward absorbed; ""Cymmer""→""Cymer"" rename + merger with Glyncorrwg"
+Neath Port Talbot,Glyncorrwg,Cymer and Glyncorrwg,2017 ward merged with Cymer
+Neath Port Talbot,Glynneath,Glynneath Central and East,2017 ward partially became Glynneath Central and East
+Neath Port Talbot,Gwaun Cae Gurwen,Gwaun-Cae-Gurwen and Lower Brynamman,2017 ward merged with Lower Brynamman
+Neath Port Talbot,Gwynfi,Gwynfi and Croeserw,2017 ward merged with Croeserw (new community area)
+Neath Port Talbot,Lower Brynamman,Gwaun-Cae-Gurwen and Lower Brynamman,2017 ward merged with Gwaun-Cae-Gurwen
+Neath Port Talbot,Margam,Margam and Tai-bach,2017 ward merged with Tai-bach
+Neath Port Talbot,Onllwyn,"Crynant, Onllwyn and Seven Sisters",2017 ward merged with Crynant + Seven Sisters
+Neath Port Talbot,Pelenna,Cimla and Pelenna,2017 ward merged with Cimla
+Neath Port Talbot,Resolven,Resolven and Tonna,2017 ward merged with Tonna
+Neath Port Talbot,Seven Sisters,"Crynant, Onllwyn and Seven Sisters",2017 ward merged with Crynant + Onllwyn
+Neath Port Talbot,Taibach,Margam and Tai-bach,2017 ward absorbed into merged Margam and Tai-bach
+Neath Port Talbot,Tonna,Resolven and Tonna,2017 ward merged with Resolven
+Neath Port Talbot,Ystalyfera,Cwmllynfell and Ystalyfera,2017 ward merged with Cwmllynfell
+Newport,Langstone,Bishton and Langstone,2017 ward merged with Bishton
+Newport,Marshfield,Tredegar Park and Marshfield,2017 ward merged with Tredegar Park
+Newport,Rogerstone,Rogerstone West,2017 ward split (1 of 3 successors)
+Newport,Rogerstone,Rogerstone North,2017 ward split (2 of 3 successors)
+Newport,Rogerstone,Rogerstone East,2017 ward split (3 of 3 successors)
+Newport,Tredegar Park,Tredegar Park and Marshfield,2017 ward merged with Marshfield
+North Ayrshire,Ardrossan and Arran,Arran,2017 ward split (1 of 2)
+North Ayrshire,Ardrossan and Arran,Ardrossan,2017 ward split (2 of 2)
+North Ayrshire,North Coast and Cumbraes,North Coast,2017 ward shortened in 2022 review
+North Ayrshire,Saltcoats,Saltcoats and Stevenston,2017 ward merged with Stevenston
+North Ayrshire,Stevenston,Saltcoats and Stevenston,2017 ward merged with Saltcoats
+Pembrokeshire,Amroth,Amroth and Saundersfoot North,2017 ward merged with Saundersfoot North
+Pembrokeshire,Carew,Carew and Jeffreyston,2017 ward merged with Jeffreyston
+Pembrokeshire,Cilgerran,Cilgerran and Eglwyswrw,2017 ward merged with Eglwyswrw
+Pembrokeshire,Clydau,Boncath and Clydau,2017 ward merged with Boncath
+Pembrokeshire,Crymych,Crymych and Mynachlog-ddu,2017 ward merged with Mynachlog-ddu
+Pembrokeshire,Dinas Cross,Newport and Dinas,2017 ward merged with Newport
+Pembrokeshire,Kilgetty / Begelly,Kilgetty and Begelly,slash drift
+Pembrokeshire,Manorbier,Manorbier and Penally,2017 ward merged with Penally
+Pembrokeshire,Newport,Newport and Dinas,2017 ward merged with Dinas
+Pembrokeshire,Pembroke Dock Central,Pembroke Dock: Central,colon added in 2022 review
+Pembrokeshire,Pembroke Dock Market,Pembroke Dock: Market,colon added in 2022 review
+Pembrokeshire,Pembroke Dock Pennar,Pembroke Dock: Pennar,colon added in 2022 review
+Pembrokeshire,Pembroke Monkton,Pembroke: Monkton and St Mary South,2017 ward merged; colon added in 2022 review
+Pembrokeshire,Pembroke St Mary South,Pembroke: Monkton and St Mary South,2017 ward absorbed; colon added in 2022 review
+Pembrokeshire,Penally,Manorbier and Penally,2017 ward merged with Manorbier
+Pembrokeshire,Rudbaxton,Rudbaxton and Spittal,2017 ward merged with Spittal
+Pembrokeshire,Saundersfoot,Saundersfoot South,2017 ward split (1 of 2); North merged with Amroth
+Pembrokeshire,Saundersfoot,Amroth and Saundersfoot North,2017 ward split (2 of 2)
+Powys,Aber-craf,Aber-craf and Ystradgynlais,2017 ward merged with Ystradgynlais
+Powys,Beguildy,Knighton with Beguildy,2017 ward merged with Knighton
+Powys,Berriew,Berriew and Castle Caereinion,2017 ward merged with Castle Caereinion
+Powys,Bronllys,Bronllys and Felin-fach,2017 ward merged with Felin-fach
+Powys,Bwlch,Llangors with Bwlch,2017 ward merged with Llangors
+Powys,Disserth and Trecoed,Disserth and Trecoed with Newbridge,2017 ward merged with Newbridge
+Powys,Forden,Forden and Montgomery,2017 ward merged with Montgomery
+Powys,Knighton,Knighton with Beguildy,2017 ward merged with Beguildy
+Powys,Llanafanfawr,Llanafanfawr with Garth,2017 ward merged with Garth
+Powys,Llandinam,Llandinam with Dolfor,2017 ward merged with Dolfor
+Powys,Llanfair Caereinion,Llanfair Caereinion and Llanerfyl,2017 ward merged with Llanerfyl
+Powys,Llangattock,Llangattock and Llangynidr,2017 ward merged with Llangynidr
+Powys,Llangors,Llangors with Bwlch,2017 ward merged with Bwlch
+Powys,Llangunllo,Llangunllo with Norton,2017 ward merged with Norton
+Powys,Llangynidr,Llangattock and Llangynidr,2017 ward merged with Llangattock
+Powys,Llanrhaeadr-ym-Mochnant/Llansilin,Llanrhaeadr-ym-Mochnant and Llansilin,slash drift
+Powys,Llanyre,Llanyre with Nantmel,2017 ward merged with Nantmel
+Powys,Maescar / Llywel,Maescar and Llywel,slash drift
+Powys,Meifod,Llangyniew and Meifod,2017 ward merged with Llangyniew
+Powys,Montgomery,Forden and Montgomery,2017 ward merged with Forden
+Powys,Nantmel,Llanyre with Nantmel,2017 ward merged with Llanyre
+Powys,Newtown Central,Newtown Central and South,2017 ward merged with Newtown South
+Powys,Newtown Llanllwchaiarn North,Newtown North,2017 ward shortened in 2022 review
+Powys,Newtown Llanllwchaiarn West,Newtown West,2017 ward shortened in 2022 review
+Powys,Newtown South,Newtown Central and South,2017 ward merged with Newtown Central
+Powys,Trewern,Trelystan and Trewern,2017 ward merged with Trelystan
+Powys,Ystradgynlais,Aber-craf and Ystradgynlais,2017 ward merged with Aber-craf
+Rhondda Cynon Taf,Aberaman North,Aberaman,2017 ward merged with Aberaman South into single Aberaman
+Rhondda Cynon Taf,Aberaman South,Aberaman,2017 ward merged with Aberaman North into single Aberaman
+Rhondda Cynon Taf,Aberdare West / Llwydcoed,Aberdare West and Llwydcoed,slash drift
+Rhondda Cynon Taf,Beddau,Beddau and Tyn-y-nant,2017 ward merged with Tyn-y-nant
+Rhondda Cynon Taf,Brynna,Brynna and Llanharan,2017 ward merged with Llanharan
+Rhondda Cynon Taf,Ferndale,Ferndale and Maerdy,2017 ward merged with Maerdy
+Rhondda Cynon Taf,Gilfach Goch,Gilfach-goch,hyphen drift
+Rhondda Cynon Taf,Graig,Graig and Pontypridd West,2017 ward merged with Pontypridd West
+Rhondda Cynon Taf,Hawthorn,Hawthorn and Lower Rhydfelen,2017 ward merged with Lower Rhydfelen
+Rhondda Cynon Taf,Llanharan,Brynna and Llanharan,2017 ward merged with Brynna
+Rhondda Cynon Taf,Maerdy,Ferndale and Maerdy,2017 ward merged with Ferndale
+Rhondda Cynon Taf,Mountain Ash East,Mountain Ash,2017 ward merged with Mountain Ash West into single Mountain Ash
+Rhondda Cynon Taf,Mountain Ash West,Mountain Ash,2017 ward merged with Mountain Ash East into single Mountain Ash
+Rhondda Cynon Taf,Rhydfelen Central / Ilan,Rhydfelen Central,2017 ward shortened in 2022 review
+Rhondda Cynon Taf,Talbot Green,Llantrisant and Talbot Green,2017 ward merged with Llantrisant
+Rhondda Cynon Taf,Tylorstown,Tylorstown and Ynyshir,2017 ward merged with Ynyshir
+Rhondda Cynon Taf,Tyn-Y-Nant,Beddau and Tyn-y-nant,2017 ward merged with Beddau
+Rhondda Cynon Taf,Ynyshir,Tylorstown and Ynyshir,2017 ward merged with Tylorstown
+Shetland Islands,Lerwick North,Lerwick North and Bressay,2017 ward merged with Bressay
+Swansea,Dunvant,Dunvant and Killay,2017 ward merged with Killay (combined Killay N+S)
+Swansea,Gorseinon,Gorseinon and Penyrheol,2017 ward merged with Penyrheol
+Swansea,Killay North,Dunvant and Killay,2017 ward merged with Dunvant + Killay South
+Swansea,Killay South,Dunvant and Killay,2017 ward merged with Dunvant + Killay North
+Swansea,Penyrheol,Gorseinon and Penyrheol,2017 ward merged with Gorseinon
+Torfaen,Croesyceiliog North,Croesyceiliog,2017 ward merged with Croesyceiliog South
+Torfaen,Croesyceiliog South,Croesyceiliog,2017 ward merged with Croesyceiliog North
+Torfaen,Llanyrafon West,Llanyrafon,2017 ward merged with Llanyrafon East into single Llanyrafon
+Torfaen,Pontnewynydd,Pontnewynydd and Snatchwood,2017 ward merged with Snatchwood
+Torfaen,Pontypool,Pontypool Fawr,2017 ward renamed in 2022 review
+Torfaen,Snatchwood,Pontnewynydd and Snatchwood,2017 ward merged with Pontnewynydd
+Torfaen,St Cadocs and Penygarn,Trevethin and Penygarn,2017 ward merged in 2022 review
+Torfaen,Trevethin,Trevethin and Penygarn,2017 ward merged with Penygarn
+Vale of Glamorgan,Llandow/Ewenny,Llandow,2017 ward shortened in 2022 review
+Wrexham,Acton,Acton and Maesydre,2017 ward merged with Maesydre
+Wrexham,Bronington,Bronington and Hanmer,2017 ward merged with Hanmer
+Wrexham,Cefn,Cefn West,2017 ward split (1 of 2)
+Wrexham,Cefn,Cefn East,2017 ward split (2 of 2)
+Wrexham,Gwersyllt East and South,Gwersyllt East,2017 ward split (1 of 2)
+Wrexham,Gwersyllt East and South,Gwersyllt South,2017 ward split (2 of 2)
+Wrexham,Johnstown,Pant and Johnstown,2017 ward merged with Pant
+Wrexham,Maesydre,Acton and Maesydre,2017 ward merged with Acton
+Wrexham,Pant,Pant and Johnstown,2017 ward merged with Johnstown
+Caerphilly,Aberbargod / Aberbargoed,Aberbargoed and Bargoed,2017 ward merged with Bargoed
+Caerphilly,Bargod / Bargoed,Aberbargoed and Bargoed,2017 ward merged with Aberbargoed
+Caerphilly,"Bedwas, Trethomas and Machen",Bedwas and Trethomas,2017 ward split (1 of 2 successors)
+Caerphilly,"Bedwas, Trethomas and Machen",Machen and Rudry,2017 ward split (2 of 2 successors)
+Caerphilly,Catwg Sant / St. Cattwg,St Cattwg,Welsh/English bilingual + period drift
+Caerphilly,Cefn Fforest,Cefn Fforest and Pengam,2017 ward merged with Pengam
+Caerphilly,Pengam,Cefn Fforest and Pengam,2017 ward merged with Cefn Fforest
+Caerphilly,Coed Duon / Blackwood,Blackwood,Welsh/English bilingual
+Caerphilly,Crymlyn / Crumlin,Crumlin,Welsh/English bilingual
+Caerphilly,Cwm Aber / Aber Valley,Aber Valley,Welsh/English bilingual
+Caerphilly,Cwm Darran / Darren Valley,Darran Valley,Welsh/English bilingual
+Caerphilly,Dwyrain Rhisga / Risca East,Risca East,Welsh/English bilingual
+Caerphilly,Gorllewin Rhisga / Risca West,Risca West,Welsh/English bilingual
+Caerphilly,Martin Sant / St. Martins,St Martins,Welsh/English bilingual + period drift
+Caerphilly,Moria / Moriah,Moriah and Pontlottyn,2017 ward merged with Pontlottyn
+Caerphilly,Pontlotyn / Pontlottyn,Moriah and Pontlottyn,2017 ward merged with Moriah
+Caerphilly,Trecelyn / Newbridge,Newbridge,Welsh/English bilingual
+Caerphilly,Tredegar Newydd / New Tredegar,New Tredegar,Welsh/English bilingual

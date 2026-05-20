@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 DOCS = ROOT / "docs"
 
-SLIDER_YEARS = [2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026]
+SLIDER_YEARS = [2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026]
 
 
 @pytest.fixture(scope="session")
@@ -62,10 +62,12 @@ def test_ward_history_years_are_sorted_ascending(ward_history):
 
 
 def test_ward_history_years_are_within_slider_range(ward_history):
-    """Phase 1A spec restricts the slider to 2018-2026 (2020 deferred)."""
+    """Ward-history stops sit at [2017, 2018, 2019, 2021, 2022, 2023, 2024,
+    2025, 2026]. 2020 is excluded (Coronavirus postponement). Issue #88
+    extended the range back to 2017 for Welsh + Scottish councils."""
     years = ward_history["years"]
     assert set(years).issubset(SLIDER_YEARS), \
-        f"years contain values outside the phase 1A range: " \
+        f"years contain values outside the expected ward-history range: " \
         f"{sorted(set(years) - set(SLIDER_YEARS))}"
     assert 2026 in years, "2026 must always be a slider stop (current state)"
 
