@@ -1,15 +1,19 @@
 """Build the per-SPC per-year history dataset for the GB Current map page's
 Holyrood time-slider repaint (issue #69 Phase 1C / #74).
 
-Sibling of scripts/04e_build_ced_history.py — same three-pass shape, but
+Sibling of scripts/04e_build_ced_history.py — same multi-pass shape, but
 keyed by Holyrood polygon (current SPC26CDs from ward_geoms.json `spcs`
-and pre-review PRE_<SPC22CD>s from `spcs_pre_review`).
+and pre-review PRE_<SPC22CD>s from `spcs_pre_review`). Issue #83 added
+the d'Hondt regional-list seats per region per year alongside the
+constituency winners (Pass 4 below); mirrors 04g for Senedd.
 
 Sources, per (polygon, year) precedence (later passes win on tie):
   1. data/source/holyrood_official_<year>.csv — hand-curated fallback for
      Wikipedia content gaps. Schema: spc22cd,year,party,candidate,source,url,note
-  2. data/holyrood_history_raw.json — Wikipedia per-constituency
-     extractions for 2016 + 2021 (output of scripts/18b).
+  2. data/holyrood_history_raw.json — Wikipedia extractions for 2016 +
+     2021 (output of scripts/18b). Mixed records: kind="fptp" =
+     per-constituency winners, kind="regional" = per-region d'Hondt
+     list-seat allocations (#83).
   3. data/holyrood_winners.json — Wikipedia 2026 results (output of
      scripts/18). Routes to current SPC26CD polygons.
 
@@ -18,14 +22,22 @@ Polygon era matching (which years a polygon can accept):
   - PRE_S16000*** in `spcs_pre_review` (SPC22 codes S16000074-S16000150)
     → year < 2026.
 
-Output: data/holyrood_history.json with schema (mirrors ced_history.json):
+Region records flow through unchanged from 18b's regional pass; the
+per-region history block is keyed by display name (the same name used
+in the registry's 3rd field, e.g. "Glasgow") and applies only to
+pre-review reads (2016 + 2021 — the SPC22-era 8 regions are abolished
+by the 2026 boundary review).
+
+Output: data/holyrood_history.json with schema (mirrors senedd_history.json):
   { "years": [2016, 2021, 2026],
     "spcs": { "<polygon_key>": {
         "name":    "Aberdeen Central",
         "region":  "North East Scotland",
-        "history": [ {y, w, src, url, candidate?} ... ascending by year ] } } }
+        "history": [ {y, w, src, url, candidate?} ... ascending by year ] } },
+    "regions": { "<region_name>": {
+        "history": [ {y, seats, seats_raw, src, url} ... ascending by year ] } } }
 
-Determinism: sort_keys=True on json.dump, per-SPC history ascending by year.
+Determinism: sort_keys=True on json.dump, per-key history ascending by year.
 """
 import argparse
 import csv
@@ -125,10 +137,15 @@ def main():
         }
 
     # --- Pass 1: Wikipedia 2016 + 2021 per-constituency extractions ---
+    # 18b's output now mixes kind="fptp" (constituency winners) with
+    # kind="regional" (per-region list seats); Pass 1 ignores the regional
+    # records here — Pass 4 below handles them.
     raw_path = DATA / 'holyrood_history_raw.json'
     raw_records = json.loads(raw_path.read_text()) if raw_path.exists() else []
     pass1_added = 0
     for rec in raw_records:
+        if rec.get('kind') != 'fptp':
+            continue
         spc22cd = rec['spc22cd']
         year = rec['year']
         if year not in SLIDER_YEARS:
@@ -199,6 +216,30 @@ def main():
                 }, 'official')
                 pass3_added += 1
 
+    # --- Pass 4: Region records (regional list seats per region per year) ---
+    # Mirrors 04g's Pass 4 for Senedd. 18b emits one kind="regional"
+    # record per (region, year) carrying both `seats` (normalised party
+    # → count) and `seats_raw` (raw Wikipedia label → count). 07d's
+    # tooltip prefers `seats_raw` so historically distinct labels like
+    # "Alba Party" / "Scottish Greens" don't flatten to "Other".
+    regions_history: dict[str, dict[int, dict]] = defaultdict(dict)
+    pass4_added = 0
+    for rec in raw_records:
+        if rec.get('kind') != 'regional':
+            continue
+        region = rec['region']
+        year = rec['year']
+        if year not in SLIDER_YEARS:
+            continue
+        regions_history[region][year] = {
+            'y':         year,
+            'seats':     rec['seats'],
+            'seats_raw': rec.get('seats_raw') or {},
+            'url':       rec.get('url', ''),
+            'src':       'wiki',
+        }
+        pass4_added += 1
+
     # --- Output assembly ---
     out_spcs: dict[str, dict] = {}
     for polygon_key, per_year in history.items():
@@ -216,26 +257,57 @@ def main():
             'history': entries,
         }
 
-    all_years_in_data = {e['y'] for per_year in history.values()
-                           for e in per_year.values()}
-    present_years = sorted(set(SLIDER_YEARS) & all_years_in_data)
+    out_regions: dict[str, dict] = {}
+    for region, per_year in regions_history.items():
+        entries = []
+        for entry in sorted(per_year.values(), key=lambda e: e['y']):
+            entries.append({
+                'y':         entry['y'],
+                'seats':     entry['seats'],
+                'seats_raw': entry['seats_raw'],
+                'src':       entry['src'],
+                'url':       entry.get('url', ''),
+            })
+        out_regions[region] = {'history': entries}
 
-    out = {'years': present_years, 'spcs': out_spcs}
+    all_years_in_spcs = {e['y'] for per_year in history.values()
+                           for e in per_year.values()}
+    all_years_in_regions = {e['y'] for per_year in regions_history.values()
+                              for e in per_year.values()}
+    present_years = sorted(set(SLIDER_YEARS) & (all_years_in_spcs | all_years_in_regions))
+
+    out = {
+        'years':   present_years,
+        'spcs':    out_spcs,
+        'regions': out_regions,
+    }
     with open(DATA / 'holyrood_history.json', 'w') as f:
         json.dump(out, f, sort_keys=True, separators=(',', ':'), ensure_ascii=False)
 
     total_polys = len(out_spcs)
     total_spc_years = sum(len(s['history']) for s in out_spcs.values())
+    total_regions = len(out_regions)
+    total_region_years = sum(len(r['history']) for r in out_regions.values())
     per_year_coverage: dict[int, int] = defaultdict(int)
+    per_year_region_cov: dict[int, int] = defaultdict(int)
     for s in out_spcs.values():
         for e in s['history']:
             per_year_coverage[e['y']] += 1
+    for r in out_regions.values():
+        for e in r['history']:
+            per_year_region_cov[e['y']] += 1
     print(f'Wrote holyrood_history.json — {total_polys} SPC polygons, '
-          f'{len(present_years)} year stops, {total_spc_years:,} SPC-years')
-    print(f'  passes: 1={pass1_added} (wiki 2016+2021), '
-          f'2={pass2_added} (wiki 2026), 3={pass3_added} (hand-curated)')
-    print('  per-year coverage: ' + ' · '.join(
+          f'{total_regions} regions, {len(present_years)} year stops')
+    print(f'  spc-years:    {total_spc_years} '
+          f'(passes: 1={pass1_added} wiki 2016+2021, '
+          f'2={pass2_added} wiki 2026, 3={pass3_added} hand-curated)')
+    print(f'  region-years: {total_region_years} '
+          f'(pass: 4={pass4_added} wiki 2016+2021)')
+    print('  per-year coverage (constituencies): ' + ' · '.join(
         f'{y}: {per_year_coverage.get(y, 0)}' for y in present_years
+    ))
+    print('  per-year coverage (regions):        ' + ' · '.join(
+        f'{y}: {per_year_region_cov.get(y, 0)}' for y in present_years
     ))
 
     # Per-region summary (mirrors 04e's per-county block).
