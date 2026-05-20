@@ -61,6 +61,14 @@ PARTY_COLOURS_MAP = {
     # (Lindsay Hoyle, Chorley). Same grey as Independent so the map reads
     # "non-party" at a glance.
     "Speaker":      "#888780",
+    # Referendum outcomes (issue #85) — Leave/Remain are stored as the
+    # `w` field on EU-ref records so the same PARTY_COLOURS lookup that
+    # paints party-winner polygons also paints referendum-winner polygons.
+    # Purple recalls the UKIP brand that drove the Leave campaign; yellow
+    # recalls the stars on the EU flag. Same swatch is reused by #86's
+    # Yes/No (Scottish indyref 2014) when that ships.
+    "Leave":        "#552288",
+    "Remain":       "#ffcc00",
     "Other":        "#a87b3e",
     "Pending":      "#cccccc",
 }
@@ -88,6 +96,8 @@ PARTY_DISPLAY_MAP = {
     "Plaid":        "Plaid Cymru",
     "Independent":  "Independent",
     "Speaker":      "Speaker of the House",
+    "Leave":        "Leave",
+    "Remain":       "Remain",
     "Other":        "Other",
     "Pending":      "Awaiting declaration",
 }
@@ -110,7 +120,13 @@ PARTY_ORDER_WINNERS = [
 
 LEGEND_ORDER_MAP = [
     "Labour", "Reform", "Green", "LibDem", "Conservative",
-    "SNP", "Plaid", "Independent", "Speaker", "Other", "Pending",
+    "SNP", "Plaid", "Independent", "Speaker",
+    # Referendum outcomes (issue #85) — only present in the GB Current
+    # map and only when the EU Ref 2016 view is active. The labels still
+    # ship in the shared legend so the swatch-to-meaning mapping is
+    # available; the EU-ref view's CSS leaves the legend visible.
+    "Leave", "Remain",
+    "Other", "Pending",
 ]
 
 

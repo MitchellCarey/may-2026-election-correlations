@@ -169,3 +169,33 @@ HOLYROOD_22: list[tuple[str, str, str, str]] = [
 
 assert len(HOLYROOD_22) == 73, f'expected 73 entries, found {len(HOLYROOD_22)}'
 assert len({r[0] for r in HOLYROOD_22}) == 73, 'duplicate SPC22CD'
+
+
+# (region_name, wiki_article_title) — 8 Scottish electoral regions, each
+# with a single Wikipedia article covering every contest year (2016 +
+# 2021 + 2026 for SLIDER_YEARS). Mirrors `SENEDD_REGIONS_2007` in
+# scripts/_senedd_constituencies_2007.py.
+#
+# Three regions were renamed by the 2011 Scottish Parliament (Constituencies)
+# Order: "Lothians" → "Lothian", "South of Scotland" → "South Scotland",
+# "West of Scotland" → "West Scotland". Wikipedia redirects the old titles
+# to the canonical post-2011 forms; we use the canonical form so the
+# `redirects=1` flag in 17b is belt-and-braces rather than load-bearing.
+HOLYROOD_REGIONS_22: list[tuple[str, str]] = [
+    ('Central Scotland',      'Central Scotland (Scottish Parliament electoral region)'),
+    ('Glasgow',               'Glasgow (Scottish Parliament electoral region)'),
+    ('Highlands and Islands', 'Highlands and Islands (Scottish Parliament electoral region)'),
+    ('Lothian',               'Lothian (Scottish Parliament electoral region)'),
+    ('Mid Scotland and Fife', 'Mid Scotland and Fife (Scottish Parliament electoral region)'),
+    ('North East Scotland',   'North East Scotland (Scottish Parliament electoral region)'),
+    ('South Scotland',        'South Scotland (Scottish Parliament electoral region)'),
+    ('West Scotland',         'West Scotland (Scottish Parliament electoral region)'),
+]
+
+assert len(HOLYROOD_REGIONS_22) == 8, \
+    f'expected 8 entries, found {len(HOLYROOD_REGIONS_22)}'
+# Tripwire: every region tag in HOLYROOD_22 must appear in the regions
+# registry, or 04f's pre-review polygon→region join silently loses rows.
+assert {r[2] for r in HOLYROOD_22} == {r[0] for r in HOLYROOD_REGIONS_22}, (
+    'region names in HOLYROOD_22 (3rd field) must match HOLYROOD_REGIONS_22 keys'
+)
