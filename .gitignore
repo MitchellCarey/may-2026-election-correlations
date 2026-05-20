@@ -43,6 +43,12 @@ data/source/pcon_jul_2024.geojson
 # data/pcon_geoms_2010.json (committed).
 data/source/pcon_dec_2021.geojson
 
+# Raw cached Regions_December_2024 BGC boundary GeoJSON for the single
+# London region polygon (E12000007) from scripts/25 (~100 KB). Re-fetchable
+# from ONS Open Geography Portal; skip-if-exists in 25. The simplified path
+# lands in data/gla_mayor_geom.json (committed).
+data/source/region_london_dec_2024.geojson
+
 # Raw cached LGBCE post-review CED shapefiles from scripts/09c (~15 MB zipped,
 # ~37 MB extracted). Re-fetchable; the zips download idempotently.
 data/source/lgbce/

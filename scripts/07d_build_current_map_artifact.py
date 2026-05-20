@@ -153,6 +153,25 @@ def main():
         if region == 'gb' and surrey_geom_path.exists() else {'unitaries': {}}
     )
 
+    # GLA Mayor overlay (issue #81) — GB-only layer painting the single
+    # Greater London region polygon (E12000007) by each mayoral winner
+    # 2012 / 2016 / 2021 / 2024. paintAtYear bisects the history at each
+    # slider tick; the synthetic init record (y=null) seeds a DOM element
+    # whose fill the slider then drives. 2012 adds a new year stop at the
+    # bottom of the slider range; 2016 / 2021 / 2024 already exist.
+    gla_mayor_path = DATA / 'gla_mayor.json'
+    gla_mayor_geom_path = DATA / 'gla_mayor_geom.json'
+    gla_mayor_data = (
+        json.loads(gla_mayor_path.read_text())
+        if region == 'gb' and gla_mayor_path.exists()
+        else {'years': [], 'records': []}
+    )
+    gla_mayor_geoms = (
+        json.loads(gla_mayor_geom_path.read_text())
+        if region == 'gb' and gla_mayor_geom_path.exists()
+        else {'regions': {}}
+    )
+
     # Ward history (issue #70 phase 1A) — GB-only. Drives the time slider
     # below the legend, letting readers scrub 2018→2026. Missing file is
     # benign: the slider chrome is hidden when WARD_HISTORY is empty.
@@ -493,6 +512,28 @@ def main():
         print(f'surrey in gb: {len(surrey_js)} (decided: {n_surrey_decided}; '
               f'pending: {len(surrey_js) - n_surrey_decided})')
 
+    # GLA Mayor overlay (GB only) — one polygon, four years.
+    # The synthetic init record paints grey at initial render; paintAtYear
+    # then walks GLA_MAYOR_HISTORY[code].history (sorted ascending) to fill
+    # whichever year the slider is on. The polygon is era-less — its
+    # boundary hasn't moved between 2012 and 2024 — so it's always visible
+    # at any slider position.
+    gla_mayor_paths: dict = {
+        code: r['path'] for code, r in gla_mayor_geoms.get('regions', {}).items()
+    }
+    gla_mayor_js: list = []
+    if region == 'gb':
+        if gla_mayor_paths:
+            for code in gla_mayor_paths:
+                gla_mayor_js.append({
+                    'g': code,
+                    'n': 'Mayor of London',
+                    'w': None,
+                    'y': None,
+                })
+            n_gla_years = len(gla_mayor_data.get('years', []))
+            print(f'gla mayor in gb: {len(gla_mayor_js)} polygon, {n_gla_years} years')
+
         # Ward-history coverage report — issue #70 acceptance gauge.
         n_history_wards = len(ward_history.get('wards', {}))
         n_ward_years = sum(len(w.get('history', []))
@@ -567,6 +608,7 @@ def main():
     js.append('const PCON_PATHS_PRE = ' + json.dumps(pcon_paths_pre, separators=(',', ':')) + ';')
     js.append('const PCON_ERAS = ' + json.dumps(pcon_eras, separators=(',', ':')) + ';')
     js.append('const SURREY_PATHS = ' + json.dumps(surrey_paths, separators=(',', ':')) + ';')
+    js.append('const GLA_MAYOR_PATH = ' + json.dumps(gla_mayor_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
     js.append('const CEDS = ' + json.dumps(ceds_js, separators=(',', ':')) + ';')
     js.append('const HOLYROOD = ' + json.dumps(holyrood_js, separators=(',', ':')) + ';')
@@ -576,6 +618,8 @@ def main():
                                            separators=(',', ':')) + ';')
     js.append('const SURREY = ' + json.dumps(surrey_js, ensure_ascii=False,
                                              separators=(',', ':')) + ';')
+    js.append('const GLA_MAYOR = ' + json.dumps(gla_mayor_js, ensure_ascii=False,
+                                                separators=(',', ':')) + ';')
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
     js.append('const PARTY_DISPLAY = ' + json.dumps(PARTY_DISPLAY) + ';')
     js.append('const LEGEND_ORDER = ' + json.dumps(LEGEND_ORDER) + ';')
@@ -693,6 +737,16 @@ function fmtSurreyTitle(s) {
   return lines.join('\n');
 }
 
+function fmtGlaMayorTitle(g) {
+  const lines = ['Mayor of London'];
+  if (g.w) {
+    lines.push((g.y ? g.y + ' · ' : '') + 'winner: ' + (PARTY_DISPLAY[g.w] || g.w));
+  } else {
+    lines.push('(use slider to view a mayoral year)');
+  }
+  return lines.join('\n');
+}
+
 // Render the one Current-control map. Ward + CED + Holyrood + Senedd + PCON
 // fills are interleaved into a single layer in chronological order — older
 // elections paint first, newer ones on top — so the topmost visible polygon
@@ -712,8 +766,12 @@ if (target) {
   // tiebreak but the year sort puts it below 2025 CEDs and 2026 devolved
   // layers regardless. Records with y=null sort to the bottom (treated
   // as oldest).
-  const KIND_ORDER = { ced: 0, ward: 1, surrey: 2, pcon: 3, holyrood: 4, senedd: 5 };
+  const KIND_ORDER = { 'gla-mayor': 0, ced: 1, ward: 2, surrey: 3, pcon: 4, holyrood: 5, senedd: 6 };
   const items = [
+    ...GLA_MAYOR.map(g => ({ kind: 'gla-mayor', d: GLA_MAYOR_PATH[g.g], y: g.y,
+                             fill: (g.w && PARTY_COLOURS[g.w]) || NEUTRAL_FILL,
+                             title: fmtGlaMayorTitle(g),
+                             ds: { gla: g.g } })),
     ...WARDS.map(w => ({ kind: 'ward', d: WARD_PATHS[w.gss], y: w.y,
                          fill: (w.w && PARTY_COLOURS[w.w]) || NEUTRAL_FILL,
                          title: fmtTitle(w) })),
@@ -784,7 +842,7 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 // (only Holyrood SPCs), .view-senedd (only Senedd constituencies), and
 // .view-pcon (only GE 2024 PCONs). DOM is built once; CSS does the
 // per-mode hiding.
-const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon', 'surrey'];
+const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon', 'surrey', 'gla-mayor'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -793,7 +851,7 @@ const setView = name => {
     btn.setAttribute('aria-pressed', String(btn.dataset.view === name));
   });
 };
-if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length || SURREY.length) {
+if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length || SURREY.length || GLA_MAYOR.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
@@ -807,6 +865,7 @@ HOLYROOD.forEach(h => { if (h.w) partiesPresent.add(h.w); });
 SENEDD.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 PCON.forEach(p => { if (p.w) partiesPresent.add(p.w); });
 SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
+GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
 const legend = document.getElementById('map-legend');
 if (legend) {
   LEGEND_ORDER.forEach(p => {
@@ -846,7 +905,8 @@ if (legend) {
                               | set(ced_history.get('years', []))
                               | set(holyrood_history.get('years', []))
                               | set(senedd_history.get('years', []))
-                              | set(ge_history.get('years', [])))
+                              | set(ge_history.get('years', []))
+                              | set(gla_mayor_data.get('years', [])))
         js.append('')
         js.append('const YEARS = ' + json.dumps(slider_years) + ';')
         js.append('const WARD_HISTORY = ' + json.dumps(
@@ -921,6 +981,30 @@ if (legend) {
             }
         js.append('const PCON_HISTORY = ' + json.dumps(
             pcon_history, separators=(',', ':'), ensure_ascii=False) + ';')
+
+        # GLA_MAYOR_HISTORY (issue #81). One polygon (E12000007 = London),
+        # four contests (2012 / 2016 / 2021 / 2024). Same shape as
+        # PCON_HISTORY: {<code>: {name, history: [{y, w, src, url, candidate}]}}
+        # The polygon is era-less — the GLA boundary hasn't moved since 2000
+        # — so paintAtYear's `path.gla-mayor` block carries no visibility
+        # toggle. At slider years below 2012 the polygon paints grey (no
+        # history entry to choose); above 2024 the carry-forward keeps the
+        # last contest (Khan 2024) visible.
+        gla_history: dict = {}
+        for r in gla_mayor_data.get('records', []):
+            entry = {
+                'y': r['year'],
+                'w': r['winner'],
+                'candidate': r.get('candidate'),
+                'src': 'wiki',
+                'url': r.get('src', ''),
+            }
+            slot = gla_history.setdefault(r['code'], {'name': r['name'], 'history': []})
+            slot['history'].append(entry)
+        for slot in gla_history.values():
+            slot['history'].sort(key=lambda e: e['y'])
+        js.append('const GLA_MAYOR_HISTORY = ' + json.dumps(
+            gla_history, separators=(',', ':'), ensure_ascii=False) + ';')
         js.append(r'''
 // Stamp each ward <path> with data-gss / data-year so paintAtYear can
 // look it up. Done here (GB-only splice) rather than in the shared
@@ -1232,6 +1316,47 @@ function paintAtYear(targetYear) {
         delete el.dataset.url;
       }
     });
+    // GLA Mayor layer (#81). Single polygon (E12000007), always visible;
+    // carry-forward fill from GLA_MAYOR_HISTORY at slider time. At year < 2012
+    // (no slider stop reaches there in practice; 2012 is the new floor) the
+    // polygon paints grey — defensive handling for a future extension that
+    // adds earlier year stops.
+    root.querySelectorAll('path.gla-mayor').forEach(el => {
+      const key = el.dataset.gla;
+      const gh = key && GLA_MAYOR_HISTORY[key];
+      if (!gh) {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+        return;
+      }
+      let chosen = null;
+      for (const entry of gh.history) {
+        if (entry.y <= y) chosen = entry;
+        else break;
+      }
+      if (chosen) {
+        el.setAttribute('fill', PARTY_COLOURS[chosen.w] || NEUTRAL_FILL);
+        el.dataset.year = String(chosen.y);
+        if (chosen.url) el.dataset.url = chosen.url;
+        else delete el.dataset.url;
+        const titleEl = el.querySelector('title');
+        if (titleEl) {
+          const tl = ['Mayor of London'];
+          const winLine = chosen.y + ' · winner: ' + (PARTY_DISPLAY[chosen.w] || chosen.w);
+          tl.push(chosen.candidate ? winLine + ' (' + chosen.candidate + ')' : winLine);
+          if (chosen.url) {
+            try { tl.push('Source: ' + new URL(chosen.url).hostname + ' — click to open'); }
+            catch (_) { /* invalid URL */ }
+          }
+          titleEl.textContent = tl.join('\n');
+        }
+      } else {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+      }
+    });
   });
 }
 
@@ -1245,7 +1370,7 @@ function paintAtYear(targetYear) {
   if (!root) return;
   root.addEventListener('click', evt => {
     const target = evt.target.closest(
-      'path.ward, path.ced, path.holyrood, path.senedd, path.pcon');
+      'path.ward, path.ced, path.holyrood, path.senedd, path.pcon, path.gla-mayor');
     if (!target || !target.dataset.url) return;
     window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
   });

@@ -962,36 +962,48 @@ body {
    Welsh Senedd constituencies; .view-pcon isolates the 632 GB
    Westminster constituencies as voted on 4 July 2024 (GB page only for
    all four single-layer overlays). */
-.map-svg.view-wards    path.ced      { display: none; }
-.map-svg.view-wards    path.holyrood { display: none; }
-.map-svg.view-wards    path.senedd   { display: none; }
-.map-svg.view-wards    path.pcon     { display: none; }
-.map-svg.view-wards    path.surrey   { display: none; }
-.map-svg.view-ceds     path.ward     { display: none; }
-.map-svg.view-ceds     path.holyrood { display: none; }
-.map-svg.view-ceds     path.senedd   { display: none; }
-.map-svg.view-ceds     path.pcon     { display: none; }
-.map-svg.view-ceds     path.surrey   { display: none; }
-.map-svg.view-holyrood path.ward     { display: none; }
-.map-svg.view-holyrood path.ced      { display: none; }
-.map-svg.view-holyrood path.senedd   { display: none; }
-.map-svg.view-holyrood path.pcon     { display: none; }
-.map-svg.view-holyrood path.surrey   { display: none; }
-.map-svg.view-senedd   path.ward     { display: none; }
-.map-svg.view-senedd   path.ced      { display: none; }
-.map-svg.view-senedd   path.holyrood { display: none; }
-.map-svg.view-senedd   path.pcon     { display: none; }
-.map-svg.view-senedd   path.surrey   { display: none; }
-.map-svg.view-pcon     path.ward     { display: none; }
-.map-svg.view-pcon     path.ced      { display: none; }
-.map-svg.view-pcon     path.holyrood { display: none; }
-.map-svg.view-pcon     path.senedd   { display: none; }
-.map-svg.view-pcon     path.surrey   { display: none; }
-.map-svg.view-surrey   path.ward     { display: none; }
-.map-svg.view-surrey   path.ced      { display: none; }
-.map-svg.view-surrey   path.holyrood { display: none; }
-.map-svg.view-surrey   path.senedd   { display: none; }
-.map-svg.view-surrey   path.pcon     { display: none; }
+.map-svg.view-wards     path.ced       { display: none; }
+.map-svg.view-wards     path.holyrood  { display: none; }
+.map-svg.view-wards     path.senedd    { display: none; }
+.map-svg.view-wards     path.pcon      { display: none; }
+.map-svg.view-wards     path.surrey    { display: none; }
+.map-svg.view-wards     path.gla-mayor { display: none; }
+.map-svg.view-ceds      path.ward      { display: none; }
+.map-svg.view-ceds      path.holyrood  { display: none; }
+.map-svg.view-ceds      path.senedd    { display: none; }
+.map-svg.view-ceds      path.pcon      { display: none; }
+.map-svg.view-ceds      path.surrey    { display: none; }
+.map-svg.view-ceds      path.gla-mayor { display: none; }
+.map-svg.view-holyrood  path.ward      { display: none; }
+.map-svg.view-holyrood  path.ced       { display: none; }
+.map-svg.view-holyrood  path.senedd    { display: none; }
+.map-svg.view-holyrood  path.pcon      { display: none; }
+.map-svg.view-holyrood  path.surrey    { display: none; }
+.map-svg.view-holyrood  path.gla-mayor { display: none; }
+.map-svg.view-senedd    path.ward      { display: none; }
+.map-svg.view-senedd    path.ced       { display: none; }
+.map-svg.view-senedd    path.holyrood  { display: none; }
+.map-svg.view-senedd    path.pcon      { display: none; }
+.map-svg.view-senedd    path.surrey    { display: none; }
+.map-svg.view-senedd    path.gla-mayor { display: none; }
+.map-svg.view-pcon      path.ward      { display: none; }
+.map-svg.view-pcon      path.ced       { display: none; }
+.map-svg.view-pcon      path.holyrood  { display: none; }
+.map-svg.view-pcon      path.senedd    { display: none; }
+.map-svg.view-pcon      path.surrey    { display: none; }
+.map-svg.view-pcon      path.gla-mayor { display: none; }
+.map-svg.view-surrey    path.ward      { display: none; }
+.map-svg.view-surrey    path.ced       { display: none; }
+.map-svg.view-surrey    path.holyrood  { display: none; }
+.map-svg.view-surrey    path.senedd    { display: none; }
+.map-svg.view-surrey    path.pcon      { display: none; }
+.map-svg.view-surrey    path.gla-mayor { display: none; }
+.map-svg.view-gla-mayor path.ward      { display: none; }
+.map-svg.view-gla-mayor path.ced       { display: none; }
+.map-svg.view-gla-mayor path.holyrood  { display: none; }
+.map-svg.view-gla-mayor path.senedd    { display: none; }
+.map-svg.view-gla-mayor path.pcon      { display: none; }
+.map-svg.view-gla-mayor path.surrey    { display: none; }
 .map-svg path.ced {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
@@ -1008,7 +1020,8 @@ body {
 .map-svg path.holyrood,
 .map-svg path.senedd,
 .map-svg path.pcon,
-.map-svg path.surrey {
+.map-svg path.surrey,
+.map-svg path.gla-mayor {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
   stroke-linejoin: round;
@@ -1019,7 +1032,8 @@ body {
 .map-svg path.holyrood:hover,
 .map-svg path.senedd:hover,
 .map-svg path.pcon:hover,
-.map-svg path.surrey:hover {
+.map-svg path.surrey:hover,
+.map-svg path.gla-mayor:hover {
   stroke: var(--ink);
   stroke-width: 1.4;
   fill-opacity: 0.78;
