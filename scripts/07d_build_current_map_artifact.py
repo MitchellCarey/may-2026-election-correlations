@@ -759,6 +759,32 @@ def main():
                                              separators=(',', ':')) + ';')
     js.append('const GLA_MAYOR = ' + json.dumps(gla_mayor_js, ensure_ascii=False,
                                                 separators=(',', ':')) + ';')
+
+    # PCC_HISTORY (issue #87). 41 force histories, keyed by polygon key
+    # (bare PFA**CD for post-era 2024 polygons, PRE_<PFA**CD> for pre-era
+    # 2017 polygons). The same history list is mirrored under both key
+    # forms so paintAtYear's "newest entry with y <= targetYear" walk
+    # works regardless of which polygon set is currently visible.
+    # Per-force absorbed_from metadata travels with the slot so the
+    # renderer's path.pcc block can append a "Role absorbed into
+    # <CA mayor>" tooltip line at slider years on/after the absorption
+    # year. Emitted in the always-emitted block (not the GB-only block
+    # below) so the legend-builder + paintAtYear can reference it without
+    # tripping the temporal dead zone — on GM this evaluates to `{}`.
+    pcc_history_js: dict = {}
+    for code, f in pcc_history.get('forces', {}).items():
+        slot = {
+            'name':    f['name'],
+            'country': f.get('country'),
+            'history': f.get('history', []),
+        }
+        if f.get('absorbed_from'):
+            slot['absorbed_from'] = f['absorbed_from']
+        pcc_history_js[code] = slot
+        pcc_history_js[f'PRE_{code}'] = slot
+    js.append('const PCC_HISTORY = ' + json.dumps(
+        pcc_history_js, separators=(',', ':'), ensure_ascii=False) + ';')
+
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
     js.append('const PARTY_DISPLAY = ' + json.dumps(PARTY_DISPLAY) + ';')
     js.append('const LEGEND_ORDER = ' + json.dumps(LEGEND_ORDER) + ';')
@@ -1055,11 +1081,9 @@ PCON.forEach(p => { if (p.w) partiesPresent.add(p.w); });
 SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
-if (typeof PCC_HISTORY !== 'undefined') {
-  Object.values(PCC_HISTORY).forEach(f => {
-    (f.history || []).forEach(h => { if (h.w) partiesPresent.add(h.w); });
-  });
-}
+Object.values(PCC_HISTORY).forEach(f => {
+  (f.history || []).forEach(h => { if (h.w) partiesPresent.add(h.w); });
+});
 const legend = document.getElementById('map-legend');
 if (legend) {
   LEGEND_ORDER.forEach(p => {
@@ -1238,29 +1262,6 @@ if (legend) {
             slot['history'].sort(key=lambda e: e['y'])
         js.append('const GLA_MAYOR_HISTORY = ' + json.dumps(
             gla_history, separators=(',', ':'), ensure_ascii=False) + ';')
-
-        # PCC_HISTORY (issue #87). 41 force histories, keyed by polygon key
-        # (bare PFA**CD for post-era 2024 polygons, PRE_<PFA**CD> for
-        # pre-era 2017 polygons). The same history list is mirrored under
-        # both key forms so paintAtYear's "newest entry with y <= targetYear"
-        # walk works regardless of which polygon set is currently visible.
-        # Per-force absorbed_from metadata travels with the slot so the
-        # renderer's path.pcc block can append a "Role absorbed into
-        # <CA mayor>" tooltip line at slider years on or after the
-        # absorption year.
-        pcc_history_js: dict = {}
-        for code, f in pcc_history.get('forces', {}).items():
-            slot = {
-                'name':    f['name'],
-                'country': f.get('country'),
-                'history': f.get('history', []),
-            }
-            if f.get('absorbed_from'):
-                slot['absorbed_from'] = f['absorbed_from']
-            pcc_history_js[code] = slot
-            pcc_history_js[f'PRE_{code}'] = slot
-        js.append('const PCC_HISTORY = ' + json.dumps(
-            pcc_history_js, separators=(',', ':'), ensure_ascii=False) + ';')
         js.append(r'''
 // Stamp each ward <path> with data-gss / data-year so paintAtYear can
 // look it up. Done here (GB-only splice) rather than in the shared
@@ -1661,8 +1662,7 @@ function paintAtYear(targetYear) {
     // tooltip line at slider years on/after their absorption year —
     // the carry-forward fill is preserved (so the polygon keeps the
     // colour of the last real PCC contest).
-    if (typeof PCC_HISTORY !== 'undefined') {
-      root.querySelectorAll('path.pcc').forEach(el => {
+    root.querySelectorAll('path.pcc').forEach(el => {
         const era = el.dataset.era || 'post';
         const visible = era === 'pre' ? (y < 2024) : (y >= 2024);
         el.style.display = visible ? '' : 'none';
@@ -1704,8 +1704,7 @@ function paintAtYear(targetYear) {
           delete el.dataset.year;
           delete el.dataset.url;
         }
-      });
-    }
+    });
   });
 }
 

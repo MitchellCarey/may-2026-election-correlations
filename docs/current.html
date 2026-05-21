@@ -99,6 +99,7 @@ const PCC = [];
 const SURREY = [];
 const EU_REF = [];
 const GLA_MAYOR = [];
+const PCC_HISTORY = {};
 const PARTY_COLOURS = {"Labour": "#c8102e", "Conservative": "#0087DC", "LibDem": "#FAA61A", "Reform": "#12B6CF", "Green": "#6AB023", "SNP": "#FDF38E", "Plaid": "#005B54", "Independent": "#888780", "Speaker": "#888780", "Leave": "#552288", "Remain": "#ffcc00", "Other": "#a87b3e", "Pending": "#cccccc"};
 const PARTY_DISPLAY = {"Labour": "Labour", "Conservative": "Conservative", "LibDem": "Liberal Democrats", "Reform": "Reform UK", "Green": "Green", "SNP": "SNP", "Plaid": "Plaid Cymru", "Independent": "Independent", "Speaker": "Speaker of the House", "Leave": "Leave", "Remain": "Remain", "Other": "Other", "Pending": "Awaiting declaration"};
 const LEGEND_ORDER = ["Labour", "Reform", "Green", "LibDem", "Conservative", "SNP", "Plaid", "Independent", "Speaker", "Leave", "Remain", "Other", "Pending"];
@@ -394,11 +395,9 @@ PCON.forEach(p => { if (p.w) partiesPresent.add(p.w); });
 SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
-if (typeof PCC_HISTORY !== 'undefined') {
-  Object.values(PCC_HISTORY).forEach(f => {
-    (f.history || []).forEach(h => { if (h.w) partiesPresent.add(h.w); });
-  });
-}
+Object.values(PCC_HISTORY).forEach(f => {
+  (f.history || []).forEach(h => { if (h.w) partiesPresent.add(h.w); });
+});
 const legend = document.getElementById('map-legend');
 if (legend) {
   LEGEND_ORDER.forEach(p => {
