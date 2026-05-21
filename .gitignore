@@ -70,6 +70,15 @@ data/source/region_london_dec_2024.geojson
 # paths land in data/gla_assembly_geom.json (committed).
 data/source/lac_dec_2017.geojson
 
+# Raw cached Combined_Authorities BGC boundary GeoJSON snapshots from
+# scripts/29 (#82). Dec 2025 carries 15 features (the modern set including
+# Devon & Torbay + Lancashire, which 29 filters out); Dec 2023 carries 10
+# features (we keep only E47000011 North of Tyne, abolished May 2024).
+# Both re-fetchable from ONS Open Geography Portal; skip-if-exists in 29.
+# The simplified paths land in data/ca_mayor_geoms.json (committed).
+data/source/combined_authorities_dec_2023.geojson
+data/source/combined_authorities_dec_2025.geojson
+
 # Raw cached LGBCE post-review CED shapefiles from scripts/09c (~15 MB zipped,
 # ~37 MB extracted). Re-fetchable; the zips download idempotently.
 data/source/lgbce/
@@ -133,3 +142,4 @@ data/ced_winners.json
 data/source/spc_may_2026_sc_bgc.geojson
 data/source/spc_dec_2022_sc_bgc.geojson
 data/source/nawc_dec_2021_wa_bgc_v3.geojson
+data/source/eer_dec_2018_uk_bgc.geojson
