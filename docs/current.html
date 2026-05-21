@@ -84,6 +84,9 @@ const SENEDD_ERAS = {};
 const PCON_PATHS = {};
 const PCON_PATHS_PRE = {};
 const PCON_ERAS = {};
+const PCC_PATHS = {};
+const PCC_PATHS_PRE = {};
+const PCC_ERAS = {};
 const SURREY_PATHS = {};
 const EU_REF_PATHS = {};
 const INDYREF_PATHS = {};
@@ -99,6 +102,7 @@ const CEDS = [];
 const HOLYROOD = [];
 const SENEDD = [];
 const PCON = [];
+const PCC = [];
 const SURREY = [];
 const EU_REF = [];
 const INDYREF = [];
@@ -108,6 +112,7 @@ const GLA_ASSEMBLY = [];
 const CA_MAYORS = [];
 const EP = [];
 const EP_PARTIES = [];
+const PCC_HISTORY = {};
 const PARTY_COLOURS = {"Labour": "#c8102e", "Conservative": "#0087DC", "LibDem": "#FAA61A", "Reform": "#12B6CF", "Green": "#6AB023", "SNP": "#FDF38E", "Plaid": "#005B54", "Independent": "#888780", "Speaker": "#888780", "UKIP": "#70147A", "Brexit": "#00AEEF", "Leave": "#552288", "Remain": "#ffcc00", "Yes": "#ffcc00", "No": "#0066cc", "AV Yes": "#1f78b4", "AV No": "#e31a1c", "Other": "#a87b3e", "Pending": "#cccccc"};
 const PARTY_DISPLAY = {"Labour": "Labour", "Conservative": "Conservative", "LibDem": "Liberal Democrats", "Reform": "Reform UK", "Green": "Green", "SNP": "SNP", "Plaid": "Plaid Cymru", "Independent": "Independent", "Speaker": "Speaker of the House", "UKIP": "UKIP", "Brexit": "Brexit Party", "Leave": "Leave", "Remain": "Remain", "Yes": "Yes (independence)", "No": "No (union)", "AV Yes": "Yes", "AV No": "No", "Other": "Other", "Pending": "Awaiting declaration"};
 const LEGEND_ORDER = ["Labour", "Reform", "Green", "LibDem", "Conservative", "SNP", "Plaid", "Independent", "Speaker", "UKIP", "Brexit", "Leave", "Remain", "Yes", "No", "AV Yes", "AV No", "Other", "Pending"];
@@ -290,6 +295,15 @@ function fmtGlaMayorTitle(g) {
   return lines.join('\n');
 }
 
+function fmtPccTitle(p) {
+  // PCC records ship with w=null / y=null at initial render — paintAtYear
+  // fills them in from PCC_HISTORY at slider time, including the
+  // "Role absorbed into <Mayor>" suffix for absorbed forces.
+  const lines = ['Police & Crime Commissioner · ' + p.n];
+  lines.push('(use slider to view a PCC election year)');
+  return lines.join('\n');
+}
+
 function fmtGlaAssemblyTitle(a) {
   // Initial render only — paintAtYear rewrites the title at slider time
   // with both the FPTP winner and the London-wide list seat breakdown.
@@ -362,7 +376,8 @@ if (target) {
   // sits alongside them — same opt-in/view-isolated semantics as
   // EU Ref 2016. ep (#91) sits just above the referendum stack.
   // ca-mayor (#82) is paint-tier mate of gla-mayor.
-  const KIND_ORDER = { referendum: -3, 'av-referendum': -3, indyref: -3,
+  // pcc (#87) is a view-isolated layer like av-referendum.
+  const KIND_ORDER = { pcc: -3, referendum: -3, 'av-referendum': -3, indyref: -3,
                         'gla-mayor': -2, 'ca-mayor': -2,
                         'gla-assembly': -1, ep: -1,
                         ced: 0, ward: 1, surrey: 2, pcon: 3,
@@ -407,6 +422,11 @@ if (target) {
                         fill: (p.w && PARTY_COLOURS[p.w]) || NEUTRAL_FILL,
                         title: fmtPconTitle(p),
                         ds: { pcon: p.p, era: PCON_ERAS[p.p] || 'post' } })),
+    ...PCC.map(p => ({ kind: 'pcc',
+                       d: PCC_PATHS[p.p] || PCC_PATHS_PRE[p.p], y: p.y,
+                       fill: (p.w && PARTY_COLOURS[p.w]) || NEUTRAL_FILL,
+                       title: fmtPccTitle(p),
+                       ds: { pcc: p.p, era: PCC_ERAS[p.p] || 'post' } })),
     ...SURREY.map(s => ({ kind: 'surrey', d: SURREY_PATHS[s.c], y: s.y,
                           fill: (s.w && PARTY_COLOURS[s.w]) || NEUTRAL_FILL,
                           title: fmtSurreyTitle(s) })),
@@ -476,7 +496,7 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 // the per-mode hiding.
 const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon',
                'surrey', 'eu_ref_2016', 'av_ref_2011',
-               'gla-mayor', 'gla-assembly', 'ca-mayor', 'ep'];
+               'gla-mayor', 'gla-assembly', 'ca-mayor', 'ep', 'pcc'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -487,14 +507,16 @@ const setView = name => {
 };
 if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
     || SURREY.length || EU_REF.length || INDYREF.length || AV_REF.length
-    || GLA_MAYOR.length || GLA_ASSEMBLY.length || CA_MAYORS.length || EP.length) {
+    || GLA_MAYOR.length || GLA_ASSEMBLY.length || CA_MAYORS.length || EP.length || PCC.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
   setView('recent');
 }
 
-// Shared legend, derived from parties actually present.
+// Shared legend, derived from parties actually present. PCC records
+// ship with w=null at initial render (paintAtYear fills them at slider
+// time), so PCC parties are collected from PCC_HISTORY directly.
 const partiesPresent = new Set();
 WARDS.forEach(w => { if (w.w) partiesPresent.add(w.w); });
 HOLYROOD.forEach(h => { if (h.w) partiesPresent.add(h.w); });
@@ -512,6 +534,9 @@ CA_MAYORS.forEach(c => { if (c.w) partiesPresent.add(c.w); });
 // aren't surfaced by any other layer; without this the legend would
 // have no swatch for either even when EP polygons are clearly visible.
 EP_PARTIES.forEach(p => partiesPresent.add(p));
+Object.values(PCC_HISTORY).forEach(f => {
+  (f.history || []).forEach(h => { if (h.w) partiesPresent.add(h.w); });
+});
 const legend = document.getElementById('map-legend');
 if (legend) {
   LEGEND_ORDER.forEach(p => {

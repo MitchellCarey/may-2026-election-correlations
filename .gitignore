@@ -62,6 +62,14 @@ data/source/ec_eu_referendum_2016.csv
 # lands in data/gla_mayor_geom.json (committed).
 data/source/region_london_dec_2024.geojson
 
+# Raw cached PFA boundary GeoJSON for the 43 Police Force Areas in the
+# Dec 2024 (post) and Dec 2017 (pre) vintages from scripts/31 / 31b
+# (~3–5 MB each). Re-fetchable from ONS Open Geography Portal;
+# skip-if-exists in both fetchers. Simplified paths land in
+# data/pfa_geoms.json and data/pfa_geoms_pre.json (committed).
+data/source/pfa_dec_2024.geojson
+data/source/pfa_dec_2017.geojson
+
 # Raw cached London_Assembly_Constituencies_Dec_2017 BGC boundary GeoJSON
 # for the 14 LAC polygons from scripts/31 (~250 KB). Re-fetchable from
 # ONS Open Geography Portal; skip-if-exists in 31. LAC boundaries have

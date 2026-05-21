@@ -957,11 +957,10 @@ body {
    everything *except* the referendum layer (chronological default —
    Holyrood and Senedd 2026 paint on top of older council colours; PCON
    2024 sits below the 2025/2026 layers but above older ward colours).
-   .view-wards / .view-ceds / .view-holyrood / .view-senedd / .view-pcon
    / .view-surrey / .view-gla-mayor / .view-gla-assembly / .view-ca-mayor
-   each isolate a single layer; .view-eu_ref_2016 isolates the referendum
-   LADs (which are otherwise always hidden so readers only see them when
-   they opt in). GB page only for every single-layer overlay. */
+   / .view-pcc each isolate a single layer; .view-eu_ref_2016 isolates the
+   referendum LADs (which are otherwise always hidden so readers only see
+   them when they opt in). GB page only for every single-layer overlay. */
 .map-svg.view-wards     path.ced          { display: none; }
 .map-svg.view-wards     path.holyrood     { display: none; }
 .map-svg.view-wards     path.senedd       { display: none; }
@@ -1032,6 +1031,7 @@ body {
 .map-svg.view-gla-mayor path.indyref      { display: none; }
 .map-svg.view-gla-mayor path.ca-mayor     { display: none; }
 .map-svg.view-gla-mayor path.ep           { display: none; }
+.map-svg.view-gla-mayor path.pcc          { display: none; }
 .map-svg.view-gla-assembly path.ward      { display: none; }
 .map-svg.view-gla-assembly path.ced       { display: none; }
 .map-svg.view-gla-assembly path.holyrood  { display: none; }
@@ -1042,6 +1042,7 @@ body {
 .map-svg.view-gla-assembly path.indyref   { display: none; }
 .map-svg.view-gla-assembly path.ca-mayor  { display: none; }
 .map-svg.view-gla-assembly path.ep        { display: none; }
+.map-svg.view-gla-assembly path.pcc       { display: none; }
 .map-svg.view-ca-mayor  path.ward         { display: none; }
 .map-svg.view-ca-mayor  path.ced          { display: none; }
 .map-svg.view-ca-mayor  path.holyrood     { display: none; }
@@ -1052,6 +1053,7 @@ body {
 .map-svg.view-ca-mayor  path.gla-assembly { display: none; }
 .map-svg.view-ca-mayor  path.indyref      { display: none; }
 .map-svg.view-ca-mayor  path.ep           { display: none; }
+.map-svg.view-ca-mayor  path.pcc          { display: none; }
 /* EU Referendum 2016 (issue #85). path.referendum is hidden by default
    in every other view; only the dedicated .view-eu_ref_2016 reveals it.
    When that view is active, every other thematic layer is hidden in
@@ -1062,13 +1064,14 @@ body {
 .map-svg.view-eu_ref_2016 path.ced       { display: none; }
 .map-svg.view-eu_ref_2016 path.holyrood  { display: none; }
 .map-svg.view-eu_ref_2016 path.senedd    { display: none; }
-.map-svg.view-eu_ref_2016 path.pcon      { display: none; }
+.map-svg.view-eu_ref_2016 path.pcon         { display: none; }
 .map-svg.view-eu_ref_2016 path.surrey       { display: none; }
 .map-svg.view-eu_ref_2016 path.gla-mayor    { display: none; }
 .map-svg.view-eu_ref_2016 path.gla-assembly { display: none; }
 .map-svg.view-eu_ref_2016 path.indyref      { display: none; }
 .map-svg.view-eu_ref_2016 path.ca-mayor     { display: none; }
 .map-svg.view-eu_ref_2016 path.ep           { display: none; }
+.map-svg.view-eu_ref_2016 path.pcc          { display: none; }
 /* EP 2014/2019 (issue #91). path.ep is hidden by default in every other
    view; only the dedicated .view-ep reveals it. The 11 EER polygons are
    too large to paint chronologically in the default recent view without
@@ -1086,9 +1089,30 @@ body {
 .map-svg.view-ep path.gla-mayor             { display: none; }
 .map-svg.view-ep path.gla-assembly          { display: none; }
 .map-svg.view-ep path.ca-mayor              { display: none; }
+.map-svg.view-ep path.pcc                   { display: none; }
 .map-svg.view-ep path.referendum            { display: none; }
 .map-svg.view-ep path.indyref               { display: none; }
 .map-svg.view-ep path.av-referendum         { display: none; }
+/* PCC layer (issue #87). Same default-hidden pattern as referendum:
+   path.pcc is hidden in every view except the dedicated .view-pcc, so
+   readers only see Police-Force-Area polygons when they opt in. When
+   .view-pcc is active, every other thematic layer is hidden in parallel
+   so PCC fills paint without overdraw. */
+.map-svg path.pcc                          { display: none; }
+.map-svg.view-pcc       path.pcc           { display: inline; }
+.map-svg.view-pcc       path.ward          { display: none; }
+.map-svg.view-pcc       path.ced           { display: none; }
+.map-svg.view-pcc       path.holyrood      { display: none; }
+.map-svg.view-pcc       path.senedd        { display: none; }
+.map-svg.view-pcc       path.pcon          { display: none; }
+.map-svg.view-pcc       path.surrey        { display: none; }
+.map-svg.view-pcc       path.gla-mayor     { display: none; }
+.map-svg.view-pcc       path.gla-assembly  { display: none; }
+.map-svg.view-pcc       path.ca-mayor      { display: none; }
+.map-svg.view-pcc       path.ep            { display: none; }
+.map-svg.view-pcc       path.referendum    { display: none; }
+.map-svg.view-pcc       path.av-referendum { display: none; }
+.map-svg.view-pcc       path.indyref       { display: none; }
 .map-svg path.referendum {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
@@ -1170,7 +1194,8 @@ body {
 .map-svg path.gla-mayor,
 .map-svg path.gla-assembly,
 .map-svg path.ca-mayor,
-.map-svg path.ep {
+.map-svg path.ep,
+.map-svg path.pcc {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
   stroke-linejoin: round;
@@ -1185,7 +1210,8 @@ body {
 .map-svg path.gla-mayor:hover,
 .map-svg path.gla-assembly:hover,
 .map-svg path.ca-mayor:hover,
-.map-svg path.ep:hover {
+.map-svg path.ep:hover,
+.map-svg path.pcc:hover {
   stroke: var(--ink);
   stroke-width: 1.4;
   fill-opacity: 0.78;
