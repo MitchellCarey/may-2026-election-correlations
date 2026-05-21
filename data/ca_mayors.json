@@ -1,0 +1,76 @@
+{
+  "years": [2017, 2018, 2019, 2021, 2022, 2024, 2025],
+  "records": [
+    {"code": "E47000001", "name": "Greater Manchester", "year": 2017, "winner": "Labour", "candidate": "Andy Burnham",
+     "src": "https://en.wikipedia.org/wiki/2017_Greater_Manchester_mayoral_election"},
+    {"code": "E47000001", "name": "Greater Manchester", "year": 2021, "winner": "Labour", "candidate": "Andy Burnham",
+     "src": "https://en.wikipedia.org/wiki/2021_Greater_Manchester_mayoral_election"},
+    {"code": "E47000001", "name": "Greater Manchester", "year": 2024, "winner": "Labour", "candidate": "Andy Burnham",
+     "src": "https://en.wikipedia.org/wiki/2024_Greater_Manchester_mayoral_election"},
+
+    {"code": "E47000002", "name": "South Yorkshire", "year": 2018, "winner": "Labour", "candidate": "Dan Jarvis",
+     "src": "https://en.wikipedia.org/wiki/2018_Sheffield_City_Region_mayoral_election"},
+    {"code": "E47000002", "name": "South Yorkshire", "year": 2022, "winner": "Labour", "candidate": "Oliver Coppard",
+     "src": "https://en.wikipedia.org/wiki/2022_South_Yorkshire_mayoral_election"},
+    {"code": "E47000002", "name": "South Yorkshire", "year": 2024, "winner": "Labour", "candidate": "Oliver Coppard",
+     "src": "https://en.wikipedia.org/wiki/2024_South_Yorkshire_mayoral_election"},
+
+    {"code": "E47000003", "name": "West Yorkshire", "year": 2021, "winner": "Labour", "candidate": "Tracy Brabin",
+     "src": "https://en.wikipedia.org/wiki/2021_West_Yorkshire_mayoral_election"},
+    {"code": "E47000003", "name": "West Yorkshire", "year": 2024, "winner": "Labour", "candidate": "Tracy Brabin",
+     "src": "https://en.wikipedia.org/wiki/2024_West_Yorkshire_mayoral_election"},
+
+    {"code": "E47000004", "name": "Liverpool City Region", "year": 2017, "winner": "Labour", "candidate": "Steve Rotheram",
+     "src": "https://en.wikipedia.org/wiki/2017_Liverpool_City_Region_mayoral_election"},
+    {"code": "E47000004", "name": "Liverpool City Region", "year": 2021, "winner": "Labour", "candidate": "Steve Rotheram",
+     "src": "https://en.wikipedia.org/wiki/2021_Liverpool_City_Region_mayoral_election"},
+    {"code": "E47000004", "name": "Liverpool City Region", "year": 2024, "winner": "Labour", "candidate": "Steve Rotheram",
+     "src": "https://en.wikipedia.org/wiki/2024_Liverpool_City_Region_mayoral_election"},
+
+    {"code": "E47000006", "name": "Tees Valley", "year": 2017, "winner": "Conservative", "candidate": "Ben Houchen",
+     "src": "https://en.wikipedia.org/wiki/2017_Tees_Valley_mayoral_election"},
+    {"code": "E47000006", "name": "Tees Valley", "year": 2021, "winner": "Conservative", "candidate": "Ben Houchen",
+     "src": "https://en.wikipedia.org/wiki/2021_Tees_Valley_mayoral_election"},
+    {"code": "E47000006", "name": "Tees Valley", "year": 2024, "winner": "Conservative", "candidate": "Ben Houchen",
+     "src": "https://en.wikipedia.org/wiki/2024_Tees_Valley_mayoral_election"},
+
+    {"code": "E47000007", "name": "West Midlands", "year": 2017, "winner": "Conservative", "candidate": "Andy Street",
+     "src": "https://en.wikipedia.org/wiki/2017_West_Midlands_mayoral_election"},
+    {"code": "E47000007", "name": "West Midlands", "year": 2021, "winner": "Conservative", "candidate": "Andy Street",
+     "src": "https://en.wikipedia.org/wiki/2021_West_Midlands_mayoral_election"},
+    {"code": "E47000007", "name": "West Midlands", "year": 2024, "winner": "Labour", "candidate": "Richard Parker",
+     "src": "https://en.wikipedia.org/wiki/2024_West_Midlands_mayoral_election"},
+
+    {"code": "E47000008", "name": "Cambridgeshire and Peterborough", "year": 2017, "winner": "Conservative", "candidate": "James Palmer",
+     "src": "https://en.wikipedia.org/wiki/2017_Cambridgeshire_and_Peterborough_mayoral_election"},
+    {"code": "E47000008", "name": "Cambridgeshire and Peterborough", "year": 2021, "winner": "Labour", "candidate": "Nik Johnson",
+     "src": "https://en.wikipedia.org/wiki/2021_Cambridgeshire_and_Peterborough_mayoral_election"},
+    {"code": "E47000008", "name": "Cambridgeshire and Peterborough", "year": 2025, "winner": "Conservative", "candidate": "Paul Bristow",
+     "src": "https://en.wikipedia.org/wiki/2025_Cambridgeshire_and_Peterborough_mayoral_election"},
+
+    {"code": "E47000009", "name": "West of England", "year": 2017, "winner": "Conservative", "candidate": "Tim Bowles",
+     "src": "https://en.wikipedia.org/wiki/2017_West_of_England_mayoral_election"},
+    {"code": "E47000009", "name": "West of England", "year": 2021, "winner": "Labour", "candidate": "Dan Norris",
+     "src": "https://en.wikipedia.org/wiki/2021_West_of_England_mayoral_election"},
+    {"code": "E47000009", "name": "West of England", "year": 2025, "winner": "Labour", "candidate": "Helen Godwin",
+     "src": "https://en.wikipedia.org/wiki/2025_West_of_England_mayoral_election"},
+
+    {"code": "E47000011", "name": "North of Tyne", "year": 2019, "winner": "Labour", "candidate": "Jamie Driscoll",
+     "src": "https://en.wikipedia.org/wiki/2019_North_of_Tyne_mayoral_election"},
+
+    {"code": "E47000012", "name": "York and North Yorkshire", "year": 2024, "winner": "Labour", "candidate": "David Skaith",
+     "src": "https://en.wikipedia.org/wiki/2024_York_and_North_Yorkshire_mayoral_election"},
+
+    {"code": "E47000013", "name": "East Midlands", "year": 2024, "winner": "Labour", "candidate": "Claire Ward",
+     "src": "https://en.wikipedia.org/wiki/2024_East_Midlands_mayoral_election"},
+
+    {"code": "E47000014", "name": "North East", "year": 2024, "winner": "Labour", "candidate": "Kim McGuinness",
+     "src": "https://en.wikipedia.org/wiki/2024_North_East_mayoral_election"},
+
+    {"code": "E47000016", "name": "Hull and East Yorkshire", "year": 2025, "winner": "Reform", "candidate": "Luke Campbell",
+     "src": "https://en.wikipedia.org/wiki/2025_Hull_and_East_Yorkshire_mayoral_election"},
+
+    {"code": "E47000017", "name": "Greater Lincolnshire", "year": 2025, "winner": "Reform", "candidate": "Andrea Jenkyns",
+     "src": "https://en.wikipedia.org/wiki/2025_Greater_Lincolnshire_mayoral_election"}
+  ]
+}

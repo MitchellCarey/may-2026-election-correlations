@@ -211,6 +211,26 @@ def main():
         else {'regions': {}}
     )
 
+    # CA Mayor overlay (issue #82) — GB-only. 13 Combined-Authority mayoral
+    # regions painted at any historical slider year via per-CA history (~30
+    # contests across 2017-2025). North East CA was reformed May 2024 from
+    # the 3-LAD North of Tyne (E47000011, retired) into the 7-LAD body
+    # (E47000014); paintAtYear uses data-era ('pre'/'post'/'any') to swap
+    # the two North polygons at the 2024 split, mirroring the CED/Holyrood/
+    # Senedd/PCON era pattern. The 12 stable CAs carry era='any'.
+    ca_mayors_path = DATA / 'ca_mayors.json'
+    ca_mayors_geom_path = DATA / 'ca_mayor_geoms.json'
+    ca_mayors_data = (
+        json.loads(ca_mayors_path.read_text())
+        if region == 'gb' and ca_mayors_path.exists()
+        else {'years': [], 'records': []}
+    )
+    ca_mayors_geoms = (
+        json.loads(ca_mayors_geom_path.read_text())
+        if region == 'gb' and ca_mayors_geom_path.exists()
+        else {'regions': {}, 'regions_pre': {}}
+    )
+
     # EP 2014/2019 overlay (issue #91) — GB-only layer painting each of
     # the 11 GB European Electoral Region polygons by the plurality vote
     # winner at the selected slider year. 11 EERs × 2 years = 22 records.
@@ -681,6 +701,47 @@ def main():
             n_gla_years = len(gla_mayor_data.get('years', []))
             print(f'gla mayor in gb: {len(gla_mayor_js)} polygon, {n_gla_years} years')
 
+    # CA Mayor overlay (GB only) — 13 post-era + 1 pre-era polygon. The two
+    # North polygons (E47000011 / E47000014) carry era='pre'/'post' so
+    # paintAtYear can hide whichever is wrong-side of the 2024 split year;
+    # the other 12 carry era='any'. Synthetic init records seed grey fills
+    # at render time; CA_MAYOR_HISTORY drives the slider repaint.
+    ca_mayor_paths: dict = {
+        code: r['path'] for code, r in ca_mayors_geoms.get('regions', {}).items()
+    }
+    ca_mayor_paths_pre: dict = {
+        code: r['path'] for code, r in ca_mayors_geoms.get('regions_pre', {}).items()
+    }
+    ca_mayor_eras: dict = {}
+    ca_mayor_js: list = []
+    if region == 'gb':
+        if ca_mayor_paths or ca_mayor_paths_pre:
+            # Era stamping. Bare codes in `regions` are post-2024 (E47000014
+            # North East) or stable across the slider window (the 12 other CAs).
+            # Codes in `regions_pre` are pre-2024 only (E47000011 North of Tyne).
+            # The two North polygons get explicit era; the 12 stable CAs get 'any'.
+            for code, meta in ca_mayors_geoms.get('regions', {}).items():
+                ca_mayor_eras[code] = 'post' if code == 'E47000014' else 'any'
+                ca_mayor_js.append({
+                    'c': code,
+                    'n': meta.get('name', ''),
+                    'w': None,
+                    'y': None,
+                })
+            for code, meta in ca_mayors_geoms.get('regions_pre', {}).items():
+                ca_mayor_eras[code] = 'pre'
+                ca_mayor_js.append({
+                    'c': code,
+                    'n': meta.get('name', ''),
+                    'w': None,
+                    'y': None,
+                })
+            n_ca_years = len(ca_mayors_data.get('years', []))
+            n_pre = len(ca_mayor_paths_pre)
+            n_post = len(ca_mayor_paths)
+            print(f'ca mayors in gb: {n_post + n_pre} polygons, {n_ca_years} years '
+                  f'({n_post} post-era + {n_pre} pre-era hidden at year >= 2024)')
+
     # EP overlay (#91) — synthetic init records (w=null) painted by
     # paintAtYear at slider time. Same convention as Senedd / Holyrood
     # pre-review polygons: DOM elements exist from page load so the
@@ -794,6 +855,9 @@ def main():
     js.append('const EU_REF_PATHS = ' + json.dumps(eu_ref_paths, separators=(',', ':')) + ';')
     js.append('const AV_REF_PATHS = ' + json.dumps(av_ref_paths, separators=(',', ':')) + ';')
     js.append('const GLA_MAYOR_PATH = ' + json.dumps(gla_mayor_paths, separators=(',', ':')) + ';')
+    js.append('const CA_MAYOR_PATHS = ' + json.dumps(ca_mayor_paths, separators=(',', ':')) + ';')
+    js.append('const CA_MAYOR_PATHS_PRE = ' + json.dumps(ca_mayor_paths_pre, separators=(',', ':')) + ';')
+    js.append('const CA_MAYOR_ERAS = ' + json.dumps(ca_mayor_eras, separators=(',', ':')) + ';')
     js.append('const EP_PATHS = ' + json.dumps(ep_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
     js.append('const CEDS = ' + json.dumps(ceds_js, separators=(',', ':')) + ';')
@@ -809,6 +873,8 @@ def main():
     js.append('const AV_REF = ' + json.dumps(av_ref_js, ensure_ascii=False,
                                              separators=(',', ':')) + ';')
     js.append('const GLA_MAYOR = ' + json.dumps(gla_mayor_js, ensure_ascii=False,
+                                                separators=(',', ':')) + ';')
+    js.append('const CA_MAYORS = ' + json.dumps(ca_mayor_js, ensure_ascii=False,
                                                 separators=(',', ':')) + ';')
     js.append('const EP = ' + json.dumps(ep_js, ensure_ascii=False,
                                          separators=(',', ':')) + ';')
@@ -974,6 +1040,16 @@ function fmtGlaMayorTitle(g) {
   return lines.join('\n');
 }
 
+function fmtCaMayorTitle(c) {
+  const lines = [(c.n || 'Combined Authority') + ' · Mayor'];
+  if (c.w) {
+    lines.push((c.y ? c.y + ' · ' : '') + 'winner: ' + (PARTY_DISPLAY[c.w] || c.w));
+  } else {
+    lines.push('(use slider to view a mayoral year)');
+  }
+  return lines.join('\n');
+}
+
 function fmtEPTitle(e) {
   // EP polygons initial-render carry w=null (paintAtYear fills them at
   // the first slider tick). At page-load we just label the layer so the
@@ -1011,7 +1087,8 @@ if (target) {
   // gla-mayor sits just above referendum (also below everything else) so
   // it paints under wards/PCON in the default view; the dedicated
   // "London Mayor only" view CSS-isolates it.
-  const KIND_ORDER = { referendum: -3, 'av-referendum': -3, 'gla-mayor': -2,
+  const KIND_ORDER = { referendum: -3, 'av-referendum': -3,
+                        'gla-mayor': -2, 'ca-mayor': -2,
                         ep: -1, ced: 0, ward: 1, surrey: 2, pcon: 3,
                         holyrood: 4, senedd: 5 };
   const items = [
@@ -1019,6 +1096,12 @@ if (target) {
                              fill: (g.w && PARTY_COLOURS[g.w]) || NEUTRAL_FILL,
                              title: fmtGlaMayorTitle(g),
                              ds: { gla: g.g } })),
+    ...CA_MAYORS.map(c => ({ kind: 'ca-mayor',
+                             d: CA_MAYOR_PATHS[c.c] || CA_MAYOR_PATHS_PRE[c.c],
+                             y: c.y,
+                             fill: (c.w && PARTY_COLOURS[c.w]) || NEUTRAL_FILL,
+                             title: fmtCaMayorTitle(c),
+                             ds: { ca: c.c, era: CA_MAYOR_ERAS[c.c] || 'any' } })),
     ...WARDS.map(w => ({ kind: 'ward', d: WARD_PATHS[w.gss], y: w.y,
                          fill: (w.w && PARTY_COLOURS[w.w]) || NEUTRAL_FILL,
                          title: fmtTitle(w) })),
@@ -1104,7 +1187,8 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 // AV referendum counting areas), and .view-gla-mayor (only the GLA
 // Mayor polygon). DOM is built once; CSS does the per-mode hiding.
 const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon',
-               'surrey', 'eu_ref_2016', 'av_ref_2011', 'gla-mayor', 'ep'];
+               'surrey', 'eu_ref_2016', 'av_ref_2011',
+               'gla-mayor', 'ca-mayor', 'ep'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -1114,8 +1198,8 @@ const setView = name => {
   });
 };
 if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
-    || SURREY.length || EU_REF.length || AV_REF.length || GLA_MAYOR.length
-    || EP.length) {
+    || SURREY.length || EU_REF.length || AV_REF.length
+    || GLA_MAYOR.length || CA_MAYORS.length || EP.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
@@ -1132,6 +1216,7 @@ SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 AV_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
+CA_MAYORS.forEach(c => { if (c.w) partiesPresent.add(c.w); });
 // EP records ship with w=null (paintAtYear fills them at slider time),
 // so iterate the build-time party set instead. UKIP / Brexit Party
 // aren't surfaced by any other layer; without this the legend would
@@ -1178,6 +1263,7 @@ if (legend) {
                               | set(senedd_history.get('years', []))
                               | set(ge_history.get('years', []))
                               | set(gla_mayor_data.get('years', []))
+                              | set(ca_mayors_data.get('years', []))
                               | set(ep_data.get('years', [])))
         js.append('')
         js.append('const YEARS = ' + json.dumps(slider_years) + ';')
@@ -1315,6 +1401,28 @@ if (legend) {
             slot['history'].sort(key=lambda e: e['y'])
         js.append('const GLA_MAYOR_HISTORY = ' + json.dumps(
             gla_history, separators=(',', ':'), ensure_ascii=False) + ';')
+
+        # CA_MAYOR_HISTORY (issue #82). Same shape as GLA_MAYOR_HISTORY but
+        # keyed by E47 code, covering ~29 mayoral contests across 13 CAs
+        # plus the abolished North of Tyne. The two North polygons
+        # (E47000011 / E47000014) carry separate histories because their
+        # boundaries are disjoint; paintAtYear's data-era logic guarantees
+        # only one of the two paints at any slider year.
+        ca_history: dict = {}
+        for r in ca_mayors_data.get('records', []):
+            entry = {
+                'y': r['year'],
+                'w': r['winner'],
+                'candidate': r.get('candidate'),
+                'src': 'wiki',
+                'url': r.get('src', ''),
+            }
+            slot = ca_history.setdefault(r['code'], {'name': r['name'], 'history': []})
+            slot['history'].append(entry)
+        for slot in ca_history.values():
+            slot['history'].sort(key=lambda e: e['y'])
+        js.append('const CA_MAYOR_HISTORY = ' + json.dumps(
+            ca_history, separators=(',', ':'), ensure_ascii=False) + ';')
 
         # EP_HISTORY (issue #91). 11 EERs × 2 years (2014, 2019). Each
         # history entry carries seats + seats_raw + votes so paintAtYear
@@ -1690,6 +1798,52 @@ function paintAtYear(targetYear) {
         delete el.dataset.url;
       }
     });
+    // CA Mayor layer (#82). 13 post-era + 1 pre-era polygon. Era-aware
+    // visibility: 'pre' polygons hide at y >= 2024, 'post' at y < 2024
+    // (North of Tyne 3-LAD → North East 7-LAD reform), 'any' always visible
+    // (the 12 stable CAs). Carry-forward fill from CA_MAYOR_HISTORY at
+    // slider time; before each CA's first contest the polygon paints grey.
+    root.querySelectorAll('path.ca-mayor').forEach(el => {
+      const era = el.dataset.era || 'any';
+      const visible = era === 'pre'  ? (y <  2024)
+                    : era === 'post' ? (y >= 2024)
+                    : true;
+      el.style.display = visible ? '' : 'none';
+      const key = el.dataset.ca;
+      const ch = key && CA_MAYOR_HISTORY[key];
+      if (!ch) {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+        return;
+      }
+      let chosen = null;
+      for (const entry of ch.history) {
+        if (entry.y <= y) chosen = entry;
+        else break;
+      }
+      if (chosen) {
+        el.setAttribute('fill', PARTY_COLOURS[chosen.w] || NEUTRAL_FILL);
+        el.dataset.year = String(chosen.y);
+        if (chosen.url) el.dataset.url = chosen.url;
+        else delete el.dataset.url;
+        const titleEl = el.querySelector('title');
+        if (titleEl) {
+          const tl = [(ch.name || 'Combined Authority') + ' · Mayor'];
+          const winLine = chosen.y + ' · winner: ' + (PARTY_DISPLAY[chosen.w] || chosen.w);
+          tl.push(chosen.candidate ? winLine + ' (' + chosen.candidate + ')' : winLine);
+          if (chosen.url) {
+            try { tl.push('Source: ' + new URL(chosen.url).hostname + ' — click to open'); }
+            catch (_) { /* invalid URL */ }
+          }
+          titleEl.textContent = tl.join('\n');
+        }
+      } else {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+      }
+    });
     // GLA Mayor layer (#81). Single polygon (E12000007), always visible;
     // carry-forward fill from GLA_MAYOR_HISTORY at slider time. At year < 2012
     // (no slider stop reaches there in practice; 2012 is the new floor) the
@@ -1808,7 +1962,8 @@ function paintAtYear(targetYear) {
   root.addEventListener('click', evt => {
     const target = evt.target.closest(
       'path.ward, path.ced, path.holyrood, path.senedd, path.pcon, '
-      + 'path.referendum, path.av-referendum, path.gla-mayor, path.ep');
+      + 'path.referendum, path.av-referendum, '
+      + 'path.gla-mayor, path.ca-mayor, path.ep');
     if (!target || !target.dataset.url) return;
     window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
   });
