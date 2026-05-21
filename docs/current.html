@@ -89,6 +89,7 @@ const PCC_PATHS_PRE = {};
 const PCC_ERAS = {};
 const SURREY_PATHS = {};
 const EU_REF_PATHS = {};
+const INDYREF_PATHS = {};
 const AV_REF_PATHS = {};
 const GLA_MAYOR_PATH = {};
 const CA_MAYOR_PATHS = {};
@@ -103,15 +104,16 @@ const PCON = [];
 const PCC = [];
 const SURREY = [];
 const EU_REF = [];
+const INDYREF = [];
 const AV_REF = [];
 const GLA_MAYOR = [];
 const CA_MAYORS = [];
 const EP = [];
 const EP_PARTIES = [];
 const PCC_HISTORY = {};
-const PARTY_COLOURS = {"Labour": "#c8102e", "Conservative": "#0087DC", "LibDem": "#FAA61A", "Reform": "#12B6CF", "Green": "#6AB023", "SNP": "#FDF38E", "Plaid": "#005B54", "Independent": "#888780", "Speaker": "#888780", "UKIP": "#70147A", "Brexit": "#00AEEF", "Leave": "#552288", "Remain": "#ffcc00", "AV Yes": "#1f78b4", "AV No": "#e31a1c", "Other": "#a87b3e", "Pending": "#cccccc"};
-const PARTY_DISPLAY = {"Labour": "Labour", "Conservative": "Conservative", "LibDem": "Liberal Democrats", "Reform": "Reform UK", "Green": "Green", "SNP": "SNP", "Plaid": "Plaid Cymru", "Independent": "Independent", "Speaker": "Speaker of the House", "UKIP": "UKIP", "Brexit": "Brexit Party", "Leave": "Leave", "Remain": "Remain", "AV Yes": "Yes", "AV No": "No", "Other": "Other", "Pending": "Awaiting declaration"};
-const LEGEND_ORDER = ["Labour", "Reform", "Green", "LibDem", "Conservative", "SNP", "Plaid", "Independent", "Speaker", "UKIP", "Brexit", "Leave", "Remain", "AV Yes", "AV No", "Other", "Pending"];
+const PARTY_COLOURS = {"Labour": "#c8102e", "Conservative": "#0087DC", "LibDem": "#FAA61A", "Reform": "#12B6CF", "Green": "#6AB023", "SNP": "#FDF38E", "Plaid": "#005B54", "Independent": "#888780", "Speaker": "#888780", "UKIP": "#70147A", "Brexit": "#00AEEF", "Leave": "#552288", "Remain": "#ffcc00", "Yes": "#ffcc00", "No": "#0066cc", "AV Yes": "#1f78b4", "AV No": "#e31a1c", "Other": "#a87b3e", "Pending": "#cccccc"};
+const PARTY_DISPLAY = {"Labour": "Labour", "Conservative": "Conservative", "LibDem": "Liberal Democrats", "Reform": "Reform UK", "Green": "Green", "SNP": "SNP", "Plaid": "Plaid Cymru", "Independent": "Independent", "Speaker": "Speaker of the House", "UKIP": "UKIP", "Brexit": "Brexit Party", "Leave": "Leave", "Remain": "Remain", "Yes": "Yes (independence)", "No": "No (union)", "AV Yes": "Yes", "AV No": "No", "Other": "Other", "Pending": "Awaiting declaration"};
+const LEGEND_ORDER = ["Labour", "Reform", "Green", "LibDem", "Conservative", "SNP", "Plaid", "Independent", "Speaker", "UKIP", "Brexit", "Leave", "Remain", "Yes", "No", "AV Yes", "AV No", "Other", "Pending"];
 const NEUTRAL_FILL = "#eaeaea";
 
 
@@ -242,6 +244,28 @@ function fmtEuRefTitle(r) {
   return lines.join('\n');
 }
 
+function fmtIndyrefTitle(r) {
+  // "Glasgow City · Scottish independence referendum 2014\nYes 53.5% / No 46.5%\nSource: …"
+  // Plurality winner first so a Yes-winning council reads "Yes X / No Y"
+  // and a No-winning council reads "No X / Yes Y" — same convention as
+  // fmtEuRefTitle's Leave/Remain ordering.
+  const lines = [r.n + ' · Scottish independence referendum 2014'];
+  const yv = (r.pct && r.pct.Yes != null) ? (r.pct.Yes * 100).toFixed(1) : null;
+  const nv = (r.pct && r.pct.No  != null) ? (r.pct.No  * 100).toFixed(1) : null;
+  if (yv != null && nv != null) {
+    lines.push(r.w === 'Yes'
+      ? 'Yes ' + yv + '% / No ' + nv + '%'
+      : 'No ' + nv + '% / Yes ' + yv + '%');
+  } else if (r.w) {
+    lines.push('Winner: ' + r.w);
+  }
+  if (r.url) {
+    try { lines.push('Source: ' + new URL(r.url).hostname + ' — click to open'); }
+    catch (_) { /* invalid URL */ }
+  }
+  return lines.join('\n');
+}
+
 function fmtAvRefTitle(r) {
   // "Amber Valley · AV Referendum 2011\nYes 29.5% / No 70.5%\nSource: …"
   const lines = [r.n + ' · AV Referendum 2011'];
@@ -325,7 +349,16 @@ if (target) {
   // gla-mayor sits just above referendum (also below everything else) so
   // it paints under wards/PCON in the default view; the dedicated
   // "London Mayor only" view CSS-isolates it.
-  const KIND_ORDER = { pcc: -3, referendum: -3, 'av-referendum': -3,
+  // indyref (#86) sorts alongside referendum at the bottom of the stack:
+  // its visibility is slider-driven (`paintAtYear` shows path.indyref
+  // only at y === 2014; CSS hides it at every other slider position),
+  // so the paint-order tiebreak only matters at year=2014 when no other
+  // contemporary contest sits on the same polygons. av-referendum (#92)
+  // sits alongside them — same opt-in/view-isolated semantics as
+  // EU Ref 2016. ep (#91) sits just above the referendum stack.
+  // ca-mayor (#82) is paint-tier mate of gla-mayor.
+  // pcc (#87) is a view-isolated layer like av-referendum.
+  const KIND_ORDER = { pcc: -3, referendum: -3, 'av-referendum': -3, indyref: -3,
                         'gla-mayor': -2, 'ca-mayor': -2,
                         ep: -1, ced: 0, ward: 1, surrey: 2, pcon: 3,
                         holyrood: 4, senedd: 5 };
@@ -376,6 +409,10 @@ if (target) {
                           fill: (r.w && PARTY_COLOURS[r.w]) || NEUTRAL_FILL,
                           title: fmtEuRefTitle(r),
                           ds: { lad: r.lad, url: r.url || null } })),
+    ...INDYREF.map(r => ({ kind: 'indyref', d: INDYREF_PATHS[r.lad], y: r.y,
+                           fill: (r.w && PARTY_COLOURS[r.w]) || NEUTRAL_FILL,
+                           title: fmtIndyrefTitle(r),
+                           ds: { lad: r.lad, url: r.url || null } })),
     ...AV_REF.map(r => ({ kind: 'av-referendum', d: AV_REF_PATHS[r.c], y: r.y,
                           fill: (r.w && PARTY_COLOURS[r.w]) || NEUTRAL_FILL,
                           title: fmtAvRefTitle(r),
@@ -441,7 +478,7 @@ const setView = name => {
   });
 };
 if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
-    || SURREY.length || EU_REF.length || AV_REF.length
+    || SURREY.length || EU_REF.length || INDYREF.length || AV_REF.length
     || GLA_MAYOR.length || CA_MAYORS.length || EP.length || PCC.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
@@ -459,6 +496,7 @@ SENEDD.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 PCON.forEach(p => { if (p.w) partiesPresent.add(p.w); });
 SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
+INDYREF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 AV_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
 CA_MAYORS.forEach(c => { if (c.w) partiesPresent.add(c.w); });
