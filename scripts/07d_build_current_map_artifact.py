@@ -176,6 +176,22 @@ def main():
         if region == 'gb' and lad_2016_geom_path.exists() else {'lads': {}}
     )
 
+    # AV Referendum 2011 LAD/SPC/NAWC-level overlay (issue #92) — GB-only.
+    # 439 GB counting areas painted blue ("AV Yes") or red ("AV No"):
+    # 326 LADs in England (reuse the same 2016-era polygons EU Ref uses,
+    # because LAD16 = LAD11 for England), 73 Holyrood pre-review SPC22
+    # polygons in Scotland (reuse spcs_pre_review from ward_geoms — the
+    # 2014 boundary set was in legal effect in 2011 too), and 40 Senedd
+    # pre-review NAWC21 polygons in Wales (reuse senedd_geoms_2007). NI's
+    # single counting area is filtered out by the extractor. Renders only
+    # when the reader opts in via the dedicated "AV Ref 2011" view button.
+    av_ref_path = DATA / 'av_referendum_2011.json'
+    av_ref_data = (
+        json.loads(av_ref_path.read_text())
+        if region == 'gb' and av_ref_path.exists()
+        else {'years': [], 'areas': {}}
+    )
+
     # GLA Mayor overlay (issue #81) — GB-only layer painting the single
     # Greater London region polygon (E12000007) by each mayoral winner
     # 2012 / 2016 / 2021 / 2024. paintAtYear bisects the history at each
@@ -572,6 +588,55 @@ def main():
             msg += f'; {n_eu_orphan} result(s) with no 2016 polygon'
         print(msg)
 
+    # AV Ref 2011 — one record + path per GB counting area. Paths are
+    # sourced from three places depending on the area kind; the three code
+    # spaces are disjoint so a single flat AV_REF_PATHS lookup is enough.
+    # All 439 polygons share the av-referendum CSS class (distinct from
+    # EU Ref's `referendum` class) so the view picker can isolate either
+    # referendum layer without leaking the other through.
+    av_ref_paths: dict = {}
+    av_ref_js: list = []
+    if region == 'gb':
+        av_ref_areas = av_ref_data.get('areas', {})
+        for code, area in av_ref_areas.items():
+            kind = area.get('kind')
+            if kind == 'lad':
+                path = lad_paths_2016.get(code)
+            elif kind == 'spc':
+                path = holyrood_paths_pre.get(f'PRE_{code}')
+            elif kind == 'nawc':
+                path = senedd_paths_pre.get(f'PRE_{code}')
+            else:
+                continue
+            if not path:
+                continue
+            av_ref_paths[code] = path
+            entry = area['history'][0] if area.get('history') else None
+            if not entry:
+                continue
+            av_ref_js.append({
+                'c':     code,
+                'k':     kind,
+                'n':     area.get('name', ''),
+                'w':     entry['w'],          # "AV Yes" / "AV No"
+                'y':     entry['y'],
+                'votes': entry.get('votes', {}),
+                'pct':   entry.get('pct', {}),
+                'url':   entry.get('url', ''),
+            })
+        n_av_decided = sum(1 for r in av_ref_js if r['w'])
+        n_av_orphan = sum(1 for code in av_ref_areas if code not in av_ref_paths)
+        by_kind: dict[str, int] = {}
+        for r in av_ref_js:
+            by_kind[r['k']] = by_kind.get(r['k'], 0) + 1
+        kind_line = ', '.join(f'{k}={n}' for k, n in sorted(by_kind.items()))
+        msg = (f'av_ref_2011 in gb: {len(av_ref_js)} '
+               f'(decided: {n_av_decided}; '
+               f'grey: {len(av_ref_js) - n_av_decided}; {kind_line})')
+        if n_av_orphan:
+            msg += f'; {n_av_orphan} result(s) with no matching polygon'
+        print(msg)
+
     # GLA Mayor overlay (GB only) — one polygon, four years.
     # The synthetic init record paints grey at initial render; paintAtYear
     # then walks GLA_MAYOR_HISTORY[code].history (sorted ascending) to fill
@@ -669,6 +734,7 @@ def main():
     js.append('const PCON_ERAS = ' + json.dumps(pcon_eras, separators=(',', ':')) + ';')
     js.append('const SURREY_PATHS = ' + json.dumps(surrey_paths, separators=(',', ':')) + ';')
     js.append('const EU_REF_PATHS = ' + json.dumps(eu_ref_paths, separators=(',', ':')) + ';')
+    js.append('const AV_REF_PATHS = ' + json.dumps(av_ref_paths, separators=(',', ':')) + ';')
     js.append('const GLA_MAYOR_PATH = ' + json.dumps(gla_mayor_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
     js.append('const CEDS = ' + json.dumps(ceds_js, separators=(',', ':')) + ';')
@@ -680,6 +746,8 @@ def main():
     js.append('const SURREY = ' + json.dumps(surrey_js, ensure_ascii=False,
                                              separators=(',', ':')) + ';')
     js.append('const EU_REF = ' + json.dumps(eu_ref_js, ensure_ascii=False,
+                                             separators=(',', ':')) + ';')
+    js.append('const AV_REF = ' + json.dumps(av_ref_js, ensure_ascii=False,
                                              separators=(',', ':')) + ';')
     js.append('const GLA_MAYOR = ' + json.dumps(gla_mayor_js, ensure_ascii=False,
                                                 separators=(',', ':')) + ';')
@@ -817,6 +885,23 @@ function fmtEuRefTitle(r) {
   return lines.join('\n');
 }
 
+function fmtAvRefTitle(r) {
+  // "Amber Valley · AV Referendum 2011\nYes 29.5% / No 70.5%\nSource: …"
+  const lines = [r.n + ' · AV Referendum 2011'];
+  const yv = (r.pct && r.pct['AV Yes'] != null) ? (r.pct['AV Yes'] * 100).toFixed(1) : null;
+  const nv = (r.pct && r.pct['AV No']  != null) ? (r.pct['AV No']  * 100).toFixed(1) : null;
+  if (yv != null && nv != null) {
+    lines.push('Yes ' + yv + '% / No ' + nv + '%');
+  } else if (r.w) {
+    lines.push('Winner: ' + (r.w === 'AV Yes' ? 'Yes' : 'No'));
+  }
+  if (r.url) {
+    try { lines.push('Source: ' + new URL(r.url).hostname + ' — click to open'); }
+    catch (_) { /* invalid URL */ }
+  }
+  return lines.join('\n');
+}
+
 function fmtGlaMayorTitle(g) {
   const lines = ['Mayor of London'];
   if (g.w) {
@@ -853,8 +938,9 @@ if (target) {
   // gla-mayor sits just above referendum (also below everything else) so
   // it paints under wards/PCON in the default view; the dedicated
   // "London Mayor only" view CSS-isolates it.
-  const KIND_ORDER = { referendum: -2, 'gla-mayor': -1, ced: 0, ward: 1,
-                        surrey: 2, pcon: 3, holyrood: 4, senedd: 5 };
+  const KIND_ORDER = { referendum: -2, 'av-referendum': -2, 'gla-mayor': -1,
+                        ced: 0, ward: 1, surrey: 2, pcon: 3,
+                        holyrood: 4, senedd: 5 };
   const items = [
     ...GLA_MAYOR.map(g => ({ kind: 'gla-mayor', d: GLA_MAYOR_PATH[g.g], y: g.y,
                              fill: (g.w && PARTY_COLOURS[g.w]) || NEUTRAL_FILL,
@@ -891,6 +977,10 @@ if (target) {
                           fill: (r.w && PARTY_COLOURS[r.w]) || NEUTRAL_FILL,
                           title: fmtEuRefTitle(r),
                           ds: { lad: r.lad, url: r.url || null } })),
+    ...AV_REF.map(r => ({ kind: 'av-referendum', d: AV_REF_PATHS[r.c], y: r.y,
+                          fill: (r.w && PARTY_COLOURS[r.w]) || NEUTRAL_FILL,
+                          title: fmtAvRefTitle(r),
+                          ds: { area: r.c, areaKind: r.k, url: r.url || null } })),
   ].filter(it => it.d);
   items.sort((a, b) => (a.y ?? 0) - (b.y ?? 0) || (KIND_ORDER[a.kind] - KIND_ORDER[b.kind]));
   const fills = document.createElementNS(SVG_NS, 'g');
@@ -928,16 +1018,16 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 }
 
 // View picker (GB only — gated on CEDS / HOLYROOD / SENEDD / PCON being
-// non-empty). Seven buttons with data-view attributes flip the SVG root
-// between .view-recent (default; chronological z-order), .view-wards
-// (only ward polygons), .view-ceds (only CED polygons), .view-holyrood
-// (only Holyrood SPCs), .view-senedd (only Senedd constituencies),
-// .view-pcon (only GE 2024 PCONs), .view-surrey (only the two Surrey
-// unitaries), .view-eu_ref_2016 (only EU referendum LADs), and
-// .view-gla-mayor (only the GLA Mayor polygon). DOM is built once;
-// CSS does the per-mode hiding.
+// non-empty). Buttons with data-view attributes flip the SVG root between
+// .view-recent (default; chronological z-order), .view-wards (only ward
+// polygons), .view-ceds (only CED polygons), .view-holyrood (only
+// Holyrood SPCs), .view-senedd (only Senedd constituencies), .view-pcon
+// (only GE 2024 PCONs), .view-surrey (only the two Surrey unitaries),
+// .view-eu_ref_2016 (only EU referendum LADs), .view-av_ref_2011 (only
+// AV referendum counting areas), and .view-gla-mayor (only the GLA
+// Mayor polygon). DOM is built once; CSS does the per-mode hiding.
 const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon',
-               'surrey', 'eu_ref_2016', 'gla-mayor'];
+               'surrey', 'eu_ref_2016', 'av_ref_2011', 'gla-mayor'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -947,7 +1037,7 @@ const setView = name => {
   });
 };
 if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
-    || SURREY.length || EU_REF.length || GLA_MAYOR.length) {
+    || SURREY.length || EU_REF.length || AV_REF.length || GLA_MAYOR.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
@@ -962,6 +1052,7 @@ SENEDD.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 PCON.forEach(p => { if (p.w) partiesPresent.add(p.w); });
 SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
+AV_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
 const legend = document.getElementById('map-legend');
 if (legend) {
@@ -1538,13 +1629,15 @@ function paintAtYear(targetYear) {
 // Library data (2010 / 2015 / 2017 / 2019); post-era PCON (2024) has no
 // URL in ge2024.json and so does nothing on click, same as today.
 // Referendum (EU Ref 2016) opens the Electoral Commission results landing
-// page.
+// page; AV Ref 2011 opens the Wikipedia results article (the EC's
+// original aboutmyvote.co.uk micro-site has been retired).
 (function wireClicks() {
   const root = document.querySelector('.map-svg');
   if (!root) return;
   root.addEventListener('click', evt => {
     const target = evt.target.closest(
-      'path.ward, path.ced, path.holyrood, path.senedd, path.pcon, path.referendum, path.gla-mayor');
+      'path.ward, path.ced, path.holyrood, path.senedd, path.pcon, '
+      + 'path.referendum, path.av-referendum, path.gla-mayor');
     if (!target || !target.dataset.url) return;
     window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
   });
