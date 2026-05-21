@@ -176,6 +176,22 @@ def main():
         if region == 'gb' and lad_2016_geom_path.exists() else {'lads': {}}
     )
 
+    # Scottish independence referendum 2014 overlay (issue #86) — GB-only
+    # layer painting Scotland's 32 council areas Yes-yellow or No-blue per
+    # the 18 September 2014 vote. Polygons come from the existing
+    # ward_geoms.json `boroughs` block (S12* subset) — Scottish council
+    # boundaries have been stable since 1996, so the WD24-era dissolution
+    # describes the same shapes that existed in 2014, and reusing the
+    # already-loaded boroughs avoids a parallel geometry fetch.
+    # paintAtYear gates visibility on slider year === 2014; the layer is
+    # hidden by CSS at every other slider position.
+    indyref_path = DATA / 'indyref_2014.json'
+    indyref_data = (
+        json.loads(indyref_path.read_text())
+        if region == 'gb' and indyref_path.exists()
+        else {'years': [], 'lads': {}}
+    )
+
     # GLA Mayor overlay (issue #81) — GB-only layer painting the single
     # Greater London region polygon (E12000007) by each mayoral winner
     # 2012 / 2016 / 2021 / 2024. paintAtYear bisects the history at each
@@ -534,6 +550,9 @@ def main():
     # EU Ref 2016 overlay (issue #85) — empty on GM, populated below on GB.
     eu_ref_paths: dict = {}
     eu_ref_js: list = []
+    # Indyref 2014 overlay (issue #86) — empty on GM, populated below on GB.
+    indyref_paths: dict = {}
+    indyref_js: list = []
     if region == 'gb':
         n_surrey_decided = sum(1 for s in surrey_js if s['seats'])
         print(f'surrey in gb: {len(surrey_js)} (decided: {n_surrey_decided}; '
@@ -570,6 +589,44 @@ def main():
                f'grey: {len(eu_ref_js) - n_eu_decided})')
         if n_eu_orphan:
             msg += f'; {n_eu_orphan} result(s) with no 2016 polygon'
+        print(msg)
+
+        # Indyref 2014 (#86). 32 Scottish councils, one record per S12 LAD,
+        # painted on the existing `boroughs` polygons in ward_geoms.json —
+        # Scottish council boundaries have been stable since 1996, so today's
+        # WD24-era dissolution describes the same shapes that existed at the
+        # 2014 vote and a parallel geometry fetch is unnecessary.
+        indyref_lads = indyref_data.get('lads', {})
+        scottish_borough_paths = {
+            code: b['path']
+            for code, b in geoms.get('boroughs', {}).items()
+            if code.startswith('S12')
+        }
+        indyref_paths = {
+            code: scottish_borough_paths[code]
+            for code in indyref_lads if code in scottish_borough_paths
+        }
+        for code, lad in indyref_lads.items():
+            entry = lad['history'][0] if lad.get('history') else None
+            if not entry:
+                continue
+            indyref_js.append({
+                'lad':   code,
+                'n':     lad.get('name', ''),
+                'w':     entry['w'],          # "Yes" / "No"
+                'y':     entry['y'],
+                'votes': entry.get('votes', {}),
+                'pct':   entry.get('pct', {}),
+                'url':   entry.get('url', ''),
+            })
+        n_indy_decided = sum(1 for r in indyref_js if r['w'])
+        n_indy_orphan = sum(1 for code in indyref_lads
+                            if code not in scottish_borough_paths)
+        msg = (f'indyref_2014 in gb: {len(indyref_js)} '
+               f'(decided: {n_indy_decided}; '
+               f'grey: {len(indyref_js) - n_indy_decided})')
+        if n_indy_orphan:
+            msg += f'; {n_indy_orphan} result(s) with no S12 borough polygon'
         print(msg)
 
     # GLA Mayor overlay (GB only) — one polygon, four years.
@@ -669,6 +726,7 @@ def main():
     js.append('const PCON_ERAS = ' + json.dumps(pcon_eras, separators=(',', ':')) + ';')
     js.append('const SURREY_PATHS = ' + json.dumps(surrey_paths, separators=(',', ':')) + ';')
     js.append('const EU_REF_PATHS = ' + json.dumps(eu_ref_paths, separators=(',', ':')) + ';')
+    js.append('const INDYREF_PATHS = ' + json.dumps(indyref_paths, separators=(',', ':')) + ';')
     js.append('const GLA_MAYOR_PATH = ' + json.dumps(gla_mayor_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
     js.append('const CEDS = ' + json.dumps(ceds_js, separators=(',', ':')) + ';')
@@ -681,6 +739,8 @@ def main():
                                              separators=(',', ':')) + ';')
     js.append('const EU_REF = ' + json.dumps(eu_ref_js, ensure_ascii=False,
                                              separators=(',', ':')) + ';')
+    js.append('const INDYREF = ' + json.dumps(indyref_js, ensure_ascii=False,
+                                              separators=(',', ':')) + ';')
     js.append('const GLA_MAYOR = ' + json.dumps(gla_mayor_js, ensure_ascii=False,
                                                 separators=(',', ':')) + ';')
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
@@ -817,6 +877,28 @@ function fmtEuRefTitle(r) {
   return lines.join('\n');
 }
 
+function fmtIndyrefTitle(r) {
+  // "Glasgow City · Scottish independence referendum 2014\nYes 53.5% / No 46.5%\nSource: …"
+  // Plurality winner first so a Yes-winning council reads "Yes X / No Y"
+  // and a No-winning council reads "No X / Yes Y" — same convention as
+  // fmtEuRefTitle's Leave/Remain ordering.
+  const lines = [r.n + ' · Scottish independence referendum 2014'];
+  const yv = (r.pct && r.pct.Yes != null) ? (r.pct.Yes * 100).toFixed(1) : null;
+  const nv = (r.pct && r.pct.No  != null) ? (r.pct.No  * 100).toFixed(1) : null;
+  if (yv != null && nv != null) {
+    lines.push(r.w === 'Yes'
+      ? 'Yes ' + yv + '% / No ' + nv + '%'
+      : 'No ' + nv + '% / Yes ' + yv + '%');
+  } else if (r.w) {
+    lines.push('Winner: ' + r.w);
+  }
+  if (r.url) {
+    try { lines.push('Source: ' + new URL(r.url).hostname + ' — click to open'); }
+    catch (_) { /* invalid URL */ }
+  }
+  return lines.join('\n');
+}
+
 function fmtGlaMayorTitle(g) {
   const lines = ['Mayor of London'];
   if (g.w) {
@@ -853,8 +935,13 @@ if (target) {
   // gla-mayor sits just above referendum (also below everything else) so
   // it paints under wards/PCON in the default view; the dedicated
   // "London Mayor only" view CSS-isolates it.
-  const KIND_ORDER = { referendum: -2, 'gla-mayor': -1, ced: 0, ward: 1,
-                        surrey: 2, pcon: 3, holyrood: 4, senedd: 5 };
+  // indyref (#86) sorts alongside referendum at the bottom of the stack:
+  // its visibility is slider-driven (`paintAtYear` shows path.indyref
+  // only at y === 2014; CSS hides it at every other slider position),
+  // so the paint-order tiebreak only matters at year=2014 when no other
+  // contemporary contest sits on the same polygons.
+  const KIND_ORDER = { referendum: -3, indyref: -2, 'gla-mayor': -1, ced: 0,
+                        ward: 1, surrey: 2, pcon: 3, holyrood: 4, senedd: 5 };
   const items = [
     ...GLA_MAYOR.map(g => ({ kind: 'gla-mayor', d: GLA_MAYOR_PATH[g.g], y: g.y,
                              fill: (g.w && PARTY_COLOURS[g.w]) || NEUTRAL_FILL,
@@ -891,6 +978,10 @@ if (target) {
                           fill: (r.w && PARTY_COLOURS[r.w]) || NEUTRAL_FILL,
                           title: fmtEuRefTitle(r),
                           ds: { lad: r.lad, url: r.url || null } })),
+    ...INDYREF.map(r => ({ kind: 'indyref', d: INDYREF_PATHS[r.lad], y: r.y,
+                           fill: (r.w && PARTY_COLOURS[r.w]) || NEUTRAL_FILL,
+                           title: fmtIndyrefTitle(r),
+                           ds: { lad: r.lad, url: r.url || null } })),
   ].filter(it => it.d);
   items.sort((a, b) => (a.y ?? 0) - (b.y ?? 0) || (KIND_ORDER[a.kind] - KIND_ORDER[b.kind]));
   const fills = document.createElementNS(SVG_NS, 'g');
@@ -947,7 +1038,7 @@ const setView = name => {
   });
 };
 if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
-    || SURREY.length || EU_REF.length || GLA_MAYOR.length) {
+    || SURREY.length || EU_REF.length || INDYREF.length || GLA_MAYOR.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
@@ -962,6 +1053,7 @@ SENEDD.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 PCON.forEach(p => { if (p.w) partiesPresent.add(p.w); });
 SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
+INDYREF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
 const legend = document.getElementById('map-legend');
 if (legend) {
@@ -1003,7 +1095,8 @@ if (legend) {
                               | set(holyrood_history.get('years', []))
                               | set(senedd_history.get('years', []))
                               | set(ge_history.get('years', []))
-                              | set(gla_mayor_data.get('years', [])))
+                              | set(gla_mayor_data.get('years', []))
+                              | set(indyref_data.get('years', [])))
         js.append('')
         js.append('const YEARS = ' + json.dumps(slider_years) + ';')
         js.append('const WARD_HISTORY = ' + json.dumps(
@@ -1140,6 +1233,22 @@ if (legend) {
             slot['history'].sort(key=lambda e: e['y'])
         js.append('const GLA_MAYOR_HISTORY = ' + json.dumps(
             gla_history, separators=(',', ':'), ensure_ascii=False) + ';')
+
+        # INDYREF_HISTORY (#86). One polygon per Scottish council, one
+        # contest (2014). Same {<code>: {name, history: [{y, w, votes, pct,
+        # url}]}} shape as the per-LAD referendum histories, with `pct`
+        # pre-computed at extract time. paintAtYear's path.indyref block
+        # toggles visibility on slider year === 2014; carry-forward isn't
+        # relevant for a single-year layer, but the same dict shape keeps
+        # tooltip rebuild consistent with the other GB layers.
+        indyref_history: dict = {}
+        for code, lad in indyref_data.get('lads', {}).items():
+            indyref_history[code] = {
+                'name': lad.get('name', ''),
+                'history': lad.get('history', []),
+            }
+        js.append('const INDYREF_HISTORY = ' + json.dumps(
+            indyref_history, separators=(',', ':'), ensure_ascii=False) + ';')
         js.append(r'''
 // Stamp each ward <path> with data-gss / data-year so paintAtYear can
 // look it up. Done here (GB-only splice) rather than in the shared
@@ -1488,6 +1597,15 @@ function paintAtYear(targetYear) {
         delete el.dataset.url;
       }
     });
+    // Indyref 2014 layer (#86). 32 Scottish council polygons that paint
+    // only at slider year === 2014 — every other position hides them. No
+    // era discrimination (single-vintage layer), no carry-forward
+    // (single-year layer). Fills + tooltips are already populated at
+    // initial render via fmtIndyrefTitle; this block toggles visibility
+    // and is otherwise a no-op.
+    root.querySelectorAll('path.indyref').forEach(el => {
+      el.style.display = (y === 2014) ? '' : 'none';
+    });
     // GLA Mayor layer (#81). Single polygon (E12000007), always visible;
     // carry-forward fill from GLA_MAYOR_HISTORY at slider time. At year < 2012
     // (no slider stop reaches there in practice; 2012 is the new floor) the
@@ -1532,19 +1650,22 @@ function paintAtYear(targetYear) {
   });
 }
 
-// Click any ward / CED / Holyrood / Senedd / PCON / referendum polygon
-// to open its source URL — lets readers verify accuracy and report errors
-// against the canonical source. PCON click-through covers pre-era HoC
-// Library data (2010 / 2015 / 2017 / 2019); post-era PCON (2024) has no
-// URL in ge2024.json and so does nothing on click, same as today.
-// Referendum (EU Ref 2016) opens the Electoral Commission results landing
-// page.
+// Click any ward / CED / Holyrood / Senedd / PCON / referendum / indyref
+// polygon to open its source URL — lets readers verify accuracy and
+// report errors against the canonical source. PCON click-through covers
+// pre-era HoC Library data (2010 / 2015 / 2017 / 2019); post-era PCON
+// (2024) has no URL in ge2024.json and so does nothing on click, same
+// as today. Referendum (EU Ref 2016) opens the Electoral Commission
+// results landing page; indyref (Scottish 2014) opens the Wikipedia
+// article (the EC published its indyref numbers only in PDF Appendix 3,
+// no machine-readable companion).
 (function wireClicks() {
   const root = document.querySelector('.map-svg');
   if (!root) return;
   root.addEventListener('click', evt => {
     const target = evt.target.closest(
-      'path.ward, path.ced, path.holyrood, path.senedd, path.pcon, path.referendum, path.gla-mayor');
+      'path.ward, path.ced, path.holyrood, path.senedd, path.pcon, '
+      + 'path.referendum, path.indyref, path.gla-mayor');
     if (!target || !target.dataset.url) return;
     window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
   });

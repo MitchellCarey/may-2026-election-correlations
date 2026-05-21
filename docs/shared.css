@@ -1030,6 +1030,25 @@ body {
   stroke-width: 1.4;
   fill-opacity: 0.78;
 }
+/* Scottish independence referendum 2014 (issue #86). path.indyref is
+   hidden by default and revealed by paintAtYear at slider year === 2014;
+   there's no dedicated view button — visibility is purely slider-driven.
+   Styling mirrors path.referendum so the polygons read consistently
+   when they're on screen. */
+.map-svg path.indyref {
+  display: none;
+  stroke: rgba(20,17,13,0.45);
+  stroke-width: 0.4;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  fill-opacity: 0.92;
+  cursor: pointer;
+}
+.map-svg path.indyref:hover {
+  stroke: var(--ink);
+  stroke-width: 1.4;
+  fill-opacity: 0.78;
+}
 .map-svg path.ced {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
