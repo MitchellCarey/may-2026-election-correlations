@@ -1,0 +1,638 @@
+{
+  "years": [
+    2014,
+    2019
+  ],
+  "regions": {
+    "E15000001": {
+      "name": "North East England",
+      "history": [
+        {
+          "y": 2014,
+          "w": "Labour",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/North_East_England_(European_Parliament_constituency)",
+          "seats": {
+            "Labour": 2,
+            "UKIP": 1
+          },
+          "seats_raw": {
+            "Labour Party (UK)": 2,
+            "UK Independence Party": 1
+          },
+          "votes": {
+            "Labour": 221988,
+            "UKIP": 177660,
+            "Conservative": 107733,
+            "LibDem": 36093,
+            "Green": 31605,
+            "Other": 33573
+          }
+        },
+        {
+          "y": 2019,
+          "w": "Brexit",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/North_East_England_(European_Parliament_constituency)",
+          "seats": {
+            "Brexit": 2,
+            "Labour": 1
+          },
+          "seats_raw": {
+            "Brexit Party": 2,
+            "Labour Party (UK)": 1
+          },
+          "votes": {
+            "Brexit": 240056,
+            "Labour": 119931,
+            "LibDem": 104330,
+            "Green": 49905,
+            "Conservative": 42395,
+            "UKIP": 38269,
+            "Other": 24968
+          }
+        }
+      ]
+    },
+    "E15000002": {
+      "name": "North West England",
+      "history": [
+        {
+          "y": 2014,
+          "w": "Labour",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/North_West_England_(European_Parliament_constituency)",
+          "seats": {
+            "Labour": 3,
+            "UKIP": 3,
+            "Conservative": 2
+          },
+          "seats_raw": {
+            "Labour Party (UK)": 3,
+            "UK Independence Party": 3,
+            "Conservative Party (UK)": 2
+          },
+          "votes": {
+            "Labour": 594063,
+            "UKIP": 481932,
+            "Conservative": 351985,
+            "Green": 123075,
+            "LibDem": 105487,
+            "Other": 98145
+          }
+        },
+        {
+          "y": 2019,
+          "w": "Brexit",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/North_West_England_(European_Parliament_constituency)",
+          "seats": {
+            "Brexit": 3,
+            "Labour": 2,
+            "LibDem": 2,
+            "Green": 1
+          },
+          "seats_raw": {
+            "Brexit Party": 3,
+            "Labour Party (UK)": 2,
+            "Liberal Democrats (UK)": 2,
+            "Green Party of England and Wales": 1
+          },
+          "votes": {
+            "Brexit": 541843,
+            "Labour": 380193,
+            "LibDem": 297507,
+            "Green": 216581,
+            "Conservative": 131002,
+            "UKIP": 62464,
+            "Other": 64407,
+            "Independent": 40910
+          }
+        }
+      ]
+    },
+    "E15000003": {
+      "name": "Yorkshire and the Humber",
+      "history": [
+        {
+          "y": 2014,
+          "w": "UKIP",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Yorkshire_and_the_Humber_(European_Parliament_constituency)",
+          "seats": {
+            "UKIP": 3,
+            "Labour": 2,
+            "Conservative": 1
+          },
+          "seats_raw": {
+            "UK Independence Party": 3,
+            "Labour Party (UK)": 2,
+            "Conservative Party (UK)": 1
+          },
+          "votes": {
+            "UKIP": 403630,
+            "Labour": 380189,
+            "Conservative": 248945,
+            "Green": 102282,
+            "LibDem": 81108,
+            "Other": 80547
+          }
+        },
+        {
+          "y": 2019,
+          "w": "Brexit",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Yorkshire_and_the_Humber_(European_Parliament_constituency)",
+          "seats": {
+            "Brexit": 3,
+            "Labour": 1,
+            "LibDem": 1,
+            "Green": 1
+          },
+          "seats_raw": {
+            "Brexit Party": 3,
+            "Labour Party (UK)": 1,
+            "Liberal Democrats (UK)": 1,
+            "Green Party of England and Wales": 1
+          },
+          "votes": {
+            "Brexit": 470351,
+            "Labour": 210516,
+            "LibDem": 200180,
+            "Green": 166980,
+            "Conservative": 92863,
+            "UKIP": 56100,
+            "Other": 92287
+          }
+        }
+      ]
+    },
+    "E15000004": {
+      "name": "East Midlands",
+      "history": [
+        {
+          "y": 2014,
+          "w": "UKIP",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/East_Midlands_(European_Parliament_constituency)",
+          "seats": {
+            "UKIP": 2,
+            "Conservative": 2,
+            "Labour": 1
+          },
+          "seats_raw": {
+            "UK Independence Party": 2,
+            "Conservative Party (UK)": 2,
+            "Labour Party (UK)": 1
+          },
+          "votes": {
+            "UKIP": 368734,
+            "Conservative": 291270,
+            "Labour": 279363,
+            "Green": 67066,
+            "LibDem": 60772,
+            "Other": 53516
+          }
+        },
+        {
+          "y": 2019,
+          "w": "Brexit",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/East_Midlands_(European_Parliament_constituency)",
+          "seats": {
+            "Brexit": 3,
+            "LibDem": 1,
+            "Labour": 1
+          },
+          "seats_raw": {
+            "Brexit Party": 3,
+            "Liberal Democrats (UK)": 1,
+            "Labour Party (UK)": 1
+          },
+          "votes": {
+            "Brexit": 452321,
+            "LibDem": 203989,
+            "Labour": 164682,
+            "Conservative": 126138,
+            "Green": 124630,
+            "UKIP": 58198,
+            "Other": 41117,
+            "Independent": 12152
+          }
+        }
+      ]
+    },
+    "E15000005": {
+      "name": "West Midlands",
+      "history": [
+        {
+          "y": 2014,
+          "w": "UKIP",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/West_Midlands_(European_Parliament_constituency)",
+          "seats": {
+            "UKIP": 3,
+            "Labour": 2,
+            "Conservative": 2
+          },
+          "seats_raw": {
+            "UK Independence Party": 3,
+            "Labour Party (UK)": 2,
+            "Conservative Party (UK)": 2
+          },
+          "votes": {
+            "UKIP": 428010,
+            "Labour": 363033,
+            "Conservative": 330470,
+            "LibDem": 75648,
+            "Green": 71464,
+            "Other": 90582
+          }
+        },
+        {
+          "y": 2019,
+          "w": "Brexit",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/West_Midlands_(European_Parliament_constituency)",
+          "seats": {
+            "Brexit": 3,
+            "Labour": 1,
+            "LibDem": 1,
+            "Green": 1,
+            "Conservative": 1
+          },
+          "seats_raw": {
+            "Brexit Party": 3,
+            "Labour Party (UK)": 1,
+            "Liberal Democrats (UK)": 1,
+            "Green Party of England and Wales": 1,
+            "Conservative Party (UK)": 1
+          },
+          "votes": {
+            "Brexit": 507152,
+            "Labour": 228298,
+            "LibDem": 219982,
+            "Green": 143520,
+            "Conservative": 135279,
+            "UKIP": 66934,
+            "Other": 45673
+          }
+        }
+      ]
+    },
+    "E15000006": {
+      "name": "East of England",
+      "history": [
+        {
+          "y": 2014,
+          "w": "UKIP",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/East_of_England_(European_Parliament_constituency)",
+          "seats": {
+            "UKIP": 3,
+            "Conservative": 3,
+            "Labour": 1
+          },
+          "seats_raw": {
+            "UK Independence Party": 3,
+            "Conservative Party (UK)": 3,
+            "Labour Party (UK)": 1
+          },
+          "votes": {
+            "UKIP": 542812,
+            "Conservative": 446569,
+            "Labour": 271601,
+            "Green": 133331,
+            "LibDem": 108010,
+            "Other": 72023
+          }
+        },
+        {
+          "y": 2019,
+          "w": "Brexit",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/East_of_England_(European_Parliament_constituency)",
+          "seats": {
+            "Brexit": 3,
+            "LibDem": 2,
+            "Green": 1,
+            "Conservative": 1
+          },
+          "seats_raw": {
+            "Brexit Party": 3,
+            "Liberal Democrats (UK)": 2,
+            "Green Party of England and Wales": 1,
+            "Conservative Party (UK)": 1
+          },
+          "votes": {
+            "Brexit": 604715,
+            "LibDem": 361563,
+            "Green": 202460,
+            "Conservative": 163830,
+            "Labour": 139490,
+            "Other": 68491,
+            "UKIP": 54676,
+            "Independent": 3230
+          }
+        }
+      ]
+    },
+    "E15000007": {
+      "name": "London",
+      "history": [
+        {
+          "y": 2014,
+          "w": "Labour",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/London_(European_Parliament_constituency)",
+          "seats": {
+            "Labour": 4,
+            "Conservative": 2,
+            "UKIP": 1,
+            "Green": 1
+          },
+          "seats_raw": {
+            "Labour Party (UK)": 4,
+            "Conservative Party (UK)": 2,
+            "UK Independence Party": 1,
+            "Green Party of England and Wales": 1
+          },
+          "votes": {
+            "Labour": 806959,
+            "Conservative": 495639,
+            "UKIP": 371133,
+            "Green": 196419,
+            "LibDem": 148013,
+            "Other": 182312
+          }
+        },
+        {
+          "y": 2019,
+          "w": "LibDem",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/London_(European_Parliament_constituency)",
+          "seats": {
+            "LibDem": 3,
+            "Labour": 2,
+            "Brexit": 2,
+            "Green": 1
+          },
+          "seats_raw": {
+            "Liberal Democrats (UK)": 3,
+            "Labour Party (UK)": 2,
+            "Brexit Party": 2,
+            "Green Party of England and Wales": 1
+          },
+          "votes": {
+            "LibDem": 608725,
+            "Labour": 536810,
+            "Brexit": 400257,
+            "Green": 278957,
+            "Conservative": 177964,
+            "Other": 185439,
+            "UKIP": 46497,
+            "Independent": 7032
+          }
+        }
+      ]
+    },
+    "E15000008": {
+      "name": "South East England",
+      "history": [
+        {
+          "y": 2014,
+          "w": "UKIP",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/South_East_England_(European_Parliament_constituency)",
+          "seats": {
+            "UKIP": 4,
+            "Conservative": 3,
+            "Labour": 1,
+            "Green": 1,
+            "LibDem": 1
+          },
+          "seats_raw": {
+            "UK Independence Party": 4,
+            "Conservative Party (UK)": 3,
+            "Labour Party (UK)": 1,
+            "Green Party of England and Wales": 1,
+            "Liberal Democrats (UK)": 1
+          },
+          "votes": {
+            "UKIP": 751439,
+            "Conservative": 723571,
+            "Labour": 342775,
+            "Green": 211706,
+            "LibDem": 187876,
+            "Other": 117753
+          }
+        },
+        {
+          "y": 2019,
+          "w": "Brexit",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/South_East_England_(European_Parliament_constituency)",
+          "seats": {
+            "Brexit": 4,
+            "LibDem": 3,
+            "Green": 1,
+            "Conservative": 1,
+            "Labour": 1
+          },
+          "seats_raw": {
+            "Brexit Party": 4,
+            "Liberal Democrats (UK)": 3,
+            "Green Party of England and Wales": 1,
+            "Conservative Party (UK)": 1,
+            "Labour Party (UK)": 1
+          },
+          "votes": {
+            "Brexit": 915686,
+            "LibDem": 653743,
+            "Green": 343249,
+            "Conservative": 260277,
+            "Labour": 184678,
+            "Other": 116982,
+            "UKIP": 56487,
+            "Independent": 7843
+          }
+        }
+      ]
+    },
+    "E15000009": {
+      "name": "South West England",
+      "history": [
+        {
+          "y": 2014,
+          "w": "UKIP",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/South_West_England_(European_Parliament_constituency)",
+          "seats": {
+            "UKIP": 2,
+            "Conservative": 2,
+            "Labour": 1,
+            "Green": 1
+          },
+          "seats_raw": {
+            "UK Independence Party": 2,
+            "Conservative Party (UK)": 2,
+            "Labour Party (UK)": 1,
+            "Green Party of England and Wales": 1
+          },
+          "votes": {
+            "UKIP": 484184,
+            "Conservative": 433151,
+            "Labour": 206124,
+            "Green": 166447,
+            "LibDem": 160376,
+            "Other": 49160
+          }
+        },
+        {
+          "y": 2019,
+          "w": "Brexit",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/South_West_England_(European_Parliament_constituency)",
+          "seats": {
+            "Brexit": 3,
+            "LibDem": 2,
+            "Green": 1
+          },
+          "seats_raw": {
+            "Brexit Party": 3,
+            "Liberal Democrats (UK)": 2,
+            "Green Party of England and Wales": 1
+          },
+          "votes": {
+            "Brexit": 611742,
+            "LibDem": 385095,
+            "Green": 302364,
+            "Conservative": 144674,
+            "Labour": 108100,
+            "UKIP": 53739,
+            "Other": 55005,
+            "Independent": 5860
+          }
+        }
+      ]
+    },
+    "S15000001": {
+      "name": "Scotland",
+      "history": [
+        {
+          "y": 2014,
+          "w": "SNP",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Scotland_(European_Parliament_constituency)",
+          "seats": {
+            "SNP": 2,
+            "Labour": 2,
+            "Conservative": 1,
+            "UKIP": 1
+          },
+          "seats_raw": {
+            "Scottish National Party": 2,
+            "Labour Party (UK)": 2,
+            "Conservative Party (UK)": 1,
+            "UK Independence Party": 1
+          },
+          "votes": {
+            "SNP": 389503,
+            "Labour": 348219,
+            "Conservative": 231330,
+            "UKIP": 140534,
+            "Green": 108305,
+            "LibDem": 95319,
+            "Other": 30273
+          }
+        },
+        {
+          "y": 2019,
+          "w": "SNP",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Scotland_(European_Parliament_constituency)",
+          "seats": {
+            "SNP": 3,
+            "Brexit": 1,
+            "LibDem": 1,
+            "Conservative": 1
+          },
+          "seats_raw": {
+            "Scottish National Party": 3,
+            "Brexit Party": 1,
+            "Liberal Democrats (UK)": 1,
+            "Conservative Party (UK)": 1
+          },
+          "votes": {
+            "SNP": 594533,
+            "Brexit": 233006,
+            "LibDem": 218285,
+            "Conservative": 182476,
+            "Labour": 146724,
+            "Green": 129603,
+            "Independent": 38181,
+            "UKIP": 28418
+          }
+        }
+      ]
+    },
+    "W08000001": {
+      "name": "Wales",
+      "history": [
+        {
+          "y": 2014,
+          "w": "Labour",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Wales_(European_Parliament_constituency)",
+          "seats": {
+            "Labour": 1,
+            "UKIP": 1,
+            "Conservative": 1,
+            "Plaid": 1
+          },
+          "seats_raw": {
+            "Labour Party (UK)": 1,
+            "UK Independence Party": 1,
+            "Conservative Party (UK)": 1,
+            "Plaid Cymru": 1
+          },
+          "votes": {
+            "Labour": 210791,
+            "UKIP": 201983,
+            "Conservative": 127742,
+            "Plaid": 111864,
+            "Green": 33275,
+            "LibDem": 28930,
+            "Other": 18475
+          }
+        },
+        {
+          "y": 2019,
+          "w": "Brexit",
+          "src": "wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Wales_(European_Parliament_constituency)",
+          "seats": {
+            "Brexit": 2,
+            "Plaid": 1,
+            "Labour": 1
+          },
+          "seats_raw": {
+            "Brexit Party": 2,
+            "Plaid Cymru": 1,
+            "Labour Party (UK)": 1
+          },
+          "votes": {
+            "Brexit": 271404,
+            "Plaid": 163928,
+            "Labour": 127833,
+            "LibDem": 113885,
+            "Conservative": 54587,
+            "Green": 52660,
+            "UKIP": 27566,
+            "Other": 24332
+          }
+        }
+      ]
+    }
+  }
+}
