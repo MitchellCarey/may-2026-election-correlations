@@ -134,10 +134,13 @@ def find_id_column(ws) -> int:
 
 
 # CSV → JSON party-key normalisation. Returns the canonical label that
-# 07d's palette + display maps already know about. UKIP / Brexit / DUP /
-# Sinn Féin / SDLP / UUP / Alliance all fold to 'Other' — consistent with
-# 20_extract_ge2024.py's westminster_party() wrapper. Speaker is preserved
-# by the overrides map above, not by this normaliser.
+# 07d's palette + display maps already know about. DUP / Sinn Féin / SDLP /
+# UUP / Alliance all fold to 'Other' — consistent with 20_extract_ge2024.py's
+# westminster_party() wrapper. UKIP and Brexit keep their own labels since
+# the EP overlay (issue #91) added matching entries to PARTY_COLOURS_MAP;
+# the visible effect on Westminster history is Douglas Carswell's Clacton
+# 2015 win now painting UKIP instead of "Other". Speaker is preserved by
+# the overrides map above, not by this normaliser.
 def normalize_hoc_party(raw: str) -> str:
     s = raw.strip()
     # Trailing whitespace in source headers — "Labour " (2017), etc.

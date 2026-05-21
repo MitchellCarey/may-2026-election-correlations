@@ -1,4 +1,4 @@
-"""Shared registry for the three UK-wide nationwide referendums + GE 2010.
+"""Shared registry for the UK-wide nationwide referendums + GE 2010.
 
 Bootstrapped by issue #85 (EU Referendum 2016 LAD-level overlay) and reused
 by:
@@ -6,6 +6,10 @@ by:
     pcon_geoms_2010.json / ge_history.json plumbing)
   - #86 (Scottish independence referendum 2014 — Yes/No across the 32
     Scottish council areas)
+  - #92 (AV referendum 2011 — Yes/No across 439 GB counting areas:
+    326 English LADs + 73 Scottish Parliament constituencies +
+    40 National Assembly for Wales constituencies; NI's single counting
+    area is filtered out, matching the EU Ref `gb` viewBox)
 
 The module exposes two constants:
 
@@ -30,11 +34,16 @@ The module exposes two constants:
 # - EU Ref 2016: Leave (purple, recalling the UKIP brand that drove the
 #   Leave campaign) vs Remain (yellow, recalling the EU flag's stars).
 # - Indyref 2014: Yes (SNP yellow) vs No (Better Together blue).
+# - AV Ref 2011: Yes (mid-blue) vs No (red). Distinct from EU Ref's
+#   purple/yellow and Indyref's yellow/blue so all three referendum
+#   layers stay visually distinct on the GB current map.
 REFERENDUMS = [
     ("eu_ref_2016",  2016, "EU Referendum 2016",
      "#552288", "#ffcc00"),                            # Leave / Remain
     ("indyref_2014", 2014, "Scottish independence referendum 2014",
      "#ffcc00", "#0066cc"),                            # Yes / No
+    ("av_ref_2011",  2011, "AV Referendum 2011",
+     "#1f78b4", "#e31a1c"),                            # AV Yes / AV No
     ("ge_2010",      2010, "UK general election 2010",
      None,      None),
 ]
