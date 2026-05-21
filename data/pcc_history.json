@@ -2118,16 +2118,15 @@
         {
           "y": 2021,
           "w": "Conservative",
-          "candidate": "Jonathon Seed",
+          "candidate": "Philip Wilkinson",
           "src": "wiki",
           "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
           "votes": {
-            "Conservative": 84885,
-            "LibDem": 35013,
-            "Labour": 34147,
-            "Independent": 31722,
-            "Green": 16606,
-            "Reform": 4348
+            "Conservative": 32564,
+            "Independent": 25197,
+            "LibDem": 17966,
+            "Labour": 12971,
+            "Reform": 1859
           }
         },
         {

@@ -161,7 +161,13 @@ def _strip_refs_and_wikilinks(block: str) -> str:
 def _force_sections(wt: str, alias_map: dict[str, str]) -> dict[str, str]:
     """Return {pfa_code: section_wikitext} by walking H3/H4 headings and
     mapping each matching alias to the body between that heading and the
-    next heading (any depth)."""
+    next heading of equal or shallower depth.
+
+    Depth-aware boundaries: an H3 force section is terminated only by the
+    next H3 (or shallower); H4 children stay inside their parent. This
+    keeps inline sub-sections like Wiltshire 2021's
+    ``==== August 2021 re-run ====`` inside the parent ``[[Wiltshire
+    Police]]`` H3 body so the re-run Election box reaches the parser."""
     headings = list(HEADING_RE.finditer(wt))
     sections: dict[str, str] = {}
     for i, m in enumerate(headings):
@@ -169,8 +175,13 @@ def _force_sections(wt: str, alias_map: dict[str, str]) -> dict[str, str]:
         code = alias_map.get(label)
         if not code:
             continue
+        depth = len(m.group(1))
         body_start = m.end()
-        body_end = headings[i + 1].start() if i + 1 < len(headings) else len(wt)
+        body_end = len(wt)
+        for j in range(i + 1, len(headings)):
+            if len(headings[j].group(1)) <= depth:
+                body_end = headings[j].start()
+                break
         # If the same force is split across multiple sub-sections (rare),
         # take the first occurrence.
         sections.setdefault(code, wt[body_start:body_end])
@@ -264,12 +275,21 @@ def _resolve_winner(block: str) -> tuple[str | None, str | None]:
 
 
 def _extract_force_year(section: str) -> dict | None:
-    """Find the first Election box block within a force section and parse it.
+    """Find the last Election box block within a force section and parse it.
     Returns None if the section has no Election box (force absorbed into a
-    CA mayor that year, or section is purely contextual)."""
-    bm = BOX_BEGIN_RE.search(section)
-    if not bm:
+    CA mayor that year, or section is purely contextual).
+
+    Last-wins: for Wiltshire 2021, the original May 2021 winner (Jonathon
+    Seed) was disqualified for a past drink-driving conviction and never
+    took office; the actual seated PCC is Philip Wilkinson, who won the
+    19 August 2021 re-run held in the same article's
+    ``==== August 2021 re-run ====`` sub-section. Across every other
+    (force, year) cell each section carries exactly one Election box, so
+    last == first."""
+    begins = list(BOX_BEGIN_RE.finditer(section))
+    if not begins:
         return None
+    bm = begins[-1]
     em = BOX_END_RE.search(section, bm.end())
     if not em:
         return None
