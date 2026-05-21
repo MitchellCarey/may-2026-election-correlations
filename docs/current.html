@@ -86,6 +86,7 @@ const PCON_PATHS_PRE = {};
 const PCON_ERAS = {};
 const SURREY_PATHS = {};
 const EU_REF_PATHS = {};
+const AV_REF_PATHS = {};
 const GLA_MAYOR_PATH = {};
 const CA_MAYOR_PATHS = {};
 const CA_MAYOR_PATHS_PRE = {};
@@ -97,11 +98,12 @@ const SENEDD = [];
 const PCON = [];
 const SURREY = [];
 const EU_REF = [];
+const AV_REF = [];
 const GLA_MAYOR = [];
 const CA_MAYORS = [];
-const PARTY_COLOURS = {"Labour": "#c8102e", "Conservative": "#0087DC", "LibDem": "#FAA61A", "Reform": "#12B6CF", "Green": "#6AB023", "SNP": "#FDF38E", "Plaid": "#005B54", "Independent": "#888780", "Speaker": "#888780", "Leave": "#552288", "Remain": "#ffcc00", "Other": "#a87b3e", "Pending": "#cccccc"};
-const PARTY_DISPLAY = {"Labour": "Labour", "Conservative": "Conservative", "LibDem": "Liberal Democrats", "Reform": "Reform UK", "Green": "Green", "SNP": "SNP", "Plaid": "Plaid Cymru", "Independent": "Independent", "Speaker": "Speaker of the House", "Leave": "Leave", "Remain": "Remain", "Other": "Other", "Pending": "Awaiting declaration"};
-const LEGEND_ORDER = ["Labour", "Reform", "Green", "LibDem", "Conservative", "SNP", "Plaid", "Independent", "Speaker", "Leave", "Remain", "Other", "Pending"];
+const PARTY_COLOURS = {"Labour": "#c8102e", "Conservative": "#0087DC", "LibDem": "#FAA61A", "Reform": "#12B6CF", "Green": "#6AB023", "SNP": "#FDF38E", "Plaid": "#005B54", "Independent": "#888780", "Speaker": "#888780", "Leave": "#552288", "Remain": "#ffcc00", "AV Yes": "#1f78b4", "AV No": "#e31a1c", "Other": "#a87b3e", "Pending": "#cccccc"};
+const PARTY_DISPLAY = {"Labour": "Labour", "Conservative": "Conservative", "LibDem": "Liberal Democrats", "Reform": "Reform UK", "Green": "Green", "SNP": "SNP", "Plaid": "Plaid Cymru", "Independent": "Independent", "Speaker": "Speaker of the House", "Leave": "Leave", "Remain": "Remain", "AV Yes": "Yes", "AV No": "No", "Other": "Other", "Pending": "Awaiting declaration"};
+const LEGEND_ORDER = ["Labour", "Reform", "Green", "LibDem", "Conservative", "SNP", "Plaid", "Independent", "Speaker", "Leave", "Remain", "AV Yes", "AV No", "Other", "Pending"];
 const NEUTRAL_FILL = "#eaeaea";
 
 
@@ -232,6 +234,23 @@ function fmtEuRefTitle(r) {
   return lines.join('\n');
 }
 
+function fmtAvRefTitle(r) {
+  // "Amber Valley · AV Referendum 2011\nYes 29.5% / No 70.5%\nSource: …"
+  const lines = [r.n + ' · AV Referendum 2011'];
+  const yv = (r.pct && r.pct['AV Yes'] != null) ? (r.pct['AV Yes'] * 100).toFixed(1) : null;
+  const nv = (r.pct && r.pct['AV No']  != null) ? (r.pct['AV No']  * 100).toFixed(1) : null;
+  if (yv != null && nv != null) {
+    lines.push('Yes ' + yv + '% / No ' + nv + '%');
+  } else if (r.w) {
+    lines.push('Winner: ' + (r.w === 'AV Yes' ? 'Yes' : 'No'));
+  }
+  if (r.url) {
+    try { lines.push('Source: ' + new URL(r.url).hostname + ' — click to open'); }
+    catch (_) { /* invalid URL */ }
+  }
+  return lines.join('\n');
+}
+
 function fmtGlaMayorTitle(g) {
   const lines = ['Mayor of London'];
   if (g.w) {
@@ -278,7 +297,8 @@ if (target) {
   // gla-mayor sits just above referendum (also below everything else) so
   // it paints under wards/PCON in the default view; the dedicated
   // "London Mayor only" view CSS-isolates it.
-  const KIND_ORDER = { referendum: -2, 'gla-mayor': -1, 'ca-mayor': -1,
+  const KIND_ORDER = { referendum: -2, 'av-referendum': -2,
+                        'gla-mayor': -1, 'ca-mayor': -1,
                         ced: 0, ward: 1, surrey: 2, pcon: 3,
                         holyrood: 4, senedd: 5 };
   const items = [
@@ -323,6 +343,10 @@ if (target) {
                           fill: (r.w && PARTY_COLOURS[r.w]) || NEUTRAL_FILL,
                           title: fmtEuRefTitle(r),
                           ds: { lad: r.lad, url: r.url || null } })),
+    ...AV_REF.map(r => ({ kind: 'av-referendum', d: AV_REF_PATHS[r.c], y: r.y,
+                          fill: (r.w && PARTY_COLOURS[r.w]) || NEUTRAL_FILL,
+                          title: fmtAvRefTitle(r),
+                          ds: { area: r.c, areaKind: r.k, url: r.url || null } })),
   ].filter(it => it.d);
   items.sort((a, b) => (a.y ?? 0) - (b.y ?? 0) || (KIND_ORDER[a.kind] - KIND_ORDER[b.kind]));
   const fills = document.createElementNS(SVG_NS, 'g');
@@ -360,16 +384,17 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 }
 
 // View picker (GB only — gated on CEDS / HOLYROOD / SENEDD / PCON being
-// non-empty). Seven buttons with data-view attributes flip the SVG root
-// between .view-recent (default; chronological z-order), .view-wards
-// (only ward polygons), .view-ceds (only CED polygons), .view-holyrood
-// (only Holyrood SPCs), .view-senedd (only Senedd constituencies),
-// .view-pcon (only GE 2024 PCONs), .view-surrey (only the two Surrey
-// unitaries), .view-eu_ref_2016 (only EU referendum LADs), and
-// .view-gla-mayor (only the GLA Mayor polygon). DOM is built once;
-// CSS does the per-mode hiding.
+// non-empty). Buttons with data-view attributes flip the SVG root between
+// .view-recent (default; chronological z-order), .view-wards (only ward
+// polygons), .view-ceds (only CED polygons), .view-holyrood (only
+// Holyrood SPCs), .view-senedd (only Senedd constituencies), .view-pcon
+// (only GE 2024 PCONs), .view-surrey (only the two Surrey unitaries),
+// .view-eu_ref_2016 (only EU referendum LADs), .view-av_ref_2011 (only
+// AV referendum counting areas), and .view-gla-mayor (only the GLA
+// Mayor polygon). DOM is built once; CSS does the per-mode hiding.
 const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon',
-               'surrey', 'eu_ref_2016', 'gla-mayor', 'ca-mayor'];
+               'surrey', 'eu_ref_2016', 'av_ref_2011',
+               'gla-mayor', 'ca-mayor'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -379,7 +404,8 @@ const setView = name => {
   });
 };
 if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
-    || SURREY.length || EU_REF.length || GLA_MAYOR.length || CA_MAYORS.length) {
+    || SURREY.length || EU_REF.length || AV_REF.length
+    || GLA_MAYOR.length || CA_MAYORS.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
@@ -394,6 +420,7 @@ SENEDD.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 PCON.forEach(p => { if (p.w) partiesPresent.add(p.w); });
 SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
+AV_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
 CA_MAYORS.forEach(c => { if (c.w) partiesPresent.add(c.w); });
 const legend = document.getElementById('map-legend');
