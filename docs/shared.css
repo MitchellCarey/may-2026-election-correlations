@@ -968,7 +968,8 @@ body {
 .map-svg.view-wards     path.pcon      { display: none; }
 .map-svg.view-wards     path.surrey    { display: none; }
 .map-svg.view-wards     path.gla-mayor { display: none; }
-.map-svg.view-wards     path.ca-mayor  { display: none; }
+.map-svg.view-wards     path.indyref   { display: none; }
+.map-svg.view-wards     path.ca-mayor { display: none; }
 .map-svg.view-wards     path.ep        { display: none; }
 .map-svg.view-ceds      path.ward      { display: none; }
 .map-svg.view-ceds      path.holyrood  { display: none; }
@@ -976,7 +977,8 @@ body {
 .map-svg.view-ceds      path.pcon      { display: none; }
 .map-svg.view-ceds      path.surrey    { display: none; }
 .map-svg.view-ceds      path.gla-mayor { display: none; }
-.map-svg.view-ceds      path.ca-mayor  { display: none; }
+.map-svg.view-ceds      path.indyref   { display: none; }
+.map-svg.view-ceds      path.ca-mayor { display: none; }
 .map-svg.view-ceds      path.ep        { display: none; }
 .map-svg.view-holyrood  path.ward      { display: none; }
 .map-svg.view-holyrood  path.ced       { display: none; }
@@ -984,7 +986,8 @@ body {
 .map-svg.view-holyrood  path.pcon      { display: none; }
 .map-svg.view-holyrood  path.surrey    { display: none; }
 .map-svg.view-holyrood  path.gla-mayor { display: none; }
-.map-svg.view-holyrood  path.ca-mayor  { display: none; }
+.map-svg.view-holyrood  path.indyref   { display: none; }
+.map-svg.view-holyrood  path.ca-mayor { display: none; }
 .map-svg.view-holyrood  path.ep        { display: none; }
 .map-svg.view-senedd    path.ward      { display: none; }
 .map-svg.view-senedd    path.ced       { display: none; }
@@ -992,7 +995,8 @@ body {
 .map-svg.view-senedd    path.pcon      { display: none; }
 .map-svg.view-senedd    path.surrey    { display: none; }
 .map-svg.view-senedd    path.gla-mayor { display: none; }
-.map-svg.view-senedd    path.ca-mayor  { display: none; }
+.map-svg.view-senedd    path.indyref   { display: none; }
+.map-svg.view-senedd    path.ca-mayor { display: none; }
 .map-svg.view-senedd    path.ep        { display: none; }
 .map-svg.view-pcon      path.ward      { display: none; }
 .map-svg.view-pcon      path.ced       { display: none; }
@@ -1000,7 +1004,8 @@ body {
 .map-svg.view-pcon      path.senedd    { display: none; }
 .map-svg.view-pcon      path.surrey    { display: none; }
 .map-svg.view-pcon      path.gla-mayor { display: none; }
-.map-svg.view-pcon      path.ca-mayor  { display: none; }
+.map-svg.view-pcon      path.indyref   { display: none; }
+.map-svg.view-pcon      path.ca-mayor { display: none; }
 .map-svg.view-pcon      path.ep        { display: none; }
 .map-svg.view-surrey    path.ward      { display: none; }
 .map-svg.view-surrey    path.ced       { display: none; }
@@ -1008,7 +1013,8 @@ body {
 .map-svg.view-surrey    path.senedd    { display: none; }
 .map-svg.view-surrey    path.pcon      { display: none; }
 .map-svg.view-surrey    path.gla-mayor { display: none; }
-.map-svg.view-surrey    path.ca-mayor  { display: none; }
+.map-svg.view-surrey    path.indyref   { display: none; }
+.map-svg.view-surrey    path.ca-mayor { display: none; }
 .map-svg.view-surrey    path.ep        { display: none; }
 .map-svg.view-gla-mayor path.ward      { display: none; }
 .map-svg.view-gla-mayor path.ced       { display: none; }
@@ -1016,6 +1022,7 @@ body {
 .map-svg.view-gla-mayor path.senedd    { display: none; }
 .map-svg.view-gla-mayor path.pcon      { display: none; }
 .map-svg.view-gla-mayor path.surrey    { display: none; }
+.map-svg.view-gla-mayor path.indyref   { display: none; }
 .map-svg.view-gla-mayor path.ca-mayor  { display: none; }
 .map-svg.view-ca-mayor  path.ward      { display: none; }
 .map-svg.view-ca-mayor  path.ced       { display: none; }
@@ -1024,6 +1031,8 @@ body {
 .map-svg.view-ca-mayor  path.pcon      { display: none; }
 .map-svg.view-ca-mayor  path.surrey    { display: none; }
 .map-svg.view-ca-mayor  path.gla-mayor { display: none; }
+.map-svg.view-ca-mayor  path.indyref   { display: none; }
+.map-svg.view-ca-mayor  path.ep        { display: none; }
 .map-svg.view-gla-mayor path.ep        { display: none; }
 /* EU Referendum 2016 (issue #85). path.referendum is hidden by default
    in every other view; only the dedicated .view-eu_ref_2016 reveals it.
@@ -1038,7 +1047,8 @@ body {
 .map-svg.view-eu_ref_2016 path.pcon      { display: none; }
 .map-svg.view-eu_ref_2016 path.surrey    { display: none; }
 .map-svg.view-eu_ref_2016 path.gla-mayor { display: none; }
-.map-svg.view-eu_ref_2016 path.ca-mayor  { display: none; }
+.map-svg.view-eu_ref_2016 path.indyref   { display: none; }
+.map-svg.view-eu_ref_2016 path.ca-mayor { display: none; }
 .map-svg.view-eu_ref_2016 path.ep        { display: none; }
 /* EP 2014/2019 (issue #91). path.ep is hidden by default in every other
    view; only the dedicated .view-ep reveals it. The 11 EER polygons are
@@ -1057,6 +1067,7 @@ body {
 .map-svg.view-ep path.gla-mayor          { display: none; }
 .map-svg.view-ep path.ca-mayor           { display: none; }
 .map-svg.view-ep path.referendum         { display: none; }
+.map-svg.view-ep path.indyref            { display: none; }
 .map-svg.view-ep path.av-referendum      { display: none; }
 .map-svg path.referendum {
   stroke: rgba(20,17,13,0.45);
@@ -1067,6 +1078,24 @@ body {
   cursor: pointer;
 }
 .map-svg path.referendum:hover {
+  stroke: var(--ink);
+  stroke-width: 1.4;
+  fill-opacity: 0.78;
+}
+/* Scottish independence referendum 2014 (issue #86). path.indyref has
+   no dedicated view button — paintAtYear toggles `display: none` inline
+   at every slider year except 2014, where it sets `display: ''` so the
+   single-layer view CSS rules below can still hide it. Styling mirrors
+   path.referendum so the polygons read consistently when on screen. */
+.map-svg path.indyref {
+  stroke: rgba(20,17,13,0.45);
+  stroke-width: 0.4;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  fill-opacity: 0.92;
+  cursor: pointer;
+}
+.map-svg path.indyref:hover {
   stroke: var(--ink);
   stroke-width: 1.4;
   fill-opacity: 0.78;
@@ -1085,7 +1114,8 @@ body {
 .map-svg.view-av_ref_2011 path.pcon          { display: none; }
 .map-svg.view-av_ref_2011 path.surrey        { display: none; }
 .map-svg.view-av_ref_2011 path.gla-mayor     { display: none; }
-.map-svg.view-av_ref_2011 path.ca-mayor      { display: none; }
+.map-svg.view-av_ref_2011 path.indyref       { display: none; }
+.map-svg.view-av_ref_2011 path.ca-mayor { display: none; }
 .map-svg.view-av_ref_2011 path.ep            { display: none; }
 .map-svg path.av-referendum {
   stroke: rgba(20,17,13,0.45);

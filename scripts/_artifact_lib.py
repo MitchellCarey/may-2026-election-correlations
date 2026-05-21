@@ -73,10 +73,15 @@ PARTY_COLOURS_MAP = {
     # `w` field on EU-ref records so the same PARTY_COLOURS lookup that
     # paints party-winner polygons also paints referendum-winner polygons.
     # Purple recalls the UKIP brand that drove the Leave campaign; yellow
-    # recalls the stars on the EU flag. Same swatch is reused by #86's
-    # Yes/No (Scottish indyref 2014) when that ships.
+    # recalls the stars on the EU flag.
     "Leave":        "#552288",
     "Remain":       "#ffcc00",
+    # Indyref 2014 outcomes (issue #86). Yes uses SNP yellow (saturated
+    # variant — the Map palette's plain SNP swatch is a paler pastel, so
+    # the deeper Wikipedia / SNP-brand yellow reads more decisively on
+    # the 32 Scottish council polygons). No uses Better Together blue.
+    "Yes":          "#ffcc00",
+    "No":           "#0066cc",
     # AV referendum 2011 (issue #92) — namespaced "AV Yes" / "AV No" so the
     # labels don't collide with #86's Indyref Yes/No or any future Yes/No
     # referendum. Mid-blue / red — distinct from EU Ref's purple/yellow.
@@ -113,6 +118,8 @@ PARTY_DISPLAY_MAP = {
     "Brexit":       "Brexit Party",
     "Leave":        "Leave",
     "Remain":       "Remain",
+    "Yes":          "Yes (independence)",
+    "No":           "No (union)",
     "AV Yes":       "Yes",
     "AV No":        "No",
     "Other":        "Other",
@@ -150,6 +157,11 @@ LEGEND_ORDER_MAP = [
     # ship in the shared legend so the swatch-to-meaning mapping is
     # available; the EU-ref view's CSS leaves the legend visible.
     "Leave", "Remain",
+    # Indyref 2014 outcomes (issue #86) — only present in the GB Current
+    # map and only when the slider lands on 2014. Like Leave/Remain, the
+    # labels ship in the shared legend so the swatch reads cleanly when
+    # the layer is visible.
+    "Yes", "No",
     # AV referendum 2011 (issue #92). Same opt-in / view-gated visibility
     # as EU Ref; ship the swatches so the legend reads correctly under the
     # AV-ref view.
