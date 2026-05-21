@@ -133,9 +133,10 @@ LEGEND_ORDER_MAP = [
     "SNP", "Plaid", "Independent", "Speaker",
     # EP 2014/2019 (issue #91) — only present in the GB Current map's
     # European Parliament view (and chronologically beneath other layers
-    # in the default view). Ordered after the SNP/Plaid devolved parties
-    # but before Independent/Speaker so the legend reads from largest GB
-    # vote share downward.
+    # in the default view). Placed after the standard GB party block so
+    # the historical EP-only labels sit together with the other opt-in
+    # layers (Leave/Remain below) rather than displacing the main
+    # legend.
     "UKIP", "Brexit",
     # Referendum outcomes (issue #85) — only present in the GB Current
     # map and only when the EU Ref 2016 view is active. The labels still
