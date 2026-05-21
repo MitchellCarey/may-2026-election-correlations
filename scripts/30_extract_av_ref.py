@@ -94,17 +94,19 @@ ENGLISH_REGIONS = (
 # headline is 32.10% Yes / 67.90% No UK-wide; NI alone was 43.68% Yes (its
 # single counting area). Subtracting NI from the article's UK aggregate
 # (6,152,607 Yes / 13,013,123 No - 289,088 Yes / 372,706 No) gives a
-# GB-only expectation of ≈ 31.69% Yes. Tolerance of ±0.5pp absorbs the
-# residual drift from a few hand-typo'd values in the per-LAD Wikipedia
-# tables (notably the South West section has three rows where adjacent
-# LADs were transcribed with duplicated vote counts — Cheltenham/Cotswold,
-# North Dorset/North Devon, and Wiltshire/Weymouth & Portland — which
-# the parser cannot detect because the duplicate values are individually
-# well-formed. The per-LAD winner is unaffected: all six involved LADs
-# voted No either way, so the choropleth paints correctly).
+# GB-only expectation of ≈ 31.69% Yes.
+#
+# Three South West LAD rows in the Wikipedia article were transcribed
+# with values duplicated from the preceding row — Cotswold inherited
+# Cheltenham's totals, North Devon inherited North Dorset's, and Wiltshire
+# inherited Weymouth & Portland's. Authoritative values for those three
+# LADs are restored at ingest time from av_ref_2011_overrides.csv,
+# sourced from HoC Library RP11-44. With the corrections applied the GB
+# total tracks the expected GB-only headline to within 0.10pp, so the
+# tolerance is tight.
 GB_HEADLINE_YES_PCT = 31.69
 GB_HEADLINE_NO_PCT  = 68.31
-HEADLINE_TOLERANCE  = 0.50
+HEADLINE_TOLERANCE  = 0.15
 
 
 # A row spans from a `|-` separator to the next `|-` or `|}`. Cells inside
@@ -270,22 +272,37 @@ def build_nawc_lookup() -> dict[str, str]:
     return out
 
 
-def load_overrides() -> dict[tuple[str, str], str]:
-    """Hand-curated `(kind, display_name) → code` overrides for cases
-    where the Wikipedia display name doesn't normalise to the canonical
-    registry name. Currently expected only for English LADs whose
-    Wikipedia article uses an ambiguous or qualifier-heavy display label.
+def load_overrides() -> tuple[dict[tuple[str, str], str],
+                              dict[str, tuple[int, int]]]:
+    """Hand-curated overrides for two distinct problems:
+
+      1. `(kind, normalised display_name) → code` for cases where the
+         Wikipedia display name doesn't normalise to the canonical
+         registry name (e.g. "Bristol" vs ONS's "Bristol, City of").
+
+      2. `code → (yes_votes, no_votes)` for the small set of LADs whose
+         Wikipedia row was transcribed with values duplicated from a
+         neighbouring row (Cotswold / North Devon / Wiltshire — each
+         inherited the previous row's totals). Authoritative values come
+         from HoC Library RP11-44 (the AV referendum 2011 research
+         paper). Rows that only need the name mapping leave the
+         vote-count columns blank.
     """
-    overrides: dict[tuple[str, str], str] = {}
+    name_overrides: dict[tuple[str, str], str] = {}
+    vote_overrides: dict[str, tuple[int, int]] = {}
     if not OVERRIDES_CSV.exists():
-        return overrides
+        return name_overrides, vote_overrides
     with open(OVERRIDES_CSV, newline='', encoding='utf-8') as f:
         for row in csv.DictReader(f):
             kind = row['kind'].strip().lower()
             name = row['wiki_display'].strip()
             code = row['code'].strip()
-            overrides[(kind, _normalise_name(name))] = code
-    return overrides
+            name_overrides[(kind, _normalise_name(name))] = code
+            yes_raw = (row.get('yes_votes') or '').strip()
+            no_raw  = (row.get('no_votes')  or '').strip()
+            if yes_raw and no_raw:
+                vote_overrides[code] = (int(yes_raw), int(no_raw))
+    return name_overrides, vote_overrides
 
 
 def resolve_code(kind: str, target: str, display: str,
@@ -320,7 +337,7 @@ def main():
     lad_lookup  = build_lad_name_lookup(lad_geom)
     spc_lookup  = build_spc_lookup()
     nawc_lookup = build_nawc_lookup()
-    overrides   = load_overrides()
+    name_overrides, vote_overrides = load_overrides()
 
     areas: dict[str, dict] = {}
     unmatched: list[tuple[str, str, str]] = []  # (region, target, display)
@@ -375,12 +392,16 @@ def main():
         rows = parse_region_wikitext(wt)
         for r in rows:
             code = resolve_code(kind, r['target'], r['display'],
-                                lookup, overrides)
+                                lookup, name_overrides)
             if not code:
                 unmatched.append((region, r['target'], r['display']))
                 continue
+            yes_votes = r['yes_votes']
+            no_votes  = r['no_votes']
+            if code in vote_overrides:
+                yes_votes, no_votes = vote_overrides[code]
             ingest(region, kind, code, r['display'],
-                   r['yes_votes'], r['no_votes'])
+                   yes_votes, no_votes)
 
     out = {'years': [YEAR], 'areas': areas}
     DATA.mkdir(parents=True, exist_ok=True)
