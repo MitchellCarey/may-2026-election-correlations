@@ -195,6 +195,34 @@ def main():
         else {'regions': {}}
     )
 
+    # PCC overlay (issue #87) — GB-only. Police and Crime Commissioner
+    # elections 2012 / 2016 / 2021 / 2024 across 41 of the 43 PFAs
+    # (Metropolitan Police E23000001 and City of London E23000034 are
+    # excluded — both use non-PCC arrangements). Boundary geometry is
+    # split into two vintages mirroring PCON's pre/post split (#71):
+    # `pfa_geoms` carries the Dec 2024 set (post-era), `pfa_geoms_pre`
+    # carries the Dec 2017 set (pre-era). Era boundary at 2024.
+    # `absorbed_from` flags GMC (from 2016) and WY (from 2021) — the
+    # renderer carry-forwards the prior PCC winner with a "Role
+    # absorbed into <Mayor>" tooltip line at slider years >= that
+    # year. Missing files are benign on GM.
+    pcc_history_path = DATA / 'pcc_history.json'
+    pcc_geom_path = DATA / 'pfa_geoms.json'
+    pcc_pre_geom_path = DATA / 'pfa_geoms_pre.json'
+    pcc_history = (
+        json.loads(pcc_history_path.read_text())
+        if region == 'gb' and pcc_history_path.exists()
+        else {'years': [], 'forces': {}}
+    )
+    pcc_geoms = (
+        json.loads(pcc_geom_path.read_text())
+        if region == 'gb' and pcc_geom_path.exists() else {'forces': {}}
+    )
+    pcc_geoms_pre = (
+        json.loads(pcc_pre_geom_path.read_text())
+        if region == 'gb' and pcc_pre_geom_path.exists() else {'forces': {}}
+    )
+
     # Ward history (issue #70 phase 1A) — GB-only. Drives the time slider
     # below the legend, letting readers scrub 2018→2026. Missing file is
     # benign: the slider chrome is hidden when WARD_HISTORY is empty.
@@ -594,6 +622,49 @@ def main():
             n_gla_years = len(gla_mayor_data.get('years', []))
             print(f'gla mayor in gb: {len(gla_mayor_js)} polygon, {n_gla_years} years')
 
+    # PCC layer (issue #87) — GB-only. Build the polygon set + synthetic
+    # init records mirroring PCON's pre/post era pattern. Polygon keys
+    # for the pre-era 2017 vintage use a `PRE_<PFA**CD>` prefix to keep
+    # the key space disjoint from the bare-code post-era set (codes are
+    # identical between vintages — PFA boundaries have been stable since
+    # 2007 — so the prefix is purely for era disambiguation).
+    pcc_codes = set(pcc_history.get('forces', {}).keys())  # the 41 PCC areas
+    pcc_paths: dict = {}
+    pcc_paths_pre: dict = {}
+    pcc_eras: dict = {}
+    pcc_js: list = []
+    if region == 'gb':
+        for code, c in pcc_geoms.get('forces', {}).items():
+            if code not in pcc_codes:
+                continue  # filter MPS / CoLP
+            pcc_paths[code] = c['path']
+            pcc_eras[code] = 'post'
+            pcc_js.append({'p': code, 'n': c['name'], 'w': None, 'y': None})
+        for code, c in pcc_geoms_pre.get('forces', {}).items():
+            if code not in pcc_codes:
+                continue
+            key = f'PRE_{code}'
+            pcc_paths_pre[key] = c['path']
+            pcc_eras[key] = 'pre'
+            pcc_js.append({'p': key, 'n': c['name'], 'w': None, 'y': None})
+
+        n_pcc_history_years = sum(
+            len(f.get('history', []))
+            for f in pcc_history.get('forces', {}).values()
+        )
+        n_pcc_absorbed = sum(
+            1 for f in pcc_history.get('forces', {}).values()
+            if f.get('absorbed_from')
+        )
+        n_slider_pcc_years = len(pcc_history.get('years', []))
+        print(f'pcc in gb: {len(pcc_paths)} forces across '
+              f'{n_slider_pcc_years} year stops '
+              f'(post: {len(pcc_paths)} polygons, '
+              f'pre: {len(pcc_paths_pre)} polygons; '
+              f'{n_pcc_history_years} force-years from wiki; '
+              f'{n_pcc_absorbed} absorbed forces)')
+
+    if region == 'gb':
         # Ward-history coverage report — issue #70 acceptance gauge.
         n_history_wards = len(ward_history.get('wards', {}))
         n_ward_years = sum(len(w.get('history', []))
@@ -667,6 +738,9 @@ def main():
     js.append('const PCON_PATHS = ' + json.dumps(pcon_paths, separators=(',', ':')) + ';')
     js.append('const PCON_PATHS_PRE = ' + json.dumps(pcon_paths_pre, separators=(',', ':')) + ';')
     js.append('const PCON_ERAS = ' + json.dumps(pcon_eras, separators=(',', ':')) + ';')
+    js.append('const PCC_PATHS = ' + json.dumps(pcc_paths, separators=(',', ':')) + ';')
+    js.append('const PCC_PATHS_PRE = ' + json.dumps(pcc_paths_pre, separators=(',', ':')) + ';')
+    js.append('const PCC_ERAS = ' + json.dumps(pcc_eras, separators=(',', ':')) + ';')
     js.append('const SURREY_PATHS = ' + json.dumps(surrey_paths, separators=(',', ':')) + ';')
     js.append('const EU_REF_PATHS = ' + json.dumps(eu_ref_paths, separators=(',', ':')) + ';')
     js.append('const GLA_MAYOR_PATH = ' + json.dumps(gla_mayor_paths, separators=(',', ':')) + ';')
@@ -677,6 +751,8 @@ def main():
                                              separators=(',', ':')) + ';')
     js.append('const PCON = ' + json.dumps(pcon_js, ensure_ascii=False,
                                            separators=(',', ':')) + ';')
+    js.append('const PCC = ' + json.dumps(pcc_js, ensure_ascii=False,
+                                          separators=(',', ':')) + ';')
     js.append('const SURREY = ' + json.dumps(surrey_js, ensure_ascii=False,
                                              separators=(',', ':')) + ';')
     js.append('const EU_REF = ' + json.dumps(eu_ref_js, ensure_ascii=False,
@@ -827,6 +903,15 @@ function fmtGlaMayorTitle(g) {
   return lines.join('\n');
 }
 
+function fmtPccTitle(p) {
+  // PCC records ship with w=null / y=null at initial render — paintAtYear
+  // fills them in from PCC_HISTORY at slider time, including the
+  // "Role absorbed into <Mayor>" suffix for absorbed forces.
+  const lines = ['Police & Crime Commissioner · ' + p.n];
+  lines.push('(use slider to view a PCC election year)');
+  return lines.join('\n');
+}
+
 // Render the one Current-control map. Ward + CED + Holyrood + Senedd + PCON
 // fills are interleaved into a single layer in chronological order — older
 // elections paint first, newer ones on top — so the topmost visible polygon
@@ -853,7 +938,7 @@ if (target) {
   // gla-mayor sits just above referendum (also below everything else) so
   // it paints under wards/PCON in the default view; the dedicated
   // "London Mayor only" view CSS-isolates it.
-  const KIND_ORDER = { referendum: -2, 'gla-mayor': -1, ced: 0, ward: 1,
+  const KIND_ORDER = { pcc: -3, referendum: -2, 'gla-mayor': -1, ced: 0, ward: 1,
                         surrey: 2, pcon: 3, holyrood: 4, senedd: 5 };
   const items = [
     ...GLA_MAYOR.map(g => ({ kind: 'gla-mayor', d: GLA_MAYOR_PATH[g.g], y: g.y,
@@ -884,6 +969,11 @@ if (target) {
                         fill: (p.w && PARTY_COLOURS[p.w]) || NEUTRAL_FILL,
                         title: fmtPconTitle(p),
                         ds: { pcon: p.p, era: PCON_ERAS[p.p] || 'post' } })),
+    ...PCC.map(p => ({ kind: 'pcc',
+                       d: PCC_PATHS[p.p] || PCC_PATHS_PRE[p.p], y: p.y,
+                       fill: (p.w && PARTY_COLOURS[p.w]) || NEUTRAL_FILL,
+                       title: fmtPccTitle(p),
+                       ds: { pcc: p.p, era: PCC_ERAS[p.p] || 'post' } })),
     ...SURREY.map(s => ({ kind: 'surrey', d: SURREY_PATHS[s.c], y: s.y,
                           fill: (s.w && PARTY_COLOURS[s.w]) || NEUTRAL_FILL,
                           title: fmtSurreyTitle(s) })),
@@ -937,7 +1027,7 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 // .view-gla-mayor (only the GLA Mayor polygon). DOM is built once;
 // CSS does the per-mode hiding.
 const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon',
-               'surrey', 'eu_ref_2016', 'gla-mayor'];
+               'surrey', 'eu_ref_2016', 'gla-mayor', 'pcc'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -947,14 +1037,16 @@ const setView = name => {
   });
 };
 if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
-    || SURREY.length || EU_REF.length || GLA_MAYOR.length) {
+    || SURREY.length || EU_REF.length || GLA_MAYOR.length || PCC.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
   setView('recent');
 }
 
-// Shared legend, derived from parties actually present.
+// Shared legend, derived from parties actually present. PCC records
+// ship with w=null at initial render (paintAtYear fills them at slider
+// time), so PCC parties are collected from PCC_HISTORY directly.
 const partiesPresent = new Set();
 WARDS.forEach(w => { if (w.w) partiesPresent.add(w.w); });
 HOLYROOD.forEach(h => { if (h.w) partiesPresent.add(h.w); });
@@ -963,6 +1055,11 @@ PCON.forEach(p => { if (p.w) partiesPresent.add(p.w); });
 SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
+if (typeof PCC_HISTORY !== 'undefined') {
+  Object.values(PCC_HISTORY).forEach(f => {
+    (f.history || []).forEach(h => { if (h.w) partiesPresent.add(h.w); });
+  });
+}
 const legend = document.getElementById('map-legend');
 if (legend) {
   LEGEND_ORDER.forEach(p => {
@@ -1003,7 +1100,8 @@ if (legend) {
                               | set(holyrood_history.get('years', []))
                               | set(senedd_history.get('years', []))
                               | set(ge_history.get('years', []))
-                              | set(gla_mayor_data.get('years', [])))
+                              | set(gla_mayor_data.get('years', []))
+                              | set(pcc_history.get('years', [])))
         js.append('')
         js.append('const YEARS = ' + json.dumps(slider_years) + ';')
         js.append('const WARD_HISTORY = ' + json.dumps(
@@ -1140,6 +1238,29 @@ if (legend) {
             slot['history'].sort(key=lambda e: e['y'])
         js.append('const GLA_MAYOR_HISTORY = ' + json.dumps(
             gla_history, separators=(',', ':'), ensure_ascii=False) + ';')
+
+        # PCC_HISTORY (issue #87). 41 force histories, keyed by polygon key
+        # (bare PFA**CD for post-era 2024 polygons, PRE_<PFA**CD> for
+        # pre-era 2017 polygons). The same history list is mirrored under
+        # both key forms so paintAtYear's "newest entry with y <= targetYear"
+        # walk works regardless of which polygon set is currently visible.
+        # Per-force absorbed_from metadata travels with the slot so the
+        # renderer's path.pcc block can append a "Role absorbed into
+        # <CA mayor>" tooltip line at slider years on or after the
+        # absorption year.
+        pcc_history_js: dict = {}
+        for code, f in pcc_history.get('forces', {}).items():
+            slot = {
+                'name':    f['name'],
+                'country': f.get('country'),
+                'history': f.get('history', []),
+            }
+            if f.get('absorbed_from'):
+                slot['absorbed_from'] = f['absorbed_from']
+            pcc_history_js[code] = slot
+            pcc_history_js[f'PRE_{code}'] = slot
+        js.append('const PCC_HISTORY = ' + json.dumps(
+            pcc_history_js, separators=(',', ':'), ensure_ascii=False) + ';')
         js.append(r'''
 // Stamp each ward <path> with data-gss / data-year so paintAtYear can
 // look it up. Done here (GB-only splice) rather than in the shared
@@ -1529,22 +1650,78 @@ function paintAtYear(targetYear) {
         delete el.dataset.url;
       }
     });
+    // PCC layer (issue #87) — pre/post era polygons keyed by PFA**CD.
+    // Era boundary at 2024: 'pre' polygons (PRE_<PFA**CD>; Dec-2017
+    // vintage) visible at y < 2024, 'post' polygons (bare PFA**CD;
+    // Dec-2024 vintage) visible at y >= 2024. PCC_HISTORY carries a
+    // shared history list under both key forms so carry-forward works
+    // regardless of which polygon set is currently visible. Forces
+    // absorbed into a CA mayor (Greater Manchester from 2016, West
+    // Yorkshire from 2021) get an extra "Role absorbed into <Mayor>"
+    // tooltip line at slider years on/after their absorption year —
+    // the carry-forward fill is preserved (so the polygon keeps the
+    // colour of the last real PCC contest).
+    if (typeof PCC_HISTORY !== 'undefined') {
+      root.querySelectorAll('path.pcc').forEach(el => {
+        const era = el.dataset.era || 'post';
+        const visible = era === 'pre' ? (y < 2024) : (y >= 2024);
+        el.style.display = visible ? '' : 'none';
+        if (!visible) return;
+        const key = el.dataset.pcc;
+        const ph = key && PCC_HISTORY[key];
+        if (!ph) {
+          el.setAttribute('fill', NEUTRAL_FILL);
+          delete el.dataset.year;
+          delete el.dataset.url;
+          return;
+        }
+        let chosen = null;
+        for (const entry of ph.history) {
+          if (entry.y <= y) chosen = entry;
+          else break;
+        }
+        if (chosen) {
+          el.setAttribute('fill', PARTY_COLOURS[chosen.w] || NEUTRAL_FILL);
+          el.dataset.year = String(chosen.y);
+          if (chosen.url) el.dataset.url = chosen.url;
+          else delete el.dataset.url;
+          const titleEl = el.querySelector('title');
+          if (titleEl) {
+            const tl = ['Police & Crime Commissioner · ' + (ph.name || '')];
+            const winLine = chosen.y + ' · winner: ' + (PARTY_DISPLAY[chosen.w] || chosen.w);
+            tl.push(chosen.candidate ? winLine + ' (' + chosen.candidate + ')' : winLine);
+            if (ph.absorbed_from && y >= ph.absorbed_from.year) {
+              tl.push('Role absorbed into ' + ph.absorbed_from.ca_mayor + ' from ' + ph.absorbed_from.year);
+            }
+            if (chosen.url) {
+              try { tl.push('Source: ' + new URL(chosen.url).hostname + ' — click to open'); }
+              catch (_) { /* invalid URL */ }
+            }
+            titleEl.textContent = tl.join('\n');
+          }
+        } else {
+          el.setAttribute('fill', NEUTRAL_FILL);
+          delete el.dataset.year;
+          delete el.dataset.url;
+        }
+      });
+    }
   });
 }
 
-// Click any ward / CED / Holyrood / Senedd / PCON / referendum polygon
-// to open its source URL — lets readers verify accuracy and report errors
-// against the canonical source. PCON click-through covers pre-era HoC
-// Library data (2010 / 2015 / 2017 / 2019); post-era PCON (2024) has no
-// URL in ge2024.json and so does nothing on click, same as today.
-// Referendum (EU Ref 2016) opens the Electoral Commission results landing
-// page.
+// Click any ward / CED / Holyrood / Senedd / PCON / referendum / GLA mayor
+// / PCC polygon to open its source URL — lets readers verify accuracy and
+// report errors against the canonical source. PCON click-through covers
+// pre-era HoC Library data (2010 / 2015 / 2017 / 2019); post-era PCON
+// (2024) has no URL in ge2024.json and so does nothing on click, same as
+// today. Referendum (EU Ref 2016) opens the Electoral Commission results
+// landing page. PCC opens the consolidated Wikipedia year article.
 (function wireClicks() {
   const root = document.querySelector('.map-svg');
   if (!root) return;
   root.addEventListener('click', evt => {
     const target = evt.target.closest(
-      'path.ward, path.ced, path.holyrood, path.senedd, path.pcon, path.referendum, path.gla-mayor');
+      'path.ward, path.ced, path.holyrood, path.senedd, path.pcon, path.referendum, path.gla-mayor, path.pcc');
     if (!target || !target.dataset.url) return;
     window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
   });

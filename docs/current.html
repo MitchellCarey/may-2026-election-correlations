@@ -84,6 +84,9 @@ const SENEDD_ERAS = {};
 const PCON_PATHS = {};
 const PCON_PATHS_PRE = {};
 const PCON_ERAS = {};
+const PCC_PATHS = {};
+const PCC_PATHS_PRE = {};
+const PCC_ERAS = {};
 const SURREY_PATHS = {};
 const EU_REF_PATHS = {};
 const GLA_MAYOR_PATH = {};
@@ -92,6 +95,7 @@ const CEDS = [];
 const HOLYROOD = [];
 const SENEDD = [];
 const PCON = [];
+const PCC = [];
 const SURREY = [];
 const EU_REF = [];
 const GLA_MAYOR = [];
@@ -238,6 +242,15 @@ function fmtGlaMayorTitle(g) {
   return lines.join('\n');
 }
 
+function fmtPccTitle(p) {
+  // PCC records ship with w=null / y=null at initial render — paintAtYear
+  // fills them in from PCC_HISTORY at slider time, including the
+  // "Role absorbed into <Mayor>" suffix for absorbed forces.
+  const lines = ['Police & Crime Commissioner · ' + p.n];
+  lines.push('(use slider to view a PCC election year)');
+  return lines.join('\n');
+}
+
 // Render the one Current-control map. Ward + CED + Holyrood + Senedd + PCON
 // fills are interleaved into a single layer in chronological order — older
 // elections paint first, newer ones on top — so the topmost visible polygon
@@ -264,7 +277,7 @@ if (target) {
   // gla-mayor sits just above referendum (also below everything else) so
   // it paints under wards/PCON in the default view; the dedicated
   // "London Mayor only" view CSS-isolates it.
-  const KIND_ORDER = { referendum: -2, 'gla-mayor': -1, ced: 0, ward: 1,
+  const KIND_ORDER = { pcc: -3, referendum: -2, 'gla-mayor': -1, ced: 0, ward: 1,
                         surrey: 2, pcon: 3, holyrood: 4, senedd: 5 };
   const items = [
     ...GLA_MAYOR.map(g => ({ kind: 'gla-mayor', d: GLA_MAYOR_PATH[g.g], y: g.y,
@@ -295,6 +308,11 @@ if (target) {
                         fill: (p.w && PARTY_COLOURS[p.w]) || NEUTRAL_FILL,
                         title: fmtPconTitle(p),
                         ds: { pcon: p.p, era: PCON_ERAS[p.p] || 'post' } })),
+    ...PCC.map(p => ({ kind: 'pcc',
+                       d: PCC_PATHS[p.p] || PCC_PATHS_PRE[p.p], y: p.y,
+                       fill: (p.w && PARTY_COLOURS[p.w]) || NEUTRAL_FILL,
+                       title: fmtPccTitle(p),
+                       ds: { pcc: p.p, era: PCC_ERAS[p.p] || 'post' } })),
     ...SURREY.map(s => ({ kind: 'surrey', d: SURREY_PATHS[s.c], y: s.y,
                           fill: (s.w && PARTY_COLOURS[s.w]) || NEUTRAL_FILL,
                           title: fmtSurreyTitle(s) })),
@@ -348,7 +366,7 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 // .view-gla-mayor (only the GLA Mayor polygon). DOM is built once;
 // CSS does the per-mode hiding.
 const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon',
-               'surrey', 'eu_ref_2016', 'gla-mayor'];
+               'surrey', 'eu_ref_2016', 'gla-mayor', 'pcc'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -358,14 +376,16 @@ const setView = name => {
   });
 };
 if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
-    || SURREY.length || EU_REF.length || GLA_MAYOR.length) {
+    || SURREY.length || EU_REF.length || GLA_MAYOR.length || PCC.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
   setView('recent');
 }
 
-// Shared legend, derived from parties actually present.
+// Shared legend, derived from parties actually present. PCC records
+// ship with w=null at initial render (paintAtYear fills them at slider
+// time), so PCC parties are collected from PCC_HISTORY directly.
 const partiesPresent = new Set();
 WARDS.forEach(w => { if (w.w) partiesPresent.add(w.w); });
 HOLYROOD.forEach(h => { if (h.w) partiesPresent.add(h.w); });
@@ -374,6 +394,11 @@ PCON.forEach(p => { if (p.w) partiesPresent.add(p.w); });
 SURREY.forEach(s => { if (s.w) partiesPresent.add(s.w); });
 EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
+if (typeof PCC_HISTORY !== 'undefined') {
+  Object.values(PCC_HISTORY).forEach(f => {
+    (f.history || []).forEach(h => { if (h.w) partiesPresent.add(h.w); });
+  });
+}
 const legend = document.getElementById('map-legend');
 if (legend) {
   LEGEND_ORDER.forEach(p => {
