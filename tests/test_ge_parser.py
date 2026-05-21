@@ -63,8 +63,8 @@ def test_speaker_overrides_cover_four_known_seats():
     ("Scottish National",   "SNP"),
     ("Plaid Cymru",         "Plaid"),
     ("Green",               "Green"),
-    ("UKIP",                "Other"),
-    ("Brexit",              "Other"),
+    ("UKIP",                "UKIP"),
+    ("Brexit",              "Brexit"),
     ("DUP",                 "Other"),
     ("Sinn Féin",           "Other"),
 ])
