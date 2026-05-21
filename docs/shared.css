@@ -958,52 +958,67 @@ body {
    Holyrood and Senedd 2026 paint on top of older council colours; PCON
    2024 sits below the 2025/2026 layers but above older ward colours).
    .view-wards / .view-ceds / .view-holyrood / .view-senedd / .view-pcon
-   / .view-surrey / .view-gla-mayor each isolate a single layer;
+   / .view-surrey / .view-gla-mayor / .view-gla-assembly each isolate a
+   single layer;
    .view-eu_ref_2016 isolates the referendum LADs (which are otherwise
    always hidden so readers only see them when they opt in). GB page only
    for every single-layer overlay. */
-.map-svg.view-wards     path.ced       { display: none; }
-.map-svg.view-wards     path.holyrood  { display: none; }
-.map-svg.view-wards     path.senedd    { display: none; }
-.map-svg.view-wards     path.pcon      { display: none; }
-.map-svg.view-wards     path.surrey    { display: none; }
-.map-svg.view-wards     path.gla-mayor { display: none; }
-.map-svg.view-ceds      path.ward      { display: none; }
-.map-svg.view-ceds      path.holyrood  { display: none; }
-.map-svg.view-ceds      path.senedd    { display: none; }
-.map-svg.view-ceds      path.pcon      { display: none; }
-.map-svg.view-ceds      path.surrey    { display: none; }
-.map-svg.view-ceds      path.gla-mayor { display: none; }
-.map-svg.view-holyrood  path.ward      { display: none; }
-.map-svg.view-holyrood  path.ced       { display: none; }
-.map-svg.view-holyrood  path.senedd    { display: none; }
-.map-svg.view-holyrood  path.pcon      { display: none; }
-.map-svg.view-holyrood  path.surrey    { display: none; }
-.map-svg.view-holyrood  path.gla-mayor { display: none; }
-.map-svg.view-senedd    path.ward      { display: none; }
-.map-svg.view-senedd    path.ced       { display: none; }
-.map-svg.view-senedd    path.holyrood  { display: none; }
-.map-svg.view-senedd    path.pcon      { display: none; }
-.map-svg.view-senedd    path.surrey    { display: none; }
-.map-svg.view-senedd    path.gla-mayor { display: none; }
-.map-svg.view-pcon      path.ward      { display: none; }
-.map-svg.view-pcon      path.ced       { display: none; }
-.map-svg.view-pcon      path.holyrood  { display: none; }
-.map-svg.view-pcon      path.senedd    { display: none; }
-.map-svg.view-pcon      path.surrey    { display: none; }
-.map-svg.view-pcon      path.gla-mayor { display: none; }
-.map-svg.view-surrey    path.ward      { display: none; }
-.map-svg.view-surrey    path.ced       { display: none; }
-.map-svg.view-surrey    path.holyrood  { display: none; }
-.map-svg.view-surrey    path.senedd    { display: none; }
-.map-svg.view-surrey    path.pcon      { display: none; }
-.map-svg.view-surrey    path.gla-mayor { display: none; }
-.map-svg.view-gla-mayor path.ward      { display: none; }
-.map-svg.view-gla-mayor path.ced       { display: none; }
-.map-svg.view-gla-mayor path.holyrood  { display: none; }
-.map-svg.view-gla-mayor path.senedd    { display: none; }
-.map-svg.view-gla-mayor path.pcon      { display: none; }
-.map-svg.view-gla-mayor path.surrey    { display: none; }
+.map-svg.view-wards     path.ced          { display: none; }
+.map-svg.view-wards     path.holyrood     { display: none; }
+.map-svg.view-wards     path.senedd       { display: none; }
+.map-svg.view-wards     path.pcon         { display: none; }
+.map-svg.view-wards     path.surrey       { display: none; }
+.map-svg.view-wards     path.gla-mayor    { display: none; }
+.map-svg.view-wards     path.gla-assembly { display: none; }
+.map-svg.view-ceds      path.ward         { display: none; }
+.map-svg.view-ceds      path.holyrood     { display: none; }
+.map-svg.view-ceds      path.senedd       { display: none; }
+.map-svg.view-ceds      path.pcon         { display: none; }
+.map-svg.view-ceds      path.surrey       { display: none; }
+.map-svg.view-ceds      path.gla-mayor    { display: none; }
+.map-svg.view-ceds      path.gla-assembly { display: none; }
+.map-svg.view-holyrood  path.ward         { display: none; }
+.map-svg.view-holyrood  path.ced          { display: none; }
+.map-svg.view-holyrood  path.senedd       { display: none; }
+.map-svg.view-holyrood  path.pcon         { display: none; }
+.map-svg.view-holyrood  path.surrey       { display: none; }
+.map-svg.view-holyrood  path.gla-mayor    { display: none; }
+.map-svg.view-holyrood  path.gla-assembly { display: none; }
+.map-svg.view-senedd    path.ward         { display: none; }
+.map-svg.view-senedd    path.ced          { display: none; }
+.map-svg.view-senedd    path.holyrood     { display: none; }
+.map-svg.view-senedd    path.pcon         { display: none; }
+.map-svg.view-senedd    path.surrey       { display: none; }
+.map-svg.view-senedd    path.gla-mayor    { display: none; }
+.map-svg.view-senedd    path.gla-assembly { display: none; }
+.map-svg.view-pcon      path.ward         { display: none; }
+.map-svg.view-pcon      path.ced          { display: none; }
+.map-svg.view-pcon      path.holyrood     { display: none; }
+.map-svg.view-pcon      path.senedd       { display: none; }
+.map-svg.view-pcon      path.surrey       { display: none; }
+.map-svg.view-pcon      path.gla-mayor    { display: none; }
+.map-svg.view-pcon      path.gla-assembly { display: none; }
+.map-svg.view-surrey    path.ward         { display: none; }
+.map-svg.view-surrey    path.ced          { display: none; }
+.map-svg.view-surrey    path.holyrood     { display: none; }
+.map-svg.view-surrey    path.senedd       { display: none; }
+.map-svg.view-surrey    path.pcon         { display: none; }
+.map-svg.view-surrey    path.gla-mayor    { display: none; }
+.map-svg.view-surrey    path.gla-assembly { display: none; }
+.map-svg.view-gla-mayor path.ward         { display: none; }
+.map-svg.view-gla-mayor path.ced          { display: none; }
+.map-svg.view-gla-mayor path.holyrood     { display: none; }
+.map-svg.view-gla-mayor path.senedd       { display: none; }
+.map-svg.view-gla-mayor path.pcon         { display: none; }
+.map-svg.view-gla-mayor path.surrey       { display: none; }
+.map-svg.view-gla-mayor path.gla-assembly { display: none; }
+.map-svg.view-gla-assembly path.ward      { display: none; }
+.map-svg.view-gla-assembly path.ced       { display: none; }
+.map-svg.view-gla-assembly path.holyrood  { display: none; }
+.map-svg.view-gla-assembly path.senedd    { display: none; }
+.map-svg.view-gla-assembly path.pcon      { display: none; }
+.map-svg.view-gla-assembly path.surrey    { display: none; }
+.map-svg.view-gla-assembly path.gla-mayor { display: none; }
 /* EU Referendum 2016 (issue #85). path.referendum is hidden by default
    in every other view; only the dedicated .view-eu_ref_2016 reveals it.
    When that view is active, every other thematic layer is hidden in
@@ -1015,8 +1030,9 @@ body {
 .map-svg.view-eu_ref_2016 path.holyrood  { display: none; }
 .map-svg.view-eu_ref_2016 path.senedd    { display: none; }
 .map-svg.view-eu_ref_2016 path.pcon      { display: none; }
-.map-svg.view-eu_ref_2016 path.surrey    { display: none; }
-.map-svg.view-eu_ref_2016 path.gla-mayor { display: none; }
+.map-svg.view-eu_ref_2016 path.surrey       { display: none; }
+.map-svg.view-eu_ref_2016 path.gla-mayor    { display: none; }
+.map-svg.view-eu_ref_2016 path.gla-assembly { display: none; }
 .map-svg path.referendum {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
@@ -1047,7 +1063,8 @@ body {
 .map-svg path.senedd,
 .map-svg path.pcon,
 .map-svg path.surrey,
-.map-svg path.gla-mayor {
+.map-svg path.gla-mayor,
+.map-svg path.gla-assembly {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
   stroke-linejoin: round;
@@ -1059,7 +1076,8 @@ body {
 .map-svg path.senedd:hover,
 .map-svg path.pcon:hover,
 .map-svg path.surrey:hover,
-.map-svg path.gla-mayor:hover {
+.map-svg path.gla-mayor:hover,
+.map-svg path.gla-assembly:hover {
   stroke: var(--ink);
   stroke-width: 1.4;
   fill-opacity: 0.78;
