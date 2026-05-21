@@ -1,0 +1,2389 @@
+{
+  "years": [
+    2012,
+    2016,
+    2021,
+    2024
+  ],
+  "forces": {
+    "E23000036": {
+      "name": "Avon and Somerset",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Independent",
+          "candidate": "Sue Mountstevens",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 83985,
+            "Conservative": 57094,
+            "Labour": 49989,
+            "LibDem": 43446
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Independent",
+          "candidate": "Sue Mountstevens",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 105375,
+            "Labour": 75538,
+            "Conservative": 61335,
+            "Other": 28038,
+            "LibDem": 23429,
+            "Green": 23414
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Mark Shelford",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 136988,
+            "Labour": 93495,
+            "Green": 64790,
+            "LibDem": 52839,
+            "Independent": 46379
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Clare Moody",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 95982,
+            "Conservative": 91006,
+            "Green": 64623,
+            "LibDem": 45864
+          }
+        }
+      ]
+    },
+    "E23000026": {
+      "name": "Bedfordshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Olly Martins",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 27947,
+            "Conservative": 26226,
+            "LibDem": 11205,
+            "Other": 8675,
+            "Independent": 8076
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Kathryn Holloway",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 39288,
+            "Labour": 37853,
+            "LibDem": 12413,
+            "Other": 17581
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Festus Akinbusoye",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 51700,
+            "Labour": 42708,
+            "LibDem": 15983,
+            "Independent": 8279,
+            "Other": 3387
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "John Tizard",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 40738,
+            "Conservative": 35688,
+            "LibDem": 15857,
+            "Other": 8396
+          }
+        }
+      ]
+    },
+    "E23000023": {
+      "name": "Cambridgeshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Graham Bright",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 23731,
+            "Labour": 17576,
+            "Other": 21723,
+            "Independent": 18043,
+            "LibDem": 7530
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Jason Ablewhite",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 63614,
+            "Labour": 54426,
+            "Other": 29698,
+            "LibDem": 27884
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Darryl Preston",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 99034,
+            "Labour": 72313,
+            "LibDem": 51490,
+            "Reform": 8031
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Darryl Preston",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 61688,
+            "Labour": 58304,
+            "LibDem": 41984
+          }
+        }
+      ]
+    },
+    "E23000006": {
+      "name": "Cheshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "John Dwyer",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 40122,
+            "Labour": 30974,
+            "Independent": 18596,
+            "LibDem": 10653,
+            "Other": 8557
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "David Keane",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 72497,
+            "Conservative": 69322,
+            "Other": 21991,
+            "LibDem": 18530
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "John Dwyer",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 99565,
+            "Labour": 83329,
+            "LibDem": 32348,
+            "Reform": 8258
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Dan Price",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 86279,
+            "Conservative": 65836,
+            "LibDem": 27342
+          }
+        }
+      ]
+    },
+    "E23000013": {
+      "name": "Cleveland",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Barry Coppinger",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 25691,
+            "Conservative": 16047,
+            "Independent": 11561,
+            "Green": 8484
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Barry Coppinger",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 32733,
+            "Conservative": 18196,
+            "Other": 17005,
+            "Independent": 11895
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Steve Turner",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 74023,
+            "Labour": 39467,
+            "Independent": 16667,
+            "LibDem": 6540
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Matt Storey",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 65418,
+            "Conservative": 58977
+          }
+        }
+      ]
+    },
+    "E23000002": {
+      "name": "Cumbria",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Richard Rhodes",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 18080,
+            "Labour": 15301,
+            "Independent": 15245,
+            "LibDem": 13625
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Peter McCall",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 32569,
+            "Labour": 22768,
+            "LibDem": 16053,
+            "Independent": 13831,
+            "Other": 9370
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Peter McCall",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 56753,
+            "Labour": 27687,
+            "LibDem": 21506
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "David Allen",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 38708,
+            "Conservative": 24863,
+            "LibDem": 18100
+          }
+        }
+      ]
+    },
+    "E23000018": {
+      "name": "Derbyshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Alan Charles",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 50028,
+            "Conservative": 27690,
+            "Other": 18097,
+            "Independent": 17093
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Hardyal Dhindsa",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 66925,
+            "Conservative": 61741,
+            "Other": 30381,
+            "LibDem": 19492
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Angelique Foster",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 137884,
+            "Labour": 104700,
+            "LibDem": 25811,
+            "Reform": 10721
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Nicolle Ndiweni",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 93260,
+            "Conservative": 65293,
+            "Reform": 32944,
+            "LibDem": 22540
+          }
+        }
+      ]
+    },
+    "E23000035": {
+      "name": "Devon & Cornwall",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Tony Hogg",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 55257,
+            "Independent": 70831,
+            "Labour": 24196,
+            "LibDem": 23948,
+            "Other": 16433
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Alison Hernandez",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 69354,
+            "Labour": 66519,
+            "Other": 49659,
+            "Independent": 63777,
+            "LibDem": 35154
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Alison Hernandez",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 247173,
+            "Labour": 99894,
+            "LibDem": 88318,
+            "Green": 59242
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Alison Hernandez",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 131764,
+            "Labour": 107897,
+            "LibDem": 64790
+          }
+        }
+      ]
+    },
+    "E23000039": {
+      "name": "Dorset",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Independent",
+          "candidate": "Martyn Underhill",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 43425,
+            "Conservative": 31165,
+            "Labour": 11596,
+            "LibDem": 9963
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Independent",
+          "candidate": "Martyn Underhill",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 47738,
+            "Conservative": 37089,
+            "Other": 21086,
+            "Labour": 20169
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "David Sidwick",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 64071,
+            "Independent": 31112,
+            "Green": 21283,
+            "LibDem": 17837,
+            "Labour": 16379
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "David Sidwick",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 57994,
+            "LibDem": 34774,
+            "Independent": 32237,
+            "Labour": 26884
+          }
+        }
+      ]
+    },
+    "E23000008": {
+      "name": "Durham",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Ron Hogg",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 36171,
+            "Independent": 18813,
+            "Other": 8257,
+            "Conservative": 6900
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Ron Hogg",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 50915,
+            "Conservative": 18797,
+            "LibDem": 10060
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Labour",
+          "candidate": "Joy Allen",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 71084,
+            "Conservative": 69748,
+            "LibDem": 21376
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Joy Allen",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 66752,
+            "Conservative": 37773,
+            "LibDem": 14678
+          }
+        }
+      ]
+    },
+    "E23000028": {
+      "name": "Essex",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Nick Alston",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 51325,
+            "Independent": 62295,
+            "Labour": 27926,
+            "Other": 26688
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Roger Hirst",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 110858,
+            "Other": 123960,
+            "Labour": 65325,
+            "LibDem": 30804
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Roger Hirst",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 235246,
+            "Labour": 99712,
+            "LibDem": 58131,
+            "Other": 42831
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Roger Hirst",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 126447,
+            "Labour": 116875,
+            "LibDem": 52922,
+            "Other": 44909
+          }
+        }
+      ]
+    },
+    "E23000037": {
+      "name": "Gloucestershire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Independent",
+          "candidate": "Martin Surl",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 27676,
+            "Conservative": 28422,
+            "Labour": 13741,
+            "LibDem": 8663
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Independent",
+          "candidate": "Martin Surl",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 57447,
+            "Conservative": 49965,
+            "Labour": 33825
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Chris Nelson",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 79086,
+            "LibDem": 37024,
+            "Independent": 47417,
+            "Labour": 31347
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Chris Nelson",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 47838,
+            "LibDem": 46352,
+            "Labour": 35069,
+            "Independent": 15240
+          }
+        }
+      ]
+    },
+    "E23000005": {
+      "name": "Greater Manchester",
+      "country": "England",
+      "absorbed_from": {
+        "year": 2016,
+        "ca_mayor": "Mayor of Greater Manchester",
+        "ca_mayor_url": "https://en.wikipedia.org/wiki/Mayor_of_Greater_Manchester"
+      },
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Tony Lloyd",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 139437,
+            "Conservative": 42478,
+            "LibDem": 40318,
+            "Independent": 26664,
+            "Other": 23256
+          }
+        }
+      ]
+    },
+    "E23000030": {
+      "name": "Hampshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Independent",
+          "candidate": "Simon Hayes",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 47632,
+            "Conservative": 52616,
+            "Labour": 38813,
+            "LibDem": 27197,
+            "Other": 45628
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Michael Lane",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 113717,
+            "Labour": 63747,
+            "Independent": 75719,
+            "LibDem": 55266,
+            "Other": 90104
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Donna Jones",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 262667,
+            "Labour": 101832,
+            "LibDem": 93581,
+            "Independent": 68895
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Donna Jones",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 175953,
+            "Labour": 106141,
+            "LibDem": 92843,
+            "Other": 40691
+          }
+        }
+      ]
+    },
+    "E23000027": {
+      "name": "Hertfordshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "David Lloyd",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 54686,
+            "Labour": 34528,
+            "LibDem": 16790,
+            "Other": 13154
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "David Lloyd",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 100262,
+            "Labour": 64978,
+            "LibDem": 38488,
+            "Other": 33575
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "David Lloyd",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 155144,
+            "LibDem": 87524,
+            "Labour": 76941
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Jonathan Ash-Edwards",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 93658,
+            "LibDem": 68264,
+            "Labour": 66585,
+            "Green": 26714
+          }
+        }
+      ]
+    },
+    "E23000012": {
+      "name": "Humberside",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Matthew Grove",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 29440,
+            "Labour": 33282,
+            "Independent": 37901,
+            "Other": 21484,
+            "LibDem": 11655
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Keith Hunter",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 62010,
+            "Conservative": 40925,
+            "Other": 27434,
+            "LibDem": 23451
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Jonathan Evison",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 71554,
+            "Labour": 61859,
+            "LibDem": 23640
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Jonathan Evison",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 51083,
+            "Labour": 46846,
+            "LibDem": 30834
+          }
+        }
+      ]
+    },
+    "E23000032": {
+      "name": "Kent",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Independent",
+          "candidate": "Ann Barnes",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 103567,
+            "Conservative": 51671,
+            "Labour": 23005,
+            "Other": 26674
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Matthew Scott",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 88396,
+            "Other": 81610,
+            "Labour": 50978,
+            "Independent": 26221,
+            "LibDem": 19601
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Matthew Scott",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 237278,
+            "Labour": 103807,
+            "LibDem": 69464
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Matthew Scott",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 120491,
+            "Labour": 92508,
+            "LibDem": 60279
+          }
+        }
+      ]
+    },
+    "E23000003": {
+      "name": "Lancashire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Clive Grunshaw",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 66017,
+            "Conservative": 58428,
+            "Other": 25228,
+            "LibDem": 18396
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Clive Grunshaw",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 132261,
+            "Conservative": 96746,
+            "Other": 49987,
+            "LibDem": 23164
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Andrew Snowden",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 166202,
+            "Labour": 154195,
+            "LibDem": 32813,
+            "Reform": 17926
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Clive Grunshaw",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 135638,
+            "Conservative": 101281,
+            "LibDem": 51252
+          }
+        }
+      ]
+    },
+    "E23000021": {
+      "name": "Leicestershire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Sir Clive Loader",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 59915,
+            "Labour": 42503,
+            "Independent": 21292
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Willy Bach, Baron Bach",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 67991,
+            "Conservative": 46958,
+            "LibDem": 19359,
+            "Other": 17815
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Rupert Matthews",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 121252,
+            "Labour": 81898,
+            "LibDem": 42951
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Rupert Matthews",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 62280,
+            "Labour": 61420,
+            "Green": 23649,
+            "LibDem": 22041,
+            "Other": 7104
+          }
+        }
+      ]
+    },
+    "E23000020": {
+      "name": "Lincolnshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Independent",
+          "candidate": "Alan Hardwick",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 26272,
+            "Other": 27345,
+            "Conservative": 19872,
+            "Labour": 10247
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Marc Jones",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 39441,
+            "Other": 28583,
+            "Labour": 25475,
+            "Independent": 18497
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Marc Jones",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 102813,
+            "Labour": 34310,
+            "Independent": 18375,
+            "LibDem": 10172,
+            "Reform": 6101
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Marc Jones",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 39639,
+            "Labour": 31931,
+            "Reform": 15518,
+            "LibDem": 13380,
+            "Other": 7739
+          }
+        }
+      ]
+    },
+    "E23000004": {
+      "name": "Merseyside",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Jane Kennedy",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 70884,
+            "Conservative": 15870,
+            "Independent": 14379,
+            "LibDem": 9192,
+            "Other": 15846
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Jane Kennedy",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 186661,
+            "Conservative": 54000,
+            "LibDem": 34625,
+            "Green": 26967
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Labour",
+          "candidate": "Emily Spurrell",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 178875,
+            "Conservative": 71961,
+            "LibDem": 51979,
+            "Reform": 11662
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Emily Spurrell",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 152640,
+            "Conservative": 35221,
+            "Green": 31330,
+            "LibDem": 28093
+          }
+        }
+      ]
+    },
+    "E23000024": {
+      "name": "Norfolk",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Independent",
+          "candidate": "Stephen Bett",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 27842,
+            "Conservative": 30834,
+            "Labour": 21456,
+            "Other": 9633,
+            "LibDem": 7392
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Lorne Green",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 42928,
+            "Labour": 37141,
+            "Other": 27030,
+            "Independent": 25527,
+            "LibDem": 12838,
+            "Green": 9187
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Giles Orpen-Smellie",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 103980,
+            "Labour": 51056,
+            "LibDem": 31666,
+            "Green": 23469,
+            "Independent": 20473
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Sarah Taylor",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 52445,
+            "Conservative": 50567,
+            "Green": 23628,
+            "LibDem": 22525
+          }
+        }
+      ]
+    },
+    "E23000009": {
+      "name": "North Yorkshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Julia Mulligan",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 47885,
+            "Labour": 34328
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Julia Mulligan",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 53078,
+            "Labour": 34351,
+            "Independent": 30984,
+            "LibDem": 13856
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Philip Allott",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 73656,
+            "Labour": 40803,
+            "Independent": 22338,
+            "LibDem": 19773
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "David Skaith",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 66761,
+            "Conservative": 51967,
+            "LibDem": 30867,
+            "Green": 15188,
+            "Independent": 25620
+          }
+        }
+      ]
+    },
+    "E23000022": {
+      "name": "Northamptonshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Adam Simmonds",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 30436,
+            "Labour": 25098,
+            "Independent": 19276,
+            "Other": 18963,
+            "LibDem": 7394
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Stephen Mold",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 46785,
+            "Labour": 41015,
+            "Other": 27708
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Stephen Mold",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 102752,
+            "Labour": 53166,
+            "LibDem": 29621,
+            "Reform": 7715
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Danielle Stone",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 43684,
+            "Conservative": 39714,
+            "LibDem": 27799
+          }
+        }
+      ]
+    },
+    "E23000007": {
+      "name": "Northumbria",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Vera Baird",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 100170,
+            "Conservative": 45845,
+            "Other": 18876,
+            "LibDem": 13916
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Vera Baird",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 180479,
+            "Conservative": 58713,
+            "Other": 52293,
+            "LibDem": 34757
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Labour",
+          "candidate": "Kim McGuinness",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 179021,
+            "Conservative": 118543,
+            "Independent": 45567,
+            "LibDem": 40955
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Susan Dungworth",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 176311,
+            "Conservative": 78818,
+            "LibDem": 58574,
+            "Independent": 31773
+          }
+        }
+      ]
+    },
+    "E23000019": {
+      "name": "Nottinghamshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Paddy Tipping",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 57356,
+            "Independent": 49313,
+            "Conservative": 26304
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Paddy Tipping",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 80926,
+            "Conservative": 48155,
+            "Other": 20320,
+            "Independent": 21743
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Caroline Henry",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 131318,
+            "Labour": 119271,
+            "LibDem": 23794
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Gary Godden",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 119355,
+            "Conservative": 77148,
+            "LibDem": 32410
+          }
+        }
+      ]
+    },
+    "E23000011": {
+      "name": "South Yorkshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Shaun Wright",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 74615,
+            "Other": 39381,
+            "Conservative": 21075,
+            "LibDem": 10223
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Alan Billings",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 144978,
+            "Other": 76206,
+            "Conservative": 29904,
+            "LibDem": 28060
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Labour",
+          "candidate": "Alan Billings",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 165442,
+            "Conservative": 98851,
+            "LibDem": 42462
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Oliver Coppard",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 138611,
+            "Conservative": 44948,
+            "Green": 37142,
+            "LibDem": 31002,
+            "Other": 20835
+          }
+        }
+      ]
+    },
+    "E23000015": {
+      "name": "Staffordshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Matthew Ellis",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 51237,
+            "Labour": 47589
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Matthew Ellis",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 63123,
+            "Labour": 54753,
+            "Other": 27550,
+            "Independent": 22155,
+            "Green": 6527
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Ben Adams",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 136024,
+            "Labour": 67050,
+            "Independent": 19102,
+            "LibDem": 10690,
+            "Reform": 5504
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Ben Adams",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 73500,
+            "Labour": 70128,
+            "LibDem": 17666
+          }
+        }
+      ]
+    },
+    "E23000025": {
+      "name": "Suffolk",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Tim Passmore",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 29805,
+            "Labour": 29967,
+            "Independent": 14217,
+            "Other": 11179
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Tim Passmore",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 57167,
+            "Labour": 32268,
+            "Other": 22094,
+            "LibDem": 11726,
+            "Green": 7501
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Tim Passmore",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 112139,
+            "Labour": 47159,
+            "Green": 27965,
+            "LibDem": 17801
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Tim Passmore",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 52968,
+            "Labour": 41734,
+            "Green": 22488,
+            "LibDem": 14541
+          }
+        }
+      ]
+    },
+    "E23000031": {
+      "name": "Surrey",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Other",
+          "candidate": "Kevin Hurley",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Other": 45062,
+            "Conservative": 34391,
+            "Independent": 26292,
+            "Labour": 17384,
+            "LibDem": 8503
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "David Munro",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 82125,
+            "Other": 65658,
+            "LibDem": 29933,
+            "Labour": 28005,
+            "Independent": 26753
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Lisa Townsend",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 112260,
+            "LibDem": 69412,
+            "Other": 59554,
+            "Labour": 53103,
+            "Independent": 40597
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Lisa Townsend",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 95538,
+            "LibDem": 82213,
+            "Labour": 42813,
+            "Independent": 42052
+          }
+        }
+      ]
+    },
+    "E23000033": {
+      "name": "Sussex",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Katy Bourne",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 59635,
+            "Labour": 40765,
+            "Independent": 38930,
+            "Other": 29327,
+            "LibDem": 20579
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Katy Bourne",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 114570,
+            "Labour": 61017,
+            "Other": 43075,
+            "LibDem": 29550,
+            "Green": 26038
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Katy Bourne",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 214523,
+            "Labour": 84736,
+            "LibDem": 63271,
+            "Green": 60781,
+            "Independent": 30408
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Katy Bourne",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 122495,
+            "Labour": 99502,
+            "LibDem": 48923,
+            "Green": 43105
+          }
+        }
+      ]
+    },
+    "E23000029": {
+      "name": "Thames Valley",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Anthony Stansfeld",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 76011,
+            "Labour": 56631,
+            "Independent": 46594,
+            "LibDem": 20511,
+            "Other": 19324
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Anthony Stansfeld",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 164554,
+            "Labour": 138084,
+            "LibDem": 59975,
+            "Other": 49942
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Matthew Barber",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 267404,
+            "Labour": 175123,
+            "LibDem": 110072,
+            "Independent": 77210
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Matthew Barber",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 144092,
+            "Labour": 141749,
+            "LibDem": 84341,
+            "Other": 46853,
+            "Independent": 31460
+          }
+        }
+      ]
+    },
+    "E23000017": {
+      "name": "Warwickshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Independent",
+          "candidate": "Ron Ball",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 21410,
+            "Labour": 22308,
+            "Conservative": 20571
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Philip Seccombe",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 33895,
+            "Labour": 27725,
+            "Other": 14553,
+            "Independent": 21059,
+            "LibDem": 11509
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Philip Seccombe",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 85963,
+            "Labour": 45768,
+            "LibDem": 26660,
+            "Reform": 6692
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Philip Seccombe",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 45638,
+            "Labour": 45377,
+            "LibDem": 24867
+          }
+        }
+      ]
+    },
+    "E23000016": {
+      "name": "West Mercia",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Independent",
+          "candidate": "Bill Longmore",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 50900,
+            "Conservative": 49298,
+            "Labour": 34652
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "John-Paul Campion",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 64514,
+            "Labour": 40870,
+            "Other": 32719,
+            "Independent": 27986,
+            "Green": 14323,
+            "LibDem": 12914
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "John-Paul Campion",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 179411,
+            "Labour": 77664,
+            "LibDem": 50699,
+            "Reform": 16419
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "John-Paul Campion",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 73395,
+            "Labour": 63082,
+            "LibDem": 33782,
+            "Green": 22021,
+            "Other": 21645
+          }
+        }
+      ]
+    },
+    "E23000014": {
+      "name": "West Midlands",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Bob Jones",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 100130,
+            "Conservative": 44130,
+            "Independent": 61148,
+            "Other": 17563,
+            "LibDem": 15413
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "David Jamieson",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 275672,
+            "Conservative": 142651,
+            "Other": 93851,
+            "Independent": 40478
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Labour",
+          "candidate": "Simon Foster",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 276743,
+            "Conservative": 239288,
+            "LibDem": 38594,
+            "Independent": 27664,
+            "Reform": 18002,
+            "Other": 7745
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Simon Foster",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 327844,
+            "Conservative": 241827
+          }
+        }
+      ]
+    },
+    "E23000010": {
+      "name": "West Yorkshire",
+      "country": "England",
+      "absorbed_from": {
+        "year": 2021,
+        "ca_mayor": "Mayor of West Yorkshire",
+        "ca_mayor_url": "https://en.wikipedia.org/wiki/Mayor_of_West_Yorkshire"
+      },
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Mark Burns-Williamson",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 102817,
+            "Independent": 49299,
+            "Conservative": 45365,
+            "LibDem": 17247
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Mark Burns-Williamson",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 260271,
+            "Conservative": 119338,
+            "Other": 95404,
+            "LibDem": 48963
+          }
+        }
+      ]
+    },
+    "E23000038": {
+      "name": "Wiltshire",
+      "country": "England",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Angus Macpherson",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 28558,
+            "Labour": 16198,
+            "Independent": 16658,
+            "LibDem": 10130,
+            "Other": 7250
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Conservative",
+          "candidate": "Angus Macpherson",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 56605,
+            "Labour": 28166,
+            "LibDem": 19294,
+            "Other": 18434
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Conservative",
+          "candidate": "Jonathon Seed",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 84885,
+            "LibDem": 35013,
+            "Labour": 34147,
+            "Independent": 31722,
+            "Green": 16606,
+            "Reform": 4348
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Conservative",
+          "candidate": "Philip Wilkinson",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 38578,
+            "Labour": 36345,
+            "Independent": 29035,
+            "LibDem": 20485
+          }
+        }
+      ]
+    },
+    "W15000004": {
+      "name": "Dyfed-Powys",
+      "country": "Wales",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Conservative",
+          "candidate": "Christopher Salmon",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Conservative": 32887,
+            "Labour": 31773
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Plaid",
+          "candidate": "Dafydd Llywelyn",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Plaid": 52469,
+            "Conservative": 47093,
+            "Labour": 34799,
+            "Other": 20870,
+            "LibDem": 20725,
+            "Independent": 11561
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Plaid",
+          "candidate": "Dafydd Llywelyn",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Plaid": 68208,
+            "Conservative": 69112,
+            "Labour": 48033,
+            "LibDem": 17649
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Plaid",
+          "candidate": "Dafydd Llywelyn",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Plaid": 31323,
+            "Conservative": 19134,
+            "Labour": 18353,
+            "LibDem": 7719
+          }
+        }
+      ]
+    },
+    "W15000002": {
+      "name": "Gwent",
+      "country": "Wales",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Independent",
+          "candidate": "Ian Johnston",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 29649,
+            "Labour": 23087,
+            "Conservative": 6630
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Jeff Cuthbert",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 76893,
+            "Conservative": 50985,
+            "Plaid": 37916
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Labour",
+          "candidate": "Jeff Cuthbert",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 75775,
+            "Conservative": 52313,
+            "Plaid": 29392,
+            "Independent": 13601,
+            "LibDem": 7640,
+            "Other": 2615
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Jane Mudd",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 28476,
+            "Conservative": 21919,
+            "Plaid": 9864,
+            "LibDem": 8078
+          }
+        }
+      ]
+    },
+    "W15000001": {
+      "name": "North Wales",
+      "country": "Wales",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Independent",
+          "candidate": "Winston Roddick",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Independent": 37168,
+            "Labour": 23066,
+            "Conservative": 11485,
+            "Other": 6034
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Plaid",
+          "candidate": "Arfon Jones",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Plaid": 67179,
+            "Labour": 54892,
+            "Conservative": 42005,
+            "Other": 25943,
+            "Independent": 23487
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Labour",
+          "candidate": "Andy Dunbobbin",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 69459,
+            "Conservative": 75472,
+            "Plaid": 67672,
+            "Independent": 15907,
+            "LibDem": 10149
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Andy Dunbobbin",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 31950,
+            "Conservative": 26281,
+            "Plaid": 23466,
+            "LibDem": 7129
+          }
+        }
+      ]
+    },
+    "W15000003": {
+      "name": "South Wales",
+      "country": "Wales",
+      "absorbed_from": null,
+      "history": [
+        {
+          "y": 2012,
+          "w": "Labour",
+          "candidate": "Alun Michael",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2012_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 66879,
+            "Independent": 54642,
+            "Conservative": 20913
+          }
+        },
+        {
+          "y": 2016,
+          "w": "Labour",
+          "candidate": "Alun Michael",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2016_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 161529,
+            "Conservative": 70799,
+            "Plaid": 70770,
+            "Independent": 67454,
+            "LibDem": 24438
+          }
+        },
+        {
+          "y": 2021,
+          "w": "Labour",
+          "candidate": "Alun Michael",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2021_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 177110,
+            "Conservative": 102465,
+            "Plaid": 82246,
+            "Independent": 37110,
+            "LibDem": 19907,
+            "Other": 13263
+          }
+        },
+        {
+          "y": 2024,
+          "w": "Labour",
+          "candidate": "Emma Wools",
+          "src": "wiki",
+          "url": "https://en.wikipedia.org/wiki/2024_England_and_Wales_police_and_crime_commissioner_elections",
+          "votes": {
+            "Labour": 73128,
+            "Conservative": 43344,
+            "Plaid": 27410,
+            "LibDem": 17908
+          }
+        }
+      ]
+    }
+  }
+}
