@@ -61,6 +61,14 @@ PARTY_COLOURS_MAP = {
     # (Lindsay Hoyle, Chorley). Same grey as Independent so the map reads
     # "non-party" at a glance.
     "Speaker":      "#888780",
+    # EP 2014/2019 (issue #91). UKIP brand purple (their 1993-2019 livery)
+    # and Brexit Party brand light-blue (2019 EP campaign). Reform UK
+    # legally inherited the Brexit Party registration after 2020 but uses
+    # a brighter cyan (#12B6CF above) — keeping Brexit's lighter blue
+    # distinct so a reader scanning 2019 vs 2024 sees the two as different
+    # layers even though the legal entity is the same.
+    "UKIP":         "#70147A",
+    "Brexit":       "#00AEEF",
     # Referendum outcomes (issue #85) — Leave/Remain are stored as the
     # `w` field on EU-ref records so the same PARTY_COLOURS lookup that
     # paints party-winner polygons also paints referendum-winner polygons.
@@ -101,6 +109,8 @@ PARTY_DISPLAY_MAP = {
     "Plaid":        "Plaid Cymru",
     "Independent":  "Independent",
     "Speaker":      "Speaker of the House",
+    "UKIP":         "UKIP",
+    "Brexit":       "Brexit Party",
     "Leave":        "Leave",
     "Remain":       "Remain",
     "AV Yes":       "Yes",
@@ -128,6 +138,13 @@ PARTY_ORDER_WINNERS = [
 LEGEND_ORDER_MAP = [
     "Labour", "Reform", "Green", "LibDem", "Conservative",
     "SNP", "Plaid", "Independent", "Speaker",
+    # EP 2014/2019 (issue #91) — only present in the GB Current map's
+    # European Parliament view (and chronologically beneath other layers
+    # in the default view). Placed after the standard GB party block so
+    # the historical EP-only labels sit together with the other opt-in
+    # layers (Leave/Remain below) rather than displacing the main
+    # legend.
+    "UKIP", "Brexit",
     # Referendum outcomes (issue #85) — only present in the GB Current
     # map and only when the EU Ref 2016 view is active. The labels still
     # ship in the shared legend so the swatch-to-meaning mapping is

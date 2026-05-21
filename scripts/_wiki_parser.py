@@ -109,6 +109,13 @@ def normalize_party(raw: str) -> str:
         return 'Green'
     if 'reform' in s:
         return 'Reform'
+    # EP-era parties (issue #91). Order matters only against "independent"
+    # below — "uk independence" doesn't substring-match "independent", so
+    # 'UKIP' and 'Independent' stay disjoint.
+    if 'uk independence' in s or s == 'ukip':
+        return 'UKIP'
+    if 'brexit' in s:
+        return 'Brexit'
     if 'scottish national' in s or s == 'snp':
         return 'SNP'
     if 'plaid' in s:
