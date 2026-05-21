@@ -231,6 +231,28 @@ def main():
         else {'regions': {}, 'regions_pre': {}}
     )
 
+    # EP 2014/2019 overlay (issue #91) — GB-only layer painting each of
+    # the 11 GB European Electoral Region polygons by the plurality vote
+    # winner at the selected slider year. 11 EERs × 2 years = 22 records.
+    # The EER boundaries were unchanged 1999–2020, so a single polygon
+    # set with no PRE_/era logic serves both contests. Only visible when
+    # the dedicated "European Parliament" view is active — hidden by
+    # CSS in every other view (same convention as EU Ref 2016 since
+    # both are rare opt-in layers that would otherwise overdraw the
+    # main thematic layers at vast scale).
+    ep_path = DATA / 'ep_results.json'
+    ep_geom_path = DATA / 'eer_geoms.json'
+    ep_data = (
+        json.loads(ep_path.read_text())
+        if region == 'gb' and ep_path.exists()
+        else {'years': [], 'regions': {}}
+    )
+    ep_geoms = (
+        json.loads(ep_geom_path.read_text())
+        if region == 'gb' and ep_geom_path.exists()
+        else {'regions': {}}
+    )
+
     # Ward history (issue #70 phase 1A) — GB-only. Drives the time slider
     # below the legend, letting readers scrub 2018→2026. Missing file is
     # benign: the slider chrome is hidden when WARD_HISTORY is empty.
@@ -720,6 +742,42 @@ def main():
             print(f'ca mayors in gb: {n_post + n_pre} polygons, {n_ca_years} years '
                   f'({n_post} post-era + {n_pre} pre-era hidden at year >= 2024)')
 
+    # EP overlay (#91) — synthetic init records (w=null) painted by
+    # paintAtYear at slider time. Same convention as Senedd / Holyrood
+    # pre-review polygons: DOM elements exist from page load so the
+    # slider can rewrite their fill at year=2014 / 2019 without needing
+    # to re-mount the SVG. EP_HISTORY (built below) drives the actual
+    # winners.
+    ep_paths: dict = {
+        code: r['path'] for code, r in ep_geoms.get('regions', {}).items()
+    }
+    ep_js: list = []
+    # Union of every party that ever won an EP seat at 2014 / 2019, used
+    # to seed the shared legend (UKIP / Brexit aren't surfaced by any
+    # other layer). Empty on GM so the legend code is a no-op there.
+    ep_parties: set = set()
+    if region == 'gb':
+        if ep_paths:
+            for code in ep_paths:
+                ep_js.append({
+                    'e':     code,
+                    'n':     ep_geoms['regions'][code].get('name', ''),
+                    'w':     None,
+                    'y':     None,
+                    'seats': {},
+                    'votes': {},
+                })
+            for info in ep_data.get('regions', {}).values():
+                for h in info.get('history', []):
+                    for p in (h.get('seats') or {}).keys():
+                        ep_parties.add(p)
+            n_ep_years = len(ep_data.get('years', []))
+            total_records = sum(
+                len(r.get('history', [])) for r in ep_data.get('regions', {}).values()
+            )
+            print(f'ep in gb: {len(ep_js)} polygons across '
+                  f'{n_ep_years} year stops ({total_records} ep-years)')
+
         # Ward-history coverage report — issue #70 acceptance gauge.
         n_history_wards = len(ward_history.get('wards', {}))
         n_ward_years = sum(len(w.get('history', []))
@@ -800,6 +858,7 @@ def main():
     js.append('const CA_MAYOR_PATHS = ' + json.dumps(ca_mayor_paths, separators=(',', ':')) + ';')
     js.append('const CA_MAYOR_PATHS_PRE = ' + json.dumps(ca_mayor_paths_pre, separators=(',', ':')) + ';')
     js.append('const CA_MAYOR_ERAS = ' + json.dumps(ca_mayor_eras, separators=(',', ':')) + ';')
+    js.append('const EP_PATHS = ' + json.dumps(ep_paths, separators=(',', ':')) + ';')
     js.append('const WARDS = ' + json.dumps(wards_js, separators=(',', ':')) + ';')
     js.append('const CEDS = ' + json.dumps(ceds_js, separators=(',', ':')) + ';')
     js.append('const HOLYROOD = ' + json.dumps(holyrood_js, separators=(',', ':')) + ';')
@@ -817,6 +876,9 @@ def main():
                                                 separators=(',', ':')) + ';')
     js.append('const CA_MAYORS = ' + json.dumps(ca_mayor_js, ensure_ascii=False,
                                                 separators=(',', ':')) + ';')
+    js.append('const EP = ' + json.dumps(ep_js, ensure_ascii=False,
+                                         separators=(',', ':')) + ';')
+    js.append('const EP_PARTIES = ' + json.dumps(sorted(ep_parties)) + ';')
     js.append('const PARTY_COLOURS = ' + json.dumps(PARTY_COLOURS) + ';')
     js.append('const PARTY_DISPLAY = ' + json.dumps(PARTY_DISPLAY) + ';')
     js.append('const LEGEND_ORDER = ' + json.dumps(LEGEND_ORDER) + ';')
@@ -988,6 +1050,17 @@ function fmtCaMayorTitle(c) {
   return lines.join('\n');
 }
 
+function fmtEPTitle(e) {
+  // EP polygons initial-render carry w=null (paintAtYear fills them at
+  // the first slider tick). At page-load we just label the layer so the
+  // tooltip explains why the polygon is grey until the slider moves.
+  const lines = ['European Parliament · ' + e.n];
+  if (e.y == null) {
+    lines.push('(use slider to view 2014 or 2019)');
+  }
+  return lines.join('\n');
+}
+
 // Render the one Current-control map. Ward + CED + Holyrood + Senedd + PCON
 // fills are interleaved into a single layer in chronological order — older
 // elections paint first, newer ones on top — so the topmost visible polygon
@@ -1014,9 +1087,9 @@ if (target) {
   // gla-mayor sits just above referendum (also below everything else) so
   // it paints under wards/PCON in the default view; the dedicated
   // "London Mayor only" view CSS-isolates it.
-  const KIND_ORDER = { referendum: -2, 'av-referendum': -2,
-                        'gla-mayor': -1, 'ca-mayor': -1,
-                        ced: 0, ward: 1, surrey: 2, pcon: 3,
+  const KIND_ORDER = { referendum: -3, 'av-referendum': -3,
+                        'gla-mayor': -2, 'ca-mayor': -2,
+                        ep: -1, ced: 0, ward: 1, surrey: 2, pcon: 3,
                         holyrood: 4, senedd: 5 };
   const items = [
     ...GLA_MAYOR.map(g => ({ kind: 'gla-mayor', d: GLA_MAYOR_PATH[g.g], y: g.y,
@@ -1064,6 +1137,10 @@ if (target) {
                           fill: (r.w && PARTY_COLOURS[r.w]) || NEUTRAL_FILL,
                           title: fmtAvRefTitle(r),
                           ds: { area: r.c, areaKind: r.k, url: r.url || null } })),
+    ...EP.map(e => ({ kind: 'ep', d: EP_PATHS[e.e], y: e.y,
+                      fill: (e.w && PARTY_COLOURS[e.w]) || NEUTRAL_FILL,
+                      title: fmtEPTitle(e),
+                      ds: { eer: e.e } })),
   ].filter(it => it.d);
   items.sort((a, b) => (a.y ?? 0) - (b.y ?? 0) || (KIND_ORDER[a.kind] - KIND_ORDER[b.kind]));
   const fills = document.createElementNS(SVG_NS, 'g');
@@ -1111,7 +1188,7 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 // Mayor polygon). DOM is built once; CSS does the per-mode hiding.
 const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon',
                'surrey', 'eu_ref_2016', 'av_ref_2011',
-               'gla-mayor', 'ca-mayor'];
+               'gla-mayor', 'ca-mayor', 'ep'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -1122,7 +1199,7 @@ const setView = name => {
 };
 if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
     || SURREY.length || EU_REF.length || AV_REF.length
-    || GLA_MAYOR.length || CA_MAYORS.length) {
+    || GLA_MAYOR.length || CA_MAYORS.length || EP.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
@@ -1140,6 +1217,11 @@ EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 AV_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
 CA_MAYORS.forEach(c => { if (c.w) partiesPresent.add(c.w); });
+// EP records ship with w=null (paintAtYear fills them at slider time),
+// so iterate the build-time party set instead. UKIP / Brexit Party
+// aren't surfaced by any other layer; without this the legend would
+// have no swatch for either even when EP polygons are clearly visible.
+EP_PARTIES.forEach(p => partiesPresent.add(p));
 const legend = document.getElementById('map-legend');
 if (legend) {
   LEGEND_ORDER.forEach(p => {
@@ -1181,7 +1263,8 @@ if (legend) {
                               | set(senedd_history.get('years', []))
                               | set(ge_history.get('years', []))
                               | set(gla_mayor_data.get('years', []))
-                              | set(ca_mayors_data.get('years', [])))
+                              | set(ca_mayors_data.get('years', []))
+                              | set(ep_data.get('years', [])))
         js.append('')
         js.append('const YEARS = ' + json.dumps(slider_years) + ';')
         js.append('const WARD_HISTORY = ' + json.dumps(
@@ -1340,6 +1423,33 @@ if (legend) {
             slot['history'].sort(key=lambda e: e['y'])
         js.append('const CA_MAYOR_HISTORY = ' + json.dumps(
             ca_history, separators=(',', ':'), ensure_ascii=False) + ';')
+
+        # EP_HISTORY (issue #91). 11 EERs × 2 years (2014, 2019). Each
+        # history entry carries seats + seats_raw + votes so paintAtYear
+        # can rebuild the d'Hondt seat-split tooltip at every slider tick.
+        # EP_RAW_DISPLAY shortens raw Wikipedia party strings the same way
+        # SENEDD_RAW_DISPLAY does, so labels stay historically accurate
+        # ("UKIP" / "Brexit Party") without flattening to "Other".
+        js.append('const EP_HISTORY = ' + json.dumps(
+            ep_data.get('regions', {}),
+            separators=(',', ':'), ensure_ascii=False) + ';')
+        js.append('const EP_RAW_DISPLAY = ' + json.dumps({
+            'UK Independence Party':             'UKIP',
+            'Brexit Party':                      'Brexit Party',
+            'The Brexit Party':                  'Brexit Party',
+            'Labour Party (UK)':                 'Lab',
+            'Conservative Party (UK)':           'Con',
+            'Liberal Democrats (UK)':            'LibDem',
+            'Green Party of England and Wales':  'Green',
+            'Scottish Greens':                   'Green',
+            'Scottish Green Party':              'Green',
+            'Scottish National Party':           'SNP',
+            'Plaid Cymru':                       'Plaid',
+            'Change UK':                         'Change UK',
+            'Change UK – The Independent Group': 'Change UK',
+            'Independent politician':            'Indep',
+            'Independent':                       'Indep',
+        }) + ';')
         js.append(r'''
 // Stamp each ward <path> with data-gss / data-year so paintAtYear can
 // look it up. Done here (GB-only splice) rather than in the shared
@@ -1775,6 +1885,66 @@ function paintAtYear(targetYear) {
         delete el.dataset.url;
       }
     });
+    // EP layer (#91). 11 EER polygons, single boundary era (1999-2020),
+    // two historical contests (2014, 2019). No era logic — every polygon
+    // is always visible at every slider year, painted by carry-forward
+    // from EP_HISTORY. Below 2014 (slider year < layer's first contest)
+    // every polygon paints grey. Tooltip is rebuilt on every tick so the
+    // d'Hondt seat split tracks the slider — for 2019 North East:
+    // "European Parliament · North East\n2019 · seats: Brexit Party 2 ·
+    // Lab 1\nPlurality: Brexit Party\nSource: en.wikipedia.org — click
+    // to open". Prefer seats_raw over seats so UKIP / Brexit Party
+    // render under their actual brand names rather than the normalised
+    // labels.
+    root.querySelectorAll('path.ep').forEach(el => {
+      const key = el.dataset.eer;
+      const eh = key && EP_HISTORY[key];
+      if (!eh) {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+        return;
+      }
+      let chosen = null;
+      for (const entry of eh.history) {
+        if (entry.y <= y) chosen = entry;
+        else break;
+      }
+      if (chosen) {
+        el.setAttribute('fill', PARTY_COLOURS[chosen.w] || NEUTRAL_FILL);
+        el.dataset.year = String(chosen.y);
+        if (chosen.url) el.dataset.url = chosen.url;
+        else delete el.dataset.url;
+        const titleEl = el.querySelector('title');
+        if (titleEl) {
+          const tl = ['European Parliament · ' + (eh.name || '')];
+          const raw = chosen.seats_raw || {};
+          const useRaw = Object.keys(raw).length > 0;
+          const seats = useRaw ? raw : (chosen.seats || {});
+          const entries = Object.entries(seats).sort((a, b) => b[1] - a[1]);
+          if (entries.length) {
+            tl.push(chosen.y + ' · seats: ' + entries.map(([p, n]) => {
+              const display = useRaw
+                ? (EP_RAW_DISPLAY[p] || p)
+                : (PARTY_DISPLAY[p] || p);
+              return display + ' ' + n;
+            }).join(' · '));
+          }
+          if (chosen.w) {
+            tl.push('Plurality: ' + (PARTY_DISPLAY[chosen.w] || chosen.w));
+          }
+          if (chosen.url) {
+            try { tl.push('Source: ' + new URL(chosen.url).hostname + ' — click to open'); }
+            catch (_) { /* invalid URL */ }
+          }
+          titleEl.textContent = tl.join('\n');
+        }
+      } else {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+      }
+    });
   });
 }
 
@@ -1793,7 +1963,7 @@ function paintAtYear(targetYear) {
     const target = evt.target.closest(
       'path.ward, path.ced, path.holyrood, path.senedd, path.pcon, '
       + 'path.referendum, path.av-referendum, '
-      + 'path.gla-mayor, path.ca-mayor');
+      + 'path.gla-mayor, path.ca-mayor, path.ep');
     if (!target || !target.dataset.url) return;
     window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
   });
