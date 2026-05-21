@@ -70,6 +70,14 @@ data/source/region_london_dec_2024.geojson
 data/source/pfa_dec_2024.geojson
 data/source/pfa_dec_2017.geojson
 
+# Raw cached London_Assembly_Constituencies_Dec_2017 BGC boundary GeoJSON
+# for the 14 LAC polygons from scripts/31 (~250 KB). Re-fetchable from
+# ONS Open Geography Portal; skip-if-exists in 31. LAC boundaries have
+# been stable since 2000 — the 2017 vintage describes the geometry at
+# every Assembly contest in scope (2012/2016/2021/2024). The simplified
+# paths land in data/gla_assembly_geom.json (committed).
+data/source/lac_dec_2017.geojson
+
 # Raw cached Combined_Authorities BGC boundary GeoJSON snapshots from
 # scripts/29 (#82). Dec 2025 carries 15 features (the modern set including
 # Devon & Torbay + Lancashire, which 29 filters out); Dec 2023 carries 10
