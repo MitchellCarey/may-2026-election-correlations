@@ -7,9 +7,11 @@ Greater London electorate (a single list — unlike Holyrood / Senedd which
 split their list seats across multiple electoral regions).
 
 Constituency boundaries have been stable since the GLA's creation in 2000,
-so the ONS December 2024 LAC vintage describes the geometry used at every
-target election (2012 / 2016 / 2021 / 2024). Code prefix `E32` is reserved
-by ONS for London Assembly Constituencies.
+so the ONS December 2017 LAC vintage (the only LAC snapshot shipped with
+geometry — post-2017 LAC_*_NC datasets carry names and codes only)
+describes the geometry used at every target election (2012 / 2016 / 2021
+/ 2024). Code prefix `E32` is reserved by ONS for London Assembly
+Constituencies.
 
 Per-year Wikipedia articles (`2012_London_Assembly_election` etc.) carry
 both the per-constituency FPTP tables and the London-wide list seat

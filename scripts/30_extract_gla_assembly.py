@@ -74,12 +74,6 @@ COLOUR_TO_PARTY = {
     'ffaaaa':  'Labour',
     'aacfff':  'Conservative',
     'ffd152':  'LibDem',
-    # Defensive — not observed in 2012-2024 but trivially adding for the
-    # most likely future cases. Standard "light" tints used by the
-    # London Assembly article editors.
-    'd6f3d6':  'Green',
-    'b3e0ff':  'Reform',
-    'ffcca8':  'LibDem',  # alternative orange tint
 }
 
 
