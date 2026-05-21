@@ -968,42 +968,49 @@ body {
 .map-svg.view-wards     path.pcon      { display: none; }
 .map-svg.view-wards     path.surrey    { display: none; }
 .map-svg.view-wards     path.gla-mayor { display: none; }
+.map-svg.view-wards     path.indyref   { display: none; }
 .map-svg.view-ceds      path.ward      { display: none; }
 .map-svg.view-ceds      path.holyrood  { display: none; }
 .map-svg.view-ceds      path.senedd    { display: none; }
 .map-svg.view-ceds      path.pcon      { display: none; }
 .map-svg.view-ceds      path.surrey    { display: none; }
 .map-svg.view-ceds      path.gla-mayor { display: none; }
+.map-svg.view-ceds      path.indyref   { display: none; }
 .map-svg.view-holyrood  path.ward      { display: none; }
 .map-svg.view-holyrood  path.ced       { display: none; }
 .map-svg.view-holyrood  path.senedd    { display: none; }
 .map-svg.view-holyrood  path.pcon      { display: none; }
 .map-svg.view-holyrood  path.surrey    { display: none; }
 .map-svg.view-holyrood  path.gla-mayor { display: none; }
+.map-svg.view-holyrood  path.indyref   { display: none; }
 .map-svg.view-senedd    path.ward      { display: none; }
 .map-svg.view-senedd    path.ced       { display: none; }
 .map-svg.view-senedd    path.holyrood  { display: none; }
 .map-svg.view-senedd    path.pcon      { display: none; }
 .map-svg.view-senedd    path.surrey    { display: none; }
 .map-svg.view-senedd    path.gla-mayor { display: none; }
+.map-svg.view-senedd    path.indyref   { display: none; }
 .map-svg.view-pcon      path.ward      { display: none; }
 .map-svg.view-pcon      path.ced       { display: none; }
 .map-svg.view-pcon      path.holyrood  { display: none; }
 .map-svg.view-pcon      path.senedd    { display: none; }
 .map-svg.view-pcon      path.surrey    { display: none; }
 .map-svg.view-pcon      path.gla-mayor { display: none; }
+.map-svg.view-pcon      path.indyref   { display: none; }
 .map-svg.view-surrey    path.ward      { display: none; }
 .map-svg.view-surrey    path.ced       { display: none; }
 .map-svg.view-surrey    path.holyrood  { display: none; }
 .map-svg.view-surrey    path.senedd    { display: none; }
 .map-svg.view-surrey    path.pcon      { display: none; }
 .map-svg.view-surrey    path.gla-mayor { display: none; }
+.map-svg.view-surrey    path.indyref   { display: none; }
 .map-svg.view-gla-mayor path.ward      { display: none; }
 .map-svg.view-gla-mayor path.ced       { display: none; }
 .map-svg.view-gla-mayor path.holyrood  { display: none; }
 .map-svg.view-gla-mayor path.senedd    { display: none; }
 .map-svg.view-gla-mayor path.pcon      { display: none; }
 .map-svg.view-gla-mayor path.surrey    { display: none; }
+.map-svg.view-gla-mayor path.indyref   { display: none; }
 /* EU Referendum 2016 (issue #85). path.referendum is hidden by default
    in every other view; only the dedicated .view-eu_ref_2016 reveals it.
    When that view is active, every other thematic layer is hidden in
@@ -1017,6 +1024,7 @@ body {
 .map-svg.view-eu_ref_2016 path.pcon      { display: none; }
 .map-svg.view-eu_ref_2016 path.surrey    { display: none; }
 .map-svg.view-eu_ref_2016 path.gla-mayor { display: none; }
+.map-svg.view-eu_ref_2016 path.indyref   { display: none; }
 .map-svg path.referendum {
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
@@ -1030,13 +1038,12 @@ body {
   stroke-width: 1.4;
   fill-opacity: 0.78;
 }
-/* Scottish independence referendum 2014 (issue #86). path.indyref is
-   hidden by default and revealed by paintAtYear at slider year === 2014;
-   there's no dedicated view button — visibility is purely slider-driven.
-   Styling mirrors path.referendum so the polygons read consistently
-   when they're on screen. */
+/* Scottish independence referendum 2014 (issue #86). path.indyref has
+   no dedicated view button — paintAtYear toggles `display: none` inline
+   at every slider year except 2014, where it sets `display: ''` so the
+   single-layer view CSS rules below can still hide it. Styling mirrors
+   path.referendum so the polygons read consistently when on screen. */
 .map-svg path.indyref {
-  display: none;
   stroke: rgba(20,17,13,0.45);
   stroke-width: 0.4;
   stroke-linejoin: round;

@@ -1602,7 +1602,10 @@ function paintAtYear(targetYear) {
     // era discrimination (single-vintage layer), no carry-forward
     // (single-year layer). Fills + tooltips are already populated at
     // initial render via fmtIndyrefTitle; this block toggles visibility
-    // and is otherwise a no-op.
+    // and is otherwise a no-op. Visible branch sets `display: ''` (not
+    // `'inline'`) so the `.view-X path.indyref { display: none }` CSS
+    // rules can still hide the layer when a single-layer view is active
+    // — same pattern as path.pcon / path.holyrood / path.senedd above.
     root.querySelectorAll('path.indyref').forEach(el => {
       el.style.display = (y === 2014) ? '' : 'none';
     });
