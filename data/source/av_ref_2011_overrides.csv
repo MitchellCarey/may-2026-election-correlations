@@ -1,0 +1,7 @@
+kind,wiki_display,code,note
+lad,Bristol,E06000023,Wikipedia uses bare "Bristol"; ONS calls it "Bristol, City of"
+lad,Herefordshire,E06000019,Wikipedia uses bare "Herefordshire"; ONS calls it "Herefordshire, County of"
+lad,Kingston upon Hull,E06000010,Wikipedia uses bare "Kingston upon Hull"; ONS calls it "Kingston upon Hull, City of"
+spc,Edinburgh North and Leith,S16000106,Wikipedia uses "Edinburgh North and Leith"; the canonical Holyrood name is "Edinburgh Northern and Leith"
+spc,Orkney,S16000135,Wikipedia uses bare "Orkney"; the canonical Holyrood name is "Orkney Islands"
+spc,Shetland,S16000142,Wikipedia uses bare "Shetland"; the canonical Holyrood name is "Shetland Islands"
