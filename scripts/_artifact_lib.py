@@ -69,6 +69,11 @@ PARTY_COLOURS_MAP = {
     # Yes/No (Scottish indyref 2014) when that ships.
     "Leave":        "#552288",
     "Remain":       "#ffcc00",
+    # AV referendum 2011 (issue #92) — namespaced "AV Yes" / "AV No" so the
+    # labels don't collide with #86's Indyref Yes/No or any future Yes/No
+    # referendum. Mid-blue / red — distinct from EU Ref's purple/yellow.
+    "AV Yes":       "#1f78b4",
+    "AV No":        "#e31a1c",
     "Other":        "#a87b3e",
     "Pending":      "#cccccc",
 }
@@ -98,6 +103,8 @@ PARTY_DISPLAY_MAP = {
     "Speaker":      "Speaker of the House",
     "Leave":        "Leave",
     "Remain":       "Remain",
+    "AV Yes":       "Yes",
+    "AV No":        "No",
     "Other":        "Other",
     "Pending":      "Awaiting declaration",
 }
@@ -126,6 +133,10 @@ LEGEND_ORDER_MAP = [
     # ship in the shared legend so the swatch-to-meaning mapping is
     # available; the EU-ref view's CSS leaves the legend visible.
     "Leave", "Remain",
+    # AV referendum 2011 (issue #92). Same opt-in / view-gated visibility
+    # as EU Ref; ship the swatches so the legend reads correctly under the
+    # AV-ref view.
+    "AV Yes", "AV No",
     "Other", "Pending",
 ]
 
