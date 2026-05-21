@@ -89,6 +89,7 @@ const EU_REF_PATHS = {};
 const INDYREF_PATHS = {};
 const AV_REF_PATHS = {};
 const GLA_MAYOR_PATH = {};
+const GLA_ASSEMBLY_PATHS = {};
 const CA_MAYOR_PATHS = {};
 const CA_MAYOR_PATHS_PRE = {};
 const CA_MAYOR_ERAS = {};
@@ -103,6 +104,7 @@ const EU_REF = [];
 const INDYREF = [];
 const AV_REF = [];
 const GLA_MAYOR = [];
+const GLA_ASSEMBLY = [];
 const CA_MAYORS = [];
 const EP = [];
 const EP_PARTIES = [];
@@ -288,6 +290,21 @@ function fmtGlaMayorTitle(g) {
   return lines.join('\n');
 }
 
+function fmtGlaAssemblyTitle(a) {
+  // Initial render only — paintAtYear rewrites the title at slider time
+  // with both the FPTP winner and the London-wide list seat breakdown.
+  // The synthetic init record has w=null/y=null, so this renders the
+  // "use slider" placeholder; once paintAtYear runs (at the slider's
+  // initial year), the full title arrives.
+  const lines = ['London Assembly · ' + a.n];
+  if (a.w) {
+    lines.push((a.y ? a.y + ' · ' : '') + 'winner: ' + (PARTY_DISPLAY[a.w] || a.w));
+  } else {
+    lines.push('(use slider to view a London Assembly year)');
+  }
+  return lines.join('\n');
+}
+
 function fmtCaMayorTitle(c) {
   const lines = [(c.n || 'Combined Authority') + ' · Mayor'];
   if (c.w) {
@@ -334,7 +351,9 @@ if (target) {
   // view is active and a viewer paints over an overlapping later layer.
   // gla-mayor sits just above referendum (also below everything else) so
   // it paints under wards/PCON in the default view; the dedicated
-  // "London Mayor only" view CSS-isolates it.
+  // "London Mayor only" view CSS-isolates it. gla-assembly sits just above
+  // gla-mayor with the same logic — its dedicated "London Assembly only"
+  // view isolates the 14 LAC polygons.
   // indyref (#86) sorts alongside referendum at the bottom of the stack:
   // its visibility is slider-driven (`paintAtYear` shows path.indyref
   // only at y === 2014; CSS hides it at every other slider position),
@@ -345,13 +364,19 @@ if (target) {
   // ca-mayor (#82) is paint-tier mate of gla-mayor.
   const KIND_ORDER = { referendum: -3, 'av-referendum': -3, indyref: -3,
                         'gla-mayor': -2, 'ca-mayor': -2,
-                        ep: -1, ced: 0, ward: 1, surrey: 2, pcon: 3,
+                        'gla-assembly': -1, ep: -1,
+                        ced: 0, ward: 1, surrey: 2, pcon: 3,
                         holyrood: 4, senedd: 5 };
   const items = [
     ...GLA_MAYOR.map(g => ({ kind: 'gla-mayor', d: GLA_MAYOR_PATH[g.g], y: g.y,
                              fill: (g.w && PARTY_COLOURS[g.w]) || NEUTRAL_FILL,
                              title: fmtGlaMayorTitle(g),
                              ds: { gla: g.g } })),
+    ...GLA_ASSEMBLY.map(a => ({ kind: 'gla-assembly',
+                                d: GLA_ASSEMBLY_PATHS[a.lac], y: a.y,
+                                fill: (a.w && PARTY_COLOURS[a.w]) || NEUTRAL_FILL,
+                                title: fmtGlaAssemblyTitle(a),
+                                ds: { lac: a.lac } })),
     ...CA_MAYORS.map(c => ({ kind: 'ca-mayor',
                              d: CA_MAYOR_PATHS[c.c] || CA_MAYOR_PATHS_PRE[c.c],
                              y: c.y,
@@ -444,11 +469,14 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 // Holyrood SPCs), .view-senedd (only Senedd constituencies), .view-pcon
 // (only GE 2024 PCONs), .view-surrey (only the two Surrey unitaries),
 // .view-eu_ref_2016 (only EU referendum LADs), .view-av_ref_2011 (only
-// AV referendum counting areas), and .view-gla-mayor (only the GLA
-// Mayor polygon). DOM is built once; CSS does the per-mode hiding.
+// AV referendum counting areas), .view-gla-mayor (only the GLA Mayor
+// polygon), .view-gla-assembly (only the 14 London Assembly
+// Constituency polygons), .view-ca-mayor (only the CA Mayor polygons),
+// and .view-ep (only the EP EER polygons). DOM is built once; CSS does
+// the per-mode hiding.
 const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon',
                'surrey', 'eu_ref_2016', 'av_ref_2011',
-               'gla-mayor', 'ca-mayor', 'ep'];
+               'gla-mayor', 'gla-assembly', 'ca-mayor', 'ep'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -459,7 +487,7 @@ const setView = name => {
 };
 if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
     || SURREY.length || EU_REF.length || INDYREF.length || AV_REF.length
-    || GLA_MAYOR.length || CA_MAYORS.length || EP.length) {
+    || GLA_MAYOR.length || GLA_ASSEMBLY.length || CA_MAYORS.length || EP.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
@@ -477,6 +505,7 @@ EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 INDYREF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 AV_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
+GLA_ASSEMBLY.forEach(a => { if (a.w) partiesPresent.add(a.w); });
 CA_MAYORS.forEach(c => { if (c.w) partiesPresent.add(c.w); });
 // EP records ship with w=null (paintAtYear fills them at slider time),
 // so iterate the build-time party set instead. UKIP / Brexit Party

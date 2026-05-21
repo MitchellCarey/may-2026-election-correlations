@@ -1,0 +1,582 @@
+[
+  {
+    "lac24cd": "E32000001",
+    "name": "Barnet and Camden",
+    "year": 2012,
+    "winner": "Labour",
+    "candidate": "Andrew Dismore",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000002",
+    "name": "Bexley and Bromley",
+    "year": 2012,
+    "winner": "Conservative",
+    "candidate": "James Cleverly",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000003",
+    "name": "Brent and Harrow",
+    "year": 2012,
+    "winner": "Labour",
+    "candidate": "Navin Shah",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000004",
+    "name": "City and East",
+    "year": 2012,
+    "winner": "Labour",
+    "candidate": "John Biggs",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000005",
+    "name": "Croydon and Sutton",
+    "year": 2012,
+    "winner": "Conservative",
+    "candidate": "Steve O'Connell",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000006",
+    "name": "Ealing and Hillingdon",
+    "year": 2012,
+    "winner": "Labour",
+    "candidate": "Onkar Sahota",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000007",
+    "name": "Enfield and Haringey",
+    "year": 2012,
+    "winner": "Labour",
+    "candidate": "Joanne McCartney",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000008",
+    "name": "Greenwich and Lewisham",
+    "year": 2012,
+    "winner": "Labour",
+    "candidate": "Len Duvall",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000009",
+    "name": "Havering and Redbridge",
+    "year": 2012,
+    "winner": "Conservative",
+    "candidate": "Roger Evans",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000010",
+    "name": "Lambeth and Southwark",
+    "year": 2012,
+    "winner": "Labour",
+    "candidate": "Val Shawcross",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000011",
+    "name": "Merton and Wandsworth",
+    "year": 2012,
+    "winner": "Conservative",
+    "candidate": "Richard Tracey",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000012",
+    "name": "North East",
+    "year": 2012,
+    "winner": "Labour",
+    "candidate": "Jennette Arnold",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000013",
+    "name": "South West",
+    "year": 2012,
+    "winner": "Conservative",
+    "candidate": "Tony Arbour",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000014",
+    "name": "West Central",
+    "year": 2012,
+    "winner": "Conservative",
+    "candidate": "Kit Malthouse",
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "region": "Greater London",
+    "year": 2012,
+    "seats": {
+      "Labour": 4,
+      "Conservative": 3,
+      "Green": 2,
+      "LibDem": 2
+    },
+    "seats_raw": {
+      "Labour Party (UK)": 4,
+      "Conservative Party (UK)": 3,
+      "Green Party of England and Wales": 2,
+      "Liberal Democrats (UK)": 2
+    },
+    "url": "https://en.wikipedia.org/wiki/2012_London_Assembly_election",
+    "kind": "list"
+  },
+  {
+    "lac24cd": "E32000001",
+    "name": "Barnet and Camden",
+    "year": 2016,
+    "winner": "Labour",
+    "candidate": "Andrew Dismore",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000002",
+    "name": "Bexley and Bromley",
+    "year": 2016,
+    "winner": "Conservative",
+    "candidate": "Gareth Bacon",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000003",
+    "name": "Brent and Harrow",
+    "year": 2016,
+    "winner": "Labour",
+    "candidate": "Navin Shah",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000004",
+    "name": "City and East",
+    "year": 2016,
+    "winner": "Labour",
+    "candidate": "Unmesh Desai",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000005",
+    "name": "Croydon and Sutton",
+    "year": 2016,
+    "winner": "Conservative",
+    "candidate": "Steve O'Connell",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000006",
+    "name": "Ealing and Hillingdon",
+    "year": 2016,
+    "winner": "Labour",
+    "candidate": "Onkar Sahota",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000007",
+    "name": "Enfield and Haringey",
+    "year": 2016,
+    "winner": "Labour",
+    "candidate": "Joanne McCartney",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000008",
+    "name": "Greenwich and Lewisham",
+    "year": 2016,
+    "winner": "Labour",
+    "candidate": "Len Duvall",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000009",
+    "name": "Havering and Redbridge",
+    "year": 2016,
+    "winner": "Conservative",
+    "candidate": "Keith Prince",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000010",
+    "name": "Lambeth and Southwark",
+    "year": 2016,
+    "winner": "Labour",
+    "candidate": "Florence Eshalomi",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000011",
+    "name": "Merton and Wandsworth",
+    "year": 2016,
+    "winner": "Labour",
+    "candidate": "Leonie Cooper",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000012",
+    "name": "North East",
+    "year": 2016,
+    "winner": "Labour",
+    "candidate": "Jennette Arnold",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000013",
+    "name": "South West",
+    "year": 2016,
+    "winner": "Conservative",
+    "candidate": "Tony Arbour",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000014",
+    "name": "West Central",
+    "year": 2016,
+    "winner": "Conservative",
+    "candidate": "Tony Devenish",
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "region": "Greater London",
+    "year": 2016,
+    "seats": {
+      "Labour": 3,
+      "Conservative": 3,
+      "Green": 2,
+      "Other": 2,
+      "LibDem": 1
+    },
+    "seats_raw": {
+      "Labour": 3,
+      "Conservative": 3,
+      "Green": 2,
+      "UKIP": 2,
+      "Liberal Democrats": 1
+    },
+    "url": "https://en.wikipedia.org/wiki/2016_London_Assembly_election",
+    "kind": "list"
+  },
+  {
+    "lac24cd": "E32000001",
+    "name": "Barnet and Camden",
+    "year": 2021,
+    "winner": "Labour",
+    "candidate": "Anne Clarke",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000002",
+    "name": "Bexley and Bromley",
+    "year": 2021,
+    "winner": "Conservative",
+    "candidate": "Peter Fortune",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000003",
+    "name": "Brent and Harrow",
+    "year": 2021,
+    "winner": "Labour",
+    "candidate": "Krupesh Hirani",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000004",
+    "name": "City and East",
+    "year": 2021,
+    "winner": "Labour",
+    "candidate": "Unmesh Desai",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000005",
+    "name": "Croydon and Sutton",
+    "year": 2021,
+    "winner": "Conservative",
+    "candidate": "Neil Garratt",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000006",
+    "name": "Ealing and Hillingdon",
+    "year": 2021,
+    "winner": "Labour",
+    "candidate": "Onkar Sahota",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000007",
+    "name": "Enfield and Haringey",
+    "year": 2021,
+    "winner": "Labour",
+    "candidate": "Joanne McCartney",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000008",
+    "name": "Greenwich and Lewisham",
+    "year": 2021,
+    "winner": "Labour",
+    "candidate": "Len Duvall",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000009",
+    "name": "Havering and Redbridge",
+    "year": 2021,
+    "winner": "Conservative",
+    "candidate": "Keith Prince",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000010",
+    "name": "Lambeth and Southwark",
+    "year": 2021,
+    "winner": "Labour",
+    "candidate": "Marina Ahmad",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000011",
+    "name": "Merton and Wandsworth",
+    "year": 2021,
+    "winner": "Labour",
+    "candidate": "Leonie Cooper",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000012",
+    "name": "North East",
+    "year": 2021,
+    "winner": "Labour",
+    "candidate": "Sem Moema",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000013",
+    "name": "South West",
+    "year": 2021,
+    "winner": "Conservative",
+    "candidate": "Nicholas Rogers",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000014",
+    "name": "West Central",
+    "year": 2021,
+    "winner": "Conservative",
+    "candidate": "Tony Devenish",
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "region": "Greater London",
+    "year": 2021,
+    "seats": {
+      "Labour": 2,
+      "Conservative": 4,
+      "Green": 3,
+      "LibDem": 2
+    },
+    "seats_raw": {
+      "Labour": 2,
+      "Conservative": 4,
+      "Green": 3,
+      "Liberal Democrats": 2
+    },
+    "url": "https://en.wikipedia.org/wiki/2021_London_Assembly_election",
+    "kind": "list"
+  },
+  {
+    "lac24cd": "E32000001",
+    "name": "Barnet and Camden",
+    "year": 2024,
+    "winner": "Labour",
+    "candidate": "Anne Clarke",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000002",
+    "name": "Bexley and Bromley",
+    "year": 2024,
+    "winner": "Conservative",
+    "candidate": "Thomas Turrell",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000003",
+    "name": "Brent and Harrow",
+    "year": 2024,
+    "winner": "Labour",
+    "candidate": "Krupesh Hirani",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000004",
+    "name": "City and East",
+    "year": 2024,
+    "winner": "Labour",
+    "candidate": "Unmesh Desai",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000005",
+    "name": "Croydon and Sutton",
+    "year": 2024,
+    "winner": "Conservative",
+    "candidate": "Neil Garratt",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000006",
+    "name": "Ealing and Hillingdon",
+    "year": 2024,
+    "winner": "Labour",
+    "candidate": "Bassam Mahfouz",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000007",
+    "name": "Enfield and Haringey",
+    "year": 2024,
+    "winner": "Labour",
+    "candidate": "Joanne McCartney",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000008",
+    "name": "Greenwich and Lewisham",
+    "year": 2024,
+    "winner": "Labour",
+    "candidate": "Len Duvall",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000009",
+    "name": "Havering and Redbridge",
+    "year": 2024,
+    "winner": "Conservative",
+    "candidate": "Keith Prince",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000010",
+    "name": "Lambeth and Southwark",
+    "year": 2024,
+    "winner": "Labour",
+    "candidate": "Marina Ahmad",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000011",
+    "name": "Merton and Wandsworth",
+    "year": 2024,
+    "winner": "Labour",
+    "candidate": "Leonie Cooper",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000012",
+    "name": "North East",
+    "year": 2024,
+    "winner": "Labour",
+    "candidate": "Sem Moema",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000013",
+    "name": "South West",
+    "year": 2024,
+    "winner": "LibDem",
+    "candidate": "Gareth Roberts",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "lac24cd": "E32000014",
+    "name": "West Central",
+    "year": 2024,
+    "winner": "Labour",
+    "candidate": "James Small-Edwards",
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "fptp"
+  },
+  {
+    "region": "Greater London",
+    "year": 2024,
+    "seats": {
+      "Labour": 1,
+      "Conservative": 5,
+      "Green": 3,
+      "LibDem": 1,
+      "Reform": 1
+    },
+    "seats_raw": {
+      "Labour": 1,
+      "Conservative": 5,
+      "Green": 3,
+      "Liberal Democrats": 1,
+      "Reform UK": 1
+    },
+    "url": "https://en.wikipedia.org/wiki/2024_London_Assembly_election",
+    "kind": "list"
+  }
+]

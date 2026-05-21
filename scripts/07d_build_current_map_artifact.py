@@ -227,6 +227,28 @@ def main():
         else {'regions': {}}
     )
 
+    # GLA Assembly overlay (issue #89) — GB-only layer painting the 14
+    # London Assembly Constituency polygons (E32000001..E32000014) by each
+    # FPTP winner 2012 / 2016 / 2021 / 2024, with the London-wide list
+    # seat allocation (11 d'Hondt seats per contest) spliced into the
+    # tooltip per slider year. Sibling of the GLA Mayor overlay above:
+    # the LAC boundaries have been stable since the GLA's creation in 2000,
+    # so the polygon set is era-less and the renderer skips the data-era
+    # toggle. Year stops 2012 / 2016 / 2021 / 2024 already exist in the
+    # slider's union (mayor / PCON / CED / wards), so no new ticks land.
+    gla_assembly_geom_path = DATA / 'gla_assembly_geom.json'
+    gla_assembly_history_path = DATA / 'gla_assembly_history.json'
+    gla_assembly_geoms = (
+        json.loads(gla_assembly_geom_path.read_text())
+        if region == 'gb' and gla_assembly_geom_path.exists()
+        else {'constituencies': {}}
+    )
+    gla_assembly_history = (
+        json.loads(gla_assembly_history_path.read_text())
+        if region == 'gb' and gla_assembly_history_path.exists()
+        else {'years': [], 'constituencies': {}, 'regions': {}}
+    )
+
     # CA Mayor overlay (issue #82) — GB-only. 13 Combined-Authority mayoral
     # regions painted at any historical slider year via per-CA history (~30
     # contests across 2017-2025). North East CA was reformed May 2024 from
@@ -758,6 +780,34 @@ def main():
             n_gla_years = len(gla_mayor_data.get('years', []))
             print(f'gla mayor in gb: {len(gla_mayor_js)} polygon, {n_gla_years} years')
 
+    # GLA Assembly overlay (GB only) — 14 polygons, four years, plus a single
+    # London-wide list block per year for the d'Hondt 11-seat allocation.
+    # Synthetic init records (w=null, y=null) seed the DOM; paintAtYear walks
+    # GLA_ASSEMBLY_HISTORY[lac].history (FPTP winner) and splices a
+    # London-wide-list line via GLA_ASSEMBLY_REGION_HISTORY at slider time.
+    # Era-less for the same reason as the mayor polygon.
+    gla_assembly_paths: dict = {
+        code: r['path']
+        for code, r in gla_assembly_geoms.get('constituencies', {}).items()
+    }
+    gla_assembly_js: list = []
+    if region == 'gb':
+        if gla_assembly_paths:
+            for code, info in gla_assembly_geoms.get('constituencies', {}).items():
+                gla_assembly_js.append({
+                    'lac': code,
+                    'n':   info.get('name', code),
+                    'w':   None,
+                    'y':   None,
+                })
+            n_la_years = len(gla_assembly_history.get('years', []))
+            n_la_fptp = sum(len(c.get('history', []))
+                            for c in gla_assembly_history.get('constituencies', {}).values())
+            n_la_list = sum(len(r.get('history', []))
+                            for r in gla_assembly_history.get('regions', {}).values())
+            print(f'gla assembly in gb: {len(gla_assembly_js)} polygons, '
+                  f'{n_la_years} years (FPTP {n_la_fptp}/56 + list {n_la_list}/4)')
+
     # CA Mayor overlay (GB only) — 13 post-era + 1 pre-era polygon. The two
     # North polygons (E47000011 / E47000014) carry era='pre'/'post' so
     # paintAtYear can hide whichever is wrong-side of the 2024 split year;
@@ -913,6 +963,7 @@ def main():
     js.append('const INDYREF_PATHS = ' + json.dumps(indyref_paths, separators=(',', ':')) + ';')
     js.append('const AV_REF_PATHS = ' + json.dumps(av_ref_paths, separators=(',', ':')) + ';')
     js.append('const GLA_MAYOR_PATH = ' + json.dumps(gla_mayor_paths, separators=(',', ':')) + ';')
+    js.append('const GLA_ASSEMBLY_PATHS = ' + json.dumps(gla_assembly_paths, separators=(',', ':')) + ';')
     js.append('const CA_MAYOR_PATHS = ' + json.dumps(ca_mayor_paths, separators=(',', ':')) + ';')
     js.append('const CA_MAYOR_PATHS_PRE = ' + json.dumps(ca_mayor_paths_pre, separators=(',', ':')) + ';')
     js.append('const CA_MAYOR_ERAS = ' + json.dumps(ca_mayor_eras, separators=(',', ':')) + ';')
@@ -934,6 +985,8 @@ def main():
                                              separators=(',', ':')) + ';')
     js.append('const GLA_MAYOR = ' + json.dumps(gla_mayor_js, ensure_ascii=False,
                                                 separators=(',', ':')) + ';')
+    js.append('const GLA_ASSEMBLY = ' + json.dumps(gla_assembly_js, ensure_ascii=False,
+                                                   separators=(',', ':')) + ';')
     js.append('const CA_MAYORS = ' + json.dumps(ca_mayor_js, ensure_ascii=False,
                                                 separators=(',', ':')) + ';')
     js.append('const EP = ' + json.dumps(ep_js, ensure_ascii=False,
@@ -1122,6 +1175,21 @@ function fmtGlaMayorTitle(g) {
   return lines.join('\n');
 }
 
+function fmtGlaAssemblyTitle(a) {
+  // Initial render only — paintAtYear rewrites the title at slider time
+  // with both the FPTP winner and the London-wide list seat breakdown.
+  // The synthetic init record has w=null/y=null, so this renders the
+  // "use slider" placeholder; once paintAtYear runs (at the slider's
+  // initial year), the full title arrives.
+  const lines = ['London Assembly · ' + a.n];
+  if (a.w) {
+    lines.push((a.y ? a.y + ' · ' : '') + 'winner: ' + (PARTY_DISPLAY[a.w] || a.w));
+  } else {
+    lines.push('(use slider to view a London Assembly year)');
+  }
+  return lines.join('\n');
+}
+
 function fmtCaMayorTitle(c) {
   const lines = [(c.n || 'Combined Authority') + ' · Mayor'];
   if (c.w) {
@@ -1168,7 +1236,9 @@ if (target) {
   // view is active and a viewer paints over an overlapping later layer.
   // gla-mayor sits just above referendum (also below everything else) so
   // it paints under wards/PCON in the default view; the dedicated
-  // "London Mayor only" view CSS-isolates it.
+  // "London Mayor only" view CSS-isolates it. gla-assembly sits just above
+  // gla-mayor with the same logic — its dedicated "London Assembly only"
+  // view isolates the 14 LAC polygons.
   // indyref (#86) sorts alongside referendum at the bottom of the stack:
   // its visibility is slider-driven (`paintAtYear` shows path.indyref
   // only at y === 2014; CSS hides it at every other slider position),
@@ -1179,13 +1249,19 @@ if (target) {
   // ca-mayor (#82) is paint-tier mate of gla-mayor.
   const KIND_ORDER = { referendum: -3, 'av-referendum': -3, indyref: -3,
                         'gla-mayor': -2, 'ca-mayor': -2,
-                        ep: -1, ced: 0, ward: 1, surrey: 2, pcon: 3,
+                        'gla-assembly': -1, ep: -1,
+                        ced: 0, ward: 1, surrey: 2, pcon: 3,
                         holyrood: 4, senedd: 5 };
   const items = [
     ...GLA_MAYOR.map(g => ({ kind: 'gla-mayor', d: GLA_MAYOR_PATH[g.g], y: g.y,
                              fill: (g.w && PARTY_COLOURS[g.w]) || NEUTRAL_FILL,
                              title: fmtGlaMayorTitle(g),
                              ds: { gla: g.g } })),
+    ...GLA_ASSEMBLY.map(a => ({ kind: 'gla-assembly',
+                                d: GLA_ASSEMBLY_PATHS[a.lac], y: a.y,
+                                fill: (a.w && PARTY_COLOURS[a.w]) || NEUTRAL_FILL,
+                                title: fmtGlaAssemblyTitle(a),
+                                ds: { lac: a.lac } })),
     ...CA_MAYORS.map(c => ({ kind: 'ca-mayor',
                              d: CA_MAYOR_PATHS[c.c] || CA_MAYOR_PATHS_PRE[c.c],
                              y: c.y,
@@ -1278,11 +1354,14 @@ if (boroughBtn && Object.keys(COUNTRY_PATHS).length) {
 // Holyrood SPCs), .view-senedd (only Senedd constituencies), .view-pcon
 // (only GE 2024 PCONs), .view-surrey (only the two Surrey unitaries),
 // .view-eu_ref_2016 (only EU referendum LADs), .view-av_ref_2011 (only
-// AV referendum counting areas), and .view-gla-mayor (only the GLA
-// Mayor polygon). DOM is built once; CSS does the per-mode hiding.
+// AV referendum counting areas), .view-gla-mayor (only the GLA Mayor
+// polygon), .view-gla-assembly (only the 14 London Assembly
+// Constituency polygons), .view-ca-mayor (only the CA Mayor polygons),
+// and .view-ep (only the EP EER polygons). DOM is built once; CSS does
+// the per-mode hiding.
 const VIEWS = ['recent', 'wards', 'ceds', 'holyrood', 'senedd', 'pcon',
                'surrey', 'eu_ref_2016', 'av_ref_2011',
-               'gla-mayor', 'ca-mayor', 'ep'];
+               'gla-mayor', 'gla-assembly', 'ca-mayor', 'ep'];
 const setView = name => {
   document.querySelectorAll('.map-svg').forEach(svg => {
     VIEWS.forEach(v => svg.classList.toggle('view-' + v, v === name));
@@ -1293,7 +1372,7 @@ const setView = name => {
 };
 if (CEDS.length || HOLYROOD.length || SENEDD.length || PCON.length
     || SURREY.length || EU_REF.length || INDYREF.length || AV_REF.length
-    || GLA_MAYOR.length || CA_MAYORS.length || EP.length) {
+    || GLA_MAYOR.length || GLA_ASSEMBLY.length || CA_MAYORS.length || EP.length) {
   document.querySelectorAll('[data-view]').forEach(btn => {
     btn.addEventListener('click', () => setView(btn.dataset.view));
   });
@@ -1311,6 +1390,7 @@ EU_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 INDYREF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 AV_REF.forEach(r => { if (r.w) partiesPresent.add(r.w); });
 GLA_MAYOR.forEach(g => { if (g.w) partiesPresent.add(g.w); });
+GLA_ASSEMBLY.forEach(a => { if (a.w) partiesPresent.add(a.w); });
 CA_MAYORS.forEach(c => { if (c.w) partiesPresent.add(c.w); });
 // EP records ship with w=null (paintAtYear fills them at slider time),
 // so iterate the build-time party set instead. UKIP / Brexit Party
@@ -1497,6 +1577,45 @@ if (legend) {
             slot['history'].sort(key=lambda e: e['y'])
         js.append('const GLA_MAYOR_HISTORY = ' + json.dumps(
             gla_history, separators=(',', ':'), ensure_ascii=False) + ';')
+
+        # GLA_ASSEMBLY_HISTORY (issue #89). 14 LAC polygons (E32000001..14),
+        # four contests (2012 / 2016 / 2021 / 2024). Same shape as the
+        # Senedd / Holyrood constituency histories:
+        # {<LAC24CD>: {name, region, history: [{y, w, src, url, candidate}]}}
+        # Era-less (no boundary review since 2000), so paintAtYear's
+        # `path.gla-assembly` block carries no visibility toggle. At slider
+        # years below 2012 the polygons paint grey (no history entry to
+        # choose); above 2024 the carry-forward keeps the 2024 result.
+        js.append('const GLA_ASSEMBLY_HISTORY = ' + json.dumps(
+            gla_assembly_history.get('constituencies', {}),
+            separators=(',', ':'), ensure_ascii=False) + ';')
+        # GLA_ASSEMBLY_REGION_HISTORY — the London-wide list seat allocations
+        # per year (11 d'Hondt seats per contest). One region: "Greater
+        # London" (no per-region split; the d'Hondt allocation runs across
+        # the whole electorate, unlike Holyrood's 8 regions and Senedd's 5).
+        # Each entry has `seats` (normalised) + `seats_raw` (raw labels);
+        # GLA_ASSEMBLY_RAW_DISPLAY shortens the raw labels for the tooltip
+        # while preserving party distinctions (UKIP 2016, Reform 2024).
+        js.append('const GLA_ASSEMBLY_REGION_HISTORY = ' + json.dumps(
+            gla_assembly_history.get('regions', {}),
+            separators=(',', ':'), ensure_ascii=False) + ';')
+        js.append('const GLA_ASSEMBLY_RAW_DISPLAY = ' + json.dumps({
+            'Labour':                            'Lab',
+            'Labour Party (UK)':                 'Lab',
+            'Conservative':                      'Con',
+            'Conservative Party (UK)':           'Con',
+            'London Conservatives':              'Con',
+            'Green':                             'Green',
+            'Green Party of England and Wales':  'Green',
+            'London Green Party':                'Green',
+            'Liberal Democrats':                 'LibDem',
+            'Liberal Democrats (UK)':            'LibDem',
+            'Lib Dems':                          'LibDem',
+            'Reform UK':                         'Reform',
+            'UK Independence Party':             'UKIP',
+            'UKIP':                              'UKIP',
+            'Independent':                       'Indep',
+        }) + ';')
 
         # INDYREF_HISTORY (#86). One polygon per Scottish council, one
         # contest (2014). Same {<code>: {name, history: [{y, w, votes, pct,
@@ -2009,6 +2128,77 @@ function paintAtYear(targetYear) {
         delete el.dataset.url;
       }
     });
+    // GLA Assembly layer (#89). 14 polygons (E32000001..14), always visible
+    // (no boundary review since 2000). For each polygon: paint the FPTP
+    // constituency winner from GLA_ASSEMBLY_HISTORY, then splice in the
+    // London-wide list seat breakdown from GLA_ASSEMBLY_REGION_HISTORY for
+    // the same slider year (carry-forward by newest-y-<=-target). At
+    // year < 2012 (no slider stop in current scope) the polygon paints grey.
+    root.querySelectorAll('path.gla-assembly').forEach(el => {
+      const key = el.dataset.lac;
+      const ah = key && GLA_ASSEMBLY_HISTORY[key];
+      if (!ah) {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+        return;
+      }
+      let chosen = null;
+      for (const entry of ah.history) {
+        if (entry.y <= y) chosen = entry;
+        else break;
+      }
+      if (chosen) {
+        el.setAttribute('fill', PARTY_COLOURS[chosen.w] || NEUTRAL_FILL);
+        el.dataset.year = String(chosen.y);
+        if (chosen.url) el.dataset.url = chosen.url;
+        else delete el.dataset.url;
+        const titleEl = el.querySelector('title');
+        if (titleEl) {
+          const tl = ['London Assembly · ' + (ah.name || '')];
+          const winLine = 'Constituency ' + chosen.y + ': '
+                          + (PARTY_DISPLAY[chosen.w] || chosen.w);
+          tl.push(chosen.candidate ? winLine + ' (' + chosen.candidate + ')' : winLine);
+          // London-wide list breakdown — splice in the 11-seat allocation
+          // for the same slider year. Prefer the raw seat dict over the
+          // normalised one so UKIP 2016 / Reform 2024 / etc. render as
+          // themselves rather than collapsing to "Other".
+          const rh = GLA_ASSEMBLY_REGION_HISTORY[ah.region || 'Greater London'];
+          if (rh && rh.history) {
+            let regionChosen = null;
+            for (const e of rh.history) {
+              if (e.y <= y) regionChosen = e;
+              else break;
+            }
+            if (regionChosen) {
+              const raw = regionChosen.seats_raw || {};
+              const useRaw = Object.keys(raw).length > 0;
+              const seats = useRaw ? raw : (regionChosen.seats || {});
+              const entries = Object.entries(seats).sort((a, b) => b[1] - a[1]);
+              if (entries.length) {
+                const label = entries.map(([p, n]) => {
+                  const display = useRaw
+                    ? (GLA_ASSEMBLY_RAW_DISPLAY[p] || p)
+                    : (PARTY_DISPLAY[p] || p);
+                  return display + ' ' + n;
+                }).join(', ');
+                tl.push('London-wide list ' + regionChosen.y + ': '
+                        + label + ' (11 seats)');
+              }
+            }
+          }
+          if (chosen.url) {
+            try { tl.push('Source: ' + new URL(chosen.url).hostname + ' — click to open'); }
+            catch (_) { /* invalid URL */ }
+          }
+          titleEl.textContent = tl.join('\n');
+        }
+      } else {
+        el.setAttribute('fill', NEUTRAL_FILL);
+        delete el.dataset.year;
+        delete el.dataset.url;
+      }
+    });
     // EP layer (#91). 11 EER polygons, single boundary era (1999-2020),
     // two historical contests (2014, 2019). No era logic — every polygon
     // is always visible at every slider year, painted by carry-forward
@@ -2090,7 +2280,7 @@ function paintAtYear(targetYear) {
     const target = evt.target.closest(
       'path.ward, path.ced, path.holyrood, path.senedd, path.pcon, '
       + 'path.referendum, path.indyref, path.av-referendum, '
-      + 'path.gla-mayor, path.ca-mayor, path.ep');
+      + 'path.gla-mayor, path.gla-assembly, path.ca-mayor, path.ep');
     if (!target || !target.dataset.url) return;
     window.open(target.dataset.url, '_blank', 'noopener,noreferrer');
   });
